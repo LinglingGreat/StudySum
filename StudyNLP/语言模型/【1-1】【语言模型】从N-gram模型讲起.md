@@ -69,9 +69,13 @@ $P(w_i|w_{i-1})=\frac{count(w_{i-1}, w_i)}{count(w_{i-1})}$
 
 **1.加1平滑和加K平滑**
 
-对每一个N-gram，其计数更新为(实际出现次数+1)次。这称为加1平滑，或者Laplace平滑。这个方法的弊端在于，很容易为没出现过的N-gram分配过多的概率空间。
+对每一个N-gram，其计数更新为(实际出现次数+1)次。这称为加1平滑，或者Laplace平滑。这个方法的弊端在于，很容易为没出现过的N-gram分配过多的概率空间。1920年提出
 
 对每一个N-gram，其计数更新为(实际出现次数+K)次，其中K小于1。这种方法称为Lidstone法则。
+
+加1平滑在别的分类问题中可能有用，但是在语言模型中表现一般
+
+比喻：政府给大家每人发一点钱
 
 **2.卡茨退避法(Katz backoff)**
 
@@ -103,11 +107,103 @@ $$ P(w_i|w_{i-1})= \begin{cases} f(w_i|w_{i-1}), & \text {if $count(w_{i-1},w_i)
 
 **3.删除插值(Deleted Interpolation)法**
 
-用低阶语言模型和高阶模型进行线性插值来达到平滑的目的。
+用低阶语言模型和高阶模型进行线性插值来达到平滑的目的。1980提出完善
 
 $P(w_i|w_{i-2}, w_{i-1})=\lambda_3 f(w_i|w_{i-2}, w_{i-1})+\lambda_2 f(w_i|w_{i-1})+\lambda_1 f(w_i)$
 
-公式中的$\lambda$均为正数且和为1。这种方法的效果比卡茨退避法略差。
+比喻：自己，爸爸，爷爷各自出一点钱
+
+公式中的$\lambda$均为正数且和为1。这种方法的效果比卡茨退避法略差。注意f值从Training Set中计算出，$\lambda$值从Development Set中得出，用极大似然估计法。
+
+$L=\sum_h count(h)log(\sum_{i=1}^K \lambda_i f_{w_i}(h))$
+
+log里面只有几个参数的和，求导之后，各个参数耦合在一起。用EM算法来解决。
+
+更进一步，还可以根据不同的上下文，选择不同的参数
+
+$\lambda_k \rightarrow \lambda_{k, w^i_{i-2}}$
+
+**4.Back-off回退法**
+
+1987年提出, 使用Trigram如果count(trigram)满足一定的条件；否则使用Bigram；否则使用Unigram。具体参考"Katz smoothing"
+
+比喻：自己有钱自己出；自己没钱爸爸出；爸爸没钱爷爷出
+
+**5.Absolute Discounting绝对折扣**
+
+比喻：有钱的，每个人交固定的税D，建立一个基金；没钱的，根据自己爸爸有多少钱来分了这个基金。
+
+![1599872728427](img/1599872728427.png)
+
+递归停止：Unigram或者zero-gram
+
+下面是具体的例子，可以不用看，这个方法已经过时了。
+
+![1599872853089](img/1599872853089.png)
+
+![1599872865521](img/1599872865521.png)
+
+![1599872877012](img/1599872877012.png)
+
+![1599872887142](img/1599872887142.png)
+
+**6.Kneser-Ney Smoothing**
+
+回顾Absolute Discounting
+
+填空：我 想 买 太阳 __
+
+A 像章 count(太阳，像章)=0  count(像章)=100
+
+B 老铁 count(太阳，老铁)=0 count(老铁)=1000
+
+这样会选到B，显然不合理，需要选一个更加"适配"的词
+
+(刘强西 奶茶)=40，(玉思聪 ZB)=10，(玉思聪 LY)=10，(玉思聪 LPD)=10
+
+(___, 网红SLD)？会选成刘（出现次数更多）
+
+需要选一个更加"交际广泛"的人
+
+
+
+Kneser-Ney Smoothing
+
+有钱的，每个人固定的税D，建立一个基金；没钱的，根据自己爸爸“交际广泛”的程度来分了这个基金。
+
+![1599873612653](img/1599873612653.png)
+
+以bigram为例，分子表示$w_i$这个词之前出现了多少种词（跟多少个词搭配过），分母表示一共有多少个bigram。
+
+Modified Kneser-Ney Smoothing
+
+设置三个D：
+
+D1 如果c=1, D2如果c=2, D3如果c>=3
+
+![1599873899332](img/1599873899332.png)
+
+
+
+**OOV问题的解决**
+
+1.假设Training Set中出现了|V'|个不同的词汇，那么我们根据词频选择词频最高的|V|个词汇作为我们的词汇集V。
+
+2.在Training和Testing中，将不属于V的词汇都替换成特殊词汇UNK。
+
+
+
+### 实践
+
+工具：KenLM
+
+https://kheafield.com/code/kenlm
+
+pip install https://github.com/kpu/kenlm/archive/master.zip
+
+代码：https://github.com/shixing/xing_nlp/tree/master/LM
+
+案例：完形填空。http://edu.sina.com.cn/en/2002-09-27/6063.html
 
 
 
@@ -117,3 +213,4 @@ $P(w_i|w_{i-2}, w_{i-1})=\lambda_3 f(w_i|w_{i-2}, w_{i-1})+\lambda_2 f(w_i|w_{i-
 
 [自然语言处理NLP中的N-gram模型](https://blog.csdn.net/songbinxu/article/details/80209197)
 
+小象学院《自然语言处理之序列模型》
