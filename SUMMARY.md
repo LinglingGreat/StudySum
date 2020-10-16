@@ -3,7 +3,6 @@
 * [简介](README.md)
 * [Python](StudyPython/README.md)
   * [Streamlit](StudyPython/Streamlit.md)
-* [数据结构与算法](StudyAlgorithm/README.md)
 * [NLP](StudyNLP/README.md)
   * 基础知识
     * [正则表达式](StudyNLP/基础知识/[1-1]正则表达式.md)
