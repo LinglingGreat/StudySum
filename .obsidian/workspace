@@ -1,0 +1,108 @@
+{
+  "main": {
+    "id": "fc34d6487e60bd88",
+    "type": "split",
+    "children": [
+      {
+        "id": "2830be0bc1acf18c",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "StudyNLP/基础知识/[1-2]文本预处理.md",
+            "mode": "preview"
+          }
+        }
+      },
+      {
+        "id": "22ace7670163e36d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "StudyNLP/基础知识/[1-2]文本预处理.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "47bbe9db2427f3ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "79cfa90992a78f87",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f5e130d6e52a15d2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "bb2fda3c447a41f6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "305f592ad77dae89",
+    "type": "split",
+    "children": [
+      {
+        "id": "39f9c0f3cb94da05",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "67883344a7252a2d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "StudyNLP/基础知识/[1-2]文本预处理.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "StudyNLP/基础知识/[1-2]文本预处理.md",
+    "StudyNLP/基础知识/子表达式.md",
+    "StudyNLP/基础知识/7.re模块.md",
+    "StudyNLP/基础知识/【备用】正则表达式.md",
+    "StudyNLP/基础知识/[2-1]神经网络.md",
+    "StudyNLP/基础知识/[1-3]词性.md",
+    "StudyNLP/基础知识/[1-1]正则表达式.md"
+  ]
+}
