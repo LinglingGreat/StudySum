@@ -623,13 +623,13 @@ Batch Normalization
 
 Embedding 是怎么训练的
 
-## RNN 简介：马尔科夫过程和隐马尔科夫过程
+## 21 RNN 简介：马尔科夫过程和隐马尔科夫过程
 
 马尔科夫过程
 
 隐马尔科夫过程
 
-## RNN 简介：RNN 和LSTM
+## 22 RNN 简介：RNN 和LSTM
 
 RNN
 
@@ -637,7 +637,7 @@ LSTM
 
 https://blog.csdn.net/dqcfkyqdxym3f8rb0/article/details/82922386
 
-## CNN 简介
+## 23 CNN 简介
 
 CNN 简介
 
@@ -647,4 +647,510 @@ CNN 如何应用在文本当中
 
 - 传统来说，NLP 当中的CNN 一般较浅，但有证据表明更深的CNN 更有效。
 - 在传统文本分类模型当中，CNN 效果往往要比LSTM 分类效果好（但不一定）。
+
+## 24 环境部署
+
+谷歌云配置，jupyter notebook
+
+安装Anaconda，安装cuda，安装Pytorch，docker
+
+## 25 Pytorch简介：Tensor和相关运算
+
+broadcast, Einsum
+
+```python
+import torch
+
+my_tensor = torch.tensor([[0.0, 1.0],[0.1, 0.2]])
+my_tensor
+
+new_tensor= my_tensor.int().float()
+new_tensor
+
+import numpy as np
+np_tensor = np.array([[0.1,1.0],[1.0,0.2]])
+
+tensor_from_np = torch.tensor(np_tensor)
+tensor_from_np
+
+to_numpy = tensor_from_np.numpy()
+to_numpy
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+my_tensor.to(device=device) # See https://pytorch.org/docs/stable/notes/cuda.html for complete examples
+
+to_numpy = my_tensor.numpy()
+to_numpy
+
+single_number = torch.tensor([0])
+single_number
+
+single_number.item()
+
+tensor_with_gradient = torch.tensor([[0.1,1.0], [1.0, 2.0]], requires_grad=True)
+result =tensor_with_gradient.pow(2).sum()
+result.backward()
+tensor_with_gradient.grad
+
+tensor_with_gradient.detach_() # This will make sure that the Tensor will never need gradient
+
+x = torch.tensor([[0.1, 1.0],[2.0, 1.0]])
+x + 1
+
+x * 2
+
+y = torch.tensor([[0.1, 2.0], [2.0, 3.0]])
+x + y 
+
+x[:,:]
+
+x[1,:]
+
+x[:,1]
+
+x = x.unsqueeze(0)
+x
+x.shape
+
+z = x + y 
+z # This is a case of broadcast, see https://pytorch.org/docs/stable/notes/broadcasting.html for details
+z.shape
+
+z = z.squeeze()
+z
+
+x = torch.randn(5)
+y = torch.randn(5)
+torch.einsum('i,j->ij', x, y) 
+
+A = torch.randn(3,5,4)
+l = torch.randn(2,5)
+r = torch.randn(2,4)
+torch.einsum('bn,anm,bm->ba', l, A, r)
+```
+
+
+
+## 26 Pytorch简介：如何构造Dataset和DataLoader
+
+https://pytorch.org/tutorials/beginner/data_loading_tutorial.html
+
+```python
+import torch
+from torch.utils.data import Dataset, DataLoader
+
+class MyStupidDataset(Dataset):
+    def __init__(self):
+        super(MyStupidDataset, self).__init__()
+        self.data = torch.randn([1024, 10, 10])
+    def __len__(self):
+        return 1024
+    def __getitem__(self, idx):
+        return self.data[idx, :, :] 
+    
+my_stupid_dataset = MyStupidDataset()
+
+my_data_loader = DataLoader(my_stupid_dataset, batch_size=64, shuffle=True)
+
+for i in my_data_loader:
+    print(i)
+
+# A common Pattern
+class MyDictDataset(Dataset):
+    def __init__(self):
+        super(MyDictDataset, self).__init__()
+        self.x = torch.randn(1024, 10)
+        self.y = torch.randn(1024)
+    def __len__(self):
+        return 1024
+    def __getitem__(self, idx):
+        return {'x':self.x[idx,:],'y':self.y[idx]}
+    
+my_dict_dataset = MyDictDataset()
+my_data_loader = DataLoader(my_dict_dataset, batch_size=64, shuffle=True)
+for batch in my_data_loader:
+    print(batch['x'])
+    print(batch['y'])
+    
+from torch.utils.data import TensorDataset
+x = torch.randn(10,100)
+y = torch.randn(10)
+tensor_dataset = TensorDataset(x, y)
+```
+
+
+
+## 27 Pytorch简介：如何构造神经网络
+
+```python
+import torch 
+import torch.nn as nn
+
+x = torch.rand([8, 100, 10]).detach()
+x 
+
+y = torch.rand(8)
+y = (y>0.5).int()
+y
+
+class MLP(nn.Module):
+    def __init__(self):
+        super(MLP, self).__init__()
+        # 为什么这些要写在init里？因为只有写在这才会被初始化，里面的参数才会被优化
+        # 可不可以重用？比如这里的first_layer我用好几次。
+        # 这样导致的结果就是这好几次的参数都是一样的。
+        self.first_layer = nn.Linear(1000,50)
+        self.second_layer = nn.Linear(50, 1)
+    def forward(self, x):
+        x = torch.flatten(x, start_dim=1, end_dim=2)
+        x = nn.functional.relu(self.first_layer(x))
+        x = self.second_layer(x)
+        return x
+    
+mlp = MLP()
+output = mlp(x)
+output
+
+class Embedding(nn.Module):
+    def __init__(self):
+        super(Embedding, self).__init__()
+        self.embedding = nn.Embedding(4, 100)
+    def forward(self, x):
+        return self.embedding(x)
+    
+embedding = Embedding()
+
+embedding_input = torch.tensor([[0,1, 0],[2,3, 3]])
+embedding_output = embedding(embedding_input)
+embedding_output.shape   # [2, 3, 100]
+
+class LSTM(nn.Module):
+    def __init__(self):
+        super(LSTM, self).__init__()
+        # 10是embedding维度，15是hidden层
+        self.lstm = nn.LSTM(10, 
+                           15, 
+                           num_layers=2, 
+                           bidirectional=True, 
+                           dropout=0.1)
+    def forward(self, x):
+        # 一般用output, hidden
+        output, (hidden, cell) = self.lstm(x)
+        return output, hidden, cell
+    
+# 和上面的不一样，LSTM的输入第二维才是样本量
+permute_x = x.permute([1,0,2])
+lstm = LSTM()
+output_lstm1, output_lstm2, output_lstm3 = lstm(permute_x)
+output_lstm1.shape   # [100, 8, 30], 30=15*2
+output_lstm2.shape   # [4, 8, 15], 15是Hidden，4是2*2？
+
+class Conv(nn.Module):
+    def __init__(self):
+        super(Conv, self).__init__()
+        self.conv1d = nn.Conv1d(100, 50, 2)
+    def forward(self, x):
+        return self.conv1d(x)
+    
+conv = Conv()
+output = conv(x)
+output.shape  # [8, 50, 9]
+```
+
+## 28 文本分类实践：如何进行简单的文本分类？
+
+开源代码，第一先跑通，第二不要去看一些细节，先理架构逻辑，第三去看每一步中哪个地方有问题
+
+作业：分析怎么提升准确性
+
+https://github.com/bentrevett/pytorch-sentiment-analysis. 
+
+```python
+import nltk
+nltk.download('punkt')  # punkt用来分词
+
+from nltk.tokenize import word_tokenize
+tokenizer = word_tokenize
+
+import torch
+from torchtext import data
+from torchtext import datasets
+
+SEED = 1234
+
+torch.manual_seed(SEED)
+torch.backends.cudnn.deterministic = True
+
+TEXT = data.Field(tokenize = tokenizer, include_lengths = True)
+LABEL = data.LabelField(dtype = torch.float)
+
+
+from torchtext import datasets
+
+train_data, test_data = datasets.IMDB.splits(TEXT, LABEL)
+
+
+import random
+
+train_data, valid_data = train_data.split(random_state = random.seed(SEED))
+
+
+MAX_VOCAB_SIZE = 25000
+
+TEXT.build_vocab(train_data, 
+                 max_size = MAX_VOCAB_SIZE, 
+                 vectors = "glove.6B.300d", 
+                 unk_init = torch.Tensor.normal_)
+
+LABEL.build_vocab(train_data)
+
+
+BATCH_SIZE = 64
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+train_iterator, valid_iterator, test_iterator = data.BucketIterator.splits(
+    (train_data, valid_data, test_data), 
+    batch_size = BATCH_SIZE,
+    sort_within_batch = True,
+    device = device)
+
+
+import torch.nn as nn
+
+class RNN(nn.Module):
+    def __init__(self, vocab_size, embedding_dim, hidden_dim, output_dim, n_layers, 
+                 bidirectional, dropout, pad_idx):
+        
+        super().__init__()
+        
+        self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx = pad_idx)
+        
+        self.rnn = nn.LSTM(embedding_dim, 
+                           hidden_dim, 
+                           num_layers=n_layers, 
+                           bidirectional=bidirectional, 
+                           dropout=dropout)
+        
+        # bidirectional一般是True，双向LSTM
+        self.fc = nn.Linear(hidden_dim * 2, output_dim)
+        
+        self.dropout = nn.Dropout(dropout)
+        
+    def forward(self, text, text_lengths):
+        
+        embedded = self.embedding(text)
+        
+        packed_embedded = nn.utils.rnn.pack_padded_sequence(embedded, text_lengths)
+        
+        packed_output, (hidden, cell) = self.rnn(packed_embedded)
+        
+        output, output_lengths = nn.utils.rnn.pad_packed_sequence(packed_output)
+        
+        # 向前和向后的
+        hidden = self.dropout(torch.cat((hidden[-2,:,:], hidden[-1,:,:]), dim = 1))
+                
+        return self.fc(hidden)
+
+INPUT_DIM = len(TEXT.vocab)
+EMBEDDING_DIM = 300
+HIDDEN_DIM = 256
+OUTPUT_DIM = 1
+N_LAYERS = 2
+BIDIRECTIONAL = True
+DROPOUT = 0.2
+PAD_IDX = TEXT.vocab.stoi[TEXT.pad_token]
+
+model = RNN(INPUT_DIM, 
+            EMBEDDING_DIM, 
+            HIDDEN_DIM, 
+            OUTPUT_DIM, 
+            N_LAYERS, 
+            BIDIRECTIONAL, 
+            DROPOUT, 
+            PAD_IDX)
+
+
+pretrained_embeddings = TEXT.vocab.vectors
+model.embedding.weight.data.copy_(pretrained_embeddings)
+
+
+UNK_IDX = TEXT.vocab.stoi[TEXT.unk_token]
+
+model.embedding.weight.data[UNK_IDX] = torch.zeros(EMBEDDING_DIM)
+model.embedding.weight.data[PAD_IDX] = torch.zeros(EMBEDDING_DIM)
+
+
+import torch.optim as optim
+
+optimizer = optim.Adam(model.parameters())
+criterion = nn.BCEWithLogitsLoss()
+
+model = model.to(device)
+criterion = criterion.to(device)
+
+
+def binary_accuracy(preds, y):
+    """
+    Returns accuracy per batch, i.e. if you get 8/10 right, this returns 0.8, NOT 8
+    """
+
+    #round predictions to the closest integer
+    rounded_preds = torch.round(torch.sigmoid(preds))
+    correct = (rounded_preds == y).float() #convert into float for division 
+    acc = correct.sum() / len(correct)
+    return acc
+
+
+def train(model, iterator, optimizer, criterion):
+    
+    epoch_loss = 0
+    epoch_acc = 0
+    
+    model.train()
+    
+    for batch in iterator:
+        
+        optimizer.zero_grad()
+        
+        text, text_lengths = batch.text
+        
+        predictions = model(text, text_lengths).squeeze(1)
+        
+        loss = criterion(predictions, batch.label)
+        
+        acc = binary_accuracy(predictions, batch.label)
+        
+        loss.backward()
+        
+        optimizer.step()
+        
+        epoch_loss += loss.item()
+        epoch_acc += acc.item()
+        
+    return epoch_loss / len(iterator), epoch_acc / len(iterator)
+
+
+def evaluate(model, iterator, criterion):
+    
+    epoch_loss = 0
+    epoch_acc = 0
+    
+    model.eval()
+    
+    with torch.no_grad():
+    
+        for batch in iterator:
+
+            text, text_lengths = batch.text
+            
+            predictions = model(text, text_lengths).squeeze(1)
+            
+            loss = criterion(predictions, batch.label)
+            
+            acc = binary_accuracy(predictions, batch.label)
+
+            epoch_loss += loss.item()
+            epoch_acc += acc.item()
+        
+    return epoch_loss / len(iterator), epoch_acc / len(iterator)
+
+
+import time
+
+def epoch_time(start_time, end_time):
+    elapsed_time = end_time - start_time
+    elapsed_mins = int(elapsed_time / 60)
+    elapsed_secs = int(elapsed_time - (elapsed_mins * 60))
+    return elapsed_mins, elapsed_secs
+
+
+N_EPOCHS = 5
+
+best_valid_loss = float('inf')
+
+for epoch in range(N_EPOCHS):
+
+    start_time = time.time()
+    
+    train_loss, train_acc = train(model, train_iterator, optimizer, criterion)
+    valid_loss, valid_acc = evaluate(model, valid_iterator, criterion)
+    
+    end_time = time.time()
+
+    epoch_mins, epoch_secs = epoch_time(start_time, end_time)
+    
+    if valid_loss < best_valid_loss:
+        best_valid_loss = valid_loss
+        torch.save(model.state_dict(), 'model.pt')
+    
+    print(f'Epoch: {epoch+1:02} | Epoch Time: {epoch_mins}m {epoch_secs}s')
+    print(f'\tTrain Loss: {train_loss:.3f} | Train Acc: {train_acc*100:.2f}%')
+    print(f'\t Val. Loss: {valid_loss:.3f} |  Val. Acc: {valid_acc*100:.2f}%')
+
+
+model.load_state_dict(torch.load('model.pt'))
+
+test_loss, test_acc = evaluate(model, test_iterator, criterion)
+
+print(f'Test Loss: {test_loss:.3f} | Test Acc: {test_acc*100:.2f}%')
+```
+
+## 29 文本分类实践的评价：如何提升进一步的分类效果？
+
+分词器，影响没有很大
+
+数据清洗，但是有时候清洗之后可能效果还变差了。用最好的模型来观察数据清洗。
+
+怎么选训练集验证集测试集？测试集一定要比较有代表性。
+
+train一般比val大。
+
+五折验证，模型平均，结果更有代表性。
+
+国内比赛，更多的时候看训练集的结果，测试集可能质量很差
+
+MAX_VOCAB_SIZE。如果embedding已经训练好了，一般会尽量让每个词都有embedding，如果要自己训练，可能需要选择一些频率高的词去训练，频率低的词可以不训练，或者一起作为一个token。
+
+如果想发挥embedding作用的话，一般可以在目标训练集上再稍微训练一点embedding，学习率要选的小一点。
+
+选哪个词向量，一般选更大的词向量，可以拼多个词向量，可以测试不同词向量。如果是BERT等，可以跟词向量做个平均，因为两者捕捉的东西不一样，可能会带来效果上的提升。
+
+BERT是字向量，中文的字向量一般不太好，词向量又是词，如果平均的话，怎么把两者对应起来？这是torchtext没有解决的问题，所以不怎么用。可能需要自己去写，但是很麻烦。
+
+BATCH_SIZE也很重要，不太大，也不太小。一般开始用比较小的batch_size，到快要收敛的时候调低学习率，增大batch_size，这样会更稳定，更有可能找到局部最优，因为收敛比较慢。一般选32,64,128，但是特殊的应用不一样，比如机器翻译一般BS比较大
+
+DeepSpeed
+
+LSTM的num_layers一般不要很多。dropout一般不要很大
+
+seq_length很重要，一般不选最长的文本长度，没信息，收敛慢。
+
+学习率要调
+
+embedding不要和LSTM一起训练。一开始不训练，可以在最后快收敛的时候再训练。
+
+多个LOSS相加可能的好处：如果模型收敛比较慢，再初始的时候加多个LOSS会增加收敛速度；模型快要收敛的时候，加多个LOSS，可能会收敛道更好的结果。但是多个LOSS之间的权重很重要，调整很麻烦。
+
+不要在每个epoch结束的时候才去评价、存储。因为数据量不同的时候，收敛速度完全不一样，比如数据量比较大的时候，3个epoch就已经过拟合了，很可能错过全局最优点。
+
+一般会在比如同样都跑100个batch以后做evaluation。
+
+除了保存模型的状态，还应该保存优化器的状态，随着训练，优化器的有个参数会改变，如果有scheduler（改变学习率）要存学习率。wramup，学习率一开始小，然后增大，然后减小
+
+有些模型，初始化对它影响很大。随即初始化比0好，正态比均匀好，但是正态的方差怎么选？默认何恺明的比较好。
+
+
+
+词向量和字向量甚至句子向量的结合？
+
+LSTM还是CNN？
+
+CNN放到LSTM上？
+
+
+
+## 课件和Demo地址
+
+https://gitee.com/geektime-geekbang/NLP
 
