@@ -4,20 +4,9 @@
     "type": "split",
     "children": [
       {
-        "id": "2830be0bc1acf18c",
-        "type": "leaf",
-        "active": true,
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "StudyNLP/基础知识/[1-2]文本预处理.md",
-            "mode": "preview"
-          }
-        }
-      },
-      {
         "id": "22ace7670163e36d",
         "type": "leaf",
+        "active": true,
         "state": {
           "type": "markdown",
           "state": {
@@ -88,13 +77,33 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "4e8981ccab8108fe",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a587b5911d49c840",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "StudyNLP/基础知识/[1-2]文本预处理.md"
+              }
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "lastOpenFiles": [
     "StudyNLP/基础知识/[1-2]文本预处理.md",
