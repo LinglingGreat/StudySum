@@ -168,7 +168,7 @@ conds的预测分两步，第一步预测条件值和运算符，第二步预测
 
 环境是：`python 2.7 + tensorflow 1.13 + keras 2.2.4 + keras-bert 0.68.1`
 
-我是用Python3的，所以对原来的代码做了一些修改，修改后的代码：
+我是用Python3的，所以对原来的代码做了一些修改，修改后的代码：https://github.com/LinglingGreat/StudySum/blob/master/StudyNLP/Text2SQL/nl2sql_baseline.py
 
 注意如果你执行此代码报错，那么你可能需要修改一下Keras的`backend/tensorflow_backend.py`，将`sparse_categorical_crossentropy`函数中原本是
 
@@ -184,7 +184,7 @@ logits = tf.reshape(output, [-1, tf.shape(output)[-1]])
 
 还需要下载bert模型`chinese_wwm_L-12_H-768_A-12`，下载地址：https://github.com/ymcui/Chinese-BERT-wwm，找到**BERT-wwm-ext, Chinese**，下载TensorFlow版本即可。
 
-下面我们来看看解析一下代码吧！
+下面我们来解析代码吧！
 
 定义一些变量
 
@@ -651,15 +651,8 @@ train_model = load_model("single_baseline_best_model.h5", custom_objects=get_cus
 test(test_data, test_tables)
 ```
 
+## 参考资料
 
+https://kexue.fm/archives/6771 
 
-```python
-
-
-
-
-
-
-
-```
 
