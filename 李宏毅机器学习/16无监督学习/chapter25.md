@@ -2,21 +2,23 @@
 
 > 更新人：李玲
 >
-> 更新时间：
+> 更新时间：2021/06/20
 >
 > 注：本章节是在历史版本基础上修改的，感谢之前小伙伴的整理
 
 本节主题是无监督学习：词嵌入（Unsupervised Learning: Word Embedding），主要讲述如何用一个向量表示一个词。首先介绍了1-of-N Encoding、Word Class两种方法，但是它们都存在向量无法表示出足够信息的问题。接着介绍了Word Embedding方法，它所需的维度比1-of-N Encoding低，而且能表示出词汇的语义相似。
 
-Word Embedding是一个无监督方法，可以用基于计数的词嵌入方法和基于预测的词嵌入来找出词的Embedding
+Word Embedding是一个无监督方法，可以用基于计数的词嵌入方法和基于预测的词嵌入来找出词的Embedding。基于计数的词嵌入方法代表性的是Glove，基于预测的词嵌入方法中最具代表性的就是word2vec方法。本节重点介绍了基于预测的词嵌入方法是怎么做的。
+
+此外还简单提及多语言嵌入、多领域嵌入、文档嵌入等，但没有对其做更深入的探讨。
+
+本节内容的框架
+
+![Word Embedding](img/Word Embedding.png)
 
 
 
-章节内容的思维导图框架。。
-
-
-
-## 1-of-N Encoding
+## 1-of-N Encoding & Word Class
 
 
 
@@ -143,7 +145,7 @@ Tomas Mikolov 就是 propose word vector 的作者，他说，首先他并不是
 
 其实像word embedding这个概念在语音界大概是2010年的时候开始红起来的，那个时候我们把它叫做continuous 的 language model。一开始的时候不是用neural network 来得到这个 word embedding的，因为运算量比较大，而是用一些比较简单的方法。只是后来大家逐渐发现，用neural network 得到的结果才是最好的，所以其他不是 neural network 的方法就渐渐变成了 neural network based 的方法。
 
-
+### 词嵌入的特性
 
 ![image](res/chapter25-13.png)
 
@@ -214,3 +216,12 @@ word vector还可以做很多事情，比如你可以把不同语言的word vect
 
 ## 总结
 
+本节重要知识点列表
+
+- 由于1-of-N Encoding、Word Class的缺陷，引入了Word Embedding（词嵌入）的方法。
+- 这个方法是一个无监督方法，希望通过让机器阅读大量文章来学习到词的含义。思想是通过词汇的上下文来了解该词汇的含义。
+- 具体来说，词嵌入又分为基于计数的方法（以Glove为代表）和基于预测的方法（以Word2vec为代表）
+- 基于计数的方法希望达到这样的目标：两个词的向量的内积尽可能和这两个词在同一个文档共现的次数接近。
+- 基于预测的方法则希望学习这样一个函数：给定前面N个词，函数能够预测出下一个词。其变形的模式是CBOW（给定上下文，预测中间的词）和Skip-gram（给定中间的词，预测上下文）
+- 这样训练出来的词嵌入有一些特性，比如相似的词的向量会很相似，这可以用来做推理。
+- 此外多语言嵌入、多领域嵌入、文档嵌入可以进一步学习
