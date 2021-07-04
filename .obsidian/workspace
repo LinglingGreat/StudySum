@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "李宏毅机器学习/16无监督学习/chapter25.md",
+            "file": "README.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "李宏毅机器学习/16无监督学习/chapter25.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "李宏毅机器学习/16无监督学习/chapter25.md"
+                "file": "README.md"
               }
             }
           }
@@ -108,8 +108,8 @@
   },
   "active": "22ace7670163e36d",
   "lastOpenFiles": [
-    "李宏毅机器学习/16无监督学习/chapter25.md",
     "README.md",
+    "李宏毅机器学习/16无监督学习/chapter25.md",
     "SUMMARY.md",
     "StudyNLP/README.md",
     "StudyNLP/基础知识/[1-2]文本预处理.md",
