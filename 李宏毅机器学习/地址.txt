@@ -1,3 +1,5 @@
 http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html
 
 https://www.bilibili.com/video/BV1y54y117qE
+
+https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html

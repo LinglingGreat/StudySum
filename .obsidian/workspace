@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "README.md",
+            "file": "StudyNLP/对话&问答/NLU/NLU.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "StudyNLP/对话&问答/NLU/NLU.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "StudyNLP/对话&问答/NLU/NLU.md"
               }
             }
           }
@@ -108,15 +108,15 @@
   },
   "active": "22ace7670163e36d",
   "lastOpenFiles": [
+    "StudyNLP/对话&问答/NLU/NLU.md",
+    "StudyNLP/对话&问答/NLG.md",
+    "StudyNLP/对话&问答/NLU.md",
+    "StudyNLP/对话&问答/DST/DST.md",
     "README.md",
     "李宏毅机器学习/16无监督学习/chapter25.md",
     "SUMMARY.md",
     "StudyNLP/README.md",
     "StudyNLP/基础知识/[1-2]文本预处理.md",
-    "StudyNLP/基础知识/子表达式.md",
-    "StudyNLP/基础知识/7.re模块.md",
-    "StudyNLP/基础知识/【备用】正则表达式.md",
-    "StudyNLP/基础知识/[2-1]神经网络.md",
-    "StudyNLP/基础知识/[1-3]词性.md"
+    "StudyNLP/基础知识/子表达式.md"
   ]
 }
