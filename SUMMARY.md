@@ -1,12 +1,62 @@
 # Your Book Title
 
+- 李宏毅机器学习
+  - 10DNN训练Tips
+    * [Chapter 18](李宏毅机器学习/10DNN训练Tips/chapter18.md)
+  - 16无监督学习
+    * [Chapter 25](李宏毅机器学习/16无监督学习/chapter25.md)
 - [Study Bigdata](StudyBigdata/README.md)
 - [Study NLP](StudyNLP/README.md)
-  - Text 2 SQL
-    * [Text2SQL Baseline解析](StudyNLP/Text2SQL/Text2SQL Baseline解析.md)
-  - 分类模型
-    * [[1-1]朴素贝叶斯与情感分类](StudyNLP/分类模型/[1-1]朴素贝叶斯与情感分类.md)
-    * [[1-2]逻辑回归](StudyNLP/分类模型/[1-2]逻辑回归.md)
+  - 对比学习
+    - 业界分享
+      * [对比学习在微博内容表示的应用_张俊林](StudyNLP/对比学习/业界分享/对比学习在微博内容表示的应用_张俊林.md)
+  - [对话](StudyNLP/对话/readme.md)
+    - 任务型对话
+      - DST
+        * [DST概述](StudyNLP/对话/任务型对话/DST/DST概述.md)
+      - NLG
+        * [NLG概述](StudyNLP/对话/任务型对话/NLG/NLG概述.md)
+      - NLU
+        * [NLU概述](StudyNLP/对话/任务型对话/NLU/NLU概述.md)
+      * [任务型对话概述](StudyNLP/对话/任务型对话/任务型对话概述.md)
+    - 问答型对话
+      - 检索式问答
+        * [检索式文本问答](StudyNLP/对话/问答型对话/检索式问答/检索式文本问答.md)
+      - 业界分享
+        * [低资源场景下的知识图谱表示学习和问答_阿里_李杨](StudyNLP/对话/问答型对话/业界分享/低资源场景下的知识图谱表示学习和问答_阿里_李杨.md)
+        * [QQ浏览器搜索智能问答](StudyNLP/对话/问答型对话/业界分享/QQ浏览器搜索智能问答.md)
+      * [问答型对话系统概述](StudyNLP/对话/问答型对话/问答型对话系统概述.md)
+    - 闲聊型对话
+      * [闲聊型对话系统概述](StudyNLP/对话/闲聊型对话/闲聊型对话系统概述.md)
+    - 业界分享
+      * [美团智能客服实践_江会星](StudyNLP/对话/业界分享/美团智能客服实践_江会星.md)
+      * [去哪儿智能客服](StudyNLP/对话/业界分享/去哪儿智能客服.md)
+      * [实时语音对话场景下的算法实践_阿里_陈克寒](StudyNLP/对话/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md)
+      * [智能语音交互中的无效query识别_小米_崔世起](StudyNLP/对话/业界分享/智能语音交互中的无效query识别_小米_崔世起.md)
+      * [UNIT智能对话](StudyNLP/对话/业界分享/UNIT智能对话.md)
+  - 机器翻译
+    - 业界分享
+      * [爱奇艺台词翻译分享](StudyNLP/机器翻译/业界分享/爱奇艺台词翻译分享.md)
+  - 基础模型
+    * [[1-1][语言模型]从N-gram模型讲起](StudyNLP/基础模型/[1-1][语言模型]从N-gram模型讲起.md)
+    * [[1-1]朴素贝叶斯与情感分类](StudyNLP/基础模型/[1-1]朴素贝叶斯与情感分类.md)
+    * [[1-2][语言模型]NNLM(神经网络语言模型)](StudyNLP/基础模型/[1-2][语言模型]NNLM(神经网络语言模型).md)
+    * [[1-2]逻辑回归](StudyNLP/基础模型/[1-2]逻辑回归.md)
+    * [[1-3][语言模型]基于RNN的语言模型](StudyNLP/基础模型/[1-3][语言模型]基于RNN的语言模型.md)
+    * [[1-4][语言模型]用N-gram来做完形填空](StudyNLP/基础模型/[1-4][语言模型]用N-gram来做完形填空.md)
+    * [[1-5][语言模型]用KenLM来做完形填空](StudyNLP/基础模型/[1-5][语言模型]用KenLM来做完形填空.md)
+    * [新建文本文档](StudyNLP/基础模型/新建文本文档.md)
+    * [Bert](StudyNLP/基础模型/bert.md)
+    * [BM 25](StudyNLP/基础模型/BM25.md)
+    * [Elmo](StudyNLP/基础模型/elmo.md)
+    * [Glove](StudyNLP/基础模型/glove.md)
+    * [Gpt](StudyNLP/基础模型/gpt.md)
+    * [LDA](StudyNLP/基础模型/LDA.md)
+    * [TFIDF](StudyNLP/基础模型/TFIDF.md)
+    * [TINYBERT](StudyNLP/基础模型/TINYBERT.md)
+    * [Transformer](StudyNLP/基础模型/transformer.md)
+    * [Word 2 Vec](StudyNLP/基础模型/word2vec.md)
+    * [XL Net](StudyNLP/基础模型/XLNet.md)
   - 基础知识
     * [[1-1]正则表达式](StudyNLP/基础知识/[1-1]正则表达式.md)
     * [[1-2]文本预处理](StudyNLP/基础知识/[1-2]文本预处理.md)
@@ -17,32 +67,28 @@
     * [[2-1]神经网络](StudyNLP/基础知识/[2-1]神经网络.md)
     * [【备用】正则表达式](StudyNLP/基础知识/【备用】正则表达式.md)
     * [7.re模块](StudyNLP/基础知识/7.re模块.md)
-    * [Todo](StudyNLP/基础知识/todo.md)
+    * [绿色深度学习](StudyNLP/基础知识/绿色深度学习.md)
     * [子表达式](StudyNLP/基础知识/子表达式.md)
-  - 语言模型
-    * [[1-1][语言模型]从N-gram模型讲起](StudyNLP/语言模型/[1-1][语言模型]从N-gram模型讲起.md)
-    * [[1-2][语言模型]NNLM(神经网络语言模型)](StudyNLP/语言模型/[1-2][语言模型]NNLM(神经网络语言模型).md)
-    * [[1-3][语言模型]基于RNN的语言模型](StudyNLP/语言模型/[1-3][语言模型]基于RNN的语言模型.md)
-    * [[1-4][语言模型]用N-gram来做完形填空](StudyNLP/语言模型/[1-4][语言模型]用N-gram来做完形填空.md)
-    * [[1-5][语言模型]用KenLM来做完形填空](StudyNLP/语言模型/[1-5][语言模型]用KenLM来做完形填空.md)
-    * [Bert](StudyNLP/语言模型/bert.md)
-    * [Elmo](StudyNLP/语言模型/elmo.md)
-    * [Glove](StudyNLP/语言模型/glove.md)
-    * [Gpt](StudyNLP/语言模型/gpt.md)
-    * [TINYBERT](StudyNLP/语言模型/TINYBERT.md)
-    * [Transformer](StudyNLP/语言模型/transformer.md)
-    * [Word 2 Vec](StudyNLP/语言模型/word2vec.md)
-    * [XL Net](StudyNLP/语言模型/XLNet.md)
-    * [新建文本文档](StudyNLP/语言模型/新建文本文档.md)
+    * [Todo](StudyNLP/基础知识/todo.md)
   - 课程笔记
-    * [极客时间_NLP实战高手课](StudyNLP/课程笔记/极客时间_NLP实战高手课.md)
+    - NLP实战高手课
+      * [极客时间_NLP实战高手课](StudyNLP/课程笔记/NLP实战高手课/极客时间_NLP实战高手课.md)
+  - 搜索
+    - 业界分享
+      * [爱奇艺搜索排序](StudyNLP/搜索/业界分享/爱奇艺搜索排序.md)
+      * [知乎搜索文本相关性](StudyNLP/搜索/业界分享/知乎搜索文本相关性.md)
+    * [查询关键字理解](StudyNLP/搜索/查询关键字理解.md)
+    * [搜索排序](StudyNLP/搜索/搜索排序.md)
+  - Text 2 SQL
+    - [M SQL](StudyNLP/Text2SQL/M-SQL/M-SQL.md)
+    * [Text2SQL Baseline解析](StudyNLP/Text2SQL/Text2SQL Baseline解析.md)
   * [NLP知识体系](StudyNLP/NLP知识体系.md)
-  * [Transformer](StudyNLP/Transformer.md)
-  * [文本相关性](StudyNLP/文本相关性.md)
 - [Study Python](StudyPython/README.md)
   * [Streamlit](StudyPython/Streamlit.md)
 - [Study Recsys](StudyRecsys/README.md)
+  - 业界
+    * [腾讯基于知识图谱长视频推荐](StudyRecsys/业界/腾讯基于知识图谱长视频推荐.md)
   - [Sparrow Rec Sys](StudyRecsys/SparrowRecSys/README.md)
-  * [Deep FM](StudyRecsys/DeepFM.md)
-  * [推荐模型](StudyRecsys/推荐模型.md)
   * [深度学习推荐系统实战](StudyRecsys/深度学习推荐系统实战.md)
+  * [推荐模型](StudyRecsys/推荐模型.md)
+  * [Deep FM](StudyRecsys/DeepFM.md)

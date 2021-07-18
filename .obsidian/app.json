@@ -1,0 +1,9 @@
+{
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
+  "newFileLocation": "current",
+  "newLinkFormat": "relative",
+  "attachmentFolderPath": "./img",
+  "foldHeading": true,
+  "foldIndent": true
+}

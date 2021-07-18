@@ -7,11 +7,8 @@
         "id": "22ace7670163e36d",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "StudyNLP/对话&问答/NLU/NLU.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -68,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "StudyNLP/对话&问答/NLU/NLU.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,28 +91,26 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "StudyNLP/对话&问答/NLU/NLU.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 274
   },
   "active": "22ace7670163e36d",
   "lastOpenFiles": [
+    "StudyNLP/对话&问答/readme.md",
+    "StudyNLP/对话&问答/问答型对话/未命名.md",
+    "StudyNLP/对话&问答/问答型对话/检索式问答/检索式文本问答.md",
     "StudyNLP/对话&问答/NLU/NLU.md",
-    "StudyNLP/对话&问答/NLG.md",
-    "StudyNLP/对话&问答/NLU.md",
-    "StudyNLP/对话&问答/DST/DST.md",
-    "README.md",
-    "李宏毅机器学习/16无监督学习/chapter25.md",
-    "SUMMARY.md",
-    "StudyNLP/README.md",
-    "StudyNLP/基础知识/[1-2]文本预处理.md",
-    "StudyNLP/基础知识/子表达式.md"
+    "StudyNLP/对话&问答/0对话系统概述.md",
+    "StudyNLP/对话&问答/任务型对话/任务式对话系统.md",
+    "StudyNLP/对话&问答/闲聊型对话/开放域对话系统.md",
+    "StudyNLP/对话&问答/业界分享/UNIT智能对话.md",
+    "StudyNLP/对话&问答/业界分享/智能语音交互中的无效query识别_小米_崔世起.md",
+    "StudyNLP/对话&问答/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md"
   ]
 }
