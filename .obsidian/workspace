@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "README.md",
+            "file": "StudyNLP/对话/问答型对话/问答型对话系统概述.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "StudyNLP/对话/问答型对话/问答型对话系统概述.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "StudyNLP/对话/问答型对话/问答型对话系统概述.md"
               }
             }
           }
@@ -108,6 +108,8 @@
   },
   "active": "22ace7670163e36d",
   "lastOpenFiles": [
+    "StudyNLP/对话/问答型对话/问答型对话系统概述.md",
+    "StudyNLP/对话/readme.md",
     "README.md",
     "StudyNLP/对话&问答/readme.md",
     "StudyNLP/对话&问答/问答型对话/未命名.md",
@@ -115,8 +117,6 @@
     "StudyNLP/对话&问答/NLU/NLU.md",
     "StudyNLP/对话&问答/0对话系统概述.md",
     "StudyNLP/对话&问答/任务型对话/任务式对话系统.md",
-    "StudyNLP/对话&问答/闲聊型对话/开放域对话系统.md",
-    "StudyNLP/对话&问答/业界分享/UNIT智能对话.md",
-    "StudyNLP/对话&问答/业界分享/智能语音交互中的无效query识别_小米_崔世起.md"
+    "StudyNLP/对话&问答/闲聊型对话/开放域对话系统.md"
   ]
 }
