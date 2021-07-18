@@ -1,6 +1,14 @@
 # StudySum
 学习过程中的笔记梳理与总结
 
+可以在gitbook中观看，效果更佳：
+
+[Introduction - Study (gitbook.io)](https://codingling.gitbook.io/study/)
+
+章节目录见：[SUMMARY](SUMMARY.md)
+
+
+
 gitbook教程：
 
 https://blog.csdn.net/weixin_41024483/article/details/100090621

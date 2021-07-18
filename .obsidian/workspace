@@ -7,8 +7,11 @@
         "id": "22ace7670163e36d",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "README.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -65,6 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,7 +95,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "README.md"
+              }
             }
           }
         ]
@@ -102,6 +108,7 @@
   },
   "active": "22ace7670163e36d",
   "lastOpenFiles": [
+    "README.md",
     "StudyNLP/对话&问答/readme.md",
     "StudyNLP/对话&问答/问答型对话/未命名.md",
     "StudyNLP/对话&问答/问答型对话/检索式问答/检索式文本问答.md",
@@ -110,7 +117,6 @@
     "StudyNLP/对话&问答/任务型对话/任务式对话系统.md",
     "StudyNLP/对话&问答/闲聊型对话/开放域对话系统.md",
     "StudyNLP/对话&问答/业界分享/UNIT智能对话.md",
-    "StudyNLP/对话&问答/业界分享/智能语音交互中的无效query识别_小米_崔世起.md",
-    "StudyNLP/对话&问答/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md"
+    "StudyNLP/对话&问答/业界分享/智能语音交互中的无效query识别_小米_崔世起.md"
   ]
 }
