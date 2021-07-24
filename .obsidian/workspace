@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "StudyNLP/对话/问答型对话/问答型对话系统概述.md",
+            "file": "StudyNLP/对话/readme.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "StudyNLP/对话/问答型对话/问答型对话系统概述.md",
+                "file": "StudyNLP/对话/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "StudyNLP/对话/问答型对话/问答型对话系统概述.md"
+                "file": "StudyNLP/对话/readme.md"
               }
             }
           }
@@ -108,8 +108,8 @@
   },
   "active": "22ace7670163e36d",
   "lastOpenFiles": [
-    "StudyNLP/对话/问答型对话/问答型对话系统概述.md",
     "StudyNLP/对话/readme.md",
+    "StudyNLP/对话/问答型对话/问答型对话系统概述.md",
     "README.md",
     "StudyNLP/对话&问答/readme.md",
     "StudyNLP/对话&问答/问答型对话/未命名.md",
