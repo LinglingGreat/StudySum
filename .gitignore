@@ -1,5 +1,7 @@
 # my special
 *.pdf
+data/
+gitignore/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

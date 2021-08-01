@@ -31,3 +31,9 @@ Multi-Head Attention 通过多层的 Self-Attention 可以将输入语句映射�
 
 待续
 
+
+
+## 参考资料
+
+[NLP预训练家族 | Transformer-XL及其进化XLNet](https://mp.weixin.qq.com/s/_xZpg5WDInqGKur1AGxI1Q)
+
