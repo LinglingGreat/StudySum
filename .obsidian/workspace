@@ -4,14 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "22ace7670163e36d",
+        "id": "566cd20f2ff00376",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "StudyNLP/对话/readme.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -68,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "StudyNLP/对话/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,28 +91,26 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "StudyNLP/对话/readme.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 274
+    "width": 110
   },
-  "active": "22ace7670163e36d",
+  "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "StudyNLP/对比学习/readme.md",
+    "StudyNLP/对比学习/SimCSE.md",
+    "StudyNLP/基础模型/BERT/BERT.md",
+    "StudyNLP/文本分类/TextCNN.md",
+    "deep_learning/program-CNN.md",
+    "deep_learning/4.CNN.md",
     "StudyNLP/对话/readme.md",
     "StudyNLP/对话/问答型对话/问答型对话系统概述.md",
     "README.md",
-    "StudyNLP/对话&问答/readme.md",
-    "StudyNLP/对话&问答/问答型对话/未命名.md",
-    "StudyNLP/对话&问答/问答型对话/检索式问答/检索式文本问答.md",
-    "StudyNLP/对话&问答/NLU/NLU.md",
-    "StudyNLP/对话&问答/0对话系统概述.md",
-    "StudyNLP/对话&问答/任务型对话/任务式对话系统.md",
-    "StudyNLP/对话&问答/闲聊型对话/开放域对话系统.md"
+    "StudyNLP/对话&问答/readme.md"
   ]
 }

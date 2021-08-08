@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../../.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gitignore/智能人机交互自然语言理解/Bert-Chinese-Text-Classification-Pytorch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gitignore/智能人机交互自然语言理解/Chinese-Text-Classification-Pytorch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gitignore/智能人机交互自然语言理解/intent_detection_and_slot_filling" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/gitignore/智能人机交互自然语言理解/robertta_albert_bert_zh" vcs="Git" />
+  </component>
+</project>

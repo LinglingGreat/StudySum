@@ -13,6 +13,8 @@
 
 极客时间《NLP实战高手课》笔记
 
+https://mp.weixin.qq.com/s/cMdL0husTEOnQReUbzyn5w
+
 ## 参考书目等
 
 《Python和NLTK自然语言处理》
