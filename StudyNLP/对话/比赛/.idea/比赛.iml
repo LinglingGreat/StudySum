@@ -4,9 +4,9 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-  <component name="PyDocumentationSettings">
-    <option name="format" value="PLAIN" />
-    <option name="myDocStringFormat" value="Plain" />
+    <orderEntry type="module" module-name="text_audit" />
+    <orderEntry type="module" module-name="poi_deduplicate" />
+    <orderEntry type="module" module-name="poi-qualitycheck" />
+    <orderEntry type="module" module-name="prd_enquiry_rob" />
   </component>
 </module>

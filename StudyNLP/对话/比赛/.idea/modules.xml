@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../../我的项目/gs/projects/poi-qualitycheck/.idea/poi-qualitycheck.iml" filepath="$PROJECT_DIR$/../../../../我的项目/gs/projects/poi-qualitycheck/.idea/poi-qualitycheck.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../我的项目/gs/projects/poi_deduplicate/.idea/poi_deduplicate.iml" filepath="$PROJECT_DIR$/../../../../我的项目/gs/projects/poi_deduplicate/.idea/poi_deduplicate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../我的项目/gs/projects/prd_enquiry_rob/.idea/prd_enquiry_rob.iml" filepath="$PROJECT_DIR$/../../../../我的项目/gs/projects/prd_enquiry_rob/.idea/prd_enquiry_rob.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../我的项目/gs/projects/text_audit/text_audit/.idea/text_audit.iml" filepath="$PROJECT_DIR$/../../../../我的项目/gs/projects/text_audit/text_audit/.idea/text_audit.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/比赛.iml" filepath="$PROJECT_DIR$/.idea/比赛.iml" />
     </modules>
   </component>

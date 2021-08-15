@@ -50,6 +50,13 @@ Domain/Intent Classification
 
 另外，还有rule-based的方法做Domain/Intent Classification，比如CFG、JSGF，感兴趣的可以看看。基于RNN的细分的话，还有RCNN(Lai et al., 2015)和C-LSTM(Zhou et al., 2015)两种方法
 
+### 难点
+
+- 输入不规范：错别字、堆砌关键词、非标准自然语言；
+- 多意图：输入的语句信息量太少造成意图不明确，且有歧义。比如输入仙剑奇侠传，那么是想获得游戏下载、电视剧、电影、音乐还是小说下载呢；
+- 意图强度：输入的语句好像即属于A意图，又属于B意图，每个意图的的得分都不高；
+- 时效性：用户的意图是有较强时效性的，用户在不同时间节点的相同的query可能是属于不同意图的，比如query为“战狼”，在当前时间节点可能是想在线观看战狼1或者战狼2，而如果是在战狼3开拍的时间节点搜的话，可能很大概率是想了解战狼3的一些相关新闻了。
+
 ## 槽填充
 
 槽填充一般是序列标注问题，因此在序列标注任务中广泛应用的CRF和RNN以及各种变种很自然的就可以用于槽填充。
@@ -247,6 +254,10 @@ decoder的隐层输出加权得到最后的意图分类，BiRNN得到特征并�
 ![img](img/v2-7271f7e0350b8587ede78d86614a9ee9_b.jpg)
 
 ![img](https://pic4.zhimg.com/v2-d15b0f5e4e6f79d77f5e0a2873ed0ca3_b.jpg)
+
+## 联合训练
+
+[Intent Detection and Slot Filling](https://zhuanlan.zhihu.com/p/75228411)
 
 ## 参考资料
 
