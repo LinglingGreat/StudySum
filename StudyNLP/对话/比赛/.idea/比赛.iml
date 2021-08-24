@@ -2,11 +2,13 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="text_audit" />
     <orderEntry type="module" module-name="poi_deduplicate" />
     <orderEntry type="module" module-name="poi-qualitycheck" />
     <orderEntry type="module" module-name="prd_enquiry_rob" />
+    <orderEntry type="module" module-name="智能人机交互自然语言理解" />
+    <orderEntry type="module" module-name="poi_tag" />
   </component>
 </module>
