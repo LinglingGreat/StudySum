@@ -10,6 +10,8 @@
 
 实体识别
 
+- CRF
+
 - GlobalPointer
 
 Text2SQL

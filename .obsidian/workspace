@@ -7,8 +7,11 @@
         "id": "566cd20f2ff00376",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -36,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "多标签分类",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -45,7 +48,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -91,10 +96,13 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md"
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -102,15 +110,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
+    "StudyNLP/BaseModel/数据不均衡/数据不均衡问题.md",
+    "StudyNLP/BaseModel/损失函数/损失函数.md",
+    "StudyNLP/InformationExtraction/命名实体识别NER/GlobalPointer/GlobalPointer.md",
+    "StudyNLP/InformationExtraction/命名实体识别NER/命名实体识别NER.md",
     "StudyNLP/对比学习/readme.md",
     "StudyNLP/对比学习/SimCSE.md",
     "StudyNLP/基础模型/BERT/BERT.md",
     "StudyNLP/文本分类/TextCNN.md",
-    "deep_learning/program-CNN.md",
-    "deep_learning/4.CNN.md",
-    "StudyNLP/对话/readme.md",
-    "StudyNLP/对话/问答型对话/问答型对话系统概述.md",
-    "README.md",
-    "StudyNLP/对话&问答/readme.md"
+    "deep_learning/program-CNN.md"
   ]
 }
