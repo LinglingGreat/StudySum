@@ -1,8 +1,8 @@
-###Background
+### Background
 
 Structural vs. Reduced-Form Models
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/researchmodel.png)
+![image](img/researchmodel.png)
 
 
 
@@ -10,13 +10,13 @@ https://economics.stackexchange.com/questions/180/what-is-structural-estimation-
 
 
 
-####Reduced-form models:
+#### Reduced-form models:
 
 目的是通过已有数据建立消费者或公司的历史决策模型，再将其用于预测这些人的未来行为。
 
 但是，如果策略变化导致的影响与历史数据相差太大，或者如果这样的变化会导致决策者的决策方式发生改变（即决策模型的参数甚至函数形势发生变化），这样的分析可能会导致错误的预测。
 
-####Structural Models:
+#### Structural Models:
 
 捕获数据反映的关系的潜在经济过程。
 
@@ -36,17 +36,17 @@ Discrete Choice Model离散选择模型是大多数structural models的基本模
 
 可以用于理解和预测决策者面临选择集的一个离散选择。
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/CDP.png)
+![image](img/CDP.png)
 
 Choice Decision Process的元素：
 
-######Decision maker
+###### Decision maker
 
 不同的决策者根据他们所处的环境不同可能有不同的选择集(choice sets)
 
 不同的决策者有不同的偏好
 
-######Alternatives (the Choice Set)
+###### Alternatives (the Choice Set)
 
 choice set的三个特点：
 
@@ -64,7 +64,7 @@ choice set的三个特点：
 
 选择过程中的可选择方案被一个属性值集刻画，包括一般属性和方案的特殊属性。
 
-######Decision rule
+###### Decision rule
 
 Decision rule is a mechanism to process information andevaluate alternatives.
 An individual invokes a decision rule to select an alternativefrom a choice set with two or more alternatives.
@@ -90,27 +90,27 @@ U是效用函数，X~i~ 是描述可选方案i和j的属性向量，S~n~ 是描�
 
 利用极大似然估计，最大化观测数据中方案被选中的概率P(P^D的连乘，其中D表明方案是否被选中)(概率P即该方案的效用大于其它方案效用的概率，利用ε的分布可求得)。
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit1.jpg)
+![image](img/logit1.jpg)
 
 
 
 很多Logit模型的缺陷都来源于i.i.d的假设以及双指数分布的假设
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit2.jpg)
+![image](img/logit2.jpg)
 
 
 
 在J个方案中选择i的概率 / 在给定J个方案中i的效用是最大的概率
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit3.jpg)
+![image](img/logit3.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit4.jpg)
+![image](img/logit4.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit5.jpg)
+![image](img/logit5.jpg)
 
 
 
@@ -118,7 +118,7 @@ Estimation
 
 -maximum likelihood estimation(MLE)
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit6.jpg)
+![image](img/logit6.jpg)
 
 
 
@@ -128,19 +128,19 @@ Estimation
 
 无法识别，如Y = AX，A不是满秩矩阵时，方程的解不唯一，即不可识别。
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit7.jpg)
+![image](img/logit7.jpg)
 
 
 
 Model Interpretation & Effects
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit8.jpg)
+![image](img/logit8.jpg)
 
 
 
 产品的属性改变导致销量的变化。“自己的弹性”，“交叉弹性”
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit9.jpg)
+![image](img/logit9.jpg)
 
 
 
@@ -148,21 +148,21 @@ Model Interpretation & Effects
 
 #### IIA Assumption
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit10.jpg)
+![image](img/logit10.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit11.jpg)
+![image](img/logit11.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit12.jpg)
+![image](img/logit12.jpg)
 
 
 
 #### 优缺点
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/logit13.jpg)
+![image](img/logit13.jpg)
 
 
 
@@ -176,45 +176,45 @@ Model Interpretation & Effects
 
 (X~2~ - X~1~ )β ,其它方案与基准方案之差 。利用simulation求系数。
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/probit1.jpg)
+![image](img/probit1.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/probit2.jpg)
+![image](img/probit2.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/probit3.jpg)
+![image](img/probit3.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/probit4.jpg)
+![image](img/probit4.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/probit5.jpg)
+![image](img/probit5.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/probit6.jpg)
+![image](img/probit6.jpg)
 
 
 
 其它方案与方案1的效用差异
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/probit7.jpg)
+![image](img/probit7.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/probit8.jpg)
+![image](img/probit8.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/Probit9.jpg)
+![image](img/Probit9.jpg)
 
 
 
-![image](https://github.com/LinglingGreat/Quote/raw/master/img/statistics/probit10.jpg)
+![image](img/probit10.jpg)
 
 
 
