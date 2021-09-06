@@ -10,30 +10,30 @@
   - 对比学习
     - 业界分享
       * [对比学习在微博内容表示的应用_张俊林](StudyNLP/ContrastiveLearning/业界分享/对比学习在微博内容表示的应用_张俊林.md)
-  - [对话](StudyNLP/对话/readme.md)
+  - [对话](StudyNLP/Dailogue/readme.md)
     - 任务型对话
       - DST
-        * [DST概述](StudyNLP/对话/任务型对话/DST/DST概述.md)
+        * [DST概述](StudyNLP/Dailogue/任务型对话/DST/DST概述.md)
       - NLG
-        * [NLG概述](StudyNLP/对话/任务型对话/NLG/NLG概述.md)
+        * [NLG概述](StudyNLP/Dailogue/任务型对话/NLG/NLG概述.md)
       - NLU
-        * [NLU概述](StudyNLP/对话/任务型对话/NLU/NLU概述.md)
-      * [任务型对话概述](StudyNLP/对话/任务型对话/任务型对话概述.md)
+        * [NLU概述](StudyNLP/Dailogue/任务型对话/NLU/NLU概述.md)
+      * [任务型对话概述](StudyNLP/Dailogue/任务型对话/任务型对话概述.md)
     - 问答型对话
       - 检索式问答
-        * [检索式文本问答](StudyNLP/对话/问答型对话/检索式问答/检索式文本问答.md)
+        * [检索式文本问答](StudyNLP/Dailogue/问答型对话/检索式问答/检索式文本问答.md)
       - 业界分享
-        * [低资源场景下的知识图谱表示学习和问答_阿里_李杨](StudyNLP/对话/问答型对话/业界分享/低资源场景下的知识图谱表示学习和问答_阿里_李杨.md)
-        * [QQ浏览器搜索智能问答](StudyNLP/对话/问答型对话/业界分享/QQ浏览器搜索智能问答.md)
-      * [问答型对话系统概述](StudyNLP/对话/问答型对话/问答型对话系统概述.md)
+        * [低资源场景下的知识图谱表示学习和问答_阿里_李杨](StudyNLP/Dailogue/问答型对话/业界分享/低资源场景下的知识图谱表示学习和问答_阿里_李杨.md)
+        * [QQ浏览器搜索智能问答](StudyNLP/Dailogue/问答型对话/业界分享/QQ浏览器搜索智能问答.md)
+      * [问答型对话系统概述](StudyNLP/Dailogue/问答型对话/问答型对话系统概述.md)
     - 闲聊型对话
-      * [闲聊型对话系统概述](StudyNLP/对话/闲聊型对话/闲聊型对话系统概述.md)
+      * [闲聊型对话系统概述](StudyNLP/Dailogue/闲聊型对话/闲聊型对话系统概述.md)
     - 业界分享
-      * [美团智能客服实践_江会星](StudyNLP/对话/业界分享/美团智能客服实践_江会星.md)
-      * [去哪儿智能客服探索和实践](StudyNLP/对话/业界分享/去哪儿智能客服探索和实践.md)
-      * [实时语音对话场景下的算法实践_阿里_陈克寒](StudyNLP/对话/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md)
-      * [智能语音交互中的无效query识别_小米_崔世起](StudyNLP/对话/业界分享/智能语音交互中的无效query识别_小米_崔世起.md)
-      * [UNIT智能对话](StudyNLP/对话/业界分享/UNIT智能对话.md)
+      * [美团智能客服实践_江会星](StudyNLP/Dailogue/业界分享/美团智能客服实践_江会星.md)
+      * [去哪儿智能客服探索和实践](StudyNLP/Dailogue/业界分享/去哪儿智能客服探索和实践.md)
+      * [实时语音对话场景下的算法实践_阿里_陈克寒](StudyNLP/Dailogue/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md)
+      * [智能语音交互中的无效query识别_小米_崔世起](StudyNLP/Dailogue/业界分享/智能语音交互中的无效query识别_小米_崔世起.md)
+      * [UNIT智能对话](StudyNLP/Dailogue/业界分享/UNIT智能对话.md)
   - 机器翻译
     - 业界分享
       * [爱奇艺台词翻译分享](StudyNLP/MachineTranslation/业界分享/爱奇艺台词翻译分享.md)

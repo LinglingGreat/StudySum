@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d12598d6-6d37-459a-a79a-c147095d1ff8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../BaseModel/损失函数/损失函数.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../BaseModel/损失函数/损失函数.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Text2SQL/Text2SQL Baseline解析.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../Text2SQL/Text2SQL Baseline解析.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/比赛.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/比赛.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../竞赛/智能人机交互自然语言理解/Bert-Chinese-Text-Classification-Pytorch" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../竞赛/智能人机交互自然语言理解/Bert-Chinese-Text-Classification-Pytorch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../竞赛/智能人机交互自然语言理解/Chinese-Text-Classification-Pytorch" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../竞赛/智能人机交互自然语言理解/Chinese-Text-Classification-Pytorch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../竞赛/智能人机交互自然语言理解/JointBERT" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../竞赛/智能人机交互自然语言理解/JointBERT" afterDir="false" />
@@ -37,7 +33,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../我的项目/gs/projects/poi_tag" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="leetcode.id" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">

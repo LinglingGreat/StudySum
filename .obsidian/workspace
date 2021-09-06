@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "多标签分类",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -48,8 +48,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",

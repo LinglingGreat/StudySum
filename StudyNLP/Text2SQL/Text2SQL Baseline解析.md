@@ -190,7 +190,7 @@ X1和X2拼起来，输入bert模型
 
 bert模型的输出经过softmax，预测条件类型pcop。pcop[0, :len(question)+1].argmax(1)是预测值，每个字对应一个条件类型，可以把连续的同一个条件类型的组起来。
 
-直接将字向量和表头向量拼接起来，然后过一个全连接层后再接一个Dense(1)，来预测条件值对应的列。softmax，pcsel。结合pcop来做预测。pcsel[0][v_start: v_end].mean(0).argmax()，连续的字的条件列的预测结果
+直接将字向量和表头向量拼接起来，然后过一个全连接层后再接一个Dense(1)，来预测条件值对应的列。softmax，pcsel。结合pcop来做预测。pcsel\[0][v_start: v_end].mean(0).argmax()，连续的字的条件列的预测结果
 
 损失函数：上述4个预测结果的cross_entropy损失之和
 
