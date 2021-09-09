@@ -263,6 +263,60 @@ BERT 要求我们：
 
 ## BERT之灵魂拷问
 
+### BERT参数量计算
+
+**bert的参数主要可以分为四部分：embedding层的权重矩阵、multi-head attention、layer normalization、feed forward。**
+
+```python3
+BertModel(vocab_size=30522，
+hidden_size=768，max_position_embeddings=512，
+token_type_embeddings=2)
+```
+
+**一、embedding层**
+
+embedding层有三部分组成：token embedding、segment embedding和position embedding。
+
+token embedding：词表大小词向量维度就是对应的参数了，也就是30522*768
+
+segment embedding：主要用01来区分上下句子，那么参数就是2*768
+
+position embedding：文本输入最长为512，那么参数为512*768
+
+因此embedding层的参数为(30522+2+512)*768=23835648
+
+**二、multi-head attention**
+
+`每个head的参数为768*768/12，对应到QKV三个权重矩阵自然是768*768/12*3，12个head的参数就是768*768/12*3*12，拼接后经过一个线性变换，这个线性变换对应的权重为768*768。`
+
+因此1层multi-head attention部分的参数为`768*768/12*3*12+768*768=2359296`
+
+12层自然是`12*2359296=28311552`
+
+**三、layer normalization**
+
+layer normalization有两个参数，分别是gamma和beta。有三个地方用到了layer normalization，分别是embedding层后、multi-head attention后、feed forward后，这三部分的参数为`768*2+12*(768*2+768*2)=38400`
+
+**四、feed forward**
+
+feed forward的参数主要由两个全连接层组成，intermediate_size为3072，那么参数为`12*（768*3072+3072*768）=56623104`
+
+**五、总结**
+
+总的参数=embedding+multi-head attention+layer normalization+feed forward
+
+=23835648+28311552+38400+56623104
+
+=108808704
+
+≈110M
+
+参考
+
+- https://zhuanlan.zhihu.com/p/357353536
+- https://blog.csdn.net/weixin_43922901/article/details/102602557
+- https://github.com/google-research/bert/issues/656
+
 ### **为什么BERT比ELMo效果好？** 
 
 从网络结构以及最后的实验效果来看，BERT比ELMo效果好主要集中在以下几点原因：
