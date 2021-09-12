@@ -1,4 +1,4 @@
-##资料
+## 资料
 
 课程主页： https://web.stanford.edu/class/cs224n /
 
