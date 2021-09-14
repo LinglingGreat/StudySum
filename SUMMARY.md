@@ -48,7 +48,7 @@
     * [[1-1][语言模型]从N-gram模型讲起](StudyNLP/BaseModel/[1-1][语言模型]从N-gram模型讲起.md)
     * [[1-1]朴素贝叶斯与情感分类](StudyNLP/BaseModel/[1-1]朴素贝叶斯与情感分类.md)
     * [[1-2][语言模型]NNLM(神经网络语言模型)](StudyNLP/BaseModel/[1-2][语言模型]NNLM(神经网络语言模型).md)
-    * [[1-2]逻辑回归](StudyNLP/BaseModel/[1-2]逻辑回归.md)
+    * [[1-2]逻辑回归](StudyBase/machine_learning/[1-2]逻辑回归.md)
     * [[1-3][语言模型]基于RNN的语言模型](StudyNLP/BaseModel/[1-3][语言模型]基于RNN的语言模型.md)
     * [[1-4][语言模型]用N-gram来做完形填空](StudyNLP/BaseModel/[1-4][语言模型]用N-gram来做完形填空.md)
     * [[1-5][语言模型]用KenLM来做完形填空](StudyNLP/BaseModel/[1-5][语言模型]用KenLM来做完形填空.md)

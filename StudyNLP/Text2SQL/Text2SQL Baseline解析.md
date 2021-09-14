@@ -1,3 +1,15 @@
+摘要
+
+第一个[CLS]对应的向量，我们可以认为是整个问题的句向量，我们用它来预测conds的连接符，softmax预测，pconn。1 + int(pconn[0, 1:].argmax())
+
+后面的每个[CLS]对应的向量，我们认为是每个表头的编码向量，我们把它拿出来，用来预测该表头表示的列是否应该被select。softmax。psel。psel[0].argmax(1)是所有表头的预测值
+
+bert模型的输出经过softmax，预测条件类型pcop。pcop[0, :len(question)+1].argmax(1)是预测值，每个字对应一个条件类型，可以把连续的同一个条件类型的组起来。（序列标注or分类？#td）
+
+直接将字向量和表头向量拼接起来，然后过一个全连接层后再接一个Dense(1)，来预测条件值对应的列。softmax，pcsel。结合pcop来做预测。pcsel\[0][v_start: v_end].mean(0).argmax()，连续的字的条件列的预测结果
+
+损失函数：上述4个预测结果的cross_entropy损失之和
+
 ## 背景说明
 
 文本转SQL，顾名思义，就是将文本转成SQL，这样不懂SQL的人也能够与数据库交互。这个技术可以简称为NL2SQL，或者Text2SQL。

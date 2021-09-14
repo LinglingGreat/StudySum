@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
-            "mode": "source"
+            "file": "StudyNLP/Pre-training/BERT/BERT.md",
+            "mode": "preview"
           }
         }
       }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
+                "file": "StudyNLP/Pre-training/BERT/BERT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md"
+                "file": "StudyNLP/Pre-training/BERT/BERT.md"
               }
             }
           }
@@ -105,19 +105,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 110
+    "width": 168
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
-    "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
-    "StudyNLP/BaseModel/数据不均衡/数据不均衡问题.md",
-    "StudyNLP/BaseModel/损失函数/损失函数.md",
-    "StudyNLP/InformationExtraction/命名实体识别NER/GlobalPointer/GlobalPointer.md",
+    "StudyNLP/Pre-training/BERT/BERT.md",
+    "StudyNLP/Pre-training/BERT/img/layernorm3.png",
+    "StudyNLP/Pre-training/BERT/img/layernorm2.png",
+    "StudyNLP/Pre-training/BERT/img/layernorm1.png",
+    "StudyNLP/InformationExtraction/命名实体识别NER/CRF/CRF.md",
     "StudyNLP/InformationExtraction/命名实体识别NER/命名实体识别NER.md",
-    "StudyNLP/对比学习/readme.md",
-    "StudyNLP/对比学习/SimCSE.md",
-    "StudyNLP/基础模型/BERT/BERT.md",
-    "StudyNLP/文本分类/TextCNN.md",
-    "deep_learning/program-CNN.md"
+    "StudyNLP/Text2SQL/Text2SQL Baseline解析.md",
+    "StudyBase/machine_learning/img/qkv.png",
+    "StudyNLP/Pre-training/Transformer/Transformer.md",
+    "common.md"
   ]
 }

@@ -9,8 +9,8 @@ Transformer模型来自论文[Attention Is All You Need](https://arxiv.org/abs/1
 
 作者采用Attention机制的原因是考虑到RNN（或者LSTM，GRU等）的计算限制为是顺序的，也就是说RNN相关算法只能从左向右依次计算或者从右向左依次计算，这种机制带来了两个问题：
 
-1. 时间片t 的计算依赖t-1时刻的计算结果，这样限制了模型的并行能力；
-2. 顺序计算的过程中信息会丢失，尽管LSTM等门机制的结构一定程度上缓解了长期依赖的问题，但是对于特别长期的依赖现象,LSTM依旧无能为力。
+1. **时间片t 的计算依赖t-1时刻的计算结果，这样限制了模型的并行能力；**
+2. **顺序计算的过程中信息会丢失，尽管LSTM等门机制的结构一定程度上缓解了长期依赖的问题，但是对于特别长期的依赖现象,LSTM依旧无能为力。**
 
 [Transformer](https://arxiv.org/abs/1706.03762) 是一个完全基于注意力机制（Attention mechanism）的模块，对比 RNN（Recurrent Neural Network），当输入的句子是长句子时，RNN 可能会遗忘之前句子中出现的字词，而 Transformer 的注意力机制使得句子中重要的字词的权重增大，从而保证不会被遗忘（将序列中的任意两个位置之间的距离缩小为一个常量）。并且 Transformer 另一个巨大的优势在于，它可以使用并行的方法运行计算，从而加快了速度。
 
@@ -20,11 +20,11 @@ Transformer 的具体结构如下图：
 
 
 
-https://doc.shiyanlou.com/courses/uid214893-20190806-1565074908805
+来自：https://doc.shiyanlou.com/courses/uid214893-20190806-1565074908805
 
 对于机器翻译来说，它的输入是源语言(法语)的句子，输出是目标语言(英语)的句子。
 
-Transformer(或者任何的NMT系统)都可以分成Encoder和Decoder两个部分。
+**Transformer(或者任何的NMT系统)都可以分成Encoder和Decoder两个部分。**
 
 再展开一点，Encoder由很多(6个)结构一样的Encoder堆叠(stack)而成，Decoder也是一样。
 
@@ -32,18 +32,16 @@ Transformer(或者任何的NMT系统)都可以分成Encoder和Decoder两个部�
 
 ![img](img/The_transformer_encoder_decoder_stack.png)
 
-每一层的Encoder都是相同的结构，它由一个Self-Attention层和一个前馈网络(全连接网络)组成。
 
-每一层的Decoder也是相同的结构，它除了Self-Attention层和全连接层之外还多了一个普通的Attention层，这个Attention层使得Decoder在解码时会考虑最后一层Encoder所有时刻的输出。
 
-在 Encoder 中，
+每一层的Encoder都是相同的结构，它由一个Self-Attention层和一个前馈网络(全连接网络)组成。在 Encoder 中：
 
 1. Input 经过 embedding 后，要做 positional encodings，
 2. 然后是 Multi-head attention，
 3. 再经过 position-wise Feed Forward，
 4. 每个子层之间有残差连接。
 
-在 Decoder 中，
+每一层的Decoder也是相同的结构，它除了Self-Attention层和全连接层之外还多了一个普通的Attention层，这个Attention层使得Decoder在解码时会考虑最后一层Encoder所有时刻的输出。在 Decoder 中，
 
 1. 如上图所示，也有 positional encodings，Multi-head attention 和 FFN，子层之间也要做残差连接，
 2. 但比 encoder 多了一个 Masked Multi-head attention，
@@ -51,7 +49,7 @@ Transformer(或者任何的NMT系统)都可以分成Encoder和Decoder两个部�
 
 ## 结构分析
 
-输入的句子是一个词(ID)的序列，我们首先通过Embedding（Word2Vec等词嵌入方法）把它变成一个连续稠密的向量。论文中使用的词嵌入的维度为512.
+**输入的句子是一个词(ID)的序列，我们首先通过Embedding（Word2Vec等词嵌入方法）把它变成一个连续稠密的向量。**论文中使用的词嵌入的维度为512.
 
 Embedding之后的序列会输入Encoder。在最底层的block中，x将直接作为Transformer的输入，而在其他层中，输入则是上一个block的输出。
 
@@ -70,12 +68,10 @@ Embedding之后的序列会输入Encoder。在最底层的block中，x将直接�
 
 Decoder的结构如图所示，它和encoder的不同之处在于Decoder多了一个Encoder-Decoder Attention，两个Attention分别用于计算输入和输出的权值：
 
-1. Self-Attention：当前翻译和已经翻译的前文之间的关系；
-2. Encoder-Decnoder Attention：当前翻译和编码的特征向量之间的关系。
+1. Self-Attention：**当前翻译和已经翻译的前文之间的关系**；
+2. Encoder-Decoder Attention：**当前翻译和编码的特征向量之间的关系**。
 
 ![img](img/v2-d5777da2a84e120846c825ff9ca95a68_b.jpg)
-
-
 
 
 
@@ -83,21 +79,19 @@ Decoder的结构如图所示，它和encoder的不同之处在于Decoder多了�
 
 Self-Attention用Encoder在编码一个词的时候会考虑句子中所有其它的词，从而确定怎么编码当前词。
 
-对于输入的每一个向量(第一层是词的Embedding，其它层是前一层的输出)，我们首先需要生成3个新的向量Q、K和V，分别代表查询(Query)向量、Key向量和Value向量，长度均为64。输入向量组成的矩阵乘以不同的矩阵变换就得到Q、K、V。三个矩阵的维度都是512x64.
+**对于输入的每一个向量(第一层是词的Embedding，其它层是前一层的输出)，我们首先需要生成3个新的向量Q、K和V，分别代表查询(Query)向量、Key向量和Value向量，长度均为64。输入向量组成的矩阵乘以不同的矩阵变换就得到Q、K、V。三个矩阵的维度都是512x64.**
 
-Q表示为了编码当前词，需要去注意(attend to)其它(其实也包括它自己)的词，我们需要有一个查询向量。而Key向量可以认为是这个词的关键的用于被检索的信息，而Value向量是真正的内容。
+**Q表示为了编码当前词，需要去注意(attend to)其它(其实也包括它自己)的词，我们需要有一个查询向量。而Key向量可以认为是这个词的关键的用于被检索的信息，而Value向量是真正的内容。**
 
-Attention的计算方法：
-
-取 Q 中一个行向量为例（也就是每一个输入样本中 xi 对应的 qi），用 qi 乘上每一个样本对应的 ki，再除以注意力头的维度（为了梯度的稳定），就得到每个样本对应的注意力值。接下来，再使用 Softmax 函数将值转换为和为 1 的概率值（向量形式）并乘上 V，得到经过注意力机制计算后的输出值。
+**Attention的计算方法：**
 
 ![image-20210829121024997](img/image-20210829121024997.png)
 
 单个向量的计算分解：
 
-![img](img/self-attention-output.png)
+- 取 Q 中一个行向量为例（也就是每一个输入样本中 xi 对应的 qi），用 qi 乘上每一个样本对应的 ki，再除以注意力头的维度（**为了梯度的稳定**），就得到每个样本对应的注意力值。接下来，再使用 Softmax 函数将值转换为和为 1 的概率值（向量形式）并乘上 V，得到经过注意力机制计算后的输出值。
 
-可以看出，Bidirection 特性就在 Self-Attention 机制中得到了体现，即计算句子中的注意力对某个词的分布时，既考虑了在该词左侧的词，也考虑了在该词右侧的词。
+![img](img/self-attention-output.png)
 
 实际中是基于矩阵的方法计算的：
 
@@ -107,7 +101,7 @@ Attention的计算方法：
 
 Query，Key，Value的概念取自于信息检索系统，举个简单的搜索的例子来说。当你在某电商平台搜索某件商品（年轻女士冬季穿的红色薄款羽绒服）时，你在搜索引擎上输入的内容便是Query，然后搜索引擎根据Query为你匹配Key（例如商品的种类，颜色，描述等），然后根据Query和Key的相似度得到匹配的内容（Value)。
 
-self-attention中的Q，K，V也是起着类似的作用，在矩阵计算中，点积是计算两个矩阵相似度的方法之一，因此式1中使用了$QK^T$进行相似度的计算。接着便是根据相似度进行输出的匹配，这里使用了加权匹配的方式，而权值就是query与key的相似度。
+self-attention中的Q，K，V也是起着类似的作用，**在矩阵计算中，点积是计算两个矩阵相似度的方法之一，因此式1中使用了$QK^T$进行相似度的计算。接着便是根据相似度进行输出的匹配，这里使用了加权匹配的方式，而权值就是query与key的相似度。**
 
 ## Multi-Head Attention
 
@@ -115,13 +109,15 @@ self-attention中的Q，K，V也是起着类似的作用，在矩阵计算中，
 
 对于输入矩阵(time_step, num_input)，每一组Q、K和V都可以得到一个输出矩阵Z(time_step, num_features)。
 
-但是后面的全连接网络需要的输入是一个矩阵而不是多个矩阵，因此我们可以把多个head输出的Z按照第二个维度拼接起来，但是这样的特征有一些多，因此Transformer又用了一个线性变换(矩阵WO)对它进行了压缩。
+但是后面的全连接网络需要的输入是一个矩阵而不是多个矩阵，因此我们可以把多个head输出的Z按照第二个维度拼接起来，但是这样的特征有一些多，**因此Transformer又用了一个线性变换(矩阵WO)对它进行了压缩。**
 
 ![image-20210829121454167](img/image-20210829121454167.png)
 
 ![img](img/transformer_multi-headed_self-attention-recap.png)
 
-Multi-Head Attention 通过多层的 Self-Attention 可以将输入语句映射到不同的子空间中，于是能够更好地理解到语句所包含的信息。
+**Multi-Head Attention 通过多层的 Self-Attention 可以将输入语句映射到不同的子空间中，于是能够更好地理解到语句所包含的信息。**
+
+![](img/Pasted%20image%2020210914185348.png)
 
 ## Decoder
 
@@ -131,32 +127,33 @@ Decoder的输入分为两类：
 
 一种是训练时的输入，一种是预测时的输入。
 
-训练时的输入就是已经对准备好对应的target数据。例如翻译任务，Encoder输入"Tom chase Jerry"，Decoder输入"汤姆追逐杰瑞"。
+训练时的输入就是已经准备好对应的target数据。例如翻译任务，Encoder输入"Tom chase Jerry"，Decoder输入"汤姆追逐杰瑞"。
 
 预测时的输入，一开始输入的是起始符，然后每次输入是上一时刻Transformer的输出。例如，输入""，输出"汤姆"，输入"汤姆"，输出"汤姆追逐"，输入"汤姆追逐"，输出"汤姆追逐杰瑞"，输入"汤姆追逐杰瑞"，输出"汤姆追逐杰瑞"结束。
 
-与Encoder的Multi-Head Attention计算原理一样，只是多加了一个mask码。mask 表示掩码，它对某些值进行掩盖，使其在参数更新时不产生效果。Transformer 模型里面涉及两种 mask，分别是 padding mask 和 sequence mask。为什么需要添加这两种mask码呢？
+与Encoder的Multi-Head Attention计算原理一样，只是多加了一个mask码。mask 表示掩码，它对某些值进行掩盖，使其在参数更新时不产生效果。**Transformer 模型里面涉及两种 mask，分别是 padding mask 和 sequence mask。**为什么需要添加这两种mask码呢？
 
 1.padding mask
 
-什么是 padding mask 呢？因为每个批次输入序列长度是不一样的也就是说，我们要对输入序列进行对齐。具体来说，就是给在较短的序列后面填充 0。但是如果输入的序列太长，则是截取左边的内容，把多余的直接舍弃。因为这些填充的位置，其实是没什么意义的，所以我们的attention机制不应该把注意力放在这些位置上，所以我们需要进行一些处理。
+什么是 padding mask 呢？因为每个批次输入序列长度是不一样的。也就是说，我们要对输入序列进行对齐。具体来说，就是给在较短的序列后面填充 0。但是如果输入的序列太长，则是截取左边的内容，把多余的直接舍弃。因为这些填充的位置，其实是没什么意义的，所以我们的attention机制不应该把注意力放在这些位置上，所以我们需要进行一些处理。
 
 具体的做法是，把这些位置的值加上一个非常大的负数(负无穷)，这样的话，经过 softmax，这些位置的概率就会接近0！
 
 2.sequence mask
 
 sequence mask 是为了使得 decoder 不能看见未来的信息。对于一个序列，在 time_step 为 t 的时刻，我们的解码输出应该只能依赖于 t 时刻之前的输出，而不能依赖 t 之后的输出。因此我们需要想一个办法，把 t 之后的信息给隐藏起来。这在训练的时候有效，因为训练的时候每次我们是将target数据完整输入进decoder中地，预测时不需要，预测的时候我们只能得到前一时刻预测出的输出。
+
 那么具体怎么做呢？也很简单：产生一个上三角矩阵，上三角的值全为0。把这个矩阵作用在每一个序列上，就可以达到我们的目的。
 
 上面可能忘记说了，在Encoder中的Multi-Head Attention也是需要进行mask地，只不过Encoder中只需要padding mask即可，而Decoder中需要padding mask和sequence mask。OK除了这点mask不一样以外，其他的部分均与Encoder一样啦~
 
 Add＆Normalize也与Encoder中一样，接下来就到了Decoder中第二个Multi-Head Attention，这个Multi-Head Attention又与Encoder中有一点点不一样。
 
-基于Encoder-Decoder 的Multi-Head Attention
+**基于Encoder-Decoder 的Multi-Head Attention**
 
 Encoder中的Multi-Head Attention是基于Self-Attention地，Decoder中的第二个Multi-Head Attention就只是基于Attention，它的输入Query来自于Masked Multi-Head Attention的输出，Keys和Values来自于Encoder中最后一层的输出。
 
-为啥Decoder中要搞两个Multi-Head Attention呢？
+**为啥Decoder中要搞两个Multi-Head Attention呢？**
 
 我个人理解是第一个Masked Multi-Head Attention是为了得到之前已经预测输出的信息，相当于记录当前时刻的输入之间的信息的意思。第二个Multi-Head Attention是为了通过当前输入的信息得到下一时刻的信息，也就是输出的信息，是为了表示当前的输入与经过encoder提取过的特征向量之间的关系来预测输出。
 
