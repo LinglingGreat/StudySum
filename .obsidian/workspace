@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "StudyNLP/Pre-training/BERT/BERT.md",
-            "mode": "preview"
+            "file": "StudyNLP/WordEmbedding/word2vec.md",
+            "mode": "source"
           }
         }
       }
@@ -39,16 +39,17 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "#td",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -68,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "StudyNLP/Pre-training/BERT/BERT.md",
+                "file": "StudyNLP/WordEmbedding/word2vec.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,12 +97,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "StudyNLP/Pre-training/BERT/BERT.md"
+                "file": "StudyNLP/WordEmbedding/word2vec.md"
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -109,15 +110,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
-    "StudyNLP/Pre-training/BERT/BERT.md",
-    "StudyNLP/Pre-training/BERT/img/layernorm3.png",
-    "StudyNLP/Pre-training/BERT/img/layernorm2.png",
-    "StudyNLP/Pre-training/BERT/img/layernorm1.png",
-    "StudyNLP/InformationExtraction/命名实体识别NER/CRF/CRF.md",
-    "StudyNLP/InformationExtraction/命名实体识别NER/命名实体识别NER.md",
-    "StudyNLP/Text2SQL/Text2SQL Baseline解析.md",
-    "StudyBase/machine_learning/img/qkv.png",
+    "StudyNLP/WordEmbedding/word2vec.md",
     "StudyNLP/Pre-training/Transformer/Transformer.md",
-    "common.md"
+    "StudyNLP/TextClassification/TextCNN/TextCNN.md",
+    "StudyNLP/Text2SQL/Text2SQL Baseline解析.md",
+    "StudyNLP/CourseNote/cs224n2019/Lecture 01 Introduction and Word Vectors.md",
+    "StudyNLP/TextClassification/fastText/fastText.md",
+    "StudyNLP/DataAugmentation/数据不均衡问题.md",
+    "StudyNLP/Pre-training/BERT/BERT.md",
+    "StudyNLP/LossFunction/损失函数.md",
+    "StudyRecsys/推荐模型.md"
   ]
 }

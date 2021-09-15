@@ -4,7 +4,7 @@
 
 后面的每个[CLS]对应的向量，我们认为是每个表头的编码向量，我们把它拿出来，用来预测该表头表示的列是否应该被select。softmax。psel。psel[0].argmax(1)是所有表头的预测值
 
-bert模型的输出经过softmax，预测条件类型pcop。pcop[0, :len(question)+1].argmax(1)是预测值，每个字对应一个条件类型，可以把连续的同一个条件类型的组起来。（序列标注or分类？#td）
+bert模型的输出经过softmax，预测条件类型pcop。pcop[0, :len(question)+1].argmax(1)是预测值，每个字对应一个条件类型，可以把连续的同一个条件类型的组起来。（序列标注or分类？ #td ）
 
 直接将字向量和表头向量拼接起来，然后过一个全连接层后再接一个Dense(1)，来预测条件值对应的列。softmax，pcsel。结合pcop来做预测。pcsel\[0][v_start: v_end].mean(0).argmax()，连续的字的条件列的预测结果
 

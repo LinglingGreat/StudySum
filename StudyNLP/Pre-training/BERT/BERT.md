@@ -377,6 +377,10 @@ BERT的预训练模型中，预训练任务是一个mask LM ，通过随机的�
 
 在 Self-Attention 机制中得到了体现，即计算句子中的注意力对某个词的分布时，既考虑了在该词左侧的词，也考虑了在该词右侧的词。
 
+LSTM可以做这样的双向mask预测任务吗？ #td 
+
+BERT好在哪里？ #td 
+
 ### **为什么BERT比ELMo效果好？** 
 
 从网络结构以及最后的实验效果来看，BERT比ELMo效果好主要集中在以下几点原因：
@@ -464,6 +468,9 @@ class BERTSelfAttention(nn.Module):
 
 
 参照Transformer 的结构，在 Multi-Head Attention 之后是 Add & Norm，将经过注意力机制计算后的向量和原输入相加并归一化，进入 Feed Forward Neural Network，然后再进行一次和输入的相加并完成归一化。
+
+## 模型上线
+#td 
 
 ## 工业实践
 

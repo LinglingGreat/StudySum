@@ -100,6 +100,8 @@ x 就是上面提到的 one-hot encoder 形式的输入，y 是在这 V 个词�
 - 将分数向量转化为概率$\hat y=softmax(z)$，$\hat y_{c-m},...,\hat y_{c-1}, \hat y_{c+1},...,\hat y_{c+m}$是每个上下文词观察到的概率
 - 希望生成的概率向量匹配真实概率$y_{c-m},...,y_{c-1},y_{c+1},...,y_{c+m}$，one-hot向量是实际的输出。
 
+
+
 与CBOW模型不同的是，引用了朴素贝叶斯假设来拆分概率，即给定中心词，所有输出的词是完全独立的。
 $$
 \begin{aligned} 
@@ -181,6 +183,8 @@ Hierarchical Softmax是一种为了解决词汇表过大导致计算维度过大
 ![image-20210912171448061](img/image-20210912171448061.png)
 
 首先是，这棵树怎么建立的。这棵树的实质是一棵Huffman树（给定n个权值作为n个叶子结点，构造一棵二叉树，若该树的带权路径长度达到最小，称这样的二叉树为最优二叉树，也称为Huffman树），而这棵Huffman树的权重则来源于每个单词出现的频率，根据每个单词的出现频率即可构建出Huffman树。至于原因，可以比较简单的理解为，更为经常出现的单词，在训练的时候经常会出现，快点找到他更有利于进行后续的计算，因此深度可以浅一些，相反不经常出现的单词弱化存在感问题不大，所以建造这样的Huffman树有利于提升效率。
+
+关于哈夫曼树？ #td 
 
 那么，建立这棵树之后，是怎么应用和计算呢。此时在word2vec中，使用的就转为分层二分类逻辑斯蒂回归，从根节点出发，分为负类则向左子树走，分为正类则向右子树走，分类的依据来源于每个非叶子节点上所带有的内部节点向量。
 
@@ -318,3 +322,6 @@ word2vector论文：Distributed Representations of Words and Phrases and their C
 - Hierarchical softmax(分层softmax)简单描述。有关Hierarchical softmax的解释：https://cloud.tencent.com/developer/article/1387413
 
 [https://looperxx.github.io/CS224n-2019-01-Introduction%20and%20Word%20Vectors/](https://looperxx.github.io/CS224n-2019-01-Introduction and Word Vectors/)
+
+[理解 Word2Vec 之 Skip-Gram 模型](https://zhuanlan.zhihu.com/p/27234078) #td 
+
