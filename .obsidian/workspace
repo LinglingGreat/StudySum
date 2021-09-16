@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "#td",
+                "query": "tag:#td",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -111,13 +111,13 @@
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
     "StudyNLP/WordEmbedding/word2vec.md",
+    "StudyNLP/Pre-training/BERT/BERT.md",
     "StudyNLP/Pre-training/Transformer/Transformer.md",
     "StudyNLP/TextClassification/TextCNN/TextCNN.md",
     "StudyNLP/Text2SQL/Text2SQL Baseline解析.md",
     "StudyNLP/CourseNote/cs224n2019/Lecture 01 Introduction and Word Vectors.md",
     "StudyNLP/TextClassification/fastText/fastText.md",
     "StudyNLP/DataAugmentation/数据不均衡问题.md",
-    "StudyNLP/Pre-training/BERT/BERT.md",
     "StudyNLP/LossFunction/损失函数.md",
     "StudyRecsys/推荐模型.md"
   ]
