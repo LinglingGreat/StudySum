@@ -150,9 +150,9 @@
       * [智能语音交互中的无效query识别_小米_崔世起](StudyNLP/Dailogue/业界分享/智能语音交互中的无效query识别_小米_崔世起.md)
       * [UNIT智能对话](StudyNLP/Dailogue/业界分享/UNIT智能对话.md)
   - Data Augmentation
-    - [Mixup](StudyNLP/DataAugmentation/mixup/mixup.md)
-    * [数据不均衡问题](StudyNLP/DataAugmentation/数据不均衡问题.md)
-    * [数据增强的方法有哪些？](StudyNLP/DataAugmentation/数据增强的方法有哪些？.md)
+    - [Mixup](StudyNLP/DataRelated/mixup/mixup.md)
+    * [数据不均衡问题](StudyNLP/DataRelated/数据不均衡问题.md)
+    * [数据增强的方法有哪些？](StudyNLP/DataRelated/数据增强的方法有哪些？.md)
   - Information Extraction
     - [命名实体识别NER](StudyNLP/InformationExtraction/命名实体识别NER/命名实体识别NER.md)
       - 阅读理解做NER

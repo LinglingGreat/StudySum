@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "StudyNLP/WordEmbedding/word2vec.md",
+            "file": "StudyNLP/Pre-training/Transformer/Transformer.md",
             "mode": "source"
           }
         }
@@ -48,8 +48,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -69,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "StudyNLP/WordEmbedding/word2vec.md",
+                "file": "StudyNLP/Pre-training/Transformer/Transformer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "StudyNLP/WordEmbedding/word2vec.md"
+                "file": "StudyNLP/Pre-training/Transformer/Transformer.md"
               }
             }
           }
@@ -110,15 +109,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "StudyNLP/Pre-training/Transformer/Transformer.md",
+    "StudyNLP/LossFunction/softmax+交叉熵.md",
+    "StudyNLP/LossFunction/FocalLoss.md",
+    "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
+    "StudyNLP/LossFunction/损失函数.md",
     "StudyNLP/WordEmbedding/word2vec.md",
     "StudyNLP/Pre-training/BERT/BERT.md",
-    "StudyNLP/Pre-training/Transformer/Transformer.md",
     "StudyNLP/TextClassification/TextCNN/TextCNN.md",
     "StudyNLP/Text2SQL/Text2SQL Baseline解析.md",
-    "StudyNLP/CourseNote/cs224n2019/Lecture 01 Introduction and Word Vectors.md",
-    "StudyNLP/TextClassification/fastText/fastText.md",
-    "StudyNLP/DataAugmentation/数据不均衡问题.md",
-    "StudyNLP/LossFunction/损失函数.md",
-    "StudyRecsys/推荐模型.md"
+    "StudyNLP/CourseNote/cs224n2019/Lecture 01 Introduction and Word Vectors.md"
   ]
 }

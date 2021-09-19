@@ -10,7 +10,7 @@ C++ makefile
 
 [多标签分类(Multi-label Classification)](StudyNLP/TextClassification/多标签分类(Multi-label%20Classification)/多标签分类(Multi-label%20Classification).md)
 
-[数据不均衡问题](StudyNLP/DataAugmentation/数据不均衡问题.md)
+[数据不均衡问题](StudyNLP/DataRelated/数据不均衡问题.md)
 
 [损失函数](StudyNLP/LossFunction/损失函数.md)
 
