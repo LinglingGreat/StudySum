@@ -10,6 +10,8 @@
 
 ![](image/image.png)
 
+
+
 BERT 的整体结构如下图所示，其是以 Transformer 为基础构建的，使用 WordPiece 的方法进行数据预处理，最后通过 MLM 任务和下个句子预测任务进行预训练的语言表示模型。下面我们从 BERT 的结构：Transformer 出发，来一步步详细解析一下 BERT。
 
 ![img](img/uid522453-20190919-1568876896467.png)
@@ -17,6 +19,8 @@ BERT 的整体结构如下图所示，其是以 Transformer 为基础构建的�
 来自：https://doc.shiyanlou.com/courses/uid522453-20190919-1568876896467
 
 BERT 包含 12 个 Transformer 层，每层接受一组 token 的 embeddings 列表作为输入，并产生相同数目的 embeddings 作为输出（当然，它们的值是不同的）。
+
+**需要注意的是，与Transformer本身的Encoder端相比，BERT的Transformer Encoder端输入的向量表示，多了Segment Embeddings。**
 
 Transformer部分参考：
 
@@ -31,12 +35,18 @@ Transformer部分参考：
 BERT模型的输入表示
 
 - 对于英文模型，使用了Wordpiece模型来产生Subword从而减小词表规模；**对于中文模型，直接训练基于字的模型。**
-
 - 模型输入需要附加一个起始Token，记为[CLS]，对应最终的Hidden State（即Transformer的输出）可以用来表征整个句子，用于下游的分类任务。
-
 - 模型能够处理句间关系。为区别两个句子，用一个特殊标记符[SEP]进行分隔，另外针对不同的句子，将学习到的Segment Embeddings 加到每个Token的Embedding上。
-
 - 对于单句输入，只有一种Segment Embedding；对于句对输入，会有两种Segment Embedding。
+- 主要输入是文本中各个字/词(或者称为token)的原始词向量，该向量既可以随机初始化，也可以利用Word2Vector等算法进行预训练以作为初始值
+- Segment Embeddings：该向量的取值在模型训练过程中自动学习，用于刻画文本的全局语义信息，并与单字/词的语义信息相融合
+- Position Embeddings：对不同位置的字/词分别附加一个不同的向量以作区分
+
+token embedding、segment embedding、position embedding都是随机生成的，模型训练。
+
+BERT的输入mask，有文本的位置是1，其他位置是0（pad，CLS等）
+
+在传统的NLP机器学习问题中，我们倾向于清除不需要的文本，例如删除停用词，标点符号，删除符号和数字等。但是，在BERT中，不需要执行此类预处理任务，因为BERT使用了这些 单词的顺序和位置，以了解用户输入的意图。
 
 ### **分词方法 WordPiece** 
 
@@ -48,14 +58,24 @@ BERT 在对数据预处理时，使用了 WordPiece 的方法，WordPiece 从字
 
 ### 输出
 
+输出是文本中各个字/词融合了全文语义信息后的向量表示。
+
 BERT 具有两种输出，一个是pooler output，对应的 [CLS]的输出，以及**sequence output**，对应的是序列中的所有字的最后一层hidden输出。 所以BERT主要可以处理两种，一种任务是分类/回归任务（使用的是pooler output），一种是序列任务（sequence output）。
 
 官方bert一般返回四个值，一个是最后一层输出，一个是预测值，一个是隐藏层，一个是attention。
 
 **last_hidden_state**：shape是(batch_size, sequence_length, hidden_size)，hidden_size=768,它是模型最后一层输出的隐藏状态。（通常用于命名实体识别）
-**pooler_output**：shape是(batch_size, hidden_size)，这是序列的第一个token(classification token)的最后一层的隐藏状态，它是由线性层和Tanh激活函数进一步处理的。（通常用于句子分类，至于是使用这个表示，还是使用整个输入序列的隐藏状态序列的平均化或池化，视情况而定）
+**pooler_output**：shape是(batch_size, hidden_size)，这是序列的第一个token(classification token)的最后一层的隐藏状态，它是由线性层和Tanh激活函数进一步处理的。这个输出不是对输入的语义内容的一个很好的总结，对于整个输入序列的隐藏状态序列的平均化或池化通常更好。（通常用于句子分类，至于是使用这个表示，还是使用整个输入序列的隐藏状态序列的平均化或池化，视情况而定）
 **hidden_states**：这是输出的一个可选项，如果输出，需要指定config.output_hidden_states=True,它也是一个元组，它的第一个元素是embedding，其余元素是各层的输出，每个元素的形状是(batch_size, sequence_length, hidden_size)
 **attentions**：这也是输出的一个可选项，如果输出，需要指定config.output_attentions=True,它也是一个元组，它的元素是每一层的注意力权重，用于计算self-attention heads的加权平均值。
+
+一般来说，后面+CNN、RNN等结构的时候就取last_hidden_state，如果只是加个线性层做分类就取pooler_output。
+
+有篇文章做了个实验，fine-tuning的时候，用pooler output更好，没有fine-tuning的时候用last hidden state更好。文章是[Tips and Tricks for your BERT based applications](https://towardsdatascience.com/tips-and-tricks-for-your-bert-based-applications-359c6b697f8e)
+
+[PyTorch的BERT微调](https://www.jianshu.com/p/b3c301cdcfad)
+
+[Huggingface简介及BERT代码浅析](https://zhuanlan.zhihu.com/p/120315111)
 
 ## **BERT 预训练模型** 
 
@@ -63,7 +83,15 @@ BERT 在预训练阶段的两个任务：遮蔽语言模型（Masked Language Mo
 
 ### **遮蔽语言模型** 
 
-与常见的训练从左向右语言模型（Left-To-Right Language Model）的预训练任务不同，BERT 是以训练遮蔽语言模型（Masked Language Model）作为预训练目标，具体来说就是把输入的语句中的字词随机用 `[Mask]` 标签覆盖，然后训练模型结合被覆盖的词的左侧和右侧上下文进行预测。可以看出，BERT 的做法与从左向右语言模型只通过左侧语句预测下一个词的做法相比，**遮蔽语言模型能够生成同时融合了左、右上下文的语言表示。这种做法能够使 BERT 学到字词更完整的语义表示** 。
+与常见的训练从左向右语言模型（Left-To-Right Language Model）的预训练任务不同，BERT 是以训练遮蔽语言模型（Masked Language Model）作为预训练目标，具体来说就是把输入的语句中的字词随机用 `[Mask]` 标签覆盖，然后训练模型结合被覆盖的词的左侧和右侧上下文进行预测。可以看出，BERT 的做法与从左向右语言模型只通过左侧语句预测下一个词的做法相比，**遮蔽语言模型能够生成同时融合了左、右上下文的语言表示。这种做法能够使 BERT 学到字词更完整的语义表示** 。思想来源于**完形填空**的任务。
+
+**BERT模型为什么要用mask?**
+
+BERT通过在输入X中随机Mask掉一部分单词，然后预训练过程的主要任务之一是根据上下文单词来预测这些被Mask掉的单词。其实这个就是典型的Denosing Autoencoder的思路，那些被Mask掉的单词就是**在输入侧加入的所谓噪音。**类似BERT这种预训练模式，被称为DAE LM。因此总结来说BERT模型 [Mask] 标记就是引入噪音的手段。
+
+关于DAE LM预训练模式，优点是它能比较自然地融入双向语言模型，同时看到被预测单词的上文和下文，然而缺点也很明显，主要在输入侧引入[Mask]标记，导致预训练阶段和Fine-tuning阶段不一致的问题。
+
+
 
 这样做会产生两个缺点：
 
@@ -71,6 +99,10 @@ BERT 在预训练阶段的两个任务：遮蔽语言模型（Masked Language Mo
 - **（2）由于每个Batch中只有15%的词会被预测，因此模型的收敛速度比起单向的语言模型会慢，训练花费的时间会更长。**
 
 对于第一个缺点的解决办法是，**把80%需要被替换成[MASK]的词进行替换，10%的随机替换为其他词，10%保留原词。由于Transformer Encoder并不知道哪个词需要被预测，哪个词是被随机替换的，这样就强迫每个词的表达需要参照上下文信息。**对于第二个缺点目前没有有效的解决办法，但是从提升收益的角度来看，付出的代价是值得的。
+
+BERT并不知道[MASK]替换的是这15%个Token中的哪一个词(**注意：这里意思是输入的时候不知道[MASK]替换的是哪一个词，但是输出还是知道要预测哪个词的**)
+
+这么做的主要原因是：在后续微调任务中语句中并不会出现 [MASK] 标记，而且这么做的另一个好处是：预测一个词汇时，模型并不知道输入对应位置的词汇是否为正确的词汇（ 10% 概率），这就迫使模型更多地依赖于上下文信息去预测词汇，并且赋予了模型一定的纠错能力。上述提到了这样做的一个缺点，其实这样做还有另外一个缺点，就是每批次数据中只有 15% 的标记被预测，这意味着模型可能需要更多的预训练步骤来收敛。
 
 BERT 的论文中提到，增加掩膜的具体方式为：先对语句进行 WordPiece 分割，分割后选择句中 15% 的字符，例如选择到了第 i 字符，接下来：
 
@@ -154,6 +186,8 @@ tokenizer.convert_ids_to_tokens(pred)[14]
 
 为了训练一个理解句子间关系的模型，引入一个下一句预测任务。**这一任务的训练语料可以从语料库中抽取句子对包括两个句子A和B来进行生成，其中50%的概率B是A的下一个句子，50%的概率B是语料中的一个随机句子。NSP任务预测B是否是A的下一句。NSP的目的是获取句子间的信息，这点是语言模型无法直接捕捉的。**
 
+这个类似于**段落重排序**的任务，即：将一篇文章的各段打乱，让我们通过重新排序把原文还原出来，这其实需要我们对全文大意有充分、准确的理解。Next Sentence Prediction 任务实际上就是段落重排序的简化版：只考虑两句话，判断是否是一篇文章中的前后句。在实际预训练过程中，文章作者从文本语料库中随机选择 50% 正确语句对和 50% 错误语句对进行训练，与 Masked LM 任务相结合，让模型能够更准确地刻画语句乃至篇章层面的语义信息。
+
 Google的论文结果表明，这个简单的任务对问答和自然语言推理任务十分有益，但是后续一些新的研究[15]发现，去掉NSP任务之后模型效果没有下降甚至还有提升。
 
 下面我们使用 PyTorch-Transformers 库中的句子预测模型进行，观察一下输出结果。
@@ -215,8 +249,15 @@ pred
 我们通过两个例子来看 BERT 的效果，都是非常理想的。实际上，BERT 效果好的原因主要有两点：
 
 1. 使用的双向的 Transformer 结构学习到左、右两侧上下文语境。
-
 2. 使用完整的文档语料训练而不是打乱的句子，配合下个句子预测任务，从而学习到了捕捉很长的连续语句中的信息的能力。
+
+### 损失函数
+
+BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单词级别分类任务**，另一部分是**句子级别的分类任务**。通过这两个任务的联合学习，可以使得 BERT 学习到的表征既有 token 级别信息，同时也包含了句子级别的语义信息。具体损失函数如下：
+
+![image-20210920185623270](img/image-20210920185623270.png)
+
+具体的预训练工程实现细节方面，BERT 还利用了一系列策略，使得模型更易于训练，比如对于学习率的 warm-up 策略，使用的激活函数不再是普通的 ReLu，而是 GeLu，也使用了 dropout 等常见的训练技巧。
 
 ## **BERT Finetune** 
 
@@ -274,203 +315,34 @@ BERT 要求我们：
 
 **单句标注任务**。类似单句分类，先加入[CLS]，但是最后取其他位置输出，预测相应标注，进行 finetune。
 
+### **针对句子语义相似度的任务**
 
+实际操作时，[CLS]+句子1+[SEP]+句子2+[SEP]，语义相似度任务将两个句子按照上述方式输入即可，之后与论文中的分类任务一样，将[CLS] token位置对应的输出，接上softmax做分类即可(实际上GLUE任务中就有很多语义相似度的数据集)。
 
-## BERT之灵魂拷问
+### **针对多标签分类的任务**
 
-### BERT参数量计算
+对于多标签分类任务，显而易见的朴素做法就是不管样本属于几个类，就给它训练几个分类模型即可，然后再一一判断在该类别中，其属于那个子类别，但是这样做未免太暴力了，而多标签分类任务，其实是可以**只用一个模型**来解决的。
 
-**bert的参数主要可以分为四部分：embedding层的权重矩阵、multi-head attention、layer normalization、feed forward。**
+利用BERT模型解决多标签分类问题时，其输入与普通单标签分类问题一致，得到其embedding表示之后(也就是BERT输出层的embedding)，有几个label就连接到几个全连接层(也可以称为projection layer)，然后再分别接上softmax分类层，这样的话会得到loss1, loss2, ...。最后再将所有的loss相加起来即可。这种做法就相当于将n个分类模型的特征提取层参数共享，得到一个共享的表示(其维度可以视任务而定，由于是多标签分类任务，因此其维度可以适当增大一些)，最后再做多标签分类任务。
 
-```python3
-BertModel(vocab_size=30522，
-hidden_size=768，max_position_embeddings=512，
-token_type_embeddings=2)
-```
+### **针对翻译的任务**
 
-**一、embedding层**
+针对翻译的任务，我自己想到一种做法，因为BERT本身会产生embedding这样的“副产品”，因此可以直接利用BERT输出层得到的embedding，然后在做机器翻译任务时，将其作为输入/输出的embedding表示，这样做的话，可能会遇到UNK的问题，为了解决UNK的问题，可以将得到的词向量embedding拼接字向量的embedding得到输入/输出的表示(对应到英文就是token embedding拼接经过charcnn的embedding的表示)。
 
-embedding层有三部分组成：token embedding、segment embedding和position embedding。
+### **针对文本生成的任务**
 
-token embedding：词表大小词向量维度就是对应的参数了，也就是30522*768
+关于生成任务，搜到以下几篇论文：
 
-segment embedding：主要用01来区分上下句子，那么参数就是2*768
+[BERT has a Mouth, and It Must Speak: BERT as a Markov Random Field Language Model](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1902.04094)
 
-position embedding：文本输入最长为512，那么参数为512*768
+[MASS: Masked Sequence to Sequence Pre-training for Language Generation](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1905.02450)
 
-因此embedding层的参数为(30522+2+512)*768=23835648
+[Unified Language Model Pre-training for Natural Language Understanding and Generation](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1905.03197)
 
-**二、multi-head attention**
 
-Q，K，V就是我们输入的三个句子词向量，从之前的词向量分析可知，输出向量大小从len -> len x hidden_size，即len x 768。如果是self-attention，Q=K=V，如果是普通的attention，Q !=K=V。但是，不管用的是self-attention还是普通的attention，参数计算并不影响。因为在输入单头head时，对QKV的向量均进行了不同的线性变换，引入了三个参数，W1，W2，W3。其维度均为：768 x 64。
-
-为什么是64呢，从下图可知，
-Wi 的维度 ：dmodel x dk | dv | dq
-而：dk | dv | dq = dmodle/h，h是头的数量，dmodel模型的大小，即h=12，dmodle=768；
-所以：dk | dv | dq=768/12=64
-得出：W1，W2，W3的维度为768 x 64
-
-![在这里插入图片描述](img/qkv.png)
-
-
-`每个head的参数为768*768/12，对应到QKV三个权重矩阵自然是768*768/12*3，12个head的参数就是768*768/12*3*12，拼接后经过一个线性变换，这个线性变换对应的权重为768*768。`
-
-因此1层multi-head attention部分的参数为`768*768/12*3*12+768*768=2359296`
-
-12层自然是`12*2359296=28311552`
-
-**三、layer normalization**
-
-文章其实并没有写出layernorm层的参数，但是在代码中有，分别为gamma和beta。有三个地方用到了layer normalization，分别是embedding层后、multi-head attention后、feed forward后
-①词向量处
-
-![在这里插入图片描述](img/layernorm1.png)
-
-②多头注意力之后
-
-![在这里插入图片描述](img/layernorm2.png)
-
-③最后的全连接层之后
-
-![在这里插入图片描述](img/layernorm3.png)
-
-但是参数都很少，gamma和beta的维度均为768。因此总参数为768 * 2 + 768 * 2 * 2 * 12（层数）
-
-这三部分的参数为`768*2+12*(768*2+768*2)=38400`
-
-**四、feed forward**
-
-![在这里插入图片描述](img/20191017120044663.png)
-
-以上是论文中全连接层的公式，其中用到了两个参数W1和W2，Bert沿用了惯用的全连接层大小设置，即4 * dmodle，为3072，因此，W1，W2大小为768 * 3072，2个为 2 * 768 * 3072。
-
-`12*（768*3072+3072*768）=56623104`
-
-**五、总结**
-
-总的参数=embedding+multi-head attention+layer normalization+feed forward
-
-=23835648+28311552+38400+56623104
-
-=108808704
-
-≈110M
-
-另一种算法
-
-- 词向量参数（包括layernorm） + 12 * （Multi-Heads参数 + 全连接层参数 + layernorm参数）= （30522+512 + 2）* 768 + 768 * 2 + 12 * （768 * 768 / 12 * 3 * 12 + 768 * 768 + 768 * 3072 * 2 + 768 * 2 * 2） = 108808704.0 ≈ 110M
-
-PS：本文介绍的参数仅仅是encoder的参数，基于encoder的两个任务next sentence prediction 和 MLM涉及的参数（分别是768 * 2，768 * 768，总共约0.5M）并未加入，此外涉及的bias由于参数很少，本文也并未加入。
-
-
-参考
-
-- https://zhuanlan.zhihu.com/p/357353536
-- https://blog.csdn.net/weixin_43922901/article/details/102602557
-- https://github.com/google-research/bert/issues/656
-
-### BERT的双向体现在哪里
-
-BERT的预训练模型中，预训练任务是一个mask LM ，通过随机的把句子中的单词替换成mask标签， 然后对单词进行预测。
-
-这里注意到，对于模型，输入的是一个被挖了空的句子， 而由于Transformer的特性， 它是会注意到所有的单词的，这就导致模型会根据挖空的上下文来进行预测， 这就实现了双向表示， 说明BERT是一个双向的语言模型。
-
-在 Self-Attention 机制中得到了体现，即计算句子中的注意力对某个词的分布时，既考虑了在该词左侧的词，也考虑了在该词右侧的词。
-
-LSTM可以做这样的双向mask预测任务吗？ #td 
-
-BERT好在哪里？ #td 
-
-### **为什么BERT比ELMo效果好？** 
-
-从网络结构以及最后的实验效果来看，BERT比ELMo效果好主要集中在以下几点原因：
-
-(1).LSTM抽取特征的能力远弱于Transformer
-
-(2).拼接方式双向融合的特征融合能力偏弱(没有具体实验验证，只是推测)
-
-(3).其实还有一点，BERT的训练数据以及模型参数均多余ELMo，这也是比较重要的一点
-
-### **ELMo和BERT的区别是什么？** 
-
-ELMo模型是通过语言模型任务得到句子中单词的embedding表示，以此作为补充的新特征给下游任务使用。因为ELMO给下游提供的是每个单词的特征形式，所以这一类预训练的方法被称为“Feature-based Pre-Training”。而BERT模型是“基于Fine-tuning的模式”，这种做法和图像领域基于Fine-tuning的方式基本一致，下游任务需要将模型改造成BERT模型，才可利用BERT模型预训练好的参数。
-
-### **BERT有什么局限性？** 
-
-从XLNet论文中，提到了BERT的两个缺点，分别如下：
-
-- BERT在第一个预训练阶段，假设句子中多个单词被Mask掉，这些被Mask掉的单词之间没有任何关系，是条件独立的，然而有时候这些单词之间是有关系的，比如”New York is a city”，假设我们Mask住”New”和”York”两个词，那么给定”is a city”的条件下”New”和”York”并不独立，因为”New York”是一个实体，看到”New”则后面出现”York”的概率要比看到”Old”后面出现”York”概率要大得多。
-
-&ensp;&ensp;&ensp;&ensp;- 但是需要注意的是，这个问题并不是什么大问题，甚至可以说对最后的结果并没有多大的影响，因为本身BERT预训练的语料就是海量的(动辄几十个G)，所以如果训练数据足够大，其实不靠当前这个例子，靠其它例子，也能弥补被Mask单词直接的相互关系问题，因为总有其它例子能够学会这些单词的相互依赖关系。
-
-- BERT的在预训练时会出现特殊的[MASK]，但是它在下游的fine-tune中不会出现，这就出现了预训练阶段和fine-tune阶段不一致的问题。其实这个问题对最后结果产生多大的影响也是不够明确的，因为后续有许多BERT相关的预训练模型仍然保持了[MASK]标记，也取得了很大的结果，而且很多数据集上的结果也比BERT要好。但是确确实实引入[MASK]标记，也是为了构造自编码语言模型而采用的一种折中方式。
-
-另外还有一个缺点，是BERT在分词后做[MASK]会产生的一个问题，为了解决OOV的问题，我们通常会把一个词切分成更细粒度的WordPiece。BERT在Pretraining的时候是随机Mask这些WordPiece的，这就可能出现只Mask一个词的一部分的情况，例如：
-
-![https://pic3.zhimg.com/80/v2-fb520ebe418cab927efb64d6a6ae019e_720w.jpg](https://pic3.zhimg.com/80/v2-fb520ebe418cab927efb64d6a6ae019e_720w.jpg)
-
-probability这个词被切分成"pro"、”#babi”和”#lity”3个WordPiece。有可能出现的一种随机Mask是把”#babi” Mask住，但是”pro”和”#lity”没有被Mask。这样的预测任务就变得容易了，因为在”pro”和”#lity”之间基本上只能是”#babi”了。这样它只需要记住一些词(WordPiece的序列)就可以完成这个任务，而不是根据上下文的语义关系来预测出来的。类似的中文的词”模型”也可能被Mask部分(其实用”琵琶”的例子可能更好，因为这两个字只能一起出现而不能单独出现)，这也会让预测变得容易。
-
-为了解决这个问题，很自然的想法就是词作为一个整体要么都Mask要么都不Mask，这就是所谓的Whole Word Masking。这是一个很简单的想法，对于BERT的代码修改也非常少，只是修改一些Mask的那段代码。
-
-## 源码解析
-
-BERT 模型对 Self-Attention 的实现代码片段：
-
-```python
-# 取自 hugging face 团队实现的基于 pytorch 的 BERT 模型
-class BERTSelfAttention(nn.Module):
-    # BERT 的 Self-Attention 类
-    def __init__(self, config):
-        # 初始化函数
-        super(BERTSelfAttention, self).__init__()
-        if config.hidden_size % config.num_attention_heads != 0:
-            raise ValueError(
-                "The hidden size (%d) is not a multiple of the number of attention "
-                "heads (%d)" % (config.hidden_size, config.num_attention_heads))
-        self.num_attention_heads = config.num_attention_heads
-        self.attention_head_size = int(config.hidden_size / config.num_attention_heads)
-        self.all_head_size = self.num_attention_heads * self.attention_head_size
-
-        self.query = nn.Linear(config.hidden_size, self.all_head_size)
-        self.key = nn.Linear(config.hidden_size, self.all_head_size)
-        self.value = nn.Linear(config.hidden_size, self.all_head_size)
-
-    def transpose_for_scores(self, x):
-        # 调整维度，转换为 (batch_size, num_attention_heads, hidden_size, attention_head_size)
-        new_x_shape = x.size()[:-1] + (self.num_attention_heads, self.attention_head_size)
-        x = x.view(*new_x_shape)
-        return x.permute(0, 2, 1, 3)
-
-    def forward(self, hidden_states):
-        # 前向传播函数
-        mixed_query_layer = self.query(hidden_states)
-        mixed_key_layer = self.key(hidden_states)
-        mixed_value_layer = self.value(hidden_states)
-
-        query_layer = self.transpose_for_scores(mixed_query_layer) 
-        key_layer = self.transpose_for_scores(mixed_key_layer)
-        value_layer = self.transpose_for_scores(mixed_value_layer)
-
-        # 将"query"和"key"点乘，得到未经处理注意力值
-        attention_scores = torch.matmul(query_layer, key_layer.transpose(-1, -2))
-        attention_scores = attention_scores / math.sqrt(self.attention_head_size)
-
-        # 使用 softmax 函数将注意力值标准化成概率值
-        attention_probs = nn.Softmax(dim=-1)(attention_scores)
-
-        context_layer = torch.matmul(attention_probs, value_layer)
-        context_layer = context_layer.permute(0, 2, 1, 3).contiguous()
-        new_context_layer_shape = context_layer.size()[:-2] + (self.all_head_size,)
-        context_layer = context_layer.view(*new_context_layer_shape)
-        return context_layer
-```
-
-
-参照Transformer 的结构，在 Multi-Head Attention 之后是 Add & Norm，将经过注意力机制计算后的向量和原输入相加并归一化，进入 Feed Forward Neural Network，然后再进行一次和输入的相加并完成归一化。
 
 ## 模型上线
-#td 
+ #td 
 
 ## 工业实践
 
@@ -991,13 +863,12 @@ print(pred)
 3. [美团BERT的探索和实践](https://tech.meituan.com/2019/11/14/nlp-bert-practice.html)（预训练语言模型简介、BERT介绍、美团训练加速、加入美团点评业务语料进行预训练、融入知识图谱、业务实践等，见下图）
 4. [基于BERT fine-tuning的中文标题分类实战](https://zhuanlan.zhihu.com/p/72448986)（BERT多分类，2019年文章）
 5. [一起读Bert文本分类代码 (pytorch篇 一）](https://zhuanlan.zhihu.com/p/56103665)，[一起读Bert文本分类代码 (pytorch篇 二）](https://zhuanlan.zhihu.com/p/56155191)共五篇（质量一般）
-6. [关于BERT的若干问题整理记录](https://zhuanlan.zhihu.com/p/95594311)（BERT的基本原理是什么，BERT是怎么用Transformer的，BERT的训练过程是怎么样的，为什么BERT比ELMo效果好？ELMo和BERT的区别是什么，BERT的输入和输出分别是什么，针对句子语义相似度/多标签分类/机器翻译翻译/文本生成的任务，利用BERT结构怎么做fine-tuning，BERT应用于有空格丢失或者单词拼写错误等数据是否还是有效？有什么改进的方法，BERT的embedding向量如何的来的，BERT模型为什么要用mask？它是如何做mask的？其mask相对于CBOW有什么异同点，BERT的两个预训练任务对应的损失函数是什么，词袋模型到word2vec改进了什么？word2vec到BERT又改进了什么）
-7. [BERT面试8问8答](https://www.jianshu.com/p/56a621e33d34)
 
 ![](image/image_2.png)
 
+[关于BERT的若干问题整理记录](https://zhuanlan.zhihu.com/p/95594311)（BERT的基本原理是什么，BERT是怎么用Transformer的，BERT的训练过程是怎么样的，为什么BERT比ELMo效果好？ELMo和BERT的区别是什么，BERT的输入和输出分别是什么，针对句子语义相似度/多标签分类/机器翻译翻译/文本生成的任务，利用BERT结构怎么做fine-tuning，BERT应用于有空格丢失或者单词拼写错误等数据是否还是有效？有什么改进的方法，BERT的embedding向量如何的来的，BERT模型为什么要用mask？它是如何做mask的？其mask相对于CBOW有什么异同点，BERT的两个预训练任务对应的损失函数是什么，词袋模型到word2vec改进了什么？word2vec到BERT又改进了什么）
 
+[【NLP】彻底搞懂BERT](https://www.cnblogs.com/rucwxb/p/10277217.html)
 
 http://fancyerii.github.io/2019/03/09/bert-theory/
 
-http://fancyerii.github.io/2019/03/09/bert-codes/

@@ -267,3 +267,4 @@ decoder的隐层输出加权得到最后的意图分类，BiRNN得到特征并�
 
 [总结|对话系统中的口语理解技术(SLU)（三）](https://zhuanlan.zhihu.com/p/50704090)
 
+[一步到位解决SLU/NLU--意图识别和槽位填充联合训练模型理论和代码复现](https://zhuanlan.zhihu.com/p/358322284)（一些论文模型）

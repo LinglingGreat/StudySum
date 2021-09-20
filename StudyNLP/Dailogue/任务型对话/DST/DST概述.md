@@ -161,3 +161,6 @@ DST涉及到两方面内容：**状态表示、状态追踪**。另外为了解�
 ## 参考资料
 
 [一文看懂任务型对话系统中的状态追踪（DST）](https://zhuanlan.zhihu.com/p/51476362)
+
+[多轮对话之对话管理(Dialog Management)](https://zhuanlan.zhihu.com/p/32716205)
+

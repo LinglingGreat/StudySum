@@ -1,0 +1,1 @@
+[曾被嫌弃的预训练任务NSP，做出了优秀的Zero Shot效果](https://kexue.fm/archives/8671)

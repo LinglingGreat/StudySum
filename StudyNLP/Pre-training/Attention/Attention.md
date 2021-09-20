@@ -41,7 +41,7 @@ self-attention的特点在于无视词之间的距离直接计算依赖关系，
 如果你还想了解更多的attention，请查看：[https://zhuanlan.zhihu.com/p/73](https://zhuanlan.zhihu.com/p/73357761)
 
 
-参考
+## 参考资料
 
 [https://zhuanlan.zhihu.com/p/73357761](https://zhuanlan.zhihu.com/p/73357761)
 

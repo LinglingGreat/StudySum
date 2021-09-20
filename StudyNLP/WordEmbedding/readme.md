@@ -12,3 +12,6 @@
 
 2.直接加权平均各个场景下的向量，奇迹般地有很好的效果
 
+
+
+[Word Embedding 如何处理未登录词？](https://www.zhihu.com/question/308543084/answer/576517555)

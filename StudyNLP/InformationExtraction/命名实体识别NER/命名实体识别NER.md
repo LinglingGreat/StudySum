@@ -490,7 +490,7 @@ ACL2020中的两篇论文FLAT和Simple-Lexicon分别对应于Dynamic Architectur
 
 ## 参考资料
 
-# [美团搜索中NER技术的探索与实践](https://tech.meituan.com/2020/07/23/ner-in-meituan-nlp.html)
+[美团搜索中NER技术的探索与实践](https://tech.meituan.com/2020/07/23/ner-in-meituan-nlp.html)
 
 [https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NER_study/](https://github.com/km1994/nlp_paper_study/tree/master/information_extraction/NER_study/)
 

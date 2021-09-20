@@ -1,4 +1,4 @@
-R-Drop: Regularized Dropout for Neural Networks
+[《R-Drop: Regularized Dropout for Neural Networks》](https://arxiv.org/abs/2106.14448)
 
 概要：将“Dropout两次”的思想用到了有监督任务中，在每个 mini-batch 中，每个数据样本过两次带有 Dropout 的同一个模型，R-Drop 再使用 KL-divergence 约束两次的输出一致。实验表明，该方法在多个任务上都有不错的表现。
 

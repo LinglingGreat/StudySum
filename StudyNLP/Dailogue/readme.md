@@ -21,6 +21,10 @@
 
 - 最后，在一些产品中，我们还需要把自然语言能够用语音的方法回馈给用户，这个组件往往简称为 TTS。
 
+技术手段
+
+![](img/Pasted%20image%2020210920113811.png)
+
 ## 任务型对话系统
 
 NLU
@@ -75,7 +79,44 @@ NLG
 
 - 最后，我们需要提出的就是，非任务型对话系统和任务型对话系统有时候常常需要混合使用。比如，在一个订票系统中，可能也需要掺杂一般性的对话。如何能够有效地进行两种系统的混合，肯定又是一种新的挑战。
 
+## 数据集
+
+对话：https://ai.tencent.com/ailab/nlp/dialogue/#datasets
+
+其中**NaturalConv**是中文的
+
+清华大学开源的一个大规模的中文闲聊语料库LCCC，并提供了在此数据集上的中文对话预训练模型（中文GPT模型）：https://github.com/thu-coai/CDial-GPT
+
+苏剑林用这个数据集的模型尝试：[动手做个DialoGPT：基于LM的生成式多轮对话模型](https://kexue.fm/archives/7718)
+
+## 解决方案
+
+https://github.com/deepmipt/DeepPavlov
+
+[DeepPavlov：一个面向端到端对话系统和聊天机器人的开源库](https://www.infoq.cn/article/zgn7hquufriwmmg1opyv)
+
+https://github.com/chatopera
+
+https://bot.chatopera.com/
+
+百度UNIT
+
+https://github.com/shibing624/dialogbot
+
+## 聊天机器人
+
+https://github.com/PaddlePaddle/Knover/tree/master/plato-2
+
+https://github.com/thu-coai/CDial-GPT
+
+https://github.com/bojone/nezha_gpt_dialog
+
+https://github.com/yangjianxin1/GPT2-chitchat
+
+https://github.com/liucongg/UnilmChatchitRobot
+
 ## 进一步学习
+
 [任务型对话概述](任务型对话/任务型对话概述.md)
 [闲聊型对话系统概述](闲聊型对话/闲聊型对话系统概述.md)
 [问答型对话系统概述](问答型对话/问答型对话系统概述.md)
@@ -83,8 +124,24 @@ NLG
 ## 业界分享
 
 
+
+
 ## 参考资料
 
 《AI内参》课程
 
 https://github.com/km1994/NLP-Interview-Notes/tree/main/NLPinterview/DialogueSystem
+
+[上篇 | 如何设计一个多轮对话机器人](https://www.jiqizhixin.com/articles/2019-07-11-7)
+
+[做了20+个AI多轮对话项目后的总结](https://www.163.com/dy/article/G3M9899R0511805E.html)
+
+https://github.com/qhduan/ConversationalRobotDesign
+
+阿里的分享：[达摩院Conversational AI研究进展及应用](https://mp.weixin.qq.com/s/-PFnaczT8fTlOfhAefybgw)（包括小样本学习，对话管理具备学习能力，Text2SQL）
+
+[生成式对话seq2seq：从rnn到transformer](https://zhuanlan.zhihu.com/p/97536876)（介绍了一系列模型rnn,transformer,bert等）
+
+[如何做一个完全端到端的任务型对话系统？](https://zhuanlan.zhihu.com/p/108095526)（介绍了几篇论文）
+
+[开源对话系统架构](https://cloud.tencent.com/developer/article/1796656)（介绍rasa和DeepPavlov）
