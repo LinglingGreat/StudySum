@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "StudyNLP/WordEmbedding/word2vec.md",
+            "file": "StudyNLP/LossFunction/softmax+交叉熵.md",
             "mode": "source"
           }
         }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "StudyNLP/WordEmbedding/word2vec.md",
+                "file": "StudyNLP/LossFunction/softmax+交叉熵.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,7 +87,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "StudyNLP/WordEmbedding/word2vec.md"
+                "file": "StudyNLP/LossFunction/softmax+交叉熵.md"
               }
             }
           }
@@ -110,15 +110,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "StudyNLP/LossFunction/softmax+交叉熵.md",
+    "StudyNLP/CourseNote/cs224n2019/Lecture 01 Introduction and Word Vectors.md",
+    "StudyNLP/LossFunction/常用损失函数.md",
+    "StudyNLP/Pre-training/BERT/BERT.md",
     "StudyNLP/WordEmbedding/word2vec.md",
     "StudyNLP/Dailogue/任务型对话/DST/DST概述.md",
     "StudyNLP/Dailogue/任务型对话/任务型对话概述.md",
     "StudyNLP/Dailogue/readme.md",
     "StudyNLP/Dailogue/未命名.md",
-    "StudyNLP/Dailogue/任务型对话/NLG/NLG概述.md",
-    "StudyNLP/Pre-training/Transformer/Transformer.md",
-    "StudyNLP/LossFunction/softmax+交叉熵.md",
-    "StudyNLP/LossFunction/FocalLoss.md",
-    "StudyNLP/TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md"
+    "StudyNLP/Dailogue/任务型对话/NLG/NLG概述.md"
   ]
 }

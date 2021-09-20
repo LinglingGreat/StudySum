@@ -1204,7 +1204,7 @@ def attention_layer(from_tensor,
 
 
 
-### 1.1 modeling.py
+### modeling.py
 
 modeling.py定义了BERT模型的主体结构，即从`input_ids（句子中词语id组成的tensor）`到`sequence_output（句子中每个词语的向量表示）`以及`pooled_output（句子的向量表示）`的计算过程，是其它所有后续的任务的基础。如文本分类任务就是得到输入的input_ids后，用BertModel得到句子的向量表示，并将其作为分类层的输入，得到分类结果。
 
@@ -1236,7 +1236,7 @@ modeling.py的31-106行定义了一个BertConfig类，即BertModel的配置，�
 
   modeling.py的其余部分定义了上面的步骤用到的函数，以及激活函数等。
 
-### 1.2 run_classifier.py
+### run_classifier.py
 
   这个模块可以用于配置和启动基于BERT的文本分类任务，包括输入样本为句子对的（如MRPC）和输入样本为单个句子的（如CoLA）。
 
@@ -1256,7 +1256,7 @@ modeling.py的31-106行定义了一个BertConfig类，即BertModel的配置，�
   - 首先定义任务名称和processor的对应关系，**因此如果定义了自己的processor，需要将其加入到processors字典中**。
   - 其次从FLAGS中，即启动命令中读取相关参数，构建model_fn和estimator，并根据参数中的do_train，do_eval和do_predict的取值决定要进行estimator的哪些操作。
 
-### 1.3 run_pretraining.py
+### run_pretraining.py
 
   这个模块用于BERT模型的预训练，即使用masked language model和next sentence的方法，对BERT模型本身的参数进行训练。如果使用现有的预训练BERT模型在文本分类/问题回答等任务上进行fine_tune，则无需使用run_pretraining.py。
 
@@ -1320,7 +1320,7 @@ get_next_sentence_output函数用于计算预测下一个句子的loss.
 
 
 
-### 1.4 create_pretraining_data.py
+### create_pretraining_data.py
 
   此处定义了如何将普通文本转换成可用于预训练BERT模型的tfrecord文件的方法。如果使用现有的预训练BERT模型在文本分类/问题回答等任务上进行fine_tune，则无需使用create_pretraining_data.py。
 
@@ -1383,7 +1383,7 @@ wn1,wn2,....
 
 最后是使用函数write_instance_to_example_files把前面得到的TrainingInstance用TFRecord的个数写到文件里。
 
-### 1.5 tokenization.py
+### tokenization.py
 
   此处定义了对输入的句子进行预处理的操作，预处理的内容包括：
 
@@ -1396,21 +1396,21 @@ wn1,wn2,....
 - 大小写和特殊形式字母转换
 - 分离标点符号（如 [“hello?”]转换为 [“hello”, “?”]）
 
-### 1.6 run_squad.py
+### run_squad.py
 
   这个模块可以配置和启动基于BERT在squad数据集上的问题回答任务。
 
-### 1.7 extract_features.py
+### extract_features.py
 
   这个模块可以使用预训练的BERT模型，生成输入句子的向量表示和输入句子中各个词语的向量表示（类似ELMo）。**这个模块不包含训练的过程，只是执行BERT的前向过程，使用固定的参数对输入句子进行转换**。
 
-### 1.8 optimization.py
+### optimization.py
 
   这个模块配置了用于BERT的optimizer，即加入weight decay功能和learning_rate warmup功能的AdamOptimizer。
 
 
 
-### Self-Attention
+### Self-Attention(torch)
 
 BERT 模型对 Self-Attention 的实现代码片段：
 
