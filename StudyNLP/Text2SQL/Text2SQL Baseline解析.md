@@ -4,7 +4,7 @@
 
 后面的每个[CLS]对应的向量，我们认为是每个表头的编码向量，我们把它拿出来，用来预测该表头表示的列是否应该被select。softmax。psel。psel[0].argmax(1)是所有表头的预测值
 
-bert模型的输出经过softmax，预测条件类型pcop。pcop[0, :len(question)+1].argmax(1)是预测值，每个字对应一个条件类型，可以把连续的同一个条件类型的组起来。（序列标注or分类？ #td ）
+bert模型的输出经过softmax，预测条件类型pcop。pcop[0, :len(question)+1].argmax(1)是预测值，每个字对应一个条件类型，可以把连续的同一个条件类型的组起来。（用softmax来做序列标注 ）
 
 直接将字向量和表头向量拼接起来，然后过一个全连接层后再接一个Dense(1)，来预测条件值对应的列。softmax，pcsel。结合pcop来做预测。pcsel\[0][v_start: v_end].mean(0).argmax()，连续的字的条件列的预测结果
 
@@ -174,13 +174,6 @@ conds的预测分两步，第一步预测条件值和运算符，第二步预测
 
 
 
-我们要预测的就是sql中的挑选的列(sel)，列上的聚合函数(agg)，筛选的条件(conds)，条件间的关系(cond_conn_op)。
-
-- sel这个字段的预测其实就是一个多标签分类问题，只不过在不同的表里类别不一样（这里的类别就是对应数据表的列）
-- agg则跟sel一一对应，且类别固定（不聚合，AVG，MAX，MIN，COUNT，SUM共6类）
-- cond_conn_op就是一个分类问题（类别是没有连接符，and，or这3类）
-- conds则相对复杂一些，需要预测条件列、条件运算符、条件值三个变量。可以看作是字标注和分类问题。
-
 输入：
 
 - X1是[CLS]+question+[SEP]+[CLS]+header[0]+[SEP]+...
@@ -198,11 +191,11 @@ X1和X2拼起来，输入bert模型
 
 第一个[CLS]对应的向量，我们可以认为是整个问题的句向量，我们用它来预测conds的连接符，softmax预测，pconn。1 + int(pconn[0, 1:].argmax())
 
-后面的每个[CLS]对应的向量，我们认为是每个表头的编码向量，我们把它拿出来，用来预测该表头表示的列是否应该被select。softmax。psel。psel[0].argmax(1)是所有表头的预测值
+后面的每个[CLS]对应的向量，我们认为是每个表头的编码向量，我们把它拿出来，用来预测该表头表示的列是否应该被select。softmax。psel。psel[0].argmax(1)是所有表头的预测值。index跟表头的顺序一样，值就是取哪个类。
 
 bert模型的输出经过softmax，预测条件类型pcop。pcop[0, :len(question)+1].argmax(1)是预测值，每个字对应一个条件类型，可以把连续的同一个条件类型的组起来。
 
-直接将字向量和表头向量拼接起来，然后过一个全连接层后再接一个Dense(1)，来预测条件值对应的列。softmax，pcsel。结合pcop来做预测。pcsel\[0][v_start: v_end].mean(0).argmax()，连续的字的条件列的预测结果
+直接将字向量和表头向量拼接起来，然后过一个全连接层后再接一个Dense(1)，来预测条件值对应的列。softmax，pcsel。结合pcop来做预测。pcsel\[0][v_start: v_end].mean(0).argmax()，连续的字的条件列的预测结果。v_start: v_end是根据条件类型的预测结果得到的。
 
 损失函数：上述4个预测结果的cross_entropy损失之和
 

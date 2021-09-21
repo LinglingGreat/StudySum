@@ -153,7 +153,7 @@ class data_generator:
                 HM.append(hm)  # 列名mask
                 SEL.append(sel)  # 被select的列
                 CONN.append(conn)  # 连接类型
-                CSEL.append(csel)  # 条件中的列
+                CSEL.append(csel)  # 条件中的列（同时也是值的标记）
                 COP.append(cop)  # 条件中的运算符（同时也是值的标记）
                 if len(X1) == self.batch_size:
                     X1 = seq_padding(X1)
@@ -227,7 +227,7 @@ def nl2sql(question, table, model):
             csel = pcsel[0][v_start: v_end].mean(0).argmax()
             conds.append((csel, v_op, v_str))
             v_op = -1
-    # 预测条件值
+    # 条件值的修正
     R['conds'] = set()
     for i, j, k in conds:
         if re.findall('[^\d\.]', k):
@@ -343,30 +343,33 @@ def create_model():
         x1_in, x2_in, xm_in, h_in, hm_in, sel_in, conn_in, csel_in, cop_in
     )
 
+    # K.expand_dims：在下标为dim的轴上增加一维
     hm = Lambda(lambda x: K.expand_dims(x, 1))(hm)  # header的mask.shape=(None, 1, h_len)
 
-    # 将question句子连同数据表的所有表头拼起来，一同输入到Bert模型中
+    # 将question句子连同数据表的所有表头拼起来，一同输入到Bert模型中，x是bert模型的输出
     x = bert_model([x1_in, x2_in])
-    x4conn = Lambda(lambda x: x[:, 0])(x)
+    x4conn = Lambda(lambda x: x[:, 0])(x)   # 第一个[CLS]
     # 第一个[CLS]对应的向量，我们可以认为是整个问题的句向量，我们用它来预测conds的连接符
     pconn = Dense(num_cond_conn_op, activation='softmax')(x4conn)
 
     # 后面的每个[CLS]对应的向量，我们认为是每个表头的编码向量，我们把它拿出来，用来预测该表头表示的列是否应该被select。
     # agg一共有7个类别
+    # h存了表头所在位置
     x4h = Lambda(seq_gather)([x, h])
     psel = Dense(num_agg, activation='softmax')(x4h)
 
-    # 预测条件值的运算符，4个运算符+当前字不被标注
+    # 预测条件值的运算符，4个运算符+当前字不被标注，要用到整个句子的输出
     pcop = Dense(num_op, activation='softmax')(x)
 
     # 直接将字向量和表头向量拼接起来，然后过一个全连接层后再接一个Dense(1)，来预测条件值对应的列
-    x = Lambda(lambda x: K.expand_dims(x, 2))(x)
-    x4h = Lambda(lambda x: K.expand_dims(x, 1))(x4h)
-    pcsel_1 = Dense(256)(x)
-    pcsel_2 = Dense(256)(x4h)
+    x = Lambda(lambda x: K.expand_dims(x, 2))(x)  # 每个字的向量[None, seq_len, 1, s_size]？
+    x4h = Lambda(lambda x: K.expand_dims(x, 1))(x4h)   # 每个表头的向量[None, 1, n, s_size]？
+    pcsel_1 = Dense(256)(x)  # 字向量经过全连接层
+    pcsel_2 = Dense(256)(x4h)  # 表头向量经过全连接层
     pcsel = Lambda(lambda x: x[0] + x[1])([pcsel_1, pcsel_2])
     pcsel = Activation('tanh')(pcsel)
     pcsel = Dense(1)(pcsel)
+    # hm：[1]*列名数量
     pcsel = Lambda(lambda x: x[0][..., 0] - (1 - x[1]) * 1e10)([pcsel, hm])
     pcsel = Activation('softmax')(pcsel)
 
