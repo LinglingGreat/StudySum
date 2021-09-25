@@ -7,8 +7,11 @@
         "id": "566cd20f2ff00376",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "TextSummarization/文本摘要.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -36,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#td",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -45,12 +48,11 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 210
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -66,6 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "TextSummarization/文本摘要.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,11 +95,13 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "TextSummarization/文本摘要.md"
+              }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -104,15 +109,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "TextSummarization/文本摘要.md",
+    "Pre-training/BERT/BERT.md",
+    "LossFunction/softmax+交叉熵.md",
+    "LossFunction/FocalLoss.md",
     "StudyNLP/LossFunction/softmax+交叉熵.md",
     "StudyNLP/CourseNote/cs224n2019/Lecture 01 Introduction and Word Vectors.md",
     "StudyNLP/LossFunction/常用损失函数.md",
     "StudyNLP/Pre-training/BERT/BERT.md",
     "StudyNLP/WordEmbedding/word2vec.md",
-    "StudyNLP/Dailogue/任务型对话/DST/DST概述.md",
-    "StudyNLP/Dailogue/任务型对话/任务型对话概述.md",
-    "StudyNLP/Dailogue/readme.md",
-    "StudyNLP/Dailogue/未命名.md",
-    "StudyNLP/Dailogue/任务型对话/NLG/NLG概述.md"
+    "StudyNLP/Dailogue/任务型对话/DST/DST概述.md"
   ]
 }
