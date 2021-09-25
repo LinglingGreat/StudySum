@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "TextSummarization/文本摘要.md",
+            "file": "BasicKnow/树模型&集成学习/[集成学习].md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TextSummarization/文本摘要.md",
+                "file": "BasicKnow/树模型&集成学习/[集成学习].md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TextSummarization/文本摘要.md"
+                "file": "BasicKnow/树模型&集成学习/[集成学习].md"
               }
             }
           }
@@ -109,15 +109,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
-    "TextSummarization/文本摘要.md",
-    "Pre-training/BERT/BERT.md",
-    "LossFunction/softmax+交叉熵.md",
-    "LossFunction/FocalLoss.md",
-    "StudyNLP/LossFunction/softmax+交叉熵.md",
-    "StudyNLP/CourseNote/cs224n2019/Lecture 01 Introduction and Word Vectors.md",
-    "StudyNLP/LossFunction/常用损失函数.md",
-    "StudyNLP/Pre-training/BERT/BERT.md",
-    "StudyNLP/WordEmbedding/word2vec.md",
-    "StudyNLP/Dailogue/任务型对话/DST/DST概述.md"
+    "BasicKnow/树模型&集成学习/[集成学习].md",
+    "Pre-training/预训练语言模型.md",
+    "Pre-training/BERT/未命名.md",
+    "BasicKnow/特征工程/数据分桶.md",
+    "BasicKnow/线性模型/[线性模型]逻辑回归.md",
+    "BasicKnow/machine_learning/[机器学习]聚类.md",
+    "BasicKnow/machine_learning/[机器学习]决策树.md",
+    "BasicKnow/集成学习/[集成学习]XGBoost.md",
+    "BasicKnow/集成学习/[集成学习]GBDT.md",
+    "BasicKnow/集成学习/[集成学习].md"
   ]
 }
