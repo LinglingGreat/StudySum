@@ -3,32 +3,35 @@ C++ makefile
 安装codeblocks情况下：将CodeBlocks\MinGW\bin中的mingw32-make.exe改成make.exe，设置好环境变量后，就可以在cmd中运行make命令
 
 
+[Text2SQL Baseline解析](Text2SQL/Text2SQL%20Baseline解析.md)
 
-[Text2SQL Baseline解析](StudyNLP/Text2SQL/Text2SQL%20Baseline解析.md)
+[GlobalPointer](InformationExtraction/命名实体识别NER/GlobalPointer/GlobalPointer.md)
 
-[GlobalPointer](StudyNLP/InformationExtraction/命名实体识别NER/GlobalPointer/GlobalPointer.md)
+[多标签分类(Multi-label Classification)](TextClassification/多标签分类(Multi-label%20Classification)/多标签分类(Multi-label%20Classification).md)
 
-[多标签分类(Multi-label Classification)](StudyNLP/TextClassification/多标签分类(Multi-label%20Classification)/多标签分类(Multi-label%20Classification).md)
+[数据不均衡问题](DataRelated/数据不均衡问题.md)
 
-[数据不均衡问题](StudyNLP/DataRelated/数据不均衡问题.md)
+[FocalLoss](LossFunction/FocalLoss.md)
 
-[损失函数](StudyNLP/LossFunction/损失函数.md)
+[softmax+交叉熵](LossFunction/softmax+交叉熵.md)
 
-[TFIDF](StudyNLP/BaseModel/TFIDF.md)
+[TFIDF](BasicKnow/TFIDF.md)
 
-[word2vec](StudyNLP/WordEmbedding/word2vec.md)
+[word2vec](WordEmbedding/word2vec.md)
 
-[[1-2]逻辑回归](StudyBase/machine_learning/[1-2]逻辑回归.md)
+[[线性模型]逻辑回归](BasicKnow/线性模型/[线性模型]逻辑回归.md)
 
-[集成学习之GBDT](StudyBase/machine_learning/集成学习之GBDT.md)
+[[集成学习]GBDT](BasicKnow/树模型&集成学习/[集成学习]GBDT.md)
 
-[TextCNN](StudyNLP/TextClassification/TextCNN/TextCNN.md)
+[TextCNN](TextClassification/TextCNN/TextCNN.md)
 
-[fastText](StudyNLP/TextClassification/fastText/fastText.md)
+[fastText](TextClassification/fastText/fastText.md)
 
-[BERT](StudyNLP/Pre-training/BERT/BERT.md)
+[BERT](Pre-training/BERT/BERT.md)
 
-[Transformer](StudyNLP/Pre-training/Transformer/Transformer.md)
+[Transformer](Pre-training/Transformer/Transformer.md)
+
+
 
 
 

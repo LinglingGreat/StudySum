@@ -205,6 +205,12 @@ BN是对于相同的维度进行归一化，但是咱们NLP中输入的都是词
 
 BatchNorm看起来比较直观，我们在数据预处理也经常会把输入Normalize成均值为0，方差为1的数据，只不过它引入了可以学习的参数使得模型可以更加需要重新缓慢(不能剧烈)的调整均值和方差。而LayerNorm似乎有效奇怪，比如第一个特征是年龄，第二个特征是身高，把一个人的这两个特征求均值和方差似乎没有什么意义。论文里有一些讨论，都比较抽象。当然把身高和年龄平均并没有什么意义，但是对于其它层的特征，我们通过平均”期望”它们的取值范围大体一致，也可能使得神经网络调整参数更加容易，如果这两个特征实在有很大的差异，模型也可以学习出合适的参数让它来把取值范围缩放到更合适的区间。
 
+**为什么不用BN而用LN？**
+
+因为在这里我们数据规范化的对象的维度一般都是（batch_size, seq_lenth, 512）,如果是BN，归一化的对象是整个一批数据（可以理解为是对batch_size这一维度）进行归一化，因为每一条数据里都可能会有padding补充的0元素，导致一个BN下来，整个数据的均值会降低，数据分布也就改变了。如果是LN。它是针对于每一条数据的（可以看作是seq_lenth这一维度），一行行的归一化不会包含padding进来的0，这样数据的分布也就能不被改变。
+
+而为什么在图像处理中，可以用BN，因为图像的每一个像素点都有值，没有padding 0带来的问题。所以可以用BN。
+
 ## 残差连接
 
 每个Self-Attention层都会加一个残差连接，然后是一个LayerNorm层。
@@ -639,3 +645,10 @@ def make_model(src_vocab, tgt_vocab, N=6,
 [图解什么是 Transformer](https://www.jianshu.com/p/e7d8caa13b21)（大部分是很火的那篇英文文章内容）
 
 [Transformer代码完全解读！](https://mp.weixin.qq.com/s/MfV2QU-C3bj1tQuEllWchg)
+
+[LayerNorm是Transformer的最优解吗？](https://blog.csdn.net/xixiaoyaoww/article/details/105384623)（有一篇论文将Transfomer的LN换成了BN）
+
+[Transformer 看这一篇就够了](https://blog.csdn.net/rongsenmeng2835/article/details/110511294)
+
+[transformer 为什么使用 layer normalization，而不是其他的归一化方法？](https://www.zhihu.com/question/395811291)
+

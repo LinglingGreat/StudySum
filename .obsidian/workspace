@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BasicKnow/树模型&集成学习/[集成学习].md",
+            "file": "BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "梯度爆炸",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/树模型&集成学习/[集成学习].md",
+                "file": "BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/树模型&集成学习/[集成学习].md"
+                "file": "BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md"
               }
             }
           }
@@ -109,15 +109,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
-    "BasicKnow/树模型&集成学习/[集成学习].md",
-    "Pre-training/预训练语言模型.md",
-    "Pre-training/BERT/未命名.md",
-    "BasicKnow/特征工程/数据分桶.md",
-    "BasicKnow/线性模型/[线性模型]逻辑回归.md",
-    "BasicKnow/machine_learning/[机器学习]聚类.md",
-    "BasicKnow/machine_learning/[机器学习]决策树.md",
-    "BasicKnow/集成学习/[集成学习]XGBoost.md",
-    "BasicKnow/集成学习/[集成学习]GBDT.md",
-    "BasicKnow/集成学习/[集成学习].md"
+    "BasicKnow/deep_learning/梯度消失&梯度爆炸/未命名.md",
+    "TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
+    "LossFunction/常用损失函数.md",
+    "Pre-training/Transformer/Transformer.md",
+    "CourseNote/NLP实战高手课/极客时间_NLP实战高手课.md",
+    "BasicKnow/deep_learning/神经网络概述.md",
+    "NLP知识体系.md",
+    "CourseNote/Dive-into-DL-PyTorch/README.md",
+    "BasicKnow/deep_learning/summerDL.md",
+    "_Suggestion/机器学习、深度学习面试知识点汇总.md"
   ]
 }
