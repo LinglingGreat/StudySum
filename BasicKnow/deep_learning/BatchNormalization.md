@@ -9,3 +9,7 @@ dropout在训练和预测时候，期望无偏，但方差不无偏，但bn要�
 但是Ian 也说BN和Dropout也可以一起用，特别是数据量不够大的时候，所以还是it depends
 
 https://www.youtube.com/watch?v=Xogn6veSyxA&t=10s 这是Ian Goodfellow的Lecture
+
+为什么要用BN？ #td 
+
+[深度学习中 Batch Normalization为什么效果好？](https://www.zhihu.com/question/38102762)

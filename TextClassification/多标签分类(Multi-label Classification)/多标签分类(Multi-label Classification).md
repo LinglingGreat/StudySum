@@ -176,11 +176,11 @@ Threshold Selection
 
 - Calibrate a threshold such that LCard(Y) ≈ LCard($\hat Y$)。
 
-&ensp;&ensp;&ensp;&ensp;- 例如训练数据的label cardinality是1.7，那么设置一个阈值，使得测试数据的label cardinality尽可能接近1.7。
+	- 例如训练数据的label cardinality是1.7，那么设置一个阈值，使得测试数据的label cardinality尽可能接近1.7。
 
 ![](image/image_16.png)
 
-&ensp;&ensp;&ensp;&ensp;- stacking-style的步骤可以用来决定阈值函数。
+- stacking-style的步骤可以用来决定阈值函数。
 
 ## 评估方法
 
@@ -282,7 +282,7 @@ sklearn.multioutput.ClassifierChain ← Classifier Chains
 
 1. [Multi-label Classification](https://jmread.github.io/talks/Multilabel-Part01.pdf)（PPT）
 
-&ensp;&ensp;&ensp;&ensp;[Multilabel-Part01.pdf](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bfcb0b10-7b1d-4852-bf3b-8d905c581356/Multilabel-Part01.pdf)
+[Multilabel-Part01.pdf](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bfcb0b10-7b1d-4852-bf3b-8d905c581356/Multilabel-Part01.pdf)
 
 2. [https://jmread.github.io/talks](https://jmread.github.io/talks)（这个人有蛮多多标签分类的talk）
 

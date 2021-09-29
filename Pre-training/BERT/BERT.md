@@ -18,7 +18,7 @@ BERT 的整体结构如下图所示，其是以 Transformer 为基础构建的�
 
 来自：https://doc.shiyanlou.com/courses/uid522453-20190919-1568876896467
 
-BERT 包含 12 个 Transformer 层，每层接受一组 token 的 embeddings 列表作为输入，并产生相同数目的 embeddings 作为输出（当然，它们的值是不同的）。
+BERT 包含 **12 个 Transformer 层**，每层接受一组 token 的 embeddings 列表作为输入，并产生相同数目的 embeddings 作为输出（当然，它们的值是不同的）。
 
 **需要注意的是，与Transformer本身的Encoder端相比，BERT的Transformer Encoder端输入的向量表示，多了Segment Embeddings。**
 
@@ -248,8 +248,8 @@ pred
 
 我们通过两个例子来看 BERT 的效果，都是非常理想的。实际上，BERT 效果好的原因主要有两点：
 
-1. 使用的双向的 Transformer 结构学习到左、右两侧上下文语境。
-2. 使用完整的文档语料训练而不是打乱的句子，配合下个句子预测任务，从而学习到了捕捉很长的连续语句中的信息的能力。
+1. **使用的双向的 Transformer 结构学习到左、右两侧上下文语境。**
+2. **使用完整的文档语料训练而不是打乱的句子，配合下个句子预测任务，从而学习到了捕捉很长的连续语句中的信息的能力。**
 
 ### 损失函数
 
@@ -282,22 +282,18 @@ BERT的损失函数由两部分组成，第一部分是来自 Mask-LM 的**单�
 BERT 要求我们：
 
 1. 在句子的句首和句尾添加特殊的符号
-
-&ensp;&ensp;&ensp;&ensp;1. 在每个句子的结尾，需要添加特殊的 [SEP] 符号。在以输入为两个句子的任务中（例如：句子 A 中的问题的答案是否可以在句子 B 中找到），该符号为这两个句子的分隔符。
-
-&ensp;&ensp;&ensp;&ensp;2. 在分类任务中，我们需要将 [CLS] 符号插入到每个句子的开头。这个符号有特殊的意义，BERT 包含 12 个 Transformer 层，每层接受一组 token 的 embeddings 列表作为输入，并产生相同数目的 embeddings 作为输出（当然，它们的值是不同的）。**最后一层 transformer 的输出，只有第 1 个 embedding（对应到 [CLS] 符号）会输入到分类器中。你也许会想到对最后一层的 embeddings 使用一些池化策略，但没有必要。**因为 BERT 就是被训练成只使用 [CLS] 来做分类，它会把分类所需的一切信息编码到 [CLS] 对应的 768 维 embedding 向量中，相当于它已经为我们做好了池化工作。
+	1. 在每个句子的结尾，需要添加特殊的 [SEP] 符号。在以输入为两个句子的任务中（例如：句子 A 中的问题的答案是否可以在句子 B 中找到），该符号为这两个句子的分隔符。
+	2. 在分类任务中，我们需要将 [CLS] 符号插入到每个句子的开头。这个符号有特殊的意义，BERT 包含 12 个 Transformer 层，每层接受一组 token 的 embeddings 列表作为输入，并产生相同数目的 embeddings 作为输出（当然，它们的值是不同的）。**最后一层 transformer 的输出，只有第 1 个 embedding（对应到 [CLS] 符号）会输入到分类器中。你也许会想到对最后一层的 embeddings 使用一些池化策略，但没有必要。**因为 BERT 就是被训练成只使用 [CLS] 来做分类，它会把分类所需的一切信息编码到 [CLS] 对应的 768 维 embedding 向量中，相当于它已经为我们做好了池化工作。
 
 2. 给句子填充 or 截断，使每个句子保持固定的长度。
 
-&ensp;&ensp;&ensp;&ensp;1. 所有句子必须被填充或截断到固定的长度，句子最大的长度为 512 个 tokens。
-
-&ensp;&ensp;&ensp;&ensp;2. 填充句子要使用 [PAD] 符号，它在 BERT 词典中的下标为 0
-
-&ensp;&ensp;&ensp;&ensp;3. 句子的最大长度配置会影响训练和评估速度。
+	1. 所有句子必须被填充或截断到固定的长度，句子最大的长度为 512 个 tokens。
+	2. 填充句子要使用 [PAD] 符号，它在 BERT 词典中的下标为 0
+	3. 句子的最大长度配置会影响训练和评估速度。
 
 3. 用 “attention mask” 来显示的区分填充的 tokens 和非填充的 tokens。
 
-&ensp;&ensp;&ensp;&ensp;1. “Attention Mask” 是一个只有 0 和 1 组成的数组，标记哪些 tokens 是填充的（0），哪些不是的（1）。掩码会告诉 BERT 中的 “Self-Attention” 机制不去处理这些填充的符号。
+	1. “Attention Mask” 是一个只有 0 和 1 组成的数组，标记哪些 tokens 是填充的（0），哪些不是的（1）。掩码会告诉 BERT 中的 “Self-Attention” 机制不去处理这些填充的符号。
 
 在微调过程中，BERT 的作者建议使用以下超参 (from Appendix A.3 of the **BERT paper** ):：
 

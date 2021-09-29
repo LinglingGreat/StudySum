@@ -191,9 +191,9 @@ Lattice LSTM 的提出，将词汇信息引入，有效提升了NER性能；但�
 
 - 信息损失：
 
-&ensp;&ensp;&ensp;&ensp;- 1）每个字符只能获取以它为结尾的词汇信息，对于其之前的词汇信息也没有持续记忆。如对于「大」，并无法获得‘inside’的「长江大桥」信息。
+- 1）每个字符只能获取以它为结尾的词汇信息，对于其之前的词汇信息也没有持续记忆。如对于「大」，并无法获得‘inside’的「长江大桥」信息。
 
-&ensp;&ensp;&ensp;&ensp;- 2）由于RNN特性，采取BiLSTM时其前向和后向的词汇信息不能共享。
+- 2）由于RNN特性，采取BiLSTM时其前向和后向的词汇信息不能共享。
 
 - 可迁移性差：只适配于LSTM，不具备向其他网络迁移的特性。
 
@@ -224,20 +224,15 @@ Lattice LSTM 存在问题：
 
 优缺点
 
-
 - 优点
 
-
-&ensp;&ensp;&ensp;&ensp;- LR-CNN最终相比于Lattice LSTM加速3.21倍
-&ensp;&ensp;&ensp;&ensp;
+- LR-CNN最终相比于Lattice LSTM加速3.21倍
 
 - 缺点
 
+- LR-CNN仍然计算复杂；
 
-&ensp;&ensp;&ensp;&ensp;- LR-CNN仍然计算复杂；
-&ensp;&ensp;&ensp;&ensp;
-
-&ensp;&ensp;&ensp;&ensp;- 不具备可迁移性
+- 不具备可迁移性
 
 #### [3] [CGN: Leverage Lexical Knowledge for Chinese Named Entity Recognition via Collaborative Graph Network（ EMNLP2019）](https://www.aclweb.org/anthology/D19-1396.pdf)
 
@@ -278,15 +273,15 @@ Lattice LSTM 存在问题：
 
 1.  动机一：Lattice-LSTM 和 LR-CNN 问题
 
-&ensp;&ensp;&ensp;&ensp;1. 这些模型采取的RNN和CNN结构无法捕捉长距离依赖；
+	1. 这些模型采取的RNN和CNN结构无法捕捉长距离依赖；
 
-&ensp;&ensp;&ensp;&ensp;2. 动态的Lattice结构也不能充分进行GPU并行；
+	1. 动态的Lattice结构也不能充分进行GPU并行；
 
 2. 动机二：CGN 和 LGN 问题
 
-&ensp;&ensp;&ensp;&ensp;1. 采取的图网络虽然可以捕捉对于NER任务至关重要的顺序结构，但这两者之间的gap是不可忽略的；
+	1. 采取的图网络虽然可以捕捉对于NER任务至关重要的顺序结构，但这两者之间的gap是不可忽略的；
 
-&ensp;&ensp;&ensp;&ensp;2. 这类图网络通常需要RNN作为底层编码器来捕捉顺序性，通常需要复杂的模型结构
+	1. 这类图网络通常需要RNN作为底层编码器来捕捉顺序性，通常需要复杂的模型结构
 
 众所周知，Transformer采取全连接的自注意力机制可以很好捕捉长距离依赖，由于自注意力机制对位置是无偏的，因此Transformer引入位置向量来保持位置信息。受到位置向量表征的启发，这篇论文提出的FLAT设计了一种巧妙position encoding来融合Lattice 结构，具体地，如上图所示，对于每一个字符和词汇都构建两个head position encoding 和 tail position encoding，可以证明，这种方式可以重构原有的Lattice结构。也正是由于此，FLAT可以直接建模字符与所有匹配的词汇信息间的交互，例如，字符[药]可以匹配词汇[人和药店]和[药店]。
 

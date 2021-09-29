@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md",
+            "file": "Text2SQL/Text2SQL.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "梯度爆炸",
+                "query": "ensp",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -48,7 +48,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -68,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md",
+                "file": "Text2SQL/Text2SQL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md"
+                "file": "Text2SQL/Text2SQL.md"
               }
             }
           }
@@ -109,15 +110,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
-    "BasicKnow/deep_learning/梯度消失&梯度爆炸/未命名.md",
+    "Text2SQL/Text2SQL.md",
+    "Dailogue/RASA/RASA.md",
+    "Text2SQL/M-SQL/M-SQL (2).md",
+    "TextMatching/文本匹配和多轮检索/文本匹配和多轮检索.md",
+    "_Suggestion/算法工程师.md",
+    "InformationExtraction/命名实体识别NER/命名实体识别NER.md",
     "TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
-    "LossFunction/常用损失函数.md",
     "Pre-training/Transformer/Transformer.md",
-    "CourseNote/NLP实战高手课/极客时间_NLP实战高手课.md",
-    "BasicKnow/deep_learning/神经网络概述.md",
-    "NLP知识体系.md",
-    "CourseNote/Dive-into-DL-PyTorch/README.md",
-    "BasicKnow/deep_learning/summerDL.md",
-    "_Suggestion/机器学习、深度学习面试知识点汇总.md"
+    "BasicKnow/deep_learning/BatchNormalization.md",
+    "TextClassification/TextCNN/TextCNN.md"
   ]
 }

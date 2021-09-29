@@ -275,11 +275,11 @@ X-SQL是微软提出的NL2SQL模型，参考了SQLNet、SQLova等模型的思路
 
 X-SQL 的模型架构分为三层 (如下所示)：
 
-&ensp;&ensp;&ensp;&ensp;- Encoder: 首先使用 bert 风格的预训练模型（MT-DNN） 对 Question 和 SQL 表格进行编码和特征提取， 得到上下文输出来增强结构模式表示，并结合类型信息;
+- Encoder: 首先使用 bert 风格的预训练模型（MT-DNN） 对 Question 和 SQL 表格进行编码和特征提取， 得到上下文输出来增强结构模式表示，并结合类型信息;
 
-&ensp;&ensp;&ensp;&ensp;- Context Reinforcing Layer: 该结构用于增强在 equence Encoder （序列编码器）得到的 H_[CTX]， 从而得到增强的语义表示 HCi ；
+- Context Reinforcing Layer: 该结构用于增强在 equence Encoder （序列编码器）得到的 H_[CTX]， 从而得到增强的语义表示 HCi ；
 
-&ensp;&ensp;&ensp;&ensp;- Output Layer: 输出层完成 SQL 语句的生成，我们将其分为 6 个子任务（select-column, select-aggregation, where-number, where-column, where-operator, and where-value），这六个任务彼此之间相互结合，彼此制约。
+- Output Layer: 输出层完成 SQL 语句的生成，我们将其分为 6 个子任务（select-column, select-aggregation, where-number, where-column, where-operator, and where-value），这六个任务彼此之间相互结合，彼此制约。
 
 ![](image/image_1.png)
 
@@ -301,9 +301,9 @@ X-SQL使用了一个BERT-Like模型MT-DNN作为Token Sequence Encoder，同时�
 
 - 这种强化体现在两方面：
 
-&ensp;&ensp;&ensp;&ensp;- 由于Column Tokens的输出长短不一，所以需要对Column Embeddings进行“调整”；
+- 由于Column Tokens的输出长短不一，所以需要对Column Embeddings进行“调整”；
 
-&ensp;&ensp;&ensp;&ensp;- 此外为了加强Context的影响，在Alignment Model中会使用到Context Embedding的信息；
+- 此外为了加强Context的影响，在Alignment Model中会使用到Context Embedding的信息；
 
 ![](https://ningshixian.github.io/resources/images/%E5%9B%BE%E7%89%873.jpg)
 
@@ -515,15 +515,15 @@ f分别表示各个字段的主键、外键、类型特征，$h_X^q$表示字段
 
 - W-col-val模型
 
-&ensp;&ensp;&ensp;&ensp;- 相较于X-SQL的W-VAL预测Value的首尾偏移量，W-col-val改用了序列标注的方式提取Where Value；
+- 相较于X-SQL的W-VAL预测Value的首尾偏移量，W-col-val改用了序列标注的方式提取Where Value；
 
 - W-val-match模型
 
-&ensp;&ensp;&ensp;&ensp;- 提取各列的 Distinct Value Set，基于Matching的方式匹配最可能的【列-值】；
+- 提取各列的 Distinct Value Set，基于Matching的方式匹配最可能的【列-值】；
 
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- 基于文本的匹配：rouge-L、编辑距离等；
+- 基于文本的匹配：rouge-L、编辑距离等；
 
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- 基于语义的匹配：LR、MLP、相似度计算等
+- 基于语义的匹配：LR、MLP、相似度计算等
 
 ![](https://ningshixian.github.io/resources/images/%E5%9B%BE%E7%89%876.png)
 
@@ -531,21 +531,21 @@ f分别表示各个字段的主键、外键、类型特征，$h_X^q$表示字段
 
 - Encoder：
 
-&ensp;&ensp;&ensp;&ensp;- 预训练模型更换（MT-DNN → Bert-wwm-ext）;
+- 预训练模型更换（MT-DNN → Bert-wwm-ext）;
 
-&ensp;&ensp;&ensp;&ensp;- Token/TokenType调整；
+- Token/TokenType调整；
 
 - Column Representation：基本和X-SQL一致；
 
 - Sub-models：
 
-&ensp;&ensp;&ensp;&ensp;- 增加S-num辅助任务
+- 增加S-num辅助任务
 
-&ensp;&ensp;&ensp;&ensp;- 合并W-NUM和Reducer预测；
+- 合并W-NUM和Reducer预测；
 
-&ensp;&ensp;&ensp;&ensp;- 将原本的W-VAL换成了W-col-val和W-val-match；
+- 将原本的W-VAL换成了W-col-val和W-val-match；
 
-&ensp;&ensp;&ensp;&ensp;- (待定) 把sel与agg结合，当作多分类问题
+- (待定) 把sel与agg结合，当作多分类问题
 
 ![](https://ningshixian.github.io/resources/images/%E5%9B%BE%E7%89%877.png)
 

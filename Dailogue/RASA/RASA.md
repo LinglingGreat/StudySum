@@ -68,17 +68,17 @@ userAct.slotArray <-- slotFilling(sentence, userAct.intent)
 
 if userAct.intent is not None:
 
-&ensp;&ensp;&ensp;&ensp;dialogState.intent <-- userAct.intent
+dialogState.intent <-- userAct.intent
 
-&ensp;&ensp;&ensp;&ensp;dialogState.slotArray <-- userAct.slotArray
+dialogState.slotArray <-- userAct.slotArray
 
-&ensp;&ensp;&ensp;&ensp;checkDefaultSlot(dialogState)
+checkDefaultSlot(dialogState)
 
 else:
 
-&ensp;&ensp;&ensp;&ensp;dialogState.intent <-- getIntent(dialogHistory)
+dialogState.intent <-- getIntent(dialogHistory)
 
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;dialogState.slotArray <--
+dialogState.slotArray <--
 
 updateDialogState(userAct.slotArray, dialogHistory)
 
@@ -92,27 +92,27 @@ updateDialogState(userAct.slotArray, dialogHistory)
 
 if dialogState.intent == "询问天气":
 
-&ensp;&ensp;&ensp;&ensp;if dialogState.slotArray[0] is None:
+if dialogState.slotArray[0] is None:
 
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;systemAct.intent <-- "AskDate"
+systemAct.intent <-- "AskDate"
 
-&ensp;&ensp;&ensp;&ensp;elif dialogState.slotArray[1] is None:
+elif dialogState.slotArray[1] is None:
 
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;systemAct.intent <-- "AskLocation"
-
-&ensp;&ensp;&ensp;&ensp;else:
-
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;systemAct.intent <-- "AskWeather"
-
-&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;systemAct.slotArray[0] <- getWeather(dialogState.slotArray)
-
-elif dialogState.intent is None:
-
-&ensp;&ensp;&ensp;&ensp;systemAct.intent <-- Exception("IntentError")
+systemAct.intent <-- "AskLocation"
 
 else:
 
-&ensp;&ensp;&ensp;&ensp;OtherService
+systemAct.intent <-- "AskWeather"
+
+systemAct.slotArray[0] <- getWeather(dialogState.slotArray)
+
+elif dialogState.intent is None:
+
+systemAct.intent <-- Exception("IntentError")
+
+else:
+
+OtherService
 
 输出：系统动作(systemAct)
 
@@ -124,23 +124,23 @@ else:
 
 if systemAct.intent == "AskDate":
 
-&ensp;&ensp;&ensp;&ensp;reply <-- "请输入时间"
+reply <-- "请输入时间"
 
 elif systemAct.intent == "AskLocation":
 
-&ensp;&ensp;&ensp;&ensp;reply <-- "请输入地点"
+reply <-- "请输入地点"
 
 elif systemAct.intent == "AnswerWeather":
 
-&ensp;&ensp;&ensp;&ensp;reply <-- systemAct.slotArray[0]
+reply <-- systemAct.slotArray[0]
 
 elif systemAct.intent == "IntentError":
 
-&ensp;&ensp;&ensp;&ensp;reply <-- "抱歉，刚刚没听出，能再说一次吗"
+reply <-- "抱歉，刚刚没听出，能再说一次吗"
 
 else:
 
-&ensp;&ensp;&ensp;&ensp;OthersystemAct
+OthersystemAct
 
 输出：系统回复(reply)
 
@@ -378,7 +378,7 @@ custom actions在Rasa中的使用方式并不是直接调用，而是采用服�
 
 action_endpoint:
 
-&ensp;&ensp;&ensp;&ensp;url: '[http://localhost:5055/webhook](http://localhost:5055/webhook)'
+url: '[http://localhost:5055/webhook](http://localhost:5055/webhook)'
 
 在启动会话的时候添加额外的命令--endpoints endpoints.yml，该命令会在5055端口启动一个服务，这个服务就是我们定义的action。
 

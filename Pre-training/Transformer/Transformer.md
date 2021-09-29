@@ -54,7 +54,7 @@ Transformer 的具体结构如下图：
 Embedding之后的序列会输入Encoder。在最底层的block中，x将直接作为Transformer的输入，而在其他层中，输入则是上一个block的输出。
 
 - 首先经过Self-Attention层得到一个加权之后的特征向量Z
-- 然后再经过全连接层Feed Forward Neural Network。这个全连接有两层，第一层的激活函数是ReLU，第二层是一个线性激活函数，可以表示为：
+- 然后再经过全连接层Feed Forward Neural Network。**这个全连接有两层，第一层的激活函数是ReLU，第二层是一个线性激活函数**，可以表示为：
 
 ![image-20210829120024927](img/image-20210829120024927.png)
 
@@ -93,6 +93,12 @@ Self-Attention用Encoder在编码一个词的时候会考虑句子中所有其�
 
 关于为什么要除以注意力头的维度？ #td 
 
+假设 Q 和 K 的均值为0，方差为1。它们的矩阵乘积将有均值为0，方差为dk，因此使用dk的平方根被用于缩放，因为，Q 和 K 的矩阵乘积的均值本应该为 0，方差本应该为1，这样可以获得更平缓的softmax。当维度很大时，点积结果会很大，会导致softmax的梯度很小。为了减轻这个影响，对点积进行缩放。
+
+[transformer中的attention为什么scaled?](https://www.zhihu.com/question/339723385/answer/782509914)
+
+维度的确定？注意力头的维度  #td 
+
 ![img](img/self-attention-output.png)
 
 实际中是基于矩阵的方法计算的：
@@ -123,11 +129,9 @@ self-attention中的Q，K，V也是起着类似的作用，**在矩阵计算中�
 
 ## Decoder
 
-Decoder和Encoder是类似的，如下图所示，区别在于它多了一个Encoder-Decoder Attention层。
+Decoder和Encoder是类似的，区别在于它多了一个Encoder-Decoder Attention层。
 
-Decoder的输入分为两类：
-
-一种是训练时的输入，一种是预测时的输入。
+Decoder的输入分为两类：一种是训练时的输入，一种是预测时的输入。
 
 训练时的输入就是已经准备好对应的target数据。例如翻译任务，Encoder输入"Tom chase Jerry"，Decoder输入"汤姆追逐杰瑞"。
 
@@ -143,17 +147,17 @@ Decoder的输入分为两类：
 
 2.sequence mask
 
-sequence mask 是为了使得 decoder 不能看见未来的信息。对于一个序列，在 time_step 为 t 的时刻，我们的解码输出应该只能依赖于 t 时刻之前的输出，而不能依赖 t 之后的输出。因此我们需要想一个办法，把 t 之后的信息给隐藏起来。这在训练的时候有效，因为训练的时候每次我们是将target数据完整输入进decoder中地，预测时不需要，预测的时候我们只能得到前一时刻预测出的输出。
+sequence mask 是为了使得 decoder 不能看见未来的信息。对于一个序列，在 time_step 为 t 的时刻，我们的解码输出应该只能依赖于 t 时刻之前的输出，而不能依赖 t 之后的输出。因此我们需要想一个办法，把 t 之后的信息给隐藏起来。**这在训练的时候有效，因为训练的时候每次我们是将target数据完整输入进decoder中地，预测时不需要，预测的时候我们只能得到前一时刻预测出的输出。**
 
 那么具体怎么做呢？也很简单：产生一个上三角矩阵，上三角的值全为0。把这个矩阵作用在每一个序列上，就可以达到我们的目的。
 
-上面可能忘记说了，在Encoder中的Multi-Head Attention也是需要进行mask地，只不过Encoder中只需要padding mask即可，而Decoder中需要padding mask和sequence mask。OK除了这点mask不一样以外，其他的部分均与Encoder一样啦~
+在Encoder中的Multi-Head Attention也是需要进行mask地，只不过Encoder中只需要padding mask即可，而Decoder中需要padding mask和sequence mask。
 
 Add＆Normalize也与Encoder中一样，接下来就到了Decoder中第二个Multi-Head Attention，这个Multi-Head Attention又与Encoder中有一点点不一样。
 
 **基于Encoder-Decoder 的Multi-Head Attention**
 
-Encoder中的Multi-Head Attention是基于Self-Attention地，Decoder中的第二个Multi-Head Attention就只是基于Attention，它的输入Query来自于Masked Multi-Head Attention的输出，Keys和Values来自于Encoder中最后一层的输出。
+Encoder中的Multi-Head Attention是基于Self-Attention地，Decoder中的第二个Multi-Head Attention就只是基于Attention，**它的输入Query来自于Masked Multi-Head Attention的输出，Keys和Values来自于Encoder中最后一层的输出**。
 
 **为啥Decoder中要搞两个Multi-Head Attention呢？**
 
@@ -177,21 +181,21 @@ Encoder中的Multi-Head Attention是基于Self-Attention地，Decoder中的第�
 
 我们的目的是用Self-Attention替代RNN，RNN能够记住过去的信息，这可以通过Self-Attention“实时”的注意相关的任何词来实现等价(甚至更好)的效果。RNN还有一个特定就是能考虑词的顺序(位置)关系，一个句子即使词完全是相同的但是语义可能完全不同，比如”北京到上海的机票”与”上海到北京的机票”
 
-为了解决这个问题，我们需要引入位置编码，也就是t时刻的输入，除了Embedding之外(这是与位置无关的)，我们还引入一个向量，这个向量是与t有关的，我们把Embedding和位置编码向量加起来作为模型的输入。
+为了解决这个问题，我们需要引入位置编码，也就是t时刻的输入，除了Embedding之外(这是与位置无关的)，我们还引入一个向量，这个向量是与t有关的，我们把**Embedding和位置编码向量加起来作为模型的输入**。
 
-位置编码有很多方法，其中需要考虑的一个重要因素就是需要它编码的是相对位置的关系。比如两个句子：”北京到上海的机票”和”你好，我们要一张北京到上海的机票”。显然加入位置编码之后，两个北京的向量是不同的了，两个上海的向量也是不同的了，但是我们期望Query(北京1)\*Key(上海1)却是等于Query(北京2)\*Key(上海2)的。
+位置编码有很多方法，其中需要考虑的一个重要因素就是**需要它编码的是相对位置的关系**。比如两个句子：”北京到上海的机票”和”你好，我们要一张北京到上海的机票”。显然加入位置编码之后，两个北京的向量是不同的了，两个上海的向量也是不同的了，但是我们期望Query(北京1)\*Key(上海1)却是等于Query(北京2)\*Key(上海2)的。
 
 ![img](img/v2-3e1304e3f8da6cf23cc43ab3927d700e_b.jpg)
 
 ![image-20210829121843538](img/image-20210829121843538.png)
 
-
+ #td 
 
 ## LayerNorm
 
 在神经网络进行训练之前，都需要对于输入数据进行Normalize归一化，目的有二：1，能够加快训练的速度。2.提高训练的稳定性。
 
-Batch Normalization，这个技巧能够让模型收敛的更快。但是Batch Normalization有一个问题——它需要一个minibatch的数据，而且这个minibatch不能太小(比如1)。另外一个问题就是它不能用于RNN，因为同样一个节点在不同时刻的分布是明显不同的。当然有一些改进的方法使得可以对RNN进行Batch Normalization，比如论文[Recurrent Batch Normalization](https://arxiv.org/abs/1603.09025)
+Batch Normalization，这个技巧能够让模型收敛的更快。但是Batch Normalization有一个问题——**它需要一个minibatch的数据，而且这个minibatch不能太小(比如1)**。另外一个问题就是**它不能用于RNN，因为同样一个节点在不同时刻的分布是明显不同的**。当然有一些改进的方法使得可以对RNN进行Batch Normalization，比如论文[Recurrent Batch Normalization](https://arxiv.org/abs/1603.09025)
 
 Transformer里使用了另外一种Normalization技巧，叫做Layer Normalization。
 
@@ -221,7 +225,7 @@ BatchNorm看起来比较直观，我们在数据预处理也经常会把输入No
 
 ![img](img/transformer_resideual_layer_norm_2.png)
 
-加入残差块X的目的是为了防止在深度神经网络训练中发生退化问题，退化的意思就是深度神经网络通过增加网络的层数，Loss逐渐减小，然后趋于稳定达到饱和，然后再继续增加网络层数，Loss反而增大。
+加入残差块X的目的是为了防止在深度神经网络训练中发生退化问题，**退化的意思就是深度神经网络通过增加网络的层数，Loss逐渐减小，然后趋于稳定达到饱和，然后再继续增加网络层数，Loss反而增大。**
 
 **为什么深度神经网络会发生退化？**
 
@@ -253,7 +257,7 @@ BatchNorm看起来比较直观，我们在数据预处理也经常会把输入No
 
 **优点**：（1）虽然Transformer最终也没有逃脱传统学习的套路，Transformer也只是一个全连接（或者是一维卷积）加Attention的结合体。但是其设计已经足够有创新，因为其抛弃了在NLP中最根本的RNN或者CNN并且取得了非常不错的效果，算法的设计非常精彩，值得每个深度学习的相关人员仔细研究和品位。（2）Transformer的设计最大的带来性能提升的关键是将任意两个单词的距离是1，这对解决NLP中棘手的长期依赖问题是非常有效的。（3）Transformer不仅仅可以应用在NLP的机器翻译领域，甚至可以不局限于NLP领域，是非常有科研潜力的一个方向。（4）算法的并行性非常好，符合目前的硬件（主要指GPU）环境。
 
-**缺点**：（1）粗暴的抛弃RNN和CNN虽然非常炫技，但是它也使模型丧失了捕捉局部特征的能力，RNN + CNN + Transformer的结合可能会带来更好的效果。（2）Transformer失去的位置信息其实在NLP中非常重要，而论文中在特征向量中加入Position Embedding也只是一个权宜之计，并没有改变Transformer结构上的固有缺陷。
+**缺点**：（1）粗暴的抛弃RNN和CNN虽然非常炫技，但是它也使模型丧失了捕捉局部特征的能力，RNN + CNN + Transformer的结合可能会带来更好的效果。（2）Transformer失去的位置信息其实在NLP中非常重要，而论文中在特征向量中加入Position Embedding也只是一个权宜之计，并没有改变Transformer结构上的固有缺陷。 #td 
 
 ## 代码
 

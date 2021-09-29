@@ -12,6 +12,25 @@
 
 2.直接加权平均各个场景下的向量，奇迹般地有很好的效果
 
+## glove和word2vec、 LSA对比有什么区别？
+1）**glove vs LSA**
+
+-   LSA（Latent Semantic Analysis）可以基于co-occurance matrix构建词向量，实质上是基于全局语料采用SVD进行矩阵分解，然而SVD计算复杂度高；
+-   glove可看作是对LSA一种优化的高效矩阵分解算法，采用Adagrad对最小平方损失进行优化；
+
+**2）word2vec vs LSA**
+
+-   主题模型和词嵌入两类方法最大的不同在于模型本身。
+-   主题模型是一种基于概率图模型的生成式模型。其似然函数可以写为若干条件概率连乘的形式，其中包含需要推测的隐含变量(即主题)
+-   词嵌入模型一般表示为神经网络的形式，似然函数定义在网络的输出之上。需要学习网络的权重来得到单词的稠密向量表示。
+
+3）**word2vec vs glove**
+
+-   word2vec是局部语料库训练的，其特征提取是基于滑窗的；而glove的滑窗是为了构建co-occurance matrix，是基于全局语料的，可见glove需要事先统计共现概率；因此，word2vec可以进行在线学习，glove则需要统计固定语料信息。
+-   word2vec是无监督学习，同样由于不需要人工标注；glove通常被认为是无监督学习，但实际上glove还是有label的，即共现次数log(Xij)
+-   word2vec损失函数实质上是带权重的交叉熵，权重固定；glove的损失函数是最小平方损失函数，权重可以做映射变换。
+-   总体来看，**glove可以被看作是更换了目标函数和权重函数的全局word2vec**。
+
 
 
 [Word Embedding 如何处理未登录词？](https://www.zhihu.com/question/308543084/answer/576517555)

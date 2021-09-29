@@ -11,13 +11,13 @@ C++ makefile
 
 [数据不均衡问题](DataRelated/数据不均衡问题.md)
 
-[FocalLoss](LossFunction/FocalLoss.md)
+[FocalLoss](LossFunction/FocalLoss.md) ***
 
-[softmax+交叉熵](LossFunction/softmax+交叉熵.md)
+[softmax+交叉熵](LossFunction/softmax+交叉熵.md) ***
 
 [TFIDF](BasicKnow/TFIDF.md)
 
-[word2vec](WordEmbedding/word2vec.md)
+[word2vec](WordEmbedding/word2vec.md) ***
 
 [[线性模型]逻辑回归](BasicKnow/线性模型/[线性模型]逻辑回归.md)
 
@@ -27,9 +27,9 @@ C++ makefile
 
 [fastText](TextClassification/fastText/fastText.md)
 
-[BERT](Pre-training/BERT/BERT.md)
+[BERT](Pre-training/BERT/BERT.md) ***
 
-[Transformer](Pre-training/Transformer/Transformer.md)
+[Transformer](Pre-training/Transformer/Transformer.md) ***
 
 
 

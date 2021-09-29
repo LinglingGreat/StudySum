@@ -2,7 +2,6 @@
 
 fastText是一个快速文本分类算法，与基于神经网络的分类算法相比有两大优点： 1、fastText在保持高精度的情况下加快了训练速度和测试速度 2、fastText不需要预训练好的词向量，fastText会自己训练词向量 3、fastText两个重要的优化：Hierarchical Softmax、N-gram
 
-可以做多标签分类和多分类吗? #td 
 
 ### 分层softmax（还需补充）
 
@@ -52,6 +51,16 @@ fastText模型架构和word2vec中的CBOW很相似
 
 ## 源码解析
 
+## word2vec和fastText对比
+
+1）都可以无监督学习词向量， fastText训练词向量时会考虑subword；
+
+2）fastText还可以进行有监督学习进行文本分类，其主要特点：
+
+-   结构与CBOW类似，但学习目标是人工标注的分类结果；
+-   采用hierarchical softmax对输出的分类标签建立哈夫曼树，样本中标签多的类别被分配短的搜寻路径；
+-   引入N-gram，考虑词序特征；
+-   引入subword来处理长词，处理未登陆词问题；
 
 
 ## Pytorch使用

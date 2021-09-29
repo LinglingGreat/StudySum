@@ -16,17 +16,17 @@
 
 - Seq2seq，比如
 
-&ensp;&ensp;&ensp;&ensp;- Seq2SQL：把任务视为一个文本转SQL的翻译任务。encoder用来编码文本信息获取语义表示，decoder用来解码文本的语义表示来生成SQL
+- Seq2SQL：把任务视为一个文本转SQL的翻译任务。encoder用来编码文本信息获取语义表示，decoder用来解码文本的语义表示来生成SQL
 
-&ensp;&ensp;&ensp;&ensp;- 没有考虑SQL的语法结构，准确率低
+- 没有考虑SQL的语法结构，准确率低
 
 - Sketch-based
 
-&ensp;&ensp;&ensp;&ensp;- SQL有固定的结构（如图，WikiSQL比较简单），只需要预测关键部分填入模板即可。
+- SQL有固定的结构（如图，WikiSQL比较简单），只需要预测关键部分填入模板即可。
 
-&ensp;&ensp;&ensp;&ensp;- SQLNet：把任务分成6个子任务，每个子任务预测模板的一部分。条件值的预测是seq2seq模型，其它部分是分类模型
+- SQLNet：把任务分成6个子任务，每个子任务预测模板的一部分。条件值的预测是seq2seq模型，其它部分是分类模型
 
-&ensp;&ensp;&ensp;&ensp;- SQLova and X-SQL也用了类似的任务分解，并引入了预训练BERT。基本上能够解决WikiSQL数据集。
+- SQLova and X-SQL也用了类似的任务分解，并引入了预训练BERT。基本上能够解决WikiSQL数据集。
 
 ![](image/image.png)
 
