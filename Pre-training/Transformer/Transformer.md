@@ -91,13 +91,15 @@ Self-Attention用Encoder在编码一个词的时候会考虑句子中所有其�
 
 - 取 Q 中一个行向量为例（也就是每一个输入样本中 xi 对应的 qi），用 qi 乘上每一个样本对应的 ki，再除以注意力头的维度（**为了梯度的稳定**），就得到每个样本对应的注意力值。接下来，再使用 Softmax 函数将值转换为和为 1 的概率值（向量形式）并乘上 V，得到经过注意力机制计算后的输出值。
 
-关于为什么要除以注意力头的维度？ #td 
+**关于为什么要除以注意力头的维度？**
 
 假设 Q 和 K 的均值为0，方差为1。它们的矩阵乘积将有均值为0，方差为dk，因此使用dk的平方根被用于缩放，因为，Q 和 K 的矩阵乘积的均值本应该为 0，方差本应该为1，这样可以获得更平缓的softmax。当维度很大时，点积结果会很大，会导致softmax的梯度很小。为了减轻这个影响，对点积进行缩放。
 
+注意力头的维度是默认64.
+
 [transformer中的attention为什么scaled?](https://www.zhihu.com/question/339723385/answer/782509914)
 
-维度的确定？注意力头的维度  #td 
+
 
 ![img](img/self-attention-output.png)
 
@@ -655,4 +657,10 @@ def make_model(src_vocab, tgt_vocab, N=6,
 [Transformer 看这一篇就够了](https://blog.csdn.net/rongsenmeng2835/article/details/110511294)
 
 [transformer 为什么使用 layer normalization，而不是其他的归一化方法？](https://www.zhihu.com/question/395811291)
+
+[transformer面试题的简单回答](https://zhuanlan.zhihu.com/p/363466672)
+
+[Transformer细节整理](https://www.jianshu.com/p/89ce327e957c)
+
+[答案解析(1)—史上最全Transformer面试题：灵魂20问帮你彻底搞定Transformer](https://zhuanlan.zhihu.com/p/149799951)
 
