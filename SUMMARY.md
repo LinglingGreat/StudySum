@@ -44,7 +44,7 @@
     * [[机器学习]贝叶斯分类器](BasicKnow/machine_learning/[机器学习]贝叶斯分类器.md)
     * [[机器学习]聚类](BasicKnow/machine_learning/[机器学习]聚类.md)
     * [[机器学习]决策树](BasicKnow/machine_learning/[机器学习]决策树.md)
-    * [[机器学习]K近邻](BasicKnow/machine_learning/[机器学习]K近邻.md)
+    * [K近邻](BasicKnow/machine_learning/k近邻法/K近邻.md)
     * [[机器学习]SVM支持向量机](BasicKnow/machine_learning/[机器学习]SVM支持向量机.md)
     * [[基础]概念](BasicKnow/machine_learning/[基础]概念.md)
     * [[集成学习]](BasicKnow/machine_learning/[集成学习].md)

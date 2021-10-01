@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BasicKnow/线性模型/感知机/感知机.md",
+            "file": "BasicKnow/machine_learning/k近邻法/K近邻.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/线性模型/感知机/感知机.md",
+                "file": "BasicKnow/machine_learning/k近邻法/K近邻.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/线性模型/感知机/感知机.md"
+                "file": "BasicKnow/machine_learning/k近邻法/K近邻.md"
               }
             }
           }
@@ -109,6 +109,7 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "BasicKnow/machine_learning/[机器学习]K近邻.md",
     "BasicKnow/线性模型/感知机/未命名.md",
     "BasicKnow/machine_learning/[基础]概念.md",
     "Pre-training/预训练语言模型.md",
@@ -117,7 +118,6 @@
     "BasicKnow/deep_learning/BatchNormalization.md",
     "Text2SQL/Text2SQL.md",
     "Dailogue/RASA/RASA.md",
-    "Text2SQL/M-SQL/M-SQL (2).md",
-    "TextMatching/文本匹配和多轮检索/文本匹配和多轮检索.md"
+    "Text2SQL/M-SQL/M-SQL (2).md"
   ]
 }
