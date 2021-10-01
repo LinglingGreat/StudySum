@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Pre-training/Transformer/Transformer.md",
+            "file": "BasicKnow/线性模型/感知机/感知机.md",
             "mode": "source"
           }
         }
@@ -52,7 +52,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 210
+    "width": 243
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Transformer/Transformer.md",
+                "file": "BasicKnow/线性模型/感知机/感知机.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Transformer/Transformer.md"
+                "file": "BasicKnow/线性模型/感知机/感知机.md"
               }
             }
           }
@@ -109,15 +109,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "BasicKnow/线性模型/感知机/未命名.md",
+    "BasicKnow/machine_learning/[基础]概念.md",
+    "Pre-training/预训练语言模型.md",
     "Pre-training/Transformer/Transformer.md",
     "Pre-training/Attention/Attention.md",
     "BasicKnow/deep_learning/BatchNormalization.md",
     "Text2SQL/Text2SQL.md",
     "Dailogue/RASA/RASA.md",
     "Text2SQL/M-SQL/M-SQL (2).md",
-    "TextMatching/文本匹配和多轮检索/文本匹配和多轮检索.md",
-    "_Suggestion/算法工程师.md",
-    "InformationExtraction/命名实体识别NER/命名实体识别NER.md",
-    "TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md"
+    "TextMatching/文本匹配和多轮检索/文本匹配和多轮检索.md"
   ]
 }
