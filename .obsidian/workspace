@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BasicKnow/deep_learning/summerDL.md",
+            "file": "BasicKnow/线性模型/感知机/感知机.md",
             "mode": "source"
           }
         }
@@ -48,8 +48,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -69,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/deep_learning/summerDL.md",
+                "file": "BasicKnow/线性模型/感知机/感知机.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/deep_learning/summerDL.md"
+                "file": "BasicKnow/线性模型/感知机/感知机.md"
               }
             }
           }
@@ -110,15 +109,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
-    "BasicKnow/deep_learning/summerDL.md",
-    "CourseNote/Deep-Learning-Book-Goodfellow/Part I - Applied Math and Machine Learning basics.md",
-    "BasicKnow/deep_learning/梯度下降法/梯度下降算法.md",
-    "BasicKnow/决策树/[机器学习]决策树.md",
+    "BasicKnow/线性模型/感知机/感知机.md",
+    "BasicKnow/machine_learning/优缺点.md",
+    "BasicKnow/machine_learning/SVD.md",
+    "BasicKnow/machine_learning/SVM/SVM支持向量机.md",
+    "BasicKnow/machine_learning/聚类/[机器学习]聚类.md",
+    "BasicKnow/machine_learning/关联分析/关联分析.md",
     "BasicKnow/machine_learning/[机器学习]半监督学习.md",
-    "BasicKnow/machine_learning/img/bayes1.png",
-    "BasicKnow/machine_learning/贝叶斯/[机器学习]贝叶斯分类器.md",
-    "BasicKnow/machine_learning/k近邻法/K近邻.md",
-    "BasicKnow/machine_learning/[机器学习]K近邻.md",
-    "BasicKnow/线性模型/感知机/未命名.md"
+    "BasicKnow/machine_learning/关联分析/[数据挖掘]关联分析.md",
+    "BasicKnow/machine_learning/SVM/[机器学习]SVM支持向量机.md",
+    "BasicKnow/deep_learning/summerDL.md"
   ]
 }
