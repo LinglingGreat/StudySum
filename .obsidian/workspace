@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BasicKnow/决策树/决策树.md",
+            "file": "BasicKnow/deep_learning/summerDL.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#td",
+                "query": "拉格朗日",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -48,7 +48,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -68,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/决策树/决策树.md",
+                "file": "BasicKnow/deep_learning/summerDL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/决策树/决策树.md"
+                "file": "BasicKnow/deep_learning/summerDL.md"
               }
             }
           }
@@ -109,15 +110,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "BasicKnow/deep_learning/summerDL.md",
+    "CourseNote/Deep-Learning-Book-Goodfellow/Part I - Applied Math and Machine Learning basics.md",
+    "BasicKnow/deep_learning/梯度下降法/梯度下降算法.md",
     "BasicKnow/决策树/[机器学习]决策树.md",
     "BasicKnow/machine_learning/[机器学习]半监督学习.md",
     "BasicKnow/machine_learning/img/bayes1.png",
     "BasicKnow/machine_learning/贝叶斯/[机器学习]贝叶斯分类器.md",
     "BasicKnow/machine_learning/k近邻法/K近邻.md",
     "BasicKnow/machine_learning/[机器学习]K近邻.md",
-    "BasicKnow/线性模型/感知机/未命名.md",
-    "BasicKnow/machine_learning/[基础]概念.md",
-    "Pre-training/预训练语言模型.md",
-    "Pre-training/Transformer/Transformer.md"
+    "BasicKnow/线性模型/感知机/未命名.md"
   ]
 }
