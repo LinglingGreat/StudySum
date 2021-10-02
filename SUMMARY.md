@@ -41,7 +41,7 @@
       * [LDA](BasicKnow/machine_learning/特征工程/LDA.md)
       * [PCA](BasicKnow/machine_learning/特征工程/PCA.md)
     * [[机器学习]半监督学习](BasicKnow/machine_learning/[机器学习]半监督学习.md)
-    * [[机器学习]贝叶斯分类器](BasicKnow/machine_learning/[机器学习]贝叶斯分类器.md)
+    * [朴素贝叶斯分类器](BasicKnow/machine_learning/贝叶斯/朴素贝叶斯分类器.md)
     * [[机器学习]聚类](BasicKnow/machine_learning/[机器学习]聚类.md)
     * [[机器学习]决策树](BasicKnow/machine_learning/[机器学习]决策树.md)
     * [K近邻](BasicKnow/machine_learning/k近邻法/K近邻.md)
