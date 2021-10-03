@@ -33,5 +33,10 @@ C++ makefile
 
 
 
+TODO
 
+Perturbed Masking: Parameter-free Probing for Analyzing and Interpreting BERT
+
+1. [ACL2020 | 无监督？无监督！你没试过的BERT的全新用法](https://aminer.cn/research_report/5f0d6f7b21d8d82f52e59dab)
+2. [无监督分词和句法分析！原来BERT还可以这样用  科学空间](https://kexue.fm/archives/7476)
 
