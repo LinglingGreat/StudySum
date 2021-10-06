@@ -347,31 +347,31 @@ def create_model():
     hm = Lambda(lambda x: K.expand_dims(x, 1))(hm)  # header的mask.shape=(None, 1, h_len)
 
     # 将question句子连同数据表的所有表头拼起来，一同输入到Bert模型中，x是bert模型的输出
-    x = bert_model([x1_in, x2_in])
-    x4conn = Lambda(lambda x: x[:, 0])(x)   # 第一个[CLS]
+    x = bert_model([x1_in, x2_in])  # (?, ?, 768)
+    x4conn = Lambda(lambda x: x[:, 0])(x)   # (?, 768)，768维的向量
     # 第一个[CLS]对应的向量，我们可以认为是整个问题的句向量，我们用它来预测conds的连接符
-    pconn = Dense(num_cond_conn_op, activation='softmax')(x4conn)
+    pconn = Dense(num_cond_conn_op, activation='softmax')(x4conn)  # (?, 3)，比如(1, 3)
 
     # 后面的每个[CLS]对应的向量，我们认为是每个表头的编码向量，我们把它拿出来，用来预测该表头表示的列是否应该被select。
     # agg一共有7个类别
     # h存了表头所在位置
-    x4h = Lambda(seq_gather)([x, h])
-    psel = Dense(num_agg, activation='softmax')(x4h)
+    x4h = Lambda(seq_gather)([x, h])  # (?, ?, 768)
+    psel = Dense(num_agg, activation='softmax')(x4h)  # (?, ?, 7)，比如(1, 3, 7)
 
     # 预测条件值的运算符，4个运算符+当前字不被标注，要用到整个句子的输出
-    pcop = Dense(num_op, activation='softmax')(x)
+    pcop = Dense(num_op, activation='softmax')(x)  # (?, ?, 5)，比如 (1, 22, 5)
 
     # 直接将字向量和表头向量拼接起来，然后过一个全连接层后再接一个Dense(1)，来预测条件值对应的列
-    x = Lambda(lambda x: K.expand_dims(x, 2))(x)  # 每个字的向量[None, seq_len, 1, s_size]？
-    x4h = Lambda(lambda x: K.expand_dims(x, 1))(x4h)   # 每个表头的向量[None, 1, n, s_size]？
+    x = Lambda(lambda x: K.expand_dims(x, 2))(x)  # (?, ?, 1, 768)，每个字的向量[None, seq_len, 1, s_size]？
+    x4h = Lambda(lambda x: K.expand_dims(x, 1))(x4h)  # (?, 1, ?, 768)，每个表头的向量[None, 1, n, s_size]？
     pcsel_1 = Dense(256)(x)  # 字向量经过全连接层
     pcsel_2 = Dense(256)(x4h)  # 表头向量经过全连接层
-    pcsel = Lambda(lambda x: x[0] + x[1])([pcsel_1, pcsel_2])
+    pcsel = Lambda(lambda x: x[0] + x[1])([pcsel_1, pcsel_2])  # (?, ?, ?, 256)
     pcsel = Activation('tanh')(pcsel)
-    pcsel = Dense(1)(pcsel)
+    pcsel = Dense(1)(pcsel)   # (?, ?, ?, 1)
     # hm：[1]*列名数量
-    pcsel = Lambda(lambda x: x[0][..., 0] - (1 - x[1]) * 1e10)([pcsel, hm])
-    pcsel = Activation('softmax')(pcsel)
+    pcsel = Lambda(lambda x: x[0][..., 0] - (1 - x[1]) * 1e10)([pcsel, hm])  # (?, ?, ?)
+    pcsel = Activation('softmax')(pcsel)  # (?, ?, ?)，比如(1, 22, 3)
 
     # 这里定义了一个model和一个train_model，虽然输入输出有一些不一样，但是部分相同的输入输出其实是共享的，训练train_model，model的参数也会随之改变。
     model = Model(

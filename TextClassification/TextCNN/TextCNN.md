@@ -172,3 +172,5 @@ class Model(nn.Module):
 
 [深入TextCNN（一）详述CNN及TextCNN原理](https://zhuanlan.zhihu.com/p/77634533)
 
+[TextCNN进行文本分类多标签分类](https://blog.csdn.net/weixin_42813521/article/details/104991490)
+
