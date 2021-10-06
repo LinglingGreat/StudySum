@@ -150,13 +150,13 @@
   * [数据不均衡问题](DataRelated/数据不均衡问题.md)
   * [数据增强的方法](DataRelated/数据增强的方法.md)
 - Information Extraction
-  - [命名实体识别NER](InformationExtraction/命名实体识别NER/命名实体识别NER.md)
+  - [命名实体识别NER](InformationExtraction/NER/命名实体识别NER.md)
     - 阅读理解做NER
-      * [MRC](InformationExtraction/命名实体识别NER/阅读理解做NER/MRC.md)
-    - [CRF](InformationExtraction/命名实体识别NER/CRF/CRF.md)
-    - [FLAT](InformationExtraction/命名实体识别NER/FLAT/FLAT.md)
-    - [Global Pointer](InformationExtraction/命名实体识别NER/GlobalPointer/GlobalPointer.md)
-    * [命名实体识别NER](InformationExtraction/命名实体识别NER/命名实体识别NER.md)
+      * [MRC](InformationExtraction/NER/阅读理解做NER/MRC.md)
+    - [CRF](BasicKnow/概率图模型/CRF/CRF.md)
+    - [FLAT](InformationExtraction/NER/FLAT/FLAT.md)
+    - [Global Pointer](InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
+    * [命名实体识别NER](InformationExtraction/NER/命名实体识别NER.md)
 - Knowledge Graph
   * [KG](KnowledgeGraph/KG.md)
 - Loss Function

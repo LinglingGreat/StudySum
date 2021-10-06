@@ -5,7 +5,7 @@ C++ makefile
 
 [Text2SQL Baseline解析](Text2SQL/Text2SQL%20Baseline解析.md)
 
-[GlobalPointer](InformationExtraction/命名实体识别NER/GlobalPointer/GlobalPointer.md)
+[GlobalPointer](InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
 
 [多标签分类(Multi-label Classification)](TextClassification/多标签分类(Multi-label%20Classification)/多标签分类(Multi-label%20Classification).md)
 

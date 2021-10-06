@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BasicKnow/线性模型/感知机/感知机.md",
+            "file": "InformationExtraction/NER/命名实体识别NER.md",
             "mode": "source"
           }
         }
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/线性模型/感知机/感知机.md",
+                "file": "InformationExtraction/NER/命名实体识别NER.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/线性模型/感知机/感知机.md"
+                "file": "InformationExtraction/NER/命名实体识别NER.md"
               }
             }
           }
@@ -109,6 +109,8 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "InformationExtraction/命名实体识别NER/命名实体识别NER.md",
+    "InformationExtraction/命名实体识别NER/CRF/CRF.md",
     "BasicKnow/线性模型/感知机/感知机.md",
     "BasicKnow/machine_learning/优缺点.md",
     "BasicKnow/machine_learning/SVD.md",
@@ -116,8 +118,6 @@
     "BasicKnow/machine_learning/聚类/[机器学习]聚类.md",
     "BasicKnow/machine_learning/关联分析/关联分析.md",
     "BasicKnow/machine_learning/[机器学习]半监督学习.md",
-    "BasicKnow/machine_learning/关联分析/[数据挖掘]关联分析.md",
-    "BasicKnow/machine_learning/SVM/[机器学习]SVM支持向量机.md",
-    "BasicKnow/deep_learning/summerDL.md"
+    "BasicKnow/machine_learning/关联分析/[数据挖掘]关联分析.md"
   ]
 }
