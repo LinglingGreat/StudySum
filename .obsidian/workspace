@@ -7,11 +7,8 @@
         "id": "566cd20f2ff00376",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Pre-training/TINYBERT/TINYBERT.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -69,7 +66,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/TINYBERT/TINYBERT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,9 +92,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Pre-training/TINYBERT/TINYBERT.md"
-              }
+              "state": {}
             }
           }
         ],

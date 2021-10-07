@@ -1,32 +1,157 @@
 # Pytorch
 
+PyTorch是一个基于python的科学计算包，主要针对两类人群：
+
+- 作为NumPy的替代品，可以利用GPU的性能进行计算
+- 作为一个高灵活性、速度快的深度学习平台
+
 ## 安装
 
 [https://pytorch.org/](https://pytorch.org/)  官网点击操作系统等配置获取安装命令
 
 ## 数据生成
 
-查看数据的维度大小：`a.size()`
+查看数据的**维度**大小：`a.size()`，输出一个tuple：`torch.Size([5, 3])`
 
 和numpy的各种数据生成的方法很像。
 
-标准正态分布：`torch.randn(num_examples, num_inputs, dtype=torch.float32)`
+创建一个**没有初始化**的5*3矩阵：`x = torch.empty(5, 3)`
 
-tensor转numpy类型：`a.numpy()`
+创建一个**随机初始化**矩阵：`x = torch.rand(5, 3)`
 
-numpy转tensor类型：`torch.tensor(a)`
+构造一个**填满`0`**且数据类型为`long`的矩阵:`x = torch.zeros(5, 3, dtype=torch.long)`
 
-转成long类型：`torch.LongTensor([0, 1, 2, 3])`
+**标准正态分布**：`torch.randn(num_examples, num_inputs, dtype=torch.float32)`
+
+tensor转numpy类型：`a.numpy()`。注意Torch张量和NumPy数组将共享它们的底层内存位置，因此当一个改变时,另外也会改变。
+
+numpy转tensor类型：`torch.tensor(a)`，`b = torch.from_numpy(a)`
+
+直接从数据构成向量：`torch.LongTensor([0, 1, 2, 3])`
+
+**根据已有的tensor建立新的tensor。**除非用户提供新的值，否则这些方法将重用输入张量的属性，例如dtype等：
+
+```python
+x = x.new_ones(5, 3, dtype=torch.double)      # new_* methods take in sizes
+print(x)
+
+x = torch.randn_like(x, dtype=torch.float)    # 重载 dtype!
+print(x)                                      # 结果size一致
+```
+
+## 运算
+
+### 加法
+
+维度相同，`x + y`或`torch.add(x, y)`
+
+给定一个输出张量作为参数
+
+```python
+result = torch.empty(5, 3)
+torch.add(x, y, out=result)
+print(result)
+```
+
+原位/原地操作(in-place）：`y.add_(x)`  adds x to y
+
+> 任何一个in-place改变张量的操作后面都固定一个`_`。例如`x.copy_(y)`、`x.t_()`将更改x
 
 
-
-根据index选择数据，0表示按行选，1表示按列选：`features.index_select(0, j)`
 
 torch.mm 和 torch.mul 的区别？ torch.mm是矩阵相乘，torch.mul是按元素相乘
 
 torch.manual_seed(1)的作用？ 设置随机种子，使实验结果可以复现
 
-## 梯度
+### 索引
+
+可以使用像标准的NumPy一样的各种索引操作`print(x[:, 1])`
+
+如果是仅包含一个元素的tensor，可以使用`.item()`来得到对应的python数值
+
+```python
+x = torch.randn(1)
+print(x)
+print(x.item())
+```
+
+
+
+根据index选择数据，0表示按行选，1表示按列选：`features.index_select(0, j)`
+
+### 改变形状
+
+**torch.view**
+
+**.view的用法**，比如a.view(1,6)，a.view(b.size())
+
+把原先tensor中的数据按照行优先的顺序排成一个一维的数据（这里应该是因为要求地址是连续存储的），然后按照参数组合成其他维度的tensor。比如说是不管你原先的数据是[[[1,2,3],[4,5,6]]]还是[1,2,3,4,5,6]，因为它们排成一维向量都是6个元素，所以只要view后面的参数一致，得到的结果都是一样的。
+
+参数如果是-1就代表这个位置由其他位置的数字来推断。a.view(1, -1)，-1代表的维度由a的维度和1推断出来，比如a tensor的数据个数是6，那么-1就代表6。
+
+[Pytorch的nn.DataParallel](https://zhuanlan.zhihu.com/p/102697821)
+
+超过100种tensor的运算操作，包括转置，索引，切片，数学运算， 线性代数，随机数等，具体访问[这里](https://pytorch.org/docs/stable/torch.html)
+
+### CUDA上的张量
+
+张量可以使用`.to`方法移动到任何设备(device）上：
+
+```python
+# 当GPU可用时,我们可以运行以下代码
+# 我们将使用`torch.device`来将tensor移入和移出GPU
+if torch.cuda.is_available():
+    device = torch.device("cuda")          # a CUDA device object
+    y = torch.ones_like(x, device=device)  # 直接在GPU上创建tensor
+    x = x.to(device)                       # 或者使用`.to("cuda")`方法
+    z = x + y
+    print(z)
+    print(z.to("cpu", torch.double))       # `.to`也能在移动时改变dtypeCopy
+```
+
+输出：
+
+```python
+tensor([1.0445], device='cuda:0')
+tensor([1.0445], dtype=torch.float64)
+```
+
+## 自动求导
+
+PyTorch中，所有神经网络的核心是 `autograd` 包。`utograd` 包为张量上的所有操作提供了自动求导机制。它是一个在运行时定义(define-by-run）的框架，这意味着反向传播是根据代码如何运行来决定的，并且每次迭代可以是不同的.
+
+`torch.Tensor` 是这个包的核心类。如果设置它的属性 `.requires_grad` 为 `True`，那么`autograd`将会追踪对于该张量的所有操作。当完成计算后可以通过调用 `.backward()`，来自动计算所有的梯度。这个张量的所有梯度将会自动累加到`.grad`属性.
+
+要阻止一个张量被跟踪历史，可以调用 `.detach()` 方法将其与计算历史分离，并阻止它未来的计算记录被跟踪。
+
+为了防止跟踪历史记录(和使用内存），可以将代码块包装在 `with torch.no_grad():` 中。在评估模型时特别有用，因为模型可能具有 `requires_grad = True` 的可训练的参数，但是我们不需要在此过程中对他们进行梯度计算。
+
+还有一个类对于autograd的实现非常重要：`Function`。
+
+`Tensor` 和 `Function` 互相连接生成了一个无圈图(acyclic graph)，它编码了完整的计算历史。每个张量都有一个 `.grad_fn` 属性，该属性引用了创建 `Tensor` 自身的`Function`(除非这个张量是用户手动创建的，即这个张量的 `grad_fn` 是 `None` )。
+
+如果需要计算导数，可以在 `Tensor` 上调用 `.backward()`。如果 `Tensor` 是一个标量(即它包含一个元素的数据），则不需要为 `backward()` 指定任何参数，但是如果它有更多的元素，则需要指定一个 `gradient` 参数，该参数是形状匹配的张量。
+
+```python
+import torch
+
+# 创建一个张量并设置requires_grad=True用来追踪其计算历史
+x = torch.ones(2, 2, requires_grad=True)
+print(x)
+
+# 对这个张量做一次运算：
+y = x + 2
+print(y)
+```
+
+输出
+
+```python
+tensor([[3., 3.],
+        [3., 3.]], grad_fn=<AddBackward0>)
+```
+
+`y`是计算的结果，所以它有`grad_fn`属性。
 
 使用backward()函数反向传播计算tensor的梯度时，并不计算所有tensor的梯度，而是只计算满足这几个条件的tensor的梯度：1.类型为叶子节点、2.requires_grad=True、3.依赖该tensor的所有tensor的requires_grad=True。
 
@@ -35,6 +160,12 @@ torch.manual_seed(1)的作用？ 设置随机种子，使实验结果可以复�
 如果想改变这个属性，就调用tensor.requires_grad_()方法：`x.requires_grad_(False)`
 
 参考：https://zhuanlan.zhihu.com/p/85506092
+
+进行反向传播：`out.backward()`
+
+输出导数：`print(x.grad)`
+
+
 
 ### sgd梯度下降
 
@@ -56,6 +187,230 @@ https://zhuanlan.zhihu.com/p/38475183
 
 **optimizer.zero_grad()的作用？**使梯度置零，防止不同batch得到的梯度累加
 
+## 神经网络
+
+可以使用`torch.nn`包来构建神经网络.
+
+我们已经介绍了`autograd`包，`nn`包则依赖于`autograd`包来定义模型并对它们求导。一个`nn.Module`包含各个层和一个`forward(input)`方法，该方法返回`output`。
+
+一个神经网络的典型训练过程如下：
+
+- 定义包含一些可学习参数(或者叫权重）的神经网络
+- 在输入数据集上迭代
+- 通过网络处理输入
+- 计算loss(输出和正确答案的距离）
+- 将梯度反向传播给网络的参数
+- 更新网络的权重，一般使用一个简单的规则：`weight = weight - learning_rate * gradient`
+
+### 定义网络
+
+```python
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+class Net(nn.Module):
+
+    def __init__(self):
+        super(Net, self).__init__()
+        # 输入图像channel：1；输出channel：6；5x5卷积核
+        self.conv1 = nn.Conv2d(1, 6, 5)
+        self.conv2 = nn.Conv2d(6, 16, 5)
+        # an affine operation: y = Wx + b
+        self.fc1 = nn.Linear(16 * 5 * 5, 120)
+        self.fc2 = nn.Linear(120, 84)
+        self.fc3 = nn.Linear(84, 10)
+
+    def forward(self, x):
+        # 2x2 Max pooling
+        x = F.max_pool2d(F.relu(self.conv1(x)), (2, 2))
+        # 如果是方阵,则可以只使用一个数字进行定义
+        x = F.max_pool2d(F.relu(self.conv2(x)), 2)
+        x = x.view(-1, self.num_flat_features(x))
+        x = F.relu(self.fc1(x))
+        x = F.relu(self.fc2(x))
+        x = self.fc3(x)
+        return x
+
+    def num_flat_features(self, x):
+        size = x.size()[1:]  # 除去批处理维度的其他所有维度
+        num_features = 1
+        for s in size:
+            num_features *= s
+        return num_features
+
+
+net = Net()
+print(net)
+```
+
+我们只需要定义 `forward` 函数，`backward`函数会在使用`autograd`时自动定义，`backward`函数用来计算导数。我们可以在 `forward` 函数中使用任何针对张量的操作和计算。
+
+一个模型的可学习参数可以通过`net.parameters()`返回
+
+```python
+params = list(net.parameters())
+print(len(params))
+print(params[0].size())  # conv1's .weight
+```
+
+让我们尝试一个随机的32x32的输入。注意:这个网络(LeNet）的期待输入是32x32的张量。如果使用MNIST数据集来训练这个网络，要把图片大小重新调整到32x32。
+
+```python
+input = torch.randn(1, 1, 32, 32)
+out = net(input)
+print(out)Copy
+```
+
+输出：
+
+```python
+tensor([[ 0.0399, -0.0856,  0.0668,  0.0915,  0.0453, -0.0680, -0.1024,  0.0493,
+         -0.1043, -0.1267]], grad_fn=<AddmmBackward>)Copy
+```
+
+清零所有参数的梯度缓存，然后进行随机梯度的反向传播：
+
+```python
+net.zero_grad()
+out.backward(torch.randn(1, 10))Copy
+```
+
+> 注意：
+>
+> `torch.nn`只支持小批量处理(mini-batches）。整个`torch.nn`包只支持小批量样本的输入，不支持单个样本的输入。
+>
+> 比如，`nn.Conv2d` 接受一个4维的张量，即`nSamples x nChannels x Height x Width`
+>
+> 如果是一个单独的样本，只需要使用`input.unsqueeze(0)`来添加一个“假的”批大小维度。
+
+在继续之前，让我们回顾一下到目前为止看到的所有类。
+
+**复习：**
+
+- `torch.Tensor` - 一个多维数组，支持诸如`backward()`等的自动求导操作，同时也保存了张量的梯度。
+
+- `nn.Module` - 神经网络模块。是一种方便封装参数的方式，具有将参数移动到GPU、导出、加载等功能。
+
+- `nn.Parameter` - 张量的一种，当它作为一个属性分配给一个`Module`时，它会被自动注册为一个参数。
+
+- `autograd.Function` - 实现了自动求导前向和反向传播的定义，每个`Tensor`至少创建一个`Function`节点，该节点连接到创建`Tensor`的函数并对其历史进行编码。
+
+### 损失函数
+
+一个损失函数接受一对(output, target)作为输入，计算一个值来估计网络的输出和目标值相差多少。
+
+nn包中有很多不同的[损失函数](https://pytorch.org/docs/stable/nn.html)。`nn.MSELoss`是比较简单的一种，它计算输出和目标的均方误差(mean-squared error）。
+
+例如：
+
+```python
+output = net(input)
+target = torch.randn(10)  # 本例子中使用模拟数据
+target = target.view(1, -1)  # 使目标值与数据值尺寸一致
+criterion = nn.MSELoss()
+
+loss = criterion(output, target)
+print(loss)Copy
+```
+
+输出：
+
+```python
+tensor(1.0263, grad_fn=<MseLossBackward>)
+Copy
+```
+
+现在，如果使用`loss`的`.grad_fn`属性跟踪反向传播过程，会看到计算图如下：
+
+```
+input -> conv2d -> relu -> maxpool2d -> conv2d -> relu -> maxpool2d
+      -> view -> linear -> relu -> linear -> relu -> linear
+      -> MSELoss
+      -> lossCopy
+```
+
+所以，当我们调用`loss.backward()`，整张图开始关于loss微分，图中所有设置了`requires_grad=True`的张量的`.grad`属性累积着梯度张量。
+
+为了说明这一点，让我们向后跟踪几步：
+
+```python
+print(loss.grad_fn)  # MSELoss
+print(loss.grad_fn.next_functions[0][0])  # Linear
+print(loss.grad_fn.next_functions[0][0].next_functions[0][0])  # ReLUCopy
+```
+
+输出：
+
+```python
+<MseLossBackward object at 0x7f94c821fdd8>
+<AddmmBackward object at 0x7f94c821f6a0>
+<AccumulateGrad object at 0x7f94c821f6a0>Copy
+```
+
+### 反向传播
+
+我们只需要调用`loss.backward()`来反向传播误差。我们需要清零现有的梯度，否则梯度将会与已有的梯度累加。
+
+现在，我们将调用`loss.backward()`，并查看conv1层的偏置(bias）在反向传播前后的梯度。
+
+```python
+net.zero_grad()     # 清零所有参数(parameter）的梯度缓存
+
+print('conv1.bias.grad before backward')
+print(net.conv1.bias.grad)
+
+loss.backward()
+
+print('conv1.bias.grad after backward')
+print(net.conv1.bias.grad)Copy
+```
+
+输出：
+
+```python
+conv1.bias.grad before backward
+tensor([0., 0., 0., 0., 0., 0.])
+conv1.bias.grad after backward
+tensor([ 0.0084,  0.0019, -0.0179, -0.0212,  0.0067, -0.0096])
+```
+
+### 更新权重
+
+最简单的更新规则是随机梯度下降法(SGD）:
+
+```
+weight = weight - learning_rate * gradient
+```
+
+我们可以使用简单的python代码来实现:
+
+```python
+learning_rate = 0.01
+for f in net.parameters():
+    f.data.sub_(f.grad.data * learning_rate)Copy
+```
+
+然而，在使用神经网络时，可能希望使用各种不同的更新规则，如SGD、Nesterov-SGD、Adam、RMSProp等。为此，我们构建了一个较小的包`torch.optim`，它实现了所有的这些方法。使用它很简单：
+
+```python
+import torch.optim as optim
+
+# 创建优化器(optimizer）
+optimizer = optim.SGD(net.parameters(), lr=0.01)
+
+# 在训练的迭代中：
+optimizer.zero_grad()   # 清零梯度缓存
+output = net(input)
+loss = criterion(output, target)
+loss.backward()
+optimizer.step()    # 更新参数Copy
+```
+
+> 注意：
+>
+> 观察梯度缓存区是如何使用`optimizer.zero_grad()`手动清零的。这是因为梯度是累加的，正如前面[反向传播章节](https://pytorch.apachecn.org/docs/1.4/blitz/neural_networks_tutorial.html#反向传播)叙述的那样。
 
 ## 常用函数解析
 
@@ -150,15 +505,7 @@ tokenizer.encode 分词并且将词转换成id
 
 - add_special_tokens=True将句子转化成对应模型（比如bert有cls和sep）的输入形式。
 
-### view
 
-**.view的用法**，比如a.view(1,6)，a.view(b.size())
-
-把原先tensor中的数据按照行优先的顺序排成一个一维的数据（这里应该是因为要求地址是连续存储的），然后按照参数组合成其他维度的tensor。比如说是不管你原先的数据是[[[1,2,3],[4,5,6]]]还是[1,2,3,4,5,6]，因为它们排成一维向量都是6个元素，所以只要view后面的参数一致，得到的结果都是一样的。
-
-参数如果是-1就代表这个位置由其他位置的数字来推断。a.view(1, -1)，-1代表的维度由a的维度和1推断出来，比如a tensor的数据个数是6，那么-1就代表6。
-
-[Pytorch的nn.DataParallel](https://zhuanlan.zhihu.com/p/102697821)
 
 
 ## 教程
