@@ -64,3 +64,9 @@ https://www.youtube.com/watch?v=Xogn6veSyxA&t=10s 这是Ian Goodfellow的Lecture
 ## 参考资料
 
 [深度学习中 Batch Normalization为什么效果好？](https://www.zhihu.com/question/38102762)
+
+[Batch Normalization的作用](https://blog.csdn.net/qican_7/article/details/100780370)
+
+[深入理解BATCH NORMALIZATION 的作用](https://www.cnblogs.com/hoojjack/p/12350707.html)
+ 
+ #td 

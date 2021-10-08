@@ -7,8 +7,11 @@
         "id": "566cd20f2ff00376",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "BasicKnow/概率图模型/概率图模型.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -45,8 +48,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -66,6 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "BasicKnow/概率图模型/概率图模型.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,7 +95,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "BasicKnow/概率图模型/概率图模型.md"
+              }
             }
           }
         ],
@@ -104,15 +109,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "BasicKnow/概率图模型/概率图模型.md",
+    "BasicKnow/概率图模型/CRF/CRF.md",
+    "BasicKnow/deep_learning/BatchNormalization.md",
+    "LossFunction/常用损失函数.md",
     "Pre-training/TINYBERT/TINYBERT.md",
     "CourseNote/NLP实战高手课/极客时间_NLP实战高手课.md",
     "Pre-training/BERT/BERT.md",
     "BasicKnow/machine_learning/待整合.md",
     "CourseNote/Deep-Learning-Book-Goodfellow/Part I - Applied Math and Machine Learning basics.md",
-    "LossFunction/常用损失函数.md",
-    "InformationExtraction/命名实体识别NER/命名实体识别NER.md",
-    "InformationExtraction/命名实体识别NER/CRF/CRF.md",
-    "BasicKnow/线性模型/感知机/感知机.md",
-    "BasicKnow/machine_learning/优缺点.md"
+    "InformationExtraction/命名实体识别NER/命名实体识别NER.md"
   ]
 }
