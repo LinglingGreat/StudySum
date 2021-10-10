@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BasicKnow/概率图模型/概率图模型.md",
+            "file": "BasicKnow/聚类/聚类.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "知识蒸馏",
+                "query": "距离",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -48,7 +48,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -68,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/概率图模型/概率图模型.md",
+                "file": "BasicKnow/聚类/聚类.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/概率图模型/概率图模型.md"
+                "file": "BasicKnow/聚类/聚类.md"
               }
             }
           }
@@ -109,6 +110,7 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "BasicKnow/聚类/聚类.md",
     "BasicKnow/概率图模型/概率图模型.md",
     "BasicKnow/概率图模型/CRF/CRF.md",
     "BasicKnow/deep_learning/BatchNormalization.md",
@@ -117,7 +119,6 @@
     "CourseNote/NLP实战高手课/极客时间_NLP实战高手课.md",
     "Pre-training/BERT/BERT.md",
     "BasicKnow/machine_learning/待整合.md",
-    "CourseNote/Deep-Learning-Book-Goodfellow/Part I - Applied Math and Machine Learning basics.md",
-    "InformationExtraction/命名实体识别NER/命名实体识别NER.md"
+    "CourseNote/Deep-Learning-Book-Goodfellow/Part I - Applied Math and Machine Learning basics.md"
   ]
 }
