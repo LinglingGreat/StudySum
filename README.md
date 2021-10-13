@@ -19,9 +19,6 @@ http://self-publishing.ebookchain.org/3-%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E8%
 
 
 
-# 基本概念
-生成模型与判别模型
-
 
 # 机器学习模型
 
@@ -80,9 +77,13 @@ $$
 - 
 
 ## [感知机](BasicKnow/线性模型/感知机/感知机.md)
+
 ## [SVM支持向量机](BasicKnow/线性模型/SVM/SVM支持向量机.md)
+
 ## [K近邻](BasicKnow/k近邻法/K近邻.md)
+
 ## [朴素贝叶斯分类器](BasicKnow/贝叶斯/朴素贝叶斯分类器.md)
+
 ## [决策树](BasicKnow/决策树/决策树.md)
 
 ## [AdaBoost](BasicKnow/树模型&集成学习/AdaBoost/AdaBoost.md)
@@ -91,15 +92,35 @@ $$
 
 ## [EM算法](BasicKnow/EM算法/EM算法.md)
 
-## [CRF](BasicKnow/概率图模型/CRF/CRF.md)
+## 概率图模型
+### [HMM](BasicKnow/概率图模型/HMM/HMM.md)
+- 隐马尔可夫模型：隐藏的马尔可夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测从而产生观测随机序列
+- 由初始概率分布（向量π）、状态转移概率分布（矩阵A）以及观测概率分布（矩阵B）确定。A，B，π称为HMM的三要素
+- 两个基本假设：齐次马尔可夫性假设（t的状态只依赖于t-1的状态），观测独立性假设（t的观测只依赖于t的状态）
+- 可以用于标注，状态对应着标记。标注问题是给定观测的序列预测其对应的标记序列。可以假设标注问题的数据是由隐马尔可夫模型生成的。这样我们可以利用隐马尔可夫模型的学习与预测算法进行标注。
+- 3个基本问题：
+	- 概率计算问题：给定模型$\lambda$和观测序列O，计算$P(O|\lambda)$
+		- 前向算法
+		- 后向算法
+	- 学习问题：已知观测序列O，估计模型参数$\lambda$，使得$P(O|\lambda)$最大，即用极大似然估计法估计
+		- 监督学习方法（极大似然估计，计算样本中的转移概率，观测概率）
+		- 无监督学习方法
+			- Baum-Welch算法（用EM算法学习参数）
+	- 预测问题（解码问题）：已知模型$\lambda$和观测序列O，求最大的P(I|O)，即最有可能的状态序列。
+		- 近似算法：在每个时刻t选择该时刻最有可能出现的状态
+		- 维特比算法：动态规划求概率最大路径
 
-## [HMM](BasicKnow/概率图模型/HMM/HMM.md)
+### [CRF](BasicKnow/概率图模型/CRF/CRF.md)
+
+### HMM vs CRF
 
 ## [聚类](BasicKnow/聚类/聚类.md)
 
 ## [关联分析](BasicKnow/关联分析/关联分析.md)
 
 ## 主题模型
+
+## 生成模型与判别模型
 
 # 深度学习模型
 
@@ -109,11 +130,11 @@ $$
 
 ## [BatchSize](BasicKnow/deep_learning/BatchSize/BatchSize.md)
 
-## [梯度消失&梯度爆炸](BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md)
-
 ## [BatchNormalization](BasicKnow/deep_learning/BatchNormalization.md)
 
 ## 激活函数
+
+## 损失函数
 
 ## 词嵌入
 
@@ -121,15 +142,30 @@ $$
 
 ### 位置编码
 
-# 数据/特征处理
+### Attention
 
-## 特征工程
+### Transformer
+
+### BERT
+
+# 特征工程
+
+# 问题解决
+
+## [梯度消失&梯度爆炸](BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md)
+- 梯度消失
+	- 深层网络；
+	- 不合适的激活函数：如果使用sigmoid作为损失函数，其梯度是不可能超过0.25的，初始化的网络权值通常都小于1，这样经过链式求导之后，很容易发生梯度消失。tanh稍微好一些，但是导数仍然小于1
+	- 解决：改成relu；batchnorm；resnet；lstm
+
+- 梯度爆炸
+	- 深层网络；
+	- 权值初始化值太大
+	- 解决：梯度裁剪；权重正则化；改成relu
 
 ## [数据不均衡问题](DataRelated/数据不均衡问题.md)
 
 ## [数据增强的方法](DataRelated/数据增强的方法.md)
-
-## 损失函数
 
 # GAN
 
