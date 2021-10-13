@@ -1,13 +1,7 @@
 # StudySum
 学习过程中的笔记梳理与总结
 
-可以在gitbook中观看，效果更佳：
-
-[Introduction - Study (gitbook.io)](https://codingling.gitbook.io/study/)
-
-章节目录见：[SUMMARY](SUMMARY.md)
-
-
+可以在gitbook中观看，效果更佳：[Introduction - Study (gitbook.io)](https://codingling.gitbook.io/study/)
 
 gitbook教程：
 
@@ -16,4 +10,161 @@ https://blog.csdn.net/weixin_41024483/article/details/100090621
 http://self-publishing.ebookchain.org/3-%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%B9%B3%E5%8F%B0%EF%BC%9F/1-Summary%E7%9A%84%E5%AE%89%E8%A3%85.html
 
 `book sm`自动生成目录[SUMMARY](SUMMARY.md)
+
+
+
+手动整理的目录
+
+[TOC]
+
+
+
+# 基本概念
+生成模型与判别模型
+
+
+# 机器学习模型
+
+## [线性回归](BasicKnow/线性模型/线性回归.md)
+- 决策函数：$f(x) = w^T x + b$
+- 损失函数：均方误差
+- 基于均方误差最小化来进行模型求解的方法称为"最小二乘法"。
+- 或者用求解无约束优化问题的梯度下降法
+- 形式简单、易于建模，可解释性强
+- 广义线性模型：$y=g^{-1}(w^Tx+b)$，g(.)是单调可微函数
+- 对数线性回归是广义线性模型在g(.)=ln(.)时的特例。
+
+
+## [逻辑回归](BasicKnow/线性模型/逻辑回归.md)
+- 线性回归的值域是实数域，通过逻辑斯蒂回归模型的定义式可以将线性函数转换为概率$P(Y=1|x)=\frac{exp(w^Tx)}{1+exp(w^Tx)}$
+- 输出Y=1的对数几率是由输入x的线性函数表示的模型：$log\frac{P(Y=1|x)}{(1-P(Y=1|x))}=w^Tx$
+- 一个事件的几率（odds）是指该事件发生的概率与该事件不发生的概率的比值。
+- 极大似然估计法估计模型参数，等价于最小化交叉熵损失函数，用梯度下降法及拟牛顿法学习
+- 优点
+	- 直接对分类可能性进行建模，无需实现假设数据分布，这样就避免了假设分布不准确所带来的问题；
+	- 不是仅预测出“类别”，而是可得到近似概率预测，这对许多需利用概率辅助决策的任务很有用；
+	- 对数函数是任意阶可导的凸函数，有很好的数学性质，现有的许多数值优化算法都可直接用于求取最优解。
+
+- LR中的连续特征为什么要离散化
+	- 离散特征的增加和减少都很容易，易于模型的快速迭代。
+	- 稀疏向量内积乘法运算速度快，计算结果方便存储，容易扩展；
+	- 离散化后的特征对异常数据有很强的鲁棒性，比如年龄300岁，不离散化的话wx的值就会很大，离散化之后如果训练数据没有这个特征，那么特征的权重为0，即使测试数据出现也无效
+	- 逻辑回归属于广义线性模型，表达能力受限；单变量离散化为N个后，每个变量有单独的权重，相当于为模型引入了非线性，能够提升模型表达能力，加大拟合
+	- 离散化后可以进行特征交叉，假如特征A 离散化为M个值，特征B离散为N个值，那么交叉之后会有M*N个变量，进一步引入非线性，提升表达能力；
+	- 特征离散化后，模型会更稳定，比如如果对用户年龄离散化，20-30作为一个区间，不会因为一个用户年龄长了一岁就变成一个完全不同的人。当然处于区间相邻处的样本会刚好相反，所以怎么划分区间是门学问；按区间离散化，划分区间是非常关键的。
+	- 特征离散化以后，起到了简化了逻辑回归模型的作用，降低了模型过拟合的风险。
+	- 可以将缺失作为独立的一类带入模型；
+	- 将所有的变量变换到相似的尺度上。
+
+
+
+## [最大熵模型](BasicKnow/线性模型/最大熵模型/最大熵模型.md)
+- **熵**度量了事物的不确定性，越不确定的事物，它的熵就越大。$$H(X)=-\sum_{i=1}^np_ilogp_i$$
+- 联合熵：$$H(X，Y)=-\sum_{i=1}^np(x_i,y_i)logp(x_i,y_i)$$
+- 条件熵：
+$$
+\begin{aligned}
+
+H(Y|X)
+
+&=-\sum_{i=1}^np(x_i,y_i)logp(y_i|x_i) \\
+
+&=\sum_{i=1}^np(x_i)H(Y|x_i) \\
+
+&=-\sum_{i=1}^np(x_i)\sum_{j=1}^mp(y_j|x_i)logp(y_j|x_i)
+
+\end{aligned}
+$$
+- 最大熵原理认为，学习概率模型时， 在所有可能的概率模型（分布）中，熵最大的模型是最好的模型。通常用约束条件来确定概率模型的集合，所以，最大熵原理也可以表述为在满足约束条件的模型集合中选取熵最大的模型。
+- 最大熵原理是统计学习的一般原理，将它应用到分类得到最大熵模型。
+- 
+
+## [感知机](BasicKnow/线性模型/感知机/感知机.md)
+## [SVM支持向量机](BasicKnow/线性模型/SVM/SVM支持向量机.md)
+## [K近邻](BasicKnow/k近邻法/K近邻.md)
+## [朴素贝叶斯分类器](BasicKnow/贝叶斯/朴素贝叶斯分类器.md)
+## [决策树](BasicKnow/决策树/决策树.md)
+
+## [AdaBoost](BasicKnow/树模型&集成学习/AdaBoost/AdaBoost.md)
+
+## [提升树](BasicKnow/树模型&集成学习/提升树/提升树.md)
+
+## [EM算法](BasicKnow/EM算法/EM算法.md)
+
+## [CRF](BasicKnow/概率图模型/CRF/CRF.md)
+
+## [HMM](BasicKnow/概率图模型/HMM/HMM.md)
+
+## [聚类](BasicKnow/聚类/聚类.md)
+
+## [关联分析](BasicKnow/关联分析/关联分析.md)
+
+## 主题模型
+
+# 深度学习模型
+
+## [CNN](BasicKnow/deep_learning/4.CNN.md)
+
+## [RNN](BasicKnow/deep_learning/5.RNN及其应用.md)
+
+## [BatchSize](BasicKnow/deep_learning/BatchSize/BatchSize.md)
+
+## [梯度消失&梯度爆炸](BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md)
+
+## [BatchNormalization](BasicKnow/deep_learning/BatchNormalization.md)
+
+## 激活函数
+
+## 词嵌入
+
+## 预训练模型
+
+### 位置编码
+
+# 数据/特征处理
+
+## 特征工程
+
+## [数据不均衡问题](DataRelated/数据不均衡问题.md)
+
+## [数据增强的方法](DataRelated/数据增强的方法.md)
+
+## 损失函数
+
+# GAN
+
+# GNN
+
+# 强化学习
+
+# 对比学习
+
+# Prompt
+
+
+# NLP方向
+
+## 对话
+
+## 信息抽取
+
+### [命名实体识别NER](InformationExtraction/NER/命名实体识别NER.md)
+
+## [知识图谱](KnowledgeGraph/KG.md)
+
+## 机器翻译
+
+## [Text2SQL](Text2SQL/Text2SQL.md)
+
+## [文本匹配概述](TextMatching/文本匹配概述.md)
+
+## [文本摘要](TextSummarization/文本摘要.md)
+
+## 搜索
+
+## 推荐
+
+
+
+
 

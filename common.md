@@ -15,11 +15,11 @@ C++ makefile
 
 [softmax+交叉熵](LossFunction/softmax+交叉熵.md) ***
 
-[TFIDF](BasicKnow/TFIDF.md)
+[TFIDF](Search/TFIDF.md)
 
 [word2vec](WordEmbedding/word2vec.md) ***
 
-[[线性模型]逻辑回归](BasicKnow/线性模型/[线性模型]逻辑回归.md)
+[逻辑回归](BasicKnow/线性模型/逻辑回归.md)
 
 [[集成学习]GBDT](BasicKnow/树模型&集成学习/[集成学习]GBDT.md)
 

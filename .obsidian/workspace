@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BasicKnow/聚类/聚类.md",
+            "file": "README.md",
             "mode": "source"
           }
         }
@@ -48,8 +48,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -69,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/聚类/聚类.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/聚类/聚类.md"
+                "file": "README.md"
               }
             }
           }
@@ -106,19 +105,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 168
+    "width": 168,
+    "collapsed": true
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "README.md",
+    "SUMMARY.md",
+    "BasicKnow/machine_learning/[机器学习]决策树.md",
+    "BasicKnow/线性模型/[线性模型]逻辑回归.md",
+    "BasicKnow/BM25.md",
     "BasicKnow/聚类/聚类.md",
     "BasicKnow/概率图模型/概率图模型.md",
     "BasicKnow/概率图模型/CRF/CRF.md",
     "BasicKnow/deep_learning/BatchNormalization.md",
-    "LossFunction/常用损失函数.md",
-    "Pre-training/TINYBERT/TINYBERT.md",
-    "CourseNote/NLP实战高手课/极客时间_NLP实战高手课.md",
-    "Pre-training/BERT/BERT.md",
-    "BasicKnow/machine_learning/待整合.md",
-    "CourseNote/Deep-Learning-Book-Goodfellow/Part I - Applied Math and Machine Learning basics.md"
+    "LossFunction/常用损失函数.md"
   ]
 }
