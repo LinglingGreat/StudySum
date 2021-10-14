@@ -112,13 +112,13 @@
   "lastOpenFiles": [
     "README.md",
     "SUMMARY.md",
+    "common.md",
     "BasicKnow/machine_learning/[机器学习]决策树.md",
     "BasicKnow/线性模型/[线性模型]逻辑回归.md",
     "BasicKnow/BM25.md",
     "BasicKnow/聚类/聚类.md",
     "BasicKnow/概率图模型/概率图模型.md",
     "BasicKnow/概率图模型/CRF/CRF.md",
-    "BasicKnow/deep_learning/BatchNormalization.md",
-    "LossFunction/常用损失函数.md"
+    "BasicKnow/deep_learning/BatchNormalization.md"
   ]
 }

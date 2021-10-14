@@ -253,7 +253,7 @@
   - [XL Net](Pre-training/XLNet/XLNet.md)
   * [预训练语言模型](Pre-training/预训练语言模型.md)
   * [BERT变种](Pre-training/BERT变种.md)
-- [Prompt](Prompt/Prompt.md)
+- [Prompt](Pre-training/Prompt/Prompt.md)
 - [Python](Python/README.md)
   - [Keras](Python/Keras/Keras.md)
   - [Numpy](Python/Numpy/Numpy.md)

@@ -78,22 +78,56 @@ $$
 
 ## [感知机](BasicKnow/线性模型/感知机/感知机.md)
 
+
+
 ## [SVM支持向量机](BasicKnow/线性模型/SVM/SVM支持向量机.md)
+
+
 
 ## [K近邻](BasicKnow/k近邻法/K近邻.md)
 
+
+
 ## [朴素贝叶斯分类器](BasicKnow/贝叶斯/朴素贝叶斯分类器.md)
+
+
 
 ## [决策树](BasicKnow/决策树/决策树.md)
 
+
+
 ## [AdaBoost](BasicKnow/树模型&集成学习/AdaBoost/AdaBoost.md)
+
+
 
 ## [提升树](BasicKnow/树模型&集成学习/提升树/提升树.md)
 
+
+
 ## [EM算法](BasicKnow/EM算法/EM算法.md)
 
+
+
 ## 概率图模型
+设有联合概率分布P(Y)，由无向图G表示，结点表示随机变量，边表示随机变量之间的依赖关系。如果联合概率分布P(Y)满足成对、局部或全局马尔可夫性，就称此联系和概率分布为概率无向图模型，或马尔可夫随机场。
+
+-   成对马尔可夫性：u和v是两个没有边连接的结点，其他所有结点为O。给定随机遍历组Yo的条件下随机变量Yu和Yv是条件独立的
+    
+-   局部马尔可夫性：W是与v有边连接的所有结点，O是其他结点。给定随机变量组Yw的条件下随机变量Yv与随机变量组Yo是独立的
+    
+-   全局马尔可夫性：结点集合A，B是在无向图G中被结点集合C分开的任意结点集合。给定随机变量组Yc条件下随机变量组YA和YB是条件独立的
+    
+-   成对的、局部的、全局的马尔可夫性定义是等价的。
+    
+
+更关心如何求其联合概率分布，希望将整体的联合概率写成若干子联合概率的乘积的形式（因子分解）。
+
+概率无向图模型的联合概率分布可以写作图中所有最大团C上的函数的乘积形式。
+
 ### [HMM](BasicKnow/概率图模型/HMM/HMM.md)
+
+- 生成式有向图模型
+
 - 隐马尔可夫模型：隐藏的马尔可夫链随机生成不可观测的状态随机序列，再由各个状态生成一个观测从而产生观测随机序列
 - 由初始概率分布（向量π）、状态转移概率分布（矩阵A）以及观测概率分布（矩阵B）确定。A，B，π称为HMM的三要素
 - 两个基本假设：齐次马尔可夫性假设（t的状态只依赖于t-1的状态），观测独立性假设（t的观测只依赖于t的状态）
@@ -112,45 +146,182 @@ $$
 
 ### [CRF](BasicKnow/概率图模型/CRF/CRF.md)
 
-### HMM vs CRF
+- 判别式无向图模型
+- 可看作给定观测值的马尔可夫随机场，也可看作对率回归的扩展。
+- 条件随机场和马尔可夫随机场均使用团上的势函数定义概率，两者在形式上没有显著区别；但条件随机场处理的是条件概率，而马尔可夫随机场处理的是联合概率。
+- 缺点：训练代价大、复杂度高
+
+### HMM、MEMM vs CRF
+
+- HMM是有向图模型，是生成模型；HMM有两个假设：一阶马尔科夫假设和观测独立性假设；但对于序列标注问题不仅和单个词相关，而且和观察序列的长度，单词的上下文，等等相关。HMM的一个最大的缺点就是由于其输出独立性假设，导致其不能考虑上下文的特征，限制了特征的选择。
+- MEMM（最大熵马尔科夫模型）是有向图模型，是判别模型；MEMM打破了HMM的观测独立性假设，MEMM考虑到相邻状态之间依赖关系，且考虑整个观察序列，因此MEMM的表达能力更强；但MEMM会带来标注偏置问题：由于局部归一化问题，MEMM倾向于选择拥有更少转移的状态。这就是标记偏置问题。
+- 与HMM比较。CRF没有HMM那样严格的独立性假设条件，因而可以容纳任意的上下文信息。特征设计灵活（与ME一样）
+- 与MEMM比较。由于CRF计算全局最优输出节点的条件概率，它还克服了最大熵马尔可夫模型标记偏置（Label-bias）的缺点。
+- 与ME比较。CRF是在给定需要标记的观察序列的条件下，计算整个标记序列的联合概率分布，而不是在给定当前状态条件下，定义下一个状态的状态分布.
+
+https://zhuanlan.zhihu.com/p/33397147
 
 ## [聚类](BasicKnow/聚类/聚类.md)
 
+
+
 ## [关联分析](BasicKnow/关联分析/关联分析.md)
+
+
 
 ## 主题模型
 
+
+
 ## 生成模型与判别模型
+
+
 
 # 深度学习模型
 
 ## [CNN](BasicKnow/deep_learning/4.CNN.md)
 
+
+
 ## [RNN](BasicKnow/deep_learning/5.RNN及其应用.md)
+
+
 
 ## [BatchSize](BasicKnow/deep_learning/BatchSize/BatchSize.md)
 
+
+
 ## [BatchNormalization](BasicKnow/deep_learning/BatchNormalization.md)
+
+- 在神经网络中, 数据分布对训练会产生影响。由于激活函数的存在，神经网络会对那些比较大的 x 特征范围不敏感。即比较大的x特征已经出在激活函数的饱和阶段，x再增大，输出值还是没什么变化（比如都是接近1）。 需要对输入做normalization，使得变化范围不会太大。
+- 在训练期间，随着前一层的参数发生变化，每层的输入分布都会发生变化。所以每层的输入都要标准化。
+- 在激活函数之前使用BN
+- 每个batch均值方差归一化，最后还有一个扩展和平移的操作，对应参数gamma和beta。这样神经网络就能自己慢慢琢磨出前面的 normalization 操作到底有没有起到优化的作用, 如果没有起到作用, 我就使用 gamma 和 beta来抵消一些 normalization 的操作.
+
+**优点**
+
+- 减轻了对参数初始化的依赖，这是利于调参的朋友们的。
+- 训练更快，可以使用更高的学习率。
+- BN一定程度上增加了泛化能力，dropout等技术可以去掉。
+
+缺点
+
+- batch normalization依赖于batch的大小，当batch值很小时，计算的均值和方差不稳定。
+
+不适合以下场景
+
+- batch非常小，比如训练资源有限无法应用较大的batch，也比如在线学习等使用单例进行模型参数更新的场景。
+- rnn，因为它是一个动态的网络结构，同一个batch中训练实例有长有短，导致每一个时间步长必须维持各自的统计量，这使得BN并不能正确的使用。
 
 ## 激活函数
 
+
+
 ## 损失函数
 
+
+
 ## 词嵌入
+
+### Word2vec
+
+- 如果是用一个词语作为输入，来预测它周围的上下文，那这个模型叫做『Skip-gram 模型』
+- 而如果是拿一个词语的上下文作为输入，来预测这个词语本身，则是 『CBOW 模型』
+- 在cbow方法中，是用周围词预测中心词，从而利用中心词的预测结果情况，使用GradientDesent方法，不断的去调整周围词的向量。
+- 在skip-gram中，会利用周围的词的预测结果情况，使用GradientDecent来不断的调整中心词的词向量
+- skip-gram进行预测的次数是要多于cbow的：因为每个词在作为中心词时，都要使用周围词进行预测一次。这样相当于比cbow的方法多进行了K次（假设K为窗口大小），因此时间的复杂度为O(KV)，训练时间要比cbow要长。
+- 但是在skip-gram当中，每个词都要收到周围的词的影响，每个词在作为中心词的时候，都要进行K次的预测、调整。因此， 当数据量较少，或者词为生僻词出现次数较少时， 这种多次的调整会使得词向量相对的更加准确。
+- skip-gram是 1个学生 VS K个老师，cbow是 1个老师 VS K个学生
 
 ## 预训练模型
 
 ### 位置编码
 
+
+
 ### Attention
+
+
 
 ### Transformer
 
+- Transformer由且仅由self-Attenion和Feed Forward Neural Network组成。
+- Encoder：6层，每一层有2个sublayer：多头自注意力机制和position-wise FCFN。LayerNorm(x + Sublayer(x))。所有sublayer和embedding layer是输出维度都是512
+- Decoder：6层，每一层有3个sublayer，比encoder多了个基于encoder层输出的多头注意力层+LN。且decoder的self-attention做了mask，防止attend to序列后面的位置。
+
 ### BERT
+
+- **12 个 Transformer Encoder 层**
+- 输入：token embedding、segment embedding、position embedding
+- 任务：遮蔽语言模型（Masked Language Model（MLM））和句子预测任务（Next Sentence Prediction（NSP））
+
+### Roberta
+
+与BERT相比
+
+- 更大的模型参数量
+- 更大batch size
+- 更多的训练数据
+- 去掉NSP任务
+- 动态掩码：每次向模型输入一个序列时都会生成新的掩码模式。
+- 文本编码：原版的 BERT 实现使用字符级别的 BPE 词汇，大小为 30K。roberta用更大的 byte 级别 BPE 词汇表来训练 BERT，这一词汇表包含 50K 的 subword 单元，且没有对输入作任何额外的预处理或分词。
+
+### XLNET
+
+- 看作将序列的联合概率分布按照打乱的顺序重新因式分解，其将LM的**顺序拆解推广到随机拆解**，token之间的自回归关系不再是基于在**天然序列**中的前后顺序，而是基于**打乱后的序列**中的前后顺序。
+
+### ALBERT
+
+在BERT的基础上
+
+- Factorized embedding parameterization：VxH变成VxE+ExH
+- Cross-layer parameter sharing：多个层使用相同的参数
+- NSP任务改成SOP任务（句子顺序交换），因为原来的任务不仅有句子连贯性差异，还有句子话题的差异
+
+### Electra
+
+提出了新的预训练任务和框架，把生成式的Masked language model(MLM)预训练任务改成了判别式的Replaced token detection(RTD)任务，判断当前token是否被语言模型替换过。
+
+该模型由两部分组成，分别是generator以及discriminator，两个都是transformer的encoder结构，只是两者的size不同
+
+- 随机选择15%的词替换成mask，训练生成器去预测masked token。训练目标是MLM
+- 判别器接收生成器的输出，分辨每个token是original还是replaced，注意：如果generator生成的token和原始token一致，那么这个token仍然是original的。训练目标是序列标注。计算所有token的loss，而不只是被mask的token
+
+### Prompt
+
+构建适当的Prompt，使得下游任务的形式跟预训练任务更贴近
+
+Prompt的做法，从任务形式来说可以分为两种：
+
+1. 续写Prefix：用在GPT2-3那种单向LM预训练模型上，输入「好好学习，翻译成英文：」，输出「good good study」
+2. 完形填空：用在BERT那种MLM式预训练模型上，比如情感分类任务可以输入「这个饼不错，太X了」，输出「棒」
 
 # 特征工程
 
+
+
 # 问题解决
+
+## 过拟合/欠拟合
+
+过拟合的解决方法
+
+- 使用更简单的模型结构
+- 正则化
+- 更多的数据
+- dropout
+- Bootstrap/Bagging
+- ensemble
+- early stopping
+- utilize invariance
+- Bayesian
+
+欠拟合的解决方法
+
+- 增加特征
+- 增加模型复杂度
+
+https://zhuanlan.zhihu.com/p/72038532
 
 ## [梯度消失&梯度爆炸](BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md)
 - 梯度消失
@@ -165,22 +336,67 @@ $$
 
 ## [数据不均衡问题](DataRelated/数据不均衡问题.md)
 
+- 重采样：包括对少样本的过采样和多样本的欠采样。
+  - 过采样容易使得minor classes过拟合，泛化能力差；
+  - 欠采样容易造成major class严重的信息损失，可能导致欠拟合
+- 数据合成
+  - 对少样本加随机高斯噪声
+  - SMOTE。对任意选取的一个少类的样本，用K近邻选取其相似的样本，通过对样本的线性插值得到新样本。
+  - mixup
+- 重加权：对不同类别（甚至不同样本）分配不同权重，主要体现在重加权不同类别的loss来解决长尾分布问题。
+- 迁移学习：对多类样本和少类样本分别建模，将学到的多类样本的信息/表示/知识迁移给少类别使用。
+- 度量学习
+- 元学习/域自适应：分别对头部和尾部的数据进行不同处理，可以去自适应的学习如何重加权，或是formulate成域自适应问题
+- 解耦特征和分类器
+
 ## [数据增强的方法](DataRelated/数据增强的方法.md)
+
+- 词汇替换
+  - 同义词典
+  - word-embedding相近的替换
+  - 使用一个预先训练好的 BERT 模型，然后对文本的某些部分进行 Mask，让 BERT 模型预测被 Mask 的词语。
+  - TF-IDF 分数较低的单词不能提供信息，因此可以在不影响句子的基本真值标签的情况下替换它们**。**
+- 回译
+- Text Surface Transformation：比如it is 变为it's
+- Random Noise Injection：在文本中注入噪声，来生成新的文本
+  - 随机单词的拼写错误
+  - 模拟在 QWERTY 键盘布局上打字时由于键之间非常接近而发生的常见错误
+  - 使用从 unigram 频率分布中采样的单词进行替换。
+  - 占位符标记替换一些随机单词。
+  - 将训练样本中的句子打乱
+  - 从句子中随机选择一个不是停止词的词。然后，我们找到它对应的同义词，并将其插入到句子中的一个随机位置。
+  - 在句子中随机交换任意两个单词。
+  - 概率 p 随机删除句子中的每个单词。
+- Instance Crossover Augmentation：一条 tweet 被分成两半，然后两个相同情绪类别（正/负）的 tweets 各自交换一半的内容。
+- Syntax-tree Manipulation：解析并生成原始句子的依赖树，使用规则对其进行转换来对原句子做复述生成。
+- MixUp for Text
+  - **wordMixup**：在一个小批中取两个随机的句子，它们被填充成相同的长度；然后，他们的 word embeddings 按一定比例组合，产生新的 word embeddings 然后传递下游的文本分类流程，交叉熵损失是根据原始文本的两个标签按一定比例计算得到的。
+  - **sentMixup**：在这种方法中，两个句子首先也是被填充到相同的长度；然后，通过 LSTM/CNN 编码器传递他们的 word embeddings，我们把最后的隐藏状态作为 sentence embedding。这些 embeddings 按一定的比例组合，然后传递到最终的分类层。交叉熵损失是根据原始文本的两个标签按一定比例计算得到的。
+- 生成式的方法：prompt
+- 对抗增强：在词向量上添加扰动并进行对抗训练。 #td
 
 # GAN
 
+
+
 # GNN
+
+
 
 # 强化学习
 
+
+
 # 对比学习
 
-# Prompt
+
 
 
 # NLP方向
 
 ## 对话
+
+
 
 ## 信息抽取
 
