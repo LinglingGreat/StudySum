@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "README.md",
+            "file": "LossFunction/常用损失函数.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "距离",
+                "query": "tag:#td",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -48,7 +48,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -68,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "LossFunction/常用损失函数.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "LossFunction/常用损失函数.md"
               }
             }
           }
@@ -110,15 +111,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
-    "README.md",
-    "SUMMARY.md",
-    "common.md",
-    "BasicKnow/machine_learning/[机器学习]决策树.md",
-    "BasicKnow/线性模型/[线性模型]逻辑回归.md",
-    "BasicKnow/BM25.md",
-    "BasicKnow/聚类/聚类.md",
+    "LossFunction/常用损失函数.md",
     "BasicKnow/概率图模型/概率图模型.md",
-    "BasicKnow/概率图模型/CRF/CRF.md",
-    "BasicKnow/deep_learning/BatchNormalization.md"
+    "Pre-training/预训练语言模型.md",
+    "CourseNote/李宏毅机器学习/10DNN训练Tips/chapter18.md",
+    "README.md",
+    "BasicKnow/树模型&集成学习/[集成学习].md",
+    "common.md",
+    "DataRelated/数据增强的方法.md",
+    "BasicKnow/线性模型/逻辑回归.md",
+    "Self-supervisedLearning/未命名.md"
   ]
 }

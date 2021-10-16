@@ -112,11 +112,11 @@
   * [Task3参考答案](Bigdata/Task3参考答案.md)
   * [Task4参考答案](Bigdata/Task4参考答案.md)
   * [Task5参考答案](Bigdata/Task5参考答案.md)
-- [Contrastive Learning](ContrastiveLearning/readme.md)
+- [Contrastive Learning](Self-supervisedLearning/ContrastiveLearning/readme.md)
   - 业界分享
-    * [对比学习在微博内容表示的应用_张俊林](ContrastiveLearning/业界分享/对比学习在微博内容表示的应用_张俊林.md)
-  * [R Drop](ContrastiveLearning/R-Drop.md)
-  * [Sim CSE](ContrastiveLearning/SimCSE.md)
+    * [对比学习在微博内容表示的应用_张俊林](Self-supervisedLearning/ContrastiveLearning/业界分享/对比学习在微博内容表示的应用_张俊林.md)
+  * [R Drop](Self-supervisedLearning/ContrastiveLearning/R-Drop.md)
+  * [Sim CSE](Self-supervisedLearning/ContrastiveLearning/SimCSE.md)
 - Course Note
   - [基于TensorFlow的机器学习速成课程](CourseNote/基于TensorFlow的机器学习速成课程/基于TensorFlow的机器学习速成课程.md)
     * [Key ML Terminology](CourseNote/基于TensorFlow的机器学习速成课程/Key ML Terminology.md)

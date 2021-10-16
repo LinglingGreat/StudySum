@@ -82,57 +82,15 @@ Self-Attention用Encoder在编码一个词的时候会考虑句子中所有其�
 
 **对于输入的每一个向量(第一层是词的Embedding，其它层是前一层的输出)，我们首先需要生成3个新的向量Q、K和V，分别代表查询(Query)向量、Key向量和Value向量，长度均为64。输入向量组成的矩阵乘以不同的矩阵变换就得到Q、K、V。三个矩阵的维度都是512x64.**
 
-**Q表示为了编码当前词，需要去注意(attend to)其它(其实也包括它自己)的词，我们需要有一个查询向量。而Key向量可以认为是这个词的关键的用于被检索的信息，而Value向量是真正的内容。**
-
-**Attention的计算方法：**
-
-![image-20210829121024997](img/image-20210829121024997.png)
-
-单个向量的计算分解：
-
-- 取 Q 中一个行向量为例（也就是每一个输入样本中 xi 对应的 qi），用 qi 乘上每一个样本对应的 ki，再除以注意力头的维度（**为了梯度的稳定**），就得到每个样本对应的注意力值。接下来，再使用 Softmax 函数将值转换为和为 1 的概率值（向量形式）并乘上 V，得到经过注意力机制计算后的输出值。
-
-**关于为什么要除以注意力头的维度？**
-
-假设 Q 和 K 的均值为0，方差为1。它们的矩阵乘积将有均值为0，方差为dk，因此使用dk的平方根被用于缩放，因为，Q 和 K 的矩阵乘积的均值本应该为 0，方差本应该为1，这样可以获得更平缓的softmax。当维度很大时，点积结果会很大，会导致softmax的梯度很小。为了减轻这个影响，对点积进行缩放。
+self-attention详见[Attention](../Attention/Attention.md)
 
 注意力头的维度是默认64.
 
-参考：[transformer中的attention为什么scaled?](https://www.zhihu.com/question/339723385/answer/782509914)
-
-
-
-![img](img/self-attention-output.png)
-
-实际中是基于矩阵的方法计算的：
-
-![image-20210829115751302](img/image-20210829115751302.png)
-
 注意每个Self-Attention层都会加一个残差连接（目的是解决深度学习中的退化问题），然后是一个LayerNorm层。
-
-Query，Key，Value的概念取自于信息检索系统，举个简单的搜索的例子来说。当你在某电商平台搜索某件商品（年轻女士冬季穿的红色薄款羽绒服）时，你在搜索引擎上输入的内容便是Query，然后搜索引擎根据Query为你匹配Key（例如商品的种类，颜色，描述等），然后根据Query和Key的相似度得到匹配的内容（Value)。
-
-self-attention中的Q，K，V也是起着类似的作用，**在矩阵计算中，点积是计算两个矩阵相似度的方法之一，因此式1中使用了$QK^T$进行相似度的计算。接着便是根据相似度进行输出的匹配，这里使用了加权匹配的方式，而权值就是query与key的相似度。**
-
-常用的attention有加性的和点乘性的。这里用的是点乘（多了个scaling factor ）。理论上这两者的复杂度是相似的，但实际上点乘速度更快，空间效率也更高，因为它可以用高度优化的矩阵乘积来实现。
-
-对于小的dk，两种机制表现相似，但是对于值更大的dk（不做scaling），加性的表现更好。（来自Transformer论文）
 
 ## Multi-Head Attention
 
 前面定义的一组Q、K和V可以让一个词attend to相关的词，我们可以定义多组Q、K和V，它们分别可以关注不同的上下文。多层叠加的 Self-Attention 组成了 Multi-Head Attention。
-
-对于输入矩阵(time_step, num_input)，每一组Q、K和V都可以得到一个输出矩阵Z(time_step, num_features)。
-
-但是后面的全连接网络需要的输入是一个矩阵而不是多个矩阵，因此我们可以把多个head输出的Z按照第二个维度拼接起来，但是这样的特征有一些多，**因此Transformer又用了一个线性变换(矩阵WO)对它进行了压缩。**
-
-![image-20210829121454167](img/image-20210829121454167.png)
-
-![img](img/transformer_multi-headed_self-attention-recap.png)
-
-**Multi-Head Attention 通过多层的 Self-Attention 可以将输入语句映射到不同的子空间中，于是能够更好地理解到语句所包含的信息。**
-
-![](img/Pasted%20image%2020210914185348.png)
 
 3个地方用了multi-head attention
 
