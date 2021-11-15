@@ -1,5 +1,5 @@
 # my special
-*.pdf
+#*.pdf
 *.epub
 data/
 gitignore/

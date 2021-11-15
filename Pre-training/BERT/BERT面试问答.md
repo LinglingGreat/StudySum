@@ -1,3 +1,59 @@
+## **BERT 的基本原理是什么？**
+
+BERT 来自 Google 的论文Pre-training of Deep Bidirectional Transformers for Language Understanding[1]，BERT 是“Bidirectional Encoder Representations from Transformers”的首字母缩写，整体是一个自编码语言模型（Autoencoder LM），并且其设计了两个任务来预训练该模型。
+
+- 第一个任务是采用 MaskLM 的方式来训练语言模型，通俗地说就是在输入一句话的时候，随机地选一些要预测的词，然后用一个特殊的符号[MASK]来代替它们，之后让模型根据所给的标签去学习这些地方该填的词。
+- 第二个任务在双向语言模型的基础上额外增加了一个句子级别的连续性预测任务，即预测输入 BERT 的两段文本是否为连续的文本，引入这个任务可以更好地让模型学到连续的文本片段之间的关系。
+
+最后的实验表明 BERT 模型的有效性，并在 11 项 NLP 任务中夺得 SOTA 结果。
+
+BERT 相较于原来的 RNN、LSTM 可以做到并发执行，同时提取词在句子中的关系特征，并且能在多个不同层次提取关系特征，进而更全面反映句子语义。相较于 word2vec，其又能根据句子上下文获取词义，从而避免歧义出现。同时缺点也是显而易见的，模型参数太多，而且模型太大，少量数据训练时，容易过拟合。
+
+## **BERT 的输入和输出分别是什么？**
+
+BERT 模型的主要输入是文本中各个字/词(或者称为 token)的原始词向量，该向量既可以随机初始化，也可以利用 Word2Vector 等算法进行预训练以作为初始值；输出是文本中各个字/词融合了全文语义信息后的向量表示。
+
+模型输入除了字向量(英文中对应的是 Token Embeddings)，还包含另外两个部分：
+
+1. 文本向量(英文中对应的是 Segment Embeddings)：该向量的取值在模型训练过程中自动学习，用于刻画文本的全局语义信息，并与单字/词的语义信息相融合
+2. 位置向量(英文中对应的是 Position Embeddings)：由于出现在文本不同位置的字/词所携带的语义信息存在差异（比如：“我爱你”和“你爱我”），因此，BERT 模型对不同位置的字/词分别附加一个不同的向量以作区分
+
+最后，BERT 模型将字向量、文本向量和位置向量的加和作为模型输入。特别地，在目前的 BERT 模型中，文章作者还将英文词汇作进一步切割，划分为更细粒度的语义单位（WordPiece），例如：将 playing 分割为 play 和##ing；此外，对于中文，目前作者未对输入文本进行分词，而是直接将单字作为构成文本的基本单位。
+
+需要注意的是，上图中只是简单介绍了单个句子输入 BERT 模型中的表示，实际上，在做 Next Sentence Prediction 任务时，在第一个句子的首部会加上一个[CLS] token，在两个句子中间以及最后一个句子的尾部会加上一个[SEP] token。
+
+## **BERT是怎么用Transformer的？**
+
+BERT只使用了Transformer的Encoder模块，原论文中，作者分别用12层和24层Transformer Encoder组装了两套BERT模型，分别是：
+
+![image-20211101145141135](img/image-20211101145141135.png)
+
+其中层的数量(即，Transformer Encoder块的数量)为 L，隐藏层的维度为H，自注意头的个数为A  。在所有例子中，我们将前馈/过滤器(Transformer Encoder端的feed-forward层)的维度设置为4H  ，即当H=768 时是 3072；当H=1024  是4096  。
+
+**需要注意的是，与Transformer本身的Encoder端相比，BERT的Transformer Encoder端输入的向量表示，多了Segment Embeddings。**
+
+## BERT 的三个 Embedding 直接相加会对语义有影响吗？
+
+Embedding 的数学本质，就是以 one hot 为输入的单层全连接。
+
+也就是说，世界上本没什么 Embedding，有的只是 one hot。
+
+现在我们将 token, position, segment 三者都用 one hot 表示，然后 concat 起来，然后才去过一个单层全连接，等价的效果就是三个 Embedding 相加。
+
+因此，BERT 的三个 Embedding 相加，其实可以理解为 token, position, segment 三个用 one hot 表示的特征的 concat，而特征的 concat 在深度学习领域是很常规的操作了。
+
+用一个例子理解一下：
+
+假设 token Embedding 矩阵维度是 [4,768]；position Embedding 矩阵维度是 [3,768]；segment Embedding 矩阵维度是 [2,768]。
+
+对于一个字，假设它的 token one-hot 是 [1,0,0,0]；它的 position one-hot 是 [1,0,0]；它的 segment one-hot 是 [1,0]。
+
+那这个字最后的 word Embedding，就是上面三种 Embedding 的加和。
+
+如此得到的 word Embedding，和 concat 后的特征：[1,0,0,0,1,0,0,1,0]，再经过维度为 [4+3+2,768] = [9, 768] 的 Embedding 矩阵，得到的 word Embedding 其实就是一样的。
+
+Embedding 就是以 one hot 为输入的单层全连接。
+
 ## **BERT 的MASK方式的优缺点？**
 
   答：BERT的mask方式：在选择mask的15%的词当中，80%情况下使用mask掉这个词，10%情况下采用一个任意词替换，剩余10%情况下保持原词汇不变。
@@ -27,6 +83,14 @@ LSTM可以做这样的双向mask预测任务吗？
 ## BERT中并行计算体现在哪儿？
 
   答：不同于RNN计算当前词的特征要依赖于前文计算，有时序这个概念，是按照时序计算的，而BERT的Transformer-encoder中的self-attention计算当前词的特征时候，没有时序这个概念，是同时利用上下文信息来计算的，一句话的token特征是通过矩阵并行‘瞬间’完成运算的，故，并行就体现在self-attention。
+
+## BERT 的 embedding 向量如何得来的？
+
+以中文为例，「BERT 模型通过查询字向量表将文本中的每个字转换为一维向量，作为模型输入(还有 position embedding 和 segment embedding)；模型输出则是输入各字对应的融合全文语义信息后的向量表示。」
+
+而对于输入的 token embedding、segment embedding、position embedding 都是随机生成的，需要注意的是在 Transformer 论文中的 position embedding 由 sin/cos 函数生成的固定的值，而在这里代码实现中是跟普通 word embedding 一样随机生成的，可以训练的。作者这里这样选择的原因可能是 BERT 训练的数据比 Transformer 那篇大很多，完全可以让模型自己去学习。
+
+
 
 ## BERT中Transformer中的Q、K、V存在的意义？
 
@@ -243,6 +307,19 @@ probability这个词被切分成"pro"、”#babi”和”#lity”3个WordPiece�
 
 word2vec到BERT的改进之处其实没有很明确的答案，如同上面的问题所述，BERT的思想其实很大程度上来源于CBOW模型，如果从准确率上说改进的话，BERT利用更深的模型，以及海量的语料，得到的embedding表示，来做下游任务时的准确率是要比word2vec高不少的。实际上，这也离不开模型的“加码”以及数据的“巨大加码”。再从方法的意义角度来说，BERT的重要意义在于给大量的NLP任务提供了一个泛化能力很强的预训练模型，而仅仅使用word2vec产生的词向量表示，不仅能够完成的任务比BERT少了很多，而且很多时候直接利用word2vec产生的词向量表示给下游任务提供信息，下游任务的表现不一定会很好，甚至会比较差。
 
+## BERT的优缺点
+
+优点：
+
+- 并行，解决长时依赖，双向特征表示，特征提取能力强，有效捕获上下文的全局信息，缓解梯度消失的问题等，BERT擅长解决的NLU任务。
+
+缺点：
+
+- 生成任务表现不佳：预训练过程和生成过程的不一致，导致在生成任务上效果不佳；
+- 采取独立性假设：没有考虑预测[MASK]之间的相关性，是对语言模型联合概率的有偏估计（不是密度估计）；
+- 输入噪声[MASK]，造成预训练-精调两阶段之间的差异；
+- 无法文档级别的NLP任务，只适合于句子和段落级别的任务；
+
 ## 参考资料
 
 [BERT面试8问8答](https://www.jianshu.com/p/56a621e33d34)
@@ -250,3 +327,6 @@ word2vec到BERT的改进之处其实没有很明确的答案，如同上面的�
 [关于BERT的若干问题整理记录](https://zhuanlan.zhihu.com/p/95594311)（BERT的基本原理是什么，BERT是怎么用Transformer的，BERT的训练过程是怎么样的，为什么BERT比ELMo效果好？ELMo和BERT的区别是什么，BERT的输入和输出分别是什么，针对句子语义相似度/多标签分类/机器翻译翻译/文本生成的任务，利用BERT结构怎么做fine-tuning，BERT应用于有空格丢失或者单词拼写错误等数据是否还是有效？有什么改进的方法，BERT的embedding向量如何的来的，BERT模型为什么要用mask？它是如何做mask的？其mask相对于CBOW有什么异同点，BERT的两个预训练任务对应的损失函数是什么，词袋模型到word2vec改进了什么？word2vec到BERT又改进了什么）
 
 [如何评价 BERT 模型？](https://www.zhihu.com/question/298203515)
+
+[transformer、bert、ViT常见面试题总结](https://www.jianshu.com/p/55b4de3de410)
+
