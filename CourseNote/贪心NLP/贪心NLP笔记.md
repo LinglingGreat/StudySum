@@ -77,3 +77,52 @@ https://www.quora.com/What-are-the-major-open-problems-in-natural-language-under
 
 取大的
 
+
+
+斐波那契数的时间复杂度
+
+T(n) = T(n-1)+T(n-2)
+
+不能用主定理，画一棵树（递归树）
+
+或者找规律，用数学归纳法证明
+
+
+
+空间复杂度
+
+O(N)，堆栈分析
+
+![image-20211130232151199](img/image-20211130232151199.png)
+
+
+
+指数级复杂度p^n：不可以解决的问题（NP hard/NP complete，NP complete是hard的子集）
+
+- 方法一：对于小型的问题(n小)，可仍然采用
+- 方法二：近似算法，不保证获得精确解
+  - 提出近似算法
+  - 指出时间复杂度
+  - 给出近似算法最后给出的解离我们想要的最优解有多远
+- 方法三：量子计算机
+
+多项式复杂度n^p：可以解决的问题（P问题）
+
+NP：可以多项式复杂度内能verify（给出一个解，能够判断是不是想要的）的问题，不考虑问题能否解决
+
+P是NP的子集
+
+## 问答系统
+
+基于搜索的问题系统
+
+1.分词
+
+2.预处理：spell correction, stem/lemma, stop-words, word filtering, 同义词
+
+3.文本的表示：bool vector, count vector, tfidf, word2vec, seq2seq
+
+4.计算相似度：欧几里得，cosine，jaccard。倒排索引
+
+5.排序，过滤，返回结果
+
