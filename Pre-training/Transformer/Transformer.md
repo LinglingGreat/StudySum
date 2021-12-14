@@ -637,3 +637,4 @@ def make_model(src_vocab, tgt_vocab, N=6,
 
 [碎碎念：Transformer的细枝末节](https://zhuanlan.zhihu.com/p/60821628)（很细节的内容，很少有文章讲到） #td 
 
+[Transformer模型详解（图解最完整版）](https://zhuanlan.zhihu.com/p/338817680)（适合复习模型流程）
