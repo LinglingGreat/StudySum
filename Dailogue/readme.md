@@ -53,13 +53,21 @@ NLG
 
 - 在一个知识库的基础上和用户进行对话。这个知识库可以是海量的已经存在的人机对话，也可以是某种形式的知识信息。
 
+### 检索式
+
 针对当前的输入，利用之前已经有过的对话进行回馈，这就是基于信息检索技术的对话系统的核心假设。一种最基本的做法就是，找到和当前输入最相近的已有对话中的某一个语句，然后回复之前已经回复过的内容。
 
 当然，上面这种对话系统可能会显得比较原始。但是，一旦我们把整个问题抽象成广义的搜索问题，其实就可以建立非常复杂的检索系统，来对我们究竟需要回复什么样的内容进行建模。
 
 从理论上来讲，基于检索的对话系统有很多先天的问题。比如，从根本上，搜索系统就是一个“无状态”（Stateless）的系统。特别是传统意义上的搜索系统，一般没有办法对上下文进行跟踪，其实从整个流程上讲，这并不是真正意义上的对话，当然也就谈不上是“智能”系统。
 
+开源文本匹配工具AnyQ
 
+在多轮对话匹配这一方面百度的对话团队做了大量的工作，属于长期霸榜的状态，比如Multi-view、DAM以及DGU。
+
+
+
+### S2S
 
 基于深度学习的对话系统逐渐成为了对话系统建模的主流，就是因为这些模型都能够比较有效地对状态进行管理。
 
@@ -145,3 +153,8 @@ https://github.com/qhduan/ConversationalRobotDesign
 [如何做一个完全端到端的任务型对话系统？](https://zhuanlan.zhihu.com/p/108095526)（介绍了几篇论文）
 
 [开源对话系统架构](https://cloud.tencent.com/developer/article/1796656)（介绍rasa和DeepPavlov）
+
+[《小哥哥，检索式chatbot了解一下》](https://link.zhihu.com/?target=http%3A//mp.weixin.qq.com/s%3F__biz%3DMzIwNzc2NTk0NQ%3D%3D%26mid%3D2247484934%26idx%3D1%26sn%3D40332a00a0a8f4b3943ec0dae35d5c5a%26chksm%3D970c2ed0a07ba7c67248524c08b1cb49217598c93a3b4ba2a8eda053a443136a3a8c578c4121%26scene%3D21%23wechat_redirect)详解了Multi-view、SMN、DUA以及当时最好的DAM模型。
+
+[如何打造高质量的NLP数据集](https://mp.weixin.qq.com/s/r4ycLnjOl5hSPBMwKpnmsQ)
+

@@ -607,6 +607,36 @@ def make_model(src_vocab, tgt_vocab, N=6,
 	return model
 ```
 
+## Transformer-XL
+
+为了解决长文本编码问题，原版Transformer采用了固定编码长度的方案，例如512个token。将长文本按照固定长度，切分为多个segment。每个segment内部单独编码，segment之间不产生交互信息。这种方式的问题如下
+
+- 模型无法建模超过固定编码长度的文本
+- segment之间没有交互信息，导致了文本碎片化。长语句的编码效果有待提升。
+- predict阶段，decoder每生成一个字，就往后挪一个，没有重复利用之前信息，导致计算量爆炸
+
+Segment-Level Recurrence with State Reuse 片段级递归和信息复用
+
+Transformer-XL在编码后一个segment时，将前一个segment的隐层缓存下来。后一个segment的self-attention计算，会使用到前一个segment的隐层。后一个segment的第n+1层，对前一个segment的第n层隐层进行融合。故最大编码长度理论上为O(N × L)。在预测阶段，由于对segment隐层使用了缓存，故每预测一个词，不需要重新对之前的文本进行计算。大大提升了预测速度，最大可达到原始Transformer的1800倍。
+
+Relative Positional Encodings 相对位置编码
+
+segment递归中有个比较大的问题，就是如何区分不同segment中的相同位置。如果采用原版Transformer中的绝对编码方案，两者是无法区分的。
+
+Transformer-XL将绝对位置编码改为了q和k之间的相对位置编码，代表了两个token之间的相对位置。从语义上讲，是make sense的。
+
+
+
+## Longformer
+
+Transformer不能捕获长距离信息，本质原因还是因为计算量过大导致的。那我们通过降低attention计算量，是不是就可以提升长距离编码能力呢。答案是肯定的，LongFormer提出了三种attention稀疏化的方法，来降低计算量。
+
+
+
+## Fastformer
+
+
+
 ## 参考资料
 
 [Transformer图解（by李理）](http://fancyerii.github.io/2019/03/09/transformer-illustrated/)
@@ -638,3 +668,5 @@ def make_model(src_vocab, tgt_vocab, N=6,
 [碎碎念：Transformer的细枝末节](https://zhuanlan.zhihu.com/p/60821628)（很细节的内容，很少有文章讲到） #td 
 
 [Transformer模型详解（图解最完整版）](https://zhuanlan.zhihu.com/p/338817680)（适合复习模型流程）
+
+[Transformer家族2 -- 编码长度优化（Transformer-XL、Longformer）](https://blog.csdn.net/u013510838/article/details/107006303)
