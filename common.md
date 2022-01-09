@@ -3,9 +3,9 @@ C++ makefile
 安装codeblocks情况下：将CodeBlocks\MinGW\bin中的mingw32-make.exe改成make.exe，设置好环境变量后，就可以在cmd中运行make命令
 
 
-[Text2SQL Baseline解析](Text2SQL/Text2SQL%20Baseline解析.md)
+[Text2SQL Baseline解析](NLG/Text2SQL/Text2SQL%20Baseline解析.md)
 
-[GlobalPointer](InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
+[GlobalPointer](KnowledgeGraph/InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
 
 [多标签分类(Multi-label Classification)](TextClassification/多标签分类(Multi-label%20Classification)/多标签分类(Multi-label%20Classification).md)
 

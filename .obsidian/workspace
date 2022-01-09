@@ -9,8 +9,9 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "LossFunction/常用损失函数.md",
-            "mode": "source"
+            "file": "Pre-training/ERNIE系列语言模型/ERNIE系列语言模型.md",
+            "mode": "source",
+            "source": false
           }
         }
       }
@@ -48,8 +49,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "LossFunction/常用损失函数.md",
+                "file": "Pre-training/ERNIE系列语言模型/ERNIE系列语言模型.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "LossFunction/常用损失函数.md"
+                "file": "Pre-training/ERNIE系列语言模型/ERNIE系列语言模型.md"
               }
             }
           }
@@ -111,15 +111,15 @@
   },
   "active": "566cd20f2ff00376",
   "lastOpenFiles": [
+    "Pre-training/ERNIE系列语言模型/ERNIE系列语言模型.md",
+    "Pre-training/UniLM/UniLM.md",
+    "Pre-training/NEZHA/NEZHA.md",
+    "Pre-training/CPT/兼顾理解和生成的中文预训练模型CPT.md",
+    "Pre-training/预训练语言模型.md",
+    "Pre-training/Prompt/Prompt.md",
     "LossFunction/常用损失函数.md",
     "BasicKnow/概率图模型/概率图模型.md",
-    "Pre-training/预训练语言模型.md",
     "CourseNote/李宏毅机器学习/10DNN训练Tips/chapter18.md",
-    "README.md",
-    "BasicKnow/树模型&集成学习/[集成学习].md",
-    "common.md",
-    "DataRelated/数据增强的方法.md",
-    "BasicKnow/线性模型/逻辑回归.md",
-    "Self-supervisedLearning/未命名.md"
+    "README.md"
   ]
 }

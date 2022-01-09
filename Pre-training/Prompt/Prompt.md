@@ -39,7 +39,6 @@
 
 比如，无论是神经网络早期在NLP的应用，或者是Seq2Seq 早期在翻译上的应用，都没有在性能上讨得便宜（相比于传统统计方法），可是这种颠覆性的想法给了我们太多可以想象的空间（比如既然翻译可以用Seq2Seq，那么其他任务是不是也可以这样呢？那么NLP任务解决框架就可以被统一了吗？）
 
-
 **「当我们回顾P(N) 逐渐 取代 P(N-1)的过程 （这里P是指上面定义的范式）我们突然理解」** ：
 
 
@@ -112,12 +111,17 @@ Prompt的做法，从任务形式来说可以分为两种：
 
 > **「Fine-tuning中：是预训练语言模型“迁就“各种下游任务。」**  具体体现就是上面提到的通过引入各种辅助任务loss，将其添加到预训练模型中，然后继续pre-training，以便让其更加适配下游任务。总之，这个过程中，预训练语言模型做出了更多的牺牲。> **「Prompting中，是各种下游任务“迁就“预训练语言模型。」**  具体体现也是上面介绍的，我们需要对不同任务进行重构，使得它达到适配预训练语言模型的效果。总之，这个过程中，是下游任务做出了更多的牺牲。
 
-
 **「诚然，一个更加和谐的状态应该是大家“互相让步“，相信读到这，大家心中应该有些不错的ideas了。」** 
 
 ![](image/image_1.png)
 
 Prompting 本身不是目的，它是一种实现让下游任务和预训练语言模型更加接近的途径，如果我们有其它更好的方式，那就可以引领下一个范式。
+
+
+
+Zero/Few shot下效果很好
+
+相比于大模型的finetune，prompt需要tune的代价小（只需要tune embedding层）
 
 
 
@@ -132,3 +136,8 @@ Prompting 本身不是目的，它是一种实现让下游任务和预训练语�
 
 [Prompt-based Language Models：模版增强语言模型小结](https://zhuanlan.zhihu.com/p/366771566)
 
+[NLP新宠——浅谈Prompt的前世今生](https://zhuanlan.zhihu.com/p/399295895)
+
+prefix-tuning：[https://zhuanlan.zhihu.com/p/386073664](https://zhuanlan.zhihu.com/p/386073664)
+
+[https://spaces.ac.cn/archives/8295](https://spaces.ac.cn/archives/8295)

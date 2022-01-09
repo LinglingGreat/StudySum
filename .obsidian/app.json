@@ -5,5 +5,7 @@
   "newLinkFormat": "relative",
   "attachmentFolderPath": "./img",
   "foldHeading": true,
-  "foldIndent": true
+  "foldIndent": true,
+  "legacyEditor": false,
+  "livePreview": true
 }

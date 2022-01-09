@@ -153,49 +153,49 @@
   * [贪心科技机器学习必修知识点特训营](CourseNote/贪心科技机器学习必修知识点特训营.md)
   * [唐宇迪机器学习](CourseNote/唐宇迪机器学习.md)
   * [AI技术内参](CourseNote/AI技术内参.md)
-- [Dailogue](Dailogue/readme.md)
+- [Dailogue](NLG/Dailogue/readme.md)
   - 任务型对话
     - DST
-      * [DST概述](Dailogue/任务型对话/DST/DST概述.md)
+      * [DST概述](NLG/Dailogue/任务型对话/DST/DST概述.md)
     - NLG
-      * [NLG概述](Dailogue/任务型对话/NLG/NLG概述.md)
+      * [NLG概述](NLG/Dailogue/任务型对话/NLG/NLG概述.md)
     - NLU
-      * [NLU概述](Dailogue/任务型对话/NLU/NLU概述.md)
-    * [任务型对话概述](Dailogue/任务型对话/任务型对话概述.md)
+      * [NLU概述](NLG/Dailogue/任务型对话/NLU/NLU概述.md)
+    * [任务型对话概述](NLG/Dailogue/任务型对话/任务型对话概述.md)
   - 问答型对话
     - 检索式问答
-      * [基于预训练模型的检索式对话系统](Dailogue/问答型对话/检索式问答/基于预训练模型的检索式对话系统.md)
-      * [检索式文本问答](Dailogue/问答型对话/检索式问答/检索式文本问答.md)
+      * [基于预训练模型的检索式对话系统](NLG/Dailogue/问答型对话/检索式问答/基于预训练模型的检索式对话系统.md)
+      * [检索式文本问答](NLG/Dailogue/问答型对话/检索式问答/检索式文本问答.md)
     - 业界分享
-      * [低资源场景下的知识图谱表示学习和问答_阿里_李杨](Dailogue/问答型对话/业界分享/低资源场景下的知识图谱表示学习和问答_阿里_李杨.md)
-      * [QQ浏览器搜索智能问答](Dailogue/问答型对话/业界分享/QQ浏览器搜索智能问答.md)
-    * [问答型对话系统概述](Dailogue/问答型对话/问答型对话系统概述.md)
+      * [低资源场景下的知识图谱表示学习和问答_阿里_李杨](NLG/Dailogue/问答型对话/业界分享/低资源场景下的知识图谱表示学习和问答_阿里_李杨.md)
+      * [QQ浏览器搜索智能问答](NLG/Dailogue/问答型对话/业界分享/QQ浏览器搜索智能问答.md)
+    * [问答型对话系统概述](NLG/Dailogue/问答型对话/问答型对话系统概述.md)
   - 闲聊型对话
-    * [闲聊型对话系统概述](Dailogue/闲聊型对话/闲聊型对话系统概述.md)
+    * [闲聊型对话系统概述](NLG/Dailogue/闲聊型对话/闲聊型对话系统概述.md)
   - 业界分享
-    - [腾讯多轮对话机器人](Dailogue/业界分享/腾讯多轮对话机器人/腾讯多轮对话机器人.md)
-    * [美团智能客服实践_江会星](Dailogue/业界分享/美团智能客服实践_江会星.md)
-    * [去哪儿智能客服探索和实践](Dailogue/业界分享/去哪儿智能客服探索和实践.md)
-    * [实时语音对话场景下的算法实践_阿里_陈克寒](Dailogue/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md)
-    * [智能语音交互中的无效query识别_小米_崔世起](Dailogue/业界分享/智能语音交互中的无效query识别_小米_崔世起.md)
-    * [UNIT智能对话](Dailogue/业界分享/UNIT智能对话.md)
-  - [RASA](Dailogue/RASA/RASA.md)
+    - [腾讯多轮对话机器人](NLG/Dailogue/业界分享/腾讯多轮对话机器人/腾讯多轮对话机器人.md)
+    * [美团智能客服实践_江会星](NLG/Dailogue/业界分享/美团智能客服实践_江会星.md)
+    * [去哪儿智能客服探索和实践](NLG/Dailogue/业界分享/去哪儿智能客服探索和实践.md)
+    * [实时语音对话场景下的算法实践_阿里_陈克寒](NLG/Dailogue/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md)
+    * [智能语音交互中的无效query识别_小米_崔世起](NLG/Dailogue/业界分享/智能语音交互中的无效query识别_小米_崔世起.md)
+    * [UNIT智能对话](NLG/Dailogue/业界分享/UNIT智能对话.md)
+  - [RASA](NLG/Dailogue/RASA/RASA.md)
 - Data Related
   - 数据质量
     * [置信学习](DataRelated/数据质量/置信学习.md)
   - [Mixup](DataRelated/mixup/mixup.md)
   * [数据不均衡问题](DataRelated/数据不均衡问题.md)
   * [数据增强的方法](DataRelated/数据增强的方法.md)
-- [GNN](GNN/GNN.md)
+- [GNN](BasicKnow/GNN/GNN.md)
 - Information Extraction
   - Code
-    - [BERT微调](InformationExtraction/code/BERT微调/README.md)
+    - [BERT微调](KnowledgeGraph/InformationExtraction/code/BERT微调/README.md)
   - NER
     - 阅读理解做NER
-      * [MRC](InformationExtraction/NER/阅读理解做NER/MRC.md)
-    - [FLAT](InformationExtraction/NER/FLAT/FLAT.md)
-    - [Global Pointer](InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
-    * [命名实体识别NER](InformationExtraction/NER/命名实体识别NER.md)
+      * [MRC](KnowledgeGraph/InformationExtraction/NER/阅读理解做NER/MRC.md)
+    - [FLAT](KnowledgeGraph/InformationExtraction/NER/FLAT/FLAT.md)
+    - [Global Pointer](KnowledgeGraph/InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
+    * [命名实体识别NER](KnowledgeGraph/InformationExtraction/NER/命名实体识别NER.md)
 - Knowledge Graph
   * [KG](KnowledgeGraph/KG.md)
 - Loss Function
@@ -204,7 +204,7 @@
   * [softmax+交叉熵](LossFunction/softmax+交叉熵.md)
 - Machine Translation
   - 业界分享
-    * [爱奇艺台词翻译分享](MachineTranslation/业界分享/爱奇艺台词翻译分享.md)
+    * [爱奇艺台词翻译分享](NLG/MachineTranslation/业界分享/爱奇艺台词翻译分享.md)
 - Position Encoding
   * [位置编码](Pre-training/PositionEncoding/位置编码.md)
 - Pre Training
@@ -336,11 +336,11 @@
   * [KDD21-淘宝搜索中语义向量检索技术](Search/KDD21-淘宝搜索中语义向量检索技术.md)
   * [query理解](Search/query理解.md)
   * [TFIDF](Search/TFIDF.md)
-- [Text 2 SQL](Text2SQL/Text2SQL.md)
-  - [M SQL](Text2SQL/M-SQL/M-SQL.md)
+- [Text 2 SQL](NLG/Text2SQL/Text2SQL.md)
+  - [M SQL](NLG/Text2SQL/M-SQL/M-SQL.md)
     * [M SQL 2](Text2SQL/M-SQL/M-SQL (2).md)
   * [Text2SQL Baseline解析](Text2SQL/Text2SQL Baseline解析.md)
-  * [Text 2 SQL](Text2SQL/Text2SQL.md)
+  * [Text 2 SQL](NLG/Text2SQL/Text2SQL.md)
 - Text Classification
   - [多标签分类(Multi-label Classification)](TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md)
   - [Fast Text](TextClassification/fastText/fastText.md)
@@ -351,8 +351,8 @@
   - [CNN SIM](TextMatching/CNN_SIM/CNN_SIM.md)
   * [文本匹配概述](TextMatching/文本匹配概述.md)
 - Text Summarization
-  - [[文本摘要][paper]CTRLSUM](TextSummarization/[文本摘要][paper]CTRLSUM/[文本摘要][paper]CTRLSUM.md)
-  * [文本摘要](TextSummarization/文本摘要.md)
+  - [[文本摘要][paper]CTRLSUM](NLG/TextSummarization/[文本摘要][paper]CTRLSUM/[文本摘要][paper]CTRLSUM.md)
+  * [文本摘要](NLG/TextSummarization/文本摘要.md)
 - [Word Embedding](WordEmbedding/readme.md)
   - [Skip Gram](WordEmbedding/skip_gram/README.md)
   * [Glove](WordEmbedding/glove.md)
