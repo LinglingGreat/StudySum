@@ -199,9 +199,9 @@
 - Knowledge Graph
   * [KG](KnowledgeGraph/KG.md)
 - Loss Function
-  * [常用损失函数](LossFunction/常用损失函数.md)
-  * [Focal Loss](LossFunction/FocalLoss.md)
-  * [softmax+交叉熵](LossFunction/softmax+交叉熵.md)
+  * [常用损失函数](BasicKnow/LossFunction/常用损失函数.md)
+  * [Focal Loss](BasicKnow/LossFunction/FocalLoss.md)
+  * [softmax+交叉熵](BasicKnow/LossFunction/softmax+交叉熵.md)
 - Machine Translation
   - 业界分享
     * [爱奇艺台词翻译分享](NLG/MachineTranslation/业界分享/爱奇艺台词翻译分享.md)
@@ -353,9 +353,9 @@
 - Text Summarization
   - [[文本摘要][paper]CTRLSUM](NLG/TextSummarization/[文本摘要][paper]CTRLSUM/[文本摘要][paper]CTRLSUM.md)
   * [文本摘要](NLG/TextSummarization/文本摘要.md)
-- [Word Embedding](WordEmbedding/readme.md)
-  - [Skip Gram](WordEmbedding/skip_gram/README.md)
-  * [Glove](WordEmbedding/glove.md)
-  * [Word 2 Vec](WordEmbedding/word2vec.md)
+- [Word Embedding](TextMatching/WordEmbedding/readme.md)
+  - [Skip Gram](TextMatching/WordEmbedding/skip_gram/README.md)
+  * [Glove](TextMatching/WordEmbedding/glove.md)
+  * [Word 2 Vec](TextMatching/WordEmbedding/word2vec.md)
 * [Common](common.md)
 * [NLP知识体系](NLP知识体系.md)
