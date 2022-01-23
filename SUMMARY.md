@@ -1,6 +1,7 @@
 # Your Book Title
 
 - Suggestion
+  * [工具&资料](_Suggestion/工具&资料.md)
   * [机器学习、深度学习面试知识点汇总](_Suggestion/机器学习、深度学习面试知识点汇总.md)
   * [算法工程师](_Suggestion/算法工程师.md)
   * [语言及工具](_Suggestion/语言及工具.md)
@@ -9,11 +10,14 @@
   - [半监督学习](BasicKnow/半监督学习/半监督学习.md)
   - 贝叶斯
     * [朴素贝叶斯分类器](BasicKnow/贝叶斯/朴素贝叶斯分类器.md)
+  - [对抗训练](BasicKnow/对抗训练/对抗训练.md)
   - [概率图模型](BasicKnow/概率图模型/概率图模型.md)
     - [CRF](BasicKnow/概率图模型/CRF/CRF.md)
     - [HMM](BasicKnow/概率图模型/HMM/HMM.md)
     * [概率图模型](BasicKnow/概率图模型/概率图模型.md)
   - [关联分析](BasicKnow/关联分析/关联分析.md)
+  - 归纳偏置
+    * [什么是 Inductive bias（归纳偏置）？](BasicKnow/归纳偏置/什么是 Inductive bias（归纳偏置）？.md)
   - [聚类](BasicKnow/聚类/聚类.md)
   - [决策树](BasicKnow/决策树/决策树.md)
   - [绿色深度学习](BasicKnow/绿色深度学习/绿色深度学习.md)
@@ -50,12 +54,14 @@
     * [[1-7]网络爬取](BasicKnow/预处理/[1-7]网络爬取.md)
     * [【备用】正则表达式](BasicKnow/预处理/【备用】正则表达式.md)
     * [7.re模块](BasicKnow/预处理/7.re模块.md)
+    * [词典匹配](BasicKnow/预处理/词典匹配.md)
     * [分词](BasicKnow/预处理/分词.md)
     * [子表达式](BasicKnow/预处理/子表达式.md)
     * [Todo](BasicKnow/预处理/todo.md)
   - 主题模型
     * [LDA](BasicKnow/主题模型/LDA.md)
   - Deep Learning
+    - [反向传播](BasicKnow/deep_learning/反向传播/反向传播.md)
     - [梯度消失&梯度爆炸](BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md)
     - [Batch Size](BasicKnow/deep_learning/BatchSize/BatchSize.md)
     * [1.DLbasis](BasicKnow/deep_learning/1.DLbasis.md)
@@ -72,17 +78,33 @@
     * [Program Neural Style Transfer](BasicKnow/deep_learning/program-Neural_Style_Transfer.md)
     * [Summer DL](BasicKnow/deep_learning/summerDL.md)
   - [EM算法](BasicKnow/EM算法/EM算法.md)
+  - [GAN](BasicKnow/GAN/GAN.md)
+    - [Gans In Action Master](BasicKnow/GAN/gans-in-action-master/README.md)
+  - [GNN](BasicKnow/GNN/GNN.md)
+    - [搜广推之GNN](BasicKnow/GNN/搜广推之GNN/readme.md)
+    - Representation Learning
+      * [Anomalydetection](BasicKnow/GNN/RepresentationLearning/anomalydetection.md)
+      * [Conclusion](BasicKnow/GNN/RepresentationLearning/conclusion.md)
+      * [Others](BasicKnow/GNN/RepresentationLearning/others.md)
+      * [Papernotes](BasicKnow/GNN/RepresentationLearning/papernotes.md)
+      * [Recommadation](BasicKnow/GNN/RepresentationLearning/recommadation.md)
   - k近邻法
     * [K近邻](BasicKnow/k近邻法/K近邻.md)
   - Language Model
+    - [语言模型解码采样策略](BasicKnow/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md)
     * [[1-1][语言模型]从N-gram模型讲起](BasicKnow/LanguageModel/[1-1][语言模型]从N-gram模型讲起.md)
     * [[1-2][语言模型]NNLM(神经网络语言模型)](BasicKnow/LanguageModel/[1-2][语言模型]NNLM(神经网络语言模型).md)
     * [[1-3][语言模型]基于RNN的语言模型](BasicKnow/LanguageModel/[1-3][语言模型]基于RNN的语言模型.md)
     * [[1-4][语言模型]用N-gram来做完形填空](BasicKnow/LanguageModel/[1-4][语言模型]用N-gram来做完形填空.md)
     * [[1-5][语言模型]用KenLM来做完形填空](BasicKnow/LanguageModel/[1-5][语言模型]用KenLM来做完形填空.md)
+  - Loss Function
+    * [常用损失函数](BasicKnow/LossFunction/常用损失函数.md)
+    * [Focal Loss](BasicKnow/LossFunction/FocalLoss.md)
+    * [softmax+交叉熵](BasicKnow/LossFunction/softmax+交叉熵.md)
   - Machine Learning
     * [[基础]概念](BasicKnow/machine_learning/[基础]概念.md)
     * [待整合](BasicKnow/machine_learning/待整合.md)
+    * [交叉验证](BasicKnow/machine_learning/交叉验证.md)
     * [无监督学习](BasicKnow/machine_learning/无监督学习.md)
     * [优缺点](BasicKnow/machine_learning/优缺点.md)
     * [ML Yearning](BasicKnow/machine_learning/MLYearning.md)
@@ -97,26 +119,25 @@
     * [Discrete Choice Model](BasicKnow/statistics&math/Discrete_Choice_Model.md)
     * [Nested Choice Model](BasicKnow/statistics&math/Nested_Choice_Model.md)
 - [Bigdata](Bigdata/README.md)
+  - [埋点](Bigdata/埋点/埋点.md)
   - [Docker](Bigdata/Docker/Docker.md)
   - [Elasticsearch](Bigdata/Elasticsearch/Elasticsearch.md)
   - [Spark](Bigdata/spark/spark.md)
+    - [Pyspark](Bigdata/spark/pyspark/pyspark.md)
+      * [pyspark之填充缺失的时间数据](Bigdata/spark/pyspark/pyspark之填充缺失的时间数据.md)
+    * [Spark](Bigdata/spark/spark.md)
   - [SQL](Bigdata/SQL/sql.md)
     * [数据库](Bigdata/SQL/数据库.md)
+    * [Hive Sql](Bigdata/SQL/hive&sql.md)
     * [MySQL实战45讲](Bigdata/SQL/MySQL实战45讲.md)
   * [大数据基础task1_创建虚拟机+熟悉linux](Bigdata/大数据基础task1_创建虚拟机+熟悉linux.md)
   * [任务链接](Bigdata/任务链接.md)
   * [Mr](Bigdata/mr.md)
-  * [Pyspark](Bigdata/pyspark.md)
   * [Task1参考答案](Bigdata/Task1参考答案.md)
   * [Task2参考答案](Bigdata/Task2参考答案.md)
   * [Task3参考答案](Bigdata/Task3参考答案.md)
   * [Task4参考答案](Bigdata/Task4参考答案.md)
   * [Task5参考答案](Bigdata/Task5参考答案.md)
-- [Contrastive Learning](Self-supervisedLearning/ContrastiveLearning/readme.md)
-  - 业界分享
-    * [对比学习在微博内容表示的应用_张俊林](Self-supervisedLearning/ContrastiveLearning/业界分享/对比学习在微博内容表示的应用_张俊林.md)
-  * [R Drop](Self-supervisedLearning/ContrastiveLearning/R-Drop.md)
-  * [Sim CSE](Self-supervisedLearning/ContrastiveLearning/SimCSE.md)
 - Course Note
   - [基于TensorFlow的机器学习速成课程](CourseNote/基于TensorFlow的机器学习速成课程/基于TensorFlow的机器学习速成课程.md)
     * [Key ML Terminology](CourseNote/基于TensorFlow的机器学习速成课程/Key ML Terminology.md)
@@ -130,6 +151,8 @@
       * [Chapter 18](CourseNote/李宏毅机器学习/10DNN训练Tips/chapter18.md)
     - 16无监督学习
       * [Chapter 25](CourseNote/李宏毅机器学习/16无监督学习/chapter25.md)
+  - 贪心NLP
+    * [贪心NLP笔记](CourseNote/贪心NLP/贪心NLP笔记.md)
   - [Cs 224 N 2019](CourseNote/cs224n2019/README.md)
     * [A Simple But Tough To Beat Baseline For Sentence Embeddings](CourseNote/cs224n2019/A Simple but Tough-to-beat Baseline for Sentence Embeddings.md)
     * [Lecture 01 Introduction And Word Vectors](CourseNote/cs224n2019/Lecture 01 Introduction and Word Vectors.md)
@@ -153,64 +176,97 @@
   * [贪心科技机器学习必修知识点特训营](CourseNote/贪心科技机器学习必修知识点特训营.md)
   * [唐宇迪机器学习](CourseNote/唐宇迪机器学习.md)
   * [AI技术内参](CourseNote/AI技术内参.md)
-- [Dailogue](NLG/Dailogue/readme.md)
-  - 任务型对话
-    - DST
-      * [DST概述](NLG/Dailogue/任务型对话/DST/DST概述.md)
-    - NLG
-      * [NLG概述](NLG/Dailogue/任务型对话/NLG/NLG概述.md)
-    - NLU
-      * [NLU概述](NLG/Dailogue/任务型对话/NLU/NLU概述.md)
-    * [任务型对话概述](NLG/Dailogue/任务型对话/任务型对话概述.md)
-  - 问答型对话
-    - 检索式问答
-      * [基于预训练模型的检索式对话系统](NLG/Dailogue/问答型对话/检索式问答/基于预训练模型的检索式对话系统.md)
-      * [检索式文本问答](NLG/Dailogue/问答型对话/检索式问答/检索式文本问答.md)
-    - 业界分享
-      * [低资源场景下的知识图谱表示学习和问答_阿里_李杨](NLG/Dailogue/问答型对话/业界分享/低资源场景下的知识图谱表示学习和问答_阿里_李杨.md)
-      * [QQ浏览器搜索智能问答](NLG/Dailogue/问答型对话/业界分享/QQ浏览器搜索智能问答.md)
-    * [问答型对话系统概述](NLG/Dailogue/问答型对话/问答型对话系统概述.md)
-  - 闲聊型对话
-    * [闲聊型对话系统概述](NLG/Dailogue/闲聊型对话/闲聊型对话系统概述.md)
-  - 业界分享
-    - [腾讯多轮对话机器人](NLG/Dailogue/业界分享/腾讯多轮对话机器人/腾讯多轮对话机器人.md)
-    * [美团智能客服实践_江会星](NLG/Dailogue/业界分享/美团智能客服实践_江会星.md)
-    * [去哪儿智能客服探索和实践](NLG/Dailogue/业界分享/去哪儿智能客服探索和实践.md)
-    * [实时语音对话场景下的算法实践_阿里_陈克寒](NLG/Dailogue/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md)
-    * [智能语音交互中的无效query识别_小米_崔世起](NLG/Dailogue/业界分享/智能语音交互中的无效query识别_小米_崔世起.md)
-    * [UNIT智能对话](NLG/Dailogue/业界分享/UNIT智能对话.md)
-  - [RASA](NLG/Dailogue/RASA/RASA.md)
 - Data Related
   - 数据质量
     * [置信学习](DataRelated/数据质量/置信学习.md)
+  - 自然语言处理中的数据增广_车万翔
+    * [自然语言处理中的数据增广](DataRelated/自然语言处理中的数据增广_车万翔/自然语言处理中的数据增广.md)
   - [Mixup](DataRelated/mixup/mixup.md)
   * [数据不均衡问题](DataRelated/数据不均衡问题.md)
   * [数据增强的方法](DataRelated/数据增强的方法.md)
-- [GNN](BasicKnow/GNN/GNN.md)
-- Information Extraction
-  - Code
-    - [BERT微调](KnowledgeGraph/InformationExtraction/code/BERT微调/README.md)
-  - NER
-    - 阅读理解做NER
-      * [MRC](KnowledgeGraph/InformationExtraction/NER/阅读理解做NER/MRC.md)
-    - [FLAT](KnowledgeGraph/InformationExtraction/NER/FLAT/FLAT.md)
-    - [Global Pointer](KnowledgeGraph/InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
-    * [命名实体识别NER](KnowledgeGraph/InformationExtraction/NER/命名实体识别NER.md)
 - Knowledge Graph
+  - Information Extraction
+    - Code
+      - [BERT微调](KnowledgeGraph/InformationExtraction/code/BERT微调/README.md)
+    - NER
+      - 阅读理解做NER
+        * [MRC](KnowledgeGraph/InformationExtraction/NER/阅读理解做NER/MRC.md)
+      - [FLAT](KnowledgeGraph/InformationExtraction/NER/FLAT/FLAT.md)
+      - [Global Pointer](KnowledgeGraph/InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
+      * [命名实体识别NER](KnowledgeGraph/InformationExtraction/NER/命名实体识别NER.md)
+  - Keyword Extraction
+    * [关键词抽取](KnowledgeGraph/KeywordExtraction/关键词抽取.md)
+  * [小米在知识表示学习的探索与实践](KnowledgeGraph/小米在知识表示学习的探索与实践.md)
   * [KG](KnowledgeGraph/KG.md)
-- Loss Function
-  * [常用损失函数](BasicKnow/LossFunction/常用损失函数.md)
-  * [Focal Loss](BasicKnow/LossFunction/FocalLoss.md)
-  * [softmax+交叉熵](BasicKnow/LossFunction/softmax+交叉熵.md)
-- Machine Translation
-  - 业界分享
-    * [爱奇艺台词翻译分享](NLG/MachineTranslation/业界分享/爱奇艺台词翻译分享.md)
-- Position Encoding
-  * [位置编码](Pre-training/PositionEncoding/位置编码.md)
+- [Multi Task](MultiTask/readme.md)
+- NLG
+  - [Dailogue](NLG/Dailogue/readme.md)
+    - 对话评估比赛
+      * [simpread-DSTC10 开放领域对话评估比赛冠军方法总结](NLG/Dailogue/对话评估比赛/simpread-DSTC10 开放领域对话评估比赛冠军方法总结.md)
+    - 任务型对话
+      - DST
+        * [DST概述](NLG/Dailogue/任务型对话/DST/DST概述.md)
+      - NLG
+        * [NLG概述](NLG/Dailogue/任务型对话/NLG/NLG概述.md)
+      - NLU
+        * [NLU概述](NLG/Dailogue/任务型对话/NLU/NLU概述.md)
+      * [任务型对话概述](NLG/Dailogue/任务型对话/任务型对话概述.md)
+      * [simpread-任务型对话系统预训练最新研究进展](NLG/Dailogue/任务型对话/simpread-任务型对话系统预训练最新研究进展.md)
+    - [微软小冰](NLG/Dailogue/微软小冰/微软小冰.md)
+    - 问答型对话
+      - 检索式问答
+        * [基于预训练模型的检索式对话系统](NLG/Dailogue/问答型对话/检索式问答/基于预训练模型的检索式对话系统.md)
+        * [检索式文本问答](NLG/Dailogue/问答型对话/检索式问答/检索式文本问答.md)
+      - 业界分享
+        * [低资源场景下的知识图谱表示学习和问答_阿里_李杨](NLG/Dailogue/问答型对话/业界分享/低资源场景下的知识图谱表示学习和问答_阿里_李杨.md)
+        * [QQ浏览器搜索智能问答](NLG/Dailogue/问答型对话/业界分享/QQ浏览器搜索智能问答.md)
+      * [问答型对话系统概述](NLG/Dailogue/问答型对话/问答型对话系统概述.md)
+    - 闲聊型对话
+      * [闲聊型对话系统概述](NLG/Dailogue/闲聊型对话/闲聊型对话系统概述.md)
+    - 业界分享
+      - [人工智能与心理咨询](NLG/Dailogue/业界分享/人工智能与心理咨询/人工智能与心理咨询.md)
+      - [腾讯多轮对话机器人](NLG/Dailogue/业界分享/腾讯多轮对话机器人/腾讯多轮对话机器人.md)
+      * [美团智能客服实践_江会星](NLG/Dailogue/业界分享/美团智能客服实践_江会星.md)
+      * [去哪儿智能客服探索和实践](NLG/Dailogue/业界分享/去哪儿智能客服探索和实践.md)
+      * [实时语音对话场景下的算法实践_阿里_陈克寒](NLG/Dailogue/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md)
+      * [智能语音交互中的无效query识别_小米_崔世起](NLG/Dailogue/业界分享/智能语音交互中的无效query识别_小米_崔世起.md)
+      * [UNIT智能对话](NLG/Dailogue/业界分享/UNIT智能对话.md)
+    - Paper
+      - [RAG](NLG/Dailogue/paper/RAG/RAG.md)
+    - [RASA](NLG/Dailogue/RASA/RASA.md)
+  - Machine Translation
+    - 业界分享
+      * [爱奇艺台词翻译分享](NLG/MachineTranslation/业界分享/爱奇艺台词翻译分享.md)
+    - Paper
+      - [Deep Encoder Shallow Decoder](NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md)
+  - [RAG](NLG/RAG/RAG.md)
+  - [Text 2 SQL](NLG/Text2SQL/Text2SQL.md)
+    - [M SQL](NLG/Text2SQL/M-SQL/M-SQL.md)
+      * [M SQL 2](NLG/Text2SQL/M-SQL/M-SQL (2).md)
+    * [Text2SQL Baseline解析](NLG/Text2SQL/Text2SQL Baseline解析.md)
+    * [Text 2 SQL](NLG/Text2SQL/Text2SQL.md)
+  - Text Summarization
+    - [[文本摘要][paper]CTRLSUM](NLG/TextSummarization/[文本摘要][paper]CTRLSUM/[文本摘要][paper]CTRLSUM.md)
+    * [文本摘要](NLG/TextSummarization/文本摘要.md)
 - Pre Training
-  - [ALBERT](Pre-training/ALBERT/ALBERT.md)
-  - [Attention](Pre-training/Attention/Attention.md)
+  - 业界分享
+    - 超大语言模型与语言理解_黄民烈
+      * [超大语言模型与语言理解](Pre-training/业界分享/超大语言模型与语言理解_黄民烈/超大语言模型与语言理解.md)
+    - 大模型的加速算法_腾讯微信
+      * [大模型的加速算法](Pre-training/业界分享/大模型的加速算法_腾讯微信/大模型的加速算法.md)
+    - [孟子轻量化预训练模型](Pre-training/业界分享/孟子轻量化预训练模型/孟子轻量化预训练模型.md)
+    - [悟道文汇文图生成模型](Pre-training/业界分享/悟道文汇文图生成模型/悟道文汇文图生成模型.md)
+    - [悟道文澜图文多模态大模型](Pre-training/业界分享/悟道文澜图文多模态大模型/悟道文澜图文多模态大模型.md)
+    - 语义驱动可视化内容创造_微软
+      * [语义驱动可视化内容创造](Pre-training/业界分享/语义驱动可视化内容创造_微软/语义驱动可视化内容创造.md)
+  - Base
+    - [Attention](Pre-training/Base/Attention/Attention.md)
+    - Mask
+      * [NLP中的Mask](Pre-training/Base/Mask/NLP中的Mask.md)
+    - Position Encoding
+      * [位置编码](Pre-training/Base/PositionEncoding/位置编码.md)
   - [BERT](Pre-training/BERT/BERT.md)
+    - [ALBERT](Pre-training/BERT/ALBERT/ALBERT.md)
     - [Bert](Pre-training/BERT/bert/README.md)
       - Venv
         - Lib
@@ -235,6 +291,8 @@
                   * [ICON LICENSE](Pre-training/BERT/bert/venv/Lib/site-packages/werkzeug/debug/shared/ICON_LICENSE.md)
       * [CONTRIBUTING](Pre-training/BERT/bert/CONTRIBUTING.md)
       * [Multilingual](Pre-training/BERT/bert/multilingual.md)
+    - [Ro BER Ta](Pre-training/BERT/RoBERTa/RoBERTa.md)
+    * [BERT](Pre-training/BERT/BERT.md)
     * [BERT面试问答](Pre-training/BERT/BERT面试问答.md)
     * [BERT源码解析](Pre-training/BERT/BERT源码解析.md)
     * [NSP BERT](Pre-training/BERT/NSP-BERT.md)
@@ -243,18 +301,34 @@
     - [Distilling The Knowledge In A Neural Network](Pre-training/BERTZip/Distilling_the_Knowledge_in_a_Neural_Network/Distilling_the_Knowledge_in_a_Neural_Network.md)
     - [TINYBERT](Pre-training/BERTZip/TINYBERT/TINYBERT.md)
     * [模型压缩](Pre-training/BERTZip/模型压缩.md)
+  - [CPM](Pre-training/CPM/CPM.md)
+  - CPT
+    * [兼顾理解和生成的中文预训练模型CPT](Pre-training/CPT/兼顾理解和生成的中文预训练模型CPT.md)
   - [ELECTRA](Pre-training/ELECTRA/ELECTRA.md)
   - [EL Mo](Pre-training/ELMo/elmo.md)
-  - [GPT](Pre-training/GPT/gpt.md)
-  - Mask
-    * [NLP中的Mask](Pre-training/Mask/NLP中的Mask.md)
-  - [Ro BER Ta](Pre-training/RoBERTa/RoBERTa.md)
+  - [ERNIE系列语言模型](Pre-training/ERNIE系列语言模型/ERNIE系列语言模型.md)
+  - EVA
+    * [EVA分享](Pre-training/EVA/EVA分享.md)
+    * [EVA模型](Pre-training/EVA/EVA模型.md)
+  - [GPT](Pre-training/GPT/GPT.md)
+  - [MBART](Pre-training/MBART/MBART.md)
+  - [NEZHA](Pre-training/NEZHA/NEZHA.md)
+  - NLG Sum
+    * [simpread-预训练时代下的文本生成｜模型 & 技巧](Pre-training/NLGSum/simpread-预训练时代下的文本生成｜模型 & 技巧.md)
+  - [PLATO](Pre-training/PLATO/PLATO.md)
+  - [Prompt](Pre-training/Prompt/Prompt.md)
+    - 预训练模型的提示学习方法_刘知远
+      * [预训练模型的提示学习方法](Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md)
+  - [T 5](Pre-training/T5/T5.md)
+    - [Unified SKG](Pre-training/T5/UnifiedSKG/UnifiedSKG.md)
+    * [T 5](Pre-training/T5/T5.md)
   - [Transformer](Pre-training/Transformer/Transformer.md)
+  - [Uni LM](Pre-training/UniLM/UniLM.md)
   - [XL Net](Pre-training/XLNet/XLNet.md)
   * [预训练语言模型](Pre-training/预训练语言模型.md)
   * [BERT变种](Pre-training/BERT变种.md)
-- [Prompt](Pre-training/Prompt/Prompt.md)
 - [Python](Python/README.md)
+  - [向量检索(Faiss等)](Python/向量检索(Faiss等)/向量检索(Faiss等).md)
   - [Keras](Python/Keras/Keras.md)
   - [Numpy](Python/Numpy/Numpy.md)
   - Python
@@ -312,6 +386,19 @@
 - [Recsys](Recsys/README.md)
   - [多任务Multi-task&推荐](Recsys/多任务Multi-task&推荐/多任务Multi-task&推荐.md)
   - [推荐介绍](Recsys/推荐介绍/推荐介绍.md)
+  - 推荐系统之召回与精排
+    - 代码
+      - Python
+        - Recall
+          - [Deep Match Master](Recsys/推荐系统之召回与精排/代码/python/recall/DeepMatch-master/README.md)
+            - Docs
+              - Source
+                * [Examples](Recsys/推荐系统之召回与精排/代码/python/recall/DeepMatch-master/docs/source/Examples.md)
+                * [FAQ](Recsys/推荐系统之召回与精排/代码/python/recall/DeepMatch-master/docs/source/FAQ.md)
+                * [Features](Recsys/推荐系统之召回与精排/代码/python/recall/DeepMatch-master/docs/source/Features.md)
+                * [History](Recsys/推荐系统之召回与精排/代码/python/recall/DeepMatch-master/docs/source/History.md)
+                * [Model Methods](Recsys/推荐系统之召回与精排/代码/python/recall/DeepMatch-master/docs/source/Model_Methods.md)
+                * [Quick Start](Recsys/推荐系统之召回与精排/代码/python/recall/DeepMatch-master/docs/source/Quick-Start.md)
   - 业界分享
     * [腾讯基于知识图谱长视频推荐](Recsys/业界分享/腾讯基于知识图谱长视频推荐.md)
   - [召回](Recsys/召回/召回.md)
@@ -319,14 +406,8 @@
   * [深度学习推荐系统实战](Recsys/深度学习推荐系统实战.md)
   * [推荐模型](Recsys/推荐模型.md)
   * [Deep FM](Recsys/DeepFM.md)
-- Representation Learning
-  * [小米在知识表示学习的探索与实践](RepresentationLearning/小米在知识表示学习的探索与实践.md)
-  * [Anomalydetection](RepresentationLearning/anomalydetection.md)
-  * [Conclusion](RepresentationLearning/conclusion.md)
-  * [Others](RepresentationLearning/others.md)
-  * [Papernotes](RepresentationLearning/papernotes.md)
-  * [Recommadation](RepresentationLearning/recommadation.md)
 - Search
+  - [搜索](Search/搜索/搜索.md)
   - 业界分享
     * [爱奇艺搜索排序算法实践](Search/业界分享/爱奇艺搜索排序算法实践.md)
     * [语义搜索技术和应用](Search/业界分享/语义搜索技术和应用.md)
@@ -336,11 +417,14 @@
   * [KDD21-淘宝搜索中语义向量检索技术](Search/KDD21-淘宝搜索中语义向量检索技术.md)
   * [query理解](Search/query理解.md)
   * [TFIDF](Search/TFIDF.md)
-- [Text 2 SQL](NLG/Text2SQL/Text2SQL.md)
-  - [M SQL](NLG/Text2SQL/M-SQL/M-SQL.md)
-    * [M SQL 2](Text2SQL/M-SQL/M-SQL (2).md)
-  * [Text2SQL Baseline解析](Text2SQL/Text2SQL Baseline解析.md)
-  * [Text 2 SQL](NLG/Text2SQL/Text2SQL.md)
+- Self Supervised Learning
+  - [Contrastive Learning](Self-supervisedLearning/ContrastiveLearning/readme.md)
+    - 业界分享
+      * [对比学习在微博内容表示的应用_张俊林](Self-supervisedLearning/ContrastiveLearning/业界分享/对比学习在微博内容表示的应用_张俊林.md)
+    - [Paper](Self-supervisedLearning/ContrastiveLearning/paper/readme.md)
+    * [R Drop](Self-supervisedLearning/ContrastiveLearning/R-Drop.md)
+    * [Sim CSE](Self-supervisedLearning/ContrastiveLearning/SimCSE.md)
+  * [自监督学习](Self-supervisedLearning/自监督学习.md)
 - Text Classification
   - [多标签分类(Multi-label Classification)](TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md)
   - [Fast Text](TextClassification/fastText/fastText.md)
@@ -349,13 +433,10 @@
 - Text Matching
   - [文本匹配和多轮检索](TextMatching/文本匹配和多轮检索/文本匹配和多轮检索.md)
   - [CNN SIM](TextMatching/CNN_SIM/CNN_SIM.md)
+  - [Word Embedding](TextMatching/WordEmbedding/readme.md)
+    - [Skip Gram](TextMatching/WordEmbedding/skip_gram/README.md)
+    * [Glove](TextMatching/WordEmbedding/glove.md)
+    * [Word 2 Vec](TextMatching/WordEmbedding/word2vec.md)
   * [文本匹配概述](TextMatching/文本匹配概述.md)
-- Text Summarization
-  - [[文本摘要][paper]CTRLSUM](NLG/TextSummarization/[文本摘要][paper]CTRLSUM/[文本摘要][paper]CTRLSUM.md)
-  * [文本摘要](NLG/TextSummarization/文本摘要.md)
-- [Word Embedding](TextMatching/WordEmbedding/readme.md)
-  - [Skip Gram](TextMatching/WordEmbedding/skip_gram/README.md)
-  * [Glove](TextMatching/WordEmbedding/glove.md)
-  * [Word 2 Vec](TextMatching/WordEmbedding/word2vec.md)
 * [Common](common.md)
 * [NLP知识体系](NLP知识体系.md)
