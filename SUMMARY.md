@@ -6,6 +6,9 @@
   * [算法工程师](_Suggestion/算法工程师.md)
   * [语言及工具](_Suggestion/语言及工具.md)
   * [Suggestions](_Suggestion/suggestions.md)
+- Application
+  - Contest
+    * [竞赛trick](Application/Contest/竞赛trick.md)
 - Basic Know
   - [半监督学习](BasicKnow/半监督学习/半监督学习.md)
   - 贝叶斯
@@ -186,6 +189,8 @@
   * [数据增强的方法](DataRelated/数据增强的方法.md)
 - Knowledge Graph
   - Information Extraction
+    - 联合抽取
+      - [PRGC](KnowledgeGraph/InformationExtraction/联合抽取/PRGC/PRGC.md)
     - Code
       - [BERT微调](KnowledgeGraph/InformationExtraction/code/BERT微调/README.md)
     - NER
@@ -199,6 +204,8 @@
   * [小米在知识表示学习的探索与实践](KnowledgeGraph/小米在知识表示学习的探索与实践.md)
   * [KG](KnowledgeGraph/KG.md)
 - [Multi Task](MultiTask/readme.md)
+  - EXT 5
+    * [Ex T 5](MultiTask/EXT5/ExT5.md)
 - NLG
   - [Dailogue](NLG/Dailogue/readme.md)
     - 对话评估比赛
