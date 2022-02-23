@@ -315,14 +315,14 @@
   - [EL Mo](Pre-training/ELMo/elmo.md)
   - [ERNIE系列语言模型](Pre-training/ERNIE系列语言模型/ERNIE系列语言模型.md)
   - EVA
-    * [EVA分享](Pre-training/EVA/EVA分享.md)
-    * [EVA模型](Pre-training/EVA/EVA模型.md)
+    * [EVA分享](NLG/Dailogue/EVA/EVA分享.md)
+    * [EVA模型](NLG/Dailogue/EVA/EVA模型.md)
   - [GPT](Pre-training/GPT/GPT.md)
   - [MBART](Pre-training/MBART/MBART.md)
   - [NEZHA](Pre-training/NEZHA/NEZHA.md)
   - NLG Sum
     * [simpread-预训练时代下的文本生成｜模型 & 技巧](Pre-training/NLGSum/simpread-预训练时代下的文本生成｜模型 & 技巧.md)
-  - [PLATO](Pre-training/PLATO/PLATO.md)
+  - [PLATO](NLG/Dailogue/PLATO/PLATO.md)
   - [Prompt](Pre-training/Prompt/Prompt.md)
     - 预训练模型的提示学习方法_刘知远
       * [预训练模型的提示学习方法](Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md)

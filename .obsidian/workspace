@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Pre-training/BERT/BERT.md",
+            "file": "NLG/Dailogue/任务型对话/任务型对话概述.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/BERT/BERT.md",
+                "file": "NLG/Dailogue/任务型对话/任务型对话概述.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/BERT/BERT.md"
+                "file": "NLG/Dailogue/任务型对话/任务型对话概述.md"
               }
             }
           }
@@ -111,15 +111,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "NLG/Dailogue/任务型对话/任务型对话概述.md",
+    "NLG/Dailogue/任务型对话/simpread-任务型对话系统预训练最新研究进展.md",
+    "NLG/Dailogue/readme.md",
     "Pre-training/BERT/BERT.md",
     "Pre-training/Transformer/Transformer.md",
     "Application/Contest/竞赛trick.md",
     "BasicKnow/GNN/搜广推之GNN/readme.md",
     "BasicKnow/GNN/GNN.md",
     "Pre-training/Prompt/Prompt.md",
-    "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md",
-    "_Suggestion/suggestions.md",
-    "_Suggestion/算法工程师.md",
-    "_Suggestion/机器学习、深度学习面试知识点汇总.md"
+    "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md"
   ]
 }
