@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "NLG/Dailogue/任务型对话/任务型对话概述.md",
+            "file": "NLG/RAG/RAG.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/Dailogue/任务型对话/任务型对话概述.md",
+                "file": "NLG/RAG/RAG.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/Dailogue/任务型对话/任务型对话概述.md"
+                "file": "NLG/RAG/RAG.md"
               }
             }
           }
@@ -111,15 +111,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "NLG/RAG/RAG.md",
+    "_Suggestion/工具&资料.md",
+    "README.md",
+    "NLP知识体系.md",
+    "common.md",
     "NLG/Dailogue/任务型对话/任务型对话概述.md",
     "NLG/Dailogue/任务型对话/simpread-任务型对话系统预训练最新研究进展.md",
     "NLG/Dailogue/readme.md",
     "Pre-training/BERT/BERT.md",
-    "Pre-training/Transformer/Transformer.md",
-    "Application/Contest/竞赛trick.md",
-    "BasicKnow/GNN/搜广推之GNN/readme.md",
-    "BasicKnow/GNN/GNN.md",
-    "Pre-training/Prompt/Prompt.md",
-    "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md"
+    "Pre-training/Transformer/Transformer.md"
   ]
 }

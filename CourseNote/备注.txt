@@ -1,0 +1,8 @@
+网站
+http://www.deeplearningbook.org/
+
+MIT 6.S191，
+深度学习入门课程链接：http://introtodeeplearning.com/
+课程视频：https://www.youtube.com/watch?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI&v=JN6H4rQvwgY课程 
+GitHub：https://github.com/aamini/introtodeeplearning_labs
+B站：av21824978

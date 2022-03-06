@@ -1,4 +1,5 @@
-# RAG
+
+## RAG
 
 [https://huggingface.co/docs/transformers/model_doc/rag](https://huggingface.co/docs/transformers/model_doc/rag)（官方介绍文档）
 
@@ -8,11 +9,47 @@
 
 
 
+
+
 预训练模型的汇总
 
 |Autoregressive|Autoencoding|Seq2Seq|Multimodal|Retrieval-based|
 |---|---|---|---|---|
 |GPT  <br />GPT-2  <br />CTRL  <br />Transformer-XL  <br />Reformer  <br />XLNet|BERT  <br />ALBERT  <br />RoBERTa  <br />DistilBERT  <br />ConvBERT  <br />XLM  <br />XLM-RoBERTa  <br />FlauBERT  <br />ELECTRA  <br />Funnel Transformer  <br />Longformer|BART  <br />Pegasus  <br />  <br />MarianMT  <br />  <br />T5  <br />MT5  <br />MBart  <br />ProphetNet  <br />  <br />XLM-ProphetNet|MMBT|DPR  <br />RAG|
+
+
+
+Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+
+https://github.com/huggingface/transformers/blob/master/examples/rag/
+
+![image-20211122215757615](img/image-20211122215757615.png)
+
+论文的RAG模型：
+
+- the parametric memory is a pre-trained seq2seq transformer(BART)
+- the non-parametric memory is a dense vector index of Wikipedia, accessed with a pre-trained neural retriever(Dense Passage Retriever).
+
+总结起来就是**拿到问题后先查资料再答题**
+
+The retriever (Dense Passage Retriever [26], henceforth DPR) provides latent documents conditioned on the input, and the seq2seq model (BART [32]) then conditions on these latent documents together with the input to generate the output. We marginalize the latent documents with a top-K approximation,
+either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token
+basis (where different documents are responsible for different tokens). Like T5 [51] or BART, RAG
+can be fine-tuned on any seq2seq task, whereby both the generator and retriever are jointly learned
+
+
+
+retriever：给定query x返回top k个text passages
+
+generator：根据之前i-1个token，原始的输入x以及passage z生成当前的token
+
+
+
+![image-20211122222358626](img/image-20211122222358626.png)
+
+![image-20211122222418022](img/image-20211122222418022.png)
+
+
 
 
 
@@ -37,7 +74,15 @@ RAG 的真正优势在于其灵活性。要改变预训练的语言模型所知�
 - 需要一个question_encoder_name_or_path例如dpr-question_encoder-single-nq-base
 - 需要一个generator_name_or_path例如bart-large
 
+## 分享
 
+【】
+论文1题目：Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+
+分享人：李玲
+时间：2月27日 21:00
+分享工具：飞书
+摘要：RAG架构是一个端到端的可差异化模型，它结合了信息检索组件和 seq2seq 生成器。与预训练 seq2seq 语言大模型相比，RAG 可以在知识密集型下游任务上进行微调，达到最优结果。而且与这些预训练模型不同，RAG 的内部知识可以轻松地随时更改或补充，从而使研究人员和工程师控制 RAG 所知道的内容，而不会浪费时间或算力来重新训练整个模型。
 
 
 
@@ -45,5 +90,6 @@ RAG 的真正优势在于其灵活性。要改变预训练的语言模型所知�
 
 [Facebook 开源人工智能模型 RAG：可检索文档以回答问题](https://cloud.tencent.com/developer/news/706625)
 
+https://zhuanlan.zhihu.com/p/339942960
 
-
+https://blog.csdn.net/qq_40212975/article/details/109046150

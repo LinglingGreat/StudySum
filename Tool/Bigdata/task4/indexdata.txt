@@ -1,0 +1,3 @@
+d1,i love shanghai
+d2,i am from shanghai now i study in tongji university
+d3,i am from lanzhou now i study in lanzhou university of science  and  technolgy
