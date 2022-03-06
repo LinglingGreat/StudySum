@@ -219,6 +219,7 @@
       * [实时语音对话场景下的算法实践_阿里_陈克寒](NLG/Dailogue/业界分享/实时语音对话场景下的算法实践_阿里_陈克寒.md)
       * [智能语音交互中的无效query识别_小米_崔世起](NLG/Dailogue/业界分享/智能语音交互中的无效query识别_小米_崔世起.md)
       * [UNIT智能对话](NLG/Dailogue/业界分享/UNIT智能对话.md)
+    - [主动对话](NLG/Dailogue/主动对话/主动对话.md)
     - EVA
       * [EVA分享](NLG/Dailogue/EVA/EVA分享.md)
       * [EVA模型](NLG/Dailogue/EVA/EVA模型.md)
