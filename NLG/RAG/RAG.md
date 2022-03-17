@@ -32,12 +32,14 @@ https://github.com/huggingface/transformers/blob/master/examples/rag/
 
 总结起来就是**拿到问题后先查资料再答题**
 
-The retriever (Dense Passage Retriever [26], henceforth DPR) provides latent documents conditioned on the input, and the seq2seq model (BART [32]) then conditions on these latent documents together with the input to generate the output. We marginalize the latent documents with a top-K approximation,
-either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token
-basis (where different documents are responsible for different tokens). Like T5 [51] or BART, RAG
+The retriever (Dense Passage Retriever [26], henceforth DPR) provides latent documents conditioned on the input, and the seq2seq model (BART [32]) then conditions on these latent documents together with the input to generate the output. We marginalize the latent documents with a top-K approximation, either on a per-output basis (assuming the same document is responsible for all tokens) or a per-token basis (where different documents are responsible for different tokens). Like T5 [51] or BART, RAG
 can be fine-tuned on any seq2seq task, whereby both the generator and retriever are jointly learned
 
+RAG-Sequence considers documents independently, generating an output sequence for each concatenated context separately and marginalizing over the output generations. 
 
+RAG-Token marginalizes the output distribution over all documents, allowing the generator to attend over a different document for each token.
+
+训练的时候可以固定document representation，训练context representation
 
 retriever：给定query x返回top k个text passages
 
@@ -73,6 +75,11 @@ RAG 的真正优势在于其灵活性。要改变预训练的语言模型所知�
 
 - 需要一个question_encoder_name_or_path例如dpr-question_encoder-single-nq-base
 - 需要一个generator_name_or_path例如bart-large
+
+## 代码
+huggingface的transformer库中的RagSequenceForGeneration和RagTokenForGeneration。这两个类使用了RagModel类，RagModel又包括了RagRetriever，Generator（任何seq2seq的generator都可以）以及QueryEncoder，ContextEncoder等。
+
+RagRetriever会拿query encoder后的向量去检索document，然后得到prefix + doc_title + self.config.title_sep + doc_text + self.config.doc_sep + input_string，作为generator的输入。
 
 ## 分享
 
