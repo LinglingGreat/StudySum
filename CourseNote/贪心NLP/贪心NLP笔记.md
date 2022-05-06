@@ -158,3 +158,122 @@ P是NP的子集
 
 ![image-20211212180229611](img/image-20211212180229611.png)
 
+### 拼写纠错
+
+语言模型，困惑度，语言模型的平滑
+
+博客：https://norvig.com/spell-correct.html
+
+```python
+# 词典库
+vocab = set([line.rstrip() for line in open('vocab.txt')])
+
+# 需要生成所有候选集合
+def generate_candidates(word):
+    """
+    word: 给定的输入（错误的输入） 
+    返回所有(valid)候选集合
+    """
+    # 生成编辑距离为1的单词
+    # 1.insert 2. delete 3. replace
+    # appl: replace: bppl, cppl, aapl, abpl... 
+    #       insert: bappl, cappl, abppl, acppl....
+    #       delete: ppl, apl, app
+    
+    # 假设使用26个字符
+    letters = 'abcdefghijklmnopqrstuvwxyz' 
+    
+    splits = [(word[:i], word[i:]) for i in range(len(word)+1)]
+    # insert操作
+    inserts = [L+c+R for L, R in splits for c in letters]
+    # delete
+    deletes = [L+R[1:] for L,R in splits if R]
+    # replace
+    replaces = [L+c+R[1:] for L,R in splits if R for c in letters]
+    
+    candidates = set(inserts+deletes+replaces)
+    
+    # 过来掉不存在于词典库里面的单词
+    return [word for word in candidates if word in vocab] 
+    
+generate_candidates("apple")
+
+from nltk.corpus import reuters
+
+# 读取语料库
+categories = reuters.categories()
+corpus = reuters.sents(categories=categories)
+
+# 构建语言模型: bigram
+term_count = {}
+bigram_count = {}
+for doc in corpus:
+    doc = ['<s>'] + doc
+    for i in range(0, len(doc)-1):
+        # bigram: [i,i+1]
+        term = doc[i]
+        bigram = doc[i:i+2]
+        
+        if term in term_count:
+            term_count[term]+=1
+        else:
+            term_count[term]=1
+        bigram = ' '.join(bigram)
+        if bigram in bigram_count:
+            bigram_count[bigram]+=1
+        else:
+            bigram_count[bigram]=1
+
+# sklearn里面有现成的包
+
+# 用户打错的概率统计 - channel probability
+channel_prob = {}
+
+for line in open('spell-errors.txt'):
+    items = line.split(":")
+    correct = items[0].strip()
+    mistakes = [item.strip() for item in items[1].strip().split(",")]
+    channel_prob[correct] = {}
+    for mis in mistakes:
+        channel_prob[correct][mis] = 1.0/len(mistakes)
+
+print(channel_prob)
+```
+
+
+
+## 其它
+
+逻辑回归：http://cseweb.ucsd.edu/~elkan/250B/logreg.pdf
+
+ElasticNet，凸优化原理：https://web.stanford.edu/~hastie/Papers/B67.2%20(2005)%20301-320%20Zou%20&%20Hastie.pdf
+
+MLE与MAP https://zhuanlan.zhihu.com/p/37215276
+高斯分布与L2正则 http://qwone.com/~jason/writing/l2gaussian.pdf
+
+凸优化原理https://web.stanford.edu/class/ee364a/lectures.html
+
+非凸优化问题，梯度下降法收敛分析
+
+Set Cover Problem  https://en.wikipedia.org/wiki/Set_cover_problem
+LP Relaxation   http://www.cs.cmu.edu/~anupamg/adv-approx/lecture2.pdf
+Convergence Analaysis   https://www.cs.cmu.edu/~ggordon/10725-F12/slides/05-gd-revisited.pdf
+
+SVM
+
+SVM Intro   http://web.mit.edu/6.034/wwwbob/svm-notes-long-08.pdf
+CMU's SVM   https://www.cs.cmu.edu/~cga/ai-course/svm.pdf
+Nice Paper on SVM  https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/svmtutorial.pdf
+
+CRFhttp://cseweb.ucsd.edu/~elkan/250Bfall2007/loglinear.pdf
+
+word2vechttps://arxiv.org/pdf/1301.3781.pdf
+
+词向量https://www.kdd.org/kdd2018/accepted-papers/view/real-time-personalization-using-embeddings-for-search-ranking-at-airbnb
+
+VAEhttps://arxiv.org/abs/1312.6114
+
+
+
+
+
