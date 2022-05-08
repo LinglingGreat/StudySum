@@ -1,0 +1,23 @@
+1.查看使用库源码Command+B
+2.让你的代码 PEP8 Command+Option+L
+3.新手不再愁安装库 Command+   Ctrl+Alt+
+4.查找文件、类、方法 Command + Shift + O
+5.快速选择代码块 在需要选择某个函数的时候，只需要把光标放在最前面，然后点击 Command + Option + Shift + [ ，就可以选择对当前代码块, 使用 Command + / 注释。
+6.快速插入常用代码 Command + J
+7.运行/调试代码 
+Mac：
+Control + r：直接运行当前代码
+Control + d：以Debug(调试)模式运行代码
+Windows/Linux：
+Shift + F10：直接运行当前代码
+Shift + F9：以Debug(调试)模式运行代码
+8.缩进你的代码块 先用 Shift + 上下键 来选择你要缩进的代码块，然后使用 Tab 就能缩进
+9.展开/收缩代码 Command + Shift + -符号 
+10.展示多个页面 鼠标放到当前导航处的文件名，然后右键 Split Vertically 或者 Split Horizontally
+0. 快速查找文件 Ctrl + E 可打开最近访问过的文件，用 Ctrl + Shift + E打开最近编辑过的我文件
+1. 万能搜索 连续按两下 Shift 键可以搜索文件名、类名、方法名，还可以搜索目录名，搜索目录的技巧是在在关键字前面加斜杠/
+如果你要全局项目范围内搜索文件里面的关键字，那么就需要使用 Ctrl + Shfit + F，或者 Ctrl + Shfit + R全局替换
+2. 历史粘贴版 Ctrl + Shift + V 可访问历史粘贴板
+3. 分割窗口 可以在Settings中的Keymap自定义快捷键
+4. 智能提示 比如要使用还没有引入到模块则没法自动提示了，使用 Alt + Enter 智能提示你选择合适的操作
+5. 任意位置换行 Shfit + Enter 另起一行，这样无需把光标移到末尾去操作
