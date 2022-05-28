@@ -2,7 +2,9 @@
 
 ## 安装
 
-Windows和Linux都用下列方式安装成功
+RASA3.x版本安装：`pip install rasa`或者完整版`pip install rasa[full]`或者spacy版`pip install rasa[spacy]`
+
+Windows和Linux都用下列方式安装成功(2.x)
 
 ```Markdown
 ## conda中建一个虚拟环境
@@ -18,6 +20,17 @@ pip install jieba
 pip install flask
 ## clone项目代码，根据README文件训练模型，运行服务
 ```
+
+## 常用命令
+
+- `rasa init`初始化一个rasa项目
+- `rasa train`训练一个模型
+- `rasa shell`交互式地跟你的rasa聊天
+  - `--debug` debug模式
+- `rasa interactive`交互式训练你的rasa
+
+详细的参数设置参考官网：https://rasa.com/docs/rasa/command-line-interface
+
 
 
 ## 工作原理
@@ -143,6 +156,894 @@ else:
 OthersystemAct
 
 输出：系统回复(reply)
+
+## 用Response Selector实现FAQ和闲聊
+
+目的：实现问答式的功能，每次遇到同一种问题的时候，有一样的回答。比如“你叫什么”，回答“我叫小明”
+
+1.更新配置config.yml
+
+加入RulePolicy和ResponseSelector（需要有featurizer和intent classifier，并且配置在这些项的后面）
+
+```YAML
+policies:
+# other policies
+- name: RulePolicy
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+```
+
+ResponseSelector默认会为所有的意图创建一个检索模型，如果想为FAQ和闲聊分别创建不同的检索模型，可以配置多个ResponseSelector，并且指定`retrieval_intent`字段
+
+```YAML
+pipeline:
+# Other components
+- name: ResponseSelector
+  epochs: 100
+  retrieval_intent: faq
+- name: ResponseSelector
+  epochs: 100
+  retrieval_intent: chitchat
+```
+
+2.定义intents和ResponseSelector
+
+如果有20个不同的FAQ，是不是需要定义20个对应的回复，很麻烦。与其写20条规则，不如用一个action例如`utter_faq`来处理所有的FAQ，他们都在同样的intent下。
+
+action使用ResponseSelector的输出来返回正确的回复。
+
+3.配置rules.yml
+
+```yaml
+rules:
+  - rule: respond to FAQs
+    steps:
+    - intent: faq
+    - action: utter_faq
+  - rule: respond to chitchat
+    steps:
+    - intent: chitchat
+    - action: utter_chitchat
+```
+
+4.更新NLU训练数据
+
+nlu.yml文件
+
+```yaml
+nlu:
+  - intent: chitchat/ask_name
+    examples: |
+      - What is your name?
+      - May I know your name?
+      - What do people call you?
+      - Do you have a name for yourself?
+  - intent: chitchat/ask_weather
+    examples: |
+      - What's the weather like today?
+      - Does it look sunny outside today?
+      - Oh, do you mind checking the weather for me please?
+      - I like sunny days in Berlin.
+```
+
+记得更新domain.yml
+
+```yaml
+intents:
+# other intents
+- chitchat
+```
+
+5.定义回复
+
+domain.yml
+
+```yaml
+responses:
+  utter_chitchat/ask_name:
+  - image: "https://i.imgur.com/zTvA58i.jpeg"
+    text: Hello, my name is Retrieval Bot.
+  - text: I am called Retrieval Bot!
+  utter_chitchat/ask_weather:
+  - text: Oh, it does look sunny right now in Berlin.
+    image: "https://i.imgur.com/vwv7aHN.png"
+  - text: I am not sure of the whole week but I can see the sun is out today.
+```
+
+
+
+详细参考官网：https://rasa.com/docs/rasa/chitchat-faqs
+
+## 处理业务逻辑(槽位+表单)
+
+表单，收集一些信息（槽位），槽位填充完成后，返回满足用户需求的回复
+
+1.定义表单
+
+定义表单以及需要填充的信息**domain.yml**
+
+```yaml
+forms:
+  restaurant_form:
+    required_slots:
+        - cuisine
+        - num_people
+        - outdoor_seating
+```
+
+记得在`slots`部分加入槽位相关配置
+
+```yaml
+entities:
+  - cuisine
+  - number
+slots:
+  cuisine:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: cuisine
+  num_people:
+    type: float
+    mappings:
+    - type: from_entity
+      entity: number
+  outdoor_seating:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: affirm
+      value: true
+      conditions:
+       - active_loop: restaurant_form
+         requested_slot: outdoor_seating
+    - type: from_intent
+      intent: deny
+      value: false
+      conditions:
+      - active_loop: restaurant_form
+        requested_slot: outdoor_seating
+```
+
+mappings是指slots的填充方式，如果是`from_entity`，那么`entities`部分也要加入对应的配置
+
+还可以设置`influence_conversation`为false，表示不影响对话
+
+`number`这个实体可以用DuckingEntityExtractor来抽取(config.yml)：
+
+```yaml
+language: en
+pipeline:
+# other components
+- name: DucklingEntityExtractor
+  dimensions: ["number"]
+```
+
+`outdoor_seating`槽位是根据用户意图来填充的，如果是`affirm`，那么填充为`true`，如果是`deny`，填充为`false`。
+
+如何针对slots设计相应的问题呢？domain.yml
+
+```yaml
+responses:
+  utter_ask_cuisine:
+    - text: "What cuisine?"
+  utter_ask_num_people:
+    - text: "How many people?"
+  utter_ask_outdoor_seating:
+    - text: "Do you want to sit outside?"
+```
+
+2.更新配置
+
+config.yml
+
+```yaml
+policies:
+  - name: RulePolicy
+```
+
+3.创建规则rules.yml
+
+```yaml
+rules:
+  - rule: activate restaurant form
+    steps:
+      - intent: request_restaurant   # intent that triggers form activation
+      - action: restaurant_form      # run the form
+      - active_loop: restaurant_form # this form is active
+
+  - rule: submit form
+    condition:
+    - active_loop: restaurant_form   # this form must be active
+    steps:
+      - action: restaurant_form      # run the form
+      - active_loop: null            # the form is no longer active because it has been filled
+      - action: utter_submit         # action to take after the form is complete
+      - action: utter_slots_values   # action to take after the form is complete
+```
+
+4.更新NLU训练数据
+
+```yaml
+nlu:
+- intent: request_restaurant
+  examples: |
+    - im looking for a restaurant
+    - can i get [swedish](cuisine) food in any area
+    - a restaurant that serves [caribbean](cuisine) food
+    - id like a restaurant
+    - im looking for a restaurant that serves [mediterranean](cuisine) food
+    - can i find a restaurant that serves [chinese](cuisine)
+```
+
+注意，from_entity的slots会忽略意图自动填充，也就是说，只要从用户消息中抽出了对应的实体，不管此时意图是什么，都会填充到对应的slots
+
+```yaml
+nlu:
+- intent: affirm
+  examples: |
+    - Yes
+    - yes, please
+    - yup
+- intent: deny
+  examples: |
+    - no don't
+    - no
+    - no I don't want that
+
+- intent: inform
+  examples: |
+    - [afghan](cuisine) food
+    - how bout [asian oriental](cuisine)
+    - what about [indian](cuisine) food
+    - uh how about [turkish](cuisine) type of food
+    - um [english](cuisine)
+    - im looking for [tuscan](cuisine) food
+    - id like [moroccan](cuisine) food
+    - for ten people
+    - 2 people
+    - for three people
+    - just one person
+    - book for seven people
+    - 2 please
+    - nine people
+```
+
+inform是generic的意图。
+
+更新domain.yml
+
+```yaml
+intents:
+  - request_restaurant
+  - affirm
+  - deny
+  - inform
+```
+
+5.定义最终回复
+
+domain.yml
+
+```yaml
+responses:
+  utter_submit:
+  - text: "All done!"
+  utter_slots_values:
+  - text: "I am going to run a restaurant search using the following parameters:\n
+            - cuisine: {cuisine}\n
+            - num_people: {num_people}\n
+            - outdoor_seating: {outdoor_seating}"
+```
+
+参考：https://rasa.com/docs/rasa/business-logic
+
+## Fallback(意料之外的、低置信度意图、Action等)
+
+1.创建一个Out-of-scope意图nlu.yml
+
+```yaml
+nlu:
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+```
+
+2.定义回复domain.yml
+
+```yaml
+responses:
+  utter_out_of_scope:
+  - text: Sorry, I can't handle that request.
+```
+
+3.创建一条规则rules.yml
+
+```yaml
+rules:
+- rule: out-of-scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+```
+
+### Fallbacks
+
+Fallbacks可以处理低置信度（意图的分类置信度低）消息
+
+**NLU Fallback**
+
+使用FallbackClassifier，当所有其它意图的预测概率都低于阈值的时候，会变成意图`nlu_fallback`
+
+1.配置config.yml
+
+```yaml
+pipeline:
+# other components
+- name: FallbackClassifier
+  threshold: 0.7
+```
+
+2.定义回复信息domain.yml
+
+```yaml
+responses:
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+```
+
+3.创建一条规则rules.yml
+
+```yaml
+rules:
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
+```
+
+**处理低置信度Action**
+
+1.更新配置config.yml
+
+```yaml
+policies:
+- name: RulePolicy
+  # Confidence threshold for the `core_fallback_action_name` to apply.
+  # The action will apply if no other action was predicted with
+  # a confidence >= core_fallback_threshold
+  core_fallback_threshold: 0.4
+  core_fallback_action_name: "action_default_fallback"
+  enable_fallback_prediction: True
+```
+
+2.定义回复domain.yml
+
+```yaml
+responses:
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
+```
+
+3.定制默认action(可选)actions.py
+
+```python
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.events import UserUtteranceReverted
+from rasa_sdk.executor import CollectingDispatcher
+
+class ActionDefaultFallback(Action):
+    """Executes the fallback action and goes back to the previous state
+    of the dialogue"""
+
+    def name(self) -> Text:
+        return ACTION_DEFAULT_FALLBACK_NAME
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(template="my_custom_fallback_template")
+
+        # Revert user message which led to fallback.
+        return [UserUtteranceReverted()]
+```
+
+**两阶段Fallback**
+
+(1)向用户确认意图
+
+(2)用户确认或否认意图
+
+(3)用户重述他们的意图
+
+(4)用户确认或否认重述的意图
+
+1.更新配置config.yml
+
+```yaml
+recipe: default.v1
+pipeline:
+# other components
+- name: FallbackClassifier
+  threshold: 0.7
+
+policies:
+# other policies
+- RulePolicy
+```
+
+2.定义fallback回复domain.yml
+
+```yaml
+responses:
+  utter_ask_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+```
+
+Rasa提供了默认的确认用户意图以及重述意图的实现，如果需要定制化可以参考[default actions](https://rasa.com/docs/rasa/default-actions).
+
+3.定义两阶段的Fallback规则rules.yml
+
+```yaml
+rules:
+- rule: Implementation of the Two-Stage-Fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_two_stage_fallback
+  - active_loop: action_two_stage_fallback
+```
+
+4.定义fallback action
+
+如果用户意图还是不能确认，需要配置一个默认的回复domain.yml
+
+```yaml
+responses:
+  utter_default:
+  - text: I'm sorry, I can't help you.
+```
+
+也可以定制化action
+
+```python
+from typing import Any, Dict, List, Text
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.events import UserUtteranceReverted
+from rasa_sdk.executor import CollectingDispatcher
+
+class ActionDefaultFallback(Action):
+    def name(self) -> Text:
+        return "action_default_fallback"
+
+    def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        # tell the user they are being passed to a customer service agent
+        dispatcher.utter_message(text="I am passing you to a human...")
+        
+        # assume there's a function to call customer service
+        # pass the tracker so that the agent has a record of the conversation between the user
+        # and the bot for context
+        call_customer_service(tracker)
+     
+        # pause the tracker so that the bot stops responding to user input
+        return [ConversationPaused(), UserUtteranceReverted()]
+```
+
+如果需要在某些情况下转给人工处理，可以配置相应的回复为“你需要转接给人工吗”，用户确认后，通过某个渠道转给人工处理。
+
+## 用户回复意料之外
+
+domain.yml
+
+```yaml
+slots:
+  requested_slot:
+    type: categorical
+    values:
+      - cuisine
+      - num_people
+      - outdoor_seating
+      - preferences
+      - feedback
+    influence_conversation: true
+    mappings:
+    - type: custom
+```
+
+ [slots influence the assistant's behaviou](https://rasa.com/docs/rasa/domain#slots-and-conversation-behavior)
+
+**stories.yml**
+
+```yaml
+stories:
+- story: cuisine interjection
+  steps:
+  - intent: request_restaurant
+  - action: restaurant_form
+  - active_loop: restaurant_form
+  - slot_was_set:
+    - requested_slot: cuisine
+  - intent: explain
+  - action: utter_explain_cuisine
+  - action: restaurant_form
+
+- story: number of people interjection
+  steps:
+  - intent: request_restaurant
+  - action: restaurant_form
+  - active_loop: restaurant_form
+  - slot_was_set:
+    - requested_slot: num_people
+  - intent: explain
+  - action: utter_explain_num_people
+  - action: restaurant_form
+```
+
+## 上下文相关的对话
+
+比如有些话要结合上下文才能确定什么意思
+
+1.定义slots
+
+**domain.yml**
+
+```yaml
+slots:
+  likes_music:
+    type: bool
+    mappings:
+    - type: custom
+```
+
+2.创建故事
+
+**stories.yml**
+
+```yaml
+stories:
+  - story: User likes music
+    steps:
+    - intent: how_to_get_started
+    - action: utter_get_started
+    - intent: affirm
+    - action: action_set_music_preference
+    - slot_was_set:
+      - likes_music: True
+    - action: utter_awesome
+
+  - story: User doesn't like music
+    steps:
+    - intent: how_to_get_started
+    - action: utter_get_started
+    - intent: deny
+    - action: action_set_music_preference
+    - slot_was_set:
+      - likes_music: False
+    - action: utter_goodbye
+```
+
+3.配置TEDPolicy
+
+**stories.yml**
+
+```yaml
+stories:
+  - story: user persists in asking for help
+    steps:
+    - intent: help
+    - action: utter_help
+    - intent: help
+    - action: utter_help
+    - intent: help
+    - action: action_human_handoff
+```
+
+**config.yml**
+
+```yaml
+policies:
+  - name: "TEDPolicy"
+    max_history: 5
+```
+
+参考：https://rasa.com/docs/rasa/contextual-conversations
+
+## 主动发消息给用户
+
+1.更新配置
+
+config.yml
+
+```yaml
+policies:
+  # other policies
+  - name: RulePolicy
+```
+
+2.添加规则
+
+**rules.yml**
+
+```yaml
+rules:
+  - rule: welcome user
+    conversation_start: true  # this rule only applies at the beginning of a conversation
+    steps:
+      - intent: greet
+      - action: utter_welcome
+```
+
+3.设置回复
+
+**domain.yml**
+
+```yaml
+responses:
+  utter_welcome:
+  - text: Hi there! What can I help you with today?
+```
+
+
+
+1.触发意图
+
+```bash
+curl -H "Content-Type: application/json" -X POST \
+  -d '{"name": "EXTERNAL_dry_plant", "entities": {"plant": "Orchid"}}' \
+  "http://localhost:5005/conversations/user123/trigger_intent?output_channel=latest"
+```
+
+会触发一个名为`EXTERNAL_dry_plant`的意图，同时传入实体`plant`，用户是`user123`
+
+2.获取Conversation ID
+
+3.增加NLU训练数据
+
+**domain.yml**
+
+```yaml
+intents:
+  - EXTERNAL_dry_plant
+```
+
+因为是通过`trigger_intent`触发的意图，所以不需要训练数据
+
+4.更新Domain
+
+**domain.yml**
+
+```yaml
+entities:
+  - plant
+
+slots:
+  plant:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: plant
+```
+
+5.加规则
+
+**rules.yml**
+
+```yaml
+rules:
+  - rule: warn about dry plant
+    steps:
+    - intent: EXTERNAL_dry_plant
+    - action: utter_warn_dry
+```
+
+6.添加回复
+
+**domain.yml**
+
+```yaml
+responses:
+  utter_warn_dry:
+  - text: "Your {plant} needs some water!"
+```
+
+## Reminders
+
+定制
+
+**actions.py**
+
+```python
+import datetime
+from rasa_sdk.events import ReminderScheduled
+from rasa_sdk import Action
+
+class ActionSetReminder(Action):
+    """Schedules a reminder, supplied with the last message's entities."""
+
+    def name(self) -> Text:
+        return "action_set_reminder"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message("I will remind you in 5 minutes.")
+
+        date = datetime.datetime.now() + datetime.timedelta(minutes=5)
+        entities = tracker.latest_message.get("entities")
+
+        reminder = ReminderScheduled(
+            "EXTERNAL_reminder",
+            trigger_date_time=date,
+            entities=entities,
+            name="my_reminder",
+            kill_on_user_message=False,
+        )
+
+        return [reminder]
+```
+
+**rules.yml**
+
+```yaml
+rules:
+- rule: Schedule a reminder
+  steps:
+  - intent: ask_remind_call
+    entities:
+    - PERSON
+  - action: action_set_reminder
+```
+
+**nlu.yml**
+
+```yaml
+nlu:
+- intent: ask_remind_call
+  examples: |
+    - remind me to call John
+    - later I have to call Alan
+    - Please, remind me to call Vova
+    - please remind me to call Tanja
+    - I must not forget to call Juste
+```
+
+**domain.yml**
+
+```yaml
+intents:
+  - ask_remind_call
+```
+
+**config.yml**
+
+```yaml
+pipeline:
+# other components
+- name: SpacyNLP
+  model: "en_core_web_md"
+- name: SpacyEntityExtractor
+  dimensions: ["PERSON"]
+```
+
+Reacting
+
+```python
+class ActionReactToReminder(Action):
+    """Reminds the user to call someone."""
+
+    def name(self) -> Text:
+        return "action_react_to_reminder"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        name = next(tracker.get_slot("PERSON"), "someone")
+        dispatcher.utter_message(f"Remember to call {name}!")
+
+        return []
+```
+
+**rules.yml**
+
+```yaml
+rules:
+- rule: Trigger `action_react_to_reminder` for `EXTERNAL_reminder`
+  steps:
+  - intent: EXTERNAL_reminder
+  - action: action_react_to_reminder
+```
+
+**domain.yml**
+
+```yaml
+intents:
+- intent: EXTERNAL_reminder
+```
+
+取消reminders
+
+```python
+class ForgetReminders(Action):
+    """Cancels all reminders."""
+
+    def name(self) -> Text:
+        return "action_forget_reminders"
+
+    async def run(
+        self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(f"Okay, I'll cancel all your reminders.")
+
+        # Cancel all reminders
+        return [ReminderCancelled()]
+```
+
+**rules.yml**
+
+```yaml
+rules:
+- rule: Cancel a reminder
+  steps:
+  - intent: ask_forget_reminders
+  - action: action_forget_reminders
+```
+
+**nlu.yml**
+
+```yaml
+nlu:
+- intent: ask_forget_reminders
+  examples: |
+    - Forget about the reminder
+    - do not remind me
+    - cancel the reminder
+    - cancel all reminders please
+```
+
+**domain.yml**
+
+```yaml
+intents:
+- intent: ask_forget_reminders
+```
+
+参考：https://rasa.com/docs/rasa/reaching-out-to-user
 
 ## NLU
 

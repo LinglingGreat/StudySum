@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "NLG/RAGConversation/RAGConversation.md",
+            "file": "NLG/Dailogue/RASA/RASA.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/RAGConversation/RAGConversation.md",
+                "file": "NLG/Dailogue/RASA/RASA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/RAGConversation/RAGConversation.md"
+                "file": "NLG/Dailogue/RASA/RASA.md"
               }
             }
           }
@@ -111,6 +111,7 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "NLG/Dailogue/RASA/RASA.md",
     "NLG/RAGConversation/RAGConversation.md",
     "NLG/RAG/RAG.md",
     "_Suggestion/工具&资料.md",
@@ -119,7 +120,6 @@
     "common.md",
     "NLG/Dailogue/任务型对话/任务型对话概述.md",
     "NLG/Dailogue/任务型对话/simpread-任务型对话系统预训练最新研究进展.md",
-    "NLG/Dailogue/readme.md",
-    "Pre-training/BERT/BERT.md"
+    "NLG/Dailogue/readme.md"
   ]
 }
