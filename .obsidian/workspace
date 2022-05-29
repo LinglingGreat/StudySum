@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "NLG/ControllableGen/综述/CTG综述.md",
+            "file": "Tool/Latex/Latex.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 100
+    "width": 238
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/ControllableGen/综述/CTG综述.md",
+                "file": "Tool/Latex/Latex.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/ControllableGen/综述/CTG综述.md"
+                "file": "Tool/Latex/Latex.md"
               }
             }
           }
@@ -111,15 +111,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "Tool/Latex/Latex.md",
+    "BasicKnow/聚类/Infomap/Infomap.md",
+    "BasicKnow/聚类/聚类.md",
+    "Pre-training/BERTZip/模型压缩.md",
     "NLG/ControllableGen/综述/CTG综述.md",
     "NLG/ControllableGen/ControllableChatbot/ControllableChatbot.md",
     "NLG/Dailogue/RASA/RASA.md",
     "NLG/RAGConversation/RAGConversation.md",
     "NLG/RAG/RAG.md",
-    "_Suggestion/工具&资料.md",
-    "README.md",
-    "NLP知识体系.md",
-    "common.md",
-    "NLG/Dailogue/任务型对话/任务型对话概述.md"
+    "_Suggestion/工具&资料.md"
   ]
 }
