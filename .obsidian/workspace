@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Latex/Latex.md",
+            "file": "Tool/Obsidian/README.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#td",
+                "query": "tag:#项目1",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -49,7 +49,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Latex/Latex.md",
+                "file": "Tool/Obsidian/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +98,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Latex/Latex.md"
+                "file": "Tool/Obsidian/README.md"
               }
             }
           }
@@ -111,15 +112,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "Tool/Obsidian/README.md",
+    "Tool/Obsidian/obsidian流程图.md",
+    "Pre-training/预训练语言模型.md",
     "Tool/Latex/Latex.md",
     "BasicKnow/聚类/Infomap/Infomap.md",
     "BasicKnow/聚类/聚类.md",
     "Pre-training/BERTZip/模型压缩.md",
     "NLG/ControllableGen/综述/CTG综述.md",
     "NLG/ControllableGen/ControllableChatbot/ControllableChatbot.md",
-    "NLG/Dailogue/RASA/RASA.md",
-    "NLG/RAGConversation/RAGConversation.md",
-    "NLG/RAG/RAG.md",
-    "_Suggestion/工具&资料.md"
+    "NLG/Dailogue/RASA/RASA.md"
   ]
 }
