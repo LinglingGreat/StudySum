@@ -13,3 +13,5 @@ cssclass:
 
 [玩转 Obsidian 02：基础设置篇](https://sspai.com/post/63481)
 
+[Obsidian完整用法简介](https://www.bilibili.com/video/BV18a411r7mt)
+
