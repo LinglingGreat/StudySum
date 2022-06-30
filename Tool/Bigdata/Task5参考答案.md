@@ -82,7 +82,7 @@ conf = SparkConf().setMaster('local').setAppName('word count')
 sc = SparkContext(conf = conf)
 ```
 
-#注意将这里改成自己的路径 
+注意将这里改成自己的路径 
 ```
 import os
 from pyspark import SparkConf,SparkContext

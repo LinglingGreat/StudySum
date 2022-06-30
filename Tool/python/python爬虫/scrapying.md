@@ -1,6 +1,6 @@
 URL的一般格式为（带方括号[]的为可选项）：
 
-protocol :// hostname[:port] / path / \[;parameters][?query]#fragment
+`protocol :// hostname[:port] / path / \[;parameters][?query]#fragment`
 
 URL由三部分组成： 
 

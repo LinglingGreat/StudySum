@@ -1,4 +1,4 @@
-##**机器学习应用领域**
+## **机器学习应用领域**
 
 经济相关：股市、房价等
 能源相关：产能预测、分配与合理利用
@@ -9,7 +9,7 @@ NLP相关：检索、分类、主题、相似度
 推荐系统相关：电商推荐
 其他预测：气候、社交网络分析
 
-##**机器学习常用算法**
+## **机器学习常用算法**
 
 ![1538445320110](../img/1538445320110.png)
 
@@ -19,11 +19,11 @@ SVM-中小型数据集，NB-NLP大型数据集
 
 
 
-##**常用工具**
+## **常用工具**
 
 scikit-learn，NLP的gensim,Natural Language Toolkit
 
-##**建模与问题解决流程**
+## **建模与问题解决流程**
 
 了解场景和目标
 了解评估准则
@@ -52,7 +52,7 @@ http://blog.csdn.net/han_xiaoyang/article/details/52910022
 - hive sql/spark sql
 - pandas：数据量少的时候
 
-###**特征工程**
+### **特征工程**
 
 ![1538447293961](../img/1538447293961.png)
 
@@ -109,7 +109,7 @@ Learning curve:学习曲线
 plot learning curve:绘制学习曲线
 https://www.zybuluo.com/hanxiaoyang/note/545131
 
-###模型融合
+### 模型融合
 简单说来，我们信奉几条信条
 
 群众的力量是伟大的，集体智慧是惊人的
@@ -128,11 +128,11 @@ https://www.zybuluo.com/hanxiaoyang/note/545131
 
 
 
-##**kaggle wiki**
+## **kaggle wiki**
 
 看
 
-##经济金融相关问题
+## 经济金融相关问题
 
 解决高维数据分类/回归问题
 
@@ -204,7 +204,7 @@ Data set is high dimensional, sparse and skewed:
 – Millions of unique ads to display
 – Very few ads get clicked by users
 
-###Data set and features
+### Data set and features
 Sample of the dataset used for the Display Advertising Challenge hosted by Kaggle:
 https://www.kaggle.com/c/criteo-display-ad-challenge/
 
@@ -214,7 +214,7 @@ https://www.kaggle.com/c/criteo-display-ad-challenge/
 
 
 
-###MLlib pipeline for Click Through Rate Prediction
+### MLlib pipeline for Click Through Rate Prediction
 Step 1 - Parse Data into Spark SQL DataFrames
 
 Step 2 – Feature Transformer using StringIndexer类别型转成0,1,2,3,...这种
@@ -314,7 +314,7 @@ jieba，讯飞的，斯坦福corenlp
 
 
 
-社交⽹络语⾔的tokenize，如@某⼈, 表情符号, URL, #话题符号，难以分隔
+社交⽹络语⾔的tokenize，如@某⼈, 表情符号, URL, `#话题符号`，难以分隔
 
 ```
 from nltk.tokenize import word_tokenize

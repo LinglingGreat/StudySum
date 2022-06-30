@@ -1,10 +1,10 @@
-#基本概念
+# 基本概念
 
-##ground truth
+## ground truth
 
 在机器学习中ground truth表示有监督学习的训练集的分类准确性，用于证明或者推翻某个假设。有监督的机器学习会对训练数据打标记，试想一下如果训练标记错误，那么将会对测试数据的预测产生影响，因此这里将那些**正确打标记的数据称为ground truth**。
 
-##part of speech(PoS or POS)
+## part of speech(PoS or POS)
 
 **词类**（part of speech、PoS、POS）是一个[语言学](https://zh.wikipedia.org/wiki/%E8%AF%AD%E8%A8%80%E5%AD%A6)术语，是一种[语言](https://zh.wikipedia.org/wiki/%E8%AF%AD%E8%A8%80)中[词](https://zh.wikipedia.org/wiki/%E5%8D%95%E8%AF%8D)的[语法](https://zh.wikipedia.org/wiki/%E8%AF%AD%E6%B3%95)分类，是以语法特征（包括[句法](https://zh.wikipedia.org/wiki/%E5%8F%A5%E6%B3%95)功能和[形态变化](https://zh.wikipedia.org/w/index.php?title=%E5%BD%A2%E6%80%81%E5%8F%98%E5%8C%96&action=edit&redlink=1)）为主要依据、兼顾词汇意义对词进行划分的结果。
 
@@ -113,7 +113,7 @@ Wang D, Cui P, Zhu W. Structural deep network embedding. In: Proceedings of the 
 
 让节点表示的每一维对应该节点从属于一个社区的强度, 然后设计最优化目标进行求解. 这类算法会学习得到上述的社区强度关系表示, 然后转化为社区发现的结果. 而学习社区强度关系表示的过程可以看作是无监督的非负节点表示学习的过程.
 
-###BIGCLAM
+### BIGCLAM
 
 作为一个可覆盖社区发现算法, 为每个网络中的节点学习了一个上述的k 维非负向量表示. 
 
@@ -153,7 +153,7 @@ Thomas L G, Mark S. Finding scientific topics. Proc National Acad Sci, 2004, 101
 
 Yang C, Liu Z, Zhao D, et al. Network representation learning with rich text information. In: Proceedings of the 24th International Conference on Artificial Intelligence, Buenos Aires, 2015. 2111–2117
 
-###CANE
+### CANE
 
 利用网络节点的文本信息来对节点之间的关系进行解释, 来为网络节点
 根据不同的邻居学习上下文相关的网络表示.
@@ -203,7 +203,7 @@ Kipf T N, Welling M. Semi-supervised classification with graph convolutional net
 
 Yang Z, Cohen W, Salakhutdinov R. Revisiting semi-supervised learning with graph embeddings. In: Proceedings of the 33rd International Conference on International Conference on Machine Learning, New York, 2016
 
-##word2vec
+## word2vec
 
 Target:Words;      Input:Sentences;    Output:Word embeddings
 

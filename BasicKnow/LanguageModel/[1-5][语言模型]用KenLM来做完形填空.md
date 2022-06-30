@@ -241,7 +241,7 @@ pip install https://github.com/kpu/kenlm/archive/master.zip
 
 ![1600599368177](img/1600599368177.png)
 
-这样直接安装nltk可能会报错“ #include "Python.h"  command 'gcc' failed with exit status 1”。
+这样直接安装nltk可能会报错`#include "Python.h"  command 'gcc' failed with exit status 1`。
 
 需要运行之前的Cygwin安装包，下载python-devel，再运行install nltk才能安装成功。
 

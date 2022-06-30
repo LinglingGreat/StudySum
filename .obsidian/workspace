@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Obsidian/README.md",
+            "file": "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#项目1",
+                "query": "tag:#机器翻译",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Obsidian/README.md",
+                "file": "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,29 +98,28 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Obsidian/README.md"
+                "file": "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md"
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 168,
-    "collapsed": true
+    "width": 168
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
-    "Tool/Obsidian/README.md",
-    "Tool/Obsidian/obsidian流程图.md",
-    "Pre-training/预训练语言模型.md",
-    "Tool/Latex/Latex.md",
-    "BasicKnow/聚类/Infomap/Infomap.md",
-    "BasicKnow/聚类/聚类.md",
-    "Pre-training/BERTZip/模型压缩.md",
-    "NLG/ControllableGen/综述/CTG综述.md",
-    "NLG/ControllableGen/ControllableChatbot/ControllableChatbot.md",
+    "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
+    "Recsys/推荐模型.md",
+    "Tool/SQL/sql.md",
+    "BasicKnow/deep_learning/program-DLbasis.md",
+    "CourseNote/七月kaggle课程.md",
+    "BasicKnow/GNN/RepresentationLearning/others.md",
+    "NLG/Dailogue/任务型对话/simpread-任务型对话系统预训练最新研究进展.md",
+    "BasicKnow/deep_learning/2.improveDNN.md",
+    "Tool/Bigdata/Task5参考答案.md",
     "NLG/Dailogue/RASA/RASA.md"
   ]
 }

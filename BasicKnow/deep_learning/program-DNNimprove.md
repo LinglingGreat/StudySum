@@ -1799,6 +1799,6 @@ print("Your algorithm predicts: y = " + str(np.squeeze(my_image_prediction)))
 
 
 
-#Refrences:
+# Refrences
 
 - Adam paper: <https://arxiv.org/pdf/1412.6980.pdf>

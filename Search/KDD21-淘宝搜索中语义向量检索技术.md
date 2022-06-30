@@ -254,7 +254,7 @@ I是全部的 item 集合。实际上就是 softmax 交叉熵损失，然后因�
     
 *   **在线指标**：
     
-*   GMV = #pay amount.
+*   `GMV = #pay amount.`
     
 *   线上相关性标注指标，$P_{good}$展示给用户的 item 中，和 query 相关的 item 的数量占比，$P_{good}$和$P_{h\_good}$，前者用模型打标，后者外包标注。
     

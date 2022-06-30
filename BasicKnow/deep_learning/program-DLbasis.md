@@ -1,4 +1,4 @@
-#归一化操作
+# 归一化操作
 
 针对每一行进行归一化，用**np.linalg.norm** 函数
 
@@ -68,7 +68,7 @@ def softmax(x):
     return s
 ```
 
-#预处理
+# 预处理
 
 查看数据
 
@@ -92,7 +92,7 @@ Common steps for pre-processing a new dataset are:
 - Reshape the datasets such that each example is now a vector of size (num_px \* num_px \* 3, 1)
 - "Standardize" the data}
 
-#Logistic Regression神经网络
+# Logistic Regression神经网络
 
 **Mathematical expression of the algorithm**:
 
@@ -1170,7 +1170,7 @@ def L_layer_model(X, Y, layers_dims, learning_rate = 0.0075, num_iterations = 30
 
 
 
-#Reference:
+# Reference
 
 - <http://www.wildml.com/2015/09/implementing-a-neural-network-from-scratch/>
 - <https://stats.stackexchange.com/questions/211436/why-do-we-normalize-images-by-subtracting-the-datasets-image-mean-and-not-the-c>

@@ -1,9 +1,13 @@
+---
+title: "deep_encoder_shallow_decoder"
+created: ''
+modified: ''
+tags: [机器翻译, 自回归，浅层decoder]
+---
+
 论文：Deep Encoder, Shallow Decoder: Reevaluating the Speed-Quality Tradeoff in Machine Translation
 
 代码：https://github.com/jungokasai/deep-shallow
-
-关键词： #机器翻译 ， #自回归 ， #浅层decoder 
-
 
 
 传统的机器翻译方法：autoregressively，一个一个预测的（需要基于之前的词），不能并行。

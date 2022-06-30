@@ -263,7 +263,7 @@ HTML DOM 将 HTML 文档视作树结构。这种结构被称为节点树：
 -  属性（property）是希望设置的样式属性（style attribute）。每个属性有一个值。属性和值被冒号分开。 
 - 如果值为若干单词，则要给值加引号。例如：p {font-family: "sans serif";}
 - 如果要定义不止一个声明，则需要用分号将每个声明分开， 最后一条规则可以不加分号。 例如：p {text-align:center; color:red;}
-- CSS 选择器还支持嵌套选择，各个选择器之间加上空格分隔开便可以代表嵌套关系，如： #container .wrapper p 则代表先选择 id 为 container 的节点，然后选中其内部的 class 为 wrapper 的节点，然后再进一步选中其内部的 p 节点。另外，如果不加空格，则代表并列关系，如 div#container .wrapper p.text 代表先选择 id 为 container 的 div 节点，然后选中其内部的 class 为 wrapper 的节点，再进一步选中其内部的 class 为 text 的 p 节点。这就是 CSS 选择器，其筛选功能还是非常强大的。
+- CSS 选择器还支持嵌套选择，各个选择器之间加上空格分隔开便可以代表嵌套关系，如： `#container` .wrapper p 则代表先选择 id 为 container 的节点，然后选中其内部的 class 为 wrapper 的节点，然后再进一步选中其内部的 p 节点。另外，如果不加空格，则代表并列关系，如 div#container .wrapper p.text 代表先选择 id 为 container 的 div 节点，然后选中其内部的 class 为 wrapper 的节点，再进一步选中其内部的 class 为 text 的 p 节点。这就是 CSS 选择器，其筛选功能还是非常强大的。
 
 > 参考
 >
