@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
+            "file": "Tool/Obsidian/README.md",
             "mode": "source",
             "source": false
           }
@@ -49,8 +49,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
+                "file": "Tool/Obsidian/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md"
+                "file": "Tool/Obsidian/README.md"
               }
             }
           }
@@ -111,6 +110,7 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "Tool/Obsidian/README.md",
     "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
     "Recsys/推荐模型.md",
     "Tool/SQL/sql.md",
@@ -119,7 +119,6 @@
     "BasicKnow/GNN/RepresentationLearning/others.md",
     "NLG/Dailogue/任务型对话/simpread-任务型对话系统预训练最新研究进展.md",
     "BasicKnow/deep_learning/2.improveDNN.md",
-    "Tool/Bigdata/Task5参考答案.md",
-    "NLG/Dailogue/RASA/RASA.md"
+    "Tool/Bigdata/Task5参考答案.md"
   ]
 }
