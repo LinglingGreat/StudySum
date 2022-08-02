@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Obsidian/README.md",
+            "file": "Tool/Git/readme.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Obsidian/README.md",
+                "file": "Tool/Git/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,12 +97,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Obsidian/README.md"
+                "file": "Tool/Git/readme.md"
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -110,15 +110,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "image/image_dU94N7jc2u.png.md",
+    "Tool/Git/readme.md",
+    "NLG/Dailogue/业界分享/微软小冰/微软小冰.md",
     "Tool/Obsidian/README.md",
     "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
     "Recsys/推荐模型.md",
     "Tool/SQL/sql.md",
     "BasicKnow/deep_learning/program-DLbasis.md",
     "CourseNote/七月kaggle课程.md",
-    "BasicKnow/GNN/RepresentationLearning/others.md",
-    "NLG/Dailogue/任务型对话/simpread-任务型对话系统预训练最新研究进展.md",
-    "BasicKnow/deep_learning/2.improveDNN.md",
-    "Tool/Bigdata/Task5参考答案.md"
+    "BasicKnow/GNN/RepresentationLearning/others.md"
   ]
 }
