@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Git/readme.md",
+            "file": "Tool/README.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/readme.md",
+                "file": "Tool/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/readme.md"
+                "file": "Tool/README.md"
               }
             }
           }
@@ -110,15 +110,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
-    "image/image_dU94N7jc2u.png.md",
+    "Tool/Linux/README.md",
+    "Tool/Linux/readme.md",
     "Tool/Git/readme.md",
+    "image/image_dU94N7jc2u.png.md",
     "NLG/Dailogue/业界分享/微软小冰/微软小冰.md",
     "Tool/Obsidian/README.md",
     "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
     "Recsys/推荐模型.md",
     "Tool/SQL/sql.md",
-    "BasicKnow/deep_learning/program-DLbasis.md",
-    "CourseNote/七月kaggle课程.md",
-    "BasicKnow/GNN/RepresentationLearning/others.md"
+    "BasicKnow/deep_learning/program-DLbasis.md"
   ]
 }
