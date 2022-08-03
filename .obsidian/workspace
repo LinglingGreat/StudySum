@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/README.md",
+            "file": "KnowledgeGraph/InformationExtraction/NER/LatticeLSTM/LatticeLSTM.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/README.md",
+                "file": "KnowledgeGraph/InformationExtraction/NER/LatticeLSTM/LatticeLSTM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +97,21 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/README.md"
+                "file": "KnowledgeGraph/InformationExtraction/NER/LatticeLSTM/LatticeLSTM.md"
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
     "width": 168
   },
-  "active": "6b7f0d46dda0ee30",
+  "active": "4e8981ccab8108fe",
   "lastOpenFiles": [
+    "KnowledgeGraph/InformationExtraction/NER/命名实体识别NER.md",
+    "Tool/README.md",
     "Tool/Linux/README.md",
     "Tool/Linux/readme.md",
     "Tool/Git/readme.md",
@@ -117,8 +119,6 @@
     "NLG/Dailogue/业界分享/微软小冰/微软小冰.md",
     "Tool/Obsidian/README.md",
     "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
-    "Recsys/推荐模型.md",
-    "Tool/SQL/sql.md",
-    "BasicKnow/deep_learning/program-DLbasis.md"
+    "Recsys/推荐模型.md"
   ]
 }
