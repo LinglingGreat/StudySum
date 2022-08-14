@@ -342,6 +342,12 @@ screen的用法：[https://blog.51cto.com/zz6547/1829625](https://blog.51cto.com
 
 *   Ctrl+c切换回之前模式
 
+### nohup
+
+```
+nohup python graph_api.py > logs/graph.log & echo $! > graph.pid
+```
+
 ## 解压
 
 解压tar.bz2文件`tar -jxvf xxx`
@@ -375,3 +381,14 @@ wget：[https://www.cnblogs.com/peida/archive/2013/03/18/2965369.html](https://w
 ## gcc
 
 暂时升级：`scl enable devtoolset-7 bash`
+
+## 安装re2c和ninja
+
+参考资料：http://www.manongjc.com/detail/20-nfwuuxzbajoxqos.html
+
+如果有报错autoreconf命令找不到，安装：`dnf install autoconf automake libtool`
+
+## Linux环境下conda虚拟环境的迁移
+
+[Linux环境下conda虚拟环境的迁移](https://blog.csdn.net/qq_42730750/article/details/125413470)
+

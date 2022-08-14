@@ -507,7 +507,6 @@ tokenizer.encode 分词并且将词转换成id
 
 
 
-
 ## 教程
 
 [https://pytorch.apachecn.org/docs/1.4/4.html](https://pytorch.apachecn.org/docs/1.4/4.html)
