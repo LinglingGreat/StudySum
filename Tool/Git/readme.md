@@ -101,7 +101,7 @@ cp = cherry-pick
 
 5.添加提交代码的备注`git commit -m "xxx"`（xxx为本次提交代码的备注）
 
-6.提交代码到指定的分支`git push origin xxx` （xxx为要提交代码的分支名称）
+6.提交代码到指定的分支`git push origin xxx` （xxx为要提交代码的分支名称）(可以不用提交，如果是临时分支的话)
 
 7.如果git push这个步骤出现了错误，是因为是git服务器中的你提交的文件不在本地代码目录中，可以通过如下命令进行代码合并，然后在使用第6步
 `git pull --rebase origin xxx`（xxx为要提交代码的分支名称）

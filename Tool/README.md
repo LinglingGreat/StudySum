@@ -2,6 +2,7 @@
 
 - https://blog.csdn.net/alxe_made/article/details/105480762
 - [好物分享第六弹——让zotero成为你的文献图书馆](https://mp.weixin.qq.com/s/V4gvbmJw_wlxCf5cf-AxRg)
+- [如何用ipad看文献](https://www.zhihu.com/question/288186107/answer/1327966061)
 
 ## Calibre
 
@@ -12,7 +13,7 @@
 
 ## 工具 CurlWget
 
--   [https://chrome.google.com/webstore/detail/curlwget/dgcfkhmmpcmkikfmonjcalnjcmjcjjdn](https://chrome.google.com/webstore/detail/curlwget/dgcfkhmmpcmkikfmonjcalnjcmjcjjdn)
+- [https://chrome.google.com/webstore/detail/curlwget/dgcfkhmmpcmkikfmonjcalnjcmjcjjdn](https://chrome.google.com/webstore/detail/curlwget/dgcfkhmmpcmkikfmonjcalnjcmjcjjdn)
 -   可以直接把要下载的大文件 在服务器端下载
 -   不用先下到笔记本再传到服务器了 特别适合下大模型 语料之类的
 -   自己浏览器上点一下下载，然后他就会捕捉到链接 登录状态的cookie也能带过去
