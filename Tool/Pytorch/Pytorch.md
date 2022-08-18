@@ -11,7 +11,7 @@ PyTorch是一个基于python的科学计算包，主要针对两类人群：
 
 ## 数据生成
 
-查看数据的**维度**大小：`a.size()`，输出一个tuple：`torch.Size([5, 3])`
+查看数据的**维度**大小：`a.size()`或者`a.shape`，输出一个tuple：`torch.Size([5, 3])`
 
 和numpy的各种数据生成的方法很像。
 
@@ -19,7 +19,7 @@ PyTorch是一个基于python的科学计算包，主要针对两类人群：
 
 创建一个**随机初始化**矩阵：`x = torch.rand(5, 3)`
 
-构造一个**填满`0`**且数据类型为`long`的矩阵:`x = torch.zeros(5, 3, dtype=torch.long)`
+构造一个**填满`0`**且数据类型为`long`的矩阵:`x = torch.zeros(5, 3, dtype=torch.long)`.还可以通过`torch.zero_()`和`torch.zeros_like()`将现有矩阵转换为全0矩阵.
 
 **标准正态分布**：`torch.randn(num_examples, num_inputs, dtype=torch.float32)`
 
@@ -38,6 +38,8 @@ print(x)
 x = torch.randn_like(x, dtype=torch.float)    # 重载 dtype!
 print(x)                                      # 结果size一致
 ```
+
+
 
 ## 运算
 

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Git/readme.md",
+            "file": "Recsys/深度学习推荐系统实战.md",
             "mode": "source",
             "source": false
           }
@@ -40,10 +40,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#对话/情感",
+                "query": "redis",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": true,
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/readme.md",
+                "file": "Recsys/深度学习推荐系统实战.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/readme.md"
+                "file": "Recsys/深度学习推荐系统实战.md"
               }
             }
           }
@@ -108,17 +108,17 @@
     "direction": "horizontal",
     "width": 168
   },
-  "active": "6b7f0d46dda0ee30",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
     "Tool/Linux/README.md",
+    "Tool/Pytorch/Pytorch.md",
+    "BasicKnow/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md",
+    "Tool/Git/readme.md",
     "NLG/Dailogue/Dataset/对话数据集整理.md",
     "KnowledgeGraph/小米在知识表示学习的探索与实践.md",
     "KnowledgeGraph/KG.md",
     "KnowledgeGraph/医药领域知识图谱问答.md",
     "NLG/Dailogue/LongtermChat/LongtermChat.md",
-    "Template/普通模板.md",
-    "NLG/Dailogue/ESC/ESC.md",
-    "KnowledgeGraph/InformationExtraction/NER/LatticeLSTM/LatticeLSTM.md",
-    "Tool/README.md"
+    "Template/普通模板.md"
   ]
 }
