@@ -5,7 +5,7 @@ C++ makefile
 
 [Text2SQL Baseline解析](NLG/Text2SQL/Text2SQL%20Baseline解析.md)
 
-[GlobalPointer](KnowledgeGraph/InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
+[GlobalPointer](KnowledgeGraph/NER/GlobalPointer/GlobalPointer.md)
 
 [多标签分类(Multi-label Classification)](TextClassification/多标签分类(Multi-label%20Classification)/多标签分类(Multi-label%20Classification).md)
 

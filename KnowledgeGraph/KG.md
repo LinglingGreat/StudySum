@@ -208,7 +208,8 @@ https://mp.weixin.qq.com/s/j94s-jQjJ11zXSDD_uEcAA
 
 
 ## 知识图谱数据集
-
+ 
+ 中文开放知识图谱：http://www.openkg.cn/
 
 
 ## 图数据库

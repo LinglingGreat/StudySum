@@ -79,6 +79,89 @@ PLATO-XL网络架构上承袭了PLATO unified transformer 结构,可同时进行
 PLATO-XL包括中英文2个对话模型,预训练语料规模达到千亿级token,模型规模高达110亿参数。PLATO-XL也是完全基于百度自主研发的飞桨深度学习平台,利用了飞桨 FleetX库的并行能力,使用了包括 recompute、sharded data parallelism等策略,基于高性能 GPU 集群进行了训练。
 
 
+## PLATO-LTM
+论文：Long Time No See! Open-Domain Conversation with Long-Term Persona Memory
+
+github: https://github.com/PaddlePaddle/Research/tree/master/NLP/ACL2022-DuLeMon
+
+task: Long-term Memory Conversation(LeMon)
+dataset: DuLeMon
+dialogue generation framework: PLATO-LTM
+抽取和更新长期persona记忆，训练时不需要多轮的对话数据
+
+### 数据集
+
+![](img/Pasted%20image%2020220823114702.png)
+
+![](img/Pasted%20image%2020220823114847.png)
+
+- Persona collection: 主要来源于PersonaChat
+- Dialogue collection: 众包对话
+- Persona Grounding Labeling: 标注当前回复是否用了persona info，以及当前句子是否是persona句子
+
+数据包括两个部分
+- DeLeMon-SELF: bot只知道自己的persona
+- DuLeMon-BOTH: bot也知道user的persona
+![](img/Pasted%20image%2020220823115913.png)
+
+### 模型
+![](img/Pasted%20image%2020220823134846.png)
+包括几个部分
+1. Persona Extractor(PE)
+使用分类器过滤不相关的信息，抽取persona句子
+ERNIE- CNN，使用预训练的ERNIE作为句子表示，CNN作为分类
+数据集：6k utterances（来源于DuLeMon和中国的社交平台）
+
+训练5个模型（参数不同）(pc-stage1)，拿5个模型给140万数据做标注，有至少2个模型标positive就给positive标签，否则给negative标签。然后5个模型在所有数据上训练，选择表现最好的一个作为最终的模型(pc-stage2)。
+
+2. Long-Term Memory(LTM)
+两个long-term memories存储双方的persona info
+reading and writing based on the context persona matching (CPM) model
+context encoder Ec，persona encoder Ep，[CLS]  E
+Ec和Ep用ERNIE模型初始化，然后在DuLeMon数据集上训练
+每个训练样本中，positive persona是当前用户的utterance和机器人的response使用的persona, 包括机器人看到的bot persona和user persona, negative persona是current session中的剩余persona
+
+triplet loss (context, positive persona, negative persona)
+![](img/Pasted%20image%2020220823141550.png)
+
+Write: PE module识别对话历史中的persona作为待写入的候选信息，需要跟memory中的persona去重，计算cosine相似度获取最相似的persona，如果超过阈值，就以新换旧，否则直接写入。需要存储(persona, Ep(persona)) pair.
+
+Read: 从memory中检索的过程。First, we use the effificient similarity search of dense vectors to select candidates. Then a matching model is utilized to score the relevance of the candidates to the current context. The similarity between the context and the persona using cosine similarity
+选择topk的user persona和topk的bot persona,过滤相似度低于阈值的那些。
+
+3. Generation Module
+大模型PLATO-2，双方的persona句子+对话上下文作为模型输入
+加了角色信息区分，两个策略
+- role embedding
+- role token: system persona和user persona
+
+### 实验
+自动评估指标：
+- Precision, Recall, F1 for persona classification model
+- AUC, recall@k for the long-term memory ranking model
+- PPL, BLEU, F1, DISTINCT-1/2 for response generation model
+人工评估指标
+- Coherence: whether the response is relevant and consistent with the context
+- Consistency: whether the response is consistent with the persona in the dialogue history
+- Engagingness: whether the annotator would like to talk with the speaker for each response in the long-term conversation
+
+PE模型：200条测试样本
+![](img/Pasted%20image%2020220823143555.png)
+
+ranking model CPM
+- AUC 0.76, recall@5 0.83
+
+generate model
+![](img/Pasted%20image%2020220823145503.png)
+self-chat, PLATO-LTM是user simulator, 其它所有模型是bot (包括plato-ltm)
+
+PLATO-FT: The PLATO-2 model fifine-tuned on our proposed DuLeMon dataset.
+
+PLATO-LTM: The PLATO-FT model with our proposed long-term memory (LTM).
+
+PLATO-LTM w/o PE: PLATO-LTM without the persona extractor (PE) module, which stores all history utterances (user and bot separately) into memory without persona extraction.
+
+
 
 ## 参考资料
 

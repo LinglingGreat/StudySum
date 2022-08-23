@@ -88,12 +88,12 @@
   - k近邻法
     * [K近邻](BasicKnow/k近邻法/K近邻.md)
   - Language Model
-    - [语言模型解码采样策略](BasicKnow/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md)
-    * [[1-1][语言模型]从N-gram模型讲起](BasicKnow/LanguageModel/[1-1][语言模型]从N-gram模型讲起.md)
-    * [[1-2][语言模型]NNLM(神经网络语言模型)](BasicKnow/LanguageModel/[1-2][语言模型]NNLM(神经网络语言模型).md)
-    * [[1-3][语言模型]基于RNN的语言模型](BasicKnow/LanguageModel/[1-3][语言模型]基于RNN的语言模型.md)
-    * [[1-4][语言模型]用N-gram来做完形填空](BasicKnow/LanguageModel/[1-4][语言模型]用N-gram来做完形填空.md)
-    * [[1-5][语言模型]用KenLM来做完形填空](BasicKnow/LanguageModel/[1-5][语言模型]用KenLM来做完形填空.md)
+    - [语言模型解码采样策略](NLG/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md)
+    * [[1-1][语言模型]从N-gram模型讲起](NLG/LanguageModel/[1-1][语言模型]从N-gram模型讲起.md)
+    * [[1-2][语言模型]NNLM(神经网络语言模型)](NLG/LanguageModel/[1-2][语言模型]NNLM(神经网络语言模型).md)
+    * [[1-3][语言模型]基于RNN的语言模型](NLG/LanguageModel/[1-3][语言模型]基于RNN的语言模型.md)
+    * [[1-4][语言模型]用N-gram来做完形填空](NLG/LanguageModel/[1-4][语言模型]用N-gram来做完形填空.md)
+    * [[1-5][语言模型]用KenLM来做完形填空](NLG/LanguageModel/[1-5][语言模型]用KenLM来做完形填空.md)
   - Loss Function
     * [常用损失函数](BasicKnow/LossFunction/常用损失函数.md)
     * [Focal Loss](BasicKnow/LossFunction/FocalLoss.md)
@@ -169,15 +169,15 @@
 - Knowledge Graph
   - Information Extraction
     - 联合抽取
-      - [PRGC](KnowledgeGraph/InformationExtraction/联合抽取/PRGC/PRGC.md)
+      - [PRGC](KnowledgeGraph/联合抽取/PRGC/PRGC.md)
     - Code
-      - [BERT微调](KnowledgeGraph/InformationExtraction/code/BERT微调/README.md)
+      - [BERT微调](KnowledgeGraph/code/BERT微调/README.md)
     - NER
       - 阅读理解做NER
-        * [MRC](KnowledgeGraph/InformationExtraction/NER/阅读理解做NER/MRC.md)
-      - [FLAT](KnowledgeGraph/InformationExtraction/NER/FLAT/FLAT.md)
-      - [Global Pointer](KnowledgeGraph/InformationExtraction/NER/GlobalPointer/GlobalPointer.md)
-      * [命名实体识别NER](KnowledgeGraph/InformationExtraction/NER/命名实体识别NER.md)
+        * [MRC](KnowledgeGraph/NER/阅读理解做NER/MRC.md)
+      - [FLAT](KnowledgeGraph/NER/FLAT/FLAT.md)
+      - [Global Pointer](KnowledgeGraph/NER/GlobalPointer/GlobalPointer.md)
+      * [命名实体识别NER](KnowledgeGraph/NER/命名实体识别NER.md)
   - Keyword Extraction
     * [关键词抽取](KnowledgeGraph/KeywordExtraction/关键词抽取.md)
   * [小米在知识表示学习的探索与实践](KnowledgeGraph/小米在知识表示学习的探索与实践.md)
