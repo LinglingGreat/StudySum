@@ -108,17 +108,17 @@
     "direction": "horizontal",
     "width": 168
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "Tool/Git/readme.md",
+    "Tool/Linux/README.md",
     "Tool/Linux/linux系统CUDA安装及踩坑记录/linux系统CUDA安装及踩坑记录.md",
     "CourseNote/NLP实战高手课/极客时间_NLP实战高手课.md",
-    "Tool/Linux/README.md",
     "Tool/README.md",
     "Tool/Obsidian/README.md",
     "Tool/Obsidian/obsidian流程图.md",
     "NLG/RAGConversation/RAGConversation.md",
     "NLG/LanguageModel/语言模型解码采样策略/A*算法提升文本生成效果.md",
-    "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
-    "NLG/RAG/RAG.md"
+    "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md"
   ]
 }

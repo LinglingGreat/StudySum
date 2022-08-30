@@ -379,11 +379,19 @@ wget：[https://www.cnblogs.com/peida/archive/2013/03/18/2965369.html](https://w
 [https://www.cnblogs.com/mengzhongshi/p/3319407.html](https://www.cnblogs.com/mengzhongshi/p/3319407.html "https://www.cnblogs.com/mengzhongshi/p/3319407.html")
 
 ## gcc
-`yum install centos-release-scl
 
-暂时升级：`scl enable devtoolset-7 bash`
-`yum install devtoolset-8-gcc devtoolset-8-gcc-c++
-`
+更新gcc和g++
+- `yum install centos-release-scl
+- 查看能安装的版本`yum list dev\*gcc //用于查看可以安装的版本
+- 安装 `yum install devtoolset-8-gcc devtoolset-8-gcc-c++
+- 临时生效`source /opt/rh/devtoolset-8/enable
+- 一直生效的方法：
+`echo "source /opt/rh/devtoolset-8/enable" >> /etc/bashrc
+
+`source /etc/bashrc 
+- 或者（临时生效）：`scl enable devtoolset-7 bash`
+
+
 
 ## 安装re2c和ninja
 
