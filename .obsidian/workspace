@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "NLG/Dailogue/PLATO/PLATO.md",
+            "file": "Tool/Linux/README.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "redis",
+                "query": "deepspeed",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/Dailogue/PLATO/PLATO.md",
+                "file": "Tool/Linux/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/Dailogue/PLATO/PLATO.md"
+                "file": "Tool/Linux/README.md"
               }
             }
           }
@@ -108,17 +108,17 @@
     "direction": "horizontal",
     "width": 168
   },
-  "active": "6b7f0d46dda0ee30",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
-    "NLG/LanguageModel/语言模型解码采样策略/A*算法提升文本生成效果.md",
-    "NLG/LanguageModel/语言模型解码采样策略/NAACL 最佳方法论文-课本上的 A *搜索算法可以提升文本生成效果.md",
-    "NLG/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md",
-    "NLG/Dailogue/PLATO/PLATO.md",
+    "Tool/Linux/linux系统CUDA安装及踩坑记录/linux系统CUDA安装及踩坑记录.md",
+    "CourseNote/NLP实战高手课/极客时间_NLP实战高手课.md",
     "Tool/Linux/README.md",
-    "KnowledgeGraph/NER/小样本NER/中文小样本 NER 模型方法总结和实战.md",
-    "KnowledgeGraph/医药领域知识图谱问答.md",
-    "KnowledgeGraph/小米在知识表示学习的探索与实践.md",
-    "NLG/Dailogue/LaMDA/LaMDA.md",
-    "NLG/Dailogue/BlenderBot/BlenderBot.md"
+    "Tool/README.md",
+    "Tool/Obsidian/README.md",
+    "Tool/Obsidian/obsidian流程图.md",
+    "NLG/RAGConversation/RAGConversation.md",
+    "NLG/LanguageModel/语言模型解码采样策略/A*算法提升文本生成效果.md",
+    "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md",
+    "NLG/RAG/RAG.md"
   ]
 }

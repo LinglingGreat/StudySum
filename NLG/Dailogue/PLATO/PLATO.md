@@ -174,7 +174,7 @@ generate model
 ![](img/Pasted%20image%2020220823145503.png)
 self-chat, PLATO-LTM是user simulator, 其它所有模型是bot (包括plato-ltm)
 
-PLATO-FT: The PLATO-2 model fifine-tuned on our proposed DuLeMon dataset.
+PLATO-FT: The PLATO-2 model fine-tuned on our proposed DuLeMon dataset.
 
 PLATO-LTM: The PLATO-FT model with our proposed long-term memory (LTM).
 
