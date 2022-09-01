@@ -348,6 +348,34 @@ screen的用法：[https://blog.51cto.com/zz6547/1829625](https://blog.51cto.com
 nohup python graph_api.py > logs/graph.log & echo $! > graph.pid
 ```
 
+### 统计代码行数
+
+Linux有一个统计文件行数的命令wc。使用wc可以打印出每个文件和总文件的行数、字数和字节数，如果没有指定文件，则会读取标准输入(一般是终端)做统计。
+
+1.统计当前目录下，java文件数量：
+
+```
+find . -name "*.java" |wc -l
+```
+
+2.统计当前目录下，所有java文件行数：
+
+```
+find . -name "*.java" |xargs cat|wc -l
+```
+
+```
+find . "(" -name "*.cpp" -or -name "*.h" ")"  -print | xargs wc -l
+```
+
+3.统计当前目录下，所有java文件行数，并过滤空行：
+
+```
+find . -name "*.java" |xargs cat|grep -v ^$|wc -l
+```
+
+
+
 ## 解压
 
 解压tar.bz2文件`tar -jxvf xxx`
