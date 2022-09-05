@@ -1,3 +1,10 @@
+---
+title: PLATO
+created: 2022-09-05
+tags: 百度
+
+---
+
 # PLATO
 
 PLATO是业界首个基于隐空间（Latent Space）的端到端的预训练对话生成模型。据悉，该模型利用隐向量来表示对话的潜在方向，从而达到对话内容丰富度和流畅度的显著提升。针对具体的对话任务，基于PLATO可以用少量数据训练得到非常流畅的对话系统。
@@ -81,6 +88,10 @@ PLATO-XL包括中英文2个对话模型,预训练语料规模达到千亿级toke
 
 ## PLATO-LTM
 论文：Long Time No See! Open-Domain Conversation with Long-Term Persona Memory
+
+#ACL  
+
+[https://mp.weixin.qq.com/s/EGhQ2dVjxVobz4lz3vkeXw](https://mp.weixin.qq.com/s/EGhQ2dVjxVobz4lz3vkeXw)
 
 github: https://github.com/PaddlePaddle/Research/tree/master/NLP/ACL2022-DuLeMon
 

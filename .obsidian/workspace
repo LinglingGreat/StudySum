@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Linux/README.md",
+            "file": "NLG/Dataset/对话数据集.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "deepspeed",
+                "query": "tag:#百度",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,14 +69,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "NLG/Dataset/对话数据集.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/README.md"
+                "file": "NLG/Dataset/对话数据集.md"
               }
             }
           }
@@ -110,15 +110,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "NLG/Dailogue/PLATO/PLATO.md",
+    "NLG/Dataset/生成任务.md",
+    "NLG/Dataset/对话数据集.md",
+    "Template/普通模板.md",
+    "NLG/Dataset/Diamante/Diamante.md",
+    "NLG/Dataset/NaturalConv/NaturalConv.md",
+    "NLG/Dailogue/readme.md",
     "Tool/Git/readme.md",
     "Tool/Linux/README.md",
-    "Tool/Linux/linux系统CUDA安装及踩坑记录/linux系统CUDA安装及踩坑记录.md",
-    "CourseNote/NLP实战高手课/极客时间_NLP实战高手课.md",
-    "Tool/README.md",
-    "Tool/Obsidian/README.md",
-    "Tool/Obsidian/obsidian流程图.md",
-    "NLG/RAGConversation/RAGConversation.md",
-    "NLG/LanguageModel/语言模型解码采样策略/A*算法提升文本生成效果.md",
-    "NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md"
+    "Tool/Linux/linux系统CUDA安装及踩坑记录/linux系统CUDA安装及踩坑记录.md"
   ]
 }
