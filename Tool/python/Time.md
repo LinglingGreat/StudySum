@@ -28,7 +28,7 @@ gmtime()，localtime() 和 strptime() 以时间元祖（struct_time）的形式�
 | 7              | tm_yday（一年中的第几天）  | 1 ~ 366            |
 | 8              | tm_isdst（是否为夏令时）  | 0， 1， -1（-1 代表夏令时） |
 
-注1：范围真的是 0 ~ 61（你没有看错哦^_^）；60 代表闰秒，61 是基于历史原因保留。
+注1：范围真的是 0 ~ 61（你没有看错哦`^_^`）；60 代表闰秒，61 是基于历史原因保留。
 
 time.altzone
 
@@ -106,7 +106,7 @@ format 格式如下：
 | %Y     | 完整的年份                                    |        |
 | %z     | 用 +HHMM 或 -HHMM 表示距离格林威治的时区偏移（H 代表十进制的小时数，M 代表十进制的分钟数） |        |
 | %Z     | 时区的名字（如果不存在为空字符）                         |        |
-| %%     | %号本身                                     |        |
+| `%%`     | %号本身                                     |        |
 
 注1：“%p”只有与“%I”配合使用才有效果。
 
@@ -290,18 +290,18 @@ timedelta 对象支持的操作：
 
 | **操作**                       | **结果**                                   |
 | ---------------------------- | ---------------------------------------- |
-| t1 = t2 + t3                 | t2 和 t3 的和，随后：t1 - t2 == t3 and t1 - t3 == t2 为 True*（注1）* |
-| t1 = t2 - t3                 | t2 和 t3 的差，随后：t1 == t2 - t3 and t2 == t1 + t3 为 True*（注1）* |
-| t1 = t2 * i 或 t1 = i * t2    | 对象乘以一个整数，随后：t1 // i == t2 为 true；且 i != 0 |
-| t1 = t2 * f 或 t1 = f * t2    | 对象乘以一个浮点数，结果四舍五入到精度 timedelta.resolution*（注1）* |
-| f = t2 / t3                  | t2 和 t3 的商*（注3）*，返回一个 float 对象           |
+| t1 = t2 + t3                 | t2 和 t3 的和，随后：t1 - t2 == t3 and t1 - t3 == t2 为 True（注1） |
+| t1 = t2 - t3                 | t2 和 t3 的差，随后：t1 == t2 - t3 and t2 == t1 + t3 为 True(注1） |
+| t1 = t2 \* i 或 t1 = i \* t2    | 对象乘以一个整数，随后：t1 // i == t2 为 true；且 i != 0 |
+| t1 = t2 \* f 或 t1 = f \* t2    | 对象乘以一个浮点数，结果四舍五入到精度 timedelta.resolution（注1） |
+| f = t2 / t3                  | t2 和 t3 的商（注3），返回一个 float 对象           |
 | t1 = t2 / f 或 t1 = t2 / i    | 对象除以一个整数或浮点数，结果四舍五入到精度 timedelta.resolution |
-| t1 = t2 // i 或 t1 = t2 // t3 | 对象地板除一个整数或浮点数，结果舍去小数，返回一个整数*（注3）*        |
-| t1 = t2 % t3                 | t2 和 t3 的余数，返回一个 timedelta 对象*（注3）*      |
-| q, r = divmod(t1, t2)        | 计算 t1 和 t2 的商和余数，q = t1 // t2*（注3）*，r = t1 % t2，q 是一个整数，r 是一个 timedelta 对象 |
-| +t1                          | 返回一个 timedelta 对象，且值相同*（注2）*             |
-| -t1                          | 等同于 timedelta(-t1.days, -t1.seconds, -t1.microseconds)，并且相当于 t1 * -1*（注1、4）* |
-| abs(t)                       | 当 t.days >= 0 时，等同于 +t；当 t.days < = 时，等同于 -t*（注2）* |
+| t1 = t2 // i 或 t1 = t2 // t3 | 对象地板除一个整数或浮点数，结果舍去小数，返回一个整数*（注3）        |
+| t1 = t2 % t3                 | t2 和 t3 的余数，返回一个 timedelta 对象（注3）*      |
+| q, r = divmod(t1, t2)        | 计算 t1 和 t2 的商和余数，q = t1 // t2（注3），r = t1 % t2，q 是一个整数，r 是一个 timedelta 对象 |
+| +t1                          | 返回一个 timedelta 对象，且值相同（注2）             |
+| -t1                          | 等同于 timedelta(-t1.days, -t1.seconds, -t1.microseconds)，并且相当于 t1  -1（注1、4） |
+| abs(t)                       | 当 t.days >= 0 时，等同于 +t；当 t.days < = 时，等同于 -t（注2） |
 | str(t)                       | 返回一个字符串，按照此格式：[D day[ s ], ][H]H:MM:SS[.UUUUUU] |
 | repr(t)                      | 返回一个字符串，按照此格式：datetime.timedelta(D[, S[, U]]) |
 
@@ -930,7 +930,7 @@ date, datetime, 和 time 对象均支持使用 strftime(format) 方法，将指�
 | %c        | 用字符串表示日期和时间（Tue Aug 16 21:30:00 2014）    |
 | %x        | 用字符串表示日期（08/16/14）                       |
 | %X        | 用字符串表示时间（21:30:00）                       |
-| %%        | 表示百分号                                    |
+| `%%`        | 表示百分号                                    |
 
 格式化字符串综合演示：
 
@@ -1032,7 +1032,7 @@ stmt 和 setup 参数也可以是可供调用但没有参数的对象，这将�
 
 它会先执行一次 setup 参数的语句，然后计算 stmt 参数的语句执行 number 次的时间，返回值是以秒为单位的浮点数。number 参数的默认值是一百万，stmt、setup 和 timer 参数由 timeit.Timer 类的构造函数传递。
 
-*注意：默认情况下，timeit() 在计时的时候会暂时关闭 Python 的垃圾回收机制。这样做的优点是计时结果更具有可比性，但缺点是 GC（garbage collection，垃圾回收机制的缩写）有时候是测量函数性能的一个重要组成部分。如果是这样的话，GC 可以在 setup 参数执行第一条语句的时候被重新启动，例如：*
+*注意：默认情况下，timeit() 在计时的时候会暂时关闭 Python 的垃圾回收机制。这样做的优点是计时结果更具有可比性，但缺点是 GC（garbage collection，垃圾回收机制的缩写）有时候是测量函数性能的一个重要组成部分。如果是这样的话，GC 可以在 setup 参数执行第一条语句的时候被重新启动，例如：
 
 ```
 timeit.Timer('for i in range(10): oct(i)', 'gc.enable()').timeit()
@@ -1181,3 +1181,112 @@ if __name__ == '__main__':
     print(timeit.timeit("test()", setup="from __main__ import test"))
 ```
 
+## 基本用法
+
+```python
+import datetime, calendar
+now_time = datetime.datetime.now() # 表示当前时间
+day_num = datetime.datetime.now().isoweekday() # 返回1-7，代表周一到周日，当前时间所在本周第几天；
+datetime.datetime.now().weekday() # 返回的0-6，代表周一到周日
+monday = (now_time - datetime.timedelta(days=day_num-1)) # 本周周一时间
+```
+
+### 获取今天是星期几和本月的天数
+
+```python
+import datetime, calendar
+def test1():
+  # 获取当前日期
+    now_time = datetime.datetime.now()
+    # 获取当前时间的星期数和月数
+    week, days_num = calendar.monthrange(now_time.year, now_time.month)
+     # 返回周几和当月的天数
+    return week, days_num
+
+```
+
+### 本周x
+
+```python
+def get_week(day=1):
+    """
+    本周x
+    :param day:
+    :return:
+    """
+    d = datetime.now()
+    dayscount = timedelta(days=d.isoweekday())
+    dayto = d - dayscount
+    sixdays = timedelta(days=-day)
+    dayfrom = dayto - sixdays
+    date_from = datetime(dayfrom.year, dayfrom.month, dayfrom.day, 0, 0, 0)
+    return str(date_from)[0:4] + '年' + str(date_from)[5:7] + '月' + str(date_from)[8:10] + '日'
+```
+
+### 获取下个月第一天和上个月最后一天
+
+```python
+import datetime, calendar
+def test2():
+  # 获取当前日期
+    now_time = datetime.datetime.now()
+    # 获取当前时间的星期数和天数
+    week, days_num = calendar.monthrange(now_time.year, now_time.month)
+    # 获取本月的最后一天
+    end_day_in_mouth = now_time.replace(day=days_num)
+    # 获取下月的第一天
+    next_mouth = end_day_in_mouth + datetime.timedelta(days=1)
+    date_from = datetime(next_mouth.year, next_mouth.month, next_mouth.day, 0, 0, 0)
+    return str(date_from)[0:4] + '年' + str(date_from)[5:7] + '月' + str(date_from)[8:10] + '日'
+
+```
+
+上个月最后一天
+
+```python
+
+def test2():
+  # 获取当前日期
+    now_time = datetime.datetime.now()
+    # 获取本月的第一天
+    end_day_in_mouth = now_time.replace(day=1)
+    # 获取上月的最后一天
+    next_mouth = end_day_in_mouth - datetime.timedelta(days=1)
+    # 返回上月的月份
+    return next_mouth.month
+
+```
+
+### 上周x和下周x
+
+```python
+def get_lastweek(day=1):
+    """
+    周几
+    :param day:
+    :return:
+    """
+    d = datetime.now()
+    dayscount = timedelta(days=d.isoweekday())
+    dayto = d - dayscount
+    sixdays = timedelta(days=7 - day)
+    dayfrom = dayto - sixdays
+    date_from = datetime(dayfrom.year, dayfrom.month, dayfrom.day, 0, 0, 0)
+    return str(date_from)[0:4] + '年' + str(date_from)[5:7] + '月' + str(date_from)[8:10] + '日'
+    
+    
+def get_nextweek(day=1):
+    """
+    周几
+    :param day:
+    :return:
+    """
+    d = datetime.now()
+    dayscount = timedelta(days=d.isoweekday())
+    dayto = d - dayscount
+    sixdays = timedelta(days=-7 - day)
+    dayfrom = dayto - sixdays
+    date_from = datetime(dayfrom.year, dayfrom.month, dayfrom.day, 0, 0, 0)
+    return str(date_from)[0:4] + '年' + str(date_from)[5:7] + '月' + str(date_from)[8:10] + '日' 
+ 
+```

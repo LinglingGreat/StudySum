@@ -5,6 +5,108 @@ PyTorch是一个基于python的科学计算包，主要针对两类人群：
 - 作为NumPy的替代品，可以利用GPU的性能进行计算
 - 作为一个高灵活性、速度快的深度学习平台
 
+安装
+
+`conda install pytorch torchvision torchaudio cudatoolkit=11.1.1 -c pytorch-lts -c nvidia`
+
+`conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch`
+
+## 指定卡
+
+torch.cuda.set_device(0)
+
+torch.cuda.is_available()
+
+## transformers
+
+### Trainer的使用方法
+
+[huggingface transformers使用指南之二——方便的trainer](https://zhuanlan.zhihu.com/p/363670628)
+
+保存最好的模型：`--load_best_model_at_end --metric_for_best_model eval_loss --greater_is_better False`
+
+### Cache
+
+[https://huggingface.co/docs/datasets/v1.16.1/cache.html](https://huggingface.co/docs/datasets/v1.16.1/cache.html)
+
+## GPU测速
+
+```Python
+start = torch.cuda.Event(enable_timing=True)
+end = torch.cuda.Event(enable_timing=True)
+start.record()
+# function
+end.record()
+torch.cuda.synchronize()
+time_snr = start.elapsed_time(end)
+```
+
+参考：
+
+[https://www.jianshu.com/p/cbada26ea29d](https://www.jianshu.com/p/cbada26ea29d)
+
+[https://discuss.pytorch.org/t/how-to-measure-time-in-pytorch/26964](https://discuss.pytorch.org/t/how-to-measure-time-in-pytorch/26964)
+
+## 函数
+
+### **torch.cat**
+
+函数目的： 在给定维度上对输入的张量序列seq 进行连接操作。
+
+outputs = torch.cat(inputs, dim=?) → Tensor
+
+inputs : 待连接的张量序列，可以是任意相同Tensor类型的python 序列 dim : 选择的扩维, 必须在0到len(inputs[0])之间，沿着此维连接张量序列。
+
+比如inputs为２个形状为[2 , 3]的矩阵
+
+```python
+In    [1]: torch.cat(inputs, dim=0).shape
+Out[1]: torch.Size([4,  3])
+
+In    [2]: torch.cat(inputs, dim=1).shape
+Out[2]: torch.Size([2, 6])
+
+In    [3]: torch.cat(inputs, dim=2).shape
+IndexError: Dimension out of range (expected to be in range of [-2, 1], but got 2)
+
+```
+
+### **DataLoader**
+
+DataLoader(dataset, batch_size=1, shuffle=False, sampler=None, num_workers=0, collate_fn=default_collate, pin_memory=False, drop_last=False)
+
+-   dataset：加载的数据集(Dataset对象)
+    
+-   batch_size：batch size
+    
+-   shuffle:：是否将数据打乱
+    
+-   sampler： 样本抽样，后续会详细介绍
+    
+-   num_workers：使用多进程加载的进程数，0代表不使用多进程
+    
+-   collate_fn： 如何将多个样本数据拼接成一个batch，一般使用默认的拼接方式即可
+    
+-   pin_memory：是否将数据保存在pin memory区，pin memory中的数据转到GPU会快一些
+    
+-   dataset中的数据个数可能不是batch_size的整数倍，drop_last为True会将多出来不足一个batch的数据丢弃
+    
+
+`torch.tril(input, diagonal=0, *, out=None) → Tensor`
+
+-   返回矩阵（2-D张量）或矩阵 `input` 批次的下三角部分，结果张量 `out` 的其他元素设置为0。
+-   矩阵的下三角部分被定义为对角线上和下的元素。
+-   [`diagonal`](https://runebook.dev/zh-CN/docs/pytorch/generated/torch.diagonal#torch.diagonal) 参数控制要考虑的对角线。如果 [`diagonal`](https://runebook.dev/zh-CN/docs/pytorch/generated/torch.diagonal#torch.diagonal) = 0，则保留主对角线上和下方的所有元素。正值包括在主对角线上方的对角线，同样，负值排除在主对角线下方的对角线。主要对角线是索引集\lbrace (i, i) \rbrace fori在[0,/min{d_{1},d_{2}}-1] whered_{1},d_{2}。 是矩阵的维度。
+
+### [torch.ne](http://torch.ne)
+
+![](https://secure2.wostatic.cn/static/7ezbjr1kfY7RcbtSSxvbsp/image.png)
+
+### masked_fill_
+
+masked_fill_([mask](https://so.csdn.net/so/search?q=mask&spm=1001.2101.3001.7020), value)掩码操作：用value填充[tensor](https://so.csdn.net/so/search?q=tensor&spm=1001.2101.3001.7020)中与mask中值为1位置相对应的元素。mask的形状必须与要填充的tensor形状一致。
+
+
 ## 安装
 
 [https://pytorch.org/](https://pytorch.org/)  官网点击操作系统等配置获取安装命令

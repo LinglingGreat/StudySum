@@ -141,3 +141,6 @@ Zero/Few shot下效果很好
 prefix-tuning：[https://zhuanlan.zhihu.com/p/386073664](https://zhuanlan.zhihu.com/p/386073664)
 
 [https://spaces.ac.cn/archives/8295](https://spaces.ac.cn/archives/8295)
+
+[打开模型Zero-Shot新范式：Instruction Tuning](https://mp.weixin.qq.com/s/1qsaT0AVlNjhQJR8z8PAGA)
+

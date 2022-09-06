@@ -36,3 +36,7 @@ Mask-tuning的出发点为，在预训练模型finetune的过程中，其实不�
 
 ![image-20220516221635621](img/image-20220516221635621.png)
 
+
+[打开模型Zero-Shot新范式：Instruction Tuning](https://mp.weixin.qq.com/s/1qsaT0AVlNjhQJR8z8PAGA)
+
+

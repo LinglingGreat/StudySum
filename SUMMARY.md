@@ -384,7 +384,7 @@
   - [Docker](Tool/Docker/Docker.md)
   - [Elasticsearch](Tool/Elasticsearch/Elasticsearch.md)
   - [Keras](Tool/Keras/Keras.md)
-  - [Numpy](Tool/Numpy/Numpy.md)
+  - [Numpy](Tool/python/Numpy/Numpy.md)
   - Python
     - 可视化
       * [Interactivegraphics](Tool/python/可视化/interactivegraphics.md)
@@ -401,7 +401,7 @@
       * [Selenium](Tool/python/python爬虫/selenium.md)
     * [代码优化](Tool/python/代码优化.md)
     * [一行代码](Tool/python/一行代码.md)
-    * [用python进行语言检测](Tool/python/用python进行语言检测.md)
+    * [用python进行语言检测](Tool/python/Application/用python进行语言检测.md)
     * [Debug](Tool/python/Debug.md)
     * [Exception](Tool/python/Exception.md)
     * [Features Tricks](Tool/python/Features & Tricks.md)
@@ -413,7 +413,7 @@
     * [Math](Tool/python/Math.md)
     * [Os](Tool/python/os.md)
     * [Others](Tool/python/others.md)
-    * [Pandas](Tool/python/Pandas.md)
+    * [Pandas](Tool/python/pandas/Pandas.md)
     * [Python Datastructure](Tool/python/python_datastructure.md)
     * [Python操作数据库](Tool/python/Python操作数据库.md)
     * [Streamlit](Tool/python/Streamlit.md)
