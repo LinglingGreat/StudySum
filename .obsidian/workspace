@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "NLG/Dailogue/readme.md",
+            "file": "NLG/Dataset/对话数据集.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/Dailogue/readme.md",
+                "file": "NLG/Dataset/对话数据集.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/Dailogue/readme.md"
+                "file": "NLG/Dataset/对话数据集.md"
               }
             }
           }
@@ -110,14 +110,14 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "NLG/Dataset/Diamante/Diamante.md",
+    "NLG/Dailogue/readme.md",
     "NLG/Dataset/生成任务.md",
     "NLG/Dataset/对话数据集.md",
     "Tool/Linux/README.md",
     "NLG/Dailogue/PLATO/PLATO.md",
     "Template/普通模板.md",
-    "NLG/Dataset/Diamante/Diamante.md",
     "NLG/Dataset/NaturalConv/NaturalConv.md",
-    "NLG/Dailogue/readme.md",
     "Tool/Git/readme.md",
     "Tool/Linux/linux系统CUDA安装及踩坑记录/linux系统CUDA安装及踩坑记录.md"
   ]
