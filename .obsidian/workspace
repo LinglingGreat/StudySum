@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Pytorch/Pytorch.md",
+            "file": "Tool/Git/readme.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Pytorch/Pytorch.md",
+                "file": "Tool/Git/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/Pytorch.md"
+                "file": "Tool/Git/readme.md"
               }
             }
           }
@@ -110,6 +110,7 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "Tool/Pytorch/Pytorch.md",
     "Tool/python/API/FastAPI.md",
     "Tool/python/数据库/gremlin.md",
     "Tool/python/Python操作数据库.md",
@@ -118,7 +119,6 @@
     "Tool/python/README.md",
     "Tool/python/Time.md",
     "Tool/python/Streamlit.md",
-    "Tool/Keras/Keras.md",
-    "Tool/TensorFlow/TensorFlow入门.md"
+    "Tool/Keras/Keras.md"
   ]
 }
