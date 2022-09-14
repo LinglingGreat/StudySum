@@ -395,6 +395,7 @@ find . -name "*.java" |xargs cat|grep -v ^$|wc -l
 最后一项显示的是pid和对应的名称
 
 ## 下载
+ 后台下载：`-b`
 
 wget：[https://www.cnblogs.com/peida/archive/2013/03/18/2965369.html](https://www.cnblogs.com/peida/archive/2013/03/18/2965369.html "https://www.cnblogs.com/peida/archive/2013/03/18/2965369.html")
 
