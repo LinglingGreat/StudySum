@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Linux/README.md",
+            "file": "Template/论文模板.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "Template/论文模板.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/README.md"
+                "file": "Template/论文模板.md"
               }
             }
           }
@@ -110,15 +110,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
-    "TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
+    "Template/普通模板.md",
+    "Template/论文模板.md",
     "Tool/Linux/README.md",
-    "Tool/SQL/hive&sql.md",
     "Tool/Git/readme.md",
     "Tool/Pytorch/Pytorch.md",
+    "TextClassification/多标签分类(Multi-label Classification)/多标签分类(Multi-label Classification).md",
+    "Tool/SQL/hive&sql.md",
     "Tool/python/API/FastAPI.md",
     "Tool/python/数据库/gremlin.md",
-    "Tool/python/Python操作数据库.md",
-    "Tool/python/日志/loguru.md",
-    "Tool/python/编码问题.md"
+    "Tool/python/Python操作数据库.md"
   ]
 }
