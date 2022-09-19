@@ -313,7 +313,7 @@
   - [Uni LM](Pre-training/UniLM/UniLM.md)
   - [XL Net](Pre-training/XLNet/XLNet.md)
   * [预训练语言模型](Pre-training/预训练语言模型.md)
-  * [BERT变种](Pre-training/BERT变种.md)
+  * [BERT变种](Pre-training/BERT/BERT变种.md)
 - [Recsys](Recsys/README.md)
   - [多任务Multi-task&推荐](Recsys/多任务Multi-task&推荐/多任务Multi-task&推荐.md)
   - [推荐介绍](Recsys/推荐介绍/推荐介绍.md)
