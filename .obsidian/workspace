@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "NLG/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md",
+            "file": "Tool/Pytorch/transformers.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md",
+                "file": "Tool/Pytorch/transformers.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md"
+                "file": "Tool/Pytorch/transformers.md"
               }
             }
           }
@@ -110,15 +110,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "Tool/Pytorch/Pytorch.md",
+    "Tool/Git/readme.md",
+    "Tool/Linux/README.md",
+    "TextClassification/文本分类.md",
+    "TextClassification/TextCNN/TextCNN.md",
+    "TextClassification/fastText/fastText.md",
+    "NLG/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md",
     "Tool/python/Features & Tricks.md",
     "Tool/python/Anaconda.md",
-    "Tool/python/一行代码.md",
-    "Tool/python/代码优化.md",
-    "Tool/python/编码问题.md",
-    "Tool/Pytorch/Pytorch.md",
-    "Tool/Pytorch/transformers.md",
-    "Pre-training/BERT/BERT变种.md",
-    "Pre-training/BERT/BERT面试问答.md",
-    "Template/论文模板.md"
+    "Tool/python/一行代码.md"
   ]
 }
