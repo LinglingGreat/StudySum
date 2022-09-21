@@ -108,7 +108,6 @@ cp = cherry-pick
 
 8.将分支合并到当前分支`git merge 分支名`
 
-**如果你需要删除分支在创建**
 1.删除远程你所创建的分支
 `git push origin --delete xxx`（xxx为你想删除的远程分支名称）
 2.删除本地分支
@@ -116,13 +115,36 @@ cp = cherry-pick
 **如果提示你无法删除本地分支，那是因为你目前还在当前分支，切换一下分支就好了**
 
 **分支A的文件覆盖分支B**
+
 `git checkout A xxx xxx`（可以写多个文件，也可以写文件夹）
 假如你需要用A分支的**XXX文件**覆盖B分支的**XXX文件**。需要先切换到B分支，然后执行上面的命令。
 也就是说要先切换到需要修改的分支然后，执行git checkout A XXX文件路径 来覆盖对应文件。覆盖完成以后执行提交命令提交即可。
 
+
 [Git 分支 - 分支的新建与合并](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6 "Git 分支 - 分支的新建与合并")
 
 # git操作
+
+## 同步远程已删除分支
+
+有时候一些分支在远程已经删除了，但是使用git branch -a（用来查看所有的分支，包括本地和远程的）仍然可以看见已经被删除的分支
+
+`git remote show origin`查看关于origin的一些信息，可以查看remote地址，远程分支，还有本地分支与之相对应关系(包括分支是否tracking)等信息
+
+通过`git remote prune origin` 移除那些远程仓库不存在的分支
+
+如果远程主机删除了某个分支，默认情况下，git pull 在拉取远程分支的时候，不会删除对应的本地分支。以防其他人操作了远程主机，导致git pull不知不觉删除了本地分支。但是，我们可以改变这个行为，加上参数 -p 就会在本地删除远程已经删除的分支.`git pull -p`
+
+## 同步远程仓库的所有分支
+
+`git clone`克隆远程仓库默认是只克隆`master`分支，当想把远程仓库上的所有的分支都克隆下来的话
+```shell
+git clone git地址
+cd 目录
+git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+git fetch --all
+git pull --all
+```
 
 ## 同步最新代码
 
@@ -206,7 +228,7 @@ $ git merge origin/dev [示例2：合并远端分支origin/dev到当前分支]
 
 ```
 
-git 放弃本地修改，强制拉取更新（可以先git status暂存）
+3.git 放弃本地修改，强制拉取更新（可以先git stash暂存）
 ```git
 
 git fetch --all

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Pytorch/transformers.md",
+            "file": "Tool/Git/readme.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "Tool/Git/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/transformers.md"
+                "file": "Tool/Git/readme.md"
               }
             }
           }
@@ -110,6 +110,7 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "Tool/Pytorch/transformers.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/Git/readme.md",
     "Tool/Linux/README.md",
@@ -118,7 +119,6 @@
     "TextClassification/fastText/fastText.md",
     "NLG/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md",
     "Tool/python/Features & Tricks.md",
-    "Tool/python/Anaconda.md",
-    "Tool/python/一行代码.md"
+    "Tool/python/Anaconda.md"
   ]
 }
