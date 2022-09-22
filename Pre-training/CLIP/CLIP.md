@@ -10,17 +10,21 @@ https://huggingface.co/openai/clip-vit-large-patch14
 
 - The original implementation had two variants: one using a ResNet image encoder and the other using a Vision Transformer. This repository has the variant with the Vision Transformer.
 
+- text部分的hidden-size是768，vision是1024，最后都映射到768维度
+
 https://huggingface.co/openai/clip-vit-base-patch16
 
 - The base model uses a ViT-B/16 Transformer architecture as an image encoder and uses a masked self-attention Transformer as a text encoder. These encoders are trained to maximize the similarity of (image, text) pairs via a contrastive loss.
 
 - The original implementation had two variants: one using a ResNet image encoder and the other using a Vision Transformer. This repository has the variant with the Vision Transformer.
+-  text 512, vision 768, 最后映射到512
 
 https://huggingface.co/openai/clip-vit-base-patch32
 
 - The model uses a ViT-B/32 Transformer architecture as an image encoder and uses a masked self-attention Transformer as a text encoder. These encoders are trained to maximize the similarity of (image, text) pairs via a contrastive loss.
 
 - The original implementation had two variants: one using a ResNet image encoder and the other using a Vision Transformer. This repository has the variant with the Vision Transformer.
+- text 512, vision 768, 最后映射到512
 
 用法
 ```
@@ -70,6 +74,9 @@ CLIPTextModel用法
 last_hidden_state=CLIPTextTransformer(),分解：
 - encoder_outputs = CLIPEncoder()
 - nn.LayerNorm(encoder_outputs.last_hidden_state)
+
+pooled_output
+- `pooled_output = last_hidden_state[torch.arange(last_hidden_state.shape[0]), input_ids.argmax(dim=-1)]`
 
 ## Multilingual-CLIP
 
@@ -151,6 +158,12 @@ https://huggingface.co/sentence-transformers/clip-ViT-B-32-multilingual-v1
 
 - Transformer model: DistilBertModel
 
+embeddings
+- linear(transformer())
+
+image_features
+- 
+
 ## Taiyi
 
 https://huggingface.co/IDEA-CCNL/Taiyi-CLIP-Roberta-large-326M-Chinese
@@ -198,3 +211,9 @@ with torch.no_grad():
     print(np.around(probs, 3))
 
 ```
+
+logits来源
+- classifier(BertPooler(last_hidden_state))，其中BertPooler是一个线性层+激活函数
+
+get_image_features
+- 先得到pooled_output（见clip部分）, 再经过线性层维度映射

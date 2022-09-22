@@ -121,6 +121,8 @@ REPOSITORY表示镜像的仓库源，TAG是镜像的标签，**IMAGE ID** 是镜
 
 基于镜像新建一个容器并启动：`docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
 
+举例：`docker run -it --name {name} -v local_dir:container_dir image:tag`
+
 OPTIONS部分参数说明：
 
 - **-a stdin:**  指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项；
@@ -230,6 +232,150 @@ target: 这个是要挂载的目标位置，也就是挂载到docker容器中的
 
 示例： `docker cp 4b3f8de49dff:/usr/local/tomcat/logs/catalina.out /opt`
 
+## Docker镜像
+
+查看镜像`docker images`
+
+删除镜像`docker rmi <your-image-id>`
+
+清理临时的、没有被使用的镜像文件`docker image prune`
+
+## Docker gpu使用
+
+docker gpu工具安装：[https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-centos-7-8](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#installing-on-centos-7-8)
+
+Nvidia Container Toolkit,该工具使Docker 的容器能与主机的Nvidia显卡进行interact.
+
+比如nvidia-tensorflow安装命令在：[https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow](https://ngc.nvidia.com/catalog/containers/nvidia:tensorflow)
+
+注意cuda版本和tf版本：[https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel_21-12.html#rel_21-12](https://docs.nvidia.com/deeplearning/frameworks/tensorflow-release-notes/rel_21-12.html#rel_21-12)
+
+注意宿主机的cuda版本要比docker的cuda版本高（最好高好几个，比如宿主机是cuda11.3，docker可以安装11.0）
+
+**宿主机（物理主机）的Nvidia GPU 驱动 必须大于 CUDA Toolkit要求的 Nvida GPU 驱动版本。**
+
+**即使Docker的CUDA和主机无关**，但是**Docker和宿主机的驱动有关**
+
+`nvidia-docker run --rm -it -e NVIDIA_VISIBLE_DEVICES=1,2 --shm-size=1g --ulimit memlock=-1 --mount type=bind,src=$PWD,dst=/gpt-neox gpt-neox`
+
+`nvidia-docker run --user 0 --rm -it -e NVIDIA_VISIBLE_DEVICES=1,2 --shm-size=1g --ulimit memlock=-1 --mount type=bind,src=$PWD,dst=/gpt-neox gpt-neox`
+
+比如使用tf2 gpu：
+
+```Bash
+docker run --gpus all -it --rm -v local_dir:container_dir nvcr.io/nvidia/tensorflow:19.12-tf2-py3
+```
+
+-   `-it` means run in interactive mode
+-   `--rm` will delete the container when finished
+-   `-v` is the mounting directory
+-   `local_dir` is the directory or file from your host system (absolute path) that you want to access from inside your container. `container_dir` is the target directory when you are inside your container.
+
+
+参考资料
+
+-   [CUDA兼容性问题（显卡驱动、docker内CUDA）](https://zhuanlan.zhihu.com/p/459431437)
+-   [RTX3090运行Tensorflow1.15（CUDA 11.1） Docker、TF1.15测试环境](https://zhuanlan.zhihu.com/p/341969571)
+-   [RTX3080+Ubuntu18.04+cuda11.1+cudnn8.0.4+TensorFlow1.15.4+PyTorch1.7.0环境配置](https://blog.csdn.net/wu496963386/article/details/109583045)
+
+## Docker镜像制作
+
+### docker commit
+
+容器-->镜像转化
+
+进入容器**`docker exec -it <container id> or <name> bash`**
+
+pip安装包，exit退出容器
+
+基于安装的包创建一个新的镜像**`docker commit <container id> <new docker name>`**
+
+**docker commit 的弊端：**
+
+如果是安装软件包、编译构建，那会有大量的无关内容被添加进来，如果不小心清理，将会导致镜像极为臃肿。
+
+此外，使用 docker commit 意味着所有对镜像的操作都是黑箱操作，生成的镜像也被称为 黑箱镜像，换句话说，就是除了制作镜像的人知道执行过什么命令、怎么生成的镜像，别人根本无从得知。而且，即使是这个制作镜像的人，过一段时间后也无法记清具体在操作的。虽然 docker diff 或许可以告诉得到一些线索，但是远远不到可以确保生成一致镜像的地步。这种黑箱镜像的后期维护工作是非常痛苦的。
+
+而且，镜像所使用的分层存储，除当前层外，之前的每一层都是不会发生改变的，换句话说，任何修改的结果仅仅是在当前层进行标记、添加、修改，而不会改动上一层。如果使用 docker commit 制作镜像，以及后期修改的话，每一次修改都会让镜像更加臃肿一次，所删除的上一层的东西并不会丢失，会一直如影随形的跟着这个镜像，即使根本无法访问到。这会让镜像更加臃肿。
+
+**docker commit的优点：**
+
+操作简单，易上手
+
+### docker build
+
+docker build的方式生成新镜像的前提条件是有一个旧的基础镜像，在此基础上通过docker build 命令执行dockerfile 文件从而生成一个新的镜像，不同于docker commit，是镜像--> 镜像的转化。
+
+现在，[假设需求是将之前的镜像hub.c.163.com/library/centos：7.3.1611](http://xn--hub-998dt4gmxan0f4r3a22uj2npt0a6o0dwe0a21e.c.163.com/library/centos%EF%BC%9A7.3.1611) 作为基础镜像，通过dockerfile 文件的编写，执行，生成一个新的镜像，镜像名称为centos-vim:v2.0,。
+
+1.  新建一个空文件夹，名称任意，只需要为空就好。假设名称为 make_vim 这个文件夹，进入这个文件夹，编写文件，文件名称为 centos-vimv2.0
+2.  centos-vim2.0 的内容如下：
+
+```Bash
+FROM  hub.c.163.com/library/centos:7.3.1611
+RUN yum install -y vim httpd \
+&& yum clean all
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir nibabel pydicom matplotlib pillow && \
+    pip install --no-cache-dir med2image
+
+```
+
+3.  运行build 命令，生成新镜像centos-vim:v2.0
+
+`docker build -f ./centos-vimv2.0 -t centos-vim:v2.0 .`
+
+注意，是在 make_vim 这个文件夹下执行此命令，命令最后是有一个点的。
+
+`docker run -itd --name centos5 centos-vim:v2.0`
+
+5，当然了，在dockerfile里，加入了清理yum安装痕迹命令，因此，镜像要比commit 方式小一些。仅仅做一个小示例，因此dockerfile的很多功能没有演示，比如：复制宿主机的文件和文件夹到镜像内部，cmd ，entrypoint ，add，copy，export，workdir等等并没有使用。docker build -t 后面接的是新镜像的tag，-f 后面接的是dockerfile文件的名称，如果dockerfile的名称是Dockerfile，那么，可以省略-f以及其以后的内容，也就是不指定，docker会自动优先使用名称叫Dockerfile的文件构建新镜像。
+
+Dockerfile的优点：
+
+能够自由灵活的与宿主机联系，比如，某些配置文件在宿主机验证并使用过后很好用，那么，可以将文件copy到镜像中，（这个动作是写在dockerfile里），add 远程主机的配置文件到镜像中，定义onbuild动作等等各种灵活的功能。docker commit不能做到这些事情，因为是在一个封闭的在运行中的容器中，无法做复制拷贝宿主机文件的事情。
+
+dockerfile本身就是一个比较详细的构建文档，有这个文档就可以清楚的知道新构建的镜像经历了怎样的变化。没有黑箱操作的困扰了，后期的维护更为方便了。
+
+后期可扩展性强，一个文件就可以在哪都可以运行镜像了。（前提有网，有安装docker环境）
+
+Dockerfile的缺点：编写不容易，因为需要对脚本这些比较了解，有Linux基础的人才可以编写出好用的dockerfile，上手难度大。
+
+[docker commit 和docker build （实战使用以及区别）](https://blog.csdn.net/alwaysbefine/article/details/111375658)
+
+[python dockerfile 多阶段构建镜像瘦身](https://www.toutiao.com/article/7023296235822170636/?wid=1652859218807)
+
+[docker镜像的版本（bullseye、buster、slim、alphine）](https://blog.csdn.net/alun550/article/details/123184731)
+
+## Dockerfile
+
+`FROM` [`nvcr.io/nvidia/tensorflow:21.05-tf1-py3`](http://nvcr.io/nvidia/tensorflow:21.05-tf1-py3)
+
+```Bash
+FROM python:3
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD [ "python", "./your-daemon-or-script.py" ]
+```
+
+[https://blog.csdn.net/m0_46090675/article/details/121846718](https://blog.csdn.net/m0_46090675/article/details/121846718)
+
+## 权限问题
+
+`id`查看当前用户（宿主机和容器都可以看，同一个uid表示同一个用户）
+
+如果两个不一样，可能会导致容器内没有权限，需要在docker run后面加参数`—user uid`，例如`—user 1000`
+
+参考：[理解 docker 容器中的 uid 和 gid](https://www.cnblogs.com/sparkdev/p/9614164.html)
+
+
+
 ## 资料
 
 [https://github.com/yeasy/docker_practice](https://github.com/yeasy/docker_practice)
@@ -246,4 +392,13 @@ Docker教程推荐
 Win下迁移到其它盘：[https://www.cnblogs.com/xhznl/p/13184398.html](https://www.cnblogs.com/xhznl/p/13184398.html)
 
 查看日志等：[https://nkcoder.github.io/posts/docker/docker-container-status/](https://nkcoder.github.io/posts/docker/docker-container-status/)
+
+
+[修改 Docker 镜像默认存储位置的方法](https://cloud.tencent.com/developer/article/1835999)
+
+（注意文件夹路径，docker/docker了）
+
+[Docker - 挂载目录（bind mounts）和Volume是不同的](https://blog.csdn.net/qingyafan/article/details/89577717)
+
+[17条Docker最佳实践](https://zhuanlan.zhihu.com/p/457069205)
 
