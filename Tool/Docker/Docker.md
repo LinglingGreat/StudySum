@@ -342,6 +342,29 @@ CMD [ "python", "./your-daemon-or-script.py" ]
 ```
 
 
+```
+FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel
+
+  
+
+WORKDIR /usr/src/app
+
+  
+
+RUN rm /etc/apt/sources.list.d/cuda.list \
+
+&& rm /etc/apt/sources.list.d/nvidia-ml.list \
+
+&& apt-get update \
+
+&& apt-get install -y git
+
+  
+
+COPY requirements.txt ./
+
+RUN pip install --no-cache-dir -r requirements.txt
+```
 
 3.  运行build 命令，生成新镜像centos-vim:v2.0
 
