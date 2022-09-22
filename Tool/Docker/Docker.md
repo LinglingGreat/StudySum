@@ -55,7 +55,10 @@ sudo systemctl start docker
 
 现在我们就可以使用Docker啦，来看一些常用命令吧~
 
-先来简单看看几个概念
+docker重启``sudo service docker restart`
+
+
+几个概念
 
 - 镜像（Image）：类似虚拟机镜像。
 
@@ -321,6 +324,25 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 ```
 
+另一个例子：
+
+`FROM` [`nvcr.io/nvidia/tensorflow:21.05-tf1-py3`](http://nvcr.io/nvidia/tensorflow:21.05-tf1-py3)
+
+```Bash
+FROM python:3
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD [ "python", "./your-daemon-or-script.py" ]
+```
+
+
+
 3.  运行build 命令，生成新镜像centos-vim:v2.0
 
 `docker build -f ./centos-vimv2.0 -t centos-vim:v2.0 .`
@@ -328,6 +350,10 @@ RUN pip install --no-cache-dir --upgrade pip && \
 注意，是在 make_vim 这个文件夹下执行此命令，命令最后是有一个点的。
 
 `docker run -itd --name centos5 centos-vim:v2.0`
+
+传入参数：`docker build --build-arg ARG1="" --build-arg ARG2="" -t xxx:xxx .`
+
+其中参数是在dockerfile里面定义的，比如`ARG username=$ARG1`
 
 5，当然了，在dockerfile里，加入了清理yum安装痕迹命令，因此，镜像要比commit 方式小一些。仅仅做一个小示例，因此dockerfile的很多功能没有演示，比如：复制宿主机的文件和文件夹到镜像内部，cmd ，entrypoint ，add，copy，export，workdir等等并没有使用。docker build -t 后面接的是新镜像的tag，-f 后面接的是dockerfile文件的名称，如果dockerfile的名称是Dockerfile，那么，可以省略-f以及其以后的内容，也就是不指定，docker会自动优先使用名称叫Dockerfile的文件构建新镜像。
 
@@ -347,24 +373,8 @@ Dockerfile的缺点：编写不容易，因为需要对脚本这些比较了解�
 
 [docker镜像的版本（bullseye、buster、slim、alphine）](https://blog.csdn.net/alun550/article/details/123184731)
 
-## Dockerfile
-
-`FROM` [`nvcr.io/nvidia/tensorflow:21.05-tf1-py3`](http://nvcr.io/nvidia/tensorflow:21.05-tf1-py3)
-
-```Bash
-FROM python:3
-
-WORKDIR /usr/src/app
-
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY . .
-
-CMD [ "python", "./your-daemon-or-script.py" ]
-```
-
 [https://blog.csdn.net/m0_46090675/article/details/121846718](https://blog.csdn.net/m0_46090675/article/details/121846718)
+
 
 ## 权限问题
 
