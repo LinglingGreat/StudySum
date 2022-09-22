@@ -76,6 +76,14 @@ Docker 运行容器前需要本地存在对应的镜像，如果本地不存在�
 
 REPOSITORY表示镜像的仓库源，TAG是镜像的标签，**IMAGE ID** 是镜像ID，然后是创建时间和镜像大小。因为我之前拉取过几个镜像，所以这里会有。
 
+查看镜像`docker images`
+
+删除镜像`docker rmi <your-image-id>`
+
+清理临时的、没有被使用的镜像文件`docker image prune`
+
+
+
 拉取镜像的命令是`docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]`。
 
 - 具体的选项可以通过 `docker pull --help` 命令看到
@@ -235,13 +243,8 @@ target: 这个是要挂载的目标位置，也就是挂载到docker容器中的
 
 示例： `docker cp 4b3f8de49dff:/usr/local/tomcat/logs/catalina.out /opt`
 
-## Docker镜像
 
-查看镜像`docker images`
 
-删除镜像`docker rmi <your-image-id>`
-
-清理临时的、没有被使用的镜像文件`docker image prune`
 
 ## Docker gpu使用
 
@@ -352,19 +355,24 @@ WORKDIR /usr/src/app
   
 
 RUN rm /etc/apt/sources.list.d/cuda.list \
-
 && rm /etc/apt/sources.list.d/nvidia-ml.list \
-
 && apt-get update \
-
 && apt-get install -y git
 
   
 
 COPY requirements.txt ./
-
 RUN pip install --no-cache-dir -r requirements.txt
+
+RUN mkdir -m 700 /root/.ssh; \
+touch -m 600 /root/.ssh/known_hosts; \
+ssh-keyscan github.com > /root/.ssh/known_hosts
+
+RUN --mount=type=ssh,id=github git clone git地址
 ```
+
+build命令`sudo docker build --ssh github=~/.ssh/id_ed25519 -t image_gen:v1.1 .
+
 
 3.  运行build 命令，生成新镜像centos-vim:v2.0
 
@@ -398,6 +406,7 @@ Dockerfile的缺点：编写不容易，因为需要对脚本这些比较了解�
 
 [https://blog.csdn.net/m0_46090675/article/details/121846718](https://blog.csdn.net/m0_46090675/article/details/121846718)
 
+https://dzone.com/articles/clone-code-into-containers-how
 
 ## 权限问题
 
