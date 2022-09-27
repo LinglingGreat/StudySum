@@ -82,6 +82,8 @@ pooled_output
 
 OpenAI CLIP **text encoders** for any language
 
+![](img/Pasted%20image%2020220927171412.png)
+
 https://github.com/FreddeFrallan/Multilingual-CLIP
 
 https://huggingface.co/M-CLIP/M-BERT-Base-ViT-B

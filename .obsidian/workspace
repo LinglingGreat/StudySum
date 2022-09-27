@@ -110,15 +110,15 @@
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
-    "Pre-training/Diffusion/StableDiffusion.md",
+    "Tool/Git/readme.md",
     "Pre-training/CLIP/CLIP.md",
+    "Pre-training/Diffusion/StableDiffusion.md",
     "Pre-training/量化/模型量化.md",
     "Pre-training/BERTZip/模型压缩.md",
     "Tool/Pytorch/transformers.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/Docker/Docker.md",
     "Tool/Linux/README.md",
-    "Tool/python/README.md",
-    "Tool/Git/readme.md"
+    "Tool/python/README.md"
   ]
 }
