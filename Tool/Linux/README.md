@@ -399,6 +399,46 @@ find . -name "*.java" |xargs cat|grep -v ^$|wc -l
 如果加 z 参数，则以 .tar.gz 或 .tgz 来代表 gzip 压缩过的 tar file ～
 如果加 j 参数，则以 .tar.bz2 来作为附档名啊～
 
+**解压所有tar文件**
+
+```
+#!/bin/bash
+
+TARDIR="xxx"
+
+UNTARDIR="xxx"
+
+  
+
+printf "Entered path: $TARDIR.\n\n"
+
+cd "$TARDIR"
+
+  
+
+for tar in *.tar
+
+do
+
+dirname=`echo $tar | sed 's/\.tar$//'`
+
+printf "Directory name to extract this file is: %s.\n" $dirname
+
+dirfullpath="$UNTARDIR/$dirname"
+
+printf "Directory full path to extract this file is：%s.\n" $dirfullpath
+
+mkdir "$dirfullpath"
+
+tar -xvf $tar -C $dirfullpath
+
+  
+
+printf "\n\n"
+
+done
+```
+
 ## 端口
 
 [https://github.com/NVIDIA/tacotron2/issues/181](https://github.com/NVIDIA/tacotron2/issues/181 "https://github.com/NVIDIA/tacotron2/issues/181")
