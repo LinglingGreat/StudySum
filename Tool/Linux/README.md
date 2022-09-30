@@ -378,7 +378,7 @@ find . -name "*.java" |xargs cat|grep -v ^$|wc -l
 
 ## 解压
 
-解压tar文件`tar -xvf xxx`
+解压tar文件`tar -xvf xxx -C 解压路径`
 
 解压tar.bz2文件`tar -jxvf xxx`
 
