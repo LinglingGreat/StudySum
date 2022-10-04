@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Tool/Linux/README.md",
+            "file": "DataRelated/UCPhrase/UCPhrase.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#百度",
+                "query": "tag:#数据集",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 238
+    "width": 100
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "DataRelated/UCPhrase/UCPhrase.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,28 +97,28 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/README.md"
+                "file": "DataRelated/UCPhrase/UCPhrase.md"
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 168
+    "width": 100
   },
   "active": "6b7f0d46dda0ee30",
   "lastOpenFiles": [
+    "Application/Contest/竞赛trick.md",
+    "NLG/Dailogue/知识对话比赛_百度/知识对话比赛方案.md",
+    "NLG/Dailogue/主动对话/主动对话.md",
+    "NLG/Dailogue/对话评估/DSTC10开放领域对话评估比赛/DSTC10 开放领域对话评估比赛冠军方法总结.md",
+    "Tool/Linux/README.md",
     "Tool/python/Fileprocess.md",
     "Pre-training/CLIP/CLIP.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/Pytorch/transformers.md",
-    "Tool/Git/readme.md",
-    "Pre-training/Diffusion/StableDiffusion.md",
-    "Pre-training/量化/模型量化.md",
-    "Pre-training/BERTZip/模型压缩.md",
-    "Tool/Docker/Docker.md",
-    "Tool/Linux/README.md"
+    "Tool/Git/readme.md"
   ]
 }
