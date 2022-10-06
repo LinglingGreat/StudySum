@@ -11,3 +11,11 @@ https://github.com/CompVis/stable-diffusion （源码版本推理）
 
 https://towardsdatascience.com/how-to-fine-tune-stable-diffusion-using-textual-inversion-b995d7ecc095
 
+https://jalammar.github.io/illustrated-stable-diffusion/
+
+论文：https://ommer-lab.com/research/latent-diffusion-models/
+
+
+
+
+

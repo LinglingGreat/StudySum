@@ -27,7 +27,7 @@ Ye Luo (University of Hong Kong)
 
 线性回归的收敛速度是$1/\sqrt{n}$，n是数据量
 
-![1530665222337](img/day1-1.png)
+![](img/day1-1.png)
 
 **What is a neural network?**
 
@@ -74,7 +74,7 @@ $\beta = argmin_\beta Q(\beta) +\lambda \sum_{i=1}^p |\beta_i|$
 
 **SVM**
 
-![1530666794208](img/day1-2.png)
+![](img/day1-2.png)
 
 **Non-linearity**
 
@@ -83,7 +83,7 @@ $\beta = argmin_\beta Q(\beta) +\lambda \sum_{i=1}^p |\beta_i|$
 - In SVM, we can use kernel functions K(x, x') to replace x.
 - SVM was highly successful and popular before Deep Learning rises.
 
-![1530666916859](img/day1-3.png)
+![](img/day1-3.png)
 
 **Key Features of these machine learning methods other than neural networks**
 
@@ -114,7 +114,7 @@ $\beta = argmin_\beta Q(\beta) +\lambda \sum_{i=1}^p |\beta_i|$
 
 **Another Example: Einstein’s Theory of Relativity**
 
-![1530667260357](img/day1-4.png)
+![](img/day1-4.png)
 
 **Problems for fixed base estimators**
 
@@ -130,7 +130,7 @@ $\beta = argmin_\beta Q(\beta) +\lambda \sum_{i=1}^p |\beta_i|$
 - If randomly select 8 Black grids, do you consider it as a pattern? -You need 8 equations instead of 1 equation.
 - So, many machine learning algorithms learn simple expressions (or we call them as patterns) under the “base functions” that are pre-specify.
 
-![1530667465624](img/day1-5.png)
+![](img/day1-5.png)
 
 **Modern Data Calls for Deep Learning**
 
@@ -144,17 +144,17 @@ Autoencoder，可以用来降维，先经历一个encoder降维，后经历decod
 
 主要用于自然语言处理中。
 
-![1530667605707](img/day1-6.png)
+![](img/day1-6.png)
 
 **Geometric of Deep Learning**
 
-![1530667645623](img/day1-7.png)
+![](img/day1-7.png)
 
 Figure: Picture from Gu et. al. (2018)
 
 螺旋线，先降维到1维，再恢复2维
 
-![1530667700465](img/day1-8.png)
+![](img/day1-8.png)
 
 2层(x——y) logistic regression linear algebra
 
@@ -169,7 +169,7 @@ Figure: Picture from Gu et. al. (2018)
 
 **Universal Approximation property**一致逼近理论
 
-![1530668115186](img/day1-9.png)
+![](img/day1-9.png)
 
 - It is also known that neural network with large depth can have similar properties.
 - Rojas (2003) shows that recurrent neural network with Perceptron as activation function and width = 1 can approximate any two-way classifiers.
@@ -190,7 +190,7 @@ Figure: Picture from Gu et. al. (2018)
 
 **Risk bounds on neural network**
 
-![1530669566335](img/day1-10.png)
+![](img/day1-10.png)
 
 $O_p$表示同阶，可以视作等式左边≤$C(\frac1{K_n}+\frac{pK_n}nlog(n))$，第一部分表示逼近，第二部分表示overfitting，n是sample size，p是dim(x).
 
@@ -200,11 +200,11 @@ $K_n$不能太大，也不能太小。要使上式的上界最小，需要两项
 
 维度诅咒
 
-![1530669765433](img/day1-11.png)
+![](img/day1-11.png)
 
 **Universal Approximation property in depth in nonparametric regression**
 
-![1530669926787](img/day1-12.png)
+![](img/day1-12.png)
 
 **Why Overfitting is important?**
 
@@ -220,7 +220,7 @@ $K_n$不能太大，也不能太小。要使上式的上界最小，需要两项
 - Second way is statistical entropy. We will focus on entropy today. Entropy can be viewed as a distribution-specific way of characterzing VC dimensions.
 - Reference: Van der Vaart and Wellner (1996). Empirical process.
 
-![1530670114009](img/day1-13.png)
+![](img/day1-13.png)
 
 $B_{\epsilon}(f)=\{g| ||f-g||^2 \leq \epsilon\}, ||f-g||^2=\int ||f(x)-g(x)||^2 d\mu(x) ，\mu(x)是x的密度函数$
 
@@ -234,7 +234,7 @@ $\hat\beta ——> \beta_0 \text{   if   } \frac1n \sum(y_i - g(x_i, \beta))^2 �
 
 过拟合产生的原因：没有处处收敛
 
-![1530672884562](img/day1-17.png)
+![](img/day1-17.png)
 
 中心极限定理：
 
@@ -244,17 +244,17 @@ $\frac1{\sqrt{n}}[\sum x_i - E[x_i]] ——> N(0, \sigma^2)$
 
 **Examples**
 
-![1530670201091](img/day1-14.png)
+![](img/day1-14.png)
 
 **How much overfitting?**
 
-![1530670248217](img/day1-15.png)
+![](img/day1-15.png)
 
 
 
 **Approximation**
 
-![1530670328016](img/day1-16.png)
+![](img/day1-16.png)
 
 **References**
 
@@ -359,7 +359,7 @@ relu不容易出现这两个问题
 
 **An illustrative Figure**
 
-![1530755696152](img/day2-1.png)
+![](img/day2-1.png)
 
 Why Does Unsupervised Pre-training Help Deep Learning 
 
@@ -369,9 +369,9 @@ Let’s get back to one of the prior motivations of going deep with neural netwo
 
 **The Regularisation Hypothesis**: The second hypothesis that this paper checks for is whether such a method acts as a better regularisation and hence leads to a better generalization error. 
 
-![1530756518594](img/day2-2.png)
+![](img/day2-2.png)
 
-![1530756539731](img/day2-3.png)
+![](img/day2-3.png)
 
 **AutoEncoders**
 
@@ -389,7 +389,7 @@ Let’s get back to one of the prior motivations of going deep with neural netwo
 
 层数越多，pretraning 的优势越大
 
-![1530756748575](img/day2-4.png)
+![](img/day2-4.png)
 
 **problems with learning rate**
 
@@ -400,15 +400,15 @@ Let’s get back to one of the prior motivations of going deep with neural netwo
 
 **Several different ways to adjust learning rate**
 
-![1530756990981](img/day2-5.png)
+![](img/day2-5.png)
 
 **Accelerated Gredient Descent**
 
-![1530757033273](img/day2-6.png)
+![](img/day2-6.png)
 
 Accelerated Gredient Descent: Study of Hinton et.al. 2013
 
-![1530757280324](img/day2-7.png)
+![](img/day2-7.png)
 
 
 
@@ -425,7 +425,7 @@ Accelerated Gredient Descent: Study of Hinton et.al. 2013
 
 **L2Boosting: Prediction**
 
-![1530757552432](img/day2-8.png)
+![](img/day2-8.png)
 
 **Boosting**
 
@@ -438,11 +438,11 @@ Accelerated Gredient Descent: Study of Hinton et.al. 2013
 
 **L2Boosting (BA)**
 
-![1530757862725](img/day2-9.png)
+![](img/day2-9.png)
 
 **Post-L2Boosting algorithm (post-BA)**
 
-![1530758015782](img/day2-10.png)
+![](img/day2-10.png)
 
 例如一共五个变量$x_1, x_2, ..., x_5$，经过L2Boosting，跑了三步停止了，选择了$x_1, x_2, x_3$，那么$\hat T=\{1, 3, 5\}$即$\beta$中的非零元素index集合
 
@@ -461,17 +461,17 @@ PGA：$y=x\beta$不会overfit
 
 **Approximation Theory of PGA based on revisiting (Luo and Spindler (2017))**
 
-![1530758662291](img/day2-11.png)
+![](img/day2-11.png)
 
 $||y-x\beta||^2=O(m^{-11/62})$
 
 $||y-x\beta||^2=O((\frac s{m+s})^{\epsilon^*(c)-\delta})，s=|supp(\beta)|$
 
-![1530758846495](img/day2-12.png)
+![](img/day2-12.png)
 
 **Main result for L2Boosting**
 
-![1530758880086](img/day2-13.png)
+![](img/day2-13.png)
 
 **Boosted Backpropagation**
 
@@ -489,29 +489,29 @@ $||y-x\beta||^2=O((\frac s{m+s})^{\epsilon^*(c)-\delta})，s=|supp(\beta)|$
 
 **Boosted Backpropagation: Study from Schwenk and Beggio**
 
-![1530759182025](img/day2-14.png)
+![](img/day2-14.png)
 
-![1530759286784](img/day2-15.png)
+![](img/day2-15.png)
 
 **Resnet: mixing Boosting with DNN**
 
-![1530759479514](img/day2-16.png)
+![](img/day2-16.png)
 
-![1530759619801](img/day2-17.png)
+![](img/day2-17.png)
 
 **Predictive Resnet: training DNN with Boosting**
 
 一块一块地优化
 
-![1530759685417](img/day2-18.png)
+![](img/day2-18.png)
 
 **Classification Resnet: training DNN with Boosting**
 
 Huang et.al. (2017).
 
-![1530759743795](img/day2-19.png)
+![](img/day2-19.png)
 
-![1530759801210](img/day2-20.png)
+![](img/day2-20.png)
 
 **Over view of non-local optimization methods**
 
@@ -573,7 +573,7 @@ Garanteed path convergence. Very fast compared to other existing algorithms.
 
 **Restricted Bolzmann Machine**
 
-![1530761045653](img/day2-21.png)
+![](img/day2-21.png)
 
 Deep Belief Networks传递的是分布，而不是值（一般神经网络传递的是值），来自限制玻尔兹曼机
 
@@ -597,9 +597,9 @@ $P(V)=\prod_{i=1}^nP(v_i)，P(v_i)=\sum_h P(v_i|h)p(h)，logP(v_i)难，log里�
 
 **Experiments Results**
 
-![1530761138056](img/day2-22.png)
+![](img/day2-22.png)
 
-![1530761196282](img/day2-23.png)
+![](img/day2-23.png)
 
 **Conclusion**
 
@@ -629,7 +629,7 @@ Bet of sparsity 数据少，发现不了复杂的模型，干脆假设模型是�
 
 Bet for similarity 假设个体是相似的，可以只用几个模型表达所有的个体
 
-![1530800923727](img/day3-1.png)
+![](img/day3-1.png)
 
 A和B点越接近越好
 
@@ -672,11 +672,11 @@ The following questions are either equivalent or closely connected.
 
 **Review of overfitting for Several Simple Models: Linear Regression**
 
-![1530801507421](img/day3-2.png)
+![](img/day3-2.png)
 
-![1530801671356](img/day3-3.png)
+![](img/day3-3.png)
 
-![1530801711947](img/day3-4.png)
+![](img/day3-4.png)
 
 when $n —>\infty，需\lambda —>0$
 
@@ -698,7 +698,7 @@ thumb rule，$\lambda=\sigma \sqrt{\frac{logp}n}，\sigma^2=var(\epsilon)$
 
 决策树的决策边界只能是横向或竖向(二维空间中)，比如x≤0，要拟合一个不是这种形式的决策边界需要很多决策树。而神经网络完全可以处理这种情况。
 
-![1530802622585](img/day3-5.png)
+![](img/day3-5.png)
 
 **Overview of Methods that help to prevent overfitting**
 
@@ -740,7 +740,7 @@ thumb rule，$\lambda=\sigma \sqrt{\frac{logp}n}，\sigma^2=var(\epsilon)$
 
 **An ongoing work of Luo and Liang 2016**
 
-![1530803440002](img/day3-6.png)
+![](img/day3-6.png)
 
 **Why non-linear variable selection is important?**
 
@@ -770,27 +770,27 @@ $y=f_1(x_1)+f_2(x_2)+...+f_p(x_p)+\epsilon$，partially linear，有x1x2交互�
 - The SGD does not converge well in such a case.
 - The good thing of this procedure is that you can prove convergence rate under good optimization.
 
-![1530803999521](img/day3-7.png)
+![](img/day3-7.png)
 
-![1530804019042](img/day3-8.png)
+![](img/day3-8.png)
 
 **penalty on DNN**
 
-![1530804072686](img/day3-9.png)
+![](img/day3-9.png)
 
 **Selection with DNN**
 
-![1530804249389](img/day3-10.png)
+![](img/day3-10.png)
 
 **Simulation**
 
-![1530804292425](img/day3-11.png)
+![](img/day3-11.png)
 
 **Selection Results**
 
-![1530804412224](img/day3-12.png)
+![](img/day3-12.png)
 
-![1530804432490](img/day3-13.png)
+![](img/day3-13.png)
 
 **Bayesian Neural Networks on Non-parameteric variable selection**
 
@@ -801,19 +801,19 @@ $y=f_1(x_1)+f_2(x_2)+...+f_p(x_p)+\epsilon$，partially linear，有x1x2交互�
 
 **Examples**
 
-![1530804531307](img/day3-14.png)
+![](img/day3-14.png)
 
 **Bayesian Neural Networks for Variable Selection**
 
-![1530804563447](img/day3-15.png)
+![](img/day3-15.png)
 
-![1530804597909](img/day3-16.png)
+![](img/day3-16.png)
 
-![1530804627786](img/day3-17.png)
+![](img/day3-17.png)
 
-![1530804647616](img/day3-18.png)
+![](img/day3-18.png)
 
-![1530804681854](img/day3-19.png)
+![](img/day3-19.png)
 
 **Add Additional Penality on objective functions**
 
@@ -832,7 +832,7 @@ $||Y − G(X)||_2^2+||\beta||^2 +||\nabla G(x)||$
 
 **Image Prediction by Penalized DNN**
 
-![1530805085818](img/day3-20.png)
+![](img/day3-20.png)
 
 **Random Dropout**
 
@@ -862,7 +862,7 @@ $||Y − G(X)||_2^2+||\beta||^2 +||\nabla G(x)||$
 
 **Results from Srivastava(2012) et. al.**
 
-![1530805360502](img/day3-21.png)
+![](img/day3-21.png)
 
 **Further Improvements in Pretraining**
 
@@ -874,9 +874,9 @@ $||Y − G(X)||_2^2+||\beta||^2 +||\nabla G(x)||$
 
 **Results from Srivastava(2012) et. al.**
 
-![1530805564496](img/day3-22.png)
+![](img/day3-22.png)
 
-![1530805580432](img/day3-23.png)
+![](img/day3-23.png)
 
 激活的神经元少，small neural network
 
@@ -889,9 +889,9 @@ $||Y − G(X)||_2^2+||\beta||^2 +||\nabla G(x)||$
 
 多用在高维数据中。
 
-![1530839558138](img/day3-25.png)
+![](img/day3-25.png)
 
-![1530839588194](img/day3-26.png)
+![](img/day3-26.png)
 
 而early stopping 不需要计算那么多P(γ)
 
@@ -915,7 +915,7 @@ $||Y − G(X)||_2^2+||\beta||^2 +||\nabla G(x)||$
 
 **Results from Vicent et. al(2008) et. al.**
 
-![1530805875467](img/day3-24.png)
+![](img/day3-24.png)
 
 SdA-3:3层stacked autoencoders，DBN: 多层玻尔兹曼机
 
@@ -943,7 +943,7 @@ SdA-3:3层stacked autoencoders，DBN: 多层玻尔兹曼机
 
 **Problems**
 
-![1531016524085](img/day4-1.png)
+![](img/day4-1.png)
 
 消费者的决定受价格还有其他因素的影响，但是其它因素很难考虑进去
 
@@ -956,7 +956,7 @@ SdA-3:3层stacked autoencoders，DBN: 多层玻尔兹曼机
 
 **Consumer behavior and probability function**
 
-![1531016612226](img/day4-2.png)
+![](img/day4-2.png)
 
 $p_0(Z)$是可预测的部分，$(1+\epsilon)$是不可预测的部分
 
@@ -983,11 +983,11 @@ $p_0(Z)$是可预测的部分，$(1+\epsilon)$是不可预测的部分
 
 先有一个baseline，再设计算法，比较是不是有improve
 
-![1531016894552](img/day4-3.png)
+![](img/day4-3.png)
 
 **Pricing Optimization**
 
-![1531016954875](img/day4-4.png)
+![](img/day4-4.png)
 
 约束条件：保持Q不变，拉格朗日项：$\lambda(Q-\tilde Q)$
 
@@ -1045,11 +1045,11 @@ $p_0(Z)$是可预测的部分，$(1+\epsilon)$是不可预测的部分
 
 **Continuous Bag of Words Models**
 
-![1531017426759](img/day4-5.png)
+![](img/day4-5.png)
 
 **Word2Vec**
 
-![1531017470196](img/day4-6.png)
+![](img/day4-6.png)
 
 **Mikolov’s Skip Grams.**
 
@@ -1060,7 +1060,7 @@ $p_0(Z)$是可预测的部分，$(1+\epsilon)$是不可预测的部分
 
 **Performance of Skip Gram**
 
-![1531017942835](img/day4-7.png)
+![](img/day4-7.png)
 
 **Several Drawbacks of Distributed Word Representation**
 
@@ -1115,7 +1115,7 @@ Similar words to 中国
 
 **Single Layer Recurrent Neural Networks**
 
-![1531018413328](img/day4-8.png)
+![](img/day4-8.png)
 
 **Recurrent Neural Networks**
 
@@ -1141,7 +1141,7 @@ Similar words to 中国
 
 **Translate Directly with RNN**
 
-![1531018602879](img/day4-9.png)
+![](img/day4-9.png)
 
 **Main Improvement**
 
@@ -1162,13 +1162,13 @@ Similar words to 中国
 
 **Performance of Skip Gram**
 
-![1531018695675](img/day4-10.png)
+![](img/day4-10.png)
 
-![1531018737376](img/day4-11.png)
+![](img/day4-11.png)
 
 **Traditional Ways to Learn time series models**
 
-![1531018769569](img/day4-12.png)
+![](img/day4-12.png)
 
 **Non-linear time series models and neural networks**
 
@@ -1178,19 +1178,19 @@ Similar words to 中国
 
 **Applying Neural Networks to time series**
 
-![1531018897385](img/day4-13.png)
+![](img/day4-13.png)
 
-![1531018936301](img/day4-14.png)
+![](img/day4-14.png)
 
-![1531019014029](img/day4-15.png)
+![](img/day4-15.png)
 
 **Experiment**
 
-![1531019048170](img/day4-16.png)
+![](img/day4-16.png)
 
 **Performance of SNN**
 
-![1531019078622](img/day4-17.png)
+![](img/day4-17.png)
 
 **Sun Spot data**
 
@@ -1200,7 +1200,7 @@ Similar words to 中国
 
 **Performance of SNN:Sun Spots predictions**
 
-![1531019134537](img/day4-18.png)
+![](img/day4-18.png)
 
 **References**
 

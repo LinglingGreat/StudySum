@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "BasicKnow/deep_learning/summerDL.md",
+            "file": "CV/StableDiffusion/StableDiffusion.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "激活函数",
+                "query": "VAE",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/deep_learning/summerDL.md",
+                "file": "CV/StableDiffusion/StableDiffusion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,12 +97,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/deep_learning/summerDL.md"
+                "file": "CV/StableDiffusion/StableDiffusion.md"
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -110,15 +110,15 @@
   },
   "active": "f365f866289e829e",
   "lastOpenFiles": [
-    "BasicKnow/deep_learning/3.MLstrategy.md",
-    "BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md",
-    "BasicKnow/deep_learning/summerDL.md",
-    "BasicKnow/deep_learning/BatchNorm/BatchNormalization.md",
-    "BasicKnow/deep_learning/BatchNorm/img/Pasted image 20210930082913.png",
-    "BasicKnow/deep_learning/小概念.md",
-    "BasicKnow/deep_learning/梯度消失&梯度爆炸/公式.md",
-    "BasicKnow/deep_learning/梯度消失&梯度爆炸/img/v2-db9d7889d408a1a13d49be058c797f33_r.jpg",
-    "BasicKnow/deep_learning/梯度消失&梯度爆炸/img/v2-995ba930f6f2c5dd1ca4ddeb10661666_b.jpg",
-    "BasicKnow/deep_learning/梯度消失&梯度爆炸/img/v2-8e6665fb67f086c0864583caa48c8d30_r.jpg"
+    "BasicKnow/UNet/UNet.md",
+    "BasicKnow/VAE/VAE.md",
+    "CV/StableDiffusion/StableDiffusion.md",
+    "BasicKnow/others/神经网络概述.md",
+    "BasicKnow/others/deep_learning/小概念.md",
+    "BasicKnow/others/待整合.md",
+    "Self-supervisedLearning/自监督学习.md",
+    "image/image_4VAw_b7v6D.png.md",
+    "image/image_dU94N7jc2u.png.md",
+    "Tool/Contest/竞赛trick.md"
   ]
 }

@@ -16,7 +16,7 @@
 
 textCNN 其实只有一层卷积,一层max-pooling, 最后将输出外接softmax 来n分类。
 
-[4.CNN](../../deep_learning/4.CNN.md)
+[CNN](../../BasicKnow/CNN/CNN.md)
 
 ## 卷积(convolution)
 
