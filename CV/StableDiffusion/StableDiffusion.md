@@ -15,6 +15,8 @@ https://jalammar.github.io/illustrated-stable-diffusion/
 
 论文：https://ommer-lab.com/research/latent-diffusion-models/
 
+[生成扩散模型漫谈（一）：DDPM = 拆楼 + 建楼](https://kexue.fm/archives/9119)
+
 
 
 
