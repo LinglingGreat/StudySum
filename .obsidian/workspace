@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "6b7f0d46dda0ee30",
+        "id": "f365f866289e829e",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "DataRelated/UCPhrase/UCPhrase.md",
+            "file": "BasicKnow/deep_learning/summerDL.md",
             "mode": "source",
             "source": false
           }
@@ -40,10 +40,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#数据集",
+                "query": "激活函数",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 100
+    "width": 162
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/UCPhrase/UCPhrase.md",
+                "file": "BasicKnow/deep_learning/summerDL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/UCPhrase/UCPhrase.md"
+                "file": "BasicKnow/deep_learning/summerDL.md"
               }
             }
           }
@@ -108,17 +108,17 @@
     "direction": "horizontal",
     "width": 100
   },
-  "active": "6b7f0d46dda0ee30",
+  "active": "f365f866289e829e",
   "lastOpenFiles": [
-    "Application/Contest/竞赛trick.md",
-    "NLG/Dailogue/知识对话比赛_百度/知识对话比赛方案.md",
-    "NLG/Dailogue/主动对话/主动对话.md",
-    "NLG/Dailogue/对话评估/DSTC10开放领域对话评估比赛/DSTC10 开放领域对话评估比赛冠军方法总结.md",
-    "Tool/Linux/README.md",
-    "Tool/python/Fileprocess.md",
-    "Pre-training/CLIP/CLIP.md",
-    "Tool/Pytorch/Pytorch.md",
-    "Tool/Pytorch/transformers.md",
-    "Tool/Git/readme.md"
+    "BasicKnow/deep_learning/3.MLstrategy.md",
+    "BasicKnow/deep_learning/梯度消失&梯度爆炸/梯度消失&梯度爆炸.md",
+    "BasicKnow/deep_learning/summerDL.md",
+    "BasicKnow/deep_learning/BatchNorm/BatchNormalization.md",
+    "BasicKnow/deep_learning/BatchNorm/img/Pasted image 20210930082913.png",
+    "BasicKnow/deep_learning/小概念.md",
+    "BasicKnow/deep_learning/梯度消失&梯度爆炸/公式.md",
+    "BasicKnow/deep_learning/梯度消失&梯度爆炸/img/v2-db9d7889d408a1a13d49be058c797f33_r.jpg",
+    "BasicKnow/deep_learning/梯度消失&梯度爆炸/img/v2-995ba930f6f2c5dd1ca4ddeb10661666_b.jpg",
+    "BasicKnow/deep_learning/梯度消失&梯度爆炸/img/v2-8e6665fb67f086c0864583caa48c8d30_r.jpg"
   ]
 }
