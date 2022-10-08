@@ -1,4 +1,12 @@
+
+
 # Linux
+
+## 环境配置
+
+vim /etc/profile
+
+环境变量配置全攻略：[https://www.cnblogs.com/youyoui/p/10680329.html](https://www.cnblogs.com/youyoui/p/10680329.html "https://www.cnblogs.com/youyoui/p/10680329.html")
 
 ## 忘记密码
 
@@ -7,12 +15,6 @@ Ubuntu的默认root密码是随机的，即每次开机都有一个新的 root�
 忘记密码，或者输入密码登录不了：
 
 [https://m.php.cn/centos/445366.html](https://m.php.cn/centos/445366.html "https://m.php.cn/centos/445366.html")
-
-## 环境配置
-
-vim /etc/profile
-
-环境变量配置全攻略：[https://www.cnblogs.com/youyoui/p/10680329.html](https://www.cnblogs.com/youyoui/p/10680329.html "https://www.cnblogs.com/youyoui/p/10680329.html")
 
 ## 发送请求
 
@@ -101,20 +103,25 @@ vim /etc/profile
 *   查看当前目录总共占的容量，而不单独列出各子项占用的容量`du -sh`
 
 *   查看当前目录下一级子文件和子目录占用的磁盘容量`du -lh --max-depth=1`
-
+*  查看test目录下一级子文件和子目录的大小 `ls -alh test/`
 *   统计当前文件夹(目录)大小：`du -sh *`，包括隐藏文件：`du -sh * .[^.]*`
 
 *   查看当前目录以及所有下级目录、文件占用的磁盘容量`du -h`
 
+
 *   [Linux查看文件或文件夹大小: du命令](https://blog.csdn.net/duan19920101/article/details/104823301 "Linux查看文件或文件夹大小: du命令")
+
+统计当前目录下文件的个数（不包括目录）`ls -l | grep "^-" | wc -l`
+
+统计当前目录下文件的个数（包括子目录）  `ls -lR| grep "^-" | wc -l`
+
+查看某目录下文件夹(目录)的个数（包括子目录）  `ls -lR | grep "^d" | wc -l`
 
 查看目录挂载路径 `df -h 目录名`
 
 （1）查看已经挂载的硬盘大小：`df -h`
 
 （2）查看详细的硬盘分区情况（包括挂载和未挂载两种的硬盘大小）：`fdisk -l`
-
-查看文件大小`ls -alh test/`
 
 磁盘挂载：先`fdisk -l`查看分区情况，找到需要挂载的分区，比如`/dev/nvme0n1p1`，然后`mount 分区 挂载目录`，比如mount /dev/nvme0n1p1 /data
 

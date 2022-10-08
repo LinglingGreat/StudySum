@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "CV/StableDiffusion/StableDiffusion.md",
+            "file": "Tool/Linux/README.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 162
+    "width": 167
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/StableDiffusion/StableDiffusion.md",
+                "file": "Tool/Linux/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,7 +97,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/StableDiffusion/StableDiffusion.md"
+                "file": "Tool/Linux/README.md"
               }
             }
           }
@@ -106,19 +106,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 100
+    "width": 202
   },
-  "active": "f365f866289e829e",
+  "active": "a587b5911d49c840",
   "lastOpenFiles": [
+    "Tool/python/编码问题.md",
+    "Tool/Linux/README.md",
+    "CV/StableDiffusion/StableDiffusion.md",
     "BasicKnow/UNet/UNet.md",
     "BasicKnow/VAE/VAE.md",
-    "CV/StableDiffusion/StableDiffusion.md",
     "BasicKnow/others/神经网络概述.md",
     "BasicKnow/others/deep_learning/小概念.md",
     "BasicKnow/others/待整合.md",
     "Self-supervisedLearning/自监督学习.md",
-    "image/image_4VAw_b7v6D.png.md",
-    "image/image_dU94N7jc2u.png.md",
-    "Tool/Contest/竞赛trick.md"
+    "image/image_4VAw_b7v6D.png.md"
   ]
 }
