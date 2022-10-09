@@ -108,17 +108,17 @@
     "direction": "horizontal",
     "width": 202
   },
-  "active": "a587b5911d49c840",
+  "active": "f365f866289e829e",
   "lastOpenFiles": [
-    "Tool/python/编码问题.md",
+    "CourseNote/suggestions.md",
+    "CourseNote/算法工程师.md",
+    "SUMMARY.md",
+    "README.md",
+    "NLP知识体系.md",
+    "common.md",
     "Tool/Linux/README.md",
+    "Tool/python/编码问题.md",
     "CV/StableDiffusion/StableDiffusion.md",
-    "BasicKnow/UNet/UNet.md",
-    "BasicKnow/VAE/VAE.md",
-    "BasicKnow/others/神经网络概述.md",
-    "BasicKnow/others/deep_learning/小概念.md",
-    "BasicKnow/others/待整合.md",
-    "Self-supervisedLearning/自监督学习.md",
-    "image/image_4VAw_b7v6D.png.md"
+    "BasicKnow/UNet/UNet.md"
   ]
 }

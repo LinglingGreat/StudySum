@@ -251,3 +251,4 @@ Yann Lecun
 
 [做算法？数学专业的我教你突破数学关](https://mp.weixin.qq.com/s/yzkwSdoPRK1-JZIgJncHLg)
 
+[心法利器[65] | 一些技术和成长的讨论【答读者问】](https://mp.weixin.qq.com/s/3nr4UsrTDDQgJxV5pJdVew)
