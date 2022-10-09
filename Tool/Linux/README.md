@@ -391,6 +391,8 @@ find . -name "*.java" |xargs cat|grep -v ^$|wc -l
 
 解压tar.gz和tgz文件`tar -zxvf xxx`
 
+解压tar.zst文件`tar -I zstd -xvf xxxx.tar.zst`，需要install zstd
+
 把/home目录下包括它的子目录全部做备份文件，并进行压缩，备份文件名为usr.tar.gz 。　　
 `tar czvf usr.tar.gz /home`
 

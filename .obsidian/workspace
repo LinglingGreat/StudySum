@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "VAE",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -110,15 +110,15 @@
   },
   "active": "f365f866289e829e",
   "lastOpenFiles": [
+    "Tool/Pytorch/transformers.md",
+    "Tool/Linux/README.md",
     "CourseNote/suggestions.md",
     "CourseNote/算法工程师.md",
     "SUMMARY.md",
     "README.md",
     "NLP知识体系.md",
     "common.md",
-    "Tool/Linux/README.md",
     "Tool/python/编码问题.md",
-    "CV/StableDiffusion/StableDiffusion.md",
-    "BasicKnow/UNet/UNet.md"
+    "CV/StableDiffusion/StableDiffusion.md"
   ]
 }
