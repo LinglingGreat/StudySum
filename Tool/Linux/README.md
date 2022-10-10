@@ -315,6 +315,16 @@ PythonAPI目录下的文件以及文件夹复制到局域网219的/usr目录下�
 
 `nohup python .py > run.out &`
 
+全部kill
+```
+import os
+pid = list(set(os.popen('fuser -v /dev/nvidia*').read().split()))
+kill_cmd = 'kill -9 ' + ' '.join(pid)
+print(kill_cmd)
+os.popen(kill_cmd)
+
+```
+
 ### screen
 
 screen的用法：[https://blog.51cto.com/zz6547/1829625](https://blog.51cto.com/zz6547/1829625 "https://blog.51cto.com/zz6547/1829625")
