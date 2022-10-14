@@ -91,7 +91,9 @@ cp = cherry-pick
 
 # Git 分支
 
-1.查看所有分支`git branch -a` （看看是否连接上远程的git）&#x20;
+`git fetch --all`同步所有信息，但是不会修改代码
+
+1.查看所有分支`git branch -a` （看看是否连接上远程的git）;
 
 2.创建分支`git branch xxx`（为你的分支起名字）
 
@@ -100,6 +102,7 @@ cp = cherry-pick
 4.添加修改代码到缓存（注意最后的"."前面有个空格）`git add .`
 
 5.添加提交代码的备注`git commit -m "xxx"`（xxx为本次提交代码的备注）
+	注意：`git commit -a -m "message"` 只提交修改和删除的文件，不包括未跟踪的文件
 
 6.提交代码到指定的分支`git push origin xxx` （xxx为要提交代码的分支名称）(可以不用提交，如果是临时分支的话)
 
@@ -119,6 +122,49 @@ cp = cherry-pick
 `git checkout A xxx xxx`（可以写多个文件，也可以写文件夹）
 假如你需要用A分支的**XXX文件**覆盖B分支的**XXX文件**。需要先切换到B分支，然后执行上面的命令。
 也就是说要先切换到需要修改的分支然后，执行git checkout A XXX文件路径 来覆盖对应文件。覆盖完成以后执行提交命令提交即可。
+
+一、查看远程分支  
+使用如下git命令查看所有远程分支：·`git branch -r
+
+查看远程和本地所有分支：`git branch -a
+
+查看本地分支：`git branch `
+
+在输出结果中，前面带* 的是当前分支。
+
+二、拉取远程分支并创建本地分支  
+方法一  
+使用如下命令：```git checkout -b 本地分支名x origin/远程分支名x```
+
+使用该方式会在本地新建分支x，并自动切换到该本地分支x。
+
+采用此种方法建立的本地分支会和远程分支建立映射关系。
+
+方式二  
+使用如下命令：```git fetch origin 远程分支名x:本地分支名x```
+
+使用该方式会在本地新建分支x，但是不会自动切换到该本地分支x，需要手动checkout。
+
+采用此种方法建立的本地分支不会和远程分支建立映射关系。
+
+三、本地分支和远程分支建立映射关系的作用  
+建立本地分支与远程分支的映射关系（或者为跟踪关系track）。  
+这样使用git pull或者git push时就不必每次都要指定从远程的哪个分支拉取合并和推送到远程的哪个分支了。```git branch -vv ```
+
+上面的本地分支和远程分支都有映射关系，如果没有，就需要手动建立：
+
+```
+git branch -u origin/分支名， 
+或者 
+git branch --set-upstream-to origin/分支名 
+```
+
+origin 为git地址的标志，可以建立当前分支与远程分支的映射关系。
+
+撤销本地分支与远程分支的映射关系`git branch --unset-upstream 
+`
+
+之后可以再次用git branch -vv 查看本地分支和远程分支映射关系
 
 
 [Git 分支 - 分支的新建与合并](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6 "Git 分支 - 分支的新建与合并")
