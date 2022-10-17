@@ -506,6 +506,8 @@ wget：[https://www.cnblogs.com/peida/archive/2013/03/18/2965369.html](https://w
 
 ## Linux环境下conda虚拟环境的迁移
 
+source /ssdwork/miniconda3/etc/profile.d/conda.sh
+
 [Linux环境下conda虚拟环境的迁移](https://blog.csdn.net/qq_42730750/article/details/125413470)
 
 [修改conda环境和缓存默认路径](https://blog.csdn.net/javastart/article/details/102563461)

@@ -1,0 +1,135 @@
+{
+  "main": {
+    "id": "fc34d6487e60bd88",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd5ad67c6af07b06",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f365f866289e829e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Linux/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "47bbe9db2427f3ff",
+    "type": "split",
+    "children": [
+      {
+        "id": "79cfa90992a78f87",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f5e130d6e52a15d2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bb2fda3c447a41f6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 226
+  },
+  "right": {
+    "id": "305f592ad77dae89",
+    "type": "split",
+    "children": [
+      {
+        "id": "39f9c0f3cb94da05",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "67883344a7252a2d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Tool/Linux/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "4e8981ccab8108fe",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a587b5911d49c840",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Tool/Linux/README.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 202
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "f365f866289e829e",
+  "lastOpenFiles": [
+    "Tool/Git/readme.md",
+    "Tool/Linux/README.md",
+    "Tool/Pytorch/transformers.md",
+    "CourseNote/suggestions.md",
+    "CourseNote/算法工程师.md",
+    "SUMMARY.md",
+    "README.md",
+    "NLP知识体系.md",
+    "common.md",
+    "Tool/python/编码问题.md"
+  ]
+}
