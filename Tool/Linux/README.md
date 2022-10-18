@@ -344,6 +344,8 @@ screen的用法：[https://blog.51cto.com/zz6547/1829625](https://blog.51cto.com
 
 `screen -r ID`号  ，这个命令可以还原到某个跳出（剥离）状态的会话，不能还原到处于Attached状态的会话，如果使用此命令还原某个处于Attached状态的会话，screen会提示你，这个会话者处于Attached状态，意思就是说，这个会话里面有人用，你自己考虑是否加进来，加入会话以后这个会话就由你俩共同控制了，处于Attached状态的会话只能加入，不能还原。
 
+`screen -S 会话名称 -X quit`删除会话
+
 退出
 
 *   如果已经处于某个screen会话中，使用exit命令 或者 使用ctrl+d 快捷键，表示关闭当前会话，同时这个会话中运行的程序也会关闭
