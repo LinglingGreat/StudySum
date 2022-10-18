@@ -210,7 +210,9 @@ for filename in `ls`; do if [ `date -r $filename +%m%d` -eq "1125" ];then echo $
 
 ### rsync命令
 
-将tmp目录下的文件复制到 /home/xx/，排除其中的dirc目录 &#x20;
+`rsync -avh --progress /home/lldata/* .`
+
+将tmp目录下的文件复制到 /home/xx/，排除其中的dirc目录 
 
 `rsync -avP --exclude=dirc/tmp  /home/xx/ `
 
