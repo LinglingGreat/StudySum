@@ -107,9 +107,8 @@ Ubuntu的默认root密码是随机的，即每次开机都有一个新的 root�
 *   统计当前文件夹(目录)大小：`du -sh *`，包括隐藏文件：`du -sh * .[^.]*`
 
 *   查看当前目录以及所有下级目录、文件占用的磁盘容量`du -h`
-
-
 *   [Linux查看文件或文件夹大小: du命令](https://blog.csdn.net/duan19920101/article/details/104823301 "Linux查看文件或文件夹大小: du命令")
+* 指定显示的单位，加上`--block-size=g`或者m, k
 
 统计当前目录下文件的个数（不包括目录）`ls -l | grep "^-" | wc -l`
 
