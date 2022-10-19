@@ -311,7 +311,7 @@ git reset --hard 版本库ID
 撤销刚刚的add：`git reset HEAD`
 
 `git reset --hard` 能让 commit 记录强制回溯到某一个节点。
-* `–mixed` 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add . 操作 &#x20;
+* `–mixed` 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add . 操作;
 
 这个为默认参数,git reset --mixed HEAD^ 和 `git reset HEAD^` 效果是一样的。
 

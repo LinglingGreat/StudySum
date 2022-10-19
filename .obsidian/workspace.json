@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "Tool/Git/readme.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "Tool/Git/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/README.md"
+                "file": "Tool/Git/readme.md"
               }
             }
           }
@@ -121,8 +121,8 @@
   },
   "active": "f365f866289e829e",
   "lastOpenFiles": [
-    "Tool/Git/readme.md",
     "Tool/Linux/README.md",
+    "Tool/Git/readme.md",
     "Tool/Pytorch/transformers.md",
     "CourseNote/suggestions.md",
     "CourseNote/算法工程师.md",
