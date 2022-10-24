@@ -116,6 +116,8 @@ Ubuntu的默认root密码是随机的，即每次开机都有一个新的 root�
 
 查看某目录下文件夹(目录)的个数（包括子目录）  `ls -lR | grep "^d" | wc -l`
 
+查找指定后缀的文件的个数   `find ./ -name "*.jpg" | wc -l`
+
 查看目录挂载路径 `df -h 目录名`
 
 （1）查看已经挂载的硬盘大小：`df -h`
@@ -123,6 +125,33 @@ Ubuntu的默认root密码是随机的，即每次开机都有一个新的 root�
 （2）查看详细的硬盘分区情况（包括挂载和未挂载两种的硬盘大小）：`fdisk -l`
 
 磁盘挂载：先`fdisk -l`查看分区情况，找到需要挂载的分区，比如`/dev/nvme0n1p1`，然后`mount 分区 挂载目录`，比如mount /dev/nvme0n1p1 /data
+
+### 统计代码行数
+
+Linux有一个统计文件行数的命令wc。使用wc可以打印出每个文件和总文件的行数、字数和字节数，如果没有指定文件，则会读取标准输入(一般是终端)做统计。
+
+1.统计当前目录下，java文件数量：
+
+```
+find . -name "*.java" |wc -l
+```
+
+2.统计当前目录下，所有java文件行数：
+
+```
+find . -name "*.java" |xargs cat|wc -l
+```
+
+```
+find . "(" -name "*.cpp" -or -name "*.h" ")"  -print | xargs wc -l
+```
+
+3.统计当前目录下，所有java文件行数，并过滤空行：
+
+```
+find . -name "*.java" |xargs cat|grep -v ^$|wc -l
+```
+
 
 ### 文件的增删改查等
 
@@ -368,32 +397,6 @@ screen的用法：[https://blog.51cto.com/zz6547/1829625](https://blog.51cto.com
 
 ```
 nohup python graph_api.py > logs/graph.log & echo $! > graph.pid
-```
-
-### 统计代码行数
-
-Linux有一个统计文件行数的命令wc。使用wc可以打印出每个文件和总文件的行数、字数和字节数，如果没有指定文件，则会读取标准输入(一般是终端)做统计。
-
-1.统计当前目录下，java文件数量：
-
-```
-find . -name "*.java" |wc -l
-```
-
-2.统计当前目录下，所有java文件行数：
-
-```
-find . -name "*.java" |xargs cat|wc -l
-```
-
-```
-find . "(" -name "*.cpp" -or -name "*.h" ")"  -print | xargs wc -l
-```
-
-3.统计当前目录下，所有java文件行数，并过滤空行：
-
-```
-find . -name "*.java" |xargs cat|grep -v ^$|wc -l
 ```
 
 
