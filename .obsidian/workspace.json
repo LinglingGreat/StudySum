@@ -13,7 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Tool/python/Anaconda.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "280475d434d7c3a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Tool/Linux/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "445096e0eaa0fa14",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Git/readme.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "Tool/python/Anaconda.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +129,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/README.md"
+                "file": "Tool/python/Anaconda.md"
               }
             }
           }
@@ -121,15 +145,15 @@
   },
   "active": "f365f866289e829e",
   "lastOpenFiles": [
-    "Tool/Git/readme.md",
     "Tool/Linux/README.md",
+    "Tool/Git/readme.md",
+    "Tool/python/Anaconda.md",
+    "Tool/Pytorch/Pytorch.md",
     "Tool/Pytorch/transformers.md",
     "CourseNote/suggestions.md",
     "CourseNote/算法工程师.md",
     "SUMMARY.md",
     "README.md",
-    "NLP知识体系.md",
-    "common.md",
-    "Tool/python/编码问题.md"
+    "NLP知识体系.md"
   ]
 }

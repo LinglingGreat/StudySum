@@ -14,6 +14,8 @@
 
 重新安装原先版本的anaconda，保留虚拟环境：`bash Anaconda3-5.2.0-Linux-x86_64.sh -u`
 
+## 环境迁移
+
 导出环境： `conda env export > environment.yml`
 
 重现环境： `conda env create -f environment.yml`
