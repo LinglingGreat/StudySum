@@ -523,6 +523,8 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 
 ## slurm
 
+查看节点信息`sinfo -N`
+
 提交作业 `sbatch job_script`
 
 查询作业状态 `squeue`
