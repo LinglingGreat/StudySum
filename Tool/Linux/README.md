@@ -520,3 +520,10 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 
 [修改conda环境和缓存默认路径](https://blog.csdn.net/javastart/article/details/102563461)
 
+
+## slurm
+
+提交作业 `sbatch job_script`
+
+查询作业状态 `squeue`
+

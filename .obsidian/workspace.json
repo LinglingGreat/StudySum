@@ -43,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -101,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/python/Anaconda.md",
+                "file": "Tool/Linux/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +130,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/python/Anaconda.md"
+                "file": "Tool/Linux/README.md"
               }
             }
           }
@@ -143,10 +144,10 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "f365f866289e829e",
+  "active": "280475d434d7c3a1",
   "lastOpenFiles": [
-    "Tool/Linux/README.md",
     "Tool/Git/readme.md",
+    "Tool/Linux/README.md",
     "Tool/python/Anaconda.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/Pytorch/transformers.md",
