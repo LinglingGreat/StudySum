@@ -208,6 +208,10 @@ for filename in `ls`; do if [ `date -r $filename +%m%d` -eq "1125" ];then echo $
 
 删除某个文件以外的文件`find . ! -name epoch=000184.ckpt -exec rm -f {} \;`
 
+删除匹配文件名的文件`find . -name 'info.log.2020-06*' -exec rm {} \;`
+
+
+
 ### scp命令
 
 **scp命令在工作中是比较常用的，所以就总结如下：**
