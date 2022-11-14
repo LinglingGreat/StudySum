@@ -244,5 +244,13 @@ parlai
 
 ## 用法
 
+transformers
+
+多轮对话时候的分隔符讨论：
+https://github.com/huggingface/transformers/issues/9365
+
+https://github.com/huggingface/transformers/issues/9457
+
+
 
 ## 数据

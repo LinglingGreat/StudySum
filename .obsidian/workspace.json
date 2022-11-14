@@ -20,12 +20,12 @@
             }
           },
           {
-            "id": "280475d434d7c3a1",
+            "id": "20c69388b11a4c4c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "CV/StableDiffusion/StableDiffusion.md",
                 "mode": "source",
                 "source": false
               }
@@ -42,9 +42,57 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "17abb3be0c137524",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Linux/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "003012fce28e817b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fc56e9ee035232df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NLG/Dailogue/Flamingo/Flamingo.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3ba4bf756cd4c01b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CV/StableDiffusion/StableDiffusion.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -73,7 +121,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "NDCG",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -102,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/README.md"
+                "file": "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md"
               }
             }
           }
@@ -141,20 +189,17 @@
     "direction": "horizontal",
     "width": 202
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
-  "active": "280475d434d7c3a1",
+  "active": "003012fce28e817b",
   "lastOpenFiles": [
-    "Tool/Git/readme.md",
+    "Recsys/协同过滤/协同过滤.md",
+    "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md",
+    "Recsys/评估指标/评估指标.md",
+    "Recsys/Datawhale/README.md",
     "Tool/Linux/README.md",
-    "Tool/python/Anaconda.md",
-    "Tool/Pytorch/Pytorch.md",
-    "Tool/Pytorch/transformers.md",
-    "CourseNote/suggestions.md",
-    "CourseNote/算法工程师.md",
-    "SUMMARY.md",
-    "README.md",
-    "NLP知识体系.md"
+    "Search/搜索排序.md",
+    "Recsys/深度学习推荐系统实战.md",
+    "Recsys/推荐模型.md",
+    "Recsys/评估指标/img/e1a0566473b367633f0d18346608661a.jpeg",
+    "Recsys/双塔模型/双塔模型.md"
   ]
 }

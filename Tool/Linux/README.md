@@ -397,6 +397,15 @@ screen的用法：[https://blog.51cto.com/zz6547/1829625](https://blog.51cto.com
 
 *   Ctrl+c切换回之前模式
 
+安装方式：yum install screen
+
+如果没有权限
+
+https://www.cnblogs.com/GoubuLi/p/12679471.html
+
+https://blog.csdn.net/qq_36441393/article/details/107123645
+
+
 ### nohup
 
 ```
@@ -532,4 +541,57 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 提交作业 `sbatch job_script`
 
 查询作业状态 `squeue`
+
+## 修改时间
+
+cp /usr/share/zoneinfo/GMT /etc/localtime
+
+sudo date 1031145622   月日时分年
+
+hwclock --set --date="09/17/2003 13:26:00"。 月日年时分秒.格林尼治时间
+
+## 权限
+
+### 修改账号创建文件默认权限
+
+针对未来可能会创建的文件，需要修改每个账号的创建文件的默认权限：
+
+修改~/.bashrc（或者/etc/profile，如果有权限的话），加入以下代码：
+
+```
+if [ $UID -gt 199 ] && [ "`/usr/bin/id -gn`" = "`/usr/bin/id -un`" ]; then
+	umask 002
+else
+	umask 002
+fi
+```
+
+修改后保存，source ~/.bashrc
+
+执行成功后，新创建的文件/文件夹有群组可读可写权限
+
+### 修改已有文件权限
+
+`chmod -R 777 文件夹` 赋予所有人（包括群组、其他用户）可读可写权限
+
+### 多用户共享目录conda安装
+
+-   登录自己的账号
+    
+-   运行source xxx/miniconda3/bin/activate
+    
+-   运行conda init
+    
+-   修改 ~/.bash_profile，然后source ~/.bash_profile
+```
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+fi
+```
+    
+-   即可使用conda命令
 

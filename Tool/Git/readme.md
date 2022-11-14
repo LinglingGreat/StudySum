@@ -87,6 +87,14 @@ cp = cherry-pick
 
 ```
 
+## git-lfs
+安装
+```
+wget https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz 
+tar -xzf git-lfs-linux-amd64-v3.2.0.tar.gz PATH=$PATH:/export/fs04/a12/rhuang/git-lfs-3.2.0/  写入配置文件bashrc
+git lfs install 
+git lfs version
+```
   
 
 # Git 分支
@@ -191,6 +199,35 @@ git branch -r | grep -v '\->' | while read remote; do git branch --track "${remo
 git fetch --all
 git pull --all
 ```
+
+## [Git将master最新代码拉取到当前开发分支](https://www.cnblogs.com/keenajiao/p/16444063.html)
+
+假设你正在开发一个新功能，还没开发完成。但是团队成员A最近开发了B功能，这个功能最近上线后合并到master了，此时你要拉取master最新代码到你的分支中。
+
+1. 切换到master主分支上
+
+git checkout master
+
+2. 将master更新的代码拉取到本地
+
+git pull
+
+3. 再切换到自己的分支假设为： add_order上
+
+git checkout add_order
+
+4. 合并master到自己的分支add_order上
+
+git merge master
+
+5、提交合并后的代码
+
+git add .  
+git commit -m "merge master"
+
+ 6、提交到远程仓库
+
+git push origin add_order
 
 ## 同步最新代码
 
@@ -636,7 +673,8 @@ git add folder
 
 git rev-list --objects --all | grep "$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -15 | awk '{print$1}')"
 
-  
+# 第一行的字母其实相当于文件的id,用以下命令可以找出id 对应的文件名
+git rev-list --objects --all | grep id
 
 # 文件夹BlazorApp/obj
 
