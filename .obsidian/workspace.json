@@ -68,6 +68,18 @@
             }
           },
           {
+            "id": "a066a46f07b0eb7c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Recsys/评估指标/评估指标.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "fc56e9ee035232df",
             "type": "leaf",
             "state": {
@@ -191,9 +203,9 @@
   },
   "active": "003012fce28e817b",
   "lastOpenFiles": [
-    "Recsys/协同过滤/协同过滤.md",
-    "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md",
     "Recsys/评估指标/评估指标.md",
+    "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md",
+    "Recsys/协同过滤/协同过滤.md",
     "Recsys/Datawhale/README.md",
     "Tool/Linux/README.md",
     "Search/搜索排序.md",

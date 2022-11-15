@@ -121,4 +121,27 @@ class NCF(paddle.nn.Layer):
 [评估指标](../../评估指标/评估指标.md)
 
 
+```python
+def hitrate(test_df,k=20):
+	user_num = test_df['user_id'].nunique()
+	test_gd_df = test_df[test_df['ranking']<=k].reset_index(drop=True)
+	return test_gd_df['label'].sum() / user_num
+```
+
+
+```python
+def ndcg(test_df,k=20):
+    '''
+    idcg@k 一定为1
+    dcg@k 1/log_2(ranking+1) -> log(2)/log(ranking+1)
+    '''
+    user_num = test_df['user_id'].nunique()
+    test_gd_df = test_df[test_df['ranking']<=k].reset_index(drop=True)
+    
+    test_gd_df = test_gd_df[test_gd_df['label']==1].reset_index(drop=True)
+    test_gd_df['ndcg'] = math.log(2) / np.log(test_gd_df['ranking']+1)
+    return test_gd_df['ndcg'].sum() / user_num
+```
+
+
 
