@@ -49,7 +49,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "CV/StableDiffusion/StableDiffusion.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "feddf1451c78f2d3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CV/Diffusion/Diffusion.md",
                 "mode": "source",
                 "source": false
               }
@@ -68,7 +80,7 @@
             }
           },
           {
-            "id": "a066a46f07b0eb7c",
+            "id": "563e141112eab3f9",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -162,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md",
+                "file": "CV/Diffusion/Diffusion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -190,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md"
+                "file": "CV/Diffusion/Diffusion.md"
               }
             }
           }
@@ -199,19 +211,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 202
+    "width": 202,
+    "collapsed": true
   },
-  "active": "003012fce28e817b",
+  "active": "feddf1451c78f2d3",
   "lastOpenFiles": [
-    "Recsys/评估指标/评估指标.md",
+    "CV/StableDiffusion/StableDiffusion.md",
+    "CV/Diffusion/Diffusion.md",
+    "Tool/SQL/hive&sql.md",
+    "Tool/Linux/README.md",
     "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md",
+    "Recsys/评估指标/评估指标.md",
     "Recsys/协同过滤/协同过滤.md",
     "Recsys/Datawhale/README.md",
-    "Tool/Linux/README.md",
     "Search/搜索排序.md",
-    "Recsys/深度学习推荐系统实战.md",
-    "Recsys/推荐模型.md",
-    "Recsys/评估指标/img/e1a0566473b367633f0d18346608661a.jpeg",
-    "Recsys/双塔模型/双塔模型.md"
+    "Recsys/深度学习推荐系统实战.md"
   ]
 }

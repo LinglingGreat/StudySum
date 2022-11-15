@@ -26,14 +26,14 @@ full join=full outer join包含左右表的所有行
 
 ```SQL
 select productid, split(depart,':')[0], split(depart,':')[1],district 
-from dw_globalsearchdb.gs_hotsale demo
+from xxx demo
 lateral view explode(split(departcityprices,',')) demo as depart
 lateral view explode(split(districtids,',')) demo as district
 where businesstype in (6, 7);
 ```
 
 
-array<struct>类型的
+`array<struct>`类型的
 
 ### 行列转换(explode array)
 
@@ -42,7 +42,7 @@ with
 loc as
 (  select explode(array('en-AU','en-GB','en-HK','en-MY','en-SG','en-US','ja-JP','ko-KR','zh-HK','zh-TW')) as locale
 ),
-poi as  -- 大搜扩量POI基于locale的行列转换
+poi a
 (  select id as officialpoiid, poitype, poitypecode,coverimageid,sourcetype,districtid,publishstatus
  ,districtidpath,threecode,rating,locale
     , case when locale='en-AU' then name_en_au when locale='en-GB' then name_en_gb
@@ -69,8 +69,7 @@ poi as  -- 大搜扩量POI基于locale的行列转换
       when locale='ja-JP' then score_ja_jp when locale='ko-KR' then score_ko_kr
       when locale='zh-HK' then score_zh_hk when locale='zh-TW' then score_zh_tw
       else null end as score
-  --from tmp_ibu_techapidb.ibu_gcc_tmp_poi_ext p, loc
- from tmp_tereportdb.etltmp_ibu_gcc_tmp_poi_ext_446092 p,loc
+ from xxx p,loc
 )
 ```
 
