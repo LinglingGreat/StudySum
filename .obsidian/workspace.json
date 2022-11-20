@@ -56,18 +56,6 @@
             }
           },
           {
-            "id": "49b750046cecb071",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Recsys/GRU4Rec/GRU4Rec.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "17abb3be0c137524",
             "type": "leaf",
             "state": {
@@ -140,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -198,7 +186,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Recsys/GRU4Rec/GRU4Rec.md",
+                "file": "Tool/Git/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -226,7 +214,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Recsys/GRU4Rec/GRU4Rec.md"
+                "file": "Tool/Git/readme.md"
               }
             }
           }
@@ -235,20 +223,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 202,
-    "collapsed": true
+    "width": 202
   },
-  "active": "49b750046cecb071",
+  "active": "445096e0eaa0fa14",
   "lastOpenFiles": [
     "Tool/Linux/README.md",
+    "Tool/Git/readme.md",
+    "Recsys/GRU4Rec/GRU4Rec.md",
+    "BasicKnow/RNN/RNN及其应用.md",
     "Recsys/推荐介绍/推荐介绍.md",
     "Recsys/Datawhale/Task02：传统序列召回实践：GRU4Rec/Task02：传统序列召回实践：GRU4Rec.md",
-    "Recsys/GRU4Rec/GRU4Rec.md",
     "Recsys/推荐系统之召回与精排/八斗大数据项目实战.pdf",
     "Recsys/深度学习推荐系统实战.md",
     "Recsys/推荐模型.md",
-    "Recsys/推荐系统评价体系.jpg",
-    "Recsys/README.md",
-    "Tool/Git/readme.md"
+    "Recsys/推荐系统评价体系.jpg"
   ]
 }

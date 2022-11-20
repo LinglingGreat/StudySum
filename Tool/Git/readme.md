@@ -345,7 +345,7 @@ git reset --hard 版本库ID
 
 注意：写哪个版本库ID就会回到那个版本
 
-撤销刚刚的add：`git reset HEAD`
+撤销刚刚的add：
 
 `git reset --hard` 能让 commit 记录强制回溯到某一个节点。
 * `–mixed` 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add . 操作;
@@ -354,7 +354,7 @@ git reset --hard 版本库ID
 
 * `–soft` 不删除工作空间改动代码，撤销commit，不撤销git add .常用：`git reset --soft HEAD^`（HEAD^的意思是上一个版本，也可以写成HEAD~1 ；如果你进行了2次commit，想都撤回，可以使用HEAD~2）
 
-* `–hard` 删除工作空间改动代码，撤销commit，撤销git add .注意完成这个操作后，就恢复到了上一次的commit状态。
+* `–hard` 删除工作空间改动代码，撤销commit，撤销git add .注意完成这个操作后，就恢复到了上一次的commit状态。`git reset HEAD`
 
 * 对于已经 push 的 commit，也可以使用该命令，不过再次 push 时，由于远程分支和本地分支有差异，需要强制推送 `git push -f` 来覆盖被 reset 的 commit。
 
