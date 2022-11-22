@@ -56,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -114,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "Tool/Git/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/README.md"
+                "file": "Tool/Git/readme.md"
               }
             }
           }
@@ -153,17 +153,17 @@
     "direction": "horizontal",
     "width": 202
   },
-  "active": "4e4e5cf1a84f70fb",
+  "active": "445096e0eaa0fa14",
   "lastOpenFiles": [
-    "Recsys/SR-GNN/SR-GNN.md",
     "Tool/Linux/README.md",
+    "Tool/Git/readme.md",
+    "Recsys/SR-GNN/SR-GNN.md",
     "Recsys/Datawhale/Task03：GNN在召回中的应用：SR-GNN/Task03：GNN在召回中的应用：SR-GNN.md",
     "Recsys/Datawhale/Task02：传统序列召回实践：GRU4Rec/Task02：传统序列召回实践：GRU4Rec.md",
     "Recsys/GRU4Rec/GRU4Rec.md",
     "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md",
     "CV/StableDiffusion/StableDiffusion.md",
     "NLG/Dailogue/Flamingo/Flamingo.md",
-    "Recsys/评估指标/评估指标.md",
-    "CV/Diffusion/Diffusion.md"
+    "Recsys/评估指标/评估指标.md"
   ]
 }
