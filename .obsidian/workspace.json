@@ -20,6 +20,30 @@
             }
           },
           {
+            "id": "80020b7de6fcd6ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/python/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c1e89a0839cd7080",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/python/异步/异步&协程.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "20c69388b11a4c4c",
             "type": "leaf",
             "state": {
@@ -85,7 +109,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "NDCG",
+                "query": "requirement",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -114,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/readme.md",
+                "file": "Tool/python/异步/异步&协程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/readme.md"
+                "file": "Tool/python/异步/异步&协程.md"
               }
             }
           }
@@ -153,17 +177,17 @@
     "direction": "horizontal",
     "width": 202
   },
-  "active": "445096e0eaa0fa14",
+  "active": "c1e89a0839cd7080",
   "lastOpenFiles": [
-    "Tool/Linux/README.md",
+    "Tool/python/README.md",
     "Tool/Git/readme.md",
+    "Tool/Linux/README.md",
+    "Tool/README.md",
+    "Tool/python/Anaconda.md",
     "Recsys/SR-GNN/SR-GNN.md",
     "Recsys/Datawhale/Task03：GNN在召回中的应用：SR-GNN/Task03：GNN在召回中的应用：SR-GNN.md",
     "Recsys/Datawhale/Task02：传统序列召回实践：GRU4Rec/Task02：传统序列召回实践：GRU4Rec.md",
     "Recsys/GRU4Rec/GRU4Rec.md",
-    "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md",
-    "CV/StableDiffusion/StableDiffusion.md",
-    "NLG/Dailogue/Flamingo/Flamingo.md",
-    "Recsys/评估指标/评估指标.md"
+    "Recsys/Datawhale/Task01：Paddle开发深度学习模型快速入门/Task01：Paddle开发深度学习模型快速入门.md"
   ]
 }
