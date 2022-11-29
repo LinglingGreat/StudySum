@@ -97,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "diffusion",
+                "query": "nlp",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -167,15 +167,15 @@
   },
   "active": "80020b7de6fcd6ca",
   "lastOpenFiles": [
+    "CourseNote/NLP相关资料.md",
+    "CV/Diffusion/Diffusion.md",
+    "CourseNote/suggestions.md",
+    "README.md",
+    "SUMMARY.md",
+    "NLP知识体系.md",
+    "common.md",
     "CV/StableDiffusion/StableDiffusion.md",
     "CV/CLIP/CLIP.md",
-    "CV/Diffusion/Diffusion.md",
-    "Tool/python/Python.md",
-    "Tool/python/异步/异步&协程.md",
-    "Tool/Linux/Linux.md",
-    "Tool/Git/Git.md",
-    "Recsys/MIND/MIND.md",
-    "Recsys/Comirec/Comirec.md",
-    "Recsys/Comirec/Comic-SA.md"
+    "Tool/python/Python.md"
   ]
 }

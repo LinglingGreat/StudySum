@@ -1,6 +1,12 @@
-### NLP
+## NLP资料
 
-在线课程
+### 在线课程
+
+机器学习：
+Stanford CS229 机器学习
+Stanford CS246 数据挖掘 
+资料链接:
+http://sendanywhe.re/900QEJJZ
 
 •  Dan Jurafsky 和 Chris Manning：自然语言处理[非常棒的视频介绍系列]
 
@@ -14,27 +20,23 @@
 
 [https://www.coursera.org/learn/natural-language-processing](http:)
 
-图书馆和开放资源
+多伦多大学三巨头，被誉为“深度学习之父“的Geoffrey Hinton教授在Coursera上的Neural Networks For Machine Learning网课。他的UT实验室在2012年的某医药大赛中如一匹黑马般赢得桂冠（即使整个团队没有一个人懂生物），真正地把深度学习带入了主流媒体的视线。链接： https://www.coursera.org/learn/neural-networks
 
-•  spaCy（网站，博客）[Python; 新兴的开放源码库并自带炫酷的用法示例、API文档和演示应用程序]
+斯坦福大学CS231n 卷积神经网络视觉识别课程，大数据文摘授权汉化教程链接： http://study.163.com/course/introduction/1003223001.htm
 
-网站网址：[https://spacy.io/](http:)
+牛津大学与DeepMind合作的自然语言处理深度学习课程。链接： https://www.cs.ox.ac.uk/teaching/courses/2016-2017/dl/
 
-博客网址：[https://explosion.ai/blog/](http:)
+专门致力于为深度学习工程师提供教育资源的fast.ai。
+链接： http://www.fast.ai/
 
-演示应用网址: [https://spacy.io/docs/usage/showcase](http:)
+Tensorflow提供的机器学习教程，分为两篇
 
-•  自然语言工具包（NLTK）（网站，图书）[Python; NLP实用编程介绍，主要用于教学目的]
+初学者篇： https://www.tensorflow.org/get_started/mnist/beginners
+进阶篇： https://www.tensorflow.org/get_started/mnist/pros
 
-网站网址：[http://www.nltk.org](http:)
+果壳网的 MOOC 学院，比如斯坦福的《编译原理》和 MIT 的《Python》
 
-图书网址:[ http://www.nltk.org/book/](http:)
-
-•  斯坦福CoreNLP（网站）[由Java开发的高质量的自然语言分析工具包]
-
-网站网址: [https://stanfordnlp.github.io/CoreNLP/](http:)
-
-活跃的博客
+### 活跃的博客
 
 •  自然语言处理博客（HalDaumé）
 
@@ -48,7 +50,7 @@
 
 博客网址：[http://languagelog.ldc.upenn.edu/nll/](http:)
 
-书籍
+### 书籍
 
 •  言语和语言处理（Daniel Jurafsky和James H. Martin）[经典的NLP教科书，涵盖了所有NLP的基础知识，第3版即将出版]
 
@@ -68,7 +70,9 @@
 
 入门书籍： http://u.cs.biu.ac.il/~yogo/nnlp.pdf
 
-其它杂项
+佛罗赞和莫沙拉夫的《计算机科学导论》，《穿越计算机的迷雾》。
+
+### 其它杂项
 
 •  如何在TensorFlow中构建word2vec模型[学习指南]
 
@@ -98,7 +102,7 @@
 
 [https://www.quora.com/How-do-I-learn-Natural-Language-Processing](http:)
 
-DIY项目和数据集
+### DIY项目和数据集
 
 资料来源：[http://gunshowcomic.com/](http:)
 
@@ -152,7 +156,7 @@ DIY项目和数据集
 
 [https://en.wikipedia.org/wiki/Wikipedia:Database_download](http:)
 
-NLP在社交媒体上
+### NLP在社交媒体上
 
 •  Twitter：#nlproc，NLPers上的文章列表（由Jason Baldrige提供）
 
@@ -172,46 +176,11 @@ NLP在社交媒体上
 
 [https://medium.com/towards-data-science/how-to-get-started-in-nlp-6a62aa4eaeff](http:)
 
-
-
 ### 其他
 
-斯坦福大学CS224d 自然语言处理深度学习。链接：http://cs224d.stanford.edu/
-http://web.stanford.edu/class/cs224n/archive/WWW_1617/index.html
+SQL：Leecode题目，尝试多种解法
 
-多伦多大学三巨头，被誉为“深度学习之父“的Geoffrey Hinton教授在Coursera上的Neural Networks For Machine Learning网课。他的UT实验室在2012年的某医药大赛中如一匹黑马般赢得桂冠（即使整个团队没有一个人懂生物），真正地把深度学习带入了主流媒体的视线。链接：https://www.coursera.org/learn/neural-networks
-
-斯坦福大学CS231n 卷积神经网络视觉识别课程，大数据文摘授权汉化教程链接：http://study.163.com/course/introduction/1003223001.htm
-
-牛津大学与DeepMind合作的自然语言处理深度学习课程。链接：https://www.cs.ox.ac.uk/teaching/courses/2016-2017/dl/
-
-专门致力于为深度学习工程师提供教育资源的fast.ai。
-链接：http://www.fast.ai/
-
-Tensorflow提供的机器学习教程，分为两篇
-
-初学者篇：https://www.tensorflow.org/get_started/mnist/beginners
-进阶篇：https://www.tensorflow.org/get_started/mnist/pros
-
-
-佛罗赞和莫沙拉夫的《计算机科学导论》，《穿越计算机的迷雾》。
-
-中国大学精品开放课程
-中国大学 MOOC 
-果壳网的 MOOC 学院，比如斯坦福的《编译原理》和 MIT 的《Python》
-
-SQL：
-Leecode题目，尝试多种解法
-
-Python：
-廖雪峰网站/pandas手册501页后（http://pandas.pydata.org/pandas-docs/stable/pandas.pdf），熟练掌握pandas、numpy等常用数据包
-
-机器学习：
-Stanford CS229 机器学习
-Stanford CS246 数据挖掘 
-资料链接:
-http://sendanywhe.re/900QEJJZ
-
+Python：廖雪峰网站/pandas手册501页后（http://pandas.pydata.org/pandas-docs/stable/pandas.pdf），熟练掌握pandas、numpy等常用数据包
 
 
 https://biendata.com/ 这个国内的NLP竞赛平台
@@ -233,3 +202,29 @@ https://createmomo.github.io/2017/09/12/CRF_Layer_on_the_Top_of_BiLSTM_1/
  https://github.com/kmkurn/pytorch-crf  
 
  https://sm1les.com/2019/07/26/maximum-entropy-markov-model/ 文睿的博客
+
+
+## **了解NLP的最基本知识**
+Jurafsky和Martin的Speech and Language Processing是领域内的经典教材，里面包含了NLP的基础知识、语言学扫盲知识、基本任务以及解决思路。阅读此书会接触到很多NLP的最基本任务和知识，比如tagging, 各种parsing，coreference, semantic role labeling等等等等。这对于全局地了解NLP领域有着极其重要的意义。
+
+Chris Manning 的 introduction to information retrieval 也是一本可以扫一下盲的书
+
+## **了解早年经典的NLP模型以及论文**
+
+## **了解机器学习的基本模型**
+
+Pattern Recognition and Machine Learning
+
+## **多看NLP其他子领域的论文**
+MT，信息抽取，parsing，tagging，情感分析，MRC等等。
+
+## **了解CV和data mining领域的基本重大进展**
+
+NLP领域里面一些重要的文章其实或多或少借鉴了CV里面的思想，当然也同样出现CV借鉴NLP的情况。NLP神经网络可视化、可解释性的研究，时间上还是落后于CV里面对CNN的可视化。
+
+因为跨领域不好懂，所以第一次推荐看tutorial, 如果有 sudo code 的tutorial那就更好了。另外看看扫盲课的视频，比如Stanford CS231n也是个好办法。另外，一个NLP组里面有一个很懂CV的人也很重要
+
+
+## 参考资料
+
+[初入NLP领域的一些小建议](https://zhuanlan.zhihu.com/p/59184256)
