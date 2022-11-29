@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/python/README.md",
+                "file": "CV/Diffusion/Diffusion.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CV/Diffusion/Diffusion.md",
+                "file": "Tool/Linux/Linux.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,26 +61,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Git/readme.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4e4e5cf1a84f70fb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "Tool/Git/Git.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -109,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "requirement",
+                "query": "diffusion",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -138,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/README.md",
+                "file": "CV/Diffusion/Diffusion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -166,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/README.md"
+                "file": "CV/Diffusion/Diffusion.md"
               }
             }
           }
@@ -177,17 +165,17 @@
     "direction": "horizontal",
     "width": 202
   },
-  "active": "4e4e5cf1a84f70fb",
+  "active": "80020b7de6fcd6ca",
   "lastOpenFiles": [
+    "CV/StableDiffusion/StableDiffusion.md",
+    "CV/CLIP/CLIP.md",
+    "CV/Diffusion/Diffusion.md",
+    "Tool/python/Python.md",
+    "Tool/python/异步/异步&协程.md",
+    "Tool/Linux/Linux.md",
+    "Tool/Git/Git.md",
     "Recsys/MIND/MIND.md",
     "Recsys/Comirec/Comirec.md",
-    "Recsys/Comirec/Comic-SA.md",
-    "Tool/Linux/README.md",
-    "Tool/Git/readme.md",
-    "CV/Diffusion/Diffusion.md",
-    "CV/StableDiffusion/StableDiffusion.md",
-    "Tool/python/异步/异步&协程.md",
-    "Tool/python/README.md",
-    "Tool/README.md"
+    "Recsys/Comirec/Comic-SA.md"
   ]
 }
