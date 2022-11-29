@@ -245,37 +245,35 @@ for filename in `ls`; do if [ `date -r $filename +%m%d` -eq "1125" ];then echo $
 
 ### rsync命令
 
-`rsync -avh --progress /home/lldata/* .`
+举例：`rsync -avh --progress /home/lldata/* .`
 
-将tmp目录下的文件复制到 /home/xx/，排除其中的dirc目录 
+`-a, --archive`                   归档模式，表示以递归方式传输文件，并保持所有文件属性，等于-rlptgoD 
 
-`rsync -avP --exclude=dirc/tmp  /home/xx/ `
+`-v, --verbose`                  详细模式输出。`-v`参数表示输出细节。`-vv`表示输出更详细的信息，`-vvv`表示输出最详细的信息。
 
-注意 dirc/ 后面的 / 一定要，指名是目录，如果不加的话 dirc文件也会被排除
+`-P`参数是`--progress`和`--partial`这两个参数的结合。
 
-如果想排除多个目录或文件的话 使用
+`--partial`参数允许恢复中断的传输。不使用该参数时，`rsync`会删除传输到一半被打断的文件；使用该参数后，传输到一半的文件也会同步到目标目录，下次同步时再恢复中断的传输。一般需要与`--append`或`--append-verify`配合使用。
 
-`rsync -avP  --exclude-from=/usr/exclude.list`
+`--partial-dir`参数指定将传输到一半的文件保存到一个临时目录，比如`--partial-dir=.rsync-partial`。一般需要与`--append`或`--append-verify`配合使用。
 
-exclude.list 必须是绝对路径，里面保存了各种要排除的文件或目录，以换行隔开
+`--progress`参数表示显示进展。
 
-\-a, --archive                   归档模式，表示以递归方式传输文件，并保持所有文件属性，等于-rlptgoD 
-\-v, --verbose                  详细模式输出
-\-P 等同于 --partial            保留那些因故没有完全传输的文件，以是加快随后的再次传输
+`--exclude=dirc/tmp`  排除某个目录。
+- 将tmp目录下的文件复制到 /home/xx/，排除其中的dirc目录 `rsync -avP --exclude=dirc/tmp  /home/xx/ `
+- `rsync -av --exclude .svn/ --exclude build/ --exclude dist/  --exclude .vscode/ --exclude `
 
-直接在后面加多个排除的目录
+`--exclude-from`  参数指定一个本地文件，里面是需要排除的文件模式，每个模式一行。
+- 比如`rsync -avP  --exclude-from=/usr/exclude.list`，exclude.list 必须是绝对路径
 
-PythonAPI目录下的文件以及文件夹复制到局域网219的/usr目录下，其中排除.svn，build,dist,.vscode等文件夹 
+`--delete`参数删除只存在于目标目录、不存在于源目标的文件，即保证目标目录是源目标的镜像。
 
-`rsync -av --exclude .svn/ --exclude build/ --exclude dist/  --exclude .vscode/ --exclude `​
+`--existing`、`--ignore-non-existing`参数表示不同步目标目录中不存在的文件和目录。
 
-远程
+`--ignore-existing`参数表示只要该文件在目标目录中已经存在，就跳过去，不再同步这些文件。
+- 举例：`rsync -a --ignore-existing root@ip:/home/folder .`
 
-`rsync -av --progress --exclude build/ 192.168.19.142:/sahilsending . `
-
-远程文件夹下载到本地，忽略文件夹中已有文件
-
-`rsync -a --ignore-existing root@ip:/home/folder .`
+`-u`、`--update`参数表示同步时跳过目标目录中修改时间更新的文件，即不同步这些有更新的时间戳的文件。
 
 ### 文件中查找字符串
 
