@@ -273,6 +273,10 @@ PythonAPI目录下的文件以及文件夹复制到局域网219的/usr目录下�
 
 `rsync -av --progress --exclude build/ 192.168.19.142:/sahilsending . `
 
+远程文件夹下载到本地，忽略文件夹中已有文件
+
+`rsync -a --ignore-existing root@ip:/home/folder .`
+
 ### 文件中查找字符串
 
 `grep -rn "hello,world!" *`

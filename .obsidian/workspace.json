@@ -68,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/Diffusion/Diffusion.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/Diffusion/Diffusion.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           }
@@ -165,10 +165,10 @@
     "direction": "horizontal",
     "width": 202
   },
-  "active": "80020b7de6fcd6ca",
+  "active": "20c69388b11a4c4c",
   "lastOpenFiles": [
-    "CourseNote/NLP相关资料.md",
     "CV/Diffusion/Diffusion.md",
+    "CourseNote/NLP相关资料.md",
     "CourseNote/suggestions.md",
     "README.md",
     "SUMMARY.md",
