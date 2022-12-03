@@ -68,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Tool/Git/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Tool/Git/Git.md"
               }
             }
           }
@@ -165,8 +165,9 @@
     "direction": "horizontal",
     "width": 202
   },
-  "active": "20c69388b11a4c4c",
+  "active": "445096e0eaa0fa14",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
     "CV/Diffusion/Diffusion.md",
     "CourseNote/NLP相关资料.md",
     "CourseNote/suggestions.md",
@@ -175,7 +176,6 @@
     "NLP知识体系.md",
     "common.md",
     "CV/StableDiffusion/StableDiffusion.md",
-    "CV/CLIP/CLIP.md",
-    "Tool/python/Python.md"
+    "CV/CLIP/CLIP.md"
   ]
 }
