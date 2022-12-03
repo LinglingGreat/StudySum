@@ -37,6 +37,35 @@ Mask-tuning的出发点为，在预训练模型finetune的过程中，其实不�
 ![image-20220516221635621](img/image-20220516221635621.png)
 
 
+## 优雅的精调方法
+在面对第一把梭就失败时，我通常是这么判断的：
+
+1.  如果效果差的很离谱，比如二分类准确率在60%以下，那大概率是模型有问题，开始用小数据集debug
+    
+2.  如果有点效果，但一言难尽，那估计是数据有问题，要不然噪声多，要不然是真的难，可以自己看一下训练集，如果人看完后在几秒内都不能给出答案，就别太指望模型可以做好
+    
+
+在第一把效果还行的情况下，推荐尝试以下策略：
+
+1.  **In-Domain Further Pre-train**：利用同领域下的无监督数据继续MLM预训练，这个方法我真的百试不厌，一般用一两百万的数据就能提升1-2个点
+    
+2.  **Within-Task Further Pre-Training**：利用不同领域的同任务数据预先精调，选通用一些的一般也有提升
+    
+3.  **Multi-Task Fine-Tuning**：利用不同任务预先精调
+    
+4.  **Layer-wise Decreasing Layer Rate**：每层学到的知识都是不同的，前面几层会更通用，所以学的时候可以用小一点的学习率，防止灾难性遗忘
+    
+5.  **Features from Different layers**：把不同层的输出集成起来，不过这个方法不一定有提升
+    
+6.  **长文本处理**：截断或使用层次化编码
+    
+
+以上这些方法，都出自复旦邱锡鹏老师的《**How to fine-tune BERT for text classification?**》，该文进行了各种详细的实验，得出了不少有用的结论，推荐大家去学习。即使有的方法在论文数据集中表现一般，在自己的数据上也可以尝试。
+
+## 参考资料
+
 [打开模型Zero-Shot新范式：Instruction Tuning](https://mp.weixin.qq.com/s/1qsaT0AVlNjhQJR8z8PAGA)
+
+[优雅的精调方法，永不过时](https://mp.weixin.qq.com/s/BNiZh-ucQ4LcolshYBmXZg)
 
 

@@ -25,31 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CV/Diffusion/Diffusion.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c1e89a0839cd7080",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/python/异步/异步&协程.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "20c69388b11a4c4c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/Finetune/Finetune.md",
                 "mode": "source",
                 "source": false
               }
@@ -68,7 +44,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -126,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "Pre-training/Finetune/Finetune.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +130,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md"
+                "file": "Pre-training/Finetune/Finetune.md"
               }
             }
           }
@@ -163,19 +139,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 202
+    "width": 200,
+    "collapsed": true
   },
-  "active": "445096e0eaa0fa14",
+  "active": "80020b7de6fcd6ca",
   "lastOpenFiles": [
-    "Tool/Linux/Linux.md",
-    "CV/Diffusion/Diffusion.md",
-    "CourseNote/NLP相关资料.md",
-    "CourseNote/suggestions.md",
-    "README.md",
-    "SUMMARY.md",
-    "NLP知识体系.md",
+    "Pre-training/预训练语言模型.md",
     "common.md",
-    "CV/StableDiffusion/StableDiffusion.md",
-    "CV/CLIP/CLIP.md"
+    "SUMMARY.md",
+    "README.md",
+    "NLP知识体系.md",
+    "NLG/ControllableGen/综述/CTG综述.md",
+    "CV/Diffusion/Diffusion.md",
+    "Tool/python/异步/异步&协程.md",
+    "Tool/Git/Git.md",
+    "Tool/Linux/Linux.md"
   ]
 }
