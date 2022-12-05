@@ -552,6 +552,28 @@ sudo date 1031145622   月日时分年
 
 hwclock --set --date="09/17/2003 13:26:00"。 月日年时分秒.格林尼治时间
 
+## 一键部署
+```#!/bin/bash
+for ((machine_id=11; machine_id<=25; machine_id++))
+do
+if [ $machine_id -ge 10 ]
+then
+    machine="xxx"${machine_id}
+else
+    machine="xxx0"${machine_id}
+fi
+echo $machine
+ssh $machine > /dev/null 2>&1 << eeooff
+cd path/
+conda activate env
+bash stop.sh && bash server_prod.sh
+exit
+eeooff
+echo done!
+sleep 2m
+done
+```
+
 ## 权限
 
 ### 修改账号创建文件默认权限
