@@ -94,6 +94,9 @@ Ubuntu的默认root密码是随机的，即每次开机都有一个新的 root�
 
 查询ip：`curl cip.cc`
 
+查看本机外网地址`curl ifconfig.me`
+
+
 ### 文件系统
 
 [Linux磁盘空间分析及清理（df、du、rm）](https://www.cnblogs.com/jing99/p/10487174.html "Linux磁盘空间分析及清理（df、du、rm）")

@@ -80,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -138,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/DreamArtist/DreamArtist.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -166,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/DreamArtist/DreamArtist.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           }
@@ -175,16 +175,15 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "0931645c6e5fc3c5",
   "lastOpenFiles": [
+    "CV/DreamArtist/DreamArtist.md",
     "CV/DreamBooth/DreamBooth.md",
     "CV/DreamBooth/img/Pasted image 20221128203837.png",
     "CV/DreamBooth/img/Pasted image 20221128203821.png",
     "CV/Diffusion/Diffusion模型.md",
-    "CV/DreamArtist/DreamArtist.md",
     "CV/未命名.md",
     "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
