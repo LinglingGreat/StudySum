@@ -12,9 +12,26 @@
 我们可以看到，生成的效果还是十分不错的。兼具了多样性以及可控性。虽然依然不是一个实时的算法，但训练成本不算很高，大约是10-15分钟左右的GPU单卡时间。在Huggingface上有不少大众训练的以各种风格训练的DreamBooth-StableDiffusion并且代码全部开源了。
 
 
+
+## 训练tips
 DreamBooth和TextInversion的结果对比：
 https://www.reddit.com/r/StableDiffusion/comments/xjlv19/comparison_of_dreambooth_and_textual_inversion/
 
 huggingface训练DreamBooth的博客：
 https://huggingface.co/blog/dreambooth
+
+训练人脸
+- 当使用 2 的批量大小和 1e-6 的 LR 时，800-1200 步运行良好。
+- 事先保存对于避免过度拟合很重要。
+
+如果您看到生成的图像有噪声或质量下降，则可能意味着过度拟合。首先，尝试上述步骤来避免它。如果生成的图像仍然有噪声，请使用 DDIM 调度程序或运行更多推理步骤（~100 在我们的实验中效果很好）。
+
+我们的最佳结果是结合使用文本编码器微调、低 LR 和适当数量的步骤获得的。
+
+Faces are harder to train. In our experiments, a learning rate of `2e-6` with `400` training steps works well for objects but faces required `1e-6` (or `2e-6`) with ~1200 steps.
+
+
+
+
+
 
