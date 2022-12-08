@@ -12,4 +12,9 @@
 我们可以看到，生成的效果还是十分不错的。兼具了多样性以及可控性。虽然依然不是一个实时的算法，但训练成本不算很高，大约是10-15分钟左右的GPU单卡时间。在Huggingface上有不少大众训练的以各种风格训练的DreamBooth-StableDiffusion并且代码全部开源了。
 
 
+DreamBooth和TextInversion的结果对比：
+https://www.reddit.com/r/StableDiffusion/comments/xjlv19/comparison_of_dreambooth_and_textual_inversion/
+
+huggingface训练DreamBooth的博客：
+https://huggingface.co/blog/dreambooth
 
