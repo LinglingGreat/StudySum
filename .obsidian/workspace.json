@@ -134,7 +134,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 226
+    "width": 355.5
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -191,10 +191,10 @@
   },
   "active": "49ba75732501195f",
   "lastOpenFiles": [
-    "CV/Diffusion/Diffusion模型.md",
-    "Tool/Linux/Linux.md",
     "CV/DreamArtist/DreamArtist.md",
+    "Tool/Linux/Linux.md",
     "CV/DreamBooth/DreamBooth.md",
+    "CV/Diffusion/Diffusion模型.md",
     "CV/DreamBooth/img/Pasted image 20221128203837.png",
     "CV/DreamBooth/img/Pasted image 20221128203821.png",
     "CV/未命名.md",
