@@ -8,10 +8,24 @@
 
 prompt的基本格式：`a [identifier] [class noun]`，论文里说如果不加class noun，会需要更长的训练时间，效果会变差。
 
+![](img/Pasted%20image%2020221210182506.png)
+
+
+
 
 ![](img/Pasted%20image%2020221128203837.png)
 
 我们可以看到，生成的效果还是十分不错的。兼具了多样性以及可控性。虽然依然不是一个实时的算法，但训练成本不算很高，大约是10-15分钟左右的GPU单卡时间。在Huggingface上有不少大众训练的以各种风格训练的DreamBooth-StableDiffusion并且代码全部开源了。
+
+局限性
+- 模型可能无法生成少见的prompt context
+- 物体的颜色会变化
+- 容易过拟合生成和训练集一样的图片
+- 某些主体相比其他的主体更容易学，比如猫和狗
+- 少见或复杂的主体，模型无法支持主体的多变性（subject variations）
+- 主体的保真度 fidelity也存在差异，一些生成的图像可能包含主体的幻觉特征hallucinated features，这取决于模型先验的强度和语义修改的复杂性
+
+![](img/Pasted%20image%2020221210182923.png)
 
 
 
