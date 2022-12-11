@@ -121,7 +121,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TCP",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -191,15 +191,15 @@
   },
   "active": "49ba75732501195f",
   "lastOpenFiles": [
+    "Pre-training/GPT/GPT.md",
+    "CV/DreamBooth/DreamBooth.md",
     "CV/DreamArtist/DreamArtist.md",
     "Tool/Linux/Linux.md",
-    "CV/DreamBooth/DreamBooth.md",
     "CV/Diffusion/Diffusion模型.md",
     "CV/DreamBooth/img/Pasted image 20221128203837.png",
     "CV/DreamBooth/img/Pasted image 20221128203821.png",
     "CV/未命名.md",
     "Tool/Git/Git.md",
-    "Pre-training/Finetune/Finetune.md",
-    "Pre-training/预训练语言模型.md"
+    "Pre-training/Finetune/Finetune.md"
   ]
 }
