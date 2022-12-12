@@ -17,3 +17,10 @@
 
 ![](img/Pasted%20image%2020221210151955.png)
 
+## 训练
+
+### 基于webui
+https://github.com/7eu7d7/DreamArtist-stable-diffusion
+
+
+
