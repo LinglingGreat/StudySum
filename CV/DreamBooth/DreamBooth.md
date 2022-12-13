@@ -36,11 +36,14 @@ https://www.reddit.com/r/StableDiffusion/comments/xjlv19/comparison_of_dreamboot
 huggingface训练DreamBooth的博客：
 https://huggingface.co/blog/dreambooth
 
-
+训练人物：
 https://tryolabs.com/blog/2022/10/25/the-guide-to-fine-tuning-stable-diffusion-with-your-own-images
 
+从dreambooth最初版本fork的项目，有一些训练tips
 https://github.com/JoePenna/Dreambooth-Stable-Diffusion/
 
+训练人物：
+https://bennycheung.github.io/dreambooth-training-for-personal-embedding
 
 训练人脸
 - 当使用 2 的批量大小和 1e-6 的 LR 时，800-1200 步运行良好。
