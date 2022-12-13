@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -150,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/DreamArtist/DreamArtist.md",
+                "file": "CV/DreamBooth/DreamBooth.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/DreamArtist/DreamArtist.md"
+                "file": "CV/DreamBooth/DreamBooth.md"
               }
             }
           }
@@ -189,10 +189,10 @@
     "direction": "horizontal",
     "width": 200
   },
-  "active": "e1d8c7408cdcc64a",
+  "active": "49ba75732501195f",
   "lastOpenFiles": [
-    "CV/DreamBooth/DreamBooth.md",
     "CV/DreamArtist/DreamArtist.md",
+    "CV/DreamBooth/DreamBooth.md",
     "Pre-training/GPT/GPT.md",
     "Tool/Linux/Linux.md",
     "CV/Diffusion/Diffusion模型.md",
