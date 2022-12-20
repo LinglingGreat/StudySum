@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -150,7 +150,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/DreamBooth/DreamBooth.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/DreamBooth/DreamBooth.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           }
@@ -189,12 +189,12 @@
     "direction": "horizontal",
     "width": 200
   },
-  "active": "49ba75732501195f",
+  "active": "0931645c6e5fc3c5",
   "lastOpenFiles": [
-    "CV/DreamArtist/DreamArtist.md",
-    "CV/DreamBooth/DreamBooth.md",
     "Pre-training/GPT/GPT.md",
     "Tool/Linux/Linux.md",
+    "CV/DreamBooth/DreamBooth.md",
+    "CV/DreamArtist/DreamArtist.md",
     "CV/Diffusion/Diffusion模型.md",
     "CV/DreamBooth/img/Pasted image 20221128203837.png",
     "CV/DreamBooth/img/Pasted image 20221128203821.png",

@@ -66,3 +66,5 @@ GPT2的核心思想就是认为**可以用无监督的预训练模型去做有�
 
 [【NLP-14】GPT模型（Generative Pre-Training）](https://www.cnblogs.com/yifanrensheng/p/13167796.html)
 
+[万字拆解！追溯ChatGPT各项能力的起源](https://mp.weixin.qq.com/s/VYv8BRgGnp9ZTuXxaSuFwg)
+
