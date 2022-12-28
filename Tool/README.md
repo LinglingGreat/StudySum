@@ -30,3 +30,14 @@
 # @Author: {author}\n# @Date: {createTime}\n# @Last Modified by:{lastModifiedBy}\n# @Last Modified time: {updateTime}\n# @Create Comment: \n
 ```
 
+
+制作海报：
+- canva
+- 凡科快图
+- https://kt.fkw.com/sheji.html#/m/create  
+
+画图：processon, 亿图，Cmap，mockup，vision，
+1.windows上面可以用PS，AI，sketchbook
+2.pad上面可以用procreate
+3.android上面可以用sketchbook
+

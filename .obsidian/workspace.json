@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "91af658dd25ac14c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "0931645c6e5fc3c5",
             "type": "leaf",
             "state": {
@@ -150,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Tool/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Tool/README.md"
               }
             }
           }
@@ -199,17 +211,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "0931645c6e5fc3c5",
+  "active": "91af658dd25ac14c",
   "lastOpenFiles": [
-    "Pre-training/GPT/GPT.md",
+    "Tool/Git/Git.md",
     "Tool/Linux/Linux.md",
+    "Pre-training/GPT/GPT.md",
     "CV/DreamBooth/DreamBooth.md",
     "CV/DreamArtist/DreamArtist.md",
     "CV/Diffusion/Diffusion模型.md",
     "CV/DreamBooth/img/Pasted image 20221128203837.png",
     "CV/DreamBooth/img/Pasted image 20221128203821.png",
     "CV/未命名.md",
-    "Tool/Git/Git.md",
     "Pre-training/Finetune/Finetune.md"
   ]
 }
