@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -162,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/README.md",
+                "file": "CV/DreamBooth/DreamBooth.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -190,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/README.md"
+                "file": "CV/DreamBooth/DreamBooth.md"
               }
             }
           }
@@ -211,8 +211,9 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "91af658dd25ac14c",
+  "active": "49ba75732501195f",
   "lastOpenFiles": [
+    "Tool/README.md",
     "Tool/Git/Git.md",
     "Tool/Linux/Linux.md",
     "Pre-training/GPT/GPT.md",
@@ -221,7 +222,6 @@
     "CV/Diffusion/Diffusion模型.md",
     "CV/DreamBooth/img/Pasted image 20221128203837.png",
     "CV/DreamBooth/img/Pasted image 20221128203821.png",
-    "CV/未命名.md",
-    "Pre-training/Finetune/Finetune.md"
+    "CV/未命名.md"
   ]
 }

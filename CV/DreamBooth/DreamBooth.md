@@ -44,6 +44,7 @@ https://github.com/JoePenna/Dreambooth-Stable-Diffusion/
 
 训练人物：
 https://bennycheung.github.io/dreambooth-training-for-personal-embedding
+- fix hand, eye
 
 训练多个主体：
 https://www.youtube.com/watch?v=ravETUa84P8&themeRefresh=1
