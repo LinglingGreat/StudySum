@@ -36,15 +36,20 @@ https://www.reddit.com/r/StableDiffusion/comments/xjlv19/comparison_of_dreamboot
 huggingface训练DreamBooth的博客：
 https://huggingface.co/blog/dreambooth
 
-训练人物：
-https://tryolabs.com/blog/2022/10/25/the-guide-to-fine-tuning-stable-diffusion-with-your-own-images
-
 从dreambooth最初版本fork的项目，有一些训练tips
 https://github.com/JoePenna/Dreambooth-Stable-Diffusion/
 
 训练人物：
+https://tryolabs.com/blog/2022/10/25/the-guide-to-fine-tuning-stable-diffusion-with-your-own-images
+- 使用**10 到 12 张图像会产生更好的结果。**根据经验，我们将使用 2 张图像，包括躯干和 10 张面部，具有不同的背景、风格、表情、看和不看相机等。
+- 在我们的实验中显示出良好结果的经验法则是每个训练图像使用 100 到 200 次迭代。
+- inpainting实现换头
+
+训练人物：
 https://bennycheung.github.io/dreambooth-training-for-personal-embedding
+- 使用JoePenna的项目，写了整个训练流程
 - fix hand, eye
+
 
 训练多个主体：
 https://www.youtube.com/watch?v=ravETUa84P8&themeRefresh=1
