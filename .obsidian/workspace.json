@@ -8,48 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f365f866289e829e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/python/Anaconda.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "80020b7de6fcd6ca",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/Finetune/Finetune.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "445096e0eaa0fa14",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Tool/Git/Git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "91af658dd25ac14c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -68,18 +32,6 @@
             }
           },
           {
-            "id": "e42c7ffae519ca73",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CV/Diffusion/Diffusion模型.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "49ba75732501195f",
             "type": "leaf",
             "state": {
@@ -90,21 +42,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "e1d8c7408cdcc64a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CV/DreamArtist/DreamArtist.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -133,7 +72,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "in context",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -146,7 +85,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 355.5
+    "width": 202.5
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -162,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/DreamBooth/DreamBooth.md",
+                "file": "Tool/Git/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -190,7 +129,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/DreamBooth/DreamBooth.md"
+                "file": "Tool/Git/Git.md"
               }
             }
           }
@@ -199,7 +138,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,17 +151,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "49ba75732501195f",
+  "active": "445096e0eaa0fa14",
   "lastOpenFiles": [
-    "Tool/Linux/Linux.md",
+    "NLG/Dataset/生成任务.md",
+    "Template/论文模板.md",
+    "Template/普通模板.md",
+    "NLG/InContextLearning/In-Context Learning.md",
+    "Tool/python/Anaconda.md",
+    "Pre-training/Finetune/Finetune.md",
     "Tool/Git/Git.md",
-    "CV/DreamBooth/DreamBooth.md",
-    "NLG/LanguageModel/语言模型解码采样策略/语言模型解码采样策略.md",
     "Tool/README.md",
-    "Pre-training/GPT/GPT.md",
-    "CV/DreamArtist/DreamArtist.md",
-    "CV/Diffusion/Diffusion模型.md",
-    "CV/DreamBooth/img/Pasted image 20221128203837.png",
-    "CV/DreamBooth/img/Pasted image 20221128203821.png"
+    "Tool/Linux/Linux.md",
+    "CV/Diffusion/Diffusion模型.md"
   ]
 }
