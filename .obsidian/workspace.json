@@ -43,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -72,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "in context",
+                "query": "ARTS",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -81,7 +82,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -101,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "CV/DreamBooth/DreamBooth.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md"
+                "file": "CV/DreamBooth/DreamBooth.md"
               }
             }
           }
@@ -138,8 +140,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -151,17 +152,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "445096e0eaa0fa14",
+  "active": "bb2fda3c447a41f6",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Tool/Git/Git.md",
     "NLG/Dataset/生成任务.md",
     "Template/论文模板.md",
     "Template/普通模板.md",
     "NLG/InContextLearning/In-Context Learning.md",
     "Tool/python/Anaconda.md",
     "Pre-training/Finetune/Finetune.md",
-    "Tool/Git/Git.md",
     "Tool/README.md",
-    "Tool/Linux/Linux.md",
     "CV/Diffusion/Diffusion模型.md"
   ]
 }

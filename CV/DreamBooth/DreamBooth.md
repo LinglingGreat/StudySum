@@ -64,6 +64,8 @@ https://www.youtube.com/watch?v=ravETUa84P8&themeRefresh=1
 
 Faces are harder to train. In our experiments, a learning rate of `2e-6` with `400` training steps works well for objects but faces required `1e-6` (or `2e-6`) with ~1200 steps.
 
+https://www.reddit.com/r/StableDiffusion/comments/zcr644/make_better_dreambooth_style_models_by_using/
+
 
 
 
