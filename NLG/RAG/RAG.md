@@ -8,7 +8,7 @@
 [https://github.com/huggingface/transformers/tree/master/examples/research_projects/rag](https://github.com/huggingface/transformers/tree/master/examples/research_projects/rag)（使用torch来finetune）
 
 
-
+RAG用在对话中： https://parl.ai/projects/hallucination/ 
 
 
 预训练模型的汇总

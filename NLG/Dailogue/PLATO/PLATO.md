@@ -21,6 +21,17 @@ PLATO:Pre-trained Dialogue Generation Model with Discrete Latent Variable
 
 [https://github.com/PaddlePaddle/Research/tree/master/NLP/Dialogue-PLATO](https://github.com/PaddlePaddle/Research/tree/master/NLP/Dialogue-PLATO)
 
+代码主页：[https://github.com/PaddlePaddle/Knover/tree/develop/projects/PLATO-2](https://github.com/PaddlePaddle/Knover/tree/develop/projects/PLATO-2)
+
+[https://github.com/PaddlePaddle/Knover](https://github.com/PaddlePaddle/Knover)
+
+训练中文模型：[https://github.com/PaddlePaddle/Knover/issues/25](https://github.com/PaddlePaddle/Knover/issues/25)
+
+[https://github.com/PaddlePaddle/Knover/issues/79](https://github.com/PaddlePaddle/Knover/issues/79)
+
+[https://github.com/PaddlePaddle/Knover/issues/63](https://github.com/PaddlePaddle/Knover/issues/63)
+
+[https://github.com/PaddlePaddle/Knover/issues/60](https://github.com/PaddlePaddle/Knover/issues/60)
 
 
 对话系统的挑战非常多，其中有两点非常重要，一是大规模开放域多轮对话数据匮乏； 二是对话中涉及常识、领域知识和上下文，因此在对话回复时，存在“一对多”问题。

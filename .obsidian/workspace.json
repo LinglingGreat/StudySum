@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ARTS",
+                "query": "chirpycardinal",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -82,8 +82,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -152,17 +151,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "bb2fda3c447a41f6",
+  "active": "49ba75732501195f",
   "lastOpenFiles": [
-    "Tool/Linux/Linux.md",
-    "Tool/Git/Git.md",
-    "NLG/Dataset/生成任务.md",
-    "Template/论文模板.md",
-    "Template/普通模板.md",
-    "NLG/InContextLearning/In-Context Learning.md",
-    "Tool/python/Anaconda.md",
-    "Pre-training/Finetune/Finetune.md",
-    "Tool/README.md",
-    "CV/Diffusion/Diffusion模型.md"
+    "Tool/python/调试/pdb调试代码.md",
+    "NLG/Dailogue/RASA/RASA新.md",
+    "SUMMARY.md",
+    "NLG/RAG/RAG.md",
+    "NLG/Dailogue/chirpycardinal/chirpycardinal.md",
+    "NLG/Dailogue/EVA/EVA模型.md",
+    "Tool/python/Deepspeed.md",
+    "NLG/Dailogue/PLATO/PLATO.md",
+    "CourseNote/资源.md",
+    "Tool/README.md"
   ]
 }
