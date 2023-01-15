@@ -135,7 +135,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -153,6 +153,8 @@
   },
   "active": "49ba75732501195f",
   "lastOpenFiles": [
+    "CV/Video/README.md",
+    "CV/DreamBooth/DreamBooth.md",
     "Tool/python/调试/pdb调试代码.md",
     "NLG/Dailogue/RASA/RASA新.md",
     "SUMMARY.md",
@@ -160,8 +162,6 @@
     "NLG/Dailogue/chirpycardinal/chirpycardinal.md",
     "NLG/Dailogue/EVA/EVA模型.md",
     "Tool/python/Deepspeed.md",
-    "NLG/Dailogue/PLATO/PLATO.md",
-    "CourseNote/资源.md",
-    "Tool/README.md"
+    "NLG/Dailogue/PLATO/PLATO.md"
   ]
 }
