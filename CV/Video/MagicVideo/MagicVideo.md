@@ -22,7 +22,7 @@ papername: MagicVideo Efficient Video Generation With Latent Diffusion Models
 
 ### 定义
 
-时间步t的视频帧的序列$x_t=[x_t^1, ..., x_t^F]$
+时间步t的视频帧的序列经过高斯加躁后$x_t=[x_t^1, ..., x_t^F]$
 
 VAE的encoder和decoder分别是$\xi(·)$, $D(·)$
 

@@ -23,6 +23,11 @@ papername: Make-A-Video Text-to-Video Generation without Text-Video Data
 ![](img/Pasted%20image%2020230115224848.png)
 
 
+2D+1D convolution:
+
+![](img/Pasted%20image%2020230116164052.png)
+
+
 
 ## 核心亮点
 
