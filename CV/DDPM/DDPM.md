@@ -1,6 +1,6 @@
 ["Denoising Diffusion Probabalistic Models"](https://arxiv.org/abs/2006.11239)
 
-一个崩塌(corruptio)的过程：在每个时间步(timestep)添加少量噪声。给定某个时间步的 $x_{t-1}$ ，可以通过下面的公式得到它的下一个版本（比之前多一点噪声） $x_t$ ：
+一个崩塌(corruption)的过程：在每个时间步(timestep)添加少量噪声。给定某个时间步的 $x_{t-1}$ ，可以通过下面的公式得到它的下一个版本（比之前多一点噪声） $x_t$ ：
 
 $q(\mathbf{x}_t \vert \mathbf{x}_{t-1}) = \mathcal{N}(\mathbf{x}_t; \sqrt{1 - \beta_t} \mathbf{x}_{t-1}, \beta_t\mathbf{I}) \quad$
 

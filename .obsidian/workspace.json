@@ -44,6 +44,30 @@
             }
           },
           {
+            "id": "8712d63fe59b3b0d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CV/StableDiffusion/StableDiffusion.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e53b843ee2abd749",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "BasicKnow/UNet/UNet.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "69dac092dd63b3a6",
             "type": "leaf",
             "state": {
@@ -78,9 +102,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "28b2c586d9109a01",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/Base/Attention/Attention.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -190,15 +226,15 @@
   },
   "active": "2bc200faff16ee1d",
   "lastOpenFiles": [
-    "CV/Video/MakeAVideo/MakeAVideo.md",
+    "Pre-training/Base/Attention/Attention.md",
     "CV/Video/MagicVideo/MagicVideo.md",
-    "Template/论文模板.md",
     "CV/DDPM/DDPM.md",
-    "CV/Diffusion/Diffusion模型.md",
+    "CV/Video/MakeAVideo/MakeAVideo.md",
     "BasicKnow/UNet/UNet.md",
+    "CV/StableDiffusion/StableDiffusion.md",
+    "CV/Diffusion/Diffusion模型.md",
+    "Template/论文模板.md",
     "Tool/python/可视化/PIL.md",
-    "Tool/python/API/FastAPI.md",
-    "Tool/python/others.md",
-    "Tool/python/Python.md"
+    "Tool/python/API/FastAPI.md"
   ]
 }
