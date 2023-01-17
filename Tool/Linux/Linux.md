@@ -543,9 +543,22 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 
 查看节点信息`sinfo -N`
 
-提交作业 `sbatch job_script`
+提交作业 `sbatch job_script`, 比如`sbatch train.sh`, 注意sh文件中的python执行命令不要加nohup
 
 查询作业状态 `squeue`
+
+删除作业：`scancel`
+- -u, --user=user_name 删除特定用户的作业
+- -i, --interactive交互模式. 对每一个作业进行确认
+- -n, --jobname=job_name 删除特定名称的作业
+- -p, --partition=partition_name 删除特定分区的作业
+
+1.  scancel后接作业id,删除对应作业
+2.  scancel后接参数，将删除所有满足参数的作业
+
+**提交作业**
+
+
 
 ## 修改时间
 

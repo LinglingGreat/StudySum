@@ -116,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -174,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/StableDiffusion/StableDiffusion.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,17 +202,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/StableDiffusion/StableDiffusion.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -224,15 +223,15 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "8712d63fe59b3b0d",
+  "active": "a587b5911d49c840",
   "lastOpenFiles": [
-    "CV/Video/MagicVideo/MagicVideo.md",
     "CV/Video/MakeAVideo/MakeAVideo.md",
+    "CV/Video/MagicVideo/MagicVideo.md",
+    "CV/StableDiffusion/StableDiffusion.md",
     "BasicKnow/CNN/CNN.md",
     "Pre-training/Base/Attention/Attention.md",
     "CV/DDPM/DDPM.md",
     "BasicKnow/UNet/UNet.md",
-    "CV/StableDiffusion/StableDiffusion.md",
     "CV/Diffusion/Diffusion模型.md",
     "Template/论文模板.md",
     "Tool/python/可视化/PIL.md"
