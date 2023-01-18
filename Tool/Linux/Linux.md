@@ -540,11 +540,14 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 
 ## slurm
 
-查看节点信息`sinfo -N`
+查看节点信息`sinfo -N`或者`sinfo`
+- alloc——节点在用
+- idle——节点可用
+- mix——部分占用
+- down——节点下线
+- drain——节点故障
 
-查看节点的内存，gpu等信息 `scontrol show nodes`
-
-提交作业 `sbatch job_script`, 比如`sbatch train.sh`, 注意sh文件中的python执行命令不要加nohup
+查看节点的内存，gpu等信息 `scontrol show nodes`。scontrol 可以用于查看分区、节点和作业的详细信息，也可以修改等待中的作业属性。可以使用 **man scontrol** 查看详细用法。
 
 查询作业状态 `squeue`
 
@@ -558,6 +561,21 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 2.  scancel后接参数，将删除所有满足参数的作业
 
 ### 提交作业
+
+提交作业 `sbatch job_script`, 比如`sbatch train.sh`, 注意sh文件中的python执行命令不要加nohup
+
+可以使用 **man sbatch** 命令查看sbatch详细用法。常用的：
+
+```bash
+#SBATCH --job-name=test     # create a short name for your job
+#SBATCH --nodes=2                # node count
+#SBATCH --ntasks-per-node=1      # total number of tasks per node
+#SBATCH --cpus-per-task=8        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem=32G                # total memory per node (4 GB per cpu-core is default)
+#SBATCH --gres=gpu:8             # number of gpus per node
+#SBATCH -w xxx,xxx               # specified nodes
+#SBATCH --output=file_name       # output file, default is slurm_number.out
+```
 
 这里以多机多卡为例，单机多卡，单机单卡是类似的，改一下相应的sbatch参数以及torchrun或accelerate launch参数即可。
 
@@ -675,7 +693,11 @@ srun slurm_main.sh
 6. NCCL error
 - 可能是代码有问题，检查下rank, world_size等
 
-参考资料： https://cloud.tencent.com/developer/article/2135660?shareByChannel=link
+参考资料：
+https://cloud.tencent.com/developer/article/2135660?shareByChannel=link
+
+https://gist.github.com/rom1504/474f97a95a526d40ae44a3fc3c657a2e
+
 
 ## 修改时间
 
