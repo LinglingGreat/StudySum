@@ -542,6 +542,8 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 
 查看节点信息`sinfo -N`
 
+查看节点的内存，gpu等信息 `scontrol show nodes`
+
 提交作业 `sbatch job_script`, 比如`sbatch train.sh`, 注意sh文件中的python执行命令不要加nohup
 
 查询作业状态 `squeue`
@@ -555,9 +557,123 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 1.  scancel后接作业id,删除对应作业
 2.  scancel后接参数，将删除所有满足参数的作业
 
-**提交作业**
+### 提交作业
+
+这里以多机多卡为例，单机多卡，单机单卡是类似的，改一下相应的sbatch参数以及torchrun或accelerate launch参数即可。
+
+因为slurm会运行`nodes*ntasks-per-node`次程序，所以**根据运行参数中是否存在当前节点不同值也不同的变量（比如torch run中的node_rank）**，分为两种情况：
+
+1.如果你的启动命令中没有随着当前节点不同值也不同的变量（比如torch run中的node_rank），那么可以直接写一个slurm启动脚本slurm_start.sh:
+
+可以参考https://github.com/PrincetonUniversity/multi_gpu_training/tree/main/02_pytorch_ddp
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=ddp-torch     # create a short name for your job
+#SBATCH --nodes=2                # node count
+#SBATCH --ntasks-per-node=2      # total number of tasks per node
+#SBATCH --cpus-per-task=8        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem=32G                # total memory per node (4 GB per cpu-core is default)
+#SBATCH --gres=gpu:2             # number of gpus per node
+
+export MASTER_PORT=$(expr 10000 + $(echo -n $SLURM_JOBID | tail -c 4))
+export WORLD_SIZE=$(($SLURM_NNODES * $SLURM_NTASKS_PER_NODE))
+echo "WORLD_SIZE="$WORLD_SIZE
+#SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
+master_addr=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
+export MASTER_ADDR=$master_addr
+echo "MASTER_ADDR="$MASTER_ADDR
+
+# module purge
+# module load anaconda3/2021.11
+# conda activate torch-env
+
+srun python main.py --epochs=100
+```
+
+2.否则的话，需要分两步。
+
+先写一个启动你的程序的脚本slurm_main.sh，这里是每个机器使用8张卡：
+```bash
+#!/bin/bash
+echo COUNT_NODE=$COUNT_NODE
+echo HOSTNAMES = $HOSTNAMES
+echo hostname = `hostname`
+echo MASTER_ADDR= $MASTER_ADDR
+echo MASTER_PORT= $MASTER_PORT
+
+H=`hostname`
+# 这里根据你的hostname规则来定，比如我的hostname是xxx.cluster.com, HOSTNAMES是xxx yyy
+THEID=`echo -e $HOSTNAMES  | python -c "import sys;[sys.stdout.write(str(i)) for i,line in enumerate(next(sys.stdin).split(' ')) if line.strip() == '$H'.strip().split('.')[0]]"`
+echo THEID=$THEID
+
+# 如果你使用的是torchrun
+torchrun --nproc_per_node=8 --nnodes=$COUNT_NODE --node_rank=$THEID  --master_addr=$MASTER_ADDR --master_port=$MASTER_PORT main.py
+
+# 如果你使用的是accelerate launch
+accelerate launch --num_processes $(( 8 * $COUNT_NODE )) --num_machines $COUNT_NODE --multi_gpu --mixed_precision fp16 --machine_rank $THEID --main_process_ip $MASTER_ADDR --main_process_port $MASTER_PORT main.py
+```
 
 
+然后写一个slurm启动脚本slurm_start.sh, 使用2台机器
+```bash
+#!/bin/bash
+#SBATCH --job-name=test     # create a short name for your job
+#SBATCH --nodes=2                # node count
+#SBATCH --ntasks-per-node=1      # total number of tasks per node
+#SBATCH --cpus-per-task=8        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem=32G                # total memory per node (4 GB per cpu-core is default)
+#SBATCH --gres=gpu:8             # number of gpus per node
+#SBATCH -w xxx,xxx         # specified nodes
+
+# sent to sub script
+# ******************* These are read internally it seems ***********************************
+# ******** Master port, address and world size MUST be passed as variables for DDP to work
+export HOSTNAMES=`scontrol show hostnames "$SLURM_JOB_NODELIST"`
+master_addr=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
+export MASTER_ADDR=$master_addr
+master_port=$(expr 10000 + $(echo -n $SLURM_JOBID | tail -c 4))
+export MASTER_PORT=$master_port
+export COUNT_NODE=`scontrol show hostnames "$SLURM_JOB_NODELIST" | wc -l`
+export WORLD_SIZE=$(($SLURM_NNODES * $SLURM_NTASKS_PER_NODE))
+# ******************************************************************************************
+echo "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX "
+echo "Nodelist:= " $SLURM_JOB_NODELIST
+echo "Number of nodes:= " $SLURM_JOB_NUM_NODES
+echo "Ntasks per node:= "  $SLURM_NTASKS_PER_NODE
+echo "MASTER_PORT:= " $MASTER_PORT
+echo "WORLD_SIZE:= " $WORLD_SIZE
+echo "MASTER_ADDR:= " $MASTER_ADDR
+echo "COUNT_NODE:= " $COUNT_NODE
+echo "HOSTNAMES:= " $HOSTNAMES
+echo "GPUS:= " $SLURM_GRES_GPU
+echo "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX "
+
+srun slurm_main.sh
+
+
+```
+
+上述两种情况都是直接在登录节点切换到你的对应环境，然后运行`sbatch slurm_start.sh`
+
+### 可能的报错
+1. 脚本运行后卡住不动
+- 参数设置少了，比如torch run少了个`--nproc_per_node`参数
+
+2. oom：报错信息Some of your processes may have been killed by the cgroup out-of-memory handler
+- 调低sbatch的参数`cpus-per-task`和`mem`
+
+3. 权限问题：运行脚本后出现error: execve():xxx.sh: Permission denied的提示。
+- 将xxx.sh的文件权限修改为755(`chmod 755 xxx.sh`)
+
+4. RuntimeError: Socket Timeout
+- 网络问题，重试，换节点重试
+
+5. Address already in use
+- ntasks-per-node参数改成1，slurm会运行`nodes*ntasks-per-node`次程序，如果一个node上有多个task，那么会运行多次，这样就会导致地址冲突，通常在torch run中出现
+
+6. NCCL error
+- 可能是代码有问题，检查下rank, world_size等
 
 参考资料： https://cloud.tencent.com/developer/article/2135660?shareByChannel=link
 
