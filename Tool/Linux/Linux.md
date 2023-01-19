@@ -1,7 +1,5 @@
 
 
-# Linux
-
 ## 环境配置
 
 vim /etc/profile
