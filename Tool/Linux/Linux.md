@@ -581,7 +581,7 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 
 1.如果你的启动命令中没有随着当前节点不同值也不同的变量（比如torch run中的node_rank），那么可以直接写一个slurm启动脚本slurm_start.sh:
 
-可以参考https://github.com/PrincetonUniversity/multi_gpu_training/tree/main/02_pytorch_ddp
+可以参考 https://github.com/PrincetonUniversity/multi_gpu_training/tree/main/02_pytorch_ddp
 
 ```bash
 #!/bin/bash
