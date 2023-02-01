@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CV/Instructpix2pix/Instructpix2pix.md",
+                "file": "NLG/ControllableGen/综述/CTG综述.md",
                 "mode": "source",
                 "source": false
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/Instructpix2pix/Instructpix2pix.md",
+                "file": "NLG/ControllableGen/综述/CTG综述.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -190,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/Instructpix2pix/Instructpix2pix.md"
+                "file": "NLG/ControllableGen/综述/CTG综述.md"
               }
             }
           }
@@ -211,8 +211,9 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "4e8981ccab8108fe",
+  "active": "6dad775e2604d6c4",
   "lastOpenFiles": [
+    "CV/Instructpix2pix/Instructpix2pix.md",
     "Tool/Linux/Linux.md",
     "Pre-training/GPT/GPT.md",
     "NLG/Dataset/对话数据集.md",
@@ -221,7 +222,6 @@
     "Tool/python/Python.md",
     "CV/Video/MakeAVideo/MakeAVideo.md",
     "CV/Video/MagicVideo/MagicVideo.md",
-    "CV/StableDiffusion/StableDiffusion.md",
-    "BasicKnow/CNN/CNN.md"
+    "CV/StableDiffusion/StableDiffusion.md"
   ]
 }
