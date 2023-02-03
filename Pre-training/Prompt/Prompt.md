@@ -123,8 +123,13 @@ Zero/Few shot下效果很好
 
 相比于大模型的finetune，prompt需要tune的代价小（只需要tune embedding层）
 
+## **Instruction Tuning**
 
+1. 带女朋友去了一家餐厅，她吃的很开心，这家餐厅太__了！
 
+2. 判断这句话的情感：带女朋友去了一家餐厅，她吃的很开心。选项：A=好，B=一般，C=差
+
+**Prompt就是第一种模式，Instruction就是第二种。**
 
 ## 参考资料
 

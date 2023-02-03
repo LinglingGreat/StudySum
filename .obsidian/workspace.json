@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NLG/ControllableGen/综述/CTG综述.md",
+                "file": "Pre-training/Prompt/Prompt.md",
                 "mode": "source",
                 "source": false
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/ControllableGen/综述/CTG综述.md",
+                "file": "Pre-training/Prompt/Prompt.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -190,7 +190,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/ControllableGen/综述/CTG综述.md"
+                "file": "Pre-training/Prompt/Prompt.md"
               }
             }
           }
@@ -213,15 +213,15 @@
   },
   "active": "6dad775e2604d6c4",
   "lastOpenFiles": [
+    "Pre-training/Finetune/Finetune.md",
+    "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md",
+    "Pre-training/Prompt/Prompt.md",
+    "NLG/ControllableGen/综述/CTG综述.md",
     "CV/Instructpix2pix/Instructpix2pix.md",
     "Tool/Linux/Linux.md",
     "Pre-training/GPT/GPT.md",
     "NLG/Dataset/对话数据集.md",
     "Tool/python/API/FastAPI.md",
-    "Tool/python/pydantic.md",
-    "Tool/python/Python.md",
-    "CV/Video/MakeAVideo/MakeAVideo.md",
-    "CV/Video/MagicVideo/MagicVideo.md",
-    "CV/StableDiffusion/StableDiffusion.md"
+    "Tool/python/pydantic.md"
   ]
 }
