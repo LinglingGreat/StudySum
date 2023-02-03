@@ -139,7 +139,9 @@ chatbot相关的论文比较少，可以去搜相关的专利，比如google pat
 ## 论文
 ConceptNet infused DialoGPT for Underlying Commonsense Understanding and Reasoning in Dialogue Response Generation，对话中融入常识理解
 
+## 资源汇总
 
+https://github.com/cingtiye/Awesome-Open-domain-Dialogue-Models
 
 
 ## 参考资料

@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NLG/Dailogue/Claude/Claude.md",
+                "file": "NLG/Dailogue/readme.md",
                 "mode": "source",
                 "source": false
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/Dailogue/Claude/Claude.md",
+                "file": "NLG/Dailogue/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/Dailogue/Claude/Claude.md"
+                "file": "NLG/Dailogue/readme.md"
               }
             }
           }
@@ -225,8 +225,8 @@
   },
   "active": "49e152ce507950c9",
   "lastOpenFiles": [
-    "NLG/Dailogue/ChatGPT/ChatGPT.md",
     "NLG/Dailogue/Claude/Claude.md",
+    "NLG/Dailogue/ChatGPT/ChatGPT.md",
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/Finetune/Finetune.md",
     "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md",
