@@ -89,15 +89,6 @@ NLG
 
 - 最后，我们需要提出的就是，非任务型对话系统和任务型对话系统有时候常常需要混合使用。比如，在一个订票系统中，可能也需要掺杂一般性的对话。如何能够有效地进行两种系统的混合，肯定又是一种新的挑战。
 
-## 数据集
-
-对话：https://ai.tencent.com/ailab/nlp/dialogue/#datasets
-
-其中**NaturalConv**是中文的
-
-清华大学开源的一个大规模的中文闲聊语料库LCCC，并提供了在此数据集上的中文对话预训练模型（中文GPT模型）：https://github.com/thu-coai/CDial-GPT
-
-苏剑林用这个数据集的模型尝试：[动手做个DialoGPT：基于LM的生成式多轮对话模型](https://kexue.fm/archives/7718)
 
 ## 解决方案
 
