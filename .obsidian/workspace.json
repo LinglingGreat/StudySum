@@ -42,80 +42,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "2e775f63030ae3a6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "NLG/Dataset/对话数据集.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e9452a10d9d49406",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/GPT/GPT.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "49ba75732501195f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CV/Diffusion/Diffusion模型.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8712d63fe59b3b0d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CV/StableDiffusion/StableDiffusion.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e53b843ee2abd749",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BasicKnow/UNet/UNet.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "69dac092dd63b3a6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "CV/DDPM/DDPM.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -173,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "NLG/Dailogue/Claude/Claude.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -201,7 +130,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md"
+                "file": "NLG/Dailogue/Claude/Claude.md"
               }
             }
           }
@@ -210,7 +139,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,17 +152,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "445096e0eaa0fa14",
+  "active": "01c89402acc2133f",
   "lastOpenFiles": [
-    "Tool/Pytorch/Pytorch.md",
-    "Tool/Git/Git.md",
-    "Tool/Linux/Linux.md",
-    "NLG/Dataset/对话数据集.md",
-    "NLG/Dailogue/Claude/Claude.md",
-    "Pre-training/Prompt/Prompt.md",
-    "NLG/Dataset/生成任务.md",
     "Pre-training/GPT/GPT.md",
-    "NLG/Dailogue/readme.md",
-    "NLG/Dailogue/ChatGPT/ChatGPT.md"
+    "Tool/Git/Git.md",
+    "CV/MultiModal/多模态合集.md",
+    "CV/BeiT/BeiTv3.md",
+    "CV/BLIP/BLIP.md",
+    "CV/CoCa/CoCa.md",
+    "CV/VLMo/VLMo.md",
+    "CV/ALBEF/ALBEF.md",
+    "CV/CLIP/CLIP.md",
+    "CV/ALBEF/img/Pasted image 20230205153749.png"
   ]
 }
