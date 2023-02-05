@@ -609,7 +609,9 @@ tokenizer.encode 分词并且将词转换成id
 
 - add_special_tokens=True将句子转化成对应模型（比如bert有cls和sep）的输入形式。
 
+## 分布式
 
+https://shomy.top/2022/01/05/torch-ddp-intro/
 
 ## 教程
 
