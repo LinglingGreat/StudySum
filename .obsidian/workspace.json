@@ -32,12 +32,12 @@
             }
           },
           {
-            "id": "01c89402acc2133f",
+            "id": "1b5af0e2dd38a2b6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NLG/Dailogue/Claude/Claude.md",
+                "file": "Pre-training/CPM/CPMLive/CPM-Live.md",
                 "mode": "source",
                 "source": false
               }
@@ -102,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/Dailogue/Claude/Claude.md",
+                "file": "Pre-training/CPM/CPMLive/CPM-Live.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -130,7 +130,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/Dailogue/Claude/Claude.md"
+                "file": "Pre-training/CPM/CPMLive/CPM-Live.md"
               }
             }
           }
@@ -152,17 +152,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "01c89402acc2133f",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
+    "Pre-training/CPM/CPM.md",
+    "Tool/Linux/Linux.md",
+    "NLG/Dailogue/Claude/Claude.md",
     "Pre-training/GPT/GPT.md",
     "Tool/Git/Git.md",
     "CV/MultiModal/多模态合集.md",
     "CV/BeiT/BeiTv3.md",
     "CV/BLIP/BLIP.md",
     "CV/CoCa/CoCa.md",
-    "CV/VLMo/VLMo.md",
-    "CV/ALBEF/ALBEF.md",
-    "CV/CLIP/CLIP.md",
-    "CV/ALBEF/img/Pasted image 20230205153749.png"
+    "CV/VLMo/VLMo.md"
   ]
 }
