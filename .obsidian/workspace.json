@@ -80,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -138,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Transformer/Transformer.md",
+                "file": "Pre-training/CPM/CPMLive/CPM-Live.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -166,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Transformer/Transformer.md"
+                "file": "Pre-training/CPM/CPMLive/CPM-Live.md"
               }
             }
           }
@@ -187,8 +187,10 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "48455432120c0dfa",
+  "active": "1b5af0e2dd38a2b6",
   "lastOpenFiles": [
+    "Tool/python/日志/loguru.md",
+    "Pre-training/Transformer/Transformer.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/Linux/Linux.md",
     "NLG/InContextLearning/In-Context Learning.md",
@@ -196,8 +198,6 @@
     "Pre-training/CPM/CPM.md",
     "NLG/Dailogue/Claude/Claude.md",
     "Pre-training/GPT/GPT.md",
-    "Tool/Git/Git.md",
-    "CV/MultiModal/多模态合集.md",
-    "CV/BeiT/BeiTv3.md"
+    "Tool/Git/Git.md"
   ]
 }
