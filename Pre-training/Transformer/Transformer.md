@@ -670,3 +670,6 @@ Transformer不能捕获长距离信息，本质原因还是因为计算量过大
 [Transformer模型详解（图解最完整版）](https://zhuanlan.zhihu.com/p/338817680)（适合复习模型流程）
 
 [Transformer家族2 -- 编码长度优化（Transformer-XL、Longformer）](https://blog.csdn.net/u013510838/article/details/107006303)
+
+https://amatriain.net/blog/transformer-models-an-introduction-and-catalog-2d1e9039f376/?continueFlag=9b76108503b8b1f75193d9be9ae5b05c
+

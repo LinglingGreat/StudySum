@@ -617,3 +617,5 @@ https://shomy.top/2022/01/05/torch-ddp-intro/
 
 [https://pytorch.apachecn.org/docs/1.4/4.html](https://pytorch.apachecn.org/docs/1.4/4.html)
 
+[pytorch 提速指南（持续更新）](https://zhuanlan.zhihu.com/p/119364172)
+
