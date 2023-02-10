@@ -19,7 +19,7 @@ global attention 顾名思义，forcus 全部的 position。它 和 local attent
 Local Attention只 focus 一部分 position，则为 local attention
 global attention 的缺点在于每次都要扫描全部的 source hidden state，计算开销较大，为了提升效率，提出 local attention，每次只 focus 一小部分的 source position。
 
-## **self attention** 
+## self attention
 **动机**：说起self-attention的提出，是因为rnn存在非法并行计算的问题，而cnn存在无法捕获长距离特征的问题，因为既要又要的需求，当看到attention的巨大优势，《Attention is all you need》的作者决定用attention机制代替rnn搭建整个模型，于是Multi-headed attention，横空出世。
 
 Self-Attention原始的形态：$softmax(XX^T)X$

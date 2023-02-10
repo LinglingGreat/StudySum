@@ -8,6 +8,8 @@ CPM-Ant 利用文本生成和空白填充作为其预训练目标。如下图所
 
 在 CPM-Ant 中，我们引入了预训练的软提示来切换生成模式。对于文本生成和空白填充，我们分别设置了特定于目标的软提示。这些软提示由几个可学习的嵌入组成。在预训练过程中，这些软提示被添加到输入中，并激发特定于目标的知识来处理输入。在为下游任务调整 CPM-Ant 时，仅使用与任务相关的软提示来调整 CPM-Ant。
 
+这部分可以参考[PPT](../../Prompt/PPT/PPT.md)
+
 ### 模型结构
 
 ![](img/Pasted%20image%2020230210180241.png)
@@ -26,11 +28,13 @@ CPM-Ant 利用文本生成和空白填充作为其预训练目标。如下图所
     
 -   **动态词表**：对于词表，初始阶段我们将提供大小为30000的中文词表，在后续训练过程中会结合新数据情况进行动态变动。
 
-由于我们希望我们的 CPM-Ant 对各种下游任务足够通用，我们使用统一的架构来同时编码上下文和生成令牌，通过修改注意掩码来控制生成过程，而不是应用 Transformer 的原始编码器-解码器架构:
+由于我们希望我们的 CPM-Ant 对各种下游任务足够通用，我们使用统一的编码器架构来同时编码上下文和生成令牌，通过修改注意掩码来控制生成过程，而不是应用 Transformer 的原始编码器-解码器架构:
 
 ![](img/Pasted%20image%2020230210182444.png)
 
 其中M是注意力掩码，⊙ 是 Hadamard 乘积。
+
+这部分可以参考[UniLM](../../UniLM/UniLM.md)和[GLM](../../GLM/GLM.md)
 
 为了进一步保证稳定训练，我们采用Pre-LN Residual结构为：
 
@@ -43,6 +47,8 @@ CPM-Ant 利用文本生成和空白填充作为其预训练目标。如下图所
 ![](img/Pasted%20image%2020230210183128.png)
 
 其中B是注意力层中使用的偏置矩阵，f si,sj (·)是将token之间的相对距离映射到偏置值。直观上，多段相对位置偏差可以充分考虑段相关性来编码相对距离。在 CPM-Ant 中，为了简单起见，如果两个 token 不属于同一段，无论它们的相对距离如何，我们都会分配一个统一的偏置值 b si,sj。
+
+参考
 
 
 ### NLGtune
@@ -87,9 +93,18 @@ target必须是int类型
 
 input的prompt部分经过prompt_embedding层，剩余部分经过input_embedding，两者拼起来得到input的完整embedding；segment经过segment_embedding，和前面的完整embedding加起来得到hidden_states
 
-Encoder
+attention_mask矩阵：下三角都为1且对于每一行，target之外的部分都为1
 
-position_bias
+`position_bias = self.position_bias(position, position, segment, segment)`
+
+`hidden_states = self.encoder(hidden_states, attention_mask, position_bias)`
+- hidden_states: (batch, seq_enc, dim_model)
+- attention_mask: (batch, seq_enc, seq_enc)
+- position_bias: (num_heads, seq_enc, seq_enc)
+- 经过transformer层和layer_norm
+`logits = self.input_embedding.projection(hidden_states)`
+
+logits和targets计算损失
 
 
 ## 参考资料
