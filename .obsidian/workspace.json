@@ -116,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -174,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Prompt/PPT/PPT.md",
+                "file": "Pre-training/GLM/GLM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Prompt/PPT/PPT.md"
+                "file": "Pre-training/GLM/GLM.md"
               }
             }
           }
@@ -223,8 +223,9 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "4dd9cfe05d84a922",
+  "active": "d246585fd63f8030",
   "lastOpenFiles": [
+    "Pre-training/Prompt/PPT/PPT.md",
     "Pre-training/GLM/GLM.md",
     "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md",
     "Pre-training/Prompt/Prompt.md",
@@ -232,7 +233,6 @@
     "Pre-training/CPM/CPMLive/CPM-Live.md",
     "Pre-training/Base/PositionEncoding/位置编码.md",
     "Pre-training/Base/PositionEncoding/经典式相对位置编码/Self-Attention with Relative Position Representations.md",
-    "Pre-training/Prompt/PPT/PPT.md",
     "Pre-training/Base/Attention/Attention.md",
     "Tool/Linux/Linux.md"
   ]
