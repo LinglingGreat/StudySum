@@ -93,7 +93,7 @@ target必须是int类型
 
 input的prompt部分经过prompt_embedding层，剩余部分经过input_embedding，两者拼起来得到input的完整embedding；segment经过segment_embedding，和前面的完整embedding加起来得到hidden_states
 
-attention_mask矩阵：下三角都为1且对于每一行，target之外的部分都为1
+attention_mask矩阵：下三角都为1且对于每一行，target之外的部分都为1。（UniLM中的seq-to-seq结构）
 
 `position_bias = self.position_bias(position, position, segment, segment)`
 

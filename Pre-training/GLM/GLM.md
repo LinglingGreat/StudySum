@@ -6,6 +6,7 @@ type: 论文
 papername: GLM-General Language Model Pretraining with Autoregressive Blank Infilling
 conference: ACL
 year: 2022
+institution: 清华
 ---
 
 ## 论文基本信息

@@ -104,30 +104,6 @@
             }
           },
           {
-            "id": "af63f6e911a5a466",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "NLG/Dailogue/Flamingo/Flamingo.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f7c81b143d0c701d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/UniLM/UniLM.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "260ec136ddd9b9ee",
             "type": "leaf",
             "state": {
@@ -152,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -181,7 +157,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#NER",
+                "query": "tag:#ACL",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -194,7 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 248.5
+    "width": 200
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -210,7 +186,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/Dailogue/Flamingo/Flamingo.md",
+                "file": "Pre-training/Prompt/PPT/PPT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -238,16 +214,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/Dailogue/Flamingo/Flamingo.md"
+                "file": "Pre-training/Prompt/PPT/PPT.md"
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -259,17 +236,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "af63f6e911a5a466",
+  "active": "4dd9cfe05d84a922",
   "lastOpenFiles": [
-    "Pre-training/GLM/GLM.md",
-    "Template/论文模板.md",
-    "Pre-training/Base/Attention/Attention.md",
     "Pre-training/CPM/CPMLive/CPM-Live.md",
-    "NLG/InContextLearning/In-Context Learning.md",
     "Pre-training/UniLM/UniLM.md",
-    "Pre-training/Prompt/PPT/PPT.md",
-    "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md",
-    "Pre-training/Prompt/Prompt.md",
-    "Tool/README.md"
+    "Pre-training/GLM/GLM.md",
+    "CV/BLIP/BLIP.md",
+    "CV/BLIP2/BLIP2.md",
+    "CV/BLIP2/img/Pasted image 20230210231045.png",
+    "NLG/Dailogue/Flamingo/Flamingo.md",
+    "NLG/Dailogue/PLATO/PLATO.md",
+    "Template/论文模板.md",
+    "Pre-training/Base/Attention/Attention.md"
   ]
 }

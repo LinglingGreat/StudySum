@@ -1,11 +1,24 @@
 ---
 title: Flamingo
 created: 2022-11-08
-tags: 对话 多模态
+tags: 对话 多模态 fewshot
 type: 论文
+papername: Flamingo-a Visual Language Model for Few-Shot Learning
+conference: NeurIPS
+year: 2022
+institution: DeepMind
 ---
 
 ## 论文基本信息 
+
+题目：Flamingo: a Visual Language Model for Few-Shot Learning
+
+网站： https://www.deepmind.com/blog/tackling-multiple-tasks-with-a-single-visual-language-model
+
+模型结构图：
+
+![](img/Pasted%20image%2020221108225406.png)
+
 
 要把图像和文本合并到一起训练，**第一个挑战就是怎样把2D的图像压缩到1D，好跟文本一起输入Transformer**
 
@@ -20,6 +33,7 @@ type: 论文
 作者为了提升效率，直接从一个预训练好的70B语言模型Chinchilla[1]开始加入图像信息，考虑到保留之前LM学到的知识，训练时需要把LM的参数冻住，因此提出了**Gated Cross attention**机制来融合图像和文本。
 
 具体来说，还是利用attention机制，如下图所示，把文本编码当作Q，图像编码当作K和V，这样输出的维度还是跟之前文本的一样。之后还是正常过FFW。同时为了提升稳定性和效果，在attention和FFW之后都增加了tanh门控，先开始是0，之后逐步增加。
+
 ![](img/Pasted%20image%2020221108225256.png)
 
 但为了减少参数量，这个机制不一定每层都有，具体增加的策略如下：
@@ -33,6 +47,7 @@ type: 论文
 不过在最终预测的时候，还是保持LM的causal attention，也就是Cross-attention之后的正常attention可以保证在预测输出时会关注到以前所有的文字和图像。
 
 有了上述两个机制后，图像和文本就成功融合到一起了，模型总结构如下（**注意每个图像都是单独编码的**）：
+
 ![](img/Pasted%20image%2020221108225406.png)
 
 模型部分解决了，接下来**第三个挑战是训练数据构造**。
@@ -53,8 +68,6 @@ type: 论文
 
 ## 核心亮点
 
-## 主要收获
-
 它的创新点主要在模型上面：
 
 1.  设计了一个很优雅地把图片从3D压缩到2D的机制
@@ -63,4 +76,8 @@ type: 论文
     
 
 在预训练阶段，它直接从互联网挖掘大量语料，并让图片和其之后跟随的文本做交互，是个很方便的自监督任务。
+
+## 主要收获
+
+
 

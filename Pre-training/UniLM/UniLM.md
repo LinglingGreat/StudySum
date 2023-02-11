@@ -1,4 +1,25 @@
-https://github.com/microsoft/unilm
+---
+title: UniLM
+created: 2023-02-11
+tags: 预训练 语言模型
+type: 论文
+papername: Unified language model pre-training for natural language understanding and generation
+conference: NeurIPS
+year: 2019
+institution: 微软
+---
+
+## 论文基本信息
+
+标题：Unified language model pre-training for natural language understanding and generation
+
+作者：Li Dong,  Nan Yang, Wenhui Wang, Furu Wei, Xiaodong Liu, Yu Wang, Jianfeng Gao, Ming Zhou, Hsiao-Wuen Hon
+
+链接： 
+
+代码： https://github.com/microsoft/unilm
+
+框架图：
 
 中文版：https://github.com/YunwenTechnology/Unilm
 
@@ -16,6 +37,10 @@ UniLM是微软研究院在Bert的基础上，最新产出的预训练语言模�
 模型输入X是一串word序列，该序列要么是用于单向语言模型的一段文本片段，要么是一对文本片段，主要用于双向或者seq-to-seq语言模型 。在输入的起始处会添加一个[SOS]标记，结尾处添加[EOS]标记。[EOS]一方面可以作为NLU任务中的边界标识，另一方面还能在NLG任务中让模型学到何时终止解码过程。其输入表征方式与 BERT 的一样，包括token embedding，position embedding，segment embedding，同时segment embedding还可以作为模型采取何种训练方式(单向，双向，序列到序列)的一种标识。
 
 ![](img/Pasted%20image%2020220109212739.png)
+
+## 核心亮点
+
+## 主要收获
 
 ## 参考资料
 

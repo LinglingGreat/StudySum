@@ -14,11 +14,6 @@ papername: BLIP Bootstrapping Language-Image Pre-training for Unified Vision-Lan
 
 代码：
 
-框架图：
-
-
-
-## 核心亮点
 
 ### 研究动机
 
@@ -27,14 +22,13 @@ papername: BLIP Bootstrapping Language-Image Pre-training for Unified Vision-Lan
 
 ![](img/Pasted%20image%2020230205170415.png)
 
-###模型结构
+### 模型结构
 
 ![](img/Pasted%20image%2020230205170650.png)
 
 除了Decoder部分的其它部分其实跟ALBEF的结构是一样的，但是借鉴了VLMo的共享参数有一些共享层。（同样颜色的是共享参数）
 
 Decoder部分只增加了Causal Self-Attention层，其它层是共享的，所以增加的参数不多。
-
 
 
 ![](img/Pasted%20image%2020230205171417.png)
@@ -46,8 +40,8 @@ Decoder部分只增加了Causal Self-Attention层，其它层是共享的，所�
 
 LAION COCO数据集用了BLIP
 
-
+## 核心亮点
 
 ## 主要收获
 
-## 个人评价
+
