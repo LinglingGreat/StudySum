@@ -96,13 +96,19 @@ input的prompt部分经过prompt_embedding层，剩余部分经过input_embeddin
 attention_mask矩阵：下三角都为1且对于每一行，target之外的部分都为1。（UniLM中的seq-to-seq结构）
 
 `position_bias = self.position_bias(position, position, segment, segment)`
+- 输出维度：(batch, num_heads, seq_len, seq_len)
+- relative_position_bucket=query_segment * self.num_segments + key_segment+ self.num_buckets: (batch, seq_len, seq_len)
+- query_segment：(batch, seq_len, 1), segment延伸得到
+- key_segment：(batch, 1, seq_len), segment延伸得到
 
 `hidden_states = self.encoder(hidden_states, attention_mask, position_bias)`
 - hidden_states: (batch, seq_enc, dim_model)
 - attention_mask: (batch, seq_enc, seq_enc)
 - position_bias: (num_heads, seq_enc, seq_enc)
-- 经过transformer层和layer_norm
+- 经过transformer层和layer_norm，得到维度(batch, seq_len, dim_model)
+
 `logits = self.input_embedding.projection(hidden_states)`
+- (batch, seq_len, vocab_size)
 
 logits和targets计算损失
 
