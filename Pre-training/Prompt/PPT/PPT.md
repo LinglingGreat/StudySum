@@ -21,6 +21,18 @@ institution: 清华
 
 框架图：
 
+![](img/Pasted%20image%2020230211151344.png)
+
+Hybrid Prompt Tuning和Verbalizer Selection
+
+![](img/Pasted%20image%2020230211151743.png)
+
+Real Word Initialization
+
+对于11B的模型，在fewshot场景下，这种初始化对性能影响几乎没有，甚至影响为负。（而之前的工作中3B模型的这种初始化是有效的）
+
+![](img/Pasted%20image%2020230211152141.png)
+
 
 
 ## 核心亮点
