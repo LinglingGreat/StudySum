@@ -80,6 +80,30 @@
             }
           },
           {
+            "id": "4b8009ab95f448f9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/Finetune/Finetune.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e202787bcb61cca5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/Prompt/Prompt.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "4dd9cfe05d84a922",
             "type": "leaf",
             "state": {
@@ -92,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -150,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/CPM/CPMLive/CPM-Live.md",
+                "file": "Pre-training/Prompt/PPT/PPT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/CPM/CPMLive/CPM-Live.md"
+                "file": "Pre-training/Prompt/PPT/PPT.md"
               }
             }
           }
@@ -199,17 +223,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "1b5af0e2dd38a2b6",
+  "active": "4dd9cfe05d84a922",
   "lastOpenFiles": [
-    "Pre-training/Prompt/PPT/PPT.md",
-    "Pre-training/CPM/CPMLive/CPM-Live.md",
+    "Pre-training/GLM/GLM.md",
     "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md",
-    "Pre-training/Base/Attention/Attention.md",
-    "Tool/Linux/Linux.md",
-    "Pre-training/Transformer/Transformer.md",
-    "Tool/Pytorch/Pytorch.md",
+    "Pre-training/Prompt/Prompt.md",
+    "Pre-training/Finetune/Finetune.md",
+    "Pre-training/CPM/CPMLive/CPM-Live.md",
     "Pre-training/Base/PositionEncoding/位置编码.md",
     "Pre-training/Base/PositionEncoding/经典式相对位置编码/Self-Attention with Relative Position Representations.md",
-    "Pre-training/UniLM/UniLM.md"
+    "Pre-training/Prompt/PPT/PPT.md",
+    "Pre-training/Base/Attention/Attention.md",
+    "Tool/Linux/Linux.md"
   ]
 }

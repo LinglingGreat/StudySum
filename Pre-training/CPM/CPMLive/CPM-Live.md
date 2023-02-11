@@ -48,7 +48,7 @@ CPM-Ant 利用文本生成和空白填充作为其预训练目标。如下图所
 
 其中B是注意力层中使用的偏置矩阵，f si,sj (·)是将token之间的相对距离映射到偏置值。直观上，多段相对位置偏差可以充分考虑段相关性来编码相对距离。在 CPM-Ant 中，为了简单起见，如果两个 token 不属于同一段，无论它们的相对距离如何，我们都会分配一个统一的偏置值 b si,sj。
 
-相对位置编码[Self-Attention with Relative Position Representations](../../Base/PositionEncoding/经典式相对位置编码/Self-Attention%20with%20Relative%20Position%20Representations.md)
+这份部分可以参考相对位置编码[Self-Attention with Relative Position Representations](../../Base/PositionEncoding/经典式相对位置编码/Self-Attention%20with%20Relative%20Position%20Representations.md)和T5的位置编码： [T5式](../../Base/PositionEncoding/位置编码.md#T5式)
 
 
 ### NLGtune
@@ -97,9 +97,11 @@ attention_mask矩阵：下三角都为1且对于每一行，target之外的部�
 
 `position_bias = self.position_bias(position, position, segment, segment)`
 - 输出维度：(batch, num_heads, seq_len, seq_len)
-- relative_position_bucket=query_segment * self.num_segments + key_segment+ self.num_buckets: (batch, seq_len, seq_len)
+- b_si, sj的矩阵relative_position_bucket=query_segment * self.num_segments + key_segment+ self.num_buckets: (batch, seq_len, seq_len)
 - query_segment：(batch, seq_len, 1), segment延伸得到
 - key_segment：(batch, 1, seq_len), segment延伸得到
+- f_si,sj(pi-pj)的矩阵absolute_position_bucket，参考t5的相对位置编码 [T5式](../../Base/PositionEncoding/位置编码.md#T5式)
+
 
 `hidden_states = self.encoder(hidden_states, attention_mask, position_bias)`
 - hidden_states: (batch, seq_enc, dim_model)
