@@ -48,7 +48,7 @@ CPM-Ant 利用文本生成和空白填充作为其预训练目标。如下图所
 
 其中B是注意力层中使用的偏置矩阵，f si,sj (·)是将token之间的相对距离映射到偏置值。直观上，多段相对位置偏差可以充分考虑段相关性来编码相对距离。在 CPM-Ant 中，为了简单起见，如果两个 token 不属于同一段，无论它们的相对距离如何，我们都会分配一个统一的偏置值 b si,sj。
 
-参考
+相对位置编码[Self-Attention with Relative Position Representations](../../Base/PositionEncoding/经典式相对位置编码/Self-Attention%20with%20Relative%20Position%20Representations.md)
 
 
 ### NLGtune

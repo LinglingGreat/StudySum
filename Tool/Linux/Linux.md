@@ -407,6 +407,31 @@ https://www.cnblogs.com/GoubuLi/p/12679471.html
 
 https://blog.csdn.net/qq_36441393/article/details/107123645
 
+```
+#!/bin/bash
+
+prefix=$HOME/pkgs
+mkdir -p $prefix
+cd $prefix
+wget https://ftp.gnu.org/gnu/ncurses/ncurses-6.0.tar.gz
+tar -xzf ncurses-6.0.tar.gz && rm ncurses-6.0.tar.gz
+cd ncurses-6.0
+./configure --prefix=$prefix
+make && make install
+cd .. && rm -rf ncurses-6.0
+
+wget https://ftp.gnu.org/gnu/screen/screen-4.6.2.tar.gz
+tar -xzf screen-4.6.2.tar.gz && rm screen-4.6.2.tar.gz
+cd screen-4.6.2
+export LDFLAGS="-L$prefix/lib"
+export CPPFLAGS="-I$prefix/include"
+./configure --prefix=$prefix
+make && make install
+cd .. && rm -rf screen-4.6.2
+
+echo "PATH=$prefix/bin:"'$PATH' >> $HOME/.bashrc
+source $HOME/.bashrc
+```
 
 ### nohup
 
