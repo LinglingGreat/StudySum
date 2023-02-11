@@ -56,18 +56,6 @@
             }
           },
           {
-            "id": "d246585fd63f8030",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/GLM/GLM.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "260ec136ddd9b9ee",
             "type": "leaf",
             "state": {
@@ -116,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -174,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/GLM/GLM.md",
+                "file": "Pre-training/Prompt/PPT/PPT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,12 +190,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/GLM/GLM.md"
+                "file": "Pre-training/Prompt/PPT/PPT.md"
               }
+            }
+          },
+          {
+            "id": "2b06d05197be2c99",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -223,17 +219,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "d246585fd63f8030",
+  "active": "4dd9cfe05d84a922",
   "lastOpenFiles": [
-    "Pre-training/Prompt/PPT/PPT.md",
+    "Pre-training/CPM/CPMLive/CPM-Live.md",
+    "CV/Muse/Muse.md",
     "Pre-training/GLM/GLM.md",
+    "Pre-training/Prompt/PPT/PPT.md",
     "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md",
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/Finetune/Finetune.md",
-    "Pre-training/CPM/CPMLive/CPM-Live.md",
     "Pre-training/Base/PositionEncoding/位置编码.md",
     "Pre-training/Base/PositionEncoding/经典式相对位置编码/Self-Attention with Relative Position Representations.md",
-    "Pre-training/Base/Attention/Attention.md",
-    "Tool/Linux/Linux.md"
+    "Pre-training/Base/Attention/Attention.md"
   ]
 }
