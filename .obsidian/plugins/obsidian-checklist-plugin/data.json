@@ -1,0 +1,18 @@
+{
+  "todoPageName": "",
+  "showChecked": false,
+  "showAllTodos": false,
+  "autoRefresh": true,
+  "subGroups": false,
+  "groupBy": "page",
+  "sortDirectionItems": "new->old",
+  "sortDirectionGroups": "new->old",
+  "sortDirectionSubGroups": "new->old",
+  "includeFiles": "",
+  "lookAndFeel": "classic",
+  "_collapsedSections": [
+    "Tool/Pytorch/Dive-into-DL-PyTorch/README.md",
+    "CourseNote/cs224n2019/README.md"
+  ],
+  "_hiddenTags": []
+}
