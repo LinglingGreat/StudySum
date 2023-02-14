@@ -441,7 +441,9 @@ nohup python graph_api.py > logs/graph.log & echo $! > graph.pid
 
 
 
-## 解压
+## 压缩解压
+
+
 
 解压tar文件`tar -xvf xxx -C 解压路径`
 
