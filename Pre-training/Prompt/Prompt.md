@@ -123,13 +123,28 @@ Zero/Few shot下效果很好
 
 相比于大模型的finetune，prompt需要tune的代价小（只需要tune embedding层）
 
-## **Instruction Tuning**
+## Instruction Tuning
 
 1. 带女朋友去了一家餐厅，她吃的很开心，这家餐厅太__了！
 
 2. 判断这句话的情感：带女朋友去了一家餐厅，她吃的很开心。选项：A=好，B=一般，C=差
 
 **Prompt就是第一种模式，Instruction就是第二种。**
+
+Prompt tuning:针对每个任务，单独生成prompt模板（hard prompt or soft prompt），然后在每个任务上进行full-shot微调与评估，其中预训练模型参数是freeze的。
+
+Instruction Tuning：针对每个任务，单独生成instruction（hard token），通过在若干个full-shot任务上进行微调，然后在具体的任务上进行评估泛化能力（zero shot)，其中预训练模型参数是unfreeze的。Instruction Tuning和Prompt方法的核心一样，就是去发掘语言模型本身具备的知识。而他们的不同点就在于，Prompt是去激发语言模型的补全能力，比如给出上半句生成下半句、或者做完形填空，都还是像在做language model任务，而Instruction Tuning则是激发语言模型的理解能力，通过给出更明显的指令，让模型去理解并做出正确的反馈。
+
+[FLAN](../FLAN/FLAN.md)
+
+[T0](../T0/T0.md)
+
+[InstructGPT](../InstructGPT/InstructGPT.md)
+
+[NaturalInstructions](../NaturalInstructions/NaturalInstructions.md)
+
+目前Instruction Tuning比较一致的实验结论是随着训练任务的数量、instruction数量和模型规模增大，泛化效果越好.
+
 
 ## 参考资料
 
