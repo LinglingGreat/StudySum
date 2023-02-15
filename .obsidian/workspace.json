@@ -79,8 +79,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -138,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/Dailogue/ChatGPT/ChatGPT.md",
+                "file": "Tool/Git/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -166,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/Dailogue/ChatGPT/ChatGPT.md"
+                "file": "Tool/Git/Git.md"
               }
             }
           },
@@ -195,8 +194,9 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "00390e4526da4ab4",
+  "active": "445096e0eaa0fa14",
   "lastOpenFiles": [
+    "NLG/Dailogue/ChatGPT/ChatGPT.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
     "Pre-training/Finetune/Finetune.md",
     "Pre-training/Prompt/Prompt.md",
@@ -205,7 +205,6 @@
     "Pre-training/CPM/CPMLive/CPM-Live.md",
     "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md",
     "Pre-training/GPT/GPT.md",
-    "Pre-training/InstructGPT/InstructGPT.md",
-    "NLG/Dailogue/ChatGPT/ChatGPT.md"
+    "Pre-training/InstructGPT/InstructGPT.md"
   ]
 }
