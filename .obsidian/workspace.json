@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "00390e4526da4ab4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NLG/Dailogue/ChatGPT/ChatGPT.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "4b8009ab95f448f9",
             "type": "leaf",
             "state": {
@@ -68,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -126,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/InContextLearning/In-Context Learning.md",
+                "file": "NLG/Dailogue/ChatGPT/ChatGPT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/InContextLearning/In-Context Learning.md"
+                "file": "NLG/Dailogue/ChatGPT/ChatGPT.md"
               }
             }
           },
@@ -183,13 +195,13 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "de5a755f0ded7c08",
+  "active": "00390e4526da4ab4",
   "lastOpenFiles": [
+    "Pre-training/InContextLearning/In-Context Learning.md",
     "Pre-training/Finetune/Finetune.md",
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/Prompt/PPT/PPT.md",
     "Pre-training/NaturalInstructions/NaturalInstructions.md",
-    "Pre-training/InContextLearning/In-Context Learning.md",
     "Pre-training/CPM/CPMLive/CPM-Live.md",
     "Pre-training/Prompt/预训练模型的提示学习方法_刘知远/预训练模型的提示学习方法.md",
     "Pre-training/GPT/GPT.md",
