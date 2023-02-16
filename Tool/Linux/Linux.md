@@ -442,14 +442,21 @@ nohup python graph_api.py > logs/graph.log & echo $! > graph.pid
 
 
 ## 压缩解压
+压缩成zip文件`zip -r xxx.zip 目录或文件`
 
+解压`unzip -o -d 输出目录 xxx.zip`
 
+打包成tar文件`tar -cvf xxx.tar 目录或文件`.  正常打包情况下，打包后的目录下还有个原目录。 怎么去掉这个多余的文件夹呢？如下`tar -cvf config.tar -C config/ .`      打包包含隐藏目录的文件夹：`tar -cvf config.tar -C .[!.]*`
 
-解压tar文件`tar -xvf xxx -C 解压路径`
+解压tar文件`tar -xvf xxx.tar -C 解压路径`
 
-解压tar.bz2文件`tar -jxvf xxx`
+打包压缩成tar.gz文件`tar -zcvf xxx.tar.gz 目录或文件`
 
 解压tar.gz和tgz文件`tar -zxvf xxx`
+
+打包压缩成tar.bz2文件`tar -jcvf xxx.tar.gz 目录或文件`
+
+解压tar.bz2文件`tar -jxvf xxx`
 
 解压tar.zst文件`tar -I zstd -xvf xxxx.tar.zst`，需要install zstd
 
