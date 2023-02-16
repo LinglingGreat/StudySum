@@ -164,3 +164,4 @@ prefix-tuning：[https://zhuanlan.zhihu.com/p/386073664](https://zhuanlan.zhihu.
 
 [打开模型Zero-Shot新范式：Instruction Tuning](https://mp.weixin.qq.com/s/1qsaT0AVlNjhQJR8z8PAGA)
 
+prompt工程指南： https://github.com/promptslab/Awesome-Prompt-Engineering
