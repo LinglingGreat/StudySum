@@ -44,18 +44,6 @@
             }
           },
           {
-            "id": "ed51ad97f27868a2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/FLAN/FLAN.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "0931645c6e5fc3c5",
             "type": "leaf",
             "state": {
@@ -116,6 +104,18 @@
             }
           },
           {
+            "id": "d201dc7da80ef8c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/GPT/GPT.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "952be2429537c871",
             "type": "leaf",
             "state": {
@@ -128,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -186,7 +186,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/FLAN/FLAN.md",
+                "file": "Pre-training/GPT/GPT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -214,7 +214,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/FLAN/FLAN.md"
+                "file": "Pre-training/GPT/GPT.md"
               }
             }
           },
@@ -244,17 +244,17 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "ed51ad97f27868a2",
+  "active": "d201dc7da80ef8c0",
   "lastOpenFiles": [
-    "Pre-training/README.md",
-    "Pre-training/预训练语言模型.md",
-    "Tool/Git/Git.md",
-    "Tool/Linux/Linux.md",
-    "Pre-training/InContextLearning/In-Context Learning.md",
-    "NLG/Dailogue/ChatGPT/ChatGPT.md",
-    "Pre-training/Finetune/Finetune.md",
     "Pre-training/Prompt/Prompt.md",
-    "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
-    "Pre-training/T0/T0.md"
+    "NLG/Dailogue/ChatGPT/ChatGPT.md",
+    "Pre-training/README.md",
+    "Pre-training/GPT/GPT.md",
+    "Pre-training/InContextLearning/In-Context Learning.md",
+    "Tool/Linux/Linux.md",
+    "Pre-training/FLAN/FLAN.md",
+    "Pre-training/FLANCollection/FLANCollection.md",
+    "Pre-training/FLAN-PaLM_T5/FLAN-PALM_T5.md",
+    "Pre-training/CoT/CoT.md"
   ]
 }

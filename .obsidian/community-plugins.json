@@ -1,5 +1,7 @@
 [
   "obsidian-style-settings",
   "obsidian-git",
-  "obsidian-checklist-plugin"
+  "obsidian-checklist-plugin",
+  "tag-wrangler",
+  "obsidian-linter"
 ]

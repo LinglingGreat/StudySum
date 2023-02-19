@@ -1,4 +1,4 @@
-## 大模型的训练
+## 大模型
 
 **scaling law**
 
@@ -97,6 +97,24 @@ Q：如果拿到了ChatGPT的基础模型，你希望塑造成什么样子——
 
 针对数学问题，我们考虑测试模型的思维链推理能力。经过专门化后，模型在 BigBench-Hard 这种通用测试上的能力有所下降，而在数学问题上的思维链推理能力有所增强。通用能力下降的程度预模型大小相关，模型越大，通用能力下降得越少。为了测试模型的分布外泛化能力，我们使用 GSM8K 作为训练数据集，使用 MultiArith、ASDiv、SVAMP 作为测试集。
 
+
+## Prompt
+- [ ] todo
+
+
+## Instruction tuning
+
+- [ ] todo
+
+
+
+## CoT
+
+[CoT](CoT/CoT.md)
+
+
+
+[Why did all of the public reproduction of GPT-3 fail? In which tasks should we use GPT-3.5/ChatGPT?](https://jingfengyang.github.io/gpt)
 
 
 

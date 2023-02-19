@@ -35,6 +35,8 @@ GPT 论文给了一个改造施工图如上：
 
 OpenAI 团队使用的基础预训练方法包括模型、数据与训练三部分。GPT-3 的训练过程与 GPT-2 类似，但对模型大小、数据集大小与多样性、训练长度都进行了相对直接的扩充。关于语境学习，GPT-3 同样使用了与 GPT-2 类似的方法，不过 GPT-3 研究团队系统地探索了不同的语境学习设定。
 
+GPT3的预训练语料来源：Common Crawl, WebText2, Books1, Books2, and Wikipedia
+
 OpenAI 团队明确地定义了用于评估 GPT-3 的不同设定，包括 zero-shot、one-shot 和 few-shot。
 
 - Fine-Tuning (FT)：微调是近几年来最为常用的方法，涉及在期望任务的特定数据集上更新经过预训练模型的权重；
