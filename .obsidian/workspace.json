@@ -116,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -174,7 +174,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Prompt/Prompt.md",
+                "file": "Pre-training/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -202,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Prompt/Prompt.md"
+                "file": "Pre-training/README.md"
               }
             }
           },
@@ -232,11 +232,11 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "e202787bcb61cca5",
+  "active": "2fc5ba92fdc87228",
   "lastOpenFiles": [
+    "Pre-training/Prompt/Prompt.md",
     "Pre-training/GPT/GPT.md",
     "Pre-training/README.md",
-    "Pre-training/Prompt/Prompt.md",
     "NLG/Dailogue/ChatGPT/ChatGPT.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
     "Tool/Linux/Linux.md",

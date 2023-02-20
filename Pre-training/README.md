@@ -116,6 +116,16 @@ Q：如果拿到了ChatGPT的基础模型，你希望塑造成什么样子——
 
 [Why did all of the public reproduction of GPT-3 fail? In which tasks should we use GPT-3.5/ChatGPT?](https://jingfengyang.github.io/gpt)
 
+## Benchmark
+
+- [ ] Massive Multitask Language Understanding (MMLU)：衡量语言模型在57个知识密集型任务上的表现
+
+- [ ] BIG-Bench: Beyond the Imitation Game collaborative benchmark for measuring and extrapolating the capabilities of language models
+
+## dataset
+
+- [ ] SuperNaturalInstructions
+
 
 
 
