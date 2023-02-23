@@ -215,12 +215,11 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -234,12 +233,12 @@
   },
   "active": "2fc5ba92fdc87228",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Pre-training/README.md",
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/GPT/GPT.md",
-    "Pre-training/README.md",
     "NLG/Dailogue/ChatGPT/ChatGPT.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/FLAN/FLAN.md",
     "Pre-training/FLANCollection/FLANCollection.md",
     "Pre-training/FLAN-PaLM_T5/FLAN-PALM_T5.md",
