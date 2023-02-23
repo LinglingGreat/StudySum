@@ -150,7 +150,7 @@ semi-自回归，非自回归，可能会被大模型的scale弥补效果，可�
 
 模型评估：推理+结论（结论对了就行），给选项做多选，比较哪个生成的好，人工评估
 
-sample efficient
+sample efficient：如果算法可以从每个样本中获得最大收益，那么该算法就是样本高效的。
 
 ## Prompt
 - [ ] todo
@@ -172,9 +172,15 @@ sample efficient
 
 ## Benchmark
 
-- [ ] Massive Multitask Language Understanding (MMLU)：衡量语言模型在57个知识密集型任务上的表现
+GLUE：英文
 
-- [ ] BIG-Bench: Beyond the Imitation Game collaborative benchmark for measuring and extrapolating the capabilities of language models
+CLUE：中文
+
+
+
+[MMLU](MMLU/MMLU.md)：英文
+
+[BIGBench](BigBench/BIGBench.md)：多语言，主要是英文
 
 ## dataset
 
