@@ -172,15 +172,16 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 
 ## Benchmark
 
-GLUE：英文
+| 评测系统                         | 语言   | 任务范围  | 能力/任务/数据集 |
+| -------------------------------- | ------ | --------- | ---------------- |
+| GLUE                             | 英语   | 理解      | 1/7/9            |
+| SuperGLUE                        | 英语   | 理解      | 2/4/8            |
+| CLUE                             | 中文   | 理解      | 2/6/9            |
+| CUGE（智源指数）                 | 中文   | 理解+生成 | 7/17/19          |
+| [MMLU](MMLU/MMLU.md)             | 英文   |           |                  |
+| [BIGBench](BigBench/BIGBench.md) | 多语言 |           |                  |
+| [XTREME](XTREME/XTREME.md)                                 |  多语言      |    理解       |                  |
 
-CLUE：中文
-
-
-
-[MMLU](MMLU/MMLU.md)：英文
-
-[BIGBench](BigBench/BIGBench.md)：多语言，主要是英文
 
 ## dataset
 

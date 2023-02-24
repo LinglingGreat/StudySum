@@ -141,7 +141,7 @@ Instruction Tuning：针对每个任务，单独生成instruction（hard token�
 
 [InstructGPT](../InstructGPT/InstructGPT.md)
 
-[NaturalInstructions](../NaturalInstructions/NaturalInstructions.md)
+[NaturalInstructionsv2](../NaturalInstructions/NaturalInstructionsv2.md)
 
 目前Instruction Tuning比较一致的实验结论是随着训练任务的数量、instruction数量和模型规模增大，泛化效果越好.
 
