@@ -140,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -198,7 +198,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/NaturalInstructions/NaturalInstructionsv2.md",
+                "file": "Pre-training/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -226,7 +226,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/NaturalInstructions/NaturalInstructionsv2.md"
+                "file": "Pre-training/README.md"
               }
             }
           },
@@ -264,17 +264,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "21e2d3bf88d0c715",
+  "active": "2fc5ba92fdc87228",
   "lastOpenFiles": [
-    "Pre-training/README.md",
     "Tool/Linux/Linux.md",
+    "Pre-training/NaturalInstructions/NaturalInstructionsv2.md",
+    "Pre-training/README.md",
     "Pre-training/XTREME/XTREME.md",
     "Pre-training/BigBench/BIGBench.md",
     "Pre-training/MMLU/MMLU.md",
     "Tool/python/Python.md",
     "Tool/Git/Git.md",
     "Pre-training/Prompt/Prompt.md",
-    "Pre-training/GPT/GPT.md",
-    "NLG/Dailogue/ChatGPT/ChatGPT.md"
+    "Pre-training/GPT/GPT.md"
   ]
 }
