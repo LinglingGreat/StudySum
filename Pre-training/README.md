@@ -187,7 +187,7 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 | [MMLU](MMLU/MMLU.md)             | 英文   |   理解        |                  |
 | [BIGBench](BigBench/BIGBench.md) | 多语言 |           |                  |
 | [XTREME](XTREME/XTREME.md)       | 多语言 | 理解      |                  |
-| [HELM](HELM/HELM.md)                                 |        |           |                  |
+| [HELM](HELM/HELM.md)                                 | 英文       |   理解+生成        |                  |
 
 GLUE共有九个任务，分别是CoLA、SST-2、MRPC、STS-B、QQP、MNLI、QNLI、RTE、WNLI。可以分为三类，分别是单句任务，相似性和释义任务
 
