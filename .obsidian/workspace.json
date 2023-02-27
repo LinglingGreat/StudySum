@@ -164,7 +164,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -222,7 +222,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Pre-training/LLaMA/LLaMA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -250,7 +250,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "Pre-training/LLaMA/LLaMA.md"
               }
             }
           },
@@ -288,12 +288,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2fc5ba92fdc87228",
+  "active": "2aa253bb808a2b42",
   "lastOpenFiles": [
     "Pre-training/MMLU/MMLU.md",
+    "Pre-training/README.md",
     "Pre-training/LLaMA/LLaMA.md",
     "Pre-training/HELM/HELM.md",
-    "Pre-training/README.md",
     "Pre-training/Galactica/Galactica.md",
     "Tool/Linux/Linux.md",
     "Pre-training/NaturalInstructions/NaturalInstructionsv2.md",
