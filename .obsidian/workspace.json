@@ -56,6 +56,42 @@
             }
           },
           {
+            "id": "ac415c4ae1990d1a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/MMLU/MMLU.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2aa253bb808a2b42",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/LLaMA/LLaMA.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fe11f0fe68f909af",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/HELM/HELM.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "21e2d3bf88d0c715",
             "type": "leaf",
             "state": {
@@ -140,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -198,7 +234,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Pre-training/MMLU/MMLU.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -226,7 +262,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "Pre-training/MMLU/MMLU.md"
               }
             }
           },
@@ -247,7 +283,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -264,17 +300,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2fc5ba92fdc87228",
+  "active": "ac415c4ae1990d1a",
   "lastOpenFiles": [
-    "Pre-training/Galactica/Galactica.md",
     "Pre-training/README.md",
+    "Pre-training/MMLU/MMLU.md",
+    "Pre-training/LLaMA/LLaMA.md",
+    "Pre-training/HELM/HELM.md",
+    "Pre-training/Galactica/Galactica.md",
     "Tool/Linux/Linux.md",
     "Pre-training/NaturalInstructions/NaturalInstructionsv2.md",
     "Pre-training/XTREME/XTREME.md",
     "Pre-training/BigBench/BIGBench.md",
-    "Pre-training/MMLU/MMLU.md",
-    "Tool/python/Python.md",
-    "Tool/Git/Git.md",
-    "Pre-training/Prompt/Prompt.md"
+    "Tool/python/Python.md"
   ]
 }

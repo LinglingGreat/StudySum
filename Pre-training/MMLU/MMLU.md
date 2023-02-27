@@ -6,7 +6,7 @@ type: 论文
 papername: Measuring Massive Multitask Language Understanding
 conference: ICLR
 year: 2020
-institution: 
+institution: UC_Berkeley
 ---
 
 ## 论文基本信息
