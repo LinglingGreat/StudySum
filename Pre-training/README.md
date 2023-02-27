@@ -170,7 +170,7 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 
 ## CoT
 
-[CoT](CoT/CoT.md)
+总结：[CoT](CoT/CoT.md)
 
 
 

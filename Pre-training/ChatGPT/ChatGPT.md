@@ -6,15 +6,32 @@
 -   有监督的指令微调：响应人类问题并泛化到没有见过的问题（zero-shot）上。减弱了 in context learning 的能力。
 -   RLHF：总体让回答更加丰富具体，也增强了与人类期望的一致性（zero-shot，价值观，内容安全，避免胡说），但会降低模型在任务上的性能。比较有意思的是都用了 RLHF，text-003 模型也跟 ChatGPT 有不同的能力侧重，可惜目前没有论文透露其中的细节。
 
-  
-  
-作者：字节  
-链接：https://zhuanlan.zhihu.com/p/604884758  
-来源：知乎  
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+  在多种语言上做了预训练后，只要教某一个语言的某种任务，自动学习其它语言的同样任务。——Multi-BERT(在104个语言上预训练)
+
+## 未来方向
+
+1. 如何精准的提出需求
+
+![](img/Pasted%20image%2020230227214915.png)
+
+2. 如何更正错误
+
+预训练语料只到2021年
+
+![](img/Pasted%20image%2020230227215114.png)
+
+![](img/Pasted%20image%2020230227215157.png)
+
+3. 检测是否AI生成
+
+4. 不小心泄漏秘密、隐私
+
+![](img/Pasted%20image%2020230227215539.png)
+
 
 
 ## 资源集锦
 
 https://github.com/cedrickchee/chatgpt-universe
 
+https://zhuanlan.zhihu.com/p/604884758  

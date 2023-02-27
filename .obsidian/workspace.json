@@ -80,6 +80,30 @@
             }
           },
           {
+            "id": "d1107b2c0538f74e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/CoT/CoT.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c80fb72759683b53",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/CoT/AutoCoT/AutoCoT.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "21e2d3bf88d0c715",
             "type": "leaf",
             "state": {
@@ -110,18 +134,6 @@
               "type": "markdown",
               "state": {
                 "file": "Pre-training/InContextLearning/In-Context Learning.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "00390e4526da4ab4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "NLG/Dailogue/ChatGPT/ChatGPT.md",
                 "mode": "source",
                 "source": false
               }
@@ -164,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -222,7 +234,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLaMA/LLaMA.md",
+                "file": "Pre-training/CoT/AutoCoT/AutoCoT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -250,7 +262,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLaMA/LLaMA.md"
+                "file": "Pre-training/CoT/AutoCoT/AutoCoT.md"
               }
             }
           },
@@ -288,17 +300,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2aa253bb808a2b42",
+  "active": "c80fb72759683b53",
   "lastOpenFiles": [
-    "Pre-training/MMLU/MMLU.md",
+    "Pre-training/CoT/CoT.md",
+    "Pre-training/CoT/AutoCoT/AutoCoT.md",
     "Pre-training/README.md",
+    "Pre-training/MMLU/MMLU.md",
     "Pre-training/LLaMA/LLaMA.md",
-    "Pre-training/HELM/HELM.md",
-    "Pre-training/Galactica/Galactica.md",
-    "Tool/Linux/Linux.md",
-    "Pre-training/NaturalInstructions/NaturalInstructionsv2.md",
-    "Pre-training/XTREME/XTREME.md",
-    "Pre-training/BigBench/BIGBench.md",
-    "Tool/python/Python.md"
+    "Pre-training/ChatGPT/ChatGPT.md",
+    "NLG/Dailogue/BlenderBot/BlenderBot.md",
+    "Pre-training/Claude/Claude.md",
+    "Pre-training/Flamingo/Flamingo.md",
+    "NLG/Dailogue/LaMDA/LaMDA.md"
   ]
 }

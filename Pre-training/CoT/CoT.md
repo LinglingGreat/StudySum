@@ -14,8 +14,15 @@ tags: 综述
 
 当遇到涉及推理的问题时，standard prompting配合模型的scaling就显得作用不是很大，但换成CoT，提升就明显不少。而且在作者提出的OOD的setup里面（这里OOD意思是，比如Last letter concatenation，例子给的都是2个词的，问题问的是4个词的，或者coin flip里，例子都是flip了2次，但问题flip了4次），scaling在CoT的帮助下效果相当显著。这也可以看到，LLM真的强，越大越强，如果不强，可能是你不会用:)
 
+模型参数增大后的涌现能力
+
 ![](img/Pasted%20image%2020230219170121.png)
 
+## CoT  family
+
+![](img/Pasted%20image%2020230227220518.png)
+
+ 
 ## Zeroshot CoT
 
 **Large Language Models are Zero-Shot Reasoners.**
@@ -27,6 +34,13 @@ tags: 综述
 MultiArith直接能让GPT-3从17提升到78，换到PaLM上稍微小点，25到66，然而配上self consistency（一句话说，让模型通过sampling生成多条路径和答案，用投票的方式选择概率最高的一条），直接干到88了。GSM8K也是类似，提升相当巨大。Scaling的表现也是看出来这方法尤其在超大模型才好使。
 
 ![](img/Pasted%20image%2020230219164420.png)
+
+## Manual CoT
+
+![](img/Pasted%20image%2020230227220808.png)
+
+## Auto CoT
+[AutoCoT](AutoCoT/AutoCoT.md)
 
 ## Least-to-Most Prompting，把大问题分解成一个个小问题逐个击破
 

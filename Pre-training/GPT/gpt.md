@@ -14,9 +14,12 @@ GPT-2 (1.5B parameters; Radford et al., 2019.2)
 GPT-3 (175B parameters; Brown et al., 2020.5) 
 - paper: **Language Models are Few-Shot Learners**
 - Another increase in size (1.5B -> 175B) 
-- data (40GB -> over 600GB), 预训练语料来源：Common Crawl, WebText2, Books1, Books2, and Wikipedia
+- data (40GB -> over 600GB), 预训练语料来源：Common Crawl, WebText2, Books1, Books2, and Wikipedia。原始数据有45T，从中过滤出来一部分。 
 - In-context learning:在任务之前添加示例
 - Few-Shot learning是model scale下涌现的能力
+
+GPT-3.5
+- 用GPT3微调过的模型，包括很多，看openai官网介绍 
 
 **关键词:** 单向信息，NLU的pretrain-finetune差异
 
