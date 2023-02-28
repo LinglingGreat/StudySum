@@ -199,7 +199,26 @@ GLUE共有九个任务，分别是CoLA、SST-2、MRPC、STS-B、QQP、MNLI、QNL
 - [ ] SuperNaturalInstructions
 
 
+## 要点
 
+预训练数据
+- 通过数据去重避免记忆和过拟合
+- 通过数据筛选以得到高质量数据
+- 保证数据多样性以确保 LLM 的泛化性
 
+训练策略
+- 训练框架，bf16可以表示更大范围的浮点数，能够处理在损失尖峰时出现的大数值。PaLM用了它。
+- 训练过程中的修改，PaLM 几乎没有做任何中途调整。它只是当损失尖峰出现时，从尖峰开始前大约 100 步的 checkpoint 重新开始训练，并跳过了大约 200-500 个 batch 的数据。仅仅依靠这种简单的重启，PaLM 就取得神奇的成功。这是由于它在预训练数据构建期间就已经完成采样，因此模型具有在 Bit 意义上的确定性，以及它对模型架构和训练设置进行了许多修改以获得更好的稳定性。
+- 模型架构/训练设置，为了使训练更稳定，PaLM 对模型架构和训练设置进行了多项调整，包括使用 Adafactor 的修改版本作为优化器，缩放在 softmax 之前的输出 logit，使用辅助损失来鼓励 softmax 归一化器接近 0，对词向量和其他层权重使用不同的初始化，在前馈层和层归一化中不使用偏差项，并且在预训练期间不使用 dropout。
+- 训练过程。原始的 GPT-3 预训练过程见过的 token 数与 OPT 和 BLOOM 接近，而 PaLM 则远远超过了它们。同样，PaLM 和 GPT-3 预训练语料库都大于 BLOOM 和 OPT。
 
+![](img/Pasted%20image%2020230228100643.png)
+
+- PaLM 和 GPT-3 都使用了在训练过程中从小到大逐渐增加的 batch size，这已经被展示对于训练一个更好的 LLM 是有效的，然而 OPT 和 BLOOM 都使用了恒定的 batch size。
+
+- OPT 使用了 ReLU 激活函数，而 PaLM 使用 SwiGLU 激活函数，GPT-3 和 BLOOM 使用 GeLU，它通常使得训练的 LLM 的性能更好。
+
+- 为了更好的建模更长的序列，PaLM 使用 RoPE 词向量，BLOOM 使用 ALiBi 词向量，而原始的 GPT-3 和 OPT 使用学习得到的词向量，这可能影响在长序列上的性能。
+
+参考：[万字长文解析！复现和使用GPT-3/ChatGPT，你所应该知道的](https://mp.weixin.qq.com/s/ILpbRRNP10Ef1z3lb2CqmA)，推特原文： https://twitter.com/JingfengY/status/1625003999387881472
 
