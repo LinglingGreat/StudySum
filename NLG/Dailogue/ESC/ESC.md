@@ -1,7 +1,8 @@
 ---
 title: ESC
 created: 2022-08-15
-tags: [对话/情感, 论文]
+tags: 对话/情感
+type: 论文
 ---
 
 论文：Towards Emotional Support Dialog Systems

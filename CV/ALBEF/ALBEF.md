@@ -1,7 +1,7 @@
 ---
 title: ALBEF
 created: 2023-02-05
-tags: 关键词
+tags: 多模态
 type: 论文
 papername: Align before Fuse Vision and Language Representation Learning with Momentum Distillation
 ---

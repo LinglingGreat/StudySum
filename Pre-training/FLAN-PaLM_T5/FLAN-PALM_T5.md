@@ -15,9 +15,9 @@ institution: 谷歌
 
 作者：
 
-链接：
+链接： 
 
-代码：
+代码： https://github.com/google-research/t5x/blob/main/docs/models.md#flan-t5-checkpoints
 
 框架图：
 

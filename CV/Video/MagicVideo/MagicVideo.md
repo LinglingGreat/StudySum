@@ -1,9 +1,10 @@
 ---
 title: MagicVideo
 created: 2023-01-15
-tags: 文生视频 ByteDance
+tags: 文生视频
 type: 论文
 papername: MagicVideo Efficient Video Generation With Latent Diffusion Models
+institution: 字节
 ---
 
 ## 论文基本信息

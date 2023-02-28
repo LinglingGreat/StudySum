@@ -1,7 +1,7 @@
 ---
 title: UCPhrase
 created: 2022-10-04
-tags: 关键词
+tags: 无监督 短语标注
 type: 论文
 ---
 

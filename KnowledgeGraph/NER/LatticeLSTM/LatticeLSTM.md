@@ -1,8 +1,8 @@
 ---
 title: LatticeLSTM
 created: 2022-08-03
-tags: [论文, NER]
-
+tags: NER
+type: 论文
 ---
 
 

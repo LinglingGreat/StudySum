@@ -1,9 +1,10 @@
 ---
 title: MakeAVideo
 created: 2023-01-15
-tags: 文生视频 MetaAI
+tags: 文生视频
 type: 论文
 papername: Make-A-Video Text-to-Video Generation without Text-Video Data
+institution: MetaAI
 ---
 
 ## 论文基本信息
