@@ -68,6 +68,18 @@
             }
           },
           {
+            "id": "302e1573fc91aaf9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/SuperGLUE/SuperGLUE.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "234320de7cffe3c2",
             "type": "leaf",
             "state": {
@@ -152,7 +164,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -210,7 +222,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Pre-training/SuperGLUE/SuperGLUE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -238,7 +250,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "Pre-training/SuperGLUE/SuperGLUE.md"
               }
             }
           },
@@ -276,17 +288,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2fc5ba92fdc87228",
+  "active": "302e1573fc91aaf9",
   "lastOpenFiles": [
-    "Template/论文模板.md",
     "Pre-training/README.md",
+    "Pre-training/GLUE/GLUE.md",
+    "Pre-training/SuperGLUE/SuperGLUE.md",
+    "Template/论文模板.md",
     "Pre-training/CUGE/CUGE.md",
     "Pre-training/MMLU/MMLU.md",
     "Pre-training/BigBench/BIGBench.md",
     "Pre-training/Flan-PaLM_T5/Flan-PaLM_T5.md",
     "Tool/Pytorch/Pytorch.md",
-    "Tool/python/Python.md",
-    "Pre-training/预训练语言模型.md",
-    "Tool/Linux/Linux.md"
+    "Tool/python/Python.md"
   ]
 }
