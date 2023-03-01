@@ -56,7 +56,7 @@ MultiArith直接能让GPT-3从17提升到78，换到PaLM上稍微小点，25到6
 
 ## CoT+Finetuning一样效果很好
 
-[FLAN-PALM_T5](../FLAN-PaLM_T5/FLAN-PALM_T5.md)
+[Flan-PaLM_T5](../Flan-PaLM_T5/Flan-PaLM_T5.md)
 
 ## Program of Thoughts
 

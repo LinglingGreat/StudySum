@@ -195,9 +195,6 @@ LAMBADA
 
 TruthfulQA
 
-有毒性
-
-
 
 ## dataset
 

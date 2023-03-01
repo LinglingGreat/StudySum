@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "536c94cc8e079927",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Pytorch/Pytorch.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "754251bc02cd7c06",
             "type": "leaf",
             "state": {
@@ -56,12 +68,24 @@
             }
           },
           {
+            "id": "040c9e324364db19",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/CUGE/CUGE.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "234320de7cffe3c2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/FLAN-PaLM_T5/FLAN-PALM_T5.md",
+                "file": "Pre-training/Flan-PaLM_T5/Flan-PaLM_T5.md",
                 "mode": "source",
                 "source": false
               }
@@ -140,7 +164,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -198,7 +222,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/FLAN-PaLM_T5/FLAN-PALM_T5.md",
+                "file": "Pre-training/CUGE/CUGE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -226,7 +250,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/FLAN-PaLM_T5/FLAN-PALM_T5.md"
+                "file": "Pre-training/CUGE/CUGE.md"
               }
             }
           },
@@ -264,17 +288,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "234320de7cffe3c2",
+  "active": "040c9e324364db19",
   "lastOpenFiles": [
     "Pre-training/README.md",
+    "Pre-training/CUGE/CUGE.md",
+    "Pre-training/BigBench/BIGBench.md",
+    "Pre-training/Flan-PaLM_T5/Flan-PaLM_T5.md",
+    "Tool/Pytorch/Pytorch.md",
+    "Tool/python/Python.md",
     "Pre-training/预训练语言模型.md",
     "Pre-training/MMLU/MMLU.md",
     "Tool/Linux/Linux.md",
-    "NLG/LLM-AUGMENTER/LLM-AUGMENTER.md",
-    "Pre-training/NaturalInstructions/NaturalInstructionsv2.md",
-    "Pre-training/LLaMA/LLaMA.md",
-    "CV/Video/MakeAVideo/MakeAVideo.md",
-    "NLG/Dataset/NaturalConv/NaturalConv.md",
-    "NLG/Dailogue/PLATO/PLATO.md"
+    "NLG/LLM-AUGMENTER/LLM-AUGMENTER.md"
   ]
 }
