@@ -183,9 +183,9 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 | GLUE                             | 英语   | 理解      | 1/7/9            |
 | SuperGLUE                        | 英语   | 理解      | 2/4/8            |
 | CLUE                             | 中文   | 理解      | 2/6/9            |
-| CUGE（智源指数）                 | 中文   | 理解+生成 | 7/17/19          |
+| [CUGE](CUGE/CUGE.md)                 | 中文   | 理解+生成 | 7/17/19          |
 | [MMLU](MMLU/MMLU.md)             | 英文   |   理解        |                  |
-| [BIGBench](BigBench/BIGBench.md) | 多语言 |           |                  |
+| [BIGBench](BigBench/BIGBench.md) | 多语言 |  理解+生成         |    x/200+/x              |
 | [XTREME](XTREME/XTREME.md)       | 多语言 | 理解      |                  |
 | [HELM](HELM/HELM.md)                                 | 英文       |   理解+生成        |                  |
 
@@ -194,6 +194,8 @@ GLUE共有九个任务，分别是CoLA、SST-2、MRPC、STS-B、QQP、MNLI、QNL
 LAMBADA
 
 TruthfulQA
+
+BBH
 
 
 ## dataset
