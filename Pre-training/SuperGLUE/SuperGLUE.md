@@ -28,13 +28,13 @@ institution: Facebook 纽约大学 华盛顿大学 DeepMind
     
 -   **CommitmentBank**（**CB**）：要求模型识别 文本中包含的假设，包括《华尔街日报》的信息来源，并确定该假设是否成立。
     
--   **合理选择**（Choice of plausible alternatives，**COPA**）： 提供了一个关于博客主题的前提语句，以及一本与摄影相关的百科全书，模型必须从中确定两种可能选择的因果关系。
+-   **合理选择**（Choice of plausible alternatives，**COPA**）： 是一项因果推理任务，提供了一个关于博客主题的前提语句，以及一本与摄影相关的百科全书，模型必须从中确定两种可能选择的因果关系。
     
 -   **多句阅读理解**（Multi-Sentence Reading Comprehension，**MultiRC**）：这是一项问答式的任务，其中每个样本都包含一段上下文段落、一个关于该段落的问题，以及一系列可能的答案。一种模型必须预测哪些答案是真的，哪些答案是假的。
     
 -   **基于常识推理数据集的阅读理解**（Reading Comprehension with Commonsense Reasoning Dataset，**ReCoRD**）：模型根据 CNN 和《每日邮报》的选文列表中预测被掩盖的单词和短语，在这些选文中，同一单词或短语可能以多种不同的形式表达，所有这些都被认为是正确的。
     
--   **识别文本内容**（Recognizing Textual Entailment，**RTE**）：挑战自然语言模型，以确定一个文本摘录的真实性是否来自另一个文本摘录。
+-   **识别文本内容**（Recognizing Textual Entailment，**RTE**）：RTE包含在GLUE中，我们使用与GLUE相同的数据和格式。挑战自然语言模型，以确定一个文本摘录的真实性是否来自另一个文本摘录。
 
 -   **Word-in-Context**（**WiC**）：为两个文本片段和一个多义词（即具有多重含义的单词）提供模型，并要求它们判定这个单词是否在两个句子中有相同的含义。
     
