@@ -169,7 +169,4 @@ institution: 斯坦福
 -   [BoolQ](https://crfm.stanford.edu/helm/latest/?group=boolq "The BoolQ benchmark for binary (yes/no) question answering [(Clark et al., 2019)](https://aclanthology.org/N19-1300/).")
 
 
-## 核心亮点
-
-## 主要收获
 
