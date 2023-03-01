@@ -30,6 +30,12 @@ institution: 谷歌
 
 ![](img/Pasted%20image%2020230301103427.png)
 
+### 训练
+固定学习率，adafactor优化器
+
+
+
+### 实验结果
 
 这么finetune过后的模型，其实不论在CoT任务和非CoT任务上其实都表现得最好，而且在BBH上做zeroshot优势更是巨大。这也进一步证明了CoT是可以和当前流行的instruction tuning无缝衔接的。
 
