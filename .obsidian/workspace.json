@@ -278,15 +278,15 @@
   },
   "active": "2fc5ba92fdc87228",
   "lastOpenFiles": [
-    "Pre-training/CUGE/CUGE.md",
+    "Template/论文模板.md",
     "Pre-training/README.md",
+    "Pre-training/CUGE/CUGE.md",
     "Pre-training/MMLU/MMLU.md",
     "Pre-training/BigBench/BIGBench.md",
     "Pre-training/Flan-PaLM_T5/Flan-PaLM_T5.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/python/Python.md",
     "Pre-training/预训练语言模型.md",
-    "Tool/Linux/Linux.md",
-    "NLG/LLM-AUGMENTER/LLM-AUGMENTER.md"
+    "Tool/Linux/Linux.md"
   ]
 }
