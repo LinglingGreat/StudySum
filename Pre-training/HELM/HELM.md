@@ -30,8 +30,13 @@ institution: 斯坦福
 -   从数据集构建提示的模块化框架
 -   用于管理账户和提供统一接口访问模型的代理服务器
 
+![](img/Pasted%20image%2020230301231814.png)
 
 场景
+
+![](img/Pasted%20image%2020230301233819.png)
+
+
 
 [Question answering](https://crfm.stanford.edu/helm/latest/?group=question_answering "In question answering, given a question and (optionally, in open-book settings) a passage, the goal is to produce the answer. QA is a general format that captures a wide range of tasks involving varying levels of world and commonsense knowledge and reasoning abilities.")
 
