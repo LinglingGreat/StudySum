@@ -36,7 +36,7 @@ institution: 斯坦福
 
 ![](img/Pasted%20image%2020230301233819.png)
 
-
+问答、信息抽取、摘要、情感分析、有毒性检测、文本分类、aspirational场景（文本生成、故事生成等）、语言、知识、推理、危害、效率、校准、鲁棒性
 
 [Question answering](https://crfm.stanford.edu/helm/latest/?group=question_answering "In question answering, given a question and (optionally, in open-book settings) a passage, the goal is to produce the answer. QA is a general format that captures a wide range of tasks involving varying levels of world and commonsense knowledge and reasoning abilities.")
 
