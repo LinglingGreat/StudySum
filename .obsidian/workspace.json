@@ -116,6 +116,18 @@
             }
           },
           {
+            "id": "d3dc366b23dfca06",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Docker/Docker.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "de5a755f0ded7c08",
             "type": "leaf",
             "state": {
@@ -164,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -222,7 +234,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/HELM/HELM.md",
+                "file": "Tool/Docker/Docker.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -250,7 +262,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/HELM/HELM.md"
+                "file": "Tool/Docker/Docker.md"
               }
             }
           },
@@ -288,17 +300,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4e7389af2765137e",
+  "active": "d3dc366b23dfca06",
   "lastOpenFiles": [
-    "Pre-training/BigBench/BIGBench.md",
+    "Tool/Linux/Linux.md",
+    "Tool/Git/Git.md",
     "Pre-training/HELM/HELM.md",
+    "Pre-training/BigBench/BIGBench.md",
     "Pre-training/README.md",
     "Pre-training/LAMBADA/LAMBADA.md",
     "Pre-training/LLaMA/LLaMA.md",
     "Pre-training/预训练语言模型.md",
     "Pre-training/CLUE/CLUE.md",
-    "Pre-training/SuperGLUE/SuperGLUE.md",
-    "Pre-training/GLUE/GLUE.md",
-    "Template/论文模板.md"
+    "Pre-training/SuperGLUE/SuperGLUE.md"
   ]
 }

@@ -348,18 +348,12 @@ CMD [ "python", "./your-daemon-or-script.py" ]
 ```
 FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-devel
 
-  
-
 WORKDIR /usr/src/app
-
-  
 
 RUN rm /etc/apt/sources.list.d/cuda.list \
 && rm /etc/apt/sources.list.d/nvidia-ml.list \
 && apt-get update \
 && apt-get install -y git
-
-  
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
@@ -370,6 +364,32 @@ ssh-keyscan github.com > /root/.ssh/known_hosts
 
 RUN --mount=type=ssh,id=github git clone git地址
 ```
+
+例子
+```
+FROM python:3.8-buster as builder-image
+
+COPY requirements.txt ./
+
+RUN pip3 install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+FROM python:3.8-slim-buster
+
+COPY --from=builder-image /usr/local/bin /usr/local/bin
+
+COPY --from=builder-image /usr/local/lib/python3.8/site-packages /usr/local/lib/python3.8/site-packages
+
+WORKDIR /opt/chat_server
+
+COPY . .
+
+EXPOSE 8080
+
+ENTRYPOINT [ "python" ]
+
+CMD ["test.py"]
+```
+
 
 build命令`sudo docker build --ssh github=~/.ssh/id_ed25519 -t image_gen:v1.1 .
 
