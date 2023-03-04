@@ -349,6 +349,7 @@ touch -m 600 /root/.ssh/known_hosts; \
 ssh-keyscan github.com > /root/.ssh/known_hosts
 
 RUN --mount=type=ssh,id=github git clone git地址
+# or RUN git clone git地址
 ```
 
 例子
