@@ -152,7 +152,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -210,7 +210,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -238,7 +238,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -276,8 +276,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2fc5ba92fdc87228",
+  "active": "0931645c6e5fc3c5",
   "lastOpenFiles": [
+    "Pre-training/README.md",
     "Pre-training/HELM/HELM.md",
     "Pre-training/Flan-PaLM_T5/Flan-PaLM_T5.md",
     "Pre-training/NaturalInstructions/NaturalInstructionsv2.md",
@@ -285,7 +286,6 @@
     "Tool/Docker/Docker.md",
     "Tool/Git/Git.md",
     "Pre-training/BigBench/BIGBench.md",
-    "Pre-training/README.md",
     "Pre-training/LAMBADA/LAMBADA.md",
     "Pre-training/LLaMA/LLaMA.md"
   ]
