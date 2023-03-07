@@ -156,6 +156,8 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 
 ![](img/Pasted%20image%2020230227103950.png)
 
+[LLaMA](LLaMA/LLaMA.md)
+
 
 
 ## Prompt
@@ -164,8 +166,7 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 
 ## Instruction tuning
 
-- [ ] todo
-
+[Flan-PaLM_T5](Flan-PaLM_T5/Flan-PaLM_T5.md)
 
 
 ## CoT
