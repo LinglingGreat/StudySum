@@ -192,7 +192,39 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 | [LAMBADA](LAMBADA/LAMBADA.md)                                    |  英文      |     上下文理解生成           |                  |
 
 
-TruthfulQA
+HELM包括了基本上每个评测方向的数据集，可以在此基础上评测，补充其他评测任务。
+- 问答、信息抽取、摘要、情感分析、有毒性检测、文本分类、aspirational场景（文本生成、故事生成等）、语言、知识、推理、危害、效率、校准、鲁棒性
+
+[RACE数据集](https://www.cs.cmu.edu/~glai1/data/race/)来自中国12-18岁之间的初中和高中英语考试阅读理解，包含28,000个短文、接近100,000个问题。包含用于评估学生理解能力的多种多样的主题。
+
+[TyDiQA](https://github.com/google-research-datasets/tydiqa)（问答，跨越多个语种），包括以下任务
+- **Passage selection task (SelectP)**：选择答案所在段落
+- **Minimal answer span task (MinSpan)**：选择答案的span或者回答yes/no
+- **Gold passage task (GoldP)**：给定包含答案的段落，预测答案的连续span
+
+[MGSM](https://github.com/google-research/url-nlp)（多语言的数学应用问题，GSM8K数据集手动翻译成了10种语言）
+- 可用来做CoT推理评测
+
+CoT效果的验证，也可以参考[Flan-PaLM_T5](Flan-PaLM_T5/Flan-PaLM_T5.md)执行MMLU-Direct, MMLU-CoT, BBH-Direct, BBH-CoT, TyDiQA-Direct, and MGSM-CoT的对比
+
+MMLU（包含在HELM中）
+- 偏向语言理解的知识密集型任务（比如计算机、数学、法律、哲学、医学、经济学、社会学）
+- 提供选项，选择答案，衡量指标是准确率
+- 可用来做zero-shot和few-shot
+
+BBH
+- BIG-Bench的一部分
+
+[XCOPA](https://github.com/cambridgeltl/xcopa)
+- 跨语言常识推理
+- 任务目标是根据一个问题确定前提和两个选项之间的因果关系。因此，一个成功的模型不仅要执行常识推理，还要将其推理能力推广到新语言。
+
+[XL-WiC](https://pilehvar.github.io/xlwic/)
+- 多语言单词上下文语义判断
+- 给定同一种语言的两个句子和一个出现在两个句子中的感兴趣的词，模型被询问这个词在句子中是否具有相同的意义。
+
+NaturalInstructions
+
 
 
 ## dataset
