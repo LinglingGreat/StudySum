@@ -1,5 +1,5 @@
 ---
-title: NaturalInstructionsv2
+title: SuperNaturalInstructions
 created: 2023-03-07
 tags: Benchmark
 type: 论文
@@ -48,21 +48,6 @@ d:训练方法：使用in-context learning，Tk-INSTRUCT其中k代表示例的�
 ## 贡献
 
 在新的benchmark上比T5、GPT3、T0和GPT3-Instruct效果好，其中实验表明更多任务和模型规模增大有利于模型泛化提升，而每个任务数量和更多的examples并没有帮助模型泛化提升，负样例对效果有一点提升。
-
-## 相关研究
-有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？
-
-
-## 实验
-论文中的实验是如何设计的？
-
-用于定量评估的数据集是什么？代码有没有开源？
-
-论文中的实验及结果有没有很好地支持需要验证的科学假设？
-
-
-
-## 未来方向
 
 
 ## 核心亮点

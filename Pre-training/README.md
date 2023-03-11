@@ -189,7 +189,8 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 | [BIGBench](BigBench/BIGBench.md)    | 多语言 | 理解+生成      | x/200+/x         |
 | [XTREME](XTREME/XTREME.md)          | 多语言 | 跨语言迁移能力 | x/9/x            |
 | [HELM](HELM/HELM.md)                | 英文   | 理解+生成      |                  |
-| [LAMBADA](LAMBADA/LAMBADA.md)                                    |  英文      |     上下文理解生成           |                  |
+| [LAMBADA](LAMBADA/LAMBADA.md)       | 英文   | 上下文理解生成 |                  |
+| [SuperNaturalInstructions](NaturalInstructions/SuperNaturalInstructions.md)                                    |   多语言     |                |                  |
 
 
 HELM包括了基本上每个评测方向的数据集，可以在此基础上评测，补充其他评测任务。

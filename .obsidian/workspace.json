@@ -268,12 +268,12 @@
   "lastOpenFiles": [
     "Pre-training/NaturalInstructions/SuperNaturalInstructions.md",
     "Pre-training/README.md",
+    "Pre-training/BigBench/BIGBench.md",
+    "Pre-training/预训练语言模型.md",
     "Pre-training/HELM/HELM.md",
     "Pre-training/Flan-PaLM_T5/Flan-PaLM_T5.md",
-    "Pre-training/BigBench/BIGBench.md",
     "Pre-training/LLaMA/LLaMA.md",
     "Pre-training/MMLU/MMLU.md",
-    "Pre-training/预训练语言模型.md",
     "Tool/Linux/Linux.md",
     "Pre-training/Base/PositionEncoding/位置编码.md"
   ]
