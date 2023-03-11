@@ -192,7 +192,6 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 | [LAMBADA](LAMBADA/LAMBADA.md)       | 英文   | 上下文理解生成 |                  |
 | [SuperNaturalInstructions](NaturalInstructions/SuperNaturalInstructions.md)                                    |   多语言     |                |                  |
 
-
 HELM包括了基本上每个评测方向的数据集，可以在此基础上评测，补充其他评测任务。
 - 问答、信息抽取、摘要、情感分析、有毒性检测、文本分类、aspirational场景（文本生成、故事生成等）、语言、知识、推理、危害、效率、校准、鲁棒性
 
@@ -224,13 +223,10 @@ BBH
 - 多语言单词上下文语义判断
 - 给定同一种语言的两个句子和一个出现在两个句子中的感兴趣的词，模型被询问这个词在句子中是否具有相同的意义。
 
-NaturalInstructions
-
 
 
 ## dataset
 
-- [ ] SuperNaturalInstructions
 
 
 ## 要点

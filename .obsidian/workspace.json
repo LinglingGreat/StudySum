@@ -56,7 +56,7 @@
             }
           },
           {
-            "id": "2fc5ba92fdc87228",
+            "id": "9813d6593647c55f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -264,17 +264,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2fc5ba92fdc87228",
+  "active": "9813d6593647c55f",
   "lastOpenFiles": [
-    "Pre-training/NaturalInstructions/SuperNaturalInstructions.md",
-    "Pre-training/README.md",
-    "Pre-training/BigBench/BIGBench.md",
     "Pre-training/预训练语言模型.md",
+    "Pre-training/CUGE/CUGE.md",
+    "Pre-training/README.md",
+    "Pre-training/CLUE/CLUE.md",
+    "Pre-training/NaturalInstructions/SuperNaturalInstructions.md",
+    "Pre-training/BigBench/BIGBench.md",
     "Pre-training/HELM/HELM.md",
     "Pre-training/Flan-PaLM_T5/Flan-PaLM_T5.md",
     "Pre-training/LLaMA/LLaMA.md",
-    "Pre-training/MMLU/MMLU.md",
-    "Tool/Linux/Linux.md",
-    "Pre-training/Base/PositionEncoding/位置编码.md"
+    "Pre-training/MMLU/MMLU.md"
   ]
 }
