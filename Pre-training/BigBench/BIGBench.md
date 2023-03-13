@@ -43,6 +43,10 @@ JSON任务由JSON文件定义，该文件包含由输入和目标组成的示例
 
 另外大约20%的基准任务是程序化的，它们用Python编写，能够在多轮查询中直接与模型交互，并且能够使用自定义度量来衡量性能。
 
+论文（Challenging BIG-Bench tasks and whether chain-of-thought can solve them）选择了 23 个特别具有挑战性的任务的一个子集，并将它们分组到一个称为 BIG-Bench Hard (BBH) 的评估套件中。网址： https://github.com/suzgunmirac/BIG-Bench-Hard
+
+![](img/Pasted%20image%2020230312173057.png)
+
 ### 评估发现
 
 作者团队在 BIG-bench 上评估了多个语言模型的能力，模型大小从数百万到数千亿个参数，包括 OpenAI 的 GPT 模型、Google 内部密集 transformer 架构和 Switch 式稀疏transformer的性能等等。

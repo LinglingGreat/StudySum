@@ -68,24 +68,14 @@
             }
           },
           {
-            "id": "c242bed3d225f5e0",
+            "id": "246e534759907ee5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CV/DDPM/DDPM.md",
+                "file": "Pre-training/BigBench/BIGBench.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "1c1059009fba7770",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.1.16"
               }
             }
           },
@@ -150,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -208,7 +198,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/DDPM/DDPM.md",
+                "file": "Pre-training/BigBench/BIGBench.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -236,7 +226,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/DDPM/DDPM.md"
+                "file": "Pre-training/BigBench/BIGBench.md"
               }
             }
           },
@@ -274,9 +264,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1c1059009fba7770",
+  "active": "246e534759907ee5",
   "lastOpenFiles": [
+    "Pre-training/BigBench/img/Pasted image 20230312173057.png",
+    "Pre-training/BigBench/img",
     "Pre-training/README.md",
+    "CV/DDPM/DDPM.md",
     "CV/StableDiffusion/StableDiffusion.md",
     "CV/Scheduler/README.md",
     "CV/Diffusion/Diffusion模型.md",
