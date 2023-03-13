@@ -4,9 +4,9 @@ created: 2023-02-17
 tags: instruction-tuning
 type: 论文
 papername: Finetuned Language Models Are Zero-Shot Learners
-conference: ACL/EMNLP/NAACL/EACL/COLING/SIGIR/AAAI/ICML/ICDM
+conference: ICLR
 year: 2021
-institution: 
+institution: 谷歌
 ---
 
 ## 论文基本信息
@@ -28,6 +28,10 @@ institution:
 本文提出一种基于instruction-tuning的方法叫做FLAN，一种通过提升语言模型对instructions的理解能力从而提高语言模型零样本学习能力的简单方法。
 
 ### Method
+
+![](img/Pasted%20image%2020230313211654.png)
+
+![](img/Pasted%20image%2020230313211846.png)
 
 a.训练模型：137B规模的decoder-only LM---LaMDA-PT
 
