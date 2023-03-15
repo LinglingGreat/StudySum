@@ -68,30 +68,6 @@
             }
           },
           {
-            "id": "246e534759907ee5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/BigBench/BIGBench.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5615cab461baa5ab",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/FLAN/FLAN.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "0931645c6e5fc3c5",
             "type": "leaf",
             "state": {
@@ -152,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -210,7 +186,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/FLAN/FLAN.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -238,7 +214,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/FLAN/FLAN.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -276,15 +252,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5615cab461baa5ab",
+  "active": "0931645c6e5fc3c5",
   "lastOpenFiles": [
+    "CV/BeiT/BeiTv3.md",
+    "Tool/Linux/Linux.md",
+    "Pre-training/README.md",
+    "Pre-training/BigBench/BIGBench.md",
+    "Pre-training/FLAN/FLAN.md",
     "Pre-training/FLAN/img/Pasted image 20230313211846.png",
     "Pre-training/FLAN/img/Pasted image 20230313211654.png",
     "Pre-training/FLAN/img",
-    "Pre-training/BigBench/BIGBench.md",
     "Pre-training/BigBench/img/Pasted image 20230312173057.png",
     "Pre-training/BigBench/img",
-    "Pre-training/README.md",
     "CV/DDPM/DDPM.md",
     "CV/StableDiffusion/StableDiffusion.md",
     "CV/Scheduler/README.md",

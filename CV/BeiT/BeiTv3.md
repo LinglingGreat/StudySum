@@ -12,7 +12,7 @@ papername:
 
 链接： https://arxiv.org/abs/2208.10442
 
-代码：
+代码： https://github.com/microsoft/unilm/tree/master/beit3
 
 框架图：
 
