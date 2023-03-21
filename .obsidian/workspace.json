@@ -68,12 +68,24 @@
             }
           },
           {
-            "id": "0931645c6e5fc3c5",
+            "id": "94c2507bc969a141",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Tool/Linux/Linux.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8fe3b298ba23343d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Docker/Docker.md",
                 "mode": "source",
                 "source": false
               }
@@ -157,7 +169,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "位置编码",
+                "query": "lora",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -252,11 +264,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0931645c6e5fc3c5",
+  "active": "94c2507bc969a141",
   "lastOpenFiles": [
-    "CV/BeiT/BeiTv3.md",
+    "Tool/Git/Git.md",
     "Tool/Linux/Linux.md",
     "Pre-training/README.md",
+    "CourseNote/cs224n2019/README.md",
+    "CV/DreamBooth/DreamBooth.md",
+    "CV/ALBEF/ALBEF.md",
+    "CV/MultiModal/多模态合集.md",
+    "Tool/Docker/Docker.md",
+    "CV/BeiT/BeiTv3.md",
     "Pre-training/BigBench/BIGBench.md",
     "Pre-training/FLAN/FLAN.md",
     "Pre-training/FLAN/img/Pasted image 20230313211846.png",
