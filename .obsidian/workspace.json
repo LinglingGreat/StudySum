@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "3124c48dc5aecad9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/python/Python.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "536c94cc8e079927",
             "type": "leaf",
             "state": {
@@ -68,36 +56,24 @@
             }
           },
           {
+            "id": "c9ea06b29b511013",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/CoT/CoT.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "94c2507bc969a141",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Tool/Linux/Linux.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fe7e407a00ced003",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BasicKnow/预处理/[1-1]正则表达式.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8fe3b298ba23343d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Docker/Docker.md",
                 "mode": "source",
                 "source": false
               }
@@ -152,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -210,7 +186,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "BasicKnow/预处理/[1-1]正则表达式.md",
+                "file": "Pre-training/CoT/CoT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -238,7 +214,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "BasicKnow/预处理/[1-1]正则表达式.md"
+                "file": "Pre-training/CoT/CoT.md"
               }
             }
           },
@@ -276,22 +252,29 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fe7e407a00ced003",
+  "active": "c9ea06b29b511013",
   "lastOpenFiles": [
+    "Pre-training/CoT/img/Pasted image 20230325001127.png",
+    "Pre-training/CoT/img/Pasted image 20230325001031.png",
+    "Pre-training/README.md",
+    "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
+    "Tool/Linux/Linux.md",
+    "Tool/Docker/Docker.md",
     "Pre-training/BERT/BERT面试问答.md",
+    "Pre-training/CoT/CoT.md",
+    "Pre-training/预训练语言模型.md",
+    "Tool/Git/Git.md",
+    "Tool/python/Python.md",
+    "NLP知识体系.md",
+    "README.md",
+    "BasicKnow/预处理/[1-1]正则表达式.md",
     "Pre-training/BERT/BERT.md",
     "Pre-training/XLNet/XLNet.md",
-    "Pre-training/预训练语言模型.md",
-    "Pre-training/README.md",
     "Pre-training/Transformer/Transformer.md",
-    "BasicKnow/预处理/[1-1]正则表达式.md",
-    "Tool/Linux/Linux.md",
-    "Tool/Git/Git.md",
     "CourseNote/cs224n2019/README.md",
     "CV/DreamBooth/DreamBooth.md",
     "CV/ALBEF/ALBEF.md",
     "CV/MultiModal/多模态合集.md",
-    "Tool/Docker/Docker.md",
     "CV/BeiT/BeiTv3.md",
     "Pre-training/BigBench/BIGBench.md",
     "Pre-training/FLAN/FLAN.md",
@@ -302,11 +285,6 @@
     "Pre-training/BigBench/img",
     "CV/DDPM/DDPM.md",
     "CV/StableDiffusion/StableDiffusion.md",
-    "CV/Scheduler/README.md",
-    "CV/Diffusion/Diffusion模型.md",
-    "Pre-training/NaturalInstructions/SuperNaturalInstructions.md",
-    "Pre-training/CLUE/CLUE.md",
-    "Pre-training/CUGE/CUGE.md",
-    "Pre-training/HELM/HELM.md"
+    "CV/Scheduler/README.md"
   ]
 }
