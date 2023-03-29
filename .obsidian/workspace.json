@@ -128,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -186,7 +186,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/CoT/CoT.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -214,7 +214,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/CoT/CoT.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -252,8 +252,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c9ea06b29b511013",
+  "active": "94c2507bc969a141",
   "lastOpenFiles": [
+    "Pre-training/CoT/CoT.md",
     "Pre-training/CoT/img/Pasted image 20230325001127.png",
     "Pre-training/CoT/img/Pasted image 20230325001031.png",
     "Pre-training/README.md",
@@ -261,7 +262,6 @@
     "Tool/Linux/Linux.md",
     "Tool/Docker/Docker.md",
     "Pre-training/BERT/BERT面试问答.md",
-    "Pre-training/CoT/CoT.md",
     "Pre-training/预训练语言模型.md",
     "Tool/Git/Git.md",
     "Tool/python/Python.md",
