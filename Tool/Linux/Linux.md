@@ -247,7 +247,7 @@ for filename in `ls`; do if [ `date -r $filename +%m%d` -eq "1125" ];then echo $
 
 举例：`rsync -avh --progress /home/lldata/* .`
 
-`rsync -P -r --rsh=ssh user@ip:file path`
+`rsync -P -r --rsh=ssh user@ip:file path`,  `rsync -av user@ip:file path`
 
 `-a, --archive`                   归档模式，表示以递归方式传输文件，并保持所有文件属性，等于-rlptgoD 
 
