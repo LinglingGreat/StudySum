@@ -351,6 +351,8 @@ for filename in `ls`; do if [ `date -r $filename +%m%d` -eq "1125" ];then echo $
 
 批量kill进程`ps -ef|grep pretrain_gpt2|grep -v grep|cut -c 9-15|xargs kill -9`
 
+或者 pkill -f "process_name"
+
 [nvidia-smi 无进程占用GPU，但GPU显存却被占用了很多](https://blog.csdn.net/m0_38007695/article/details/88954699 "nvidia-smi 无进程占用GPU，但GPU显存却被占用了很多")
 
 `nohup python .py > run.out &`

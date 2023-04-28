@@ -151,7 +151,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -209,7 +210,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -237,7 +238,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -275,8 +276,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "445096e0eaa0fa14",
+  "active": "94c2507bc969a141",
   "lastOpenFiles": [
+    "Tool/Git/Git.md",
     "Tool/Linux/Linux.md",
     "Pre-training/Transformer/Transformer.md",
     "Pre-training/LORA/LORA.md",
@@ -287,7 +289,6 @@
     "CourseNote/cs224n2019/README.md",
     "BasicKnow/异常检测/异常检测.md",
     "CV/DreamBooth/DreamBooth.md",
-    "Tool/Git/Git.md",
     "Pre-training/CoT/CoT.md",
     "Pre-training/CoT/img/Pasted image 20230325001127.png",
     "Pre-training/CoT/img/Pasted image 20230325001031.png",
