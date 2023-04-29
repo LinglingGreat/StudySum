@@ -223,6 +223,9 @@ BBH
 - 多语言单词上下文语义判断
 - 给定同一种语言的两个句子和一个出现在两个句子中的感兴趣的词，模型被询问这个词在句子中是否具有相同的意义。
 
+中文安全prompts，用于评估和提升大模型的安全性' thu-coai GitHub: github.com/thu-coai/Safety-Prompts
+
+【GAOKAO-bench：以中国高考题目作为数据集，评估大语言模型的语言理解能力和逻辑推理能力的测评框架，包含1781道选择题、218道填空题和812道解答题】: github.com/OpenLMLab/GAOKAO-Bench
 
 
 ## dataset
@@ -251,4 +254,9 @@ BBH
 - 为了更好的建模更长的序列，PaLM 使用 RoPE 词向量，BLOOM 使用 ALiBi 词向量，而原始的 GPT-3 和 OPT 使用学习得到的词向量，这可能影响在长序列上的性能。
 
 参考：[万字长文解析！复现和使用GPT-3/ChatGPT，你所应该知道的](https://mp.weixin.qq.com/s/ILpbRRNP10Ef1z3lb2CqmA)，推特原文： https://twitter.com/JingfengY/status/1625003999387881472
+
+
+## 资源列表汇总
+
+【收集了有关大型语言模型中不确定性、可靠性和鲁棒性的资源和论文】: github.com/jxzhangjhu/Awesome-LLM-Uncertainty-Reliability-Robustnes
 

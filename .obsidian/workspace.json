@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "536c94cc8e079927",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Pytorch/Pytorch.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "754251bc02cd7c06",
             "type": "leaf",
             "state": {
@@ -56,12 +44,12 @@
             }
           },
           {
-            "id": "c9ea06b29b511013",
+            "id": "31bc9776513c5dec",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/CoT/CoT.md",
+                "file": "CV/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -78,81 +66,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "4d78a936df2e8f9b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/LORA/LORA.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a9999790605c1288",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/Transformer/Transformer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "de5a755f0ded7c08",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/InContextLearning/In-Context Learning.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4b8009ab95f448f9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/Finetune/Finetune.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e202787bcb61cca5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/Prompt/Prompt.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "952be2429537c871",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -210,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "CV/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -238,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "CV/README.md"
               }
             }
           },
@@ -276,12 +192,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "94c2507bc969a141",
+  "active": "31bc9776513c5dec",
   "lastOpenFiles": [
-    "Tool/Git/Git.md",
+    "Pre-training/Flamingo/Flamingo.md",
+    "CV/README.md",
+    "CV/MultiModal/多模态合集.md",
+    "Pre-training/README.md",
+    "Pre-training/预训练语言模型.md",
     "Tool/Linux/Linux.md",
+    "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
+    "Pre-training/Prompt/Prompt.md",
+    "Pre-training/Finetune/Finetune.md",
+    "Pre-training/InContextLearning/In-Context Learning.md",
     "Pre-training/Transformer/Transformer.md",
     "Pre-training/LORA/LORA.md",
+    "Tool/Git/Git.md",
+    "Tool/Pytorch/Pytorch.md",
+    "Pre-training/CoT/CoT.md",
     "Pre-training/LORA/img/Pasted image 20230411150734.png",
     "Pre-training/LORA/img",
     "Pre-training/LORA",
@@ -289,25 +216,15 @@
     "CourseNote/cs224n2019/README.md",
     "BasicKnow/异常检测/异常检测.md",
     "CV/DreamBooth/DreamBooth.md",
-    "Pre-training/CoT/CoT.md",
     "Pre-training/CoT/img/Pasted image 20230325001127.png",
     "Pre-training/CoT/img/Pasted image 20230325001031.png",
-    "Pre-training/README.md",
-    "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
     "Tool/Docker/Docker.md",
     "Pre-training/BERT/BERT面试问答.md",
-    "Pre-training/预训练语言模型.md",
     "Tool/python/Python.md",
     "NLP知识体系.md",
     "README.md",
     "BasicKnow/预处理/[1-1]正则表达式.md",
     "Pre-training/BERT/BERT.md",
-    "Pre-training/XLNet/XLNet.md",
-    "CV/ALBEF/ALBEF.md",
-    "CV/MultiModal/多模态合集.md",
-    "CV/BeiT/BeiTv3.md",
-    "Pre-training/BigBench/BIGBench.md",
-    "Pre-training/FLAN/FLAN.md",
     "Pre-training/FLAN/img/Pasted image 20230313211846.png",
     "Pre-training/FLAN/img/Pasted image 20230313211654.png",
     "Pre-training/FLAN/img",
