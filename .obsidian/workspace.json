@@ -66,9 +66,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c84c288f67713c5f",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.2.7"
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -105,6 +115,14 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "3704634688e79fbc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -126,7 +144,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/README.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/README.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -192,10 +210,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "31bc9776513c5dec",
+  "active": "c84c288f67713c5f",
   "lastOpenFiles": [
-    "Pre-training/Flamingo/Flamingo.md",
     "CV/README.md",
+    "Pre-training/Flamingo/Flamingo.md",
     "CV/MultiModal/多模态合集.md",
     "Pre-training/README.md",
     "Pre-training/预训练语言模型.md",
