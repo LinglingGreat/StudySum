@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "241cc5aa9b7ddcfb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "CV/MultiModal/多模态合集.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "754251bc02cd7c06",
             "type": "leaf",
             "state": {
@@ -91,7 +103,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -157,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "CV/MultiModal/多模态合集.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -185,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md"
+                "file": "CV/MultiModal/多模态合集.md"
               }
             }
           },
@@ -223,17 +236,26 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "445096e0eaa0fa14",
+  "active": "241cc5aa9b7ddcfb",
   "lastOpenFiles": [
-    "Tool/Linux/Linux.md",
+    "Pre-training/预训练语言模型.md",
+    "CV/MultiModal/多模态合集.md",
+    "CV/BLIP2/BLIP2.md",
+    "CV/Flamingo/Flamingo.md",
+    "CV/MultiModal/img/Pasted image 20230508150354.png",
+    "CV/MultiModal/img/Pasted image 20230508150337.png",
+    "CV/MultiModal/img/Pasted image 20230508150322.png",
+    "CV/MultiModal/img/Pasted image 20230508150253.png",
+    "CV/MultiModal/img/Pasted image 20230508150237.png",
+    "CV/MultiModal/img/Pasted image 20230508150220.png",
+    "CV/MultiModal/img/Pasted image 20230508150202.png",
+    "CV/MultiModal/img/Pasted image 20230508150147.png",
     "Tool/Git/Git.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/Transformer/Transformer.md",
     "Pre-training/BERT/BERT面试问答.md",
-    "Pre-training/预训练语言模型.md",
     "Pre-training/README.md",
     "CV/README.md",
-    "Pre-training/Flamingo/Flamingo.md",
-    "CV/MultiModal/多模态合集.md",
     "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/Finetune/Finetune.md",
@@ -249,17 +271,12 @@
     "BasicKnow/异常检测/异常检测.md",
     "CV/DreamBooth/DreamBooth.md",
     "Pre-training/CoT/img/Pasted image 20230325001127.png",
-    "Pre-training/CoT/img/Pasted image 20230325001031.png",
     "Tool/Docker/Docker.md",
     "Tool/python/Python.md",
     "NLP知识体系.md",
     "README.md",
     "BasicKnow/预处理/[1-1]正则表达式.md",
-    "Pre-training/BERT/BERT.md",
-    "Pre-training/FLAN/img/Pasted image 20230313211846.png",
-    "Pre-training/FLAN/img/Pasted image 20230313211654.png",
     "Pre-training/FLAN/img",
-    "Pre-training/BigBench/img/Pasted image 20230312173057.png",
     "Pre-training/BigBench/img"
   ]
 }
