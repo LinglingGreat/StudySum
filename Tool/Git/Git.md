@@ -201,6 +201,30 @@ git fetch --all
 git pull --all
 ```
 
+## 不同的远程仓库可以跟踪不同的仓库地址
+在 Git 中，你可以将多个不同的远程仓库关联到同一个本地仓库上，以便于从多个远程仓库拉取代码或将代码推送到多个远程仓库。
+
+你可以使用 `git remote add` 命令将多个远程仓库添加到本地仓库中。例如，假设你有一个 GitHub 上的远程仓库和一个 GitLab 上的远程仓库，你可以使用以下命令将这两个远程仓库添加到你的本地仓库中：
+
+`git remote add github https://github.com/username/repo.git 
+`git remote add gitlab https://gitlab.com/username/repo.git`
+
+上述命令将 GitHub 远程仓库命名为 `github`，GitLab 远程仓库命名为 `gitlab`。
+
+如果你想查看目前本地仓库中所有的远程仓库名称及其对应的 URL，可以使用以下命令：
+
+`git remote -v`
+
+此外，你在从远程仓库拉取代码或将代码推送到远程仓库的时候，需要指定远程仓库的名称。例如，如果你要从 GitHub 远程仓库拉取分支 `main` 上的代码到本地仓库中，并且在将新修改推送到 GitHub 远程仓库时使用 `github` 远程仓库，可以使用以下命令：
+
+`git pull github main git push github`
+
+类似地，如果你要从 GitLab 远程仓库拉取分支 `develop` 上的代码到本地仓库中，并且在将新修改推送到 GitLab 远程仓库时使用 `gitlab` 远程仓库，可以使用以下命令：
+
+`git pull gitlab develop git push gitlab`
+
+总之，你可以为每个远程仓库指定不同的地址，以实现多个远程仓库的跟踪。
+
 
 
 ## 同步最新代码

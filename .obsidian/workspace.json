@@ -32,6 +32,30 @@
             }
           },
           {
+            "id": "ae83fc297e882439",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/BERT/BERT面试问答.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f6c5e21d4be48a6c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/Transformer/Transformer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "9813d6593647c55f",
             "type": "leaf",
             "state": {
@@ -66,19 +90,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "c84c288f67713c5f",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.2.7"
-              }
-            }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -144,7 +157,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Tool/Git/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -172,7 +185,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Tool/Git/Git.md"
               }
             }
           },
@@ -210,21 +223,22 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c84c288f67713c5f",
+  "active": "445096e0eaa0fa14",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Tool/Git/Git.md",
+    "Pre-training/Transformer/Transformer.md",
+    "Pre-training/BERT/BERT面试问答.md",
+    "Pre-training/预训练语言模型.md",
+    "Pre-training/README.md",
     "CV/README.md",
     "Pre-training/Flamingo/Flamingo.md",
     "CV/MultiModal/多模态合集.md",
-    "Pre-training/README.md",
-    "Pre-training/预训练语言模型.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/Finetune/Finetune.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
-    "Pre-training/Transformer/Transformer.md",
     "Pre-training/LORA/LORA.md",
-    "Tool/Git/Git.md",
     "Tool/Pytorch/Pytorch.md",
     "Pre-training/CoT/CoT.md",
     "Pre-training/LORA/img/Pasted image 20230411150734.png",
@@ -237,7 +251,6 @@
     "Pre-training/CoT/img/Pasted image 20230325001127.png",
     "Pre-training/CoT/img/Pasted image 20230325001031.png",
     "Tool/Docker/Docker.md",
-    "Pre-training/BERT/BERT面试问答.md",
     "Tool/python/Python.md",
     "NLP知识体系.md",
     "README.md",
