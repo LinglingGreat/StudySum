@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV/MultiModal/多模态合集.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CV/MultiModal/多模态合集.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -236,10 +236,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "241cc5aa9b7ddcfb",
+  "active": "94c2507bc969a141",
   "lastOpenFiles": [
-    "Tool/Linux/Linux.md",
     "CV/MultiModal/多模态合集.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/预训练语言模型.md",
     "CV/BLIP2/BLIP2.md",
     "CV/Flamingo/Flamingo.md",
