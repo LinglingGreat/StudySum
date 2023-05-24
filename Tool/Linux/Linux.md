@@ -90,7 +90,7 @@ Ubuntu的默认root密码是随机的，即每次开机都有一个新的 root�
 
 查看安装了哪些cuda版本：`ls -l /usr/local | grep cuda`
 
-查询公网ip：`curl cip.cc`或者`curl ifconfig.me`
+查询公网ip：`curl cip.cc`或者` `
 
 查询内网ip: `ifconfig -a`
 
