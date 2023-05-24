@@ -227,6 +227,8 @@ BBH
 
 【GAOKAO-bench：以中国高考题目作为数据集，评估大语言模型的语言理解能力和逻辑推理能力的测评框架，包含1781道选择题、218道填空题和812道解答题】: github.com/OpenLMLab/GAOKAO-Bench
 
+C-Eval是全面的中文基础模型评估套件，涵盖了52个不同学科的13948个多项选择题，分为四个难度级别： https://github.com/SJTU-LIT/ceval
+
 
 ## dataset
 
