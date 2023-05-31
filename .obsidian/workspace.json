@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "e34cc92a20857808",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/python/Python.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "241cc5aa9b7ddcfb",
             "type": "leaf",
             "state": {
@@ -92,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -121,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "lora",
+                "query": "hidden size",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -226,10 +238,13 @@
   },
   "active": "94c2507bc969a141",
   "lastOpenFiles": [
+    "Tool/python/Python.md",
+    "Tool/Git/Git.md",
+    "Pre-training/Transformer/Transformer.md",
+    "Pre-training/BERT/BERT.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/README.md",
     "CV/README.md",
-    "Tool/Git/Git.md",
-    "Tool/Linux/Linux.md",
     "CV/MultiModal/多模态合集.md",
     "Pre-training/预训练语言模型.md",
     "CV/BLIP2/BLIP2.md",
@@ -242,7 +257,6 @@
     "CV/MultiModal/img/Pasted image 20230508150220.png",
     "CV/MultiModal/img/Pasted image 20230508150202.png",
     "CV/MultiModal/img/Pasted image 20230508150147.png",
-    "Pre-training/Transformer/Transformer.md",
     "Pre-training/BERT/BERT面试问答.md",
     "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
     "Pre-training/Prompt/Prompt.md",
@@ -260,10 +274,8 @@
     "CV/DreamBooth/DreamBooth.md",
     "Pre-training/CoT/img/Pasted image 20230325001127.png",
     "Tool/Docker/Docker.md",
-    "Tool/python/Python.md",
     "NLP知识体系.md",
     "README.md",
-    "BasicKnow/预处理/[1-1]正则表达式.md",
     "Pre-training/FLAN/img",
     "Pre-training/BigBench/img"
   ]
