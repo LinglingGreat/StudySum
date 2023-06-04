@@ -32,10 +32,20 @@ Chain-of-thought prompting有以下几个优势
 
 ![](img/Pasted%20image%2020230227220518.png)
 
+## Manual CoT
+
+- **Chain-of-Thought Prompting Elicits Reasoning in Large Language Models，NeurIPS2022**
+    
+- Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, Denny Zhou（谷歌）
+
+![](img/Pasted%20image%2020230227220808.png)
+
  
 ## Zeroshot CoT
 
-**Large Language Models are Zero-Shot Reasoners.**
+- **Large language models are zero-shot reasoners. NeurIPS2022**
+    
+- Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, Yusuke Iwasawa（东京大学，谷歌）
 
 ![](img/Pasted%20image%2020230219164254.png)
 
@@ -45,6 +55,14 @@ MultiArith直接能让GPT-3从17提升到78，换到PaLM上稍微小点，25到6
 
 ![](img/Pasted%20image%2020230219164420.png)
 
+- Zero-shot CoT和Few-shot CoT在常识推理问题（CommonsenseQA）上，并没有太大的提升（相比于数学推理）。很多时候CoT给不出正确的答案，但是推理过程却是合理且灵活的。Zero-shot CoT在多项选择时，倾向于给出多个答案，很难只给出一个答案。
+    
+- 在数学推理问题上，CoT能有显著的提升，但是Zero-shot CoT和Few-shot CoT犯错误时的特点很不一样：Zero-shot方法在推出正确答案后，可能会继续“画蛇添足”，导致最终错误；另外，Zero-shot有时候干脆不推理，直接重复题目。Few-shot方法则是在生成的推理过程中包含三元运算的时候很容易出错，例如(3+2)*4
+    
+
+总体上，Few-shot CoT（又可以称之为Manual-CoT）的效果还是比Zero-shot CoT更好的。
+
+
 ## Self-consistency
 **通过chain-of-thought prompt让语言模型生成多个不同推理路径，然后通过投票机制采纳全部推理结果中的多数作为最终结果返回。**
 
@@ -53,9 +71,6 @@ MultiArith直接能让GPT-3从17提升到78，换到PaLM上稍微小点，25到6
 
 ![](img/Pasted%20image%2020230325001031.png)
 
-## Manual CoT
-
-![](img/Pasted%20image%2020230227220808.png)
 
 ## Auto CoT
 [AutoCoT](AutoCoT/AutoCoT.md)
