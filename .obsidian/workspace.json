@@ -102,21 +102,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "eb8dafef808fc42a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/CoT/AutoCoT/AutoCoT.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -182,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/CoT/AutoCoT/AutoCoT.md",
+                "file": "Pre-training/CoT/CoT.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/CoT/AutoCoT/AutoCoT.md"
+                "file": "Pre-training/CoT/CoT.md"
               }
             }
           },
@@ -231,7 +219,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -248,8 +236,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "eb8dafef808fc42a",
+  "active": "56a032f94fed6996",
   "lastOpenFiles": [
+    "Pre-training/RecurrentGPT/RecurrentGPT.md",
+    "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
+    "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",
+    "Pre-training/RecurrentGPT/img/Pasted image 20230604175205.png",
+    "Pre-training/RecurrentGPT/img/Pasted image 20230604175146.png",
+    "Pre-training/RecurrentGPT/img",
+    "Pre-training/CoT/AutoCoT/AutoCoT.md",
+    "Pre-training/RecurrentGPT",
     "Pre-training/CoT/AutoCoT/img/Pasted image 20230604151605.png",
     "Pre-training/CoT/CoT.md",
     "Pre-training/README.md",
@@ -270,9 +266,6 @@
     "CV/MultiModal/img/Pasted image 20230508150322.png",
     "CV/MultiModal/img/Pasted image 20230508150253.png",
     "CV/MultiModal/img/Pasted image 20230508150237.png",
-    "CV/MultiModal/img/Pasted image 20230508150220.png",
-    "CV/MultiModal/img/Pasted image 20230508150202.png",
-    "CV/MultiModal/img/Pasted image 20230508150147.png",
     "Pre-training/BERT/BERT面试问答.md",
     "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
     "Pre-training/Prompt/Prompt.md",
@@ -280,15 +273,11 @@
     "Pre-training/InContextLearning/In-Context Learning.md",
     "Pre-training/LORA/LORA.md",
     "Tool/Pytorch/Pytorch.md",
-    "Pre-training/LORA/img/Pasted image 20230411150734.png",
     "Pre-training/LORA/img",
     "Pre-training/LORA",
     "BasicKnow/others/神经网络概述.md",
     "CourseNote/cs224n2019/README.md",
     "BasicKnow/异常检测/异常检测.md",
-    "CV/DreamBooth/DreamBooth.md",
-    "Pre-training/CoT/img/Pasted image 20230325001127.png",
-    "Tool/Docker/Docker.md",
     "Pre-training/FLAN/img",
     "Pre-training/BigBench/img"
   ]
