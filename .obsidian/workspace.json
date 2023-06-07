@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/README.md",
+                "file": "Pre-training/LLMs/Vicuna/Vicuna.md",
                 "mode": "source",
                 "source": false
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/README.md",
+                "file": "Pre-training/LLMs/Vicuna/Vicuna.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/README.md"
+                "file": "Pre-training/LLMs/Vicuna/Vicuna.md"
               }
             }
           },
@@ -226,8 +226,10 @@
   },
   "active": "77c9ce75767730c1",
   "lastOpenFiles": [
-    "Pre-training/README.md",
     "Pre-training/LLMs/README.md",
+    "Pre-training/LLMs/Vicuna/Vicuna.md",
+    "Pre-training/LLMs/Vicuna",
+    "Pre-training/README.md",
     "Pre-training/LLMs",
     "Pre-training/Transformer/Transformer.md",
     "Pre-training/Benchmark/README.md",
@@ -267,10 +269,8 @@
     "CV/MultiModal/img/Pasted image 20230508150237.png",
     "Pre-training/BERT/BERT面试问答.md",
     "Pre-training/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
-    "Pre-training/Prompt/Prompt.md",
     "Pre-training/LORA/img",
     "Pre-training/LORA",
-    "Pre-training/FLAN/img",
-    "Pre-training/Benchmark/BigBench/img"
+    "Pre-training/FLAN/img"
   ]
 }
