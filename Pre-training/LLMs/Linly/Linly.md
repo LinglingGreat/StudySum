@@ -1,3 +1,12 @@
+---
+title: Linly
+created: 2023-06-08
+tags: LLM, 预训练, 增量预训练, SFT
+
+---
+
+https://github.com/CVI-SZU/Linly
+
 # Linly OpenLLaMA
 
 https://github.com/CVI-SZU/Linly/wiki/Linly-OpenLLaMA
@@ -51,4 +60,35 @@ Linly-OpenLLaMA 使用和 Meta 相同的模型结构和训练参数从头预训�
 - Batch Size: 4096
 - Learning Rate: 3e-4
 - cosine schedule, 0.1 weight decay
+
+# Linly-Chinese-LLaMA
+
+语料包括 [CLUECorpusSmall、中英文翻译数据、News Commentary v13](https://github.com/dbiir/UER-py/wiki/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%95%B0%E6%8D%AE) 和[中文科学文献数据 CSL](https://github.com/ydli-ai/CSL)。
+
+基于[TencentPretrain](https://github.com/Tencent/TencentPretrain)框架
+
+```bash
+deepspeed pretrain.py --deepspeed --deepspeed_config models/deepspeed_zero3_config.json --enable_zero3 \
+                      --pretrained_model_path models/llama-7b.bin \
+                      --dataset_path $OUTPUT_DATASET_PATH --spm_model_path $LLaMA_PATH/tokenizer.model \
+                      --config_path models/llama/7b_config.json \
+                      --output_model_path models/llama_zh_7b \
+                      --world_size 8 --data_processor lm  --deepspeed_checkpoint_activations \
+                      --total_steps 300000 --save_checkpoint_steps 5000 --batch_size 24
+```
+
+
+
+# SFT
+
+数据集：
+
+1.BELLE: 150万数据，175个指令seed
+2.pCLUE: 120万训练数据，73个Prompt
+3.CSL: 40万中文论文元数据，26个Prompt
+5.GuanacoDataset: 多语言指令数据集
+6.Chain-of-Thought: 中英文思维链数据
+7.news_commentary: 中英文翻译数据
+8.firefly: 23个中文NLP任务集合
+9.[Alpaca-CoT](https://github.com/PhoebusSi/Alpaca-CoT/tree/main)
 

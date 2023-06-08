@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/Linly/Linly.md",
+                "file": "Pre-training/LLMs/Chinese-LLaMA-Alpaca/Chinese-LLaMA-Alpaca.md",
                 "mode": "source",
                 "source": false
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "hidden size",
+                "query": "tag:#医药",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/Linly/Linly.md",
+                "file": "Pre-training/LLMs/Chinese-LLaMA-Alpaca/Chinese-LLaMA-Alpaca.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/Linly/Linly.md"
+                "file": "Pre-training/LLMs/Chinese-LLaMA-Alpaca/Chinese-LLaMA-Alpaca.md"
               }
             }
           },
@@ -219,7 +219,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -238,21 +238,28 @@
   },
   "active": "77c9ce75767730c1",
   "lastOpenFiles": [
-    "Pre-training/LLMs/Vicuna/Vicuna.md",
     "Pre-training/LLMs/Linly/Linly.md",
-    "Pre-training/LLMs/Linly",
+    "Pre-training/LLMs/Chinese-LLaMA-Alpaca/Chinese-LLaMA-Alpaca.md",
+    "Pre-training/LLMs/Chinese-LLaMA-Alpaca",
+    "Pre-training/LLMs/MedicalGPT/MedicalGPT.md",
+    "Pre-training/LLMs/TigerBot/TigerBot.md",
+    "Pre-training/LLMs/MedicalGPT",
+    "Pre-training/LLMs/TigerBot",
+    "Pre-training/LLMs/Vicuna/Vicuna.md",
+    "CV/MultiModal/多模态合集.md",
+    "Pre-training/预训练语言模型.md",
     "Tool/Linux/Linux.md",
+    "Pre-training/Transformer/Transformer.md",
+    "Pre-training/LLMs/Linly",
     "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/Vicuna",
     "Pre-training/README.md",
     "Pre-training/LLMs",
-    "Pre-training/Transformer/Transformer.md",
     "Pre-training/Benchmark/README.md",
     "Pre-training/Benchmark/LAMBADA/LAMBADA.md",
     "Pre-training/Benchmark/NaturalInstructions/SuperNaturalInstructions.md",
     "Pre-training/Benchmark",
     "Pre-training/关于LLM的一些思考.md",
-    "Pre-training/预训练语言模型.md",
     "Pre-training/Lion/Lion.md",
     "Pre-training/Benchmark/CEval/CEval.md",
     "Template/论文模板.md",
@@ -268,21 +275,14 @@
     "Pre-training/CoT/AutoCoT/AutoCoT.md",
     "Pre-training/RecurrentGPT",
     "Pre-training/CoT/AutoCoT/img/Pasted image 20230604151605.png",
-    "Pre-training/Lion",
     "Tool/python/Python.md",
     "Tool/Git/Git.md",
     "Pre-training/BERT/BERT.md",
     "CV/README.md",
-    "CV/MultiModal/多模态合集.md",
-    "CV/BLIP2/BLIP2.md",
-    "CV/Flamingo/Flamingo.md",
     "CV/MultiModal/img/Pasted image 20230508150354.png",
     "CV/MultiModal/img/Pasted image 20230508150337.png",
     "CV/MultiModal/img/Pasted image 20230508150322.png",
     "CV/MultiModal/img/Pasted image 20230508150253.png",
-    "CV/MultiModal/img/Pasted image 20230508150237.png",
-    "Pre-training/BERT/BERT面试问答.md",
-    "Pre-training/LORA/img",
-    "Pre-training/LORA"
+    "CV/MultiModal/img/Pasted image 20230508150237.png"
   ]
 }
