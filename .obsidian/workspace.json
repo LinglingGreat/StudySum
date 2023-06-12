@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/README.md",
+                "file": "Pre-training/LLMs/BiLLa/BiLLa.md",
                 "mode": "source",
                 "source": false
               }
@@ -116,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/LLMs/BiLLa/BiLLa.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/LLMs/BiLLa/BiLLa.md"
               }
             }
           },
@@ -248,9 +248,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a587b5911d49c840",
+  "active": "77c9ce75767730c1",
   "lastOpenFiles": [
     "Pre-training/LLMs/README.md",
+    "Pre-training/LLMs/BiLLa/BiLLa.md",
+    "Pre-training/LLMs/BiLLa",
+    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/YuLan-Chat/YuLan-Chat.md",
     "Pre-training/LLMs/YuLan-Chat/img/Pasted image 20230611102052.png",
     "Pre-training/LLMs/YuLan-Chat/img",
@@ -267,7 +270,6 @@
     "Pre-training/LLMs/Vicuna/Vicuna.md",
     "CV/MultiModal/多模态合集.md",
     "Pre-training/预训练语言模型.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/Transformer/Transformer.md",
     "Pre-training/LLMs/Linly",
     "Pre-training/LLMs/Vicuna",
@@ -281,7 +283,6 @@
     "Pre-training/Benchmark/CEval/CEval.md",
     "Template/论文模板.md",
     "Template/普通模板.md",
-    "Pre-training/Benchmark/CEval",
     "Pre-training/RecurrentGPT/RecurrentGPT.md",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",
