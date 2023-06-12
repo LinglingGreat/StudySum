@@ -116,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/README.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/README.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -231,7 +231,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -248,12 +248,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "77c9ce75767730c1",
+  "active": "a587b5911d49c840",
   "lastOpenFiles": [
+    "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/YuLan-Chat/YuLan-Chat.md",
     "Pre-training/LLMs/YuLan-Chat/img/Pasted image 20230611102052.png",
     "Pre-training/LLMs/YuLan-Chat/img",
-    "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/YuLan-Chat",
     "Pre-training/CoT/CoT.md",
     "Pre-training/README.md",
