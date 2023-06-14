@@ -92,6 +92,18 @@
             }
           },
           {
+            "id": "65ce70ae179ec020",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/python/Application/用python进行语言检测.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "b7d1e6cd5013e373",
             "type": "leaf",
             "state": {
@@ -116,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -145,7 +157,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#医药",
+                "query": "语种",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -162,11 +174,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 255.5
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -182,7 +195,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/BiLLa/BiLLa.md",
+                "file": "Tool/python/Application/用python进行语言检测.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +223,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/BiLLa/BiLLa.md"
+                "file": "Tool/python/Application/用python进行语言检测.md"
               }
             }
           },
@@ -248,10 +261,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "77c9ce75767730c1",
+  "active": "65ce70ae179ec020",
   "lastOpenFiles": [
-    "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/BiLLa/BiLLa.md",
+    "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/BiLLa",
     "Tool/Linux/Linux.md",
     "Pre-training/LLMs/YuLan-Chat/YuLan-Chat.md",
