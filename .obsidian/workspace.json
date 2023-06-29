@@ -32,24 +32,12 @@
             }
           },
           {
-            "id": "241cc5aa9b7ddcfb",
+            "id": "6b7f581d3f8d3789",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CV/MultiModal/多模态合集.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "754251bc02cd7c06",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/预训练语言模型.md",
+                "file": "Pre-training/LORA/LORA.md",
                 "mode": "source",
                 "source": false
               }
@@ -80,30 +68,6 @@
             }
           },
           {
-            "id": "77c9ce75767730c1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/LLMs/BiLLa/BiLLa.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "65ce70ae179ec020",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/python/Application/用python进行语言检测.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "b7d1e6cd5013e373",
             "type": "leaf",
             "state": {
@@ -127,8 +91,7 @@
               }
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -174,8 +137,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -195,7 +157,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/python/Application/用python进行语言检测.md",
+                "file": "Tool/Git/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -223,7 +185,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/python/Application/用python进行语言检测.md"
+                "file": "Tool/Git/Git.md"
               }
             }
           },
@@ -261,12 +223,22 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "65ce70ae179ec020",
+  "active": "445096e0eaa0fa14",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Pre-training/Transformer/Transformer.md",
+    "Tool/python/Application/用python进行语言检测.md",
+    "Pre-training/关于LLM的一些思考.md",
+    "CV/README.md",
+    "Pre-training/LORA/LORA.md",
+    "Tool/python/Python.md",
+    "Pre-training/Finetune/Finetune.md",
+    "Pre-training/预训练语言模型.md",
+    "CV/BLIP2/BLIP2.md",
+    "CV/BLIP/BLIP.md",
     "Pre-training/LLMs/BiLLa/BiLLa.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/BiLLa",
-    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/YuLan-Chat/YuLan-Chat.md",
     "Pre-training/LLMs/YuLan-Chat/img/Pasted image 20230611102052.png",
     "Pre-training/LLMs/YuLan-Chat/img",
@@ -282,8 +254,6 @@
     "Pre-training/LLMs/TigerBot",
     "Pre-training/LLMs/Vicuna/Vicuna.md",
     "CV/MultiModal/多模态合集.md",
-    "Pre-training/预训练语言模型.md",
-    "Pre-training/Transformer/Transformer.md",
     "Pre-training/LLMs/Linly",
     "Pre-training/LLMs/Vicuna",
     "Pre-training/LLMs",
@@ -291,20 +261,12 @@
     "Pre-training/Benchmark/LAMBADA/LAMBADA.md",
     "Pre-training/Benchmark/NaturalInstructions/SuperNaturalInstructions.md",
     "Pre-training/Benchmark",
-    "Pre-training/关于LLM的一些思考.md",
     "Pre-training/Lion/Lion.md",
-    "Pre-training/Benchmark/CEval/CEval.md",
-    "Template/论文模板.md",
-    "Template/普通模板.md",
-    "Pre-training/RecurrentGPT/RecurrentGPT.md",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175205.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175146.png",
-    "Pre-training/CoT/AutoCoT/AutoCoT.md",
     "Pre-training/CoT/AutoCoT/img/Pasted image 20230604151605.png",
-    "Tool/python/Python.md",
-    "Tool/Git/Git.md",
     "CV/MultiModal/img/Pasted image 20230508150354.png",
     "CV/MultiModal/img/Pasted image 20230508150337.png",
     "CV/MultiModal/img/Pasted image 20230508150322.png",
