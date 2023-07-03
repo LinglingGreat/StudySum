@@ -66,6 +66,8 @@ Ubuntu的默认root密码是随机的，即每次开机都有一个新的 root�
 
 ### 机器自身情况
 
+查看本机的操作系统和位数信息：`uname -m && cat /etc/*release`
+
 查看显卡信息
 
 *   `lspci -vnn | grep VGA -A 12`
