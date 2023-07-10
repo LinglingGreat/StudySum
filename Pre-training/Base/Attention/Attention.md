@@ -75,7 +75,7 @@ Multi-attention
 
 - **Multi-Head Attention 通过多层的 Self-Attention 可以将输入语句映射到不同的子空间中，于是能够更好地理解到语句所包含的信息。**
 
-![](img/Pasted image 20210914185348.png)
+![](img/image-20210914185348.png)
 
 目的与特点
 
