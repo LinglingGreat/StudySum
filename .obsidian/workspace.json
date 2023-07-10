@@ -68,6 +68,18 @@
             }
           },
           {
+            "id": "7809c46af10b5adc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/Base/Attention/Attention.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "b7d1e6cd5013e373",
             "type": "leaf",
             "state": {
@@ -92,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -121,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "语种",
+                "query": "attention",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -158,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/Base/Attention/Attention.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/Base/Attention/Attention.md"
               }
             }
           },
@@ -224,11 +236,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c2d39b1542fdd1d5",
+  "active": "7809c46af10b5adc",
   "lastOpenFiles": [
-    "Tool/Git/Git.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/Transformer/Transformer.md",
+    "Pre-training/Base/Attention/Attention.md",
+    "Tool/Linux/Linux.md",
+    "Tool/Git/Git.md",
     "Tool/python/Application/用python进行语言检测.md",
     "Pre-training/关于LLM的一些思考.md",
     "CV/README.md",
@@ -261,7 +274,6 @@
     "Pre-training/LLMs",
     "Pre-training/Benchmark/README.md",
     "Pre-training/Benchmark/LAMBADA/LAMBADA.md",
-    "Pre-training/Benchmark/NaturalInstructions/SuperNaturalInstructions.md",
     "Pre-training/Benchmark",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",

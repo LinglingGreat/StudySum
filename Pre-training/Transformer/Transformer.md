@@ -82,7 +82,7 @@ Self-Attention用Encoder在编码一个词的时候会考虑句子中所有其�
 
 **对于输入的每一个向量(第一层是词的Embedding，其它层是前一层的输出)，我们首先需要生成3个新的向量Q、K和V，分别代表查询(Query)向量、Key向量和Value向量，长度均为64。输入向量组成的矩阵乘以不同的矩阵变换就得到Q、K、V。三个矩阵的维度都是512x64.**
 
-self-attention详见[Attention](../Attention/Attention.md)
+self-attention详见[Attention](../Base/Attention/Attention.md)
 
 注意力头的维度是默认64.
 
