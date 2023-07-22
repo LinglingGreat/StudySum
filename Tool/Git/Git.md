@@ -202,6 +202,15 @@ git pull --all
 ```
 
 ## 不同的远程仓库可以跟踪不同的仓库地址
+在此之前需要给github和gitlab都设置key，命名不一样。然后在.ssh文件夹里创建config文件，内容如下
+
+```
+Host github.com
+    HostName github.com
+    User xxx
+    IdentityFile ~/.ssh/id_rsa_github
+```
+
 在 Git 中，你可以将多个不同的远程仓库关联到同一个本地仓库上，以便于从多个远程仓库拉取代码或将代码推送到多个远程仓库。
 
 你可以使用 `git remote add` 命令将多个远程仓库添加到本地仓库中。例如，假设你有一个 GitHub 上的远程仓库和一个 GitLab 上的远程仓库，你可以使用以下命令将这两个远程仓库添加到你的本地仓库中：
