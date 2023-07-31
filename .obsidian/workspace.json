@@ -91,7 +91,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -157,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "Tool/python/Python.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -185,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md"
+                "file": "Tool/python/Python.md"
               }
             }
           },
@@ -223,12 +224,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "445096e0eaa0fa14",
+  "active": "e34cc92a20857808",
   "lastOpenFiles": [
+    "Tool/Git/Git.md",
     "Tool/Linux/Linux.md",
+    "Pre-training/BERT/ALBERT/ALBERT.md",
     "Pre-training/Transformer/Transformer.md",
     "Pre-training/Base/Attention/Attention.md",
-    "Tool/Git/Git.md",
     "Tool/python/Application/用python进行语言检测.md",
     "Pre-training/关于LLM的一些思考.md",
     "CV/README.md",
@@ -260,7 +262,6 @@
     "Pre-training/LLMs/Vicuna",
     "Pre-training/LLMs",
     "Pre-training/Benchmark/README.md",
-    "Pre-training/Benchmark/LAMBADA/LAMBADA.md",
     "Pre-training/Benchmark",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",
