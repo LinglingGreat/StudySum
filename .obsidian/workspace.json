@@ -90,19 +90,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "bb9c3688dfb498c8",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.3.7"
-              }
-            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -234,7 +224,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "bb9c3688dfb498c8",
+  "active": "c2d39b1542fdd1d5",
   "lastOpenFiles": [
     "Tool/Git/Git.md",
     "Tool/python/Python.md",
