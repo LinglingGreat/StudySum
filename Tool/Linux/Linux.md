@@ -1,5 +1,7 @@
 
+[Linux 修改默认 shell - 知乎](https://zhuanlan.zhihu.com/p/504677740)
 
+[查看当前使用的shell - perlman - 博客园](https://www.cnblogs.com/softwaretesting/archive/2012/02/14/2350688.html)
 ## 环境配置
 
 vim /etc/profile
