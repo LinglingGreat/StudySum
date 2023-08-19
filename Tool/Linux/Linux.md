@@ -217,6 +217,23 @@ for filename in `ls`; do if [ `date -r $filename +%m%d` -eq "1125" ];then echo $
 删除匹配文件名的文件`find . -name 'info.log.2020-06*' -exec rm {} \;`
 
 
+**linux删除/tmp文件夹中前缀为mobi且最新修改时间在6小时以前的文件和文件夹**
+
+要删除`/tmp`文件夹中前缀为`mobi`且最新修改时间在6小时以前的文件和文件夹，你可以使用以下命令：
+
+```bash
+find /tmp -name 'mobi*' -type f -mmin +360 -o -name 'mobi*' -type d -mmin +360 -exec rm -rf {} +
+```
+
+这个命令会在`/tmp`目录下查找以`mobi`开头的文件和文件夹，并且最新修改时间在6小时（360分钟）以前的。然后，使用`-exec rm -rf {} +`来删除匹配的文件和文件夹。
+
+请注意，这个命令会直接删除符合条件的文件和文件夹，所以请谨慎使用。在执行之前，建议先使用`-print`选项来检查将要删除的文件和文件夹列表，以确保不会误删重要内容。例如：
+
+```bash
+find /tmp -name 'mobi*' -type f -mmin +360 -o -name 'mobi*' -type d -mmin +360 -print
+```
+
+这个命令会列出符合条件的文件和文件夹列表，你可以先检查这个列表，确认没有问题后再执行删除操作。同样地，请谨慎操作，以免意外删除重要文件和文件夹。
 
 ### scp命令
 
