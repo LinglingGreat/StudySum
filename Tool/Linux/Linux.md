@@ -552,7 +552,7 @@ done
 
 我要使用4040端口，但是被其他的程序占用了，查找占用的程序
 
-`netstat -apn | grep 4040`
+`netstat -apn | grep 4040https://mp.weixin.qq.com/s/l9k49nf93nj1o3oEx3ya6w`
 
 最后一项显示的是pid和对应的名称
 
