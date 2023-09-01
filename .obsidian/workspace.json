@@ -20,6 +20,16 @@
             }
           },
           {
+            "id": "c10ea88f54700dff",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.5"
+              }
+            }
+          },
+          {
             "id": "e34cc92a20857808",
             "type": "leaf",
             "state": {
@@ -104,7 +114,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,7 +180,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Tool/Git/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +208,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Tool/Git/Git.md"
               }
             }
           },
@@ -236,10 +246,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c2d39b1542fdd1d5",
+  "active": "c10ea88f54700dff",
   "lastOpenFiles": [
-    "Tool/README.md",
     "Tool/Linux/Linux.md",
+    "Tool/README.md",
     "Tool/Git/Git.md",
     "Tool/python/Python.md",
     "Pre-training/BERT/ALBERT/ALBERT.md",
