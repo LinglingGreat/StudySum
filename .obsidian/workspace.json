@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/InstructionTuning/README.md",
+                "file": "Pre-training/ChatHome/ChatHome.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/InstructionTuning/README.md",
+                "file": "Pre-training/ChatHome/ChatHome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/InstructionTuning/README.md"
+                "file": "Pre-training/ChatHome/ChatHome.md"
               }
             }
           },
@@ -215,10 +215,12 @@
   "active": "5b5985880f768e54",
   "lastOpenFiles": [
     "Pre-training/README.md",
-    "Pre-training/InstructionTuning/README.md",
-    "Pre-training/InstructionTuning",
+    "Pre-training/ChatHome/ChatHome.md",
+    "Pre-training/ChatHome",
     "Pre-training/预训练语言模型.md",
     "Pre-training/关于LLM的一些思考.md",
+    "Pre-training/InstructionTuning/README.md",
+    "Pre-training/InstructionTuning",
     "Tool/README.md",
     "Tool/Git/Git.md",
     "Inference/Speculative_decoding.md",
@@ -246,11 +248,9 @@
     "Pre-training/LLMs/TigerBot/TigerBot.md",
     "Pre-training/LLMs/Linly/Linly.md",
     "Pre-training/LLMs/Chinese-LLaMA-Alpaca",
-    "Pre-training/LLMs/MedicalGPT/MedicalGPT.md",
     "Pre-training/LLMs/MedicalGPT",
     "Pre-training/LLMs/TigerBot",
     "Pre-training/LLMs/Linly",
-    "Pre-training/LLMs/Vicuna",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175205.png",
