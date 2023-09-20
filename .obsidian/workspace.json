@@ -68,6 +68,18 @@
             }
           },
           {
+            "id": "63b34972df25d289",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "5b5985880f768e54",
             "type": "leaf",
             "state": {
@@ -92,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -158,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/LLaMA汉化工作.md",
+                "file": "Pre-training/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/LLaMA汉化工作.md"
+                "file": "Pre-training/README.md"
               }
             }
           },
@@ -224,21 +236,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7d74b64c4541ef14",
+  "active": "63b34972df25d289",
   "lastOpenFiles": [
-    "github.com/zjunlp/CaMA.md",
+    "Pre-training/关于LLM的一些思考.md",
+    "Tool/Git/Git.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
+    "github.com/zjunlp/CaMA.md",
     "github.com/zjunlp",
     "github.com",
     "Pre-training/LLMs/指令微调.md",
     "Pre-training/Finetune/Finetune.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/ChatHome/ChatHome.md",
-    "Tool/Git/Git.md",
     "Pre-training/README.md",
     "Pre-training/ChatHome",
     "Pre-training/预训练语言模型.md",
-    "Pre-training/关于LLM的一些思考.md",
     "Pre-training/InstructionTuning/README.md",
     "Pre-training/InstructionTuning",
     "Tool/README.md",
