@@ -7,15 +7,21 @@ class PositionwiseFeedForward(nn.Module):
     ''' A two-feed-forward-layer module, 前向传播Feed Forward Network, 包括了Add & Norm '''
 
     def __init__(self, d_in, d_hid, dropout=0.1):
+        '''
+        :param d_in: embedding的长度，一般是512
+        :param d_hid: inner_layer的维度，2048
+        :param dropout: dropout比率
+        '''
         super().__init__()
-        self.w_1 = nn.Linear(d_in, d_hid) # position-wise
-        self.w_2 = nn.Linear(d_hid, d_in) # position-wise
+        self.w_1 = nn.Linear(d_in, d_hid)  # position-wise
+        self.w_2 = nn.Linear(d_hid, d_in)  # position-wise
         self.layer_norm = nn.LayerNorm(d_in, eps=1e-6)
         self.dropout = nn.Dropout(dropout)
 
     def forward(self, x):
         residual = x
         x = self.w_2(F.relu(self.w_1(x)))
+        # 这里dropout的位置和harward实现方法中dropout的位置不同
         x = self.dropout(x)
         x += residual
         x = self.layer_norm(x)
@@ -26,11 +32,22 @@ class ScaledDotProductAttention(nn.Module):
     ''' Scaled Dot-Product Attention '''
 
     def __init__(self, temperature, attn_dropout=0.1):
+        '''
+        :param temperature: attention中的缩放系数，一般等于math.sqrt(词嵌入维度)
+        :param attn_dropout: dropout比率
+        '''
         super().__init__()
         self.temperature = temperature
         self.dropout = nn.Dropout(attn_dropout)
 
     def forward(self, q, k, v, mask=None):
+        '''
+        :param q:
+        :param k:
+        :param v:
+        :param mask:
+        :return:
+        '''
 
         attn = torch.matmul(q / self.temperature, k.transpose(2, 3))
 
@@ -42,10 +59,18 @@ class ScaledDotProductAttention(nn.Module):
 
         return output, attn
 
+
 class MultiHeadAttention(nn.Module):
     ''' Multi-Head Attention module '''
 
     def __init__(self, n_head, d_model, d_k, d_v, dropout=0.1):
+        '''
+        :param n_head: 头的个数，一般是8
+        :param d_model: 序列embedding长度，一般是512
+        :param d_k: key矩阵中的列数，等于d_model // n_head
+        :param d_v: value矩阵中的列数，等于d_model // n_head
+        :param dropout: dropout
+        '''
         super().__init__()
 
         self.n_head = n_head
@@ -63,19 +88,26 @@ class MultiHeadAttention(nn.Module):
         self.layer_norm = nn.LayerNorm(d_model, eps=1e-6)
 
     def forward(self, q, k, v, mask=None):
-
+        '''
+        :param q: (batch_size, seq_len, embed_dim)
+        :param k: (batch_size, seq_len, embed_dim)
+        :param v: (batch_size, seq_len, embed_dim)
+        :param mask:
+        :return: 经过多头注意力+线性层+dropout+残差连接+layer_norm的输出 (batch_size, seq_len, embed_dim)
+        '''
         d_k, d_v, n_head = self.d_k, self.d_v, self.n_head
         sz_b, len_q, len_k, len_v = q.size(0), q.size(1), k.size(1), v.size(1)
 
         residual = q
 
         # Pass through the pre-attention projection: b x lq x (n*dv)
-        # Separate different heads: b x lq x n x dv
+        # Separate different heads: b x lq x n x dv，多加了一个维度n代表头，这样就意味着每个头可以获得一部分词特征组成的句子
         q = self.w_qs(q).view(sz_b, len_q, n_head, d_k)
         k = self.w_ks(k).view(sz_b, len_k, n_head, d_k)
         v = self.w_vs(v).view(sz_b, len_v, n_head, d_v)
 
         # Transpose for attention dot product: b x n x lq x dv
+        # 为了让代表句子长度维度和词向量维度能够相邻，这样注意力机制才能找到词义与句子位置的关系
         q, k, v = q.transpose(1, 2), k.transpose(1, 2), v.transpose(1, 2)
 
         if mask is not None:

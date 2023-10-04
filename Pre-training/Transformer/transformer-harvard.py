@@ -12,7 +12,7 @@ def attention(query, key, value, mask=None, dropout=None):
     :param key:
     :param value:
     :param mask:
-    :param dropout:
+    :param dropout: dropout
     :return:
     '''
     # 首先取query的最后一维的大小，对应词嵌入维度
@@ -37,7 +37,9 @@ class PositionwiseFeedForward(nn.Module):
     """前向传播Feed Forward Network"""
 
     def __init__(self, d_model, d_ff, dropout=0.1):
-        # 初始化函数有三个输入参数分别是d_model，d_ff，和dropout=0.1，第一个是线性层的输入维度也是第二个线性层的输出维度，因为我们希望输入通过前馈全连接层后输入和输出的维度不变，第二个参数d_ff就是第二个线性层的输入维度和第一个线性层的输出，最后一个是dropout置0比率。
+        # 初始化函数有三个输入参数分别是d_model，d_ff，和dropout=0.1，
+        # 第一个是线性层的输入维度也是第二个线性层的输出维度，因为我们希望输入通过前馈全连接层后输入和输出的维度不变，
+        # 第二个参数d_ff就是第二个线性层的输入维度和第一个线性层的输出，最后一个是dropout置0比率。
         super(PositionwiseFeedForward, self).__init__()
         self.w_1 = nn.Linear(d_model, d_ff)
         self.w_2 = nn.Linear(d_ff, d_model)
@@ -46,6 +48,116 @@ class PositionwiseFeedForward(nn.Module):
     def forward(self, x):
         # 输入参数为x，代表来自上一层的输出，首先经过第一个线性层，然后使用F中的relu函数进行激活，之后再使用dropout进行随机置0，最后通过第二个线性层w2，返回最终结果
         return self.w_2(self.dropout(F.relu(self.w_1(x))))
+
+
+class MultiHeadedAttention(nn.Module):
+    def __init__(self, h, d_model, dropout=0.1):
+        # 在类的初始化时，会传入三个参数，h代表头数，d_model代表词嵌入的维度，dropout代表进行dropout操作时置0比率，默认是0.1
+        super(MultiHeadedAttention, self).__init__()
+        # 在函数中，首先使用了一个测试中常用的assert语句，判断h是否能被d_model整除，这是因为我们之后要给每个头分配等量的词特征，也就是embedding_dim/head个
+        assert d_model % h == 0
+        # We assume d_v always equals d_k
+        # 得到每个头获得的分割词向量维度d_k
+        self.d_k = d_model // h
+        # 传入头数h
+        self.h = h
+        # 创建linear层，通过nn的Linear实例化，它的内部变换矩阵是embedding_dim x embedding_dim，然后使用，
+        # 为什么是四个呢，这是因为在多头注意力中，Q,K,V各需要一个，最后拼接的矩阵还需要一个，因此一共是四个
+        self.linears = clones(nn.Linear(d_model, d_model), 4)
+        # self.attn为None，它代表最后得到的注意力张量，现在还没有结果所以为None
+        self.attn = None
+        self.dropout = nn.Dropout(p=dropout)
+
+    def forward(self, query, key, value, mask=None):
+        # 前向逻辑函数，它输入参数有四个，前三个就是注意力机制需要的Q,K,V，最后一个是注意力机制中可能需要的mask掩码张量，默认是None
+        if mask is not None:
+            # Same mask applied to all h heads.
+            # 使用unsqueeze扩展维度，代表多头中的第n头
+            # 所有h个head的mask都是相同的
+            mask = mask.unsqueeze(1)
+
+        # 接着，我们获得一个batch_size的变量，他是query尺寸的第1个数字，代表有多少条样本
+        nbatches = query.size(0)
+
+        # 1) 首先使用线性变换，然后把d_model分配给h个Head，每个head为d_k=d_model/h
+        # 1) Do all the linear projections in batch from d_model => h x d_k
+        # 首先利用zip将输入QKV与三个线性层组到一起，然后利用for循环，将输入QKV分别传到线性层中，做完线性变换后，开始为每个头分割输入，
+        # 这里使用view方法对线性变换的结构进行维度重塑，多加了一个维度h代表头，这样就意味着每个头可以获得一部分词特征组成的句子，
+        # 其中的-1代表自适应维度，计算机会根据这种变换自动计算这里的值，
+        # 然后对第二维和第三维进行转置操作，为了让代表句子长度维度和词向量维度能够相邻，这样注意力机制才能找到词义与句子位置的关系，
+        # 从attention函数中可以看到，利用的是原始输入的倒数第一和第二维，这样我们就得到了每个头的输入
+        query, key, value = \
+            [l(x).view(nbatches, -1, self.h, self.d_k).transpose(1, 2)
+             for l, x in zip(self.linears, (query, key, value))]
+
+        # 2) 使用attention函数计算
+        # 2) Apply attention on all the projected vectors in batch.
+        # 得到每个头的输入后，接下来就是将他们传入到attention中，这里直接调用我们之前实现的attention函数，同时也将mask和dropout传入其中
+        x, self.attn = attention(query, key, value, mask=mask,
+                                 dropout=self.dropout)
+
+        # 3) 把8个head的64维向量拼接成一个512的向量。然后再使用一个线性变换(512,521)，shape不变。
+        # 3) "Concat" using a view and apply a final linear.
+        # 通过多头注意力计算后，我们就得到了每个头计算结果组成的4维张量，我们需要将其转换为输入的形状以方便后续的计算，
+        # 因此这里开始进行第一步处理环节的逆操作，先对第二和第三维进行转置，然后使用contiguous方法。
+        # 这个方法的作用就是能够让转置后的张量应用view方法，否则将无法直接使用，所以，下一步就是使用view重塑形状，变成和输入形状相同。
+        x = x.transpose(1, 2).contiguous() \
+            .view(nbatches, -1, self.h * self.d_k)
+        # 最后使用线性层列表中的最后一个线性变换得到最终的多头注意力结构的输出
+        return self.linears[-1](x)
+
+
+class Embeddings(nn.Module):
+    def __init__(self, d_model, vocab):
+        """
+        类的初始化函数
+        d_model：指词嵌入的维度
+        vocab:指词表的大小
+        """
+
+    super(Embeddings, self).__init__()
+    # 之后就是调用nn中的预定义层Embedding，获得一个词嵌入对象self.lut
+    self.lut = nn.Embedding(vocab, d_model)
+    # 最后就是将d_model传入类中
+    self.d_model = d_model
+
+    def forward(self, x):
+        """
+        Embedding层的前向传播逻辑
+        参数x：这里代表输入给模型的单词文本通过词表映射后的one-hot向量
+        将x传给self.lut并与根号下self.d_model相乘作为结果返回
+        """
+        return self.lut(x) * math.sqrt(self.d_model)
+
+
+class PositionalEncoding(nn.Module):
+    def __init__(self, d_model, dropout, max_len=5000):
+        """
+        位置编码器类的初始化函数
+
+        共有三个参数，分别是
+        d_model：词嵌入维度
+        dropout: dropout触发比率
+        max_len：每个句子的最大长度
+        """
+        super(PositionalEncoding, self).__init__()
+        self.dropout = nn.Dropout(p=dropout)
+
+        # Compute the positional encodings once in log space.
+        # 注意下面代码的计算方式与公式中给出的是不同的，但是是等价的，你可以尝试简单推导证明一下。
+        # 这样计算是为了避免中间的数值计算结果超出float的范围，
+        pe = torch.zeros(max_len, d_model)
+        position = torch.arange(0, max_len).unsqueeze(1)
+        div_term = torch.exp(torch.arange(0, d_model, 2) *
+                             -(math.log(10000.0) / d_model))
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+        pe = pe.unsqueeze(0)
+        self.register_buffer('pe', pe)
+
+    def forward(self, x):
+        x = x + Variable(self.pe[:, :x.size(1)], requires_grad=False)
+        return self.dropout(x)
 
 
 class EncoderDecoder(nn.Module):
@@ -234,112 +346,6 @@ def subsequent_mask(size):
     # 如果是0，subsequent_mask中的该位置由0变成1
     # 如果是1，subsequect_mask中的该位置由1变成0
     return torch.from_numpy(subsequent_mask) == 0
-
-
-class MultiHeadedAttention(nn.Module):
-    def __init__(self, h, d_model, dropout=0.1):
-        # 在类的初始化时，会传入三个参数，h代表头数，d_model代表词嵌入的维度，dropout代表进行dropout操作时置0比率，默认是0.1
-        super(MultiHeadedAttention, self).__init__()
-        # 在函数中，首先使用了一个测试中常用的assert语句，判断h是否能被d_model整除，这是因为我们之后要给每个头分配等量的词特征，也就是embedding_dim/head个
-        assert d_model % h == 0
-        # We assume d_v always equals d_k
-        # 得到每个头获得的分割词向量维度d_k
-        self.d_k = d_model // h
-        # 传入头数h
-        self.h = h
-        # 创建linear层，通过nn的Linear实例化，它的内部变换矩阵是embedding_dim x embedding_dim，然后使用，为什么是四个呢，这是因为在多头注意力中，Q,K,V各需要一个，最后拼接的矩阵还需要一个，因此一共是四个
-        self.linears = clones(nn.Linear(d_model, d_model), 4)
-        # self.attn为None，它代表最后得到的注意力张量，现在还没有结果所以为None
-        self.attn = None
-        self.dropout = nn.Dropout(p=dropout)
-
-    def forward(self, query, key, value, mask=None):
-        # 前向逻辑函数，它输入参数有四个，前三个就是注意力机制需要的Q,K,V，最后一个是注意力机制中可能需要的mask掩码张量，默认是None
-        if mask is not None:
-            # Same mask applied to all h heads.
-            # 使用unsqueeze扩展维度，代表多头中的第n头
-            # 所有h个head的mask都是相同的
-            mask = mask.unsqueeze(1)
-
-        # 接着，我们获得一个batch_size的变量，他是query尺寸的第1个数字，代表有多少条样本
-        nbatches = query.size(0)
-
-        # 1) 首先使用线性变换，然后把d_model分配给h个Head，每个head为d_k=d_model/h
-        # 1) Do all the linear projections in batch from d_model => h x d_k
-        # 首先利用zip将输入QKV与三个线性层组到一起，然后利用for循环，将输入QKV分别传到线性层中，做完线性变换后，开始为每个头分割输入，这里使用view方法对线性变换的结构进行维度重塑，多加了一个维度h代表头，这样就意味着每个头可以获得一部分词特征组成的句子，其中的-1代表自适应维度，计算机会根据这种变换自动计算这里的值，然后对第二维和第三维进行转置操作，为了让代表句子长度维度和词向量维度能够相邻，这样注意力机制才能找到词义与句子位置的关系，从attention函数中可以看到，利用的是原始输入的倒数第一和第二维，这样我们就得到了每个头的输入
-        query, key, value = \
-            [l(x).view(nbatches, -1, self.h, self.d_k).transpose(1, 2)
-             for l, x in zip(self.linears, (query, key, value))]
-
-        # 2) 使用attention函数计算
-        # 2) Apply attention on all the projected vectors in batch.
-        # 得到每个头的输入后，接下来就是将他们传入到attention中，这里直接调用我们之前实现的attention函数，同时也将mask和dropout传入其中
-        x, self.attn = attention(query, key, value, mask=mask,
-                                 dropout=self.dropout)
-
-        # 3) 把8个head的64维向量拼接成一个512的向量。然后再使用一个线性变换(512,521)，shape不变。
-        # 3) "Concat" using a view and apply a final linear.
-        # 通过多头注意力计算后，我们就得到了每个头计算结果组成的4维张量，我们需要将其转换为输入的形状以方便后续的计算，因此这里开始进行第一步处理环节的逆操作，先对第二和第三维进行转置，然后使用contiguous方法。这个方法的作用就是能够让转置后的张量应用view方法，否则将无法直接使用，所以，下一步就是使用view重塑形状，变成和输入形状相同。
-        x = x.transpose(1, 2).contiguous() \
-            .view(nbatches, -1, self.h * self.d_k)
-
-
-        # 最后使用线性层列表中的最后一个线性变换得到最终的多头注意力结构的输出
-        return self.linears[-1](x)
-
-
-class Embeddings(nn.Module):
-    def __init__(self, d_model, vocab):
-        """
-        类的初始化函数
-        d_model：指词嵌入的维度
-        vocab:指词表的大小
-        """
-
-    super(Embeddings, self).__init__()
-    # 之后就是调用nn中的预定义层Embedding，获得一个词嵌入对象self.lut
-    self.lut = nn.Embedding(vocab, d_model)
-    # 最后就是将d_model传入类中
-    self.d_model = d_model
-
-    def forward(self, x):
-        """
-        Embedding层的前向传播逻辑
-        参数x：这里代表输入给模型的单词文本通过词表映射后的one-hot向量
-        将x传给self.lut并与根号下self.d_model相乘作为结果返回
-        """
-        return self.lut(x) * math.sqrt(self.d_model)
-
-
-class PositionalEncoding(nn.Module):
-    def __init__(self, d_model, dropout, max_len=5000):
-        """
-        位置编码器类的初始化函数
-
-        共有三个参数，分别是
-        d_model：词嵌入维度
-        dropout: dropout触发比率
-        max_len：每个句子的最大长度
-        """
-
-    super(PositionalEncoding, self).__init__()
-    self.dropout = nn.Dropout(p=dropout)
-
-    # Compute the positional encodings once in log space.
-    # 注意下面代码的计算方式与公式中给出的是不同的，但是是等价的，你可以尝试简单推导证明一下。
-    # 这样计算是为了避免中间的数值计算结果超出float的范围，
-    pe = torch.zeros(max_len, d_model)
-    position = torch.arange(0, max_len).unsqueeze(1)
-    div_term = torch.exp(torch.arange(0, d_model, 2) *
-                         -(math.log(10000.0) / d_model))
-    pe[:, 0::2] = torch.sin(position * div_term)
-    pe[:, 1::2] = torch.cos(position * div_term)
-    pe = pe.unsqueeze(0)
-    self.register_buffer('pe', pe)
-
-    def forward(self, x):
-        x = x + Variable(self.pe[:, :x.size(1)], requires_grad=False)
-        return self.dropout(x)
 
 
 def make_model(src_vocab, tgt_vocab, N=6,
