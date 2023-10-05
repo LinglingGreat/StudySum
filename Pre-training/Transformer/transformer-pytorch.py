@@ -93,7 +93,7 @@ class MultiHeadAttention(nn.Module):
         :param k: (batch_size, seq_len, embed_dim)
         :param v: (batch_size, seq_len, embed_dim)
         :param mask:
-        :return: 经过多头注意力+线性层+dropout+残差连接+layer_norm的输出 (batch_size, seq_len, embed_dim)
+        :return: 经过多头注意力+线性层+dropout+残差连接+layer_norm的输出 (batch_size, seq_len, embed_dim), 以及attention
         '''
         d_k, d_v, n_head = self.d_k, self.d_v, self.n_head
         sz_b, len_q, len_k, len_v = q.size(0), q.size(1), k.size(1), v.size(1)
