@@ -25,8 +25,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Transformer/Transformer.md",
-                "mode": "preview",
+                "file": "Pre-training/Qwen/Qwen.md",
+                "mode": "source",
                 "source": false
               }
             }
@@ -145,7 +145,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "attention",
+                "query": " ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -162,11 +162,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 365.5
+    "width": 200.5
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -182,7 +183,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Transformer/Transformer.md",
+                "file": "Pre-training/Qwen/Qwen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +211,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Transformer/Transformer.md"
+                "file": "Pre-training/Qwen/Qwen.md"
               }
             }
           },
@@ -245,7 +246,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -260,51 +262,51 @@
   },
   "active": "30da3563a63dcd83",
   "lastOpenFiles": [
+    "Pre-training/Qwen/img/Pasted image 20231006170259.png",
+    "Pre-training/Qwen/img/Pasted image 20231006170027.png",
+    "Pre-training/Qwen/img/Pasted image 20231006165813.png",
+    "Pre-training/Qwen/img/Pasted image 20231006165627.png",
+    "Pre-training/Qwen/img",
+    "Pre-training/Lion/Lion.md",
+    "Pre-training/Qwen/Qwen.md",
+    "Pre-training/Qwen",
+    "Pre-training/GLM/GLM.md",
+    "Pre-training/XLNet/XLNet.md",
+    "Pre-training/LLMs/README.md",
+    "Pre-training/LLMs/LLaMA汉化工作.md",
+    "Pre-training/LLMs/指令微调.md",
+    "Pre-training/README.md",
+    "Pre-training/ChatHome/ChatHome.md",
+    "Pre-training/Transformer/Transformer.md",
     "Pre-training/Transformer/transformer-harvard.py",
     "Pre-training/Transformer/transformer-origin.py",
     "Pre-training/Transformer/transformer-pytorch_副本.py",
     "Pre-training/Transformer/transformer-pytorch.md",
     "Pre-training/Transformer/transformer-pytorch.py",
-    "Pre-training/Transformer/Transformer.md",
     "Tool/Git/Git.md",
     "Tool/Linux/Linux.md",
-    "Pre-training/README.md",
     "Pre-training/关于LLM的一些思考.md",
-    "Pre-training/LLMs/LLaMA汉化工作.md",
     "github.com/zjunlp/CaMA.md",
     "github.com/zjunlp",
     "github.com",
-    "Pre-training/LLMs/指令微调.md",
     "Pre-training/Finetune/Finetune.md",
-    "Pre-training/LLMs/README.md",
-    "Pre-training/ChatHome/ChatHome.md",
     "Pre-training/ChatHome",
     "Pre-training/预训练语言模型.md",
     "Pre-training/InstructionTuning/README.md",
     "Pre-training/InstructionTuning",
     "Tool/README.md",
     "Inference/Speculative_decoding.md",
-    "Inference",
     "Tool/python/Python.md",
     "Pre-training/BERT/ALBERT/ALBERT.md",
     "Pre-training/Base/Attention/Attention.md",
     "Tool/python/Application/用python进行语言检测.md",
     "CV/README.md",
-    "Pre-training/LORA/LORA.md",
-    "CV/BLIP2/BLIP2.md",
-    "CV/BLIP/BLIP.md",
-    "Pre-training/LLMs/BiLLa/BiLLa.md",
-    "Pre-training/LLMs/BiLLa",
     "Pre-training/LLMs/YuLan-Chat/img/Pasted image 20230611102052.png",
-    "Pre-training/LLMs/YuLan-Chat/img",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175205.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175146.png",
     "Pre-training/CoT/AutoCoT/img/Pasted image 20230604151605.png",
-    "CV/MultiModal/img/Pasted image 20230508150354.png",
-    "CV/MultiModal/img/Pasted image 20230508150337.png",
-    "CV/MultiModal/img/Pasted image 20230508150322.png",
-    "CV/MultiModal/img/Pasted image 20230508150253.png"
+    "CV/MultiModal/img/Pasted image 20230508150354.png"
   ]
 }
