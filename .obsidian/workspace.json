@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Qwen/Qwen.md",
+                "file": "Pre-training/ChatGPT/PromptEngineer.md",
                 "mode": "source",
                 "source": false
               }
@@ -145,7 +145,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": " ",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -162,8 +162,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -183,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Qwen/Qwen.md",
+                "file": "Pre-training/ChatGPT/PromptEngineer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -211,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Qwen/Qwen.md"
+                "file": "Pre-training/ChatGPT/PromptEngineer.md"
               }
             }
           },
@@ -262,20 +261,36 @@
   },
   "active": "30da3563a63dcd83",
   "lastOpenFiles": [
+    "Pre-training/Prompt/Prompt.md",
+    "Pre-training/ChatGPT/PromptEngineer.md",
+    "DataRelated/PretrainDataset/PretrainDataset.md",
+    "Pre-training/README.md",
+    "Pre-training/CoT/CoT.md",
+    "DataRelated/Dataset/Dataset.md",
+    "DataRelated/NLGDataset/生成任务.md",
+    "DataRelated/PretrainDataset",
+    "DataRelated/NLGDataset/对话数据集.md",
+    "Pre-training/Baichuan/Baichuan.md",
+    "Pre-training/Qwen/Qwen.md",
+    "Pre-training/Baichuan/img/Pasted image 20231006175850.png",
+    "Pre-training/Baichuan/img/Pasted image 20231006175752.png",
+    "Pre-training/Baichuan/img",
+    "Pre-training/BERT/BERT-flow/BERT-flow.md",
+    "Pre-training/BERTZip/模型压缩.md",
+    "Pre-training/量化/模型量化.md",
+    "Pre-training/Baichuan",
     "Pre-training/Qwen/img/Pasted image 20231006170259.png",
     "Pre-training/Qwen/img/Pasted image 20231006170027.png",
     "Pre-training/Qwen/img/Pasted image 20231006165813.png",
     "Pre-training/Qwen/img/Pasted image 20231006165627.png",
     "Pre-training/Qwen/img",
     "Pre-training/Lion/Lion.md",
-    "Pre-training/Qwen/Qwen.md",
     "Pre-training/Qwen",
     "Pre-training/GLM/GLM.md",
     "Pre-training/XLNet/XLNet.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/LLMs/指令微调.md",
-    "Pre-training/README.md",
     "Pre-training/ChatHome/ChatHome.md",
     "Pre-training/Transformer/Transformer.md",
     "Pre-training/Transformer/transformer-harvard.py",
@@ -288,25 +303,9 @@
     "Pre-training/关于LLM的一些思考.md",
     "github.com/zjunlp/CaMA.md",
     "github.com/zjunlp",
-    "github.com",
-    "Pre-training/Finetune/Finetune.md",
-    "Pre-training/ChatHome",
-    "Pre-training/预训练语言模型.md",
-    "Pre-training/InstructionTuning/README.md",
-    "Pre-training/InstructionTuning",
-    "Tool/README.md",
-    "Inference/Speculative_decoding.md",
-    "Tool/python/Python.md",
-    "Pre-training/BERT/ALBERT/ALBERT.md",
-    "Pre-training/Base/Attention/Attention.md",
-    "Tool/python/Application/用python进行语言检测.md",
-    "CV/README.md",
     "Pre-training/LLMs/YuLan-Chat/img/Pasted image 20230611102052.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",
-    "Pre-training/RecurrentGPT/img/Pasted image 20230604175205.png",
-    "Pre-training/RecurrentGPT/img/Pasted image 20230604175146.png",
-    "Pre-training/CoT/AutoCoT/img/Pasted image 20230604151605.png",
-    "CV/MultiModal/img/Pasted image 20230508150354.png"
+    "Pre-training/RecurrentGPT/img/Pasted image 20230604175205.png"
   ]
 }

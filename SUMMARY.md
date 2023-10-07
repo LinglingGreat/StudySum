@@ -287,7 +287,7 @@
     * [BERT面试问答](Pre-training/BERT/BERT面试问答.md)
     * [BERT源码解析](Pre-training/BERT/BERT源码解析.md)
     * [NSP BERT](Pre-training/BERT/NSP-BERT.md)
-  - [BERT Flow](Pre-training/BERT-flow/BERT-flow.md)
+  - [BERT Flow](Pre-training/BERT/BERT-flow/BERT-flow.md)
   - BERT Zip
     - [Distilling The Knowledge In A Neural Network](Pre-training/BERTZip/Distilling_the_Knowledge_in_a_Neural_Network/Distilling_the_Knowledge_in_a_Neural_Network.md)
     - [TINYBERT](Pre-training/BERTZip/TINYBERT/TINYBERT.md)

@@ -113,6 +113,7 @@ MultiArith直接能让GPT-3从17提升到78，换到PaLM上稍微小点，25到6
 
 [增强语言模型之Eliciting reasoning with prompting](https://mp.weixin.qq.com/s/1KkAmqTVlwxwtpEnLUPDWQ)
 
+文献列表： github.com/zchuz/CoT-Reasoning-Survey
 
 
 

@@ -41,3 +41,4 @@
 
 【LLM的评测有关的工具、demo、论文、文档】： [GitHub - onejune2018/Awesome-LLM-Eval: Awesome-LLM-Eval: a curated list of tools, demos, papers, docs for Evaluation on Large Language Models like ChatGPT, LLaMA, GLM](https://github.com/onejune2018/Awesome-LLM-Eval)
 
+【'Xwin-LM：旨在开发并开源大型语言模型的对齐技术，包括监督微调(SFT)、奖励模型(RM)、拒绝采样、人类反馈强化学习(RLHF)等】’Xwin-LM: a collection of LLM alignment technologies and models' GitHub: github.com/Xwin-LM/Xwin-LM
