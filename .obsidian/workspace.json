@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Baichuan/Baichuan.md",
+                "file": "Pre-training/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -52,16 +52,6 @@
                 "file": "Tool/Linux/Linux.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "e532564fb0dc1d5f",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.14"
               }
             }
           },
@@ -126,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -192,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -220,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/README.md"
               }
             }
           },
@@ -269,13 +259,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e532564fb0dc1d5f",
+  "active": "30da3563a63dcd83",
   "lastOpenFiles": [
+    "未命名.canvas",
+    "Pre-training/README.md",
+    "Pre-training/预训练语言模型.md",
     "Pre-training/Baichuan/Baichuan.md",
+    "Tool/Git/Git.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/ChatGPT/PromptEngineer.md",
     "Pre-training/Prompt/Prompt.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
-    "Pre-training/README.md",
     "Pre-training/CoT/CoT.md",
     "DataRelated/Dataset/Dataset.md",
     "DataRelated/NLGDataset/生成任务.md",
@@ -308,10 +302,6 @@
     "Pre-training/Transformer/transformer-pytorch_副本.py",
     "Pre-training/Transformer/transformer-pytorch.md",
     "Pre-training/Transformer/transformer-pytorch.py",
-    "Tool/Git/Git.md",
-    "Tool/Linux/Linux.md",
-    "Pre-training/关于LLM的一些思考.md",
-    "github.com/zjunlp/CaMA.md",
     "github.com/zjunlp",
     "Pre-training/LLMs/YuLan-Chat/img/Pasted image 20230611102052.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
