@@ -252,6 +252,10 @@ rename "s/.txt//" *               //把所有以.txt结尾的文件名的
 
 ```
 
+分割文件，按照行
+`split -l 4000000 -d -a 2 --additional-suffix=".json" RedPajamaC4_train.json RedPajamaC4_train_
+`
+
 ### scp命令
 
 **scp命令在工作中是比较常用的，所以就总结如下：**
