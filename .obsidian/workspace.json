@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "Pre-training/预训练经验/预训练调参心得.md",
                 "mode": "source",
                 "source": false
               }
@@ -115,7 +115,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -181,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -209,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -258,14 +259,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "445096e0eaa0fa14",
+  "active": "c2d39b1542fdd1d5",
   "lastOpenFiles": [
-    "Tool/Linux/Linux.md",
+    "Tool/python/Python.md",
+    "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/README.md",
+    "Pre-training/关于LLM的一些思考.md",
+    "Pre-training/预训练经验/预训练调参心得.md",
+    "Tool/Git/Git.md",
+    "Pre-training/预训练经验",
+    "Tool/Linux/Linux.md",
     "未命名.canvas",
     "Pre-training/预训练语言模型.md",
     "Pre-training/Baichuan/Baichuan.md",
-    "Tool/Git/Git.md",
     "Pre-training/ChatGPT/PromptEngineer.md",
     "Pre-training/Prompt/Prompt.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
@@ -292,16 +298,12 @@
     "Pre-training/GLM/GLM.md",
     "Pre-training/XLNet/XLNet.md",
     "Pre-training/LLMs/README.md",
-    "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/LLMs/指令微调.md",
     "Pre-training/ChatHome/ChatHome.md",
-    "Pre-training/Transformer/Transformer.md",
     "Pre-training/Transformer/transformer-harvard.py",
     "Pre-training/Transformer/transformer-origin.py",
     "Pre-training/Transformer/transformer-pytorch_副本.py",
-    "Pre-training/Transformer/transformer-pytorch.md",
     "Pre-training/Transformer/transformer-pytorch.py",
-    "github.com/zjunlp",
     "Pre-training/LLMs/YuLan-Chat/img/Pasted image 20230611102052.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
     "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",

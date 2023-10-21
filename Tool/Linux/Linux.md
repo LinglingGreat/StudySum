@@ -235,6 +235,23 @@ find /tmp -name 'mobi*' -type f -mmin +360 -o -name 'mobi*' -type d -mmin +360 -
 
 这个命令会列出符合条件的文件和文件夹列表，你可以先检查这个列表，确认没有问题后再执行删除操作。同样地，请谨慎操作，以免意外删除重要文件和文件夹。
 
+## 批量修改文件名(find & rename & sed)
+
+[批量修改文件名(find & rename & sed)\_wx608b59dedd9e5的技术博客\_51CTO博客](https://blog.51cto.com/u_15187242/3773168)
+
+```
+字母的替换
+rename "s/AA/aa/" *             //把文件名中的AA替换成aa
+修改文件的后缀
+rename "s/.html/.php/" *     //把.html 后缀的改成 .php后缀
+批量添加文件后缀
+rename "s/$/.txt/" *             //把所有的文件名都以txt结尾
+批量删除文件名
+rename "s/.txt//" *               //把所有以.txt结尾的文件名的.txt删掉
+
+
+```
+
 ### scp命令
 
 **scp命令在工作中是比较常用的，所以就总结如下：**
