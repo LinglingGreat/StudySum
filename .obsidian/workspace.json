@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/LLMs/LLEMMA/LLEMMA.md",
                 "mode": "source",
                 "source": false
               }
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/LLMs/LLEMMA/LLEMMA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/LLMs/LLEMMA/LLEMMA.md"
               }
             }
           },
@@ -261,6 +261,17 @@
   },
   "active": "c2d39b1542fdd1d5",
   "lastOpenFiles": [
+    "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023223208.png",
+    "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023213059.png",
+    "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023213003.png",
+    "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023212904.png",
+    "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023212833.png",
+    "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023212617.png",
+    "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023212608.png",
+    "Pre-training/LLMs/LLEMMA/img",
+    "Tool/Linux/Linux.md",
+    "Pre-training/LLMs/LLEMMA/LLEMMA.md",
+    "Pre-training/LLMs/LLEMMA",
     "Tool/python/Python.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/README.md",
@@ -268,7 +279,6 @@
     "Pre-training/预训练经验/预训练调参心得.md",
     "Tool/Git/Git.md",
     "Pre-training/预训练经验",
-    "Tool/Linux/Linux.md",
     "未命名.canvas",
     "Pre-training/预训练语言模型.md",
     "Pre-training/Baichuan/Baichuan.md",
@@ -290,23 +300,13 @@
     "Pre-training/Baichuan",
     "Pre-training/Qwen/img/Pasted image 20231006170259.png",
     "Pre-training/Qwen/img/Pasted image 20231006170027.png",
-    "Pre-training/Qwen/img/Pasted image 20231006165813.png",
-    "Pre-training/Qwen/img/Pasted image 20231006165627.png",
     "Pre-training/Qwen/img",
     "Pre-training/Lion/Lion.md",
     "Pre-training/Qwen",
     "Pre-training/GLM/GLM.md",
     "Pre-training/XLNet/XLNet.md",
     "Pre-training/LLMs/README.md",
-    "Pre-training/LLMs/指令微调.md",
-    "Pre-training/ChatHome/ChatHome.md",
     "Pre-training/Transformer/transformer-harvard.py",
-    "Pre-training/Transformer/transformer-origin.py",
-    "Pre-training/Transformer/transformer-pytorch_副本.py",
-    "Pre-training/Transformer/transformer-pytorch.py",
-    "Pre-training/LLMs/YuLan-Chat/img/Pasted image 20230611102052.png",
-    "Pre-training/RecurrentGPT/img/Pasted image 20230604175339.png",
-    "Pre-training/RecurrentGPT/img/Pasted image 20230604175253.png",
-    "Pre-training/RecurrentGPT/img/Pasted image 20230604175205.png"
+    "Pre-training/Transformer/transformer-origin.py"
   ]
 }
