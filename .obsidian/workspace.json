@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/LLEMMA/LLEMMA.md",
+                "file": "Pre-training/LLMs/TigerBot/TigerBot.md",
                 "mode": "source",
                 "source": false
               }
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/LLEMMA/LLEMMA.md",
+                "file": "Pre-training/LLMs/TigerBot/TigerBot.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/LLEMMA/LLEMMA.md"
+                "file": "Pre-training/LLMs/TigerBot/TigerBot.md"
               }
             }
           },
@@ -261,6 +261,9 @@
   },
   "active": "c2d39b1542fdd1d5",
   "lastOpenFiles": [
+    "Pre-training/LLMs/OpenBuddy/OpenBuddy.md",
+    "Pre-training/LLMs/LLEMMA/LLEMMA.md",
+    "Pre-training/LLMs/OpenBuddy",
     "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023223208.png",
     "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023213059.png",
     "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023213003.png",
@@ -270,7 +273,6 @@
     "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023212608.png",
     "Pre-training/LLMs/LLEMMA/img",
     "Tool/Linux/Linux.md",
-    "Pre-training/LLMs/LLEMMA/LLEMMA.md",
     "Pre-training/LLMs/LLEMMA",
     "Tool/python/Python.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
@@ -299,14 +301,12 @@
     "Pre-training/量化/模型量化.md",
     "Pre-training/Baichuan",
     "Pre-training/Qwen/img/Pasted image 20231006170259.png",
-    "Pre-training/Qwen/img/Pasted image 20231006170027.png",
     "Pre-training/Qwen/img",
     "Pre-training/Lion/Lion.md",
     "Pre-training/Qwen",
     "Pre-training/GLM/GLM.md",
     "Pre-training/XLNet/XLNet.md",
     "Pre-training/LLMs/README.md",
-    "Pre-training/Transformer/transformer-harvard.py",
-    "Pre-training/Transformer/transformer-origin.py"
+    "Pre-training/Transformer/transformer-harvard.py"
   ]
 }
