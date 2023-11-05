@@ -129,3 +129,5 @@ PPO阶段共包含四各模型：actor模型、reference模型、reward模型和
 
 [BaiChuan2技术报告细节分享&个人想法](https://mp.weixin.qq.com/s/Xeb0I5FGegMyngC1TWyKCA)
 
+[百川2大模型技术解读【大模型论文系列】 - 知乎](https://zhuanlan.zhihu.com/p/656738705)
+
