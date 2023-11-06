@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Benchmark/README.md",
+                "file": "Pre-training/LLMs/Skywork/Skywork.md",
                 "mode": "source",
                 "source": false
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Benchmark/README.md",
+                "file": "Pre-training/LLMs/Skywork/Skywork.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Benchmark/README.md"
+                "file": "Pre-training/LLMs/Skywork/Skywork.md"
               }
             }
           },
@@ -236,6 +236,9 @@
   },
   "active": "175d024d616172bc",
   "lastOpenFiles": [
+    "Pre-training/Benchmark/README.md",
+    "Pre-training/LLMs/Skywork/Skywork.md",
+    "Pre-training/LLMs/Skywork",
     "Tool/README.md",
     "Pre-training/预训练经验/预训练调参心得.md",
     "Tool/Linux/Linux.md",
@@ -279,9 +282,6 @@
     "Pre-training/Baichuan",
     "Pre-training/Qwen/img/Pasted image 20231006170259.png",
     "Pre-training/Qwen/img",
-    "Pre-training/Lion/Lion.md",
-    "Pre-training/Qwen",
-    "Pre-training/GLM/GLM.md",
-    "Pre-training/Transformer/transformer-harvard.py"
+    "Pre-training/Qwen"
   ]
 }
