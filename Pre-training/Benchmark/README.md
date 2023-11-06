@@ -49,3 +49,7 @@ BBH
 
 C-Eval是全面的中文基础模型评估套件，涵盖了52个不同学科的13948个多项选择题，分为四个难度级别： https://github.com/SJTU-LIT/ceval
 
+
+[GitHub - GPT-Fathom/GPT-Fathom: GPT-Fathom is an open-source and reproducible LLM evaluation suite, benchmarking 10+ leading open-source and closed-source LLMs as well as OpenAI's earlier models on 20+ curated benchmarks under aligned settings.](https://github.com/GPT-Fathom/GPT-Fathom)
+[mp.weixin.qq.com/s/-AWkDzAzoyQNmgYXuC6B4w](https://mp.weixin.qq.com/s/-AWkDzAzoyQNmgYXuC6B4w)
+
