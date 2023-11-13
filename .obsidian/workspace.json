@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/预训练经验/预训练调参心得.md",
+                "file": "Pre-training/Parallelism/预训练调参心得.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/Parallelism/BLOOM训练背后的技术.md",
                 "mode": "source",
                 "source": false
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/Parallelism/BLOOM训练背后的技术.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/Parallelism/BLOOM训练背后的技术.md"
               }
             }
           },
@@ -236,12 +236,15 @@
   },
   "active": "79c2d1de81dc072e",
   "lastOpenFiles": [
+    "Pre-training/Parallelism/预训练调参心得.md",
+    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+    "Pre-training/Parallelism/img/Pasted image 20231112190251.png",
+    "Pre-training/Parallelism/img",
+    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/Skywork/Skywork.md",
     "Pre-training/Benchmark/README.md",
     "Pre-training/LLMs/Skywork",
     "Tool/README.md",
-    "Pre-training/预训练经验/预训练调参心得.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/关于LLM的一些思考.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/README.md",
@@ -261,7 +264,7 @@
     "Pre-training/LLMs/LLEMMA/img",
     "Pre-training/LLMs/LLEMMA",
     "Tool/Git/Git.md",
-    "Pre-training/预训练经验",
+    "Pre-training/Parallelism",
     "未命名.canvas",
     "Pre-training/预训练语言模型.md",
     "Pre-training/ChatGPT/PromptEngineer.md",
@@ -277,11 +280,7 @@
     "Pre-training/Baichuan/img/Pasted image 20231006175752.png",
     "Pre-training/Baichuan/img",
     "Pre-training/BERT/BERT-flow/BERT-flow.md",
-    "Pre-training/BERTZip/模型压缩.md",
-    "Pre-training/量化/模型量化.md",
     "Pre-training/Baichuan",
-    "Pre-training/Qwen/img/Pasted image 20231006170259.png",
-    "Pre-training/Qwen/img",
-    "Pre-training/Qwen"
+    "Pre-training/Qwen/img"
   ]
 }
