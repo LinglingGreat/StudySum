@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Parallelism/预训练调参心得.md",
+                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
                 "mode": "source",
                 "source": false
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Parallelism/BLOOM训练背后的技术.md"
+                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md"
               }
             }
           },
@@ -236,8 +236,8 @@
   },
   "active": "79c2d1de81dc072e",
   "lastOpenFiles": [
-    "Pre-training/Parallelism/预训练调参心得.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/img/Pasted image 20231112190251.png",
     "Pre-training/Parallelism/img",
     "Tool/Linux/Linux.md",
