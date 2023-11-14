@@ -43,6 +43,10 @@
 
 【'Xwin-LM：旨在开发并开源大型语言模型的对齐技术，包括监督微调(SFT)、奖励模型(RM)、拒绝采样、人类反馈强化学习(RLHF)等】’Xwin-LM: a collection of LLM alignment technologies and models' GitHub: github.com/Xwin-LM/Xwin-LM
 
+领域大模型： [GitHub - luban-agi/Awesome-Domain-LLM: 收集和梳理垂直领域的开源模型、数据集及评测基准。](https://github.com/luban-agi/Awesome-Domain-LLM)
+
+
+
 
 ## 训练情况对比
 

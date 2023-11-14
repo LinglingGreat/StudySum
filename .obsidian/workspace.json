@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/README.md",
+                "file": "Tool/Linux/Linux.md",
                 "mode": "source",
                 "source": false
               }
@@ -62,18 +62,6 @@
               "type": "markdown",
               "state": {
                 "file": "Pre-training/LLMs/Skywork/Skywork.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "79c2d1de81dc072e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
                 "mode": "source",
                 "source": false
               }
@@ -121,7 +109,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "yaofu",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -138,11 +126,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 219.5
+    "width": 280.5
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -158,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
+                "file": "Pre-training/关于LLM的一些思考.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md"
+                "file": "Pre-training/关于LLM的一些思考.md"
               }
             }
           },
@@ -234,20 +223,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "79c2d1de81dc072e",
+  "active": "bb2fda3c447a41f6",
   "lastOpenFiles": [
-    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+    "Pre-training/README.md",
+    "Pre-training/业界分享/Good_Articles.md",
+    "Pre-training/关于LLM的一些思考.md",
+    "Tool/Linux/Linux.md",
+    "Tool/README.md",
+    "Pre-training/LLMs/Skywork/Skywork.md",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
+    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/Parallelism/img/Pasted image 20231112190251.png",
     "Pre-training/Parallelism/img",
-    "Tool/Linux/Linux.md",
-    "Pre-training/LLMs/Skywork/Skywork.md",
     "Pre-training/Benchmark/README.md",
     "Pre-training/LLMs/Skywork",
-    "Tool/README.md",
-    "Pre-training/关于LLM的一些思考.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
-    "Pre-training/README.md",
     "Tool/python/Python.md",
     "Pre-training/Baichuan/Baichuan.md",
     "Pre-training/LLMs/TigerBot/TigerBot.md",
