@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Parallelism/Megatron.md",
+                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
                 "mode": "source",
                 "source": false
               }
@@ -145,7 +145,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Parallelism/Megatron.md",
+                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +173,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Parallelism/Megatron.md"
+                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md"
               }
             }
           },
