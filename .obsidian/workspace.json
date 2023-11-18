@@ -79,7 +79,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -145,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -221,11 +222,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "445096e0eaa0fa14",
+  "active": "de4736d71e61d33e",
   "lastOpenFiles": [
+    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/Parallelism/Megatron.md",
-    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/关于LLM的一些思考.md",
     "Pre-training/README.md",
     "Pre-training/业界分享/Good_Articles.md",

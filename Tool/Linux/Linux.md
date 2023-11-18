@@ -677,6 +677,7 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 #SBATCH --cpus-per-task=8        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=32G                # total memory per node (4 GB per cpu-core is default)
 #SBATCH --gres=gpu:2             # number of gpus per node
+#SBATCH --output=%x-%j.out           # output file name, %x is jobname, %y is jobid
 
 export MASTER_PORT=$(expr 10000 + $(echo -n $SLURM_JOBID | tail -c 4))
 export WORLD_SIZE=$(($SLURM_NNODES * $SLURM_NTASKS_PER_NODE))
@@ -722,7 +723,7 @@ accelerate launch --num_processes $(( 8 * $COUNT_NODE )) --num_machines $COUNT_N
 #!/bin/bash
 #SBATCH --job-name=test     # create a short name for your job
 #SBATCH --nodes=2                # node count
-#SBATCH --ntasks-per-node=1      # total number of tasks per node
+#SBATCH --ntasks-per-node=1      # total number of tasks per node, crucial - only 1 task per dist per node!
 #SBATCH --cpus-per-task=8        # cpu-cores per task (>1 if multi-threaded tasks)
 #SBATCH --mem=32G                # total memory per node (4 GB per cpu-core is default)
 #SBATCH --gres=gpu:8             # number of gpus per node
