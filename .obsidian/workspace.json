@@ -79,8 +79,7 @@
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -146,7 +145,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/LLMs/Ziya/Ziya2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +173,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/LLMs/Ziya/Ziya2.md"
               }
             }
           },
@@ -222,8 +221,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "de4736d71e61d33e",
+  "active": "445096e0eaa0fa14",
   "lastOpenFiles": [
+    "Pre-training/LLMs/Ziya/img/Pasted image 20231121165737.png",
+    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/Ziya/Ziya2.md",
     "Pre-training/LLMs/Ziya/img/Pasted image 20231121133736.png",
     "Pre-training/LLMs/Ziya/img/Pasted image 20231121133250.png",
@@ -234,7 +235,6 @@
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/LLMs/Ziya",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/关于LLM的一些思考.md",
     "Pre-training/README.md",
