@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+                "file": "Pre-training/LLMs/Ziya/Ziya2.md",
                 "mode": "source",
                 "source": false
               }
@@ -145,7 +145,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+                "file": "Pre-training/LLMs/Ziya/Ziya2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +173,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Parallelism/BLOOM训练背后的技术.md"
+                "file": "Pre-training/LLMs/Ziya/Ziya2.md"
               }
             }
           },
@@ -221,11 +221,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "445096e0eaa0fa14",
   "lastOpenFiles": [
+    "Pre-training/LLMs/Ziya/img/Pasted image 20231121102555.png",
+    "Pre-training/LLMs/Ziya/img/Pasted image 20231121101957.png",
+    "Pre-training/LLMs/Ziya/img",
+    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+    "Pre-training/LLMs/Ziya/Ziya2.md",
+    "Pre-training/LLMs/Ziya",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Tool/Linux/Linux.md",
-    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/关于LLM的一些思考.md",
     "Pre-training/README.md",
@@ -263,12 +268,7 @@
     "DataRelated/Dataset/Dataset.md",
     "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/PretrainDataset",
-    "DataRelated/NLGDataset/对话数据集.md",
-    "Pre-training/Qwen/Qwen.md",
     "Pre-training/Baichuan/img/Pasted image 20231006175850.png",
-    "Pre-training/Baichuan/img/Pasted image 20231006175752.png",
-    "Pre-training/Baichuan/img",
-    "Pre-training/Baichuan",
-    "Pre-training/Qwen/img"
+    "Pre-training/Baichuan/img"
   ]
 }
