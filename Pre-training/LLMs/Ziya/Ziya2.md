@@ -44,24 +44,30 @@ softmax用FP32
 
 ## 训练
 
-速度：163 TFLOPS/per gpu/per sec
-
 初始化：这里没看懂，应该是加权平均初始化新的token的embedding
-
-![](img/Pasted%20image%2020231121165737.png)
 
 
 ![](img/Pasted%20image%2020231121101957.png)
 
 基于LLaMA2-13B扩充词表，训练了700B tokens
 
-第一阶段：大量高质量中英文数据，650B。英文数据分布和llama2类似。
+第一阶段：大量高质量中英文数据，650B。英文数据分布和llama2类似。不同数据之间做了attention mask，互相看不到。
 
-第二阶段：加入了有监督数据
+第二阶段：加入了中英文有监督数据。拼接同类型的instruct数据到4096，多余的用pad填充。
 
 第三阶段：focus在数学数据
 
+![](img/Pasted%20image%2020231121165737.png)
 
+优化器：beta1=0.9, beta2=0.95
+
+观察到因为和LLaMA2数据分布的不一致（很多中文和代码数据），需要更长的warmup，这里用了1%的warmup。
+
+cosine decay方法，最终学习率是1e-5。weight decay=0.1, gradient clipping=1.0
+
+用Megatron+Deepspeed训练，flash-attention，fused-softmax。163 TFLOPS/per gpu/per sec。
+
+BF16训练ziya2，ziya1用的是FP16。
 
 ## 评估
 
