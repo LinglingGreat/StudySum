@@ -39,9 +39,13 @@ DE：机器（抽样1%）和人工评估（抽样1000个），满足质量要求
 
 **Pile-Pajama** is a de-duplicated fusion of the Pile and Redpajama datasets after removing Common Crawl data. **CC** is a de-duplicated fusion of data from Pile and Redpajama that originated from Common Crawl. **Wudao-Ziya** is a dataset that combines our collected data with the Wudao dataset.  **Yuan1.0** is an open-source dataset provided by Inspur Technology, and we filter the raw data using our cleaning rules. **Translate** is the multilingual translation dataset we collect. **Code** is the code data we collect from GitHub, which includes multiple programming languages such as C, C++, and Python. We add the program language type before the code and change it to a format that the Markdown syntax is able to recognize. In this way, the model we train is able to generate formatted code. **Instruct** is a dataset constructed from instructions that we collect. **Wanjuan-Ziya** is a dataset that combines high-quality data from the Wanjuan dataset, as well as math-related data we collect ourselves. **MetaMath-Ziya** is a dataset derived from the Huawei’s open-source MetaMath dataset after data augmentation. We construct some Chinese and English prompts for **Instruct**, **WanjuanZiya**, and **MetaMath-Ziya** datasets, such as “QA”, “question-answer”, “problem-solution”, etc
 
-## 词表
+## 架构
 
 扩充了7400个常用中文单词（包括简体、繁体、符号）
+
+在持续预训练期间，我们观察到持续训练数据集和原始 LLaMA2 数据集之间的文本长度分布存在差异，因此需要调整位置嵌入以适应不同的数据分布。为了避免混合精度的overflow，采用FP32精度实现ROPE。
+
+
 
 ## 评估
 

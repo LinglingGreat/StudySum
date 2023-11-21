@@ -79,7 +79,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -145,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/Ziya/Ziya2.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -173,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/Ziya/Ziya2.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -221,8 +222,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "445096e0eaa0fa14",
+  "active": "de4736d71e61d33e",
   "lastOpenFiles": [
+    "Pre-training/LLMs/Ziya/Ziya2.md",
     "Pre-training/LLMs/Ziya/img/Pasted image 20231121133736.png",
     "Pre-training/LLMs/Ziya/img/Pasted image 20231121133250.png",
     "Pre-training/LLMs/Ziya/img/Pasted image 20231121112430.png",
@@ -230,7 +232,6 @@
     "Pre-training/LLMs/Ziya/img/Pasted image 20231121101957.png",
     "Pre-training/LLMs/Ziya/img",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
-    "Pre-training/LLMs/Ziya/Ziya2.md",
     "Pre-training/LLMs/Ziya",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Tool/Linux/Linux.md",
@@ -255,7 +256,6 @@
     "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023213059.png",
     "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023213003.png",
     "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023212904.png",
-    "Pre-training/LLMs/LLEMMA/img/Pasted image 20231023212833.png",
     "Pre-training/LLMs/LLEMMA/img",
     "Pre-training/LLMs/LLEMMA",
     "Tool/Git/Git.md",
