@@ -46,7 +46,7 @@ softmax用FP32
 
 速度：163 TFLOPS/per gpu/per sec
 
-初始化：
+初始化：这里没看懂，应该是加权平均初始化新的token的embedding
 
 ![](img/Pasted%20image%2020231121165737.png)
 
