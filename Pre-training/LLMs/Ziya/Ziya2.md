@@ -73,3 +73,6 @@ BF16训练ziya2，ziya1用的是FP16。
 
 ![](img/Pasted%20image%2020231121102555.png)
 
+
+![](img/Pasted%20image%2020231121193859.png)
+
