@@ -29,6 +29,19 @@ CD：布隆过滤器和Simhash去重。
 - 采样去重数据评估
 - 用了cache和bucket技术，使得新数据不需要对所有老数据进行冗余检查。
 
+DE：机器（抽样1%）和人工评估（抽样1000个），满足质量要求的数据占比需要达到一定阈值，否则再过一遍清洗。
+
+![](img/Pasted%20image%2020231121133250.png)
+
+从13TB的数据中过滤出4.5TB的数据。自己的数据包括代码和书籍。
+
+![](img/Pasted%20image%2020231121133736.png)
+
+Pile-Pajama is a de-duplicated fusion of the Pile and Redpajama datasets after removing Common Crawl data. CC is a de-duplicated fusion of data from Pile and Redpajama that originated from Common Crawl. Wudao-Ziya is a dataset that combines our collected data with the Wudao dataset. 
+Yuan1.0 is an open-source dataset provided by Inspur Technology, and we filter the raw data using our cleaning rules. Translate is the multilingual translation dataset we collect. Code is the code data we collect from GitHub, which includes multiple programming languages such as C, C++, and Python. We add the program language type before the code and change it to a format that the Markdown syntax is able to recognize. In this way, the model we train is able to generate formatted code. Instruct is a dataset constructed from instructions that we collect. Wanjuan-Ziya is a dataset that combines high-quality data from the Wanjuan dataset, as well as math-related data we collect ourselves. MetaMath-Ziya is a dataset derived from the Huawei’s open-source MetaMath dataset after data augmentation. We construct some Chinese and English prompts for Instruct, WanjuanZiya, and MetaMath-Ziya datasets, such as “QA”, “question-answer”, “problem-solution”, etc
+
+
+
 ## 评估
 
 ![](img/Pasted%20image%2020231121102555.png)
