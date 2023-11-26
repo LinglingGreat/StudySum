@@ -9,7 +9,7 @@ In particular, we improve downstream performance by employing **Poly-encoder Tra
 ## 模型
 
 **RAG和FiD**
-- RAG Sequence和RAG Token，参照[RAG](../RAG/RAG.md)
+- RAG Sequence和RAG Token，参照[RAGRelated](../RAGRelated/RAGRelated.md)
 
 - FiD：DPR或者BM25 are still considered independently within the encoder of the generator model.对于FiD，the decoder can attend to all of the joint document/context representations at the same time when generating a response。训练的时候retriever是不变的（因为不考虑文档概率）。
 

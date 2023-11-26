@@ -230,7 +230,7 @@
       * [爱奇艺台词翻译分享](NLG/MachineTranslation/业界分享/爱奇艺台词翻译分享.md)
     - Paper
       - [Deep Encoder Shallow Decoder](NLG/MachineTranslation/paper/deep_encoder_shallow_decoder/deep_encoder_shallow_decoder.md)
-  - [RAG](NLG/RAG/RAG.md)
+  - [RAGRelated](NLG/RAG/RAGRelated/RAGRelated.md)
   - [Text 2 SQL](NLG/Text2SQL/Text2SQL.md)
     - [M SQL](NLG/Text2SQL/M-SQL/M-SQL.md)
       * [M SQL 2](NLG/Text2SQL/M-SQL/M-SQL (2).md)
@@ -251,11 +251,11 @@
     - 语义驱动可视化内容创造_微软
       * [语义驱动可视化内容创造](Pre-training/业界分享/语义驱动可视化内容创造_微软/语义驱动可视化内容创造.md)
   - Base
-    - [Attention](Pre-training/Base/Attention/Attention.md)
+    - [Attention](Pre-training/Attention/Attention.md)
     - Mask
-      * [NLP中的Mask](Pre-training/Base/Mask/NLP中的Mask.md)
+      * [NLP中的Mask](Pre-training/Mask/NLP中的Mask.md)
     - Position Encoding
-      * [位置编码](Pre-training/Base/PositionEncoding/位置编码.md)
+      * [位置编码](Pre-training/PositionEncoding/位置编码.md)
   - [BERT](Pre-training/BERT/BERT.md)
     - [ALBERT](Pre-training/BERT/ALBERT/ALBERT.md)
     - [Bert](Pre-training/BERT/bert/README.md)
