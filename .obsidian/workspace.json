@@ -91,7 +91,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -157,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -185,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -234,8 +235,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "445096e0eaa0fa14",
+  "active": "de4736d71e61d33e",
   "lastOpenFiles": [
+    "Pre-training/长度外推/长度外推.md",
     "Pre-training/长度外推/img/Pasted image 20231126171401.png",
     "Pre-training/长度外推/img/Pasted image 20231126171302.png",
     "Pre-training/长度外推/img/Pasted image 20231126171204.png",
@@ -246,9 +248,7 @@
     "Pre-training/长度外推/img/Pasted image 20231126170753.png",
     "Pre-training/长度外推/img/Pasted image 20231126170714.png",
     "Pre-training/长度外推/img/Pasted image 20231126170626.png",
-    "Pre-training/长度外推/img/Pasted image 20231126170556.png",
     "Pre-training/长度外推/ALIBI/ALIBI.md",
-    "Pre-training/长度外推/长度外推.md",
     "Pre-training/长度外推/ALIBI",
     "Pre-training/长度外推/img",
     "Pre-training/PositionEncoding/位置编码.md",
