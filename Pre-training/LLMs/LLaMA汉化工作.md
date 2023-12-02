@@ -32,7 +32,7 @@
 
 ### [Linly](https://github.com/CVI-SZU/Linly)
 
-- **中文基础模型 Chinese-LLaMA (1-2)、Chinese-Falcon：**以 LLaMA 和 Falcon 为底座，使用中文和中英平行语料进行增量预训练，将其在英文上的语言能力扩展到中文上。目前训练了5B tokens，还在持续迭代
+- **中文基础模型 Chinese-LLaMA (1-2)、Chinese-Falcon：以 LLaMA 和 Falcon 为底座，使用中文和中英平行语料进行增量预训练，将其在英文上的语言能力扩展到中文上。目前训练了5B tokens，还在持续迭代
     
     - 【扩词表】Linly-LLaMA-2 中直接扩充了 8076 个常用汉字和标点符号，在模型 embedding 和 target 层使用这些汉字在原始词表中对应 tokens 位置的均值作为初始化。
         
