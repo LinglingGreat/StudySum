@@ -1,9 +1,9 @@
 
 ## 数据梳理
 
-英文：refined web，redpajama，pile
+英文：refined web，redpajama，pile，redpajamav2
 
-中文：wudao，wanjuan
+中文：wudao，wanjuan（中英），BAAI-CCI，tigerbot（中英），skywork，MVBNC（中英）
 
 多语言混合：mC4，OSCAR，CC100，BigScienceROOT
 - CulturaX：对mC4和OSCAR进行清洗得到
@@ -25,5 +25,9 @@
 【Galactic：用于处理大规模非结构化文本数据集的工具，提供清理和筛选功能，旨在筛选微调数据集、创建用于检索增强生成(RAG)的文档集合，甚至对LLM预训练Web规模数据集进行去重】'Galactic - data cleaning and curation for unstructured text' Taylor AI GitHub: github.com/taylorai/galactic
 
 【Data-Juicer: 一站式数据处理系统，旨在为大语言模型 (LLM) 提供更高质量、更丰富、更易“消化”的数据】'Data-Juicer: A One-Stop Data Processing System for Large Language Models - A one-stop data processing system to make data higher-quality, juicier, and more digestible for LLMs!' Alibaba GitHub: github.com/alibaba/data-juicer
+
+[再看大模型预训数据质量如何评估：困惑度、错误L2范数和记忆化三种度量方法的效果对比分析研究](https://mp.weixin.qq.com/s/d7fxiScyBIhyKYBi5wPgfw)
+
+
 
 

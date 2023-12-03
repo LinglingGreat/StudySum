@@ -1,4 +1,4 @@
-
+## 现有评测汇总
 | 评测系统                            | 语言   | 任务范围       | 能力/任务/数据集 |
 | ----------------------------------- | ------ | -------------- | ---------------- |
 | [GLUE](GLUE/GLUE.md)                | 英语   | 理解           | 1/7/9            |
@@ -49,7 +49,40 @@ BBH
 
 C-Eval是全面的中文基础模型评估套件，涵盖了52个不同学科的13948个多项选择题，分为四个难度级别： https://github.com/SJTU-LIT/ceval
 
+## Ecom(电商)
+
+https://github.com/Alibaba-NLP/EcomGPT （基于BLOOMZ指令微调）
+
+|   |   |   |   |
+|---|---|---|---|
+|**Dataset**|**Lang.**|**Task**|**Metric**|
+|Lenove|EN|Named Entity Recognization(实体识别)|F1, Rouge|
+|Lenove|EN|Entity Span Detection(实体检测)|Rouge|
+|Reddit|EN|Extractive QA(抽取式问答)|Rouge|
+|ABSA|EN|Review Topic Classification(评论的话题分类)|F1, Rouge|
+|MEPAVE|ZH|Attribute Value Recognization(属性识别)|F1, Rouge|
+|MEPAVE|ZH|Attribute Value Detection(属性检测)|Rouge|
+|Multi-CPR|ZH|Product Select(选出doc中和query匹配的)|Rouge|
+|Multi-CPR|ZH|Product Align(query和doc是否匹配)|F1, Rouge|
+|OpenBG|ZH|Title Attritube Matching(是否匹配)|F1, Rouge|
+|OpenBG|ZH|Fine-grain Product Classify(item细粒度分类)|F1, Rouge|
+|OpenBG|ZH|Coarse-grain Product Classify(item粗粒度分类)|F1, Rouge|
+|OpenBG|ZH|Title Generate(基于属性生成title)|Rouge|
+|OpenBG|ZH|Item Align(两个item是否指的是同一个产品)||
+
+金融领域的评估[PIXIU](https://github.com/chancefocus/PIXIU) 也是类似的评估方式，情绪分析、NER、问答、分类等。
+
+## 参考资料
 
 [GitHub - GPT-Fathom/GPT-Fathom: GPT-Fathom is an open-source and reproducible LLM evaluation suite, benchmarking 10+ leading open-source and closed-source LLMs as well as OpenAI's earlier models on 20+ curated benchmarks under aligned settings.](https://github.com/GPT-Fathom/GPT-Fathom)
-[mp.weixin.qq.com/s/-AWkDzAzoyQNmgYXuC6B4w](https://mp.weixin.qq.com/s/-AWkDzAzoyQNmgYXuC6B4w)
+[字节的GPT-Fathom介绍](https://mp.weixin.qq.com/s/-AWkDzAzoyQNmgYXuC6B4w)
+
+
+【LLM的评测有关的工具、demo、论文、文档】： [GitHub - onejune2018/Awesome-LLM-Eval: Awesome-LLM-Eval: a curated list of tools, demos, papers, docs for Evaluation on Large Language Models like ChatGPT, LLaMA, GLM](https://github.com/onejune2018/Awesome-LLM-Eval)
+
+[如何快速地设计并评估few shot示例的效果：OpenICL上下文示例学习框架推荐及实现源码](https://mp.weixin.qq.com/s/D2Fbhs13IhpsLyCJoWSwGA)
+
+[Anthropic \\ Challenges in evaluating AI systems](https://www.anthropic.com/index/evaluating-ai-systems)
+
+
 
