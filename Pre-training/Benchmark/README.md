@@ -49,6 +49,9 @@ BBH
 
 C-Eval是全面的中文基础模型评估套件，涵盖了52个不同学科的13948个多项选择题，分为四个难度级别： https://github.com/SJTU-LIT/ceval
 
+
+https://github.com/EleutherAI/lm-evaluation-harness (还没加入上述表格)
+
 ## Ecom(电商)
 
 https://github.com/Alibaba-NLP/EcomGPT （基于BLOOMZ指令微调）
