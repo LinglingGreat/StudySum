@@ -12,3 +12,5 @@
 
 其它： https://github.com/THUNLP-AIPoet/CCPM
 
+[大模型\_人工智能高质量数据集\_人工智能数据标注平台-北京人工智能高质量数据集服务平台](http://dataset.baiia.org.cn/datasets/list-5.html)
+
