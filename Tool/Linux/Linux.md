@@ -869,3 +869,5 @@ fi
 3. **设置默认 ACL 权限**: 如果您还想要确保未来在此目录中创建的所有文件和子目录都继承同样的访问权限，您可以设置默认 ACL 权限： ```setfacl -d -m u:username:rwx /path/to/directory ``` 这条命令设置了默认的 ACL 权限，以便任何在该目录中新创建的文件和子目录都会自动给 `username` 用户分配读写执行权限。 
 4. **查看 ACL 权限**: 为了确认您的权限已正确设定，可以查看这个目录的当前 ACL 配置： ```getfacl /path/to/directory ``` 通过以上步骤，您将能设置一个文件夹让特定用户访问。请注意，以上操作可能需要您具有管理权限，或至少对文件夹有适当的读写权限。
 
+[setfacl 命令，Linux setfacl 命令详解：设置文件访问控制列表 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/setfacl.html)
+
