@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "0dcec4fca934a851",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Linux/Linux.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "6f8e8a149ebc7549",
             "type": "leaf",
             "state": {
@@ -104,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -170,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/Dataset/Dataset.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/Dataset/Dataset.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -247,8 +259,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "012993a74364258c",
+  "active": "0dcec4fca934a851",
   "lastOpenFiles": [
+    "DataRelated/Dataset/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/Benchmark/README.md",
     "Pre-training/LLMs/垂域大模型.md",
@@ -294,7 +307,6 @@
     "Template/论文模板.md",
     "NLG/RAG/RAGConversation/RAGConversation.md",
     "NLG/RAG/RAGRelated/RAGRelated.md",
-    "Pre-training/S2A/S2A.md",
     "未命名.canvas"
   ]
 }
