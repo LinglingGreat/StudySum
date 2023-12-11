@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "51da9ff246f80d69",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/LLMs/指令微调.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "6f8e8a149ebc7549",
             "type": "leaf",
             "state": {
@@ -116,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -182,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/LLMs/指令微调.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/LLMs/指令微调.md"
               }
             }
           },
@@ -259,8 +271,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0dcec4fca934a851",
+  "active": "51da9ff246f80d69",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
     "DataRelated/Dataset/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/Benchmark/README.md",
@@ -274,7 +287,6 @@
     "Inference/README.md",
     "Pre-training/LLMs/Skywork/Skywork.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/长度外推/img/Pasted image 20231126171401.png",
     "Pre-training/长度外推/img/Pasted image 20231126171302.png",
     "Pre-training/长度外推/img/Pasted image 20231126171204.png",
