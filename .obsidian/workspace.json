@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/指令微调.md",
+                "file": "Pre-training/Parallelism/Megatron.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/指令微调.md",
+                "file": "Pre-training/Parallelism/Megatron.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/指令微调.md"
+                "file": "Pre-training/Parallelism/Megatron.md"
               }
             }
           },
@@ -273,6 +273,9 @@
   },
   "active": "51da9ff246f80d69",
   "lastOpenFiles": [
+    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
+    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+    "Pre-training/LLMs/指令微调.md",
     "Tool/Linux/Linux.md",
     "DataRelated/Dataset/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
@@ -316,9 +319,6 @@
     "NLG/RAG/RECALL/img",
     "NLG/RAG/SKR/SKR.md",
     "NLG/RAG/RECALL",
-    "Template/论文模板.md",
-    "NLG/RAG/RAGConversation/RAGConversation.md",
-    "NLG/RAG/RAGRelated/RAGRelated.md",
     "未命名.canvas"
   ]
 }
