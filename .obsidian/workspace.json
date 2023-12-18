@@ -273,10 +273,11 @@
   },
   "active": "51da9ff246f80d69",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Pre-training/Parallelism/Megatron.md",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/LLMs/指令微调.md",
-    "Tool/Linux/Linux.md",
     "DataRelated/Dataset/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/Benchmark/README.md",
@@ -317,7 +318,6 @@
     "NLG/RAG/RECALL/RECALL.md",
     "NLG/RAG/TrainRobustRALMs",
     "NLG/RAG/RECALL/img",
-    "NLG/RAG/SKR/SKR.md",
     "NLG/RAG/RECALL",
     "未命名.canvas"
   ]
