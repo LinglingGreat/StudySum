@@ -46,6 +46,10 @@
 
 [GitHub - AIoT-MLSys-Lab/Efficient-LLMs-Survey: Efficient Large Language Models: A Survey](https://github.com/AIoT-MLSys-Lab/Efficient-LLMs-Survey)
 
+[GitHub - hyintell/awesome-refreshing-llms: EMNLP'23 survey: a curation of awesome papers and resources on refreshing large language models (LLMs) without expensive retraining.](https://github.com/hyintell/awesome-refreshing-llms)
+
+
+
 
 ## 训练情况对比
 
