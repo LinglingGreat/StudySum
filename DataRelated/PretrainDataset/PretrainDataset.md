@@ -8,6 +8,8 @@
 多语言混合：mC4，OSCAR，CC100，BigScienceROOT
 - CulturaX：对mC4和OSCAR进行清洗得到
 
+【OpenWebMath：包含互联网上大部分高质量数学文本的数据集，从 Common Crawl 的超过 2000 亿 HTML 文件中过滤并提取出包含 147 亿 Token 的 630 万份文档，OpenWebMath 旨在用于预训练和微调大型语言模型】《open-web-math/open-web-math · Datasets at Hugging Face》
+
 ## 数据清洗流程
 
 第一步需要进行语言识别，以便适当地将数据分配给相应的语言。先前的研究表明，cld3比FastText差很多.
@@ -27,6 +29,9 @@
 【Data-Juicer: 一站式数据处理系统，旨在为大语言模型 (LLM) 提供更高质量、更丰富、更易“消化”的数据】'Data-Juicer: A One-Stop Data Processing System for Large Language Models - A one-stop data processing system to make data higher-quality, juicier, and more digestible for LLMs!' Alibaba GitHub: github.com/alibaba/data-juicer
 
 [再看大模型预训数据质量如何评估：困惑度、错误L2范数和记忆化三种度量方法的效果对比分析研究](https://mp.weixin.qq.com/s/d7fxiScyBIhyKYBi5wPgfw)
+
+[GitHub - ZigeW/data\_management\_LLM: Collection of training data management explorations for large language models](https://github.com/ZigeW/data_management_LLM)
+
 
 
 

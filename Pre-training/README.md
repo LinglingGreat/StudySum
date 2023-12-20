@@ -40,6 +40,12 @@
 
 【'Xwin-LM：旨在开发并开源大型语言模型的对齐技术，包括监督微调(SFT)、奖励模型(RM)、拒绝采样、人类反馈强化学习(RLHF)等】’Xwin-LM: a collection of LLM alignment technologies and models' GitHub: github.com/Xwin-LM/Xwin-LM
 
+[GitHub - MLGroupJLU/LLM-eval-survey: The official GitHub page for the survey paper "A Survey on Evaluation of Large Language Models".](https://github.com/MLGroupJLU/LLM-eval-survey)
+
+[GitHub - RUCAIBox/LLMSurvey: The official GitHub page for the survey paper "A Survey of Large Language Models".](https://github.com/RUCAIBox/LLMSurvey)
+
+[GitHub - AIoT-MLSys-Lab/Efficient-LLMs-Survey: Efficient Large Language Models: A Survey](https://github.com/AIoT-MLSys-Lab/Efficient-LLMs-Survey)
+
 
 ## 训练情况对比
 
