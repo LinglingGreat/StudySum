@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "012993a74364258c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DataRelated/PretrainDataset/PretrainDataset.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "0dcec4fca934a851",
             "type": "leaf",
             "state": {
@@ -61,19 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2fd5398c83781dee",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DataRelated/PretrainDataset/PretrainDataset.md",
+                "file": "Pre-training/LLMs/垂域大模型.md",
                 "mode": "source",
                 "source": false
               }
@@ -114,21 +90,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "80ebd4693d27d12c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/关于LLM的一些思考.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -157,7 +121,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "postion",
+                "query": "In-Context Pretraining",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -194,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Pre-training/LLMs/垂域大模型.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "Pre-training/LLMs/垂域大模型.md"
               }
             }
           },
@@ -273,25 +237,27 @@
   },
   "active": "6f8e8a149ebc7549",
   "lastOpenFiles": [
-    "Pre-training/LLMs/README.md",
-    "Pre-training/README.md",
+    "Pre-training/关于LLM的一些思考.md",
     "Pre-training/预训练语言模型.md",
+    "Pre-training/README.md",
     "Pre-training/LLMs/垂域大模型.md",
+    "Pre-training/长度外推/长度外推.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
+    "Pre-training/LLMs/LLaMA汉化工作.md",
+    "Tool/Git/Git.md",
+    "Tool/Linux/Linux.md",
+    "Pre-training/InContextLearning/In-Context Learning.md",
+    "Pre-training/LLMs/README.md",
     "DataRelated/Dataset/Dataset.md",
     "Pre-training/Parallelism/Megatron.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/LLMs/指令微调.md",
     "Pre-training/Benchmark/README.md",
     "DataRelated/数据质量/README.md",
     "DataRelated/数据质量/置信学习.md",
-    "Tool/Git/Git.md",
-    "Pre-training/长度外推/长度外推.md",
     "Inference/README.md",
     "Pre-training/LLMs/Skywork/Skywork.md",
-    "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/长度外推/img/Pasted image 20231126171401.png",
     "Pre-training/长度外推/img/Pasted image 20231126171302.png",
     "Pre-training/长度外推/img/Pasted image 20231126171204.png",
@@ -311,8 +277,6 @@
     "Inference/Speculative_decoding.md",
     "NLG/RAG/RAGRobust/RAGRobust.md",
     "NLG/RAG/SelfRAG/img",
-    "NLG/RAG/TrainRobustRALMs/TrainRobustRALMs.md",
-    "NLG/RAG/ChainofNote/ChainofNote.md",
     "NLG/RAG/SelfRAG",
     "NLG/RAG/ChainofNote/img",
     "NLG/RAG/ChainofNote",
