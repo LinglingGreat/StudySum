@@ -61,3 +61,7 @@ qwen
 
 llama
 
+## Scaling law
+
+[训练10B的模型需要多大的数据？详解大模型中的Scaling Law](https://mp.weixin.qq.com/s/lSLJhyT5LKuKtZMD3EaR_A)
+

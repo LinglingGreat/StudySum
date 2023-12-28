@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/LLaMA汉化工作.md",
+                "file": "Pre-training/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/垂域大模型.md",
+                "file": "Pre-training/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/垂域大模型.md"
+                "file": "Pre-training/README.md"
               }
             }
           },
@@ -235,19 +235,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6f8e8a149ebc7549",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
+    "Pre-training/LLMs/README.md",
+    "Pre-training/LLMs/LLaMA汉化工作.md",
+    "Tool/Linux/Linux.md",
+    "Pre-training/LLMs/垂域大模型.md",
     "Pre-training/关于LLM的一些思考.md",
     "Pre-training/预训练语言模型.md",
     "Pre-training/README.md",
-    "Pre-training/LLMs/垂域大模型.md",
     "Pre-training/长度外推/长度外推.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
-    "Pre-training/LLMs/LLaMA汉化工作.md",
     "Tool/Git/Git.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
-    "Pre-training/LLMs/README.md",
     "DataRelated/Dataset/Dataset.md",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
