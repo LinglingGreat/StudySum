@@ -87,5 +87,15 @@ https://github.com/Alibaba-NLP/EcomGPT （基于BLOOMZ指令微调）
 
 [Anthropic \\ Challenges in evaluating AI systems](https://www.anthropic.com/index/evaluating-ai-systems)
 
+## 长文本
+
+[GitHub - OpenBMB/InfiniteBench: 100k+ Long-Context Benchmark for Large Language Models (paper upcoming)](https://github.com/OpenBMB/InfiniteBench)
+
+[GitHub - THUDM/LongBench: LongBench: A Bilingual, Multitask Benchmark for Long Context Understanding](https://github.com/THUDM/LongBench)
+
+## Agent
+
+[GitHub - karthikv792/LLMs-Planning: An extensible benchmark for evaluating large language models on planning](https://github.com/karthikv792/LLMs-Planning)
+
 
 

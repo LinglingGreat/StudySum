@@ -90,9 +90,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "2016cc2ed49db45f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DataRelated/Dataset/Dataset.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -158,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "DataRelated/Dataset/Dataset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "DataRelated/Dataset/Dataset.md"
               }
             }
           },
@@ -235,25 +247,27 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "2016cc2ed49db45f",
   "lastOpenFiles": [
+    "DataRelated/PretrainDataset/PretrainDataset.md",
+    "DataRelated/Dataset/Dataset.md",
+    "Pre-training/Benchmark/README.md",
+    "DataRelated/NLGDataset/对话数据集.md",
+    "DataRelated/NLGDataset/生成任务.md",
+    "Tool/Git/Git.md",
+    "Tool/Linux/Linux.md",
+    "Pre-training/README.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/垂域大模型.md",
     "Pre-training/关于LLM的一些思考.md",
     "Pre-training/预训练语言模型.md",
-    "Pre-training/README.md",
     "Pre-training/长度外推/长度外推.md",
-    "DataRelated/PretrainDataset/PretrainDataset.md",
-    "Tool/Git/Git.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
-    "DataRelated/Dataset/Dataset.md",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/LLMs/指令微调.md",
-    "Pre-training/Benchmark/README.md",
     "DataRelated/数据质量/README.md",
     "DataRelated/数据质量/置信学习.md",
     "Inference/README.md",
@@ -274,8 +288,6 @@
     "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/长度外推",
     "NLG/RAG/SelfRAG/SelfRAG.md",
-    "Inference/Speculative_decoding.md",
-    "NLG/RAG/RAGRobust/RAGRobust.md",
     "NLG/RAG/SelfRAG/img",
     "NLG/RAG/SelfRAG",
     "NLG/RAG/ChainofNote/img",

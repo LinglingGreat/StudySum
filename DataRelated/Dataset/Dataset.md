@@ -14,3 +14,7 @@
 
 [大模型\_人工智能高质量数据集\_人工智能数据标注平台-北京人工智能高质量数据集服务平台](http://dataset.baiia.org.cn/datasets/list-5.html)
 
+搜狗实验室数据：[%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B.md](https://github.com/duoergun0729/nlp/blob/master/%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E9%9B%86%E7%AE%80%E4%BB%8B.md)
+
+中文图书语料：[GitHub - FudanNLPLAB/CBook-150K: 中文图书语料MD5链接](https://github.com/FudanNLPLAB/CBook-150K)
+
