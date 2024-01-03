@@ -48,7 +48,7 @@
 
 [GitHub - hyintell/awesome-refreshing-llms: EMNLP'23 survey: a curation of awesome papers and resources on refreshing large language models (LLMs) without expensive retraining.](https://github.com/hyintell/awesome-refreshing-llms)
 
-
+[Hugging Face 年度回顾: 2023, 开源大模型之年](https://huggingface.co/blog/zh/2023-in-llms)
 
 
 ## 训练情况对比

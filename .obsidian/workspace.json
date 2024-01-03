@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/Dataset/Dataset.md",
+                "file": "Pre-training/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/Dataset/Dataset.md"
+                "file": "Pre-training/README.md"
               }
             }
           },
@@ -247,15 +247,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2016cc2ed49db45f",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
-    "DataRelated/PretrainDataset/PretrainDataset.md",
+    "Pre-training/LLMs/TinyModels/TinyModels.md",
+    "Tool/Linux/Linux.md",
+    "Pre-training/LLMs/TinyModels",
     "DataRelated/Dataset/Dataset.md",
+    "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/Benchmark/README.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "DataRelated/NLGDataset/生成任务.md",
     "Tool/Git/Git.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/README.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
@@ -287,14 +289,12 @@
     "Pre-training/长度外推/img",
     "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/长度外推",
-    "NLG/RAG/SelfRAG/SelfRAG.md",
     "NLG/RAG/SelfRAG/img",
     "NLG/RAG/SelfRAG",
     "NLG/RAG/ChainofNote/img",
     "NLG/RAG/ChainofNote",
     "NLG/RAG/TrainRobustRALMs",
     "NLG/RAG/RECALL/img",
-    "NLG/RAG/RECALL",
     "未命名.canvas"
   ]
 }
