@@ -175,3 +175,12 @@ sample efficient：如果算法可以从每个样本中获得最大收益，那�
 - 为了更好的建模更长的序列，PaLM 使用 RoPE 词向量，BLOOM 使用 ALiBi 词向量，而原始的 GPT-3 和 OPT 使用学习得到的词向量，这可能影响在长序列上的性能。
 
 参考：[万字长文解析！复现和使用GPT-3/ChatGPT，你所应该知道的](https://mp.weixin.qq.com/s/ILpbRRNP10Ef1z3lb2CqmA)，推特原文： https://twitter.com/JingfengY/status/1625003999387881472
+
+## articles
+
+[符尧：别卷大模型训练了，来卷数据吧！](https://mp.weixin.qq.com/s/jnQjMDbSV2L9OzA7rFWAUA)
+
+[XG纪要 | Compression theory for LMs](https://mp.weixin.qq.com/s/DSfZzOFexAfSSrAj6d3q5w)
+
+
+

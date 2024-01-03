@@ -80,6 +80,30 @@
             }
           },
           {
+            "id": "ffe5fbf976c4e335",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Linux/Linux.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "963c5c3802bc7aa3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/关于LLM的一些思考.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "d1601f8bc2b807d7",
             "type": "leaf",
             "state": {
@@ -104,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -170,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Pre-training/关于LLM的一些思考.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "Pre-training/关于LLM的一些思考.md"
               }
             }
           },
@@ -247,10 +271,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "963c5c3802bc7aa3",
   "lastOpenFiles": [
-    "Pre-training/LLMs/TinyModels/TinyModels.md",
+    "Pre-training/LLMs/README.md",
+    "Pre-training/README.md",
+    "Pre-training/预训练语言模型.md",
+    "Pre-training/关于LLM的一些思考.md",
     "Tool/Linux/Linux.md",
+    "Pre-training/LLMs/TinyModels/TinyModels.md",
     "Pre-training/LLMs/TinyModels",
     "DataRelated/Dataset/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
@@ -258,12 +286,8 @@
     "DataRelated/NLGDataset/对话数据集.md",
     "DataRelated/NLGDataset/生成任务.md",
     "Tool/Git/Git.md",
-    "Pre-training/README.md",
-    "Pre-training/LLMs/README.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/LLMs/垂域大模型.md",
-    "Pre-training/关于LLM的一些思考.md",
-    "Pre-training/预训练语言模型.md",
     "Pre-training/长度外推/长度外推.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
     "Pre-training/Parallelism/Megatron.md",
