@@ -97,7 +97,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/关于LLM的一些思考.md",
+                "file": "Pre-training/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/关于LLM的一些思考.md",
+                "file": "Pre-training/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/关于LLM的一些思考.md"
+                "file": "Pre-training/README.md"
               }
             }
           },
@@ -273,10 +273,10 @@
   },
   "active": "963c5c3802bc7aa3",
   "lastOpenFiles": [
+    "Pre-training/关于LLM的一些思考.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/README.md",
     "Pre-training/预训练语言模型.md",
-    "Pre-training/关于LLM的一些思考.md",
     "Tool/Linux/Linux.md",
     "Pre-training/LLMs/TinyModels/TinyModels.md",
     "Pre-training/LLMs/TinyModels",

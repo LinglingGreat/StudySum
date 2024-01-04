@@ -31,6 +31,9 @@
 ## dataset
 
 
+## Alignment
+
+[Anthropic 关于 RLHF 的研究](https://mp.weixin.qq.com/s/5LHwam2B4goElW5vPiyp9g)
 
 
 ## 资源列表汇总
