@@ -128,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Tool/Git/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "Tool/Git/Git.md"
               }
             }
           },
@@ -271,13 +271,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "963c5c3802bc7aa3",
+  "active": "d1601f8bc2b807d7",
   "lastOpenFiles": [
+    "Pre-training/README.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/关于LLM的一些思考.md",
     "Pre-training/LLMs/README.md",
-    "Pre-training/README.md",
     "Pre-training/预训练语言模型.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/TinyModels/TinyModels.md",
     "Pre-training/LLMs/TinyModels",
     "DataRelated/Dataset/Dataset.md",

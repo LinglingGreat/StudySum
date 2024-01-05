@@ -53,6 +53,8 @@
 
 [Hugging Face 年度回顾: 2023, 开源大模型之年](https://huggingface.co/blog/zh/2023-in-llms)
 
+故事生成的系列论文和数据等： https://github.com/yingpengma/Awesome-Story-Generation
+
 
 ## 训练情况对比
 
