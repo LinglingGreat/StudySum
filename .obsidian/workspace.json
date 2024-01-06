@@ -128,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -271,10 +271,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d1601f8bc2b807d7",
+  "active": "ffe5fbf976c4e335",
   "lastOpenFiles": [
-    "Pre-training/README.md",
+    "Pre-training/GLM/GLM.md",
     "Tool/Linux/Linux.md",
+    "Tool/Git/Git.md",
+    "Pre-training/README.md",
     "Pre-training/关于LLM的一些思考.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/预训练语言模型.md",
@@ -285,7 +287,6 @@
     "Pre-training/Benchmark/README.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "DataRelated/NLGDataset/生成任务.md",
-    "Tool/Git/Git.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/LLMs/垂域大模型.md",
     "Pre-training/长度外推/长度外推.md",
@@ -311,7 +312,6 @@
     "Pre-training/长度外推/ALIBI/ALIBI.md",
     "Pre-training/长度外推/ALIBI",
     "Pre-training/长度外推/img",
-    "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/长度外推",
     "NLG/RAG/SelfRAG/img",
     "NLG/RAG/SelfRAG",

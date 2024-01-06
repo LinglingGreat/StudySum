@@ -55,4 +55,6 @@ mask掉15%的token
 
 ## 参考资料
 
+[GLM-130B: An Open Bilingual Pre-Trained Model | GLM-130B](https://keg.cs.tsinghua.edu.cn/glm-130b/posts/glm-130b/)
+
 
