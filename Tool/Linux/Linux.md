@@ -633,7 +633,11 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 
 查看节点的内存，gpu等信息 `scontrol show nodes`。scontrol 可以用于查看分区、节点和作业的详细信息，也可以修改等待中的作业属性。可以使用 **man scontrol** 查看详细用法。
 
-查询作业状态 `squeue`
+查询作业状态 `squeue`, 如果名字太长可以用这个：
+
+```bash
+squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R"
+```
 
 删除作业：`scancel`
 - -u, --user=user_name 删除特定用户的作业
