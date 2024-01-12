@@ -72,3 +72,7 @@ llama
 
 [训练10B的模型需要多大的数据？详解大模型中的Scaling Law](https://mp.weixin.qq.com/s/lSLJhyT5LKuKtZMD3EaR_A)
 
+## 角色大模型
+
+[通用大模型向左，角色大模型向右](https://mp.weixin.qq.com/s/QXzGwAkgi58XFnbo80FIZg)
+
