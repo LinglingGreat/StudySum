@@ -58,6 +58,8 @@
 
 ## 训练情况对比
 
+[大模型训练需要花费多长时间：FLOPs的简单计算方法及calflop开源实现](https://mp.weixin.qq.com/s/nB-ldVgWJTJhwI-f7rO7IQ)
+
 baichuan1:
 
 baichuan2: 2.6T tokens

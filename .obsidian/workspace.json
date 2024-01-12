@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Parallelism/Megatron.md",
+                "file": "Pre-training/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -128,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -178,7 +178,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 213.5
+    "width": 243.5
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/README.md"
               }
             }
           },
@@ -271,10 +271,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ffe5fbf976c4e335",
+  "active": "51da9ff246f80d69",
   "lastOpenFiles": [
-    "Pre-training/GLM/GLM.md",
+    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
+    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
+    "Pre-training/Parallelism/Megatron.md",
     "Tool/Linux/Linux.md",
+    "Pre-training/GLM/GLM.md",
     "Tool/Git/Git.md",
     "Pre-training/README.md",
     "Pre-training/关于LLM的一些思考.md",
@@ -291,9 +294,6 @@
     "Pre-training/LLMs/垂域大模型.md",
     "Pre-training/长度外推/长度外推.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
-    "Pre-training/Parallelism/Megatron.md",
-    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
-    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/LLMs/指令微调.md",
     "DataRelated/数据质量/README.md",
     "DataRelated/数据质量/置信学习.md",
