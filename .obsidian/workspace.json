@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Pre-training/DoReMi/DoReMi.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Pre-training/DoReMi/DoReMi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "Pre-training/DoReMi/DoReMi.md"
               }
             }
           },
@@ -273,13 +273,27 @@
   },
   "active": "51da9ff246f80d69",
   "lastOpenFiles": [
+    "Pre-training/DoReMi/img/Pasted image 20240112175956.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112175730.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112175356.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112174952.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112174731.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112174144.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112174120.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112174010.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112172805.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112172300.png",
+    "Pre-training/DoReMi/img/Pasted image 20240112172106.png",
+    "Pre-training/DoReMi/img",
+    "Pre-training/README.md",
+    "Pre-training/DoReMi/DoReMi.md",
+    "Pre-training/DoReMi",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/Parallelism/Megatron.md",
     "Tool/Linux/Linux.md",
     "Pre-training/GLM/GLM.md",
     "Tool/Git/Git.md",
-    "Pre-training/README.md",
     "Pre-training/关于LLM的一些思考.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/预训练语言模型.md",
@@ -298,18 +312,6 @@
     "DataRelated/数据质量/README.md",
     "DataRelated/数据质量/置信学习.md",
     "Inference/README.md",
-    "Pre-training/LLMs/Skywork/Skywork.md",
-    "Pre-training/长度外推/img/Pasted image 20231126171401.png",
-    "Pre-training/长度外推/img/Pasted image 20231126171302.png",
-    "Pre-training/长度外推/img/Pasted image 20231126171204.png",
-    "Pre-training/长度外推/img/Pasted image 20231126171113.png",
-    "Pre-training/长度外推/img/Pasted image 20231126171028.png",
-    "Pre-training/长度外推/img/Pasted image 20231126170830.png",
-    "Pre-training/长度外推/img/Pasted image 20231126170811.png",
-    "Pre-training/长度外推/img/Pasted image 20231126170753.png",
-    "Pre-training/长度外推/img/Pasted image 20231126170714.png",
-    "Pre-training/长度外推/img/Pasted image 20231126170626.png",
-    "Pre-training/长度外推/ALIBI/ALIBI.md",
     "Pre-training/长度外推/ALIBI",
     "Pre-training/长度外推/img",
     "Pre-training/长度外推",
@@ -317,8 +319,6 @@
     "NLG/RAG/SelfRAG",
     "NLG/RAG/ChainofNote/img",
     "NLG/RAG/ChainofNote",
-    "NLG/RAG/TrainRobustRALMs",
-    "NLG/RAG/RECALL/img",
     "未命名.canvas"
   ]
 }
