@@ -92,6 +92,18 @@
             }
           },
           {
+            "id": "23aae6b4ccb92133",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/Qwen/Qwen.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "963c5c3802bc7aa3",
             "type": "leaf",
             "state": {
@@ -128,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -194,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/DoReMi/DoReMi.md",
+                "file": "Pre-training/Qwen/Qwen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/DoReMi/DoReMi.md"
+                "file": "Pre-training/Qwen/Qwen.md"
               }
             }
           },
@@ -271,8 +283,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "51da9ff246f80d69",
+  "active": "23aae6b4ccb92133",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Pre-training/DoReMi/DoReMi.md",
     "Pre-training/DoReMi/img/Pasted image 20240112175956.png",
     "Pre-training/DoReMi/img/Pasted image 20240112175730.png",
     "Pre-training/DoReMi/img/Pasted image 20240112175356.png",
@@ -283,15 +297,12 @@
     "Pre-training/DoReMi/img/Pasted image 20240112174010.png",
     "Pre-training/DoReMi/img/Pasted image 20240112172805.png",
     "Pre-training/DoReMi/img/Pasted image 20240112172300.png",
-    "Pre-training/DoReMi/img/Pasted image 20240112172106.png",
     "Pre-training/DoReMi/img",
     "Pre-training/README.md",
-    "Pre-training/DoReMi/DoReMi.md",
     "Pre-training/DoReMi",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/Parallelism/Megatron.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/GLM/GLM.md",
     "Tool/Git/Git.md",
     "Pre-training/关于LLM的一些思考.md",
