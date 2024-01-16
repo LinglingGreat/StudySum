@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/长度外推/SelfExtend/SelfExtend.md",
+                "file": "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/长度外推/SelfExtend/SelfExtend.md",
+                "file": "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/长度外推/SelfExtend/SelfExtend.md"
+                "file": "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md"
               }
             }
           },
@@ -273,6 +273,13 @@
   },
   "active": "ffe5fbf976c4e335",
   "lastOpenFiles": [
+    "Template/论文模板.md",
+    "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md",
+    "Pre-training/explore/ImpossibleLanguage",
+    "Pre-training/explore",
+    "Pre-training/Finetune/easy-to-hard/easy-to-hard-generalization.md",
+    "Pre-training/长度外推/SelfExtend/SelfExtend.md",
+    "Pre-training/Finetune/easy-to-hard",
     "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115160155.png",
     "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115155902.png",
     "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115155811.png",
@@ -285,11 +292,9 @@
     "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115145539.png",
     "Pre-training/长度外推/SelfExtend/img",
     "Tool/Linux/Linux.md",
-    "Pre-training/长度外推/SelfExtend/SelfExtend.md",
     "Pre-training/长度外推/SelfExtend",
-    "Pre-training/Qwen/Qwen.md",
+    "Pre-training/LLMs/Qwen/Qwen.md",
     "Pre-training/DoReMi/DoReMi.md",
-    "Pre-training/DoReMi/img/Pasted image 20240112175956.png",
     "Pre-training/DoReMi/img",
     "Pre-training/README.md",
     "Pre-training/DoReMi",
@@ -312,13 +317,8 @@
     "Pre-training/LLMs/垂域大模型.md",
     "Pre-training/长度外推/长度外推.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
-    "Pre-training/LLMs/指令微调.md",
-    "DataRelated/数据质量/README.md",
     "Pre-training/长度外推/ALIBI",
     "Pre-training/长度外推/img",
-    "Pre-training/长度外推",
-    "NLG/RAG/SelfRAG/img",
-    "NLG/RAG/SelfRAG",
     "未命名.canvas"
   ]
 }
