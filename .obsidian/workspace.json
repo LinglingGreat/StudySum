@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md",
+                "file": "Pre-training/LLMs/Mistral/Mistral.md",
                 "mode": "source",
                 "source": false
               }
@@ -157,7 +157,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "In-Context Pretraining",
+                "query": "mistral",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md",
+                "file": "Pre-training/LLMs/Mistral/Mistral.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md"
+                "file": "Pre-training/LLMs/Mistral/Mistral.md"
               }
             }
           },
@@ -273,8 +273,10 @@
   },
   "active": "ffe5fbf976c4e335",
   "lastOpenFiles": [
-    "Template/论文模板.md",
     "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md",
+    "Pre-training/LLMs/Mistral/Mistral.md",
+    "Pre-training/LLMs/Mistral",
+    "Template/论文模板.md",
     "Pre-training/explore/ImpossibleLanguage",
     "Pre-training/explore",
     "Pre-training/Finetune/easy-to-hard/easy-to-hard-generalization.md",
@@ -316,9 +318,7 @@
     "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/LLMs/垂域大模型.md",
     "Pre-training/长度外推/长度外推.md",
-    "Pre-training/InContextLearning/In-Context Learning.md",
     "Pre-training/长度外推/ALIBI",
-    "Pre-training/长度外推/img",
     "未命名.canvas"
   ]
 }
