@@ -85,9 +85,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/Mistral/Mistral.md",
+                "file": "Pre-training/长度外推/E2-LLM/E2-LLM.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "16e25bedd4c88df1",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.3"
               }
             }
           },
@@ -128,7 +138,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -194,7 +204,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/Mistral/Mistral.md",
+                "file": "Pre-training/长度外推/E2-LLM/E2-LLM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +232,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/Mistral/Mistral.md"
+                "file": "Pre-training/长度外推/E2-LLM/E2-LLM.md"
               }
             }
           },
@@ -248,7 +258,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -271,10 +283,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ffe5fbf976c4e335",
+  "active": "16e25bedd4c88df1",
   "lastOpenFiles": [
-    "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md",
+    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
+    "Pre-training/长度外推/E2-LLM/E2-LLM.md",
+    "Pre-training/长度外推/E2-LLM",
+    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/LLMs/Mistral/Mistral.md",
+    "Pre-training/explore/ImpossibleLanguage/ImpossibleLanguage.md",
     "Pre-training/LLMs/Mistral",
     "Template/论文模板.md",
     "Pre-training/explore/ImpossibleLanguage",
@@ -300,8 +316,6 @@
     "Pre-training/DoReMi/img",
     "Pre-training/README.md",
     "Pre-training/DoReMi",
-    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
-    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/GLM/GLM.md",
     "Tool/Git/Git.md",
@@ -317,8 +331,6 @@
     "DataRelated/NLGDataset/生成任务.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/LLMs/垂域大模型.md",
-    "Pre-training/长度外推/长度外推.md",
-    "Pre-training/长度外推/ALIBI",
     "未命名.canvas"
   ]
 }
