@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/Qwen/Qwen.md",
+                "file": "Pre-training/PositionEncoding/位置编码.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/Qwen/Qwen.md",
+                "file": "Pre-training/PositionEncoding/位置编码.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/Qwen/Qwen.md"
+                "file": "Pre-training/PositionEncoding/位置编码.md"
               }
             }
           },
@@ -276,6 +276,7 @@
   "active": "ffe5fbf976c4e335",
   "lastOpenFiles": [
     "Pre-training/LLMs/Deepseek/Deepseek.md",
+    "Pre-training/LLMs/Qwen/Qwen.md",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185941.png",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185753.png",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185721.png",
@@ -304,7 +305,6 @@
     "Pre-training/长度外推/SelfExtend/img",
     "Tool/Linux/Linux.md",
     "Pre-training/长度外推/SelfExtend",
-    "Pre-training/LLMs/Qwen/Qwen.md",
     "Pre-training/DoReMi/DoReMi.md",
     "Pre-training/DoReMi/img",
     "Pre-training/README.md",
