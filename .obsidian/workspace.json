@@ -85,19 +85,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/长度外推/E2-LLM/E2-LLM.md",
+                "file": "Pre-training/LLMs/Qwen/Qwen.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "16e25bedd4c88df1",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.3"
               }
             }
           },
@@ -138,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -204,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/长度外推/E2-LLM/E2-LLM.md",
+                "file": "Pre-training/LLMs/Qwen/Qwen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -232,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/长度外推/E2-LLM/E2-LLM.md"
+                "file": "Pre-training/LLMs/Qwen/Qwen.md"
               }
             }
           },
@@ -283,10 +273,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "16e25bedd4c88df1",
+  "active": "ffe5fbf976c4e335",
   "lastOpenFiles": [
-    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
+    "Pre-training/LLMs/Deepseek/Deepseek.md",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185941.png",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185753.png",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185721.png",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185031.png",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118184855.png",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118184836.png",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118184825.png",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118184808.png",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118184754.png",
+    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118184703.png",
+    "Pre-training/LLMs/Deepseek/img",
     "Pre-training/长度外推/E2-LLM/E2-LLM.md",
+    "Pre-training/LLMs/Deepseek",
+    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/长度外推/E2-LLM",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/LLMs/Mistral/Mistral.md",
@@ -298,16 +301,6 @@
     "Pre-training/Finetune/easy-to-hard/easy-to-hard-generalization.md",
     "Pre-training/长度外推/SelfExtend/SelfExtend.md",
     "Pre-training/Finetune/easy-to-hard",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115160155.png",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115155902.png",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115155811.png",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115154142.png",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115153815.png",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115153317.png",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115152041.png",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115151916.png",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115150044.png",
-    "Pre-training/长度外推/SelfExtend/img/Pasted image 20240115145539.png",
     "Pre-training/长度外推/SelfExtend/img",
     "Tool/Linux/Linux.md",
     "Pre-training/长度外推/SelfExtend",
@@ -315,7 +308,6 @@
     "Pre-training/DoReMi/DoReMi.md",
     "Pre-training/DoReMi/img",
     "Pre-training/README.md",
-    "Pre-training/DoReMi",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/GLM/GLM.md",
     "Tool/Git/Git.md",
@@ -323,14 +315,11 @@
     "Pre-training/LLMs/README.md",
     "Pre-training/预训练语言模型.md",
     "Pre-training/LLMs/TinyModels/TinyModels.md",
-    "Pre-training/LLMs/TinyModels",
     "DataRelated/Dataset/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/Benchmark/README.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "DataRelated/NLGDataset/生成任务.md",
-    "Pre-training/LLMs/LLaMA汉化工作.md",
-    "Pre-training/LLMs/垂域大模型.md",
     "未命名.canvas"
   ]
 }
