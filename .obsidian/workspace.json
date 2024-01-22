@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/PositionEncoding/位置编码.md",
+                "file": "Pre-training/LLMs/TopInChineseDataProcess/TopInChineseDataProcess.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/PositionEncoding/位置编码.md",
+                "file": "Pre-training/LLMs/TopInChineseDataProcess/TopInChineseDataProcess.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/PositionEncoding/位置编码.md"
+                "file": "Pre-training/LLMs/TopInChineseDataProcess/TopInChineseDataProcess.md"
               }
             }
           },
@@ -275,6 +275,9 @@
   },
   "active": "ffe5fbf976c4e335",
   "lastOpenFiles": [
+    "Pre-training/PositionEncoding/位置编码.md",
+    "Pre-training/LLMs/TopInChineseDataProcess/TopInChineseDataProcess.md",
+    "Pre-training/LLMs/TopInChineseDataProcess",
     "Pre-training/LLMs/Deepseek/Deepseek.md",
     "Pre-training/LLMs/Qwen/Qwen.md",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185941.png",
@@ -306,7 +309,6 @@
     "Tool/Linux/Linux.md",
     "Pre-training/长度外推/SelfExtend",
     "Pre-training/DoReMi/DoReMi.md",
-    "Pre-training/DoReMi/img",
     "Pre-training/README.md",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/GLM/GLM.md",
@@ -319,7 +321,6 @@
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/Benchmark/README.md",
     "DataRelated/NLGDataset/对话数据集.md",
-    "DataRelated/NLGDataset/生成任务.md",
     "未命名.canvas"
   ]
 }
