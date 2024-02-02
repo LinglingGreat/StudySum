@@ -5,3 +5,5 @@
 
 [GitHub - FasterDecoding/Medusa: Medusa: Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads](https://github.com/FasterDecoding/Medusa)
 
+[语言大模型推理加速指南](https://mp.weixin.qq.com/s/B3TD2p_5HKoYkzzupLoUxQ)
+
