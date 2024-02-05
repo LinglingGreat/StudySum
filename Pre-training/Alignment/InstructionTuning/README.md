@@ -5,6 +5,7 @@
 
 [大模型微调技术​报告汇总](www.zhihu.com/question/607397171/answer/3148846973)
 - 汇总了10多个在预训练模型上微调的报告，值得一看
+- 提供任务描述、统一使用一种语言、任务指令多样化都有助于提升模型泛化性。（from [EcomGPT：指令微调的电商领域大模型](https://mp.weixin.qq.com/s/pT89cpjrRC7nmChEQmTm6A)）
 
 [再看23个医疗领域微调大模型集合：兼看CareLlama医疗模型的一些实践经验与开放医疗数据](https://mp.weixin.qq.com/s/c6aPU2FALAaa4LWKQ8W1uA)
 - 医疗领域微调模型有哪些？做了汇总
@@ -17,4 +18,9 @@
 
 Self-Alignment with Instruction Backtranslation：[有趣的大模型微调指令数据反向增强方法：Instruction Backtranslation原理解读及其在数据分析上的思考](https://mp.weixin.qq.com/s/LbJiDoVHls7Nuwd9jP6wTQ)
 - 其大致思想在于：**首先在少量种子数据和给定网络语料库的基础上对语言模型进行微调。种子模型通过生成网络文档的指令提示（自我增强）来构建训练示例，然后从这些候选示例中选择高质量的示例（自我固化），然后利用生成的数据对更强大的模型进行微调。**
+
+
+[如何自动筛选高质量的指令微调数据喂给大模型？](https://mp.weixin.qq.com/s/YDIEhGdAejy4CSvN11PAXA)
+
+[大模型微调技巧 | 高质量指令数据筛选方法-MoDS](https://mp.weixin.qq.com/s/G4zqS_hOGpLZF4m_aQzxmg)
 

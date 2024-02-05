@@ -135,11 +135,11 @@ Prompt tuning:针对每个任务，单独生成prompt模板（hard prompt or sof
 
 Instruction Tuning：针对每个任务，单独生成instruction（hard token），通过在若干个full-shot任务上进行微调，然后在具体的任务上进行评估泛化能力（zero shot)，其中预训练模型参数是unfreeze的。Instruction Tuning和Prompt方法的核心一样，就是去发掘语言模型本身具备的知识。而他们的不同点就在于，Prompt是去激发语言模型的补全能力，比如给出上半句生成下半句、或者做完形填空，都还是像在做language model任务，而Instruction Tuning则是激发语言模型的理解能力，通过给出更明显的指令，让模型去理解并做出正确的反馈。
 
-[FLAN](../FLAN/FLAN.md)
+[FLAN](../Alignment/FLAN/FLAN.md)
 
 [T0](../T0/T0.md)
 
-[InstructGPT](../InstructGPT/InstructGPT.md)
+[InstructGPT](../LLMs/InstructGPT/InstructGPT.md)
 
 [SuperNaturalInstructions](../Benchmark/NaturalInstructions/SuperNaturalInstructions.md)
 

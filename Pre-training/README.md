@@ -14,7 +14,7 @@
 
 ## Instruction tuning
 
-[Flan-PaLM_T5](Flan-PaLM_T5/Flan-PaLM_T5.md)
+[Flan-PaLM_T5](Alignment/Flan-PaLM_T5/Flan-PaLM_T5.md)
 
 
 ## CoT

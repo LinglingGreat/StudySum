@@ -8,7 +8,7 @@ CPM-Ant 利用文本生成和空白填充作为其预训练目标。如下图所
 
 在 CPM-Ant 中，我们引入了预训练的软提示来切换生成模式。对于文本生成和空白填充，我们分别设置了特定于目标的软提示。这些软提示由几个可学习的嵌入组成。在预训练过程中，这些软提示被添加到输入中，并激发特定于目标的知识来处理输入。在为下游任务调整 CPM-Ant 时，仅使用与任务相关的软提示来调整 CPM-Ant。
 
-这部分可以参考[PPT](../../Prompt/PPT/PPT.md)
+这部分可以参考[PPT](../../../Prompt/PPT/PPT.md)
 
 ### 模型结构
 
@@ -34,7 +34,7 @@ CPM-Ant 利用文本生成和空白填充作为其预训练目标。如下图所
 
 其中M是注意力掩码，⊙ 是 Hadamard 乘积。
 
-这部分可以参考[UniLM](../../UniLM/UniLM.md)和[GLM](../../GLM/GLM.md)
+这部分可以参考[UniLM](../../../UniLM/UniLM.md)和[GLM](../../GLM/GLM.md)
 
 为了进一步保证稳定训练，我们采用Pre-LN Residual结构为：
 
@@ -48,7 +48,7 @@ CPM-Ant 利用文本生成和空白填充作为其预训练目标。如下图所
 
 其中B是注意力层中使用的偏置矩阵，f si,sj (·)是将token之间的相对距离映射到偏置值。直观上，多段相对位置偏差可以充分考虑段相关性来编码相对距离。在 CPM-Ant 中，为了简单起见，如果两个 token 不属于同一段，无论它们的相对距离如何，我们都会分配一个统一的偏置值 b si,sj。
 
-这份部分可以参考相对位置编码[Self-Attention with Relative Position Representations](../../PositionEncoding/经典式相对位置编码/Self-Attention%20with%20Relative%20Position%20Representations.md)和T5的位置编码： [T5式](../../PositionEncoding/位置编码.md#T5式)
+这份部分可以参考相对位置编码[Self-Attention with Relative Position Representations](../../../PositionEncoding/经典式相对位置编码/Self-Attention%20with%20Relative%20Position%20Representations.md)和T5的位置编码： [T5式](../../../PositionEncoding/位置编码.md#T5式)
 
 
 ### NLGtune
@@ -100,7 +100,7 @@ attention_mask矩阵：下三角都为1且对于每一行，target之外的部�
 - b_si, sj的矩阵relative_position_bucket=query_segment * self.num_segments + key_segment+ self.num_buckets: (batch, seq_len, seq_len)
 - query_segment：(batch, seq_len, 1), segment延伸得到
 - key_segment：(batch, 1, seq_len), segment延伸得到
-- f_si,sj(pi-pj)的矩阵absolute_position_bucket，参考t5的相对位置编码 [T5式](../../PositionEncoding/位置编码.md#T5式)
+- f_si,sj(pi-pj)的矩阵absolute_position_bucket，参考t5的相对位置编码 [T5式](../../../PositionEncoding/位置编码.md#T5式)
 
 
 `hidden_states = self.encoder(hidden_states, attention_mask, position_bias)`

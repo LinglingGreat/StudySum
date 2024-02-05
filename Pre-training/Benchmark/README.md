@@ -25,7 +25,7 @@ HELM包括了基本上每个评测方向的数据集，可以在此基础上评�
 [MGSM](https://github.com/google-research/url-nlp)（多语言的数学应用问题，GSM8K数据集手动翻译成了10种语言）
 - 可用来做CoT推理评测
 
-CoT效果的验证，也可以参考[Flan-PaLM_T5](Flan-PaLM_T5/Flan-PaLM_T5.md)执行MMLU-Direct, MMLU-CoT, BBH-Direct, BBH-CoT, TyDiQA-Direct, and MGSM-CoT的对比
+CoT效果的验证，也可以参考[Flan-PaLM_T5](../Alignment/Flan-PaLM_T5/Flan-PaLM_T5.md)执行MMLU-Direct, MMLU-CoT, BBH-Direct, BBH-CoT, TyDiQA-Direct, and MGSM-CoT的对比
 
 MMLU（包含在HELM中）
 - 偏向语言理解的知识密集型任务（比如计算机、数学、法律、哲学、医学、经济学、社会学）
