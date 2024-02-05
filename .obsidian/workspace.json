@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Alignment/CUT/CUT.md",
+                "file": "Pre-training/LLMs/代码大模型.md",
                 "mode": "source",
                 "source": false
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Alignment/CUT/CUT.md",
+                "file": "Pre-training/LLMs/代码大模型.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Alignment/CUT/CUT.md"
+                "file": "Pre-training/LLMs/代码大模型.md"
               }
             }
           },
@@ -251,6 +251,8 @@
   },
   "active": "ae40a233bda49405",
   "lastOpenFiles": [
+    "Pre-training/Alignment/CUT/CUT.md",
+    "Pre-training/LLMs/代码大模型.md",
     "Pre-training/Alignment/CUT/img/Pasted image 20240205155430.png",
     "Pre-training/Alignment/CUT/img/Pasted image 20240205155342.png",
     "Pre-training/Alignment/CUT/img/Pasted image 20240205155319.png",
@@ -261,7 +263,6 @@
     "Pre-training/Alignment/CUT/img/Pasted image 20240205153932.png",
     "Pre-training/Alignment/CUT/img",
     "Pre-training/Alignment/FLANCollection/FLANCollection.md",
-    "Pre-training/Alignment/CUT/CUT.md",
     "Pre-training/Alignment/CUT",
     "Pre-training/Alignment/FLAN/FLAN.md",
     "Pre-training/Alignment/Flan-PaLM_T5/Flan-PaLM_T5.md",
@@ -291,7 +292,6 @@
     "Pre-training/explore/TopInChineseDataProcess",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185941.png",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185753.png",
-    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185721.png",
     "Pre-training/LLMs/Deepseek/img",
     "Pre-training/LLMs/Deepseek",
     "Pre-training/长度外推/E2-LLM",
