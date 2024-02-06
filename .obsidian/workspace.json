@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Prompt/Prompt.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Prompt/Prompt.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -249,8 +249,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ae40a233bda49405",
+  "active": "23e3f924a824df82",
   "lastOpenFiles": [
+    "Pre-training/Prompt/Prompt.md",
     "Pre-training/LLMs/代码大模型.md",
     "Pre-training/Alignment/CUT/CUT.md",
     "Pre-training/Alignment/CUT/img/Pasted image 20240205155430.png",
@@ -288,7 +289,6 @@
     "Tool/Git/Git.md",
     "Inference/README.md",
     "Pre-training/explore/TopInChineseDataProcess/TopInChineseDataProcess.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/explore/TopInChineseDataProcess",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185941.png",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185753.png",
