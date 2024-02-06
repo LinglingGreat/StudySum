@@ -166,3 +166,5 @@ prefix-tuning：[https://zhuanlan.zhihu.com/p/386073664](https://zhuanlan.zhihu.
 
 prompt工程指南： https://github.com/promptslab/Awesome-Prompt-Engineering
 
+[比OpenAI官方提示词指南更全，这26条黄金准则让LLM性能飙升50%以上](https://mp.weixin.qq.com/s/F746iulLAt04mwveXTgncw)
+
