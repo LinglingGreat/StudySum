@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md",
+                "file": "Pre-training/LLMs/MoE/MoE.md",
                 "mode": "source",
                 "source": false
               }
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md",
+                "file": "Pre-training/LLMs/MoE/MoE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md"
+                "file": "Pre-training/LLMs/MoE/MoE.md"
               }
             }
           },
@@ -263,6 +263,9 @@
   },
   "active": "ecc82ccca2b406c6",
   "lastOpenFiles": [
+    "Pre-training/长度外推/长度外推.md",
+    "Pre-training/LLMs/MoE/MoE.md",
+    "Pre-training/LLMs/MoE",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
@@ -287,7 +290,6 @@
     "Pre-training/Alignment/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
     "Pre-training/T0/T0.md",
     "Pre-training/LLMs/T5/UnifiedSKG/UnifiedSKG.md",
-    "Pre-training/长度外推/长度外推.md",
     "Pre-training/DataMix",
     "Pre-training/LLMs/Lion/Lion.md",
     "Pre-training/LLMs/README.md",
@@ -300,7 +302,6 @@
     "Pre-training/Alignment/easy-to-hard/easy-to-hard-generalization.md",
     "Pre-training/Alignment",
     "Pre-training/业界分享/Good_Articles.md",
-    "Pre-training/预训练语言模型.md",
     "Pre-training/explore/TopInChineseDataProcess",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185941.png",
     "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185753.png",
@@ -308,7 +309,6 @@
     "Pre-training/LLMs/Deepseek",
     "Pre-training/长度外推/E2-LLM",
     "Pre-training/LLMs/Mistral",
-    "Pre-training/explore/ImpossibleLanguage",
     "未命名.canvas"
   ]
 }
