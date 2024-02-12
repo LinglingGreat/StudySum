@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/Qwen/Qwen.md",
+                "file": "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
                 "mode": "source",
                 "source": false
               }
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/Qwen/Qwen.md",
+                "file": "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/Qwen/Qwen.md"
+                "file": "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md"
               }
             }
           },
@@ -263,6 +263,21 @@
   },
   "active": "ecc82ccca2b406c6",
   "lastOpenFiles": [
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212135146.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212134040.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212131825.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212131642.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212131519.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212130827.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212130521.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212124153.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212124140.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212123311.png",
+    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212123236.png",
+    "Pre-training/LLMs/DeepSeekMath/img",
+    "Pre-training/LLMs/Qwen/Qwen.md",
+    "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
+    "Pre-training/LLMs/DeepSeekMath",
     "Pre-training/explore/TrainingTrajectories/TrainingTrajectories.md",
     "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/explore/TrainingTrajectories",
@@ -276,14 +291,6 @@
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/LLMs/代码大模型.md",
     "Pre-training/Alignment/CUT/CUT.md",
-    "Pre-training/Alignment/CUT/img/Pasted image 20240205155430.png",
-    "Pre-training/Alignment/CUT/img/Pasted image 20240205155342.png",
-    "Pre-training/Alignment/CUT/img/Pasted image 20240205155319.png",
-    "Pre-training/Alignment/CUT/img/Pasted image 20240205155209.png",
-    "Pre-training/Alignment/CUT/img/Pasted image 20240205155131.png",
-    "Pre-training/Alignment/CUT/img/Pasted image 20240205154525.png",
-    "Pre-training/Alignment/CUT/img/Pasted image 20240205154050.png",
-    "Pre-training/Alignment/CUT/img/Pasted image 20240205153932.png",
     "Pre-training/Alignment/CUT/img",
     "Pre-training/Alignment/FLANCollection/FLANCollection.md",
     "Pre-training/Alignment/CUT",
@@ -299,16 +306,9 @@
     "Pre-training/Alignment/Finetune/Finetune.md",
     "Pre-training/LLMs/LLaMA汉化工作.md",
     "Pre-training/LLMs/垂域大模型.md",
-    "Pre-training/LLMs/指令微调.md",
-    "Pre-training/InContextLearning/In-Context Learning.md",
-    "Pre-training/Alignment/easy-to-hard/easy-to-hard-generalization.md",
     "Pre-training/Alignment",
     "Pre-training/explore/TopInChineseDataProcess",
-    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185941.png",
-    "Pre-training/LLMs/Deepseek/img/Pasted image 20240118185753.png",
     "Pre-training/LLMs/Deepseek/img",
-    "Pre-training/LLMs/Deepseek",
-    "Pre-training/长度外推/E2-LLM",
     "未命名.canvas"
   ]
 }
