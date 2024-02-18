@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md",
+                "file": "Inference/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md",
+                "file": "Inference/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md"
+                "file": "Inference/README.md"
               }
             }
           },
@@ -263,6 +263,7 @@
   },
   "active": "ecc82ccca2b406c6",
   "lastOpenFiles": [
+    "Pre-training/长度外推/长度外推.md",
     "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212135146.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212134040.png",
@@ -280,7 +281,6 @@
     "Pre-training/explore/TrainingTrajectories/TrainingTrajectories.md",
     "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/explore/TrainingTrajectories",
-    "Pre-training/长度外推/长度外推.md",
     "Pre-training/LLMs/MoE",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",

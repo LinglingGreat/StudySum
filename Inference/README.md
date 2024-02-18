@@ -7,3 +7,5 @@
 
 [语言大模型推理加速指南](https://mp.weixin.qq.com/s/B3TD2p_5HKoYkzzupLoUxQ)
 
+[进我的收藏夹吃灰吧：大模型加速超全指南来了](https://mp.weixin.qq.com/s/4USwSMIiudFCdy9C5pN1dQ)
+
