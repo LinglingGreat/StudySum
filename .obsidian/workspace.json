@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
+                "file": "Pre-training/长度外推/长度外推.md",
                 "mode": "source",
                 "source": false
               }
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
+                "file": "Pre-training/长度外推/长度外推.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md"
+                "file": "Pre-training/长度外推/长度外推.md"
               }
             }
           },
@@ -263,6 +263,7 @@
   },
   "active": "ecc82ccca2b406c6",
   "lastOpenFiles": [
+    "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212135146.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212134040.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212131825.png",
@@ -273,10 +274,8 @@
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212124153.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212124140.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212123311.png",
-    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212123236.png",
     "Pre-training/LLMs/DeepSeekMath/img",
     "Pre-training/LLMs/Qwen/Qwen.md",
-    "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
     "Pre-training/LLMs/DeepSeekMath",
     "Pre-training/explore/TrainingTrajectories/TrainingTrajectories.md",
     "Pre-training/LLMs/MoE/MoE.md",
