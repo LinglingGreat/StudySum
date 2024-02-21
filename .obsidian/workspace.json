@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Inference/README.md",
+                "file": "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
                 "mode": "source",
                 "source": false
               }
@@ -145,7 +145,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "mistral",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Inference/README.md",
+                "file": "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Inference/README.md"
+                "file": "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md"
               }
             }
           },
@@ -263,7 +263,20 @@
   },
   "active": "ecc82ccca2b406c6",
   "lastOpenFiles": [
+    "Pre-training/长度外推/DataEngineer_128K/img/Pasted image 20240221203449.png",
+    "Pre-training/长度外推/DataEngineer_128K/img",
+    "Pre-training/长度外推/LongAgent/LongAgent.md",
+    "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
+    "Pre-training/长度外推/DataEngineer_128K",
+    "Pre-training/长度外推/E2-LLM/E2-LLM.md",
+    "Pre-training/长度外推/LongAgent",
+    "Pre-training/长度外推/SelfExtend/SelfExtend.md",
     "Pre-training/长度外推/长度外推.md",
+    "Inference/README.md",
+    "Tool/python/Python.md",
+    "Tool/Pytorch/Pytorch.md",
+    "Tool/README.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212135146.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212134040.png",
@@ -286,7 +299,6 @@
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
     "Pre-training/README.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/LLMs/代码大模型.md",
     "Pre-training/Alignment/CUT/CUT.md",
@@ -296,18 +308,7 @@
     "Pre-training/Alignment/FLAN/FLAN.md",
     "Pre-training/Alignment/Flan-PaLM_T5/Flan-PaLM_T5.md",
     "Pre-training/Alignment/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
-    "Pre-training/T0/T0.md",
-    "Pre-training/LLMs/T5/UnifiedSKG/UnifiedSKG.md",
     "Pre-training/DataMix",
-    "Pre-training/LLMs/Lion/Lion.md",
-    "Pre-training/LLMs/README.md",
-    "Pre-training/Alignment/InstructionTuning/README.md",
-    "Pre-training/Alignment/Finetune/Finetune.md",
-    "Pre-training/LLMs/LLaMA汉化工作.md",
-    "Pre-training/LLMs/垂域大模型.md",
-    "Pre-training/Alignment",
-    "Pre-training/explore/TopInChineseDataProcess",
-    "Pre-training/LLMs/Deepseek/img",
     "未命名.canvas"
   ]
 }
