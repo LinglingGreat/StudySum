@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/MoE/MoE.md",
+                "file": "Pre-training/长度外推/长度外推.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/MoE/MoE.md",
+                "file": "Pre-training/长度外推/长度外推.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/MoE/MoE.md"
+                "file": "Pre-training/长度外推/长度外推.md"
               }
             }
           },
@@ -275,6 +275,7 @@
   },
   "active": "e7f0f50fa5fca303",
   "lastOpenFiles": [
+    "Pre-training/LLMs/MoE/MoE.md",
     "Tool/Linux/Linux.md",
     "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
     "Pre-training/长度外推/DataEngineer_128K/img/Pasted image 20240221203449.png",
@@ -303,7 +304,6 @@
     "Pre-training/LLMs/Qwen/Qwen.md",
     "Pre-training/LLMs/DeepSeekMath",
     "Pre-training/explore/TrainingTrajectories/TrainingTrajectories.md",
-    "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/explore/TrainingTrajectories",
     "Pre-training/LLMs/MoE",
     "Pre-training/Parallelism/Megatron.md",
