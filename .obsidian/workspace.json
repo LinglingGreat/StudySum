@@ -104,6 +104,18 @@
             }
           },
           {
+            "id": "e7f0f50fa5fca303",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/LLMs/MoE/MoE.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "ecc82ccca2b406c6",
             "type": "leaf",
             "state": {
@@ -182,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
+                "file": "Pre-training/LLMs/MoE/MoE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md"
+                "file": "Pre-training/LLMs/MoE/MoE.md"
               }
             }
           },
@@ -261,12 +273,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ecc82ccca2b406c6",
+  "active": "e7f0f50fa5fca303",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
     "Pre-training/长度外推/DataEngineer_128K/img/Pasted image 20240221203449.png",
     "Pre-training/长度外推/DataEngineer_128K/img",
     "Pre-training/长度外推/LongAgent/LongAgent.md",
-    "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
     "Pre-training/长度外推/DataEngineer_128K",
     "Pre-training/长度外推/E2-LLM/E2-LLM.md",
     "Pre-training/长度外推/LongAgent",
@@ -276,7 +289,6 @@
     "Tool/python/Python.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/README.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212135146.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212134040.png",
@@ -287,7 +299,6 @@
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212130521.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212124153.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212124140.png",
-    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212123311.png",
     "Pre-training/LLMs/DeepSeekMath/img",
     "Pre-training/LLMs/Qwen/Qwen.md",
     "Pre-training/LLMs/DeepSeekMath",
