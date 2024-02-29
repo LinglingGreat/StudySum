@@ -639,6 +639,8 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 squeue --format="%.18i %.9P %.30j %.8u %.8T %.10M %.9l %.6D %R"
 ```
 
+`scontrol show job <jobid>`。这会显示该作业的所有设置和状态信息，包括作业被分配到的具体节点。
+
 删除作业：`scancel`
 - -u, --user=user_name 删除特定用户的作业
 - -i, --interactive交互模式. 对每一个作业进行确认

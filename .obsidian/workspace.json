@@ -116,18 +116,6 @@
             }
           },
           {
-            "id": "e7f0f50fa5fca303",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/长度外推/长度外推.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "ecc82ccca2b406c6",
             "type": "leaf",
             "state": {
@@ -140,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -206,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/README.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -234,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/README.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -285,10 +273,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a6eed508a29aff0c",
+  "active": "23e3f924a824df82",
   "lastOpenFiles": [
-    "Tool/Linux/Linux.md",
+    "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/长度外推/长度外推.md",
+    "Pre-training/README.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
     "Pre-training/长度外推/DataEngineer_128K/img/Pasted image 20240221203449.png",
@@ -321,7 +311,6 @@
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "Pre-training/Parallelism/BLOOM训练背后的技术.md",
-    "Pre-training/README.md",
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/LLMs/代码大模型.md",
     "Pre-training/Alignment/CUT/CUT.md",
