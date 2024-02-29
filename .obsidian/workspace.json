@@ -104,6 +104,18 @@
             }
           },
           {
+            "id": "a6eed508a29aff0c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "e7f0f50fa5fca303",
             "type": "leaf",
             "state": {
@@ -194,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md",
+                "file": "Pre-training/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/长度外推/长度外推.md"
+                "file": "Pre-training/README.md"
               }
             }
           },
@@ -273,10 +285,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7f0f50fa5fca303",
+  "active": "a6eed508a29aff0c",
   "lastOpenFiles": [
-    "Pre-training/LLMs/MoE/MoE.md",
     "Tool/Linux/Linux.md",
+    "Pre-training/长度外推/长度外推.md",
+    "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
     "Pre-training/长度外推/DataEngineer_128K/img/Pasted image 20240221203449.png",
     "Pre-training/长度外推/DataEngineer_128K/img",
@@ -285,7 +298,6 @@
     "Pre-training/长度外推/E2-LLM/E2-LLM.md",
     "Pre-training/长度外推/LongAgent",
     "Pre-training/长度外推/SelfExtend/SelfExtend.md",
-    "Pre-training/长度外推/长度外推.md",
     "Inference/README.md",
     "Tool/python/Python.md",
     "Tool/Pytorch/Pytorch.md",
