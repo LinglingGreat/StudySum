@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "DataRelated/Dataset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "DataRelated/Dataset.md"
               }
             }
           },
@@ -273,12 +273,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "23e3f924a824df82",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
+    "DataRelated/PretrainDataset/PretrainDataset.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/长度外推/长度外推.md",
     "Pre-training/README.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
     "Pre-training/长度外推/DataEngineer_128K/img/Pasted image 20240221203449.png",
@@ -319,7 +320,6 @@
     "Pre-training/Alignment/CUT",
     "Pre-training/Alignment/FLAN/FLAN.md",
     "Pre-training/Alignment/Flan-PaLM_T5/Flan-PaLM_T5.md",
-    "Pre-training/Alignment/ScalingInstructionFinetune/ScalingInstructionFinetune.md",
     "Pre-training/DataMix",
     "未命名.canvas"
   ]

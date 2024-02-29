@@ -18,3 +18,6 @@
 
 中文图书语料：[GitHub - FudanNLPLAB/CBook-150K: 中文图书语料MD5链接](https://github.com/FudanNLPLAB/CBook-150K)
 
+
+[**Pre-training Corpora, Fine-tuning Instruction Datasets, Preference Datasets, Evaluation Datasets, and Traditional NLP Datasets**..](https://github.com/lmmlzn/Awesome-LLMs-Datasets)
+
