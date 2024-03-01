@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "445096e0eaa0fa14",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/长度外推/CEPE/CEPE.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ae40a233bda49405",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/Prompt/Prompt.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "0dcec4fca934a851",
             "type": "leaf",
             "state": {
@@ -56,12 +32,12 @@
             }
           },
           {
-            "id": "ffe5fbf976c4e335",
+            "id": "e9255d565c0b64ba",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/explore/TopInChineseDataProcess/TopInChineseDataProcess.md",
+                "file": "Tool/Linux/Linux.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,38 +73,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Linux/Linux.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a6eed508a29aff0c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ecc82ccca2b406c6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
+                "file": "Pre-training/ContinualLearning/ContinualLearning.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -194,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/ContinualLearning/ContinualLearning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/ContinualLearning/ContinualLearning.md"
               }
             }
           },
@@ -275,16 +227,23 @@
   },
   "active": "23e3f924a824df82",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Pre-training/ContinualLearning/ContinualLearning.md",
+    "Pre-training/README.md",
+    "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/长度外推/CEPE/CEPE.md",
+    "Pre-training/Prompt/Prompt.md",
+    "Tool/python/Python.md",
+    "Pre-training/explore/TopInChineseDataProcess/TopInChineseDataProcess.md",
+    "Tool/Git/Git.md",
+    "Pre-training/PositionEncoding/位置编码.md",
+    "Pre-training/ContinualLearning",
     "Pre-training/长度外推/CEPE/img/Pasted image 20240301105454.png",
     "Pre-training/长度外推/CEPE/img",
     "Pre-training/长度外推/长度外推.md",
     "Pre-training/长度外推/CEPE",
-    "Tool/Linux/Linux.md",
     "DataRelated/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
-    "Pre-training/PositionEncoding/位置编码.md",
-    "Pre-training/README.md",
     "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
     "Pre-training/长度外推/DataEngineer_128K/img/Pasted image 20240221203449.png",
@@ -295,7 +254,6 @@
     "Pre-training/长度外推/LongAgent",
     "Pre-training/长度外推/SelfExtend/SelfExtend.md",
     "Inference/README.md",
-    "Tool/python/Python.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/README.md",
     "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
@@ -315,11 +273,6 @@
     "Pre-training/LLMs/MoE",
     "Pre-training/Parallelism/Megatron.md",
     "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
-    "Pre-training/Parallelism/BLOOM训练背后的技术.md",
-    "Pre-training/Prompt/Prompt.md",
-    "Pre-training/LLMs/代码大模型.md",
-    "Pre-training/Alignment/CUT/CUT.md",
-    "Pre-training/Alignment/CUT/img",
     "未命名.canvas"
   ]
 }
