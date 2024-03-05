@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "7a4877bfd572cd35",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/长度外推/ResonanceRoPE/ResonanceRoPE.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "d1601f8bc2b807d7",
             "type": "leaf",
             "state": {
@@ -68,6 +80,18 @@
             }
           },
           {
+            "id": "9f0900d104b9c9f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/长度外推/长度外推.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "23e3f924a824df82",
             "type": "leaf",
             "state": {
@@ -80,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/ContinualLearning/ContinualLearning.md",
+                "file": "Pre-training/长度外推/ResonanceRoPE/ResonanceRoPE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/ContinualLearning/ContinualLearning.md"
+                "file": "Pre-training/长度外推/ResonanceRoPE/ResonanceRoPE.md"
               }
             }
           },
@@ -225,10 +249,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "23e3f924a824df82",
+  "active": "7a4877bfd572cd35",
   "lastOpenFiles": [
+    "Pre-training/SPT/SPT.md",
+    "Pre-training/长度外推/ResonanceRoPE/ResonanceRoPE.md",
+    "Pre-training/长度外推/ResonanceRoPE",
+    "Pre-training/S2A/S2A.md",
+    "Pre-training/SPT",
     "Tool/Linux/Linux.md",
     "Pre-training/ContinualLearning/ContinualLearning.md",
+    "CV/StableDiffusion/StableDiffusion.md",
+    "Pre-training/长度外推/长度外推.md",
+    "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/README.md",
     "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/长度外推/CEPE/CEPE.md",
@@ -236,11 +268,9 @@
     "Tool/python/Python.md",
     "Pre-training/explore/TopInChineseDataProcess/TopInChineseDataProcess.md",
     "Tool/Git/Git.md",
-    "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/ContinualLearning",
     "Pre-training/长度外推/CEPE/img/Pasted image 20240301105454.png",
     "Pre-training/长度外推/CEPE/img",
-    "Pre-training/长度外推/长度外推.md",
     "Pre-training/长度外推/CEPE",
     "DataRelated/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
@@ -266,13 +296,7 @@
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212130521.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212124153.png",
     "Pre-training/LLMs/DeepSeekMath/img",
-    "Pre-training/LLMs/Qwen/Qwen.md",
     "Pre-training/LLMs/DeepSeekMath",
-    "Pre-training/explore/TrainingTrajectories/TrainingTrajectories.md",
-    "Pre-training/explore/TrainingTrajectories",
-    "Pre-training/LLMs/MoE",
-    "Pre-training/Parallelism/Megatron.md",
-    "Pre-training/Parallelism/DeepSpeed之ZeRO系列.md",
     "未命名.canvas"
   ]
 }
