@@ -21,3 +21,5 @@
 
 [**Pre-training Corpora, Fine-tuning Instruction Datasets, Preference Datasets, Evaluation Datasets, and Traditional NLP Datasets**..](https://github.com/lmmlzn/Awesome-LLMs-Datasets)
 
+[LLMDataHub: Awesome Datasets for LLM Training](https://github.com/Zjh-819/LLMDataHub)
+
