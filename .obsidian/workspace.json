@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/业界分享/Good_Articles.md",
+                "file": "Pre-training/Parallelism/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -116,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Inference/README.md",
+                "file": "Pre-training/PositionEncoding/位置编码.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Inference/README.md"
+                "file": "Pre-training/PositionEncoding/位置编码.md"
               }
             }
           },
@@ -261,9 +261,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9409ee5d7f139c42",
+  "active": "76530f0578510d56",
   "lastOpenFiles": [
+    "Pre-training/PositionEncoding/img/Pasted image 20240306204530.png",
+    "Pre-training/PositionEncoding/img/Pasted image 20240306204459.png",
+    "Pre-training/Parallelism/README.md",
+    "Pre-training/业界分享/Good_Articles.md",
     "Tool/Linux/Linux.md",
+    "Inference/README.md",
     "Pre-training/长度外推/ResonanceRoPE/ResonanceRoPE.md",
     "Pre-training/SPT/SPT.md",
     "Pre-training/长度外推/ResonanceRoPE",
@@ -274,7 +279,6 @@
     "Pre-training/长度外推/长度外推.md",
     "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/README.md",
-    "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/长度外推/CEPE/CEPE.md",
     "Pre-training/Prompt/Prompt.md",
     "Tool/python/Python.md",
@@ -295,10 +299,7 @@
     "Pre-training/长度外推/E2-LLM/E2-LLM.md",
     "Pre-training/长度外推/LongAgent",
     "Pre-training/长度外推/SelfExtend/SelfExtend.md",
-    "Inference/README.md",
     "Tool/Pytorch/Pytorch.md",
-    "Tool/README.md",
-    "Pre-training/LLMs/DeepSeekMath/DeepSeekMath.md",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212135146.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212134040.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212131825.png",
@@ -306,7 +307,6 @@
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212131519.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212130827.png",
     "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212130521.png",
-    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212124153.png",
     "Pre-training/LLMs/DeepSeekMath/img",
     "Pre-training/LLMs/DeepSeekMath",
     "未命名.canvas"
