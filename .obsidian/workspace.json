@@ -44,22 +44,12 @@
             }
           },
           {
-            "id": "c08c086b5a6e6262",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.8"
-              }
-            }
-          },
-          {
             "id": "9409ee5d7f139c42",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Inference/README.md",
+                "file": "Pre-training/WRAP/WRAP.md",
                 "mode": "source",
                 "source": false
               }
@@ -192,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "Pre-training/WRAP/WRAP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -220,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "Pre-training/WRAP/WRAP.md"
               }
             }
           },
@@ -271,17 +261,34 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c08c086b5a6e6262",
+  "active": "9409ee5d7f139c42",
   "lastOpenFiles": [
+    "Pre-training/LLMs/SaulLM/SaulLM.md",
+    "Pre-training/WRAP/WRAP.md",
+    "Pre-training/WRAP",
+    "Pre-training/LLMs/SaulLM/img/Pasted image 20240309171205.png",
+    "Pre-training/LLMs/SaulLM/img/Pasted image 20240309170743.png",
+    "Pre-training/LLMs/SaulLM/img",
+    "Pre-training/LLMs/Yi/Yi.md",
+    "Pre-training/LLMs/Yi/img/Pasted image 20240309164837.png",
+    "Pre-training/LLMs/Yi/img/Pasted image 20240309164248.png",
+    "Pre-training/LLMs/Yi/img/Pasted image 20240309163548.png",
+    "Pre-training/LLMs/Yi/img/Pasted image 20240309162705.png",
+    "Pre-training/LLMs/Yi/img/Pasted image 20240309162641.png",
+    "Pre-training/LLMs/Yi/img/Pasted image 20240309162527.png",
+    "Pre-training/LLMs/Yi/img/Pasted image 20240309161650.png",
+    "Pre-training/LLMs/Yi/img/Pasted image 20240309161607.png",
+    "Pre-training/LLMs/Yi/img",
+    "Pre-training/LLMs/垂域大模型.md",
+    "Pre-training/LLMs/SaulLM",
+    "Inference/README.md",
+    "Pre-training/LLMs/Yi",
+    "Tool/Linux/Linux.md",
     "DataRelated/Dataset.md",
     "Pre-training/Parallelism/README.md",
     "Tool/Git/Git.md",
     "Pre-training/PositionEncoding/位置编码.md",
-    "Pre-training/PositionEncoding/img/Pasted image 20240306204530.png",
-    "Pre-training/PositionEncoding/img/Pasted image 20240306204459.png",
     "Pre-training/业界分享/Good_Articles.md",
-    "Tool/Linux/Linux.md",
-    "Inference/README.md",
     "Pre-training/长度外推/ResonanceRoPE/ResonanceRoPE.md",
     "Pre-training/SPT/SPT.md",
     "Pre-training/长度外推/ResonanceRoPE",
@@ -296,28 +303,12 @@
     "Tool/python/Python.md",
     "Pre-training/explore/TopInChineseDataProcess/TopInChineseDataProcess.md",
     "Pre-training/ContinualLearning",
-    "Pre-training/长度外推/CEPE/img/Pasted image 20240301105454.png",
     "Pre-training/长度外推/CEPE/img",
     "Pre-training/长度外推/CEPE",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
-    "Pre-training/长度外推/DataEngineer_128K/img/Pasted image 20240221203449.png",
-    "Pre-training/长度外推/DataEngineer_128K/img",
     "Pre-training/长度外推/LongAgent/LongAgent.md",
-    "Pre-training/长度外推/DataEngineer_128K",
-    "Pre-training/长度外推/E2-LLM/E2-LLM.md",
-    "Pre-training/长度外推/LongAgent",
-    "Pre-training/长度外推/SelfExtend/SelfExtend.md",
-    "Tool/Pytorch/Pytorch.md",
-    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212135146.png",
-    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212134040.png",
-    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212131825.png",
-    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212131642.png",
-    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212131519.png",
-    "Pre-training/LLMs/DeepSeekMath/img/Pasted image 20240212130827.png",
-    "Pre-training/LLMs/DeepSeekMath/img",
-    "Pre-training/LLMs/DeepSeekMath",
     "未命名.canvas"
   ]
 }
