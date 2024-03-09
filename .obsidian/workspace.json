@@ -44,6 +44,16 @@
             }
           },
           {
+            "id": "c08c086b5a6e6262",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.8"
+              }
+            }
+          },
+          {
             "id": "9409ee5d7f139c42",
             "type": "leaf",
             "state": {
@@ -115,7 +125,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -181,7 +192,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/Dataset.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -209,7 +220,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/Dataset.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -260,8 +271,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0dcec4fca934a851",
+  "active": "c08c086b5a6e6262",
   "lastOpenFiles": [
+    "DataRelated/Dataset.md",
     "Pre-training/Parallelism/README.md",
     "Tool/Git/Git.md",
     "Pre-training/PositionEncoding/位置编码.md",
@@ -287,7 +299,6 @@
     "Pre-training/长度外推/CEPE/img/Pasted image 20240301105454.png",
     "Pre-training/长度外推/CEPE/img",
     "Pre-training/长度外推/CEPE",
-    "DataRelated/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/长度外推/DataEngineer_128K/DataEngineer_128K.md",
