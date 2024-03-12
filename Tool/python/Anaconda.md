@@ -6,6 +6,10 @@
 
 读取多个路径下的envs，在~/.bashrc文件末尾添加一行`export CONDA_ENVS_PATH=/xxx/miniconda3/envs:/xxx/miniconda3/envs`
 
+```bash
+echo 'export CONDA_ENVS_PATH=/path/to/miniconda3/envs:/another/path/to/miniconda3/envs' >> ~/.bashrc
+source ~/.bashrc
+```
 
 ## 常用命令
 
