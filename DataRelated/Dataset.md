@@ -23,3 +23,15 @@
 
 [LLMDataHub: Awesome Datasets for LLM Training](https://github.com/Zjh-819/LLMDataHub)
 
+幽默数据集：[TuringsSolutions (Richard A Aragon)](https://huggingface.co/TuringsSolutions)
+
+c.ai的bot：[New Arrivals](https://rentry.org/cai-list)
+
+角色扮演数据集： [ERP/RP and erotica raw data collection](https://rentry.org/qib8f)
+
+[Dampf's list of good datasets for LLM fine-tuning](https://rentry.org/datasets-llm)
+
+[Dataset Collection](https://rentry.co/cvmbb)
+
+[CIS 700 - Resources](https://interactive-fiction-class.org/resources.html)
+
