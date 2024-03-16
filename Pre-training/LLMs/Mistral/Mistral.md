@@ -39,7 +39,7 @@ institution:
 
 ![](img/Pasted%20image%2020240316142626.png)
 
-Mistral7b instruct v0.2相比0.1，长度扩充到32k，sliding window从4k改成了null(也就是使用了full attention)，并且效果还不错。0.2是在0.1基础上训练的。
+Mistral7b instruct v0.2相比0.1，长度扩充到32k，sliding window从4k改成了null(也就是使用了full attention)，rope_theta改成了100w，并且效果还不错。0.2是在0.1基础上训练的。
 
 ## 实验
 
