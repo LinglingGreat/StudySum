@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
+                "file": "Pre-training/RolePlay/RolePlaySum.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
+                "file": "Pre-training/RolePlay/RolePlaySum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md"
+                "file": "Pre-training/RolePlay/RolePlaySum.md"
               }
             }
           },
@@ -275,8 +275,10 @@
   },
   "active": "bc8d1b9ac85a68f4",
   "lastOpenFiles": [
-    "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
     "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
+    "Pre-training/RolePlay/RolePlaySum.md",
+    "Pre-training/RolePlay",
+    "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
     "Pre-training/Branch-Train-MiX",
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318153249.png",
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318152941.png",
@@ -314,13 +316,11 @@
     "Pre-training/LLMs/Yi",
     "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/SPT/SPT.md",
-    "Pre-training/长度外推/ResonanceRoPE",
     "Pre-training/S2A/S2A.md",
     "CV/StableDiffusion/StableDiffusion.md",
     "Pre-training/README.md",
     "Pre-training/长度外推/CEPE/CEPE.md",
     "Pre-training/Prompt/Prompt.md",
-    "Pre-training/explore/TopInChineseDataProcess/TopInChineseDataProcess.md",
     "未命名.canvas"
   ]
 }
