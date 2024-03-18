@@ -128,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/Yi/Yi.md",
+                "file": "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/Yi/Yi.md"
+                "file": "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md"
               }
             }
           },
@@ -273,8 +273,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1d904fb14b9879a7",
+  "active": "bc8d1b9ac85a68f4",
   "lastOpenFiles": [
+    "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318153249.png",
+    "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318152941.png",
+    "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318152636.png",
+    "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318152058.png",
+    "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318151133.png",
+    "Pre-training/Generalization_of_FT-LLM/img",
+    "Pre-training/LLMs/Yi/Yi.md",
     "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
     "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
@@ -299,12 +306,7 @@
     "Pre-training/LLMs/SaulLM/SaulLM.md",
     "Pre-training/WRAP",
     "Pre-training/LLMs/SaulLM/img/Pasted image 20240309171205.png",
-    "Pre-training/LLMs/SaulLM/img/Pasted image 20240309170743.png",
     "Pre-training/LLMs/SaulLM/img",
-    "Pre-training/LLMs/Yi/Yi.md",
-    "Pre-training/LLMs/Yi/img/Pasted image 20240309164837.png",
-    "Pre-training/LLMs/Yi/img/Pasted image 20240309164248.png",
-    "Pre-training/LLMs/Yi/img/Pasted image 20240309163548.png",
     "Pre-training/LLMs/Yi/img",
     "Pre-training/LLMs/垂域大模型.md",
     "Pre-training/LLMs/SaulLM",
@@ -319,8 +321,6 @@
     "Pre-training/长度外推/CEPE/CEPE.md",
     "Pre-training/Prompt/Prompt.md",
     "Pre-training/explore/TopInChineseDataProcess/TopInChineseDataProcess.md",
-    "Pre-training/ContinualLearning",
-    "DataRelated/PretrainDataset/PretrainDataset.md",
     "未命名.canvas"
   ]
 }
