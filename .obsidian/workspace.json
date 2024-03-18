@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
+                "file": "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
+                "file": "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md"
+                "file": "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md"
               }
             }
           },
@@ -275,6 +275,9 @@
   },
   "active": "bc8d1b9ac85a68f4",
   "lastOpenFiles": [
+    "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
+    "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
+    "Pre-training/Branch-Train-MiX",
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318153249.png",
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318152941.png",
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318152636.png",
@@ -282,7 +285,6 @@
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318151133.png",
     "Pre-training/Generalization_of_FT-LLM/img",
     "Pre-training/LLMs/Yi/Yi.md",
-    "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
     "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
     "Pre-training/Generalization_of_FT-LLM",
@@ -305,7 +307,6 @@
     "Tool/python/img/Pasted image 20240312103257.png",
     "Pre-training/LLMs/SaulLM/SaulLM.md",
     "Pre-training/WRAP",
-    "Pre-training/LLMs/SaulLM/img/Pasted image 20240309171205.png",
     "Pre-training/LLMs/SaulLM/img",
     "Pre-training/LLMs/Yi/img",
     "Pre-training/LLMs/垂域大模型.md",
@@ -315,7 +316,6 @@
     "Pre-training/SPT/SPT.md",
     "Pre-training/长度外推/ResonanceRoPE",
     "Pre-training/S2A/S2A.md",
-    "Pre-training/SPT",
     "CV/StableDiffusion/StableDiffusion.md",
     "Pre-training/README.md",
     "Pre-training/长度外推/CEPE/CEPE.md",
