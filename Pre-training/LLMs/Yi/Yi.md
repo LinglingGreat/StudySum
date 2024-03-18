@@ -3,6 +3,7 @@ title: Yi
 created: 2024-03-09
 tags:
   - 大模型
+  - 长文本
 type: 论文
 papername: Yi-Open Foundation Models by 01.AI
 conference: ACL/EMNLP/NAACL/EACL/COLING/SIGIR/AAAI/ICML/ICDM

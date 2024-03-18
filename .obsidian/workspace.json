@@ -92,6 +92,18 @@
             }
           },
           {
+            "id": "1d904fb14b9879a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/LLMs/Yi/Yi.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "76530f0578510d56",
             "type": "leaf",
             "state": {
@@ -116,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -182,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
+                "file": "Pre-training/LLMs/Yi/Yi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md"
+                "file": "Pre-training/LLMs/Yi/Yi.md"
               }
             }
           },
@@ -261,10 +273,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "bc8d1b9ac85a68f4",
+  "active": "1d904fb14b9879a7",
   "lastOpenFiles": [
-    "Tool/Linux/Linux.md",
     "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
+    "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
     "Pre-training/Generalization_of_FT-LLM",
     "Pre-training/LLMs/Mistral/Mistral.md",
