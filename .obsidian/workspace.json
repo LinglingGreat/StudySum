@@ -127,8 +127,7 @@
               }
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -194,7 +193,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/RolePlay/RolePlaySum.md",
+                "file": "DataRelated/Dataset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +221,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/RolePlay/RolePlaySum.md"
+                "file": "DataRelated/Dataset.md"
               }
             }
           },
@@ -273,10 +272,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "bc8d1b9ac85a68f4",
+  "active": "0dcec4fca934a851",
   "lastOpenFiles": [
-    "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
+    "DataRelated/PretrainDataset/PretrainDataset.md",
+    "DataRelated/Dataset.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/RolePlay/RolePlaySum.md",
+    "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
     "Pre-training/RolePlay",
     "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
     "Pre-training/Branch-Train-MiX",
@@ -287,7 +289,6 @@
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318151133.png",
     "Pre-training/Generalization_of_FT-LLM/img",
     "Pre-training/LLMs/Yi/Yi.md",
-    "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
     "Pre-training/Generalization_of_FT-LLM",
     "Pre-training/LLMs/Mistral/Mistral.md",
@@ -296,7 +297,6 @@
     "Pre-training/LLMs/Mistral/img/Pasted image 20240316142536.png",
     "Pre-training/LLMs/Mistral/img/Pasted image 20240316142514.png",
     "Pre-training/LLMs/Mistral/img",
-    "DataRelated/Dataset.md",
     "Pre-training/长度外推/长度外推.md",
     "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/ContinualLearning/ContinualLearning.md",
@@ -320,7 +320,6 @@
     "CV/StableDiffusion/StableDiffusion.md",
     "Pre-training/README.md",
     "Pre-training/长度外推/CEPE/CEPE.md",
-    "Pre-training/Prompt/Prompt.md",
     "未命名.canvas"
   ]
 }

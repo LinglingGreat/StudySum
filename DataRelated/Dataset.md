@@ -35,3 +35,5 @@ c.ai的bot：[New Arrivals](https://rentry.org/cai-list)
 
 [CIS 700 - Resources](https://interactive-fiction-class.org/resources.html)
 
+[Releasing Common Corpus: the largest public domain dataset for training LLMs](https://huggingface.co/blog/Pclanglais/common-corpus)
+
