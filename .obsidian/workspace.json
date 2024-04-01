@@ -44,18 +44,6 @@
             }
           },
           {
-            "id": "16da0880a478d8e7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Pytorch/transformers.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "e9255d565c0b64ba",
             "type": "leaf",
             "state": {
@@ -140,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -206,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "News/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -234,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/transformers.md"
+                "file": "News/README.md"
               }
             }
           },
@@ -285,10 +273,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "16da0880a478d8e7",
+  "active": "1d904fb14b9879a7",
   "lastOpenFiles": [
-    "Tool/Pytorch/Pytorch.md",
     "Tool/python/Python.md",
+    "Tool/Pytorch/transformers.md",
+    "Tool/Pytorch/Pytorch.md",
     "Tool/Linux/Linux.md",
     "News/README.md",
     "Pre-training/LLMs/Yi/Yi.md",
@@ -332,7 +321,6 @@
     "Pre-training/LLMs/Yi/img",
     "Pre-training/LLMs/SaulLM",
     "Pre-training/PositionEncoding/位置编码.md",
-    "Pre-training/SPT/SPT.md",
     "未命名.canvas"
   ]
 }
