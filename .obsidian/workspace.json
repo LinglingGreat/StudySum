@@ -80,16 +80,6 @@
             }
           },
           {
-            "id": "15561b883c3263f5",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.12"
-              }
-            }
-          },
-          {
             "id": "bc8d1b9ac85a68f4",
             "type": "leaf",
             "state": {
@@ -150,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -216,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "News/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -244,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md"
+                "file": "News/README.md"
               }
             }
           },
@@ -295,8 +285,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "15561b883c3263f5",
+  "active": "1d904fb14b9879a7",
   "lastOpenFiles": [
+    "Tool/Git/Git.md",
     "Tool/python/Python.md",
     "Tool/Pytorch/transformers.md",
     "News/README.md",
@@ -321,7 +312,6 @@
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318152058.png",
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318151133.png",
     "Pre-training/Generalization_of_FT-LLM/img",
-    "Tool/Git/Git.md",
     "Pre-training/Generalization_of_FT-LLM",
     "Pre-training/LLMs/Mistral/Mistral.md",
     "Pre-training/LLMs/Mistral/img/Pasted image 20240316142626.png",
