@@ -6,7 +6,9 @@
 ## 下载工具
 huggingface-cli download xai-org/grok-1 --repo-type model --include ckpt/tensor* --local-dir checkpoints/ckpt-0 --local-dir-use-symlinks False --resume-download 
 
-export HF_ENDPOINT=[https://hf-mirror.com](https://hf-mirror.com)
+如果要resume，local-dir-use-symlinks就不能设置成False
+
+export HF_ENDPOINT=https://hf-mirror.com
 
 export HF_HUB_ENABLE_HF_TRANSFER=1
 
