@@ -31,3 +31,6 @@
 
 [超长文本无损能力压测！中文大模型“大海捞针”首批结果公布](https://mp.weixin.qq.com/s/QgoRf2LB-7vc3vTFOHJkpw)
 
+## 2024.4.22
+
+1. #数据 开源了15T的高质量网络数据FineWeb，对2013-2014期间的cc进行过滤和去重：https://twitter.com/gui_penedo/status/1781953413938557276 
