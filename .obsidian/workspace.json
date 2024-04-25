@@ -68,6 +68,18 @@
             }
           },
           {
+            "id": "d87712d9b536a0f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Inference/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "e9255d565c0b64ba",
             "type": "leaf",
             "state": {
@@ -299,6 +311,13 @@
   },
   "active": "72f00fb46c6ee819",
   "lastOpenFiles": [
+    "Inference/README.md",
+    "Inference/FlashAttention/FlashAttention.md",
+    "Inference/FlashAttention/img/Pasted image 20240424194349.png",
+    "Inference/FlashAttention/img/Pasted image 20240424194314.png",
+    "Inference/FlashAttention/img",
+    "Inference/FlashAttention",
+    "News/README.md",
     "Tool/Pytorch/transformers.md",
     "Tool/python/Python.md",
     "Tool/Linux/Linux.md",
@@ -313,7 +332,6 @@
     "Pre-training/LLMs/JetMoE/img/Pasted image 20240413173525.png",
     "Pre-training/LLMs/JetMoE/img/Pasted image 20240413172754.png",
     "Pre-training/LLMs/JetMoE/img",
-    "News/README.md",
     "Pre-training/LLMs/JetMoE",
     "Tool/Pytorch/Pytorch.md",
     "Pre-training/LLMs/Yi/Yi.md",
@@ -330,8 +348,6 @@
     "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
     "Pre-training/Branch-Train-MiX",
     "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318153249.png",
-    "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318152941.png",
-    "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318152636.png",
     "Pre-training/Generalization_of_FT-LLM/img",
     "Pre-training/Generalization_of_FT-LLM",
     "Pre-training/LLMs/Mistral/img",
@@ -340,10 +356,6 @@
     "Pre-training/ContinualLearning/ContinualLearning.md",
     "Pre-training/WRAP/WRAP.md",
     "Pre-training/长度外推/ResonanceRoPE/ResonanceRoPE.md",
-    "Pre-training/Parallelism/README.md",
-    "Inference/README.md",
-    "Pre-training/WRAP",
-    "Pre-training/LLMs/SaulLM/img",
     "未命名.canvas"
   ]
 }

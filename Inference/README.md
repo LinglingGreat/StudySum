@@ -9,7 +9,5 @@
 
 [进我的收藏夹吃灰吧：大模型加速超全指南来了](https://mp.weixin.qq.com/s/4USwSMIiudFCdy9C5pN1dQ)
 
-[flash attention V1 V2 V3 V4 如何加速 attention - 知乎](https://zhuanlan.zhihu.com/p/685020608)
 
-[[FlashAttention系列][2w字]🔥原理详解: 从Online-Softmax到FlashAttention-1/2/FlashDecoding，再到FlashDecoding++ - 知乎](https://zhuanlan.zhihu.com/p/668888063)
 

@@ -31,10 +31,16 @@
 
 [超长文本无损能力压测！中文大模型“大海捞针”首批结果公布](https://mp.weixin.qq.com/s/QgoRf2LB-7vc3vTFOHJkpw)
 
-## 2024.4.22
+## 2024.4.22-24
 
-1. #数据 开源了15T的高质量网络数据FineWeb，对2013-2014期间的cc进行过滤和去重：https://twitter.com/gui_penedo/status/1781953413938557276 
+开源了15T的高质量网络数据FineWeb，对2013-2014期间的cc进行过滤和去重：https://twitter.com/gui_penedo/status/1781953413938557276  #数据 
 
-### 2024.4.23
-1. [好样本，事半功倍：使用样本设计工程 (SDE) 来构造更好的大模型下游微调样本](https://mp.weixin.qq.com/s/QbiTwDvXLJ_Bbsi3xFOgkQ)
+ [好样本，事半功倍：使用样本设计工程 (SDE) 来构造更好的大模型下游微调样本](https://mp.weixin.qq.com/s/QbiTwDvXLJ_Bbsi3xFOgkQ)   #微调 
+
+多头专家混合模型：[[2404.15045v1] Multi-Head Mixture-of-Experts](https://arxiv.org/abs/2404.15045v1)   #专家模型 
+
+
+
+
+
 
