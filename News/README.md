@@ -68,6 +68,12 @@
 
 [Retrieval Head Mechanistically Explains Long-Context Factuality](https://papers.cool/arxiv/2404.15574) 在长文本上下文中，大型语言模型（LLMs）是如何获取并检索相关信息的。论文提出了“检索头”这一概念，这是模型中负责从长文本上下文中检索相关信息的特殊类型的注意力头（attention heads）。这些检索头对于模型能否成功找到并使用输入文本中的信息至关重要。 #长文本 
 
+[FireAttention — Serving Open Source Models 4x faster than vLLM by quantizing with \~no tradeoffs](https://fireworks.ai/blog/fire-attention-serving-open-source-models-4x-faster-than-vllm-by-quantizing-with-no-tradeoffs) 没有开源，需要购买。 #推理加速 
+
+[LLM能否依据角色的过去预测未来？一篇有趣的研究](https://mp.weixin.qq.com/s/wwuayFtqWuy0ByEe4HVf8w)  #roleplay 
+
+
+
 
 
 
