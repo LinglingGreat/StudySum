@@ -13,19 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DataRelated/Dataset.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "00d49b8e6674f5a9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/LLMs/垂域大模型.md",
+                "file": "Pre-training/Alignment/MoI/MoI.md",
                 "mode": "source",
                 "source": false
               }
@@ -44,36 +32,12 @@
             }
           },
           {
-            "id": "1f1ee739770f9c74",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Pytorch/transformers.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "72f00fb46c6ee819",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "News/README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d87712d9b536a0f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Inference/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -92,18 +56,6 @@
             }
           },
           {
-            "id": "11abeb9a7d1a0615",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/LLMs/Mistral/Mistral.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d1601f8bc2b807d7",
             "type": "leaf",
             "state": {
@@ -114,57 +66,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "bc8d1b9ac85a68f4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/RolePlay/RolePlaySum.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1d904fb14b9879a7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/LLMs/JetMoE/JetMoE.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "76530f0578510d56",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/PositionEncoding/位置编码.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "9f0900d104b9c9f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/长度外推/长度外推.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -230,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "News/README.md",
+                "file": "Pre-training/Alignment/MoI/MoI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -258,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "News/README.md"
+                "file": "Pre-training/Alignment/MoI/MoI.md"
               }
             }
           },
@@ -309,28 +212,41 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "72f00fb46c6ee819",
+  "active": "0dcec4fca934a851",
   "lastOpenFiles": [
+    "Pre-training/Alignment/MoI/img/Pasted image 20240502180042.png",
+    "Pre-training/Alignment/MoI/img/Pasted image 20240502175916.png",
+    "Pre-training/Alignment/MoI/img/Pasted image 20240502175723.png",
+    "Pre-training/Alignment/MoI/img/Pasted image 20240502175430.png",
+    "Pre-training/Alignment/MoI/img/Pasted image 20240502175336.png",
+    "Pre-training/Alignment/MoI/img/Pasted image 20240502175110.png",
+    "Pre-training/Alignment/MoI/img/Pasted image 20240502174928.png",
+    "Pre-training/Alignment/MoI/img/Pasted image 20240502174440.png",
+    "Pre-training/Alignment/MoI/img",
+    "Pre-training/Alignment/RLHB/RLHB.md",
+    "Pre-training/Alignment/MoI/MoI.md",
+    "Pre-training/Alignment/MoI",
+    "Pre-training/Alignment/RLHB/img/Pasted image 20240502170714.png",
+    "Pre-training/Alignment/RLHB/img/Pasted image 20240502170702.png",
+    "Pre-training/Alignment/RLHB/img/Pasted image 20240502170224.png",
+    "Pre-training/Alignment/RLHB/img",
+    "Pre-training/LLMs/垂域大模型.md",
+    "Tool/python/Python.md",
+    "Tool/Pytorch/transformers.md",
+    "News/README.md",
+    "Tool/Linux/Linux.md",
+    "Pre-training/LLMs/Mistral/Mistral.md",
+    "Tool/Git/Git.md",
+    "Pre-training/RolePlay/RolePlaySum.md",
+    "Pre-training/PositionEncoding/位置编码.md",
+    "Pre-training/长度外推/长度外推.md",
+    "DataRelated/Dataset.md",
     "Inference/README.md",
+    "Pre-training/Alignment/RLHB",
     "Inference/FlashAttention/FlashAttention.md",
-    "Inference/FlashAttention/img/Pasted image 20240424194349.png",
-    "Inference/FlashAttention/img/Pasted image 20240424194314.png",
     "Inference/FlashAttention/img",
     "Inference/FlashAttention",
-    "News/README.md",
-    "Tool/Pytorch/transformers.md",
-    "Tool/python/Python.md",
-    "Tool/Linux/Linux.md",
-    "Tool/Git/Git.md",
-    "Pre-training/LLMs/Mistral/Mistral.md",
     "Pre-training/LLMs/JetMoE/JetMoE.md",
-    "Pre-training/LLMs/JetMoE/img/Pasted image 20240413180134.png",
-    "Pre-training/LLMs/JetMoE/img/Pasted image 20240413175933.png",
-    "Pre-training/LLMs/JetMoE/img/Pasted image 20240413174746.png",
-    "Pre-training/LLMs/JetMoE/img/Pasted image 20240413174735.png",
-    "Pre-training/LLMs/JetMoE/img/Pasted image 20240413173901.png",
-    "Pre-training/LLMs/JetMoE/img/Pasted image 20240413173525.png",
-    "Pre-training/LLMs/JetMoE/img/Pasted image 20240413172754.png",
     "Pre-training/LLMs/JetMoE/img",
     "Pre-training/LLMs/JetMoE",
     "Tool/Pytorch/Pytorch.md",
@@ -339,23 +255,11 @@
     "Pre-training/Transformer/Transformer.md",
     "Tool/README.md",
     "Tool/python/Anaconda.md",
-    "Pre-training/LLMs/垂域大模型.md",
-    "DataRelated/Dataset.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
-    "Pre-training/RolePlay/RolePlaySum.md",
     "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
     "Pre-training/RolePlay",
     "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
-    "Pre-training/Branch-Train-MiX",
-    "Pre-training/Generalization_of_FT-LLM/img/Pasted image 20240318153249.png",
-    "Pre-training/Generalization_of_FT-LLM/img",
-    "Pre-training/Generalization_of_FT-LLM",
-    "Pre-training/LLMs/Mistral/img",
-    "Pre-training/长度外推/长度外推.md",
     "Pre-training/业界分享/Good_Articles.md",
-    "Pre-training/ContinualLearning/ContinualLearning.md",
-    "Pre-training/WRAP/WRAP.md",
-    "Pre-training/长度外推/ResonanceRoPE/ResonanceRoPE.md",
     "未命名.canvas"
   ]
 }
