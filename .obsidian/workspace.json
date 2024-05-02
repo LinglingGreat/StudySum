@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Alignment/MoI/MoI.md",
+                "file": "Pre-training/CLInDomain/CLInDomain.md",
                 "mode": "source",
                 "source": false
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Alignment/MoI/MoI.md",
+                "file": "Pre-training/CLInDomain/CLInDomain.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Alignment/MoI/MoI.md"
+                "file": "Pre-training/CLInDomain/CLInDomain.md"
               }
             }
           },
@@ -214,21 +214,22 @@
   },
   "active": "0dcec4fca934a851",
   "lastOpenFiles": [
-    "Pre-training/Alignment/MoI/img/Pasted image 20240502180042.png",
-    "Pre-training/Alignment/MoI/img/Pasted image 20240502175916.png",
-    "Pre-training/Alignment/MoI/img/Pasted image 20240502175723.png",
-    "Pre-training/Alignment/MoI/img/Pasted image 20240502175430.png",
-    "Pre-training/Alignment/MoI/img/Pasted image 20240502175336.png",
-    "Pre-training/Alignment/MoI/img/Pasted image 20240502175110.png",
-    "Pre-training/Alignment/MoI/img/Pasted image 20240502174928.png",
-    "Pre-training/Alignment/MoI/img/Pasted image 20240502174440.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502234842.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502234828.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502233803.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502233429.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502233258.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502233225.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502232852.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502232530.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502231634.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502231416.png",
+    "Pre-training/CLInDomain/img/Pasted image 20240502225727.png",
+    "Pre-training/CLInDomain/img",
+    "Pre-training/Alignment/MoI/MoI.md",
     "Pre-training/Alignment/MoI/img",
     "Pre-training/Alignment/RLHB/RLHB.md",
-    "Pre-training/Alignment/MoI/MoI.md",
     "Pre-training/Alignment/MoI",
-    "Pre-training/Alignment/RLHB/img/Pasted image 20240502170714.png",
-    "Pre-training/Alignment/RLHB/img/Pasted image 20240502170702.png",
-    "Pre-training/Alignment/RLHB/img/Pasted image 20240502170224.png",
     "Pre-training/Alignment/RLHB/img",
     "Pre-training/LLMs/垂域大模型.md",
     "Tool/python/Python.md",
@@ -257,7 +258,6 @@
     "Tool/python/Anaconda.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
-    "Pre-training/RolePlay",
     "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
     "Pre-training/业界分享/Good_Articles.md",
     "未命名.canvas"
