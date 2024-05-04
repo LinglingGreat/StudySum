@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/CLInDomain/CLInDomain.md",
+                "file": "Pre-training/CL/SimpleCL/SimpleCL.md",
                 "mode": "source",
                 "source": false
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/CLInDomain/CLInDomain.md",
+                "file": "Pre-training/CL/SimpleCL/SimpleCL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/CLInDomain/CLInDomain.md"
+                "file": "Pre-training/CL/SimpleCL/SimpleCL.md"
               }
             }
           },
@@ -214,18 +214,23 @@
   },
   "active": "0dcec4fca934a851",
   "lastOpenFiles": [
-    "Pre-training/CLInDomain/img/Pasted image 20240502234842.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502234828.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502233803.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502233429.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502233258.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502233225.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502232852.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502232530.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502231634.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502231416.png",
-    "Pre-training/CLInDomain/img/Pasted image 20240502225727.png",
-    "Pre-training/CLInDomain/img",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504163052.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504163029.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504163001.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504162815.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504162715.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504162448.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504162413.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504162215.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504162045.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504161945.png",
+    "Pre-training/CL/SimpleCL/img/Pasted image 20240504161718.png",
+    "Pre-training/CL/SimpleCL/img",
+    "Pre-training/CL/CLInDomain/CLInDomain.md",
+    "Pre-training/CL/SimpleCL/SimpleCL.md",
+    "Pre-training/CL/SimpleCL",
+    "Pre-training/CL",
+    "Pre-training/CL/CLInDomain/img",
     "Pre-training/Alignment/MoI/MoI.md",
     "Pre-training/Alignment/MoI/img",
     "Pre-training/Alignment/RLHB/RLHB.md",
@@ -248,18 +253,13 @@
     "Inference/FlashAttention/img",
     "Inference/FlashAttention",
     "Pre-training/LLMs/JetMoE/JetMoE.md",
-    "Pre-training/LLMs/JetMoE/img",
-    "Pre-training/LLMs/JetMoE",
     "Tool/Pytorch/Pytorch.md",
     "Pre-training/LLMs/Yi/Yi.md",
-    "News",
     "Pre-training/Transformer/Transformer.md",
     "Tool/README.md",
     "Tool/python/Anaconda.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
-    "Pre-training/Generalization_of_FT-LLM/Generalization_of_FT-LLM.md",
-    "Pre-training/业界分享/Good_Articles.md",
     "未命名.canvas"
   ]
 }
