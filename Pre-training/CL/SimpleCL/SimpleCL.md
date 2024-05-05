@@ -130,6 +130,36 @@ re-warm和re-decay的策略
 
 ![](img/Pasted%20image%2020240504163052.png)
 
+### Understanding and Circumventing the Pathologies of Re-warming
+
+**Re-warming on the Same Data**
+
+之前的实验中，当在新的数据上持续预训练的时候，旧数据上的Loss会有个快速增加，随着学习率增大，这个增加会越多。我们猜想这主要是因为预训练数据集的分布迁移导致的负迁移。we follow a similar methodology as in our experiments from Fig. 3 but continue to pre-train on Pile as D1.
+
+![](img/Pasted%20image%2020240504172045.png)
+
+re-warmup学习率似乎是损失增加的一个重要原因。
+
+**Infinite Learning Rate Schedules**
+
+探索一种不需要warm-up的学习率机制，在所有新任务上保持恒定学习率。一方面，余弦衰减时间表要求我们提前知道要预训练的令牌总数。这限制了继续预训练融合检查点的能力。另一方面，我们在上一节中看到，当在以小学习率结束的余弦衰减机制预训练的模型上继续预训练时，需要将学习率从最小值warmup以最好地适应新的数据集。然而，正如上一小节所见，我们观察到重新加热学习率会加剧遗忘。
+
+![](img/Pasted%20image%2020240504172856.png)
+
+论文中考虑的cooldown phase包括2种
+
+![](img/Pasted%20image%2020240504173136.png)
+
+**Comparing Cosine Decay to Variants of our Infinite Schedules**
+
+![](img/Pasted%20image%2020240504173322.png)
+
+**Infinite Learning Rate Schedules: Scaling to Infinite Future Updates**
+
+![](img/Pasted%20image%2020240504173501.png)
+
+![](img/Pasted%20image%2020240504173636.png)
+
 
 
 ## 未来方向
