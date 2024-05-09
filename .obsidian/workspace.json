@@ -227,6 +227,13 @@
   },
   "active": "756dc56ceed502e3",
   "lastOpenFiles": [
+    "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509103303.png",
+    "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509103020.png",
+    "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509102754.png",
+    "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509101321.png",
+    "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509101113.png",
+    "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509094655.png",
+    "Pre-training/RolePlay/CharacterGLM/img",
     "Tool/python/Python.md",
     "Pre-training/RolePlay/CharacterGLM/CharacterGLM.md",
     "Pre-training/RolePlay/RolePlaySum.md",
@@ -238,11 +245,6 @@
     "Pre-training/CL/SimpleCL/img/Pasted image 20240504173322.png",
     "Pre-training/CL/SimpleCL/img/Pasted image 20240504173144.png",
     "Pre-training/CL/SimpleCL/img/Pasted image 20240504173136.png",
-    "Pre-training/CL/SimpleCL/img/Pasted image 20240504172856.png",
-    "Pre-training/CL/SimpleCL/img/Pasted image 20240504172045.png",
-    "Pre-training/CL/SimpleCL/img/Pasted image 20240504163052.png",
-    "Pre-training/CL/SimpleCL/img/Pasted image 20240504163029.png",
-    "Pre-training/CL/SimpleCL/img/Pasted image 20240504163001.png",
     "Pre-training/CL/SimpleCL/img",
     "Pre-training/CL/CLInDomain/CLInDomain.md",
     "Pre-training/CL/SimpleCL",
@@ -264,7 +266,6 @@
     "Inference/README.md",
     "Pre-training/Alignment/RLHB",
     "Inference/FlashAttention/FlashAttention.md",
-    "Inference/FlashAttention/img",
     "Pre-training/LLMs/JetMoE/JetMoE.md",
     "Tool/Pytorch/Pytorch.md",
     "Pre-training/LLMs/Yi/Yi.md",
@@ -272,7 +273,6 @@
     "Tool/README.md",
     "Tool/python/Anaconda.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
-    "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
     "未命名.canvas"
   ]
 }
