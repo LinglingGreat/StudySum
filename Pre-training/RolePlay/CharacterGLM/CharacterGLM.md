@@ -18,7 +18,7 @@ institution:
 
 链接：https://arxiv.org/abs/2311.16832
 
-代码：
+代码：https://github.com/thu-coai/CharacterGLM-6B
 
 框架图：
 

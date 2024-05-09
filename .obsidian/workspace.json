@@ -227,8 +227,9 @@
   },
   "active": "756dc56ceed502e3",
   "lastOpenFiles": [
-    "Pre-training/RolePlay/RolePlaySum.md",
+    "Tool/python/Python.md",
     "Pre-training/RolePlay/CharacterGLM/CharacterGLM.md",
+    "Pre-training/RolePlay/RolePlaySum.md",
     "Pre-training/RolePlay/CharacterGLM",
     "Tool/Linux/Linux.md",
     "Pre-training/CL/SimpleCL/SimpleCL.md",
@@ -253,7 +254,6 @@
     "Pre-training/Alignment/MoI",
     "Pre-training/Alignment/RLHB/img",
     "Pre-training/LLMs/垂域大模型.md",
-    "Tool/python/Python.md",
     "Tool/Pytorch/transformers.md",
     "News/README.md",
     "Pre-training/LLMs/Mistral/Mistral.md",
