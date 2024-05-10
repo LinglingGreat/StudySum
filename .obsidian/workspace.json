@@ -68,6 +68,18 @@
             }
           },
           {
+            "id": "09c581eeb50cfd26",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DataRelated/NLGDataset/对话数据集.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "d1601f8bc2b807d7",
             "type": "leaf",
             "state": {
@@ -80,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -146,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/RolePlay/CharacterGLM/CharacterGLM.md",
+                "file": "DataRelated/NLGDataset/对话数据集.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/RolePlay/CharacterGLM/CharacterGLM.md"
+                "file": "DataRelated/NLGDataset/对话数据集.md"
               }
             }
           },
@@ -211,8 +223,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -225,8 +236,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "756dc56ceed502e3",
+  "active": "09c581eeb50cfd26",
   "lastOpenFiles": [
+    "DataRelated/PretrainDataset/PretrainDataset.md",
+    "DataRelated/Dataset.md",
+    "Pre-training/RolePlay/CharacterGLM/CharacterGLM.md",
     "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509103303.png",
     "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509103020.png",
     "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509102754.png",
@@ -235,7 +249,6 @@
     "Pre-training/RolePlay/CharacterGLM/img/Pasted image 20240509094655.png",
     "Pre-training/RolePlay/CharacterGLM/img",
     "Tool/python/Python.md",
-    "Pre-training/RolePlay/CharacterGLM/CharacterGLM.md",
     "Pre-training/RolePlay/RolePlaySum.md",
     "Pre-training/RolePlay/CharacterGLM",
     "Tool/Linux/Linux.md",
@@ -244,7 +257,6 @@
     "Pre-training/CL/SimpleCL/img/Pasted image 20240504173501.png",
     "Pre-training/CL/SimpleCL/img/Pasted image 20240504173322.png",
     "Pre-training/CL/SimpleCL/img/Pasted image 20240504173144.png",
-    "Pre-training/CL/SimpleCL/img/Pasted image 20240504173136.png",
     "Pre-training/CL/SimpleCL/img",
     "Pre-training/CL/CLInDomain/CLInDomain.md",
     "Pre-training/CL/SimpleCL",
@@ -262,7 +274,6 @@
     "Tool/Git/Git.md",
     "Pre-training/PositionEncoding/位置编码.md",
     "Pre-training/长度外推/长度外推.md",
-    "DataRelated/Dataset.md",
     "Inference/README.md",
     "Pre-training/Alignment/RLHB",
     "Inference/FlashAttention/FlashAttention.md",
@@ -272,7 +283,6 @@
     "Pre-training/Transformer/Transformer.md",
     "Tool/README.md",
     "Tool/python/Anaconda.md",
-    "DataRelated/PretrainDataset/PretrainDataset.md",
     "未命名.canvas"
   ]
 }
