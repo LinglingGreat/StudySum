@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/RolePlay/RolePlaySum.md",
+                "file": "DataRelated/NLGDataset/对话数据集.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/RolePlay/RolePlaySum.md"
+                "file": "DataRelated/NLGDataset/对话数据集.md"
               }
             }
           },
@@ -248,8 +248,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2ac898f0576d3cd4",
+  "active": "09c581eeb50cfd26",
   "lastOpenFiles": [
+    "Pre-training/RolePlay/RolePlaySum.md",
     "News/README.md",
     "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510143202.png",
@@ -272,7 +273,6 @@
     "DataRelated/Dataset.md",
     "Pre-training/RolePlay/CharacterGLM/img",
     "Tool/python/Python.md",
-    "Pre-training/RolePlay/RolePlaySum.md",
     "Pre-training/RolePlay/CharacterGLM",
     "Tool/Linux/Linux.md",
     "Pre-training/CL/SimpleCL/SimpleCL.md",
