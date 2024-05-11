@@ -85,7 +85,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DataRelated/NLGDataset/对话数据集.md",
+                "file": "DataRelated/Dataset.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "95e38c5150d2c069",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/Benchmark/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -170,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/NLGDataset/对话数据集.md",
+                "file": "DataRelated/Dataset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/NLGDataset/对话数据集.md"
+                "file": "DataRelated/Dataset.md"
               }
             }
           },
@@ -235,7 +247,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -250,8 +263,12 @@
   },
   "active": "09c581eeb50cfd26",
   "lastOpenFiles": [
-    "Pre-training/RolePlay/RolePlaySum.md",
+    "DataRelated/NLGDataset/对话数据集.md",
     "News/README.md",
+    "Pre-training/Benchmark/README.md",
+    "Pre-training/Attention/Attention.md",
+    "Pre-training/Transformer/Transformer.md",
+    "Pre-training/RolePlay/RolePlaySum.md",
     "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510143202.png",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142939.png",
@@ -268,7 +285,6 @@
     "Pre-training/DataGen/MAmmoTH2",
     "Pre-training/DataGen/未命名.md",
     "Pre-training/DataGen",
-    "DataRelated/NLGDataset/对话数据集.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "DataRelated/Dataset.md",
     "Pre-training/RolePlay/CharacterGLM/img",
@@ -293,8 +309,6 @@
     "Inference/README.md",
     "Inference/FlashAttention/FlashAttention.md",
     "Pre-training/LLMs/JetMoE/JetMoE.md",
-    "Tool/Pytorch/Pytorch.md",
-    "Pre-training/LLMs/Yi/Yi.md",
     "未命名.canvas"
   ]
 }

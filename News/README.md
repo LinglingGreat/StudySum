@@ -72,6 +72,8 @@
 
 [LLM能否依据角色的过去预测未来？一篇有趣的研究](https://mp.weixin.qq.com/s/wwuayFtqWuy0ByEe4HVf8w)  #roleplay 
 
+## 2024.5.11
+
 
 
 

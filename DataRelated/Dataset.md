@@ -37,3 +37,7 @@ c.ai的bot：[New Arrivals](https://rentry.org/cai-list)
 
 [Releasing Common Corpus: the largest public domain dataset for training LLMs](https://huggingface.co/blog/Pclanglais/common-corpus)
 
+## 微调数据集
+
+[H-D-T/Buzz · Datasets at Hugging Face](https://huggingface.co/datasets/H-D-T/Buzz) 一个3千万的数据集
+

@@ -87,6 +87,8 @@ https://github.com/Alibaba-NLP/EcomGPT （基于BLOOMZ指令微调）
 
 [Anthropic \\ Challenges in evaluating AI systems](https://www.anthropic.com/index/evaluating-ai-systems)
 
+[GitHub - onejune2018/Awesome-LLM-Eval: Awesome-LLM-Eval: a curated list of tools, datasets/benchmark, demos, learderboard, papers, docs and models, mainly for Evaluation on LLMs. 一个由工具、基准/数据、演示、排行榜和大模型等组成的精选列表，主要面向大型语言模型评测（例如ChatGPT、LLaMA、GLM、Baichuan等）.](https://github.com/onejune2018/Awesome-LLM-Eval/)
+
 ## 长文本
 
 [GitHub - OpenBMB/InfiniteBench: 100k+ Long-Context Benchmark for Large Language Models (paper upcoming)](https://github.com/OpenBMB/InfiniteBench)
