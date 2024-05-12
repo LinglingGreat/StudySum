@@ -10,6 +10,8 @@
 
 【OpenWebMath：包含互联网上大部分高质量数学文本的数据集，从 Common Crawl 的超过 2000 亿 HTML 文件中过滤并提取出包含 147 亿 Token 的 630 万份文档，OpenWebMath 旨在用于预训练和微调大型语言模型】《open-web-math/open-web-math · Datasets at Hugging Face》
 
+[m-a-p/Matrix · Datasets at Hugging Face](https://huggingface.co/datasets/m-a-p/Matrix) 包含 46900 亿个 token 的开源预训练数据集，这个包含中英文文本的双语数据集用于训练 Neo 模型。
+
 ## 数据清洗流程
 
 第一步需要进行语言识别，以便适当地将数据分配给相应的语言。先前的研究表明，cld3比FastText差很多.
