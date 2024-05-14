@@ -80,6 +80,18 @@
             }
           },
           {
+            "id": "7a373c4f1309b21b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Inference/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "09c581eeb50cfd26",
             "type": "leaf",
             "state": {
@@ -182,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/Dataset.md",
+                "file": "Inference/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/Dataset.md"
+                "file": "Inference/README.md"
               }
             }
           },
@@ -261,11 +273,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "09c581eeb50cfd26",
+  "active": "7a373c4f1309b21b",
   "lastOpenFiles": [
+    "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
+    "DataRelated/Dataset.md",
     "DataRelated/数据增强的方法.md",
     "DataRelated/数据不均衡问题.md",
-    "DataRelated/Dataset.md",
     "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
@@ -280,7 +293,6 @@
     "Pre-training/Attention/Attention.md",
     "Pre-training/Transformer/Transformer.md",
     "Pre-training/RolePlay/RolePlaySum.md",
-    "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510143202.png",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142939.png",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142555.png",

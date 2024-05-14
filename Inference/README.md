@@ -10,4 +10,6 @@
 [进我的收藏夹吃灰吧：大模型加速超全指南来了](https://mp.weixin.qq.com/s/4USwSMIiudFCdy9C5pN1dQ)
 
 
+[[Prefill优化][万字]🔥原理&图解vLLM Automatic Prefix Cache(RadixAttention): 首Token时延优化 - 知乎](https://zhuanlan.zhihu.com/p/693556044)
+
 
