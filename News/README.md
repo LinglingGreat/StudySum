@@ -72,7 +72,13 @@
 
 [LLM能否依据角色的过去预测未来？一篇有趣的研究](https://mp.weixin.qq.com/s/wwuayFtqWuy0ByEe4HVf8w)  #roleplay 
 
-## 2024.5.11
+## 2024.5.11-5.18
+
+发个collections，我们用ExPO增强的模型上传两周已经8k+ downloads了，欢迎大家来支持下￼
+https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expedites-alignment-662b69fbe7850e722e10ff70.   #模型融合
+
+宣传一下我们最近做的开源的 online iterative RLHF recipe, https://x.com/CaimingXiong/status/1790379121719361776 . TL;DR: 我们从pretrained 出发，纯用开源数据集做了 (1) SFT, (2) reward modeling, preference modeling, (3) online iterative DPO (实际code 实现也可以换成slic ipo). 最终得到的reward model 和 preference model 现在是 reward benchmark 上开源模型的 SOTA，并且最终得到的模型和meta自己做的RLHF模型在测试的academic benchmark上 comparable 并且在指令跟随的benchmark上还要更好一些。我们开源了代码，模型，数据，和具体用的超参数，很轻松就能复现，technical report 在 https://arxiv.org/pdf/2405.07863  #rlhf #alignment 
+
 
 
 

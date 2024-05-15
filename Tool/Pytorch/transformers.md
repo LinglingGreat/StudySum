@@ -12,3 +12,7 @@ export HF_ENDPOINT=https://hf-mirror.com
 
 export HF_HUB_ENABLE_HF_TRANSFER=1
 
+huggingface-cli download HuggingFaceH4/ultrachat_200k --repo-type dataset
+
+参考 [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/en/guides/cli)
+
