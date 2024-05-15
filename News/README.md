@@ -72,12 +72,26 @@
 
 [LLM能否依据角色的过去预测未来？一篇有趣的研究](https://mp.weixin.qq.com/s/wwuayFtqWuy0ByEe4HVf8w)  #roleplay 
 
-## 2024.5.11-5.18
+## 2024.5.10-5.18
 
-发个collections，我们用ExPO增强的模型上传两周已经8k+ downloads了，欢迎大家来支持下￼
-https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expedites-alignment-662b69fbe7850e722e10ff70.   #模型融合
+#预训练 我们宣布了第一个工业级的透明中英文双语大模型-Neo的开源，我们提供了全部的4.7T 预训练数据，训练pipeline，基于spark的预训练数据pipeline，OCR pipeline，以及复现的deepseek-math提出的迭代地从预训练数据中召回高质量数据的直接可用的pipeline。我们的模型在7B大小，MMLU达到约58，CMMLU和C-Eval约为55，GSM-8k达到50，ARC-C约为68，HumanEval约为25，与OLMo和Amber相比，Neo作为基座基本达到了工业级comparable的水准
+twitter：https://twitter.com/GeZhang86038849/status/1788874345927889203
+hf model collection: https://huggingface.co/collections/m-a-p/neo-models-66395a5c9662bb58d5d70f04
+dataset: https://huggingface.co/datasets/m-a-p/Matrix
+github: https://github.com/multimodal-art-projection/MAP-NEO
 
-宣传一下我们最近做的开源的 online iterative RLHF recipe, https://x.com/CaimingXiong/status/1790379121719361776 . TL;DR: 我们从pretrained 出发，纯用开源数据集做了 (1) SFT, (2) reward modeling, preference modeling, (3) online iterative DPO (实际code 实现也可以换成slic ipo). 最终得到的reward model 和 preference model 现在是 reward benchmark 上开源模型的 SOTA，并且最终得到的模型和meta自己做的RLHF模型在测试的academic benchmark上 comparable 并且在指令跟随的benchmark上还要更好一些。我们开源了代码，模型，数据，和具体用的超参数，很轻松就能复现，technical report 在 https://arxiv.org/pdf/2405.07863  #rlhf #alignment 
+
+ #模型融合 我们用ExPO增强的模型上传两周已经8k+ downloads了
+https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expedites-alignment-662b69fbe7850e722e10ff70.  
+
+#rlhf #alignment 我们最近做的开源的 online iterative RLHF recipe, https://x.com/CaimingXiong/status/1790379121719361776 . TL;DR: 我们从pretrained 出发，纯用开源数据集做了 (1) SFT, (2) reward modeling, preference modeling, (3) online iterative DPO (实际code 实现也可以换成slic ipo). 最终得到的reward model 和 preference model 现在是 reward benchmark 上开源模型的 SOTA，并且最终得到的模型和meta自己做的RLHF模型在测试的academic benchmark上 comparable 并且在指令跟随的benchmark上还要更好一些。我们开源了代码，模型，数据，和具体用的超参数，很轻松就能复现，technical report 在 https://arxiv.org/pdf/2405.07863
+
+#长文本 #推理加速   [Full Stack Transformer Inference Optimization Season 2: Deploying Long-Context Models](https://yaofu.notion.site/Full-Stack-Transformer-Inference-Optimization-Season-2-Deploying-Long-Context-Models-ee25d3a77ba14f73b8ae19147f77d5e2)
+
+
+
+
+
 
 
 

@@ -140,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -206,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "News/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -234,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/transformers.md"
+                "file": "News/README.md"
               }
             }
           },
@@ -285,8 +285,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d408fa95e271ef04",
+  "active": "72f00fb46c6ee819",
   "lastOpenFiles": [
+    "Tool/Pytorch/transformers.md",
     "Tool/python/Python.md",
     "News/README.md",
     "Tool/Linux/Linux.md",
@@ -331,7 +332,6 @@
     "Pre-training/CL/SimpleCL",
     "Pre-training/CL",
     "Pre-training/CL/CLInDomain/img",
-    "Pre-training/Alignment/MoI/MoI.md",
     "Pre-training/Alignment/MoI/img",
     "未命名.canvas"
   ]
