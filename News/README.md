@@ -88,6 +88,10 @@ https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expe
 
 #长文本 #推理加速   [Full Stack Transformer Inference Optimization Season 2: Deploying Long-Context Models](https://yaofu.notion.site/Full-Stack-Transformer-Inference-Optimization-Season-2-Deploying-Long-Context-Models-ee25d3a77ba14f73b8ae19147f77d5e2)
 
+#rlhf #alignment Iterative Preference Learning from Human Feedback: Bridging Theory and Practice for RLHF under KL-Constraint https://arxiv.org/pdf/2312.11456v4  这篇一个是第一个做了RLHF 的理论, 处理了 KL-regularized contextual bandit (不同于之前的dueling bandit) 的数学原理; 第二个是从理论insight 出发说明online iterative RLHF 的好处; 第三个就是自然导出了 online iterative DPO 这样一个算法, 用我们最近开源的reward model (reward bench 上现在sota的开源 rm), 可以很轻松把 Zephyr-7B-SFT 在 Alpaca-eval 4.63% -> 35.95%, mt bench 5.3 -> 7.5。
+
+#sft 我们今年的NAACL做过一个让大模型意识到自己的知识边界的工作，通过sft 使得模型 尽量只回答对于自己知识边界以内的问题，对于知识边界以外的拒绝回答，teach LLMs to say i dont know.  以此来减少幻觉对真实世界造成的影响。 算是抛砖引玉，欢迎关注~  https://arxiv.org/abs/2311.09677
+
 
 
 
