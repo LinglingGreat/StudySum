@@ -7,5 +7,5 @@
 
 [XG纪要 | Compression theory for LMs](https://mp.weixin.qq.com/s/DSfZzOFexAfSSrAj6d3q5w)
 
-[如何从零开始训练大模型（minicpm分享&讨论） - 知乎](https://zhuanlan.zhihu.com/p/686664720)
+[如何从零开始训练大模型（minicpm分享&讨论） - 知乎](https://zhuanlan.zhihu.com/p/686664720) #预训练 
 

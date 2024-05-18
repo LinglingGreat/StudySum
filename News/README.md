@@ -84,14 +84,13 @@ github: https://github.com/multimodal-art-projection/MAP-NEO
  #模型融合 我们用ExPO增强的模型上传两周已经8k+ downloads了
 https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expedites-alignment-662b69fbe7850e722e10ff70.  
 
-#rlhf #alignment 我们最近做的开源的 online iterative RLHF recipe, https://x.com/CaimingXiong/status/1790379121719361776 . TL;DR: 我们从pretrained 出发，纯用开源数据集做了 (1) SFT, (2) reward modeling, preference modeling, (3) online iterative DPO (实际code 实现也可以换成slic ipo). 最终得到的reward model 和 preference model 现在是 reward benchmark 上开源模型的 SOTA，并且最终得到的模型和meta自己做的RLHF模型在测试的academic benchmark上 comparable 并且在指令跟随的benchmark上还要更好一些。我们开源了代码，模型，数据，和具体用的超参数，很轻松就能复现，technical report 在 https://arxiv.org/pdf/2405.07863
+#rlhf #alignment 我们最近做的开源的 online iterative RLHF recipe, https://x.com/CaimingXiong/status/1790379121719361776 . TL;DR: 我们从pretrained 出发，纯用开源数据集做了 (1) SFT, (2) reward modeling, preference modeling, (3) online iterative DPO (实际code 实现也可以换成slic ipo). 最终得到的reward model 和 preference model 现在是 reward benchmark 上开源模型的 SOTA，并且最终得到的模型和meta自己做的RLHF模型在测试的academic benchmark上 comparable 并且在指令跟随的benchmark上还要更好一些。我们开源了代码，模型，数据，和具体用的超参数，很轻松就能复现，technical report 在RLHF Workflow: From Reward Modeling to Online RLHF https://arxiv.org/pdf/2405.07863.  [仅靠开源数据复刻出LLaMA3指令学习效果，在线迭代RLHF全流程解决方案来了](https://mp.weixin.qq.com/s/bRxdSCCPIrgNBgtDfyzhAA)
 
 #长文本 #推理加速   [Full Stack Transformer Inference Optimization Season 2: Deploying Long-Context Models](https://yaofu.notion.site/Full-Stack-Transformer-Inference-Optimization-Season-2-Deploying-Long-Context-Models-ee25d3a77ba14f73b8ae19147f77d5e2)
 
 #rlhf #alignment Iterative Preference Learning from Human Feedback: Bridging Theory and Practice for RLHF under KL-Constraint https://arxiv.org/pdf/2312.11456v4  这篇一个是第一个做了RLHF 的理论, 处理了 KL-regularized contextual bandit (不同于之前的dueling bandit) 的数学原理; 第二个是从理论insight 出发说明online iterative RLHF 的好处; 第三个就是自然导出了 online iterative DPO 这样一个算法, 用我们最近开源的reward model (reward bench 上现在sota的开源 rm), 可以很轻松把 Zephyr-7B-SFT 在 Alpaca-eval 4.63% -> 35.95%, mt bench 5.3 -> 7.5。
 
 #sft 我们今年的NAACL做过一个让大模型意识到自己的知识边界的工作，通过sft 使得模型 尽量只回答对于自己知识边界以内的问题，对于知识边界以外的拒绝回答，teach LLMs to say i dont know.  以此来减少幻觉对真实世界造成的影响。 算是抛砖引玉，欢迎关注~  https://arxiv.org/abs/2311.09677
-
 
 
 
