@@ -32,18 +32,6 @@
             }
           },
           {
-            "id": "d408fa95e271ef04",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Pytorch/transformers.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "72f00fb46c6ee819",
             "type": "leaf",
             "state": {
@@ -86,18 +74,6 @@
               "type": "markdown",
               "state": {
                 "file": "Tool/Linux/Linux.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "756dc56ceed502e3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
                 "mode": "source",
                 "source": false
               }
@@ -152,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -181,7 +157,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "CharacterGLM",
+                "query": "from complex to simple",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -198,7 +174,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -218,7 +195,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Alignment/RLHFWorkflow/RLHFWorkflow.md",
+                "file": "News/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -246,7 +223,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Alignment/RLHFWorkflow/RLHFWorkflow.md"
+                "file": "News/README.md"
               }
             }
           },
@@ -297,29 +274,29 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e26fdf5ff4ef7281",
+  "active": "bb2fda3c447a41f6",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
+    "Tool/python/Python.md",
+    "Tool/Pytorch/transformers.md",
+    "News/README.md",
+    "Pre-training/Alignment/RLHFWorkflow/RLHFWorkflow.md",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114335.png",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114130.png",
     "Pre-training/Alignment/RLHFWorkflow/img",
     "Pre-training/Alignment/CUT/CUT.md",
-    "Pre-training/Alignment/RLHFWorkflow/RLHFWorkflow.md",
     "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/Alignment/RLHFWorkflow",
     "Pre-training/README.md",
     "Pre-training/关于LLM的一些思考.md",
-    "News/README.md",
-    "Tool/Linux/Linux.md",
-    "Tool/python/Python.md",
     "Tool/python/调试/pdb调试代码.md",
     "Tool/python/Anaconda.md",
     "Tool/python/IPython.md",
     "Tool/README.md",
     "Tool/python/others.md",
     "Tool/python/Debug.md",
-    "Tool/Pytorch/transformers.md",
     "Inference/README.md",
-    "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
     "DataRelated/Dataset.md",
     "DataRelated/数据增强的方法.md",
     "DataRelated/数据不均衡问题.md",
@@ -336,7 +313,6 @@
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510141607.png",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510140556.png",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510140525.png",
-    "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510135459.png",
     "Pre-training/DataGen/MAmmoTH2/img",
     "Pre-training/DataGen/MAmmoTH2",
     "Pre-training/DataGen",

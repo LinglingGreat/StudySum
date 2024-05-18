@@ -92,6 +92,8 @@ https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expe
 
 #sft 我们今年的NAACL做过一个让大模型意识到自己的知识边界的工作，通过sft 使得模型 尽量只回答对于自己知识边界以内的问题，对于知识边界以外的拒绝回答，teach LLMs to say i dont know.  以此来减少幻觉对真实世界造成的影响。 算是抛砖引玉，欢迎关注~  https://arxiv.org/abs/2311.09677
 
+[Apr 2024 | Llama 3 Opens the Second Chapter of the Game of Scale.](https://yaofu.notion.site/Apr-2024-Llama-3-Opens-the-Second-Chapter-of-the-Game-of-Scale-efff1c0c185f4008af673b78faf83b61)
+
 
 
 
