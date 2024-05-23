@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/Dataset.md",
+                "file": "News/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/Dataset.md"
+                "file": "News/README.md"
               }
             }
           },
@@ -249,10 +249,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "490e330ff3b7d709",
+  "active": "72f00fb46c6ee819",
   "lastOpenFiles": [
-    "DataRelated/NLGDataset/对话数据集.md",
+    "Tool/Git/Git.md",
     "DataRelated/Dataset.md",
+    "DataRelated/NLGDataset/对话数据集.md",
     "News/README.md",
     "Tool/Linux/Linux.md",
     "Inference/README.md",
@@ -280,7 +281,6 @@
     "DataRelated/数据不均衡问题.md",
     "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
-    "Pre-training/预训练语言模型.md",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510143202.png",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142939.png",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142555.png",
