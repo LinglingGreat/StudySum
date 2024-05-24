@@ -96,6 +96,12 @@ https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expe
 
 [Artifacts Log 1: Announcement, Llama 3 fine-tunes, SOTA reward model, human prompt datasets](https://www.interconnects.ai/p/f1b83a34-18cd-4507-b4b0-560902eb3275) 包括模型、数据集介绍等
 
+[大 Batch 训练 LLM 探索 - 知乎](https://zhuanlan.zhihu.com/p/666997679) batch
+
+
+
+
+
 
 
 
