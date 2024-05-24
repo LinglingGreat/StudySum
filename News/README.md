@@ -94,9 +94,11 @@ https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expe
 
 [Apr 2024 | Llama 3 Opens the Second Chapter of the Game of Scale.](https://yaofu.notion.site/Apr-2024-Llama-3-Opens-the-Second-Chapter-of-the-Game-of-Scale-efff1c0c185f4008af673b78faf83b61)
 
-[Artifacts Log 1: Announcement, Llama 3 fine-tunes, SOTA reward model, human prompt datasets](https://www.interconnects.ai/p/f1b83a34-18cd-4507-b4b0-560902eb3275) 包括模型、数据集介绍等
+#数据集 #资源汇总[Artifacts Log 1: Announcement, Llama 3 fine-tunes, SOTA reward model, human prompt datasets](https://www.interconnects.ai/p/f1b83a34-18cd-4507-b4b0-560902eb3275) 包括模型、数据集介绍等
 
-[大 Batch 训练 LLM 探索 - 知乎](https://zhuanlan.zhihu.com/p/666997679) batch
+#训练参数 [大 Batch 训练 LLM 探索 - 知乎](https://zhuanlan.zhihu.com/p/666997679) batch
+
+#推理加速  [图解Mixtral 8 \* 7b推理优化原理与源码实现 - 知乎](https://zhuanlan.zhihu.com/p/691066049)
 
 
 
