@@ -100,9 +100,10 @@ https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expe
 
 #推理加速  [图解Mixtral 8 \* 7b推理优化原理与源码实现 - 知乎](https://zhuanlan.zhihu.com/p/691066049)
 
+#推理加速  [腾讯PCG自研高性能大语言模型推理引擎「一念LLM」正式开源](https://mp.weixin.qq.com/s/rlyJwaOfDfNYMZEH7kfKGA)
 
-
-
+Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synthetic data compared to ~10M human labels. GPTs are close to limits—excel at generation but fall short at complex tasks !We are training next gen—capable of deterministic reasoning and planning !   Explore OpenChat-3.6 (20240522 Llama 3 Version): HuggingFace:https://huggingface.co/openchat/openchat-3.6-8b-20240522  Live Demo: https://openchat.team GitHub: https://github.com/imoneoi/openchat
+我们为 LLM 开发了一种新的连续预训练方法 Meta-Alignment，它实现了与 Meta 使用 Llama3 Instruct 进行的广泛 RLHF 训练类似的结果。此过程在数据和计算方面都非常高效，主要使用合成数据，占用数据集的不到 10%
 
 
 
