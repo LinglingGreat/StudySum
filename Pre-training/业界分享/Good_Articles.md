@@ -9,3 +9,5 @@
 
 [如何从零开始训练大模型（minicpm分享&讨论） - 知乎](https://zhuanlan.zhihu.com/p/686664720) #预训练 
 
+[ChatGPT 负责人：GPT-4 越来越聪明是因为 post-training，大模型短期没有数据瓶颈](https://mp.weixin.qq.com/s/I_-RXtMAy5YXPRQ7XsBNRQ)
+
