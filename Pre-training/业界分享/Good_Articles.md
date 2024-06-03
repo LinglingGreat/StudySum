@@ -11,3 +11,5 @@
 
 [ChatGPT 负责人：GPT-4 越来越聪明是因为 post-training，大模型短期没有数据瓶颈](https://mp.weixin.qq.com/s/I_-RXtMAy5YXPRQ7XsBNRQ)
 
+[大模型训练十戒](https://mp.weixin.qq.com/s/kSSXKPxTyBj9QFUnnMcEDA)
+
