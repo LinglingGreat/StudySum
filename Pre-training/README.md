@@ -68,15 +68,5 @@ qwen
 
 llama
 
-## Scaling law
 
-[训练10B的模型需要多大的数据？详解大模型中的Scaling Law](https://mp.weixin.qq.com/s/lSLJhyT5LKuKtZMD3EaR_A)
-
-[A Mechanistic Interpretability Analysis of Grokking — AI Alignment Forum](https://www.alignmentforum.org/posts/N6WM6hs7RQMKDhYjB/a-mechanistic-interpretability-analysis-of-grokking)
-
-[Scaling 能通往 AGI 吗？万字科普 Scaling Law 的业内争议与讨论](https://mp.weixin.qq.com/s/Pn-vR-cRKNN5w5tlb2O6UA)
-
-## 角色大模型
-
-[通用大模型向左，角色大模型向右](https://mp.weixin.qq.com/s/QXzGwAkgi58XFnbo80FIZg)
 

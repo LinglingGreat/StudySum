@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0dcec4fca934a851",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/CL/SimpleCL/SimpleCL.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "e34cc92a20857808",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/python/训练仓库.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "72f00fb46c6ee819",
             "type": "leaf",
             "state": {
@@ -68,42 +44,6 @@
             }
           },
           {
-            "id": "09c581eeb50cfd26",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DataRelated/Dataset.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8f6758aaa7348625",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DataRelated/NLGDataset/对话数据集.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "490e330ff3b7d709",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DataRelated/Dataset.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d1601f8bc2b807d7",
             "type": "leaf",
             "state": {
@@ -116,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -145,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#scalingLaw",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -264,13 +204,27 @@
   "active": "1f343859a1d8e35e",
   "lastOpenFiles": [
     "News/README.md",
-    "Tool/Git/Git.md",
+    "Pre-training/业界分享/Good_Articles.md",
+    "Pre-training/LLMs/README.md",
+    "Pre-training/README.md",
+    "Pre-training/ScalingLaw/ScalingLaw.md",
+    "Pre-training/ScalingLaw",
+    "Pre-training/RolePlay/RolePlaySum.md",
+    "Pre-training/LLMs/垂域大模型.md",
+    "Tool/Linux/Linux.md",
     "DataRelated/Dataset.md",
     "DataRelated/NLGDataset/对话数据集.md",
-    "Tool/Linux/Linux.md",
+    "Pre-training/CL/SimpleCL/SimpleCL.md",
+    "Tool/python/训练仓库.md",
+    "Pre-training/长度外推/LongContext.md",
+    "Recsys/深度学习推荐系统实战.md",
+    "Recsys/推荐模型.md",
+    "Recsys/DeepFM.md",
+    "Recsys/README.md",
+    "Pre-training/LLMs/MoE/MoE.md",
+    "Tool/Git/Git.md",
     "Inference/README.md",
     "Pre-training/Benchmark/README.md",
-    "Tool/python/训练仓库.md",
     "Pre-training/Alignment/RLHFWorkflow/RLHFWorkflow.md",
     "Tool/Pytorch/transformers.md",
     "Pre-training/Alignment/CUT/CUT.md",
@@ -279,20 +233,7 @@
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114335.png",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114130.png",
     "Pre-training/Alignment/RLHFWorkflow/img",
-    "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/Alignment/RLHFWorkflow",
-    "Pre-training/README.md",
-    "Pre-training/关于LLM的一些思考.md",
-    "Tool/python/调试/pdb调试代码.md",
-    "Tool/python/Anaconda.md",
-    "Tool/python/IPython.md",
-    "Tool/README.md",
-    "Tool/python/others.md",
-    "Tool/python/Debug.md",
-    "DataRelated/数据增强的方法.md",
-    "DataRelated/数据不均衡问题.md",
-    "DataRelated/NLGDataset/生成任务.md",
-    "DataRelated/PretrainDataset/PretrainDataset.md",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510143202.png",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142939.png",
     "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142555.png",
@@ -308,7 +249,6 @@
     "Pre-training/RolePlay/CharacterGLM",
     "Pre-training/CL/SimpleCL/img",
     "Pre-training/CL/SimpleCL",
-    "Pre-training/CL",
     "未命名.canvas"
   ]
 }

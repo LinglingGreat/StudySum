@@ -54,3 +54,5 @@ tags:
 
 Baichuan-NPC大模型使用了思维链对齐技术，使得模型的思考过程和行动表现更接近人类，提升了角色的一致性和基础对话能力。
 
+[通用大模型向左，角色大模型向右](https://mp.weixin.qq.com/s/QXzGwAkgi58XFnbo80FIZg)
+

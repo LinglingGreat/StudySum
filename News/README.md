@@ -72,7 +72,7 @@
 
 [LLM能否依据角色的过去预测未来？一篇有趣的研究](https://mp.weixin.qq.com/s/wwuayFtqWuy0ByEe4HVf8w)  #roleplay 
 
-## 2024.5.10-5.18
+## 2024.5.10-5.31
 
 #预训练 我们宣布了第一个工业级的透明中英文双语大模型-Neo的开源，我们提供了全部的4.7T 预训练数据，训练pipeline，基于spark的预训练数据pipeline，OCR pipeline，以及复现的deepseek-math提出的迭代地从预训练数据中召回高质量数据的直接可用的pipeline。我们的模型在7B大小，MMLU达到约58，CMMLU和C-Eval约为55，GSM-8k达到50，ARC-C约为68，HumanEval约为25，与OLMo和Amber相比，Neo作为基座基本达到了工业级comparable的水准
 twitter：https://twitter.com/GeZhang86038849/status/1788874345927889203
@@ -104,6 +104,19 @@ https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expe
 
 Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synthetic data compared to ~10M human labels. GPTs are close to limits—excel at generation but fall short at complex tasks !We are training next gen—capable of deterministic reasoning and planning !   Explore OpenChat-3.6 (20240522 Llama 3 Version): HuggingFace:https://huggingface.co/openchat/openchat-3.6-8b-20240522  Live Demo: https://openchat.team GitHub: https://github.com/imoneoi/openchat
 我们为 LLM 开发了一种新的连续预训练方法 Meta-Alignment，它实现了与 Meta 使用 Llama3 Instruct 进行的广泛 RLHF 训练类似的结果。此过程在数据和计算方面都非常高效，主要使用合成数据，占用数据集的不到 10%
+
+
+## 2024.6.1-
+
+#预训练 [高能力全透明双语大语言模型MAP-Neo完全开源，开放所有细节！](https://mp.weixin.qq.com/s/hKdufVyzAhxFKFIScT9YQA) 
+
+#专家模型 [MoE门控网络最新创新！性能对标Llama 3，源2.0-M32大幅提升模型算力效率](https://mp.weixin.qq.com/s/Z1hK9Xds9XUnmPHqvKrsRw)
+
+#alignment [Reinforcement Learning from Human Feedback 全家桶（RL 侧）](https://zhuanlan.zhihu.com/p/700149886)
+
+#专家模型 [面壁新模型：早于Llama3、比肩 Llama3、推理超越 Llama3！](https://mp.weixin.qq.com/s/BAeFq-jXuyXiGMF7MMy5qw)
+
+#推荐系统 [当推荐系统遇见大语言模型：通往未来的三条路径](https://mp.weixin.qq.com/s/H2Relpo8FW6q8vqmNtn5Rg)
 
 
 

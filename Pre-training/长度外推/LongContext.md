@@ -126,4 +126,9 @@ def random_position_ids(N):
 
 [大模型处理长上下文方法一览](https://mp.weixin.qq.com/s/81NHGf5W8HEscW2dBK8MRg)
 
+[2024.5横向对比各家LLM的Long Context（128k篇）](https://mp.weixin.qq.com/s/L8Iiv9vbDlKAFMvYMF-jQw)
+
+[解锁大模型长上下文能力](https://mp.weixin.qq.com/s/FTewPxSr5fcwkxAgRZm7Wg)
+
+
 
