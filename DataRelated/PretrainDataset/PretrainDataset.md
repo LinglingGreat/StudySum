@@ -34,6 +34,10 @@
 
 [GitHub - ZigeW/data\_management\_LLM: Collection of training data management explorations for large language models](https://github.com/ZigeW/data_management_LLM)
 
+[Karpathy点赞，这份报告教你如何用 LLaMa 3创建高质量网络数据集](https://mp.weixin.qq.com/s/luZGMG1RRUT4X_ckt8hsCQ)
+
+
+
 
 
 

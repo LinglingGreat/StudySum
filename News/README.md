@@ -106,7 +106,7 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 我们为 LLM 开发了一种新的连续预训练方法 Meta-Alignment，它实现了与 Meta 使用 Llama3 Instruct 进行的广泛 RLHF 训练类似的结果。此过程在数据和计算方面都非常高效，主要使用合成数据，占用数据集的不到 10%
 
 
-## 2024.6.1-
+## 2024.6.1-6.7
 
 #预训练 [高能力全透明双语大语言模型MAP-Neo完全开源，开放所有细节！](https://mp.weixin.qq.com/s/hKdufVyzAhxFKFIScT9YQA) 
 
@@ -124,7 +124,7 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 #tts [Seed-TTS: A Family of High-Quality Versatile Speech Generation Models](https://bytedancespeech.github.io/seedtts_tech_report/#applications-samples)
 
-[魔搭社区每周速递（5.26-5.31）](https://mp.weixin.qq.com/s/csPVepZKWFLDWsbr4N00CQ)
+#资源汇总 [魔搭社区每周速递（5.26-5.31）](https://mp.weixin.qq.com/s/csPVepZKWFLDWsbr4N00CQ)
 - **89**个模型：****MAP-Neo、YOLOV10、Yuan2-M32-hf、M2_Encoder_Huge、ChatTTS等；
 - **47****个数据集：**Matrix、中国民族五声调式数据集、orpo-dpo-mix-40k等；
 - **49****个创新应用****：**FaceChain-FACT人物写真生成、ChatTTS-demo、Grounded-SAM 自动分割生成蒙版遮罩等；
@@ -143,6 +143,9 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 #roleplay [当GPT-4o遇上情感陪伴：多巴胺的胜利，催产素的挑战](https://mp.weixin.qq.com/s/JC3Mr6uFo_TXE3P92Va00g)
 
+#训练参数 [用最酷的LR，训最猛的模型](https://mp.weixin.qq.com/s/2bNYBaJOLxuBaomv0Iu3gQ)
+
+#大模型 [开源模型进展盘点：最新Mixtral、Llama 3、Phi-3、OpenELM到底有多好？](https://mp.weixin.qq.com/s/bgdDYkGHbPZMMSJPIutFSQ)
 
 
 
