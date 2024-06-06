@@ -141,6 +141,8 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 #训练参数 [腾讯混元、北大发现Scaling law「浪涌现象」，解决学习率调参难题](https://mp.weixin.qq.com/s/ff5_O0H5VQNkArKroJkEZQ)
 
+#roleplay [当GPT-4o遇上情感陪伴：多巴胺的胜利，催产素的挑战](https://mp.weixin.qq.com/s/JC3Mr6uFo_TXE3P92Va00g)
+
 
 
 
