@@ -137,6 +137,10 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 - Data Is All You Need! 生成式图文对数据最佳实践，数据集魔搭开源！
 - PAI x ModelScope：在PAI使用ModelScope模型
 
+#roleplay 李沐：这一年多攒了不少技术，想陆续给大家分享心得。今天放一个70B模型展示post-training。1）是为复杂场景的roleplay设计，但通用能力同样很重要，2）从Llama3-70B base开始训练，做了完整了SFT和RLHF。尤其是RLHF可以提升巨大。3）很多LLM都多少overfit了测试集，所以尽量是post-training数据不包含benchmark的数据。4）在两个新的还没被刷爆评测上（MMLU-pro, Arena-hard）分数挺好。更流行的评测上面也比llama3-70B-instruct的要好。5）blog [https://boson.ai/higgs-opensource/](https://boson.ai/higgs-opensource/) 模型：[https://huggingface.co/bosonai/Higgs-Llama-3-70B](https://huggingface.co/bosonai/Higgs-Llama-3-70B)
+
+#训练参数 [腾讯混元、北大发现Scaling law「浪涌现象」，解决学习率调参难题](https://mp.weixin.qq.com/s/ff5_O0H5VQNkArKroJkEZQ)
+
 
 
 
