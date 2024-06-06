@@ -124,7 +124,18 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 #tts [Seed-TTS: A Family of High-Quality Versatile Speech Generation Models](https://bytedancespeech.github.io/seedtts_tech_report/#applications-samples)
 
-
+[魔搭社区每周速递（5.26-5.31）](https://mp.weixin.qq.com/s/csPVepZKWFLDWsbr4N00CQ)
+- **89**个模型：****MAP-Neo、YOLOV10、Yuan2-M32-hf、M2_Encoder_Huge、ChatTTS等；
+- **47****个数据集：**Matrix、中国民族五声调式数据集、orpo-dpo-mix-40k等；
+- **49****个创新应用****：**FaceChain-FACT人物写真生成、ChatTTS-demo、Grounded-SAM 自动分割生成蒙版遮罩等；
+- **7篇****文章：**
+- 高能力全透明双语大语言模型MAP-Neo完全开源，开放所有细节！
+- ChatTTS：专为对话场景设计的文本转语音模型，底模开源！
+- 【报名】GLM 法律行业大模型挑战赛 | 冠军最高 52 万现金奖励  
+- YOLOv10发布，性能效率双提升，魔搭社区最佳实践来啦！
+- 社区供稿 | YuanChat全面升级：知识库、网络检索、适配CPU，手把手个人主机部署使用教程！
+- Data Is All You Need! 生成式图文对数据最佳实践，数据集魔搭开源！
+- PAI x ModelScope：在PAI使用ModelScope模型
 
 
 
