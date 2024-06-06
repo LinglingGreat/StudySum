@@ -67,8 +67,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -134,7 +133,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/NLGDataset/Dataset.md",
+                "file": "News/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/NLGDataset/Dataset.md"
+                "file": "News/README.md"
               }
             }
           },
@@ -213,10 +212,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "72f00fb46c6ee819",
   "lastOpenFiles": [
-    "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/NLGDataset/Dataset.md",
+    "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "News/README.md",
     "Tool/Linux/Linux.md",

@@ -122,6 +122,8 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 #alignment [Interpretable Preferences via Multi-Objective Reward Modeling and Mixture-of-Experts | RLHFlow](https://rlhflow.github.io/posts/2024-05-29-multi-objective-reward-modeling/)
 
+#tts [Seed-TTS: A Family of High-Quality Versatile Speech Generation Models](https://bytedancespeech.github.io/seedtts_tech_report/#applications-samples)
+
 
 
 
