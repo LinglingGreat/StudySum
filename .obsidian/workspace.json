@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "6408b265336c19a6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DataRelated/NLGDataset/Dataset.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "1f343859a1d8e35e",
             "type": "leaf",
             "state": {
@@ -122,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/业界分享/Good_Articles.md",
+                "file": "DataRelated/NLGDataset/Dataset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/业界分享/Good_Articles.md"
+                "file": "DataRelated/NLGDataset/Dataset.md"
               }
             }
           },
@@ -201,9 +213,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1f343859a1d8e35e",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
+    "DataRelated/NLGDataset/生成任务.md",
+    "DataRelated/NLGDataset/Dataset.md",
+    "DataRelated/NLGDataset/对话数据集.md",
     "News/README.md",
+    "Tool/Linux/Linux.md",
     "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/README.md",
@@ -211,9 +227,6 @@
     "Pre-training/ScalingLaw",
     "Pre-training/RolePlay/RolePlaySum.md",
     "Pre-training/LLMs/垂域大模型.md",
-    "Tool/Linux/Linux.md",
-    "DataRelated/Dataset.md",
-    "DataRelated/NLGDataset/对话数据集.md",
     "Pre-training/CL/SimpleCL/SimpleCL.md",
     "Tool/python/训练仓库.md",
     "Pre-training/长度外推/LongContext.md",
@@ -229,7 +242,6 @@
     "Tool/Pytorch/transformers.md",
     "Pre-training/Alignment/CUT/CUT.md",
     "Tool/python/Python.md",
-    "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114335.png",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114130.png",
     "Pre-training/Alignment/RLHFWorkflow/img",

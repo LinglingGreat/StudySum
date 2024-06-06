@@ -43,3 +43,5 @@ c.ai的bot：[New Arrivals](https://rentry.org/cai-list)
 
 [H-D-T/Buzz · Datasets at Hugging Face](https://huggingface.co/datasets/H-D-T/Buzz) 一个3千万的数据集
 
+[Eurus - a openbmb Collection](https://huggingface.co/collections/openbmb/eurus-660bc40bec5376b3adc9d1c5) Eurus模型用到的UltraInteract数据集，据他们说很好。
+

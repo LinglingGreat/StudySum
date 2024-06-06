@@ -118,6 +118,10 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 #推荐系统 [当推荐系统遇见大语言模型：通往未来的三条路径](https://mp.weixin.qq.com/s/H2Relpo8FW6q8vqmNtn5Rg)
 
+#专家模型 [单个4090可推理，2000亿稀疏大模型「天工MoE」开源](https://mp.weixin.qq.com/s/h5bxuWca65t3LsQwqGq-Og)
+
+#alignment [Interpretable Preferences via Multi-Objective Reward Modeling and Mixture-of-Experts | RLHFlow](https://rlhflow.github.io/posts/2024-05-29-multi-objective-reward-modeling/)
+
 
 
 
