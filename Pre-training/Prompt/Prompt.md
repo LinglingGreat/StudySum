@@ -168,3 +168,5 @@ prompt工程指南： https://github.com/promptslab/Awesome-Prompt-Engineering
 
 [比OpenAI官方提示词指南更全，这26条黄金准则让LLM性能飙升50%以上](https://mp.weixin.qq.com/s/F746iulLAt04mwveXTgncw)
 
+[GitHub - verazuo/jailbreak\_llms: [CCS'24] A dataset consists of 15,140 ChatGPT prompts from Reddit, Discord, websites, and open-source datasets (including 1,405 jailbreak prompts).](https://github.com/verazuo/jailbreak_llms)
+
