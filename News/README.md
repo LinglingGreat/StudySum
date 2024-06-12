@@ -147,6 +147,10 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 #大模型 [开源模型进展盘点：最新Mixtral、Llama 3、Phi-3、OpenELM到底有多好？](https://mp.weixin.qq.com/s/bgdDYkGHbPZMMSJPIutFSQ)
 
+## 2024.6.11-
+
+[here is my meticulously curated (and highly biased) summer paper reading list](https://x.com/jxmnop/status/1800292343343693934)
+
 
 
 

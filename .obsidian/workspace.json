@@ -90,9 +90,20 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "07dd0447a894ac29",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Pytorch/transformers.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -158,7 +169,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Prompt/Prompt.md",
+                "file": "News/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +197,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Prompt/Prompt.md"
+                "file": "News/README.md"
               }
             }
           },
@@ -237,12 +248,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6fa080cc420ddd7c",
+  "active": "72f00fb46c6ee819",
   "lastOpenFiles": [
+    "Tool/Pytorch/transformers.md",
+    "Tool/Git/Git.md",
+    "DataRelated/NLGDataset/Dataset.md",
+    "News/README.md",
+    "Pre-training/Prompt/Prompt.md",
     "NLG/RAG/README.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
-    "News/README.md",
-    "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "Tool/Linux/Linux.md",
@@ -261,11 +275,8 @@
     "Recsys/DeepFM.md",
     "Recsys/README.md",
     "Pre-training/LLMs/MoE/MoE.md",
-    "Tool/Git/Git.md",
     "Inference/README.md",
     "Pre-training/Benchmark/README.md",
-    "Pre-training/Alignment/RLHFWorkflow/RLHFWorkflow.md",
-    "Tool/Pytorch/transformers.md",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114335.png",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114130.png",
     "Pre-training/Alignment/RLHFWorkflow/img",
