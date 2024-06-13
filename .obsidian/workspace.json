@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NLG/RAG/README.md",
+                "file": "Pre-training/Alignment/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +103,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -169,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "News/README.md",
+                "file": "Pre-training/Alignment/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -197,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "News/README.md"
+                "file": "Pre-training/Alignment/README.md"
               }
             }
           },
@@ -248,14 +249,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "72f00fb46c6ee819",
+  "active": "ac30171bf6ec6953",
   "lastOpenFiles": [
+    "News/README.md",
+    "Pre-training/Alignment/README.md",
+    "NLG/RAG/README.md",
     "Tool/Pytorch/transformers.md",
     "Tool/Git/Git.md",
     "DataRelated/NLGDataset/Dataset.md",
-    "News/README.md",
     "Pre-training/Prompt/Prompt.md",
-    "NLG/RAG/README.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/NLGDataset/对话数据集.md",
@@ -276,7 +278,6 @@
     "Recsys/README.md",
     "Pre-training/LLMs/MoE/MoE.md",
     "Inference/README.md",
-    "Pre-training/Benchmark/README.md",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114335.png",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114130.png",
     "Pre-training/Alignment/RLHFWorkflow/img",

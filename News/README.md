@@ -112,7 +112,7 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 #专家模型 [MoE门控网络最新创新！性能对标Llama 3，源2.0-M32大幅提升模型算力效率](https://mp.weixin.qq.com/s/Z1hK9Xds9XUnmPHqvKrsRw)
 
-#alignment [Reinforcement Learning from Human Feedback 全家桶（RL 侧）](https://zhuanlan.zhihu.com/p/700149886)
+
 
 #专家模型 [面壁新模型：早于Llama3、比肩 Llama3、推理超越 Llama3！](https://mp.weixin.qq.com/s/BAeFq-jXuyXiGMF7MMy5qw)
 
