@@ -234,7 +234,7 @@ Host github.com
 
 总之，你可以为每个远程仓库指定不同的地址，以实现多个远程仓库的跟踪。
 
-
+删除远程仓库的引用：`git remote remove origin`
 
 ## 同步最新代码
 

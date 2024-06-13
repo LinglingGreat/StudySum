@@ -52,8 +52,6 @@
 [Fewer Truncations Improve Language Modeling](https://papers.cool/arxiv/2404.10830) 这篇论文试图解决大型语言模型（LLM）训练中的数据截断问题。在传统的训练方法中，输入文档被连接在一起，然后分割成等长的序列，以适应模型的上下文长度。这种方法虽然高效，但会导致许多文档被不完整地截断，从而损害了数据的完整性。截断会影响模型学习逻辑连贯、事实一致的内容的能力，因为模型无法获取完整的上下文信息。
 为了解决这个问题，论文提出了一种名为“Best-fit Packing”的方法，这是一种可扩展且高效的方法，通过长度感知的组合优化将文档打包进训练序列。这种方法完全消除了不必要的截断，同时保持了与连接方法相同的训练效率。实证结果表明，使用Best-fit Packing训练的模型在多种任务上表现出更好的性能，并且在减少封闭域幻觉方面效果显著。 #预训练 
 
-[Token-level Direct Preference Optimization](https://papers.cool/arxiv/2404.11999) TDPO试图通过在token级别上直接优化策略，同时控制KL散度，来提高语言模型与人类偏好的对齐度，并保持生成响应的多样性。论文通过在多种文本任务上的实验结果表明，TDPO在平衡对齐度和生成多样性方面优于DPO和基于PPO的RLHF方法。 #alignment 
-
 [SnapKV: LLM Knows What You are Looking for Before Generation](https://papers.cool/arxiv/2404.14469) SnapKV提供了一种有效的方法来压缩KV缓存，同时保持了LLMs在处理长文本输入时的性能。 #长文本 #推理加速 
 
 [Sequence can Secretly Tell You What to Discard](https://papers.cool/arxiv/2404.15949)  这篇论文试图解决大型语言模型（LLMs）在部署时面临的一个关键内存瓶颈问题，即关键值（KV）缓存的内存占用问题。尽管LLMs在多种自然语言处理任务上表现出色，但它们需要大量的GPU内存，并消耗大量的计算资源。除了模型权重外，KV缓存占用的内存随着序列长度的增加而线性增长，成为推理过程中的主要瓶颈。
@@ -88,7 +86,6 @@ https://huggingface.co/collections/chujiezheng/weak-to-strong-extrapolation-expe
 
 #长文本 #推理加速   [Full Stack Transformer Inference Optimization Season 2: Deploying Long-Context Models](https://yaofu.notion.site/Full-Stack-Transformer-Inference-Optimization-Season-2-Deploying-Long-Context-Models-ee25d3a77ba14f73b8ae19147f77d5e2)
 
-#rlhf #alignment Iterative Preference Learning from Human Feedback: Bridging Theory and Practice for RLHF under KL-Constraint https://arxiv.org/pdf/2312.11456v4  这篇一个是第一个做了RLHF 的理论, 处理了 KL-regularized contextual bandit (不同于之前的dueling bandit) 的数学原理; 第二个是从理论insight 出发说明online iterative RLHF 的好处; 第三个就是自然导出了 online iterative DPO 这样一个算法, 用我们最近开源的reward model (reward bench 上现在sota的开源 rm), 可以很轻松把 Zephyr-7B-SFT 在 Alpaca-eval 4.63% -> 35.95%, mt bench 5.3 -> 7.5。
 
 #sft 我们今年的NAACL做过一个让大模型意识到自己的知识边界的工作，通过sft 使得模型 尽量只回答对于自己知识边界以内的问题，对于知识边界以外的拒绝回答，teach LLMs to say i dont know.  以此来减少幻觉对真实世界造成的影响。 算是抛砖引玉，欢迎关注~  https://arxiv.org/abs/2311.09677
 
@@ -112,15 +109,12 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 #专家模型 [MoE门控网络最新创新！性能对标Llama 3，源2.0-M32大幅提升模型算力效率](https://mp.weixin.qq.com/s/Z1hK9Xds9XUnmPHqvKrsRw)
 
-
-
 #专家模型 [面壁新模型：早于Llama3、比肩 Llama3、推理超越 Llama3！](https://mp.weixin.qq.com/s/BAeFq-jXuyXiGMF7MMy5qw)
 
 #推荐系统 [当推荐系统遇见大语言模型：通往未来的三条路径](https://mp.weixin.qq.com/s/H2Relpo8FW6q8vqmNtn5Rg)
 
 #专家模型 [单个4090可推理，2000亿稀疏大模型「天工MoE」开源](https://mp.weixin.qq.com/s/h5bxuWca65t3LsQwqGq-Og)
 
-#alignment [Interpretable Preferences via Multi-Objective Reward Modeling and Mixture-of-Experts | RLHFlow](https://rlhflow.github.io/posts/2024-05-29-multi-objective-reward-modeling/)
 
 #tts [Seed-TTS: A Family of High-Quality Versatile Speech Generation Models](https://bytedancespeech.github.io/seedtts_tech_report/#applications-samples)
 

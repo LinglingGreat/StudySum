@@ -32,18 +32,6 @@
             }
           },
           {
-            "id": "6fa080cc420ddd7c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/Prompt/Prompt.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "6408b265336c19a6",
             "type": "leaf",
             "state": {
@@ -61,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/业界分享/Good_Articles.md",
+                "file": "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -133,7 +121,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#scalingLaw",
+                "query": "Self-Extend",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -170,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Alignment/README.md",
+                "file": "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Alignment/README.md"
+                "file": "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md"
               }
             }
           },
@@ -249,20 +237,35 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ac30171bf6ec6953",
+  "active": "1f343859a1d8e35e",
   "lastOpenFiles": [
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202308.png",
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202259.png",
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202233.png",
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202159.png",
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202018.png",
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201958.png",
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201826.png",
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201813.png",
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201501.png",
+    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201253.png",
+    "Pre-training/explore/MultiTokenPredict/img",
+    "Pre-training/业界分享/Good_Articles.md",
+    "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
+    "Pre-training/explore/MultiTokenPredict",
     "News/README.md",
     "Pre-training/Alignment/README.md",
+    "Pre-training/Prompt/Prompt.md",
+    "DataRelated/NLGDataset/Dataset.md",
+    "Tool/Git/Git.md",
+    "Pre-training/量化/模型量化.md",
+    "Pre-training/长度外推/SelfExtend/SelfExtend.md",
     "NLG/RAG/README.md",
     "Tool/Pytorch/transformers.md",
-    "Tool/Git/Git.md",
-    "DataRelated/NLGDataset/Dataset.md",
-    "Pre-training/Prompt/Prompt.md",
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "Tool/Linux/Linux.md",
-    "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/README.md",
     "Pre-training/ScalingLaw/ScalingLaw.md",
@@ -274,29 +277,14 @@
     "Pre-training/长度外推/LongContext.md",
     "Recsys/深度学习推荐系统实战.md",
     "Recsys/推荐模型.md",
-    "Recsys/DeepFM.md",
-    "Recsys/README.md",
-    "Pre-training/LLMs/MoE/MoE.md",
-    "Inference/README.md",
     "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114335.png",
-    "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114130.png",
     "Pre-training/Alignment/RLHFWorkflow/img",
     "Pre-training/Alignment/RLHFWorkflow",
-    "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510143202.png",
-    "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142939.png",
-    "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142555.png",
-    "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142515.png",
-    "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510142503.png",
-    "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510141607.png",
-    "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510140556.png",
-    "Pre-training/DataGen/MAmmoTH2/img/Pasted image 20240510140525.png",
     "Pre-training/DataGen/MAmmoTH2/img",
     "Pre-training/DataGen/MAmmoTH2",
     "Pre-training/DataGen",
     "Pre-training/RolePlay/CharacterGLM/img",
     "Pre-training/RolePlay/CharacterGLM",
-    "Pre-training/CL/SimpleCL/img",
-    "Pre-training/CL/SimpleCL",
     "未命名.canvas"
   ]
 }
