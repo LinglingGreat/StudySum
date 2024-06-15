@@ -20,7 +20,7 @@
             }
           },
           {
-            "id": "ac30171bf6ec6953",
+            "id": "6416025f11e1325a",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
+                "file": "Pre-training/Alignment/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md"
+                "file": "Pre-training/Alignment/README.md"
               }
             }
           },
@@ -237,27 +237,42 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1f343859a1d8e35e",
+  "active": "6416025f11e1325a",
   "lastOpenFiles": [
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202308.png",
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202259.png",
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202233.png",
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202159.png",
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613202018.png",
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201958.png",
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201826.png",
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201813.png",
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201501.png",
-    "Pre-training/explore/MultiTokenPredict/img/Pasted image 20240613201253.png",
-    "Pre-training/explore/MultiTokenPredict/img",
-    "Pre-training/业界分享/Good_Articles.md",
-    "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
-    "Pre-training/explore/MultiTokenPredict",
-    "News/README.md",
+    "Pre-training/Alignment/ORPO/ORPO.md",
+    "Pre-training/Alignment/ORPO/img/Pasted image 20240615171055.png",
+    "Pre-training/Alignment/ORPO/img/Pasted image 20240615171039.png",
+    "Pre-training/Alignment/ORPO/img/Pasted image 20240615171020.png",
+    "Pre-training/Alignment/ORPO/img",
+    "Pre-training/Alignment/TDPO/TDPO.md",
+    "Pre-training/Alignment/ORPO",
+    "Pre-training/Alignment/TDPO/img/Pasted image 20240615170821.png",
+    "Pre-training/Alignment/TDPO/img",
+    "Pre-training/Alignment/DPOP/DPOP.md",
+    "Pre-training/Alignment/TDPO",
+    "Pre-training/Alignment/DPOP/img/Pasted image 20240615170704.png",
+    "Pre-training/Alignment/DPOP/img",
+    "Pre-training/Alignment/DPO/DPO.md",
+    "Pre-training/Alignment/DPOP",
+    "Pre-training/Alignment/DPO/img/Pasted image 20240615170451.png",
+    "Pre-training/Alignment/DPO/img",
     "Pre-training/Alignment/README.md",
+    "Pre-training/Alignment/DPO",
+    "Pre-training/Alignment/GRPO/GRPO.md",
+    "Pre-training/Alignment/GRPO/img/Pasted image 20240615170232.png",
+    "Pre-training/Alignment/GRPO/img/Pasted image 20240615165906.png",
+    "Pre-training/Alignment/GRPO/img",
+    "Pre-training/Alignment/GRPO",
+    "News/README.md",
+    "Pre-training/Alignment/ReMax/ReMax.md",
+    "Pre-training/Alignment/ReMax/img/Pasted image 20240615165549.png",
+    "Pre-training/Alignment/ReMax/img/Pasted image 20240615165301.png",
+    "Pre-training/Alignment/RLHFSum/RLHFSum.md",
+    "Tool/Git/Git.md",
+    "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
+    "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/Prompt/Prompt.md",
     "DataRelated/NLGDataset/Dataset.md",
-    "Tool/Git/Git.md",
     "Pre-training/量化/模型量化.md",
     "Pre-training/长度外推/SelfExtend/SelfExtend.md",
     "NLG/RAG/README.md",
@@ -269,22 +284,6 @@
     "Pre-training/LLMs/README.md",
     "Pre-training/README.md",
     "Pre-training/ScalingLaw/ScalingLaw.md",
-    "Pre-training/ScalingLaw",
-    "Pre-training/RolePlay/RolePlaySum.md",
-    "Pre-training/LLMs/垂域大模型.md",
-    "Pre-training/CL/SimpleCL/SimpleCL.md",
-    "Tool/python/训练仓库.md",
-    "Pre-training/长度外推/LongContext.md",
-    "Recsys/深度学习推荐系统实战.md",
-    "Recsys/推荐模型.md",
-    "Pre-training/Alignment/RLHFWorkflow/img/Pasted image 20240518114335.png",
-    "Pre-training/Alignment/RLHFWorkflow/img",
-    "Pre-training/Alignment/RLHFWorkflow",
-    "Pre-training/DataGen/MAmmoTH2/img",
-    "Pre-training/DataGen/MAmmoTH2",
-    "Pre-training/DataGen",
-    "Pre-training/RolePlay/CharacterGLM/img",
-    "Pre-training/RolePlay/CharacterGLM",
     "未命名.canvas"
   ]
 }
