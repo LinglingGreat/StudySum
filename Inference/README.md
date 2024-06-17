@@ -1,3 +1,10 @@
+---
+title: README
+created: 2024-06-17
+tags:
+  - 推理加速
+---
+
 
 [GitHub - microsoft/DeepSpeed-MII: MII makes low-latency and high-throughput inference possible, powered by DeepSpeed.](https://github.com/microsoft/DeepSpeed-MII)
 
@@ -11,5 +18,7 @@
 
 
 [[Prefill优化][万字]🔥原理&图解vLLM Automatic Prefix Cache(RadixAttention): 首Token时延优化 - 知乎](https://zhuanlan.zhihu.com/p/693556044)
+
+[LLM后端推理引擎性能大比拼](https://mp.weixin.qq.com/s/dPd84P_VdKog8v2IcHDOrQ) 对比了vLLM、LMDeploy、MLC-LLM、TensorRT-LLM 和 Hugging Face TGI.
 
 
