@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Alignment/README.md",
+                "file": "Pre-training/Alignment/PPO/PPO.md",
                 "mode": "source",
                 "source": false
               }
@@ -38,18 +38,6 @@
               "type": "markdown",
               "state": {
                 "file": "DataRelated/NLGDataset/Dataset.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1f343859a1d8e35e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
                 "mode": "source",
                 "source": false
               }
@@ -80,18 +68,6 @@
             }
           },
           {
-            "id": "0bf7a3bbc6873a95",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Inference/README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "07dd0447a894ac29",
             "type": "leaf",
             "state": {
@@ -104,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Inference/README.md",
+                "file": "Pre-training/Alignment/PPO/PPO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Inference/README.md"
+                "file": "Pre-training/Alignment/PPO/PPO.md"
               }
             }
           },
@@ -249,10 +225,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0bf7a3bbc6873a95",
+  "active": "6416025f11e1325a",
   "lastOpenFiles": [
-    "Tool/Git/Git.md",
+    "Pre-training/Alignment/PPO/img/Pasted image 20240617194446.png",
+    "Pre-training/Alignment/PPO/img",
     "Pre-training/Alignment/README.md",
+    "Pre-training/Alignment/PPO/PPO.md",
+    "Pre-training/Alignment/PPO",
+    "Tool/Git/Git.md",
+    "Inference/README.md",
     "Pre-training/Alignment/ORPO/ORPO.md",
     "Pre-training/Alignment/ORPO/img/Pasted image 20240615171055.png",
     "Pre-training/Alignment/ORPO/img/Pasted image 20240615171039.png",
@@ -274,8 +255,6 @@
     "Pre-training/Alignment/GRPO/GRPO.md",
     "Pre-training/Alignment/GRPO/img/Pasted image 20240615170232.png",
     "Pre-training/Alignment/GRPO/img/Pasted image 20240615165906.png",
-    "Pre-training/Alignment/GRPO/img",
-    "Pre-training/Alignment/GRPO",
     "News/README.md",
     "Pre-training/Alignment/ReMax/ReMax.md",
     "Pre-training/Alignment/ReMax/img/Pasted image 20240615165549.png",
@@ -294,8 +273,6 @@
     "DataRelated/NLGDataset/对话数据集.md",
     "Tool/Linux/Linux.md",
     "Pre-training/LLMs/README.md",
-    "Pre-training/README.md",
-    "Pre-training/ScalingLaw/ScalingLaw.md",
     "未命名.canvas"
   ]
 }
