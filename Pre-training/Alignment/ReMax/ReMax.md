@@ -79,6 +79,7 @@ ReMax 需要做两次 generation（训练 sample 1 次 + greedy sample 1 次）�
 
 ## 核心亮点
 
+![](img/Pasted%20image%2020240618173735.png)
 
 
 [源码](https://github.com/liziniu/ReMax/blob/master/step3_rlhf_finetuning/remax_trainer.py) 中计算 loss 的部分如下：

@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "1504e06b1d88e1b0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/Alignment/ReMax/ReMax.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "6408b265336c19a6",
             "type": "leaf",
             "state": {
@@ -92,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -158,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Inference/README.md",
+                "file": "Pre-training/Alignment/ReMax/ReMax.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Inference/README.md"
+                "file": "Pre-training/Alignment/ReMax/ReMax.md"
               }
             }
           },
@@ -237,8 +249,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9cb0ab446c48d5d9",
+  "active": "1504e06b1d88e1b0",
   "lastOpenFiles": [
+    "Pre-training/Alignment/ReMax/img/Pasted image 20240618173735.png",
+    "Inference/README.md",
     "Pre-training/LLMs/Index-1.9B/Index-1.9B.md",
     "Pre-training/LLMs/Index-1.9B/img/Pasted image 20240618155806.png",
     "Pre-training/LLMs/Index-1.9B/img/Pasted image 20240618155503.png",
@@ -258,7 +272,6 @@
     "Pre-training/Alignment/README.md",
     "Pre-training/Alignment/PPO",
     "Tool/Git/Git.md",
-    "Inference/README.md",
     "Pre-training/Alignment/ORPO/ORPO.md",
     "Pre-training/Alignment/ORPO/img",
     "Pre-training/Alignment/TDPO/TDPO.md",
