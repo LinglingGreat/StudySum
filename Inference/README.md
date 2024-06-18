@@ -21,4 +21,15 @@ tags:
 
 [LLM后端推理引擎性能大比拼](https://mp.weixin.qq.com/s/dPd84P_VdKog8v2IcHDOrQ) 对比了vLLM、LMDeploy、MLC-LLM、TensorRT-LLM 和 Hugging Face TGI.
 
+[大模型压缩量化方案怎么选？无问芯穹Qllm-Eval量化方案全面评估：多模型、多参数、多维度](https://mp.weixin.qq.com/s/BxMT1CZk35yMP8qnhoFNFw)
+1. Weight-only量化可以显著加速decoding阶段，从而改善端到端延迟。
+    
+2. 关于prefill阶段，Weight-only量化可能实际上会增加延迟。
+    
+3. 随着批量大小和输入长度的增加，Weight-only量化所带来的加速效果逐渐减小。
+    
+4. 对于较大的模型，Weight-only量化提供了更大的益处，因为较大模型尺寸的内存访问开销显著增加。
+
+
+
 
