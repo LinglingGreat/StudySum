@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Alignment/ReMax/ReMax.md",
+                "file": "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
                 "mode": "source",
                 "source": false
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Alignment/ReMax/ReMax.md",
+                "file": "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Alignment/ReMax/ReMax.md"
+                "file": "Pre-training/LLMs/Nemotron-4/Nemotron-4.md"
               }
             }
           },
@@ -251,6 +251,11 @@
   },
   "active": "1504e06b1d88e1b0",
   "lastOpenFiles": [
+    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240618200812.png",
+    "Pre-training/LLMs/Nemotron-4/img",
+    "Pre-training/Alignment/ReMax/ReMax.md",
+    "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
+    "Pre-training/LLMs/Nemotron-4",
     "Pre-training/Alignment/ReMax/img/Pasted image 20240618173735.png",
     "Inference/README.md",
     "Pre-training/LLMs/Index-1.9B/Index-1.9B.md",
@@ -263,7 +268,6 @@
     "Pre-training/LLMs/Index-1.9B/img/Pasted image 20240618155005.png",
     "Pre-training/LLMs/Index-1.9B/img/Pasted image 20240618154948.png",
     "Pre-training/LLMs/Index-1.9B/img/Pasted image 20240618154932.png",
-    "Pre-training/LLMs/Index-1.9B/img/Pasted image 20240618154915.png",
     "Pre-training/LLMs/Index-1.9B/img",
     "Pre-training/Alignment/PPO/PPO.md",
     "News/Inbox.md",
@@ -279,11 +283,8 @@
     "Pre-training/Alignment/TDPO/img",
     "Pre-training/Alignment/DPOP/DPOP.md",
     "Pre-training/Alignment/TDPO",
-    "Pre-training/Alignment/DPOP/img",
     "Pre-training/Alignment/DPO/DPO.md",
-    "Pre-training/Alignment/DPOP",
     "Pre-training/Alignment/GRPO/GRPO.md",
-    "Pre-training/Alignment/ReMax/ReMax.md",
     "Pre-training/Alignment/RLHFSum/RLHFSum.md",
     "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
     "Pre-training/业界分享/Good_Articles.md",
@@ -296,7 +297,6 @@
     "DataRelated/PretrainDataset/PretrainDataset.md",
     "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/NLGDataset/对话数据集.md",
-    "Tool/Linux/Linux.md",
     "未命名.canvas"
   ]
 }
