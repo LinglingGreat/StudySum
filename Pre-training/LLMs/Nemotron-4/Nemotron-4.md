@@ -66,7 +66,7 @@ Nemotron-4-340B-Reward在发表时，在RewardBench上实现了最高准确性�
     
 - 代码（15%）：包含43种编程语言。
     
-
+训练混合策略和Nemotron-4-15B-Base一致。
 #### **架构**
 
 与Nemotron-4-15B-Base类似，Nemotron-4-340B-Base基于的也是仅解码器Transformer架构。
