@@ -45,7 +45,7 @@ PPO的训练流程
 - Reward model：评判员，打分
 - Reference model/ref_policy：参考模型，不要走的太远
 
-Reward model和Critic通常用同一个基础模型。
+Reward model和Critic通常用同一个基础模型。Critic在训练过程中会更新。
 
 Actor和Reference model也是同一个，只不过Actor会一直学习进步，Reference是保持初心的。
 
@@ -66,9 +66,13 @@ Actor和Reference model也是同一个，只不过Actor会一直学习进步，R
     parser.add_argument("--pretrain", type=str, default=None)
     # reward模型
     parser.add_argument("--reward_pretrain", type=str, default=None)
+    # 更新迭代数，相当于过了多少遍数据
     parser.add_argument("--num_episodes", type=int, default=1)
+    # 生成的总batch_size，生成总量达到这个batch_size会进行PPO更新
     parser.add_argument("--rollout_batch_size", type=int, default=512)
+    # 每次batch生成时候的size，也就是单张卡generate时候的输入batch大小
     parser.add_argument("--micro_rollout_batch_size", type=int, default=8)
+    # 进行PPO更新的时候的epochs
     parser.add_argument("--max_epochs", type=int, default=1)
     parser.add_argument("--prompt_max_len", type=int, default=1024)
     parser.add_argument("--generate_max_len", type=int, default=1024)
@@ -110,6 +114,7 @@ Actor和Reference model也是同一个，只不过Actor会一直学习进步，R
 
 
 ```python
+# len(prompts_dataloader) = len(prompts_dataset) // (args.micro_rollout_batch_size * num_process)
 num_update_steps_per_episodes = (
         int(len(prompts_dataloader) * (args.micro_rollout_batch_size / args.micro_train_batch_size))
         * args.max_epochs
@@ -137,4 +142,6 @@ Loss
 ## 参考资料
 
 [ppo_trainer](https://huggingface.co/docs/trl/ppo_trainer)
+
+[The 37 Implementation Details of Proximal Policy Optimization · The ICLR Blog Track](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/)
 
