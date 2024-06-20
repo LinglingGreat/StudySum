@@ -101,7 +101,7 @@ Actor和Reference model也是同一个，只不过Actor会一直学习进步，R
     parser.add_argument("--critic_learning_rate", type=float, default=9e-6)
     parser.add_argument("--kl_target", type=float, default=None)
     parser.add_argument("--init_kl_coef", type=float, default=0.02)
-    ## Make EMA as an optional feature
+    ## Make EMA as an optional feature, moving average
     parser.add_argument("--enable_ema", action="store_true", help="Enable EMA checkpoint for the model.")
     parser.add_argument("--zpg", type=int, default=1, help="ZeRO++ max partition size")
     parser.add_argument("--adam_offload", action="store_true", default=False)
@@ -128,7 +128,7 @@ max_steps = math.ceil(args.num_episodes * num_update_steps_per_episodes)
 Loss
 - PolicyLoss
 - ValueLoss
-- GPTLMLoss：交叉熵
+- GPTLMLoss：交叉熵. pretrain_data会用到
 - aux_loss： Mixtral 8x7b
 - kl_ctl
 
