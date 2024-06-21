@@ -135,26 +135,76 @@ max_steps = math.ceil(args.num_episodes * num_update_steps_per_episodes)
 ```
 
 
-## 更新前的准备工作
+## 更新前的准备工作-make_experience
 
 ```python
+
+这个函数的主要作用是：
+1. 生成并更新注意力掩码，使模型只关注有效的 token。
+2. 确保每个序列的结束位置标记为 `eos_token_id`。尽管 `model.generate` 通常会在生成序列的末尾自动添加 `eos_token_id`，但在某些情况下（如生成的序列过长或模型行为异常），可能不会正确添加。因此，需要手动确保每个序列都以 `eos_token_id` 结尾。
+3. 生成动作掩码，用于标记状态序列中的有效 token。
+
+def process_sequences(self, sequences: torch.Tensor, input_len, eos_token_id, pad_token_id):
+		# 生成一个初始的注意力掩码，其中每个位置上的值为 `1` 表示该位置的 token 既不是 `eos_token_id` 也不是 `pad_token_id`，值为 `0` 表示该位置的 token 是 `eos_token_id` 或 `pad_token_id`。
+		# attention_mask的维度是(batch_size, seq_length)
+        attention_mask = (sequences.ne(eos_token_id) & sequences.ne(pad_token_id)).to(dtype=torch.long)
+        seq_length = attention_mask.size(1)
+
+        # The following code is equivalent to:
+        #
+        # for i in range(attention_mask.size(0)):
+        #     for t in reversed(range(seq_length)):
+        #         if attention_mask[i][t] > 0.5:
+        #             attention_mask[i][min(t + 1, seq_length - 1)] = True
+        #             sequences[i][min(t + 1, seq_length - 1)] = eos_token_id
+        #             break
+        #
+        
+        # `eos_indices`：每个序列中最后一个非 `pad` 和非 `eos` token 的索引加一的位置。
+        # `first_token_indices`：每个序列中第一个非 `pad` 和非 `eos` token 的索引。
+        eos_indices = seq_length - attention_mask.long().fliplr().argmax(dim=1, keepdim=True).clamp(min=1)
+        first_token_indices = attention_mask.long().argmax(dim=1, keepdim=True)
+
+        # For Llama3 and Qwen2 models, there are some eos_tokens in the middle of the prompt.
+        # `mask`：一个掩码矩阵，用于标记每个序列中从第一个有效 token 到 `eos_indices` 位置的范围。
+        # 使用 `mask` 更新 `attention_mask`，确保这些范围内的值都为 `1`。
+        # 使用 `scatter_` 方法将 `eos_token_id` 写入 `eos_indices` 位置。
+        mask = torch.arange(seq_length).unsqueeze(0).expand(sequences.size(0), -1)
+        mask = mask.to(sequences.device)
+        mask = (mask <= eos_indices) & (mask >= first_token_indices)
+
+        attention_mask.masked_fill_(mask, 1)
+        sequences.scatter_(dim=1, index=eos_indices, value=eos_token_id)
+
+        # in RL, state_i (current token) + action_i (next token) -> state_i+1 (next token)
+        # `state_seq`：从输入序列中截取的状态序列，范围是从 `input_len - 1` 到倒数第二个位置。
+        # `action_mask`：一个掩码，用于标记 `state_seq` 中的有效 token（既不是 `eos_token_id` 也不是 `pad_token_id`）。
+        state_seq = sequences[:, input_len - 1 : -1]
+        # we only calculate the loss of state_i != eos | pad
+        action_mask = state_seq.ne(eos_token_id) & state_seq.ne(pad_token_id)
+        return sequences, attention_mask, action_mask
+
+
 # generate seq
 inputs = self.tokenize_fn(prompts, self.prompt_max_len, device="cuda")
+# sequences是actor_model.generate()得到的output_ids，再经过上面的process_sequences函数得到sequences, attention_mask, action_mask
 sequences, attention_mask, action_mask = self.actor.generate(**inputs, **generate_kwargs)
 num_actions = action_mask.size(1)
 
 # log probs
+# 计算输出 logits 对应目标序列的对数概率 `log_probs`，只取response部分的
 action_log_probs = self.actor(sequences, num_actions, attention_mask, use_cache=False)
 
-# init log probs
+# init log probs，同上
 base_action_log_probs = self.initial_model(sequences, num_actions, attention_mask)
 
-# values
+# values，只取response部分的
 value = self.critic(sequences, action_mask, attention_mask)
 
-# rewards
+# rewards，只提取每个序列中最后一个有效位置（即 `attention_mask` 中最后一个 1 的位置）的reward
 r = self.reward_model(sequences, attention_mask)
 
+# 计算汇总每个token的奖励和KL惩罚
 reward, kl = compute_reward(
 	r,
 	self.kl_ctl.value,
@@ -162,6 +212,7 @@ reward, kl = compute_reward(
 	base_action_log_probs,
 	action_mask=action_mask,
 )
+# 计算advantage和returns
 advantage, returns = self.get_advantages_and_returns(
 	value,
 	reward,
@@ -321,7 +372,20 @@ def compute_reward(
 
 **Generalized Advantage Estimation (GAE)**: GAE [5], a $\text{TD}(\lambda)$ return estimation method, is used to estimate token-wise rewards in PPO. In practice, we typically set $\lambda = 1$, transforming the GAE method into a Monte Carlo estimation method.
 
+- **优势（Advantages）**：表示在特定状态下采取某个动作相对于平均水平的好坏程度。通过计算优势函数，可以更好地指导策略的更新，使得策略更倾向于选择优势较大的动作。
+- **回报（Returns）**：表示从某个时间步开始到未来所有时间步的折扣累积奖励。回报用于衡量整个序列的表现，通过回报可以评估策略的整体效果。
+
 ![](img/Pasted%20image%2020240621175633.png)
+
+输入
+- `values`：形状为 `(batch_size, response_size)` 的张量，表示每个时间步的价值估计。
+- `rewards`：形状为 `(batch_size, response_size)` 的张量，表示每个时间步的奖励。
+- `action_mask`：形状为 `(batch_size, response_size)` 的张量，用于掩盖无效的动作或时间步。
+- `gamma`：折扣因子，通常用于折扣未来的奖励。
+- `lambd`：GAE 参数，控制优势函数的平滑度。
+输出
+- `advantages`：形状为 `(batch_size, response_size)` 的张量，表示每个时间步的优势函数。
+- `returns`：形状为 `(batch_size, response_size)` 的张量，表示每个时间步的回报。
 
 ```python
 def get_advantages_and_returns(
@@ -345,8 +409,8 @@ def get_advantages_and_returns(
                    + γ * (1 - λ) V2 + γ^2 * λ * (1 - λ) V3 + ...
 
         Input:
-        - values: Tensor of shape (batch_size, response_size)
-        - rewards: Tensor of shape (batch_size, response_size)
+        - values: Tensor of shape (batch_size, response_size)，表示每个时间步的价值估计。
+        - rewards: Tensor of shape (batch_size, response_size)，表示每个时间步的奖励。
 
         Output:
         - advantages: Tensor of shape (batch_size, response_size)
@@ -401,14 +465,65 @@ def normalize(self, attribute: str, strategy) -> None:
             setattr(item, attribute, (items[i] - mean) * rstd)
 ```
 
-### 开始更新，其中的Loss
+### 开始更新
 
+```python
+def fit(
+        self,
+        prompts_dataloader,
+        pretrain_dataloader,
+        args,
+    ) -> None:
+        self.prompts_dataloader = prompts_dataloader
+        self.pretrain_dataloader = pretrain_dataloader
+
+        update_timesteps = args.rollout_batch_size // (self.strategy.world_size * self.micro_rollout_batch_size)
+        global_step = 1
+
+        # get eval and save steps
+        if args.eval_steps == -1:
+            args.eval_steps = prompts_dataloader.__len__() // update_timesteps  # Evaluate once per epoch
+        if args.save_steps == -1:
+            args.save_steps = float("inf")  # do not save ckpt
+
+        for episode in range(args.num_episodes):
+            if isinstance(self.prompts_dataloader.sampler, DistributedSampler):
+                self.prompts_dataloader.sampler.set_epoch(episode)
+            pbar = tqdm(
+                range(self.prompts_dataloader.__len__()),
+                desc=f"Episode [{episode + 1}/{args.num_episodes}]",
+                disable=not self.strategy.is_rank_0(),
+            )
+
+            for rand_prompts in self.prompts_dataloader:
+                experience = self.experience_maker.make_experience(rand_prompts, **self.generate_kwargs)
+                # print prompt/answer in each update step
+                if global_step % update_timesteps == 0:
+                    output = self.tokenizer.batch_decode(experience.sequences, skip_special_tokens=True)
+                    self.strategy.print(repr(output[0]))
+                self.replay_buffer.append(experience)
+
+                if global_step % update_timesteps == 0:
+                    torch.cuda.empty_cache()
+                    self.replay_buffer.normalize("advantages", self.strategy)
+                    status = self.ppo_train()
+                    self.replay_buffer.clear()
+                    torch.cuda.empty_cache()
+                    self.kl_ctl.update(status["kl"], args.rollout_batch_size)
+                    # logs/checkpoints
+                    self.save_logs_and_checkpoints(args, global_step // update_timesteps, pbar, status)
+
+                pbar.update()
+                global_step = global_step + 1
+```
 
 - actor优化时候的loss：PolicyLoss。
-- ptx loss（也是优化actor，传入pretrain_data的时候会用到）：GPTLMLoss，也就是交叉熵。Incorporating an additional supervised next-token prediction loss, alongside the KL divergence, into PPO can preserve the pre-existing abilities of the SFT model
+- ptx loss（也是优化actor，传入pretrain_data的时候会用到）：GPTLMLoss，也就是交叉熵。
 - critic优化的loss：ValueLoss。
 - 如果是Mixtral 8x7b会加一个aux_loss到上述每个loss中。
 #### PolicyLoss
+
+主要用到了advantages，新旧策略的对数概率。
 
 ```python
 class PolicyLoss(nn.Module):
@@ -429,13 +544,19 @@ class PolicyLoss(nn.Module):
     ) -> torch.Tensor:
         ratio = (log_probs - old_log_probs).exp()
         surr1 = ratio * advantages
+        # `surr2` 通过裁剪比率来限制策略更新的幅度。
         surr2 = ratio.clamp(1 - self.clip_eps, 1 + self.clip_eps) * advantages
+        # 通过取 `surr1` 和 `surr2` 的最小值来确保策略更新不会偏离太远。
         loss = -torch.min(surr1, surr2)
         loss = masked_mean(loss, action_mask, dim=-1).mean()
         return loss
 ```
 
-#### **GPTLMLoss**
+#### GPTLMLoss
+
+基于交叉熵损失的，用于训练语言模型，使其能够更好地预测下一个词。
+
+Incorporating an additional supervised next-token prediction loss, alongside the KL divergence, into PPO can preserve the pre-existing abilities of the SFT model
 
 ```python
 class GPTLMLoss(nn.Module):
@@ -456,6 +577,8 @@ class GPTLMLoss(nn.Module):
 ```
 
 #### ValueLoss
+
+通过裁剪机制来控制价值函数更新的幅度。通过计算两个损失项并取其最大值来实现价值函数更新的裁剪，防止价值函数更新幅度过大。
 
 **ValueLoss**：PPO clips the value function like the PPO’s clipped surrogate objective. Given $V_{targ} = returns = advantages + values$, PPO fits the value network by minimizing the following loss:
 
@@ -488,7 +611,7 @@ class ValueLoss(nn.Module):
             loss = (values - returns) ** 2
 
         loss = masked_mean(loss, action_mask, dim=-1).mean()
-        return 0.5 * loss
+        return 0.5 * loss # 这是为了与标准的均方误差（MSE）损失函数保持一致，通常 MSE 损失函数在优化过程中会乘以 0.5。
 ```
 
 
