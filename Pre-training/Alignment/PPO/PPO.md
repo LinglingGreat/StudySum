@@ -45,11 +45,17 @@ PPO的训练流程
 - Reward model：评判员，打分
 - Reference model/ref_policy：参考模型，不要走的太远
 
-Reward model和Critic通常用同一个基础模型。Critic在训练过程中会更新。
+模型初始化
+- Reward model和Critic通常用同一个基础模型。Critic在训练过程中会更新。
+- Actor和Reference model也是同一个，只不过Actor会一直学习进步，Reference是保持初心的。
+数据
+- 训练时，数据只需要有prompt字段，也就是输入即可。回复会用Actor实时生成。
 
-Actor和Reference model也是同一个，只不过Actor会一直学习进步，Reference是保持初心的。
+学习率参考
+- actor模型的学习率一般是SFT模型最后的学习率的1/10。
+- critic模型的学习率是SFT模型最后的学习率的将近2倍。
 
-训练时，数据只需要有prompt字段，也就是输入即可。回复会用Actor实时生成。
+
 ## 实验
 
 
@@ -144,4 +150,6 @@ Loss
 [ppo_trainer](https://huggingface.co/docs/trl/ppo_trainer)
 
 [The 37 Implementation Details of Proximal Policy Optimization · The ICLR Blog Track](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/)
+[Advanced Tricks for Training Large Language Models with Proximal Policy Optimization](https://difficult-link-dd7.notion.site/eb7b2d1891f44b3a84e7396d19d39e6f?v=01bcb084210149488d730064cbabc99f)
+
 
