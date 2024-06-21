@@ -55,6 +55,8 @@ PPO的训练流程
 - actor模型的学习率一般是SFT模型最后的学习率的1/10。
 - critic模型的学习率是SFT模型最后的学习率的将近2倍。
 
+![](img/Pasted%20image%2020240621141211.png)
+
 
 ## 实验
 
@@ -151,5 +153,7 @@ Loss
 
 [The 37 Implementation Details of Proximal Policy Optimization · The ICLR Blog Track](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/)
 [Advanced Tricks for Training Large Language Models with Proximal Policy Optimization](https://difficult-link-dd7.notion.site/eb7b2d1891f44b3a84e7396d19d39e6f?v=01bcb084210149488d730064cbabc99f)
+
+[Reinforcement Learning From Human Feedback — My sample book](https://newfacade.github.io/notes-on-reinforcement-learning/17-ppo-trl.html)
 
 
