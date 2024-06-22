@@ -46,7 +46,7 @@ PPO的训练流程
 - Reference model/ref_policy：参考模型，给语言模型增加一些约束，防止训练歪
 
 模型初始化
-- Reward model和Critic通常用同一个基础模型。Critic在训练过程中会更新。
+- Critic模型通常用Reward model初始化。Critic在训练过程中会更新，Reward model不更新。
 - Actor和Reference model也是同一个，只不过Actor会一直学习进步，Reference是保持初心的。
 数据
 - 训练时，数据只需要有prompt字段，也就是输入即可。回复会用Actor实时生成。
@@ -306,6 +306,8 @@ def _get_reward_model(base_pretrained_model, base_llm_model, head_prefix="value_
 
 #### 计算每个token的奖励和KL惩罚
 
+![](img/Pasted%20image%2020240622154108.png)
+
 **Token Level KL-Penalty: RL模型和SFT模型的response的KL散度，作为reward函数中的一个惩罚项。**
 
 $$r(s_t, a_t) = \textbf{I}(s_t =[\text{EOS}])r(x,y)-\beta \text{KL}(t) \ \ \ (1)$$
@@ -369,6 +371,20 @@ def compute_reward(
 ```
 
 #### advantages
+
+优势函数可以用以下方式定义：`Advantage(s, a) = Q(s, a) - V(s)`
+
+其中，`Advantage(s, a)`表示在状态 `s` 下采取动作 `a` 的优势函数值，`Q(s, a)` 表示状态动作对 `(s, a)` 的动作值函数（也称为动作优势函数），`V(s)` 表示状态值函数。
+
+优势函数的作用在于帮助评估当前动作的相对价值，以便在策略更新过程中确定应采取的动作。通过比较不同动作的优势函数值，可以决定哪些动作是更好的选择。正的优势函数值表示执行的动作比平均水平更好，而负的优势函数值表示执行的动作比平均水平更差。
+
+状态动作对的长期价值涉及更长时间尺度上的评估，它考虑了智能体在当前状态下选择不同动作所导致的未来回报的累积。长期价值可以表示为状态值函数（State Value Function）或动作值函数（Action Value Function）。
+
+状态值函数（V-function）表示在给定状态下，智能体从该状态开始执行一系列动作，然后按照某个策略进行决策，从而获得的预期累积回报。状态值函数估计了智能体处于某个状态时所能获得的长期价值，反映了状态的优劣程度。
+
+动作值函数（Q-function）则表示在给定状态下，智能体选择某个动作后，按照某个策略进行决策，从该状态转移到下一个状态并获得预期累积回报的价值。动作值函数估计了在给定状态下采取不同动作的长期价值，可以帮助智能体选择在每个状态下最优的动作。
+
+长期价值考虑了智能体在未来的决策过程中所能获得的累积回报，相比之下，即时奖励只提供了当前动作的即时反馈。长期价值对智能体的决策具有更全面的影响，可以帮助智能体更好地评估当前状态和动作的长期效果，并指导智能体在长期时间尺度上作出更优的决策。
 
 **Generalized Advantage Estimation (GAE)**: GAE [5], a $\text{TD}(\lambda)$ return estimation method, is used to estimate token-wise rewards in PPO. In practice, we typically set $\lambda = 1$, transforming the GAE method into a Monte Carlo estimation method.
 
@@ -614,6 +630,11 @@ class ValueLoss(nn.Module):
         return 0.5 * loss # 这是为了与标准的均方误差（MSE）损失函数保持一致，通常 MSE 损失函数在优化过程中会乘以 0.5。
 ```
 
+### 采用不同的tokenizer
+
+reward模型和其他模型可以用不同的tokenizer，但是critic模型和actor模型必须用同一个tokenizer，因为必须保证他们的token ID是一一对应的，critic模型需要计算token级别的奖励（优势函数那块）。
+
+
 
 ## 未来方向
 
@@ -632,5 +653,7 @@ class ValueLoss(nn.Module):
 [Reinforcement Learning From Human Feedback — My sample book](https://newfacade.github.io/notes-on-reinforcement-learning/17-ppo-trl.html)
 
 [reward model learning papers - Shiyu\_Huang - 博客园](https://www.cnblogs.com/huangshiyu13/p/17203355.html)
+
+[为什么RLHF中，PPO需要Critic模型而不是直接使用RewardModel - 风生水起 - 博客园](https://www.cnblogs.com/end/p/17481052.html)
 
 

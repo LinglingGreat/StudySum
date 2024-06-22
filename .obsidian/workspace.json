@@ -44,24 +44,24 @@
             }
           },
           {
-            "id": "1504e06b1d88e1b0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "ef7cf03beef7230f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Pre-training/Alignment/PPO/PPO.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5e62b0d15f9b5b64",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
                 "mode": "source",
                 "source": false
               }
@@ -145,7 +145,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Self-Extend",
+                "query": "wsd",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Alignment/PPO/PPO.md",
+                "file": "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Alignment/PPO/PPO.md"
+                "file": "Pre-training/LLMs/Nemotron-4/Nemotron-4.md"
               }
             }
           },
@@ -261,14 +261,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ef7cf03beef7230f",
+  "active": "5e62b0d15f9b5b64",
   "lastOpenFiles": [
+    "Pre-training/LLMs/Index-1.9B/Index-1.9B.md",
+    "Pre-training/业界分享/Good_Articles.md",
+    "Pre-training/Alignment/PPO/PPO.md",
+    "Pre-training/Alignment/PPO/img/Pasted image 20240622154108.png",
     "Pre-training/Alignment/PPO/img/Pasted image 20240621175633.png",
     "Pre-training/Alignment/PPO/img/Pasted image 20240621141211.png",
     "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
     "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240620205917.png",
     "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240620205511.png",
-    "Pre-training/Alignment/PPO/PPO.md",
     "Pre-training/Alignment/ReMax/ReMax.md",
     "Pre-training/Alignment/DPO/DPO.md",
     "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111330.png",
@@ -276,12 +279,9 @@
     "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111229.png",
     "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111204.png",
     "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111129.png",
-    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111040.png",
-    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619110917.png",
     "Pre-training/LLMs/Nemotron-4/img",
     "Pre-training/LLMs/Nemotron-4",
     "Inference/README.md",
-    "Pre-training/LLMs/Index-1.9B/Index-1.9B.md",
     "Pre-training/LLMs/Index-1.9B/img",
     "News/Inbox.md",
     "Pre-training/LLMs/Index-1.9B",
@@ -299,7 +299,6 @@
     "Pre-training/Alignment/GRPO/GRPO.md",
     "Pre-training/Alignment/RLHFSum/RLHFSum.md",
     "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
-    "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/Prompt/Prompt.md",
     "DataRelated/NLGDataset/Dataset.md",
     "Pre-training/量化/模型量化.md",
