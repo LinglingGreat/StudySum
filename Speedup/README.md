@@ -30,6 +30,8 @@ tags:
     
 4. 对于较大的模型，Weight-only量化提供了更大的益处，因为较大模型尺寸的内存访问开销显著增加。
 
+[大模型训练及推理经典必读：FP8的what，why，how及其带来的机会？](https://mp.weixin.qq.com/s/Hyb04agEpGpwM4inn6CibA)
+
 
 
 
