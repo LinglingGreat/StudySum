@@ -170,3 +170,5 @@ prompt工程指南： https://github.com/promptslab/Awesome-Prompt-Engineering
 
 [GitHub - verazuo/jailbreak\_llms: [CCS'24] A dataset consists of 15,140 ChatGPT prompts from Reddit, Discord, websites, and open-source datasets (including 1,405 jailbreak prompts).](https://github.com/verazuo/jailbreak_llms)
 
+[GPT-4 提示词冠军如何写 prompt：CO-STAR 框架、文本分段、系统提示](https://mp.weixin.qq.com/s/GiQ1iIavCfLLTso6jhppvw)
+
