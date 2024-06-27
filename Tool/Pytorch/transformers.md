@@ -16,3 +16,5 @@ huggingface-cli download HuggingFaceH4/ultrachat_200k --repo-type dataset
 
 参考 [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/en/guides/cli)
 
+[如何快速下载huggingface模型——全方法总结](https://zhuanlan.zhihu.com/p/663712983)
+
