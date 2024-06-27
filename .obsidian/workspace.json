@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Alignment/ReMax/ReMax.md",
+                "file": "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
                 "mode": "source",
                 "source": false
               }
@@ -128,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/Prompt/Prompt.md",
+                "file": "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/Prompt/Prompt.md"
+                "file": "Pre-training/InstructionPreTraining/InstructionPreTraining.md"
               }
             }
           },
@@ -273,28 +273,33 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f64f5fee6a5af9f5",
+  "active": "6416025f11e1325a",
   "lastOpenFiles": [
+    "Pre-training/InstructionPreTraining/img/Pasted image 20240626211910.png",
+    "Pre-training/InstructionPreTraining/img/Pasted image 20240626211612.png",
+    "Pre-training/InstructionPreTraining/img/Pasted image 20240626211412.png",
+    "Pre-training/InstructionPreTraining/img/Pasted image 20240626210735.png",
+    "Pre-training/InstructionPreTraining/img/Pasted image 20240626205754.png",
+    "Pre-training/InstructionPreTraining/img/Pasted image 20240626204443.png",
+    "Pre-training/InstructionPreTraining/img/Pasted image 20240626204153.png",
+    "Pre-training/InstructionPreTraining/img/Pasted image 20240626203827.png",
+    "Pre-training/InstructionPreTraining/img",
+    "Pre-training/Alignment/ReMax/ReMax.md",
+    "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
+    "Pre-training/InstructionPreTraining",
+    "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
+    "Pre-training/Prompt/Prompt.md",
     "Tool/Linux/Linux.md",
     "Speedup/Parallelism/README.md",
     "Speedup/README.md",
     "Speedup/量化/模型量化.md",
-    "Pre-training/Alignment/ReMax/ReMax.md",
     "Pre-training/LLMs/Index-1.9B/Index-1.9B.md",
     "Pre-training/Alignment/PPO/PPO.md",
-    "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
     "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/Alignment/PPO/img/Pasted image 20240622154108.png",
     "Pre-training/Alignment/PPO/img/Pasted image 20240621175633.png",
     "Pre-training/Alignment/PPO/img/Pasted image 20240621141211.png",
-    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240620205917.png",
-    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240620205511.png",
     "Pre-training/Alignment/DPO/DPO.md",
-    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111330.png",
-    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111257.png",
-    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111229.png",
-    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111204.png",
-    "Pre-training/LLMs/Nemotron-4/img/Pasted image 20240619111129.png",
     "Pre-training/LLMs/Nemotron-4/img",
     "Pre-training/LLMs/Nemotron-4",
     "Pre-training/LLMs/Index-1.9B/img",
@@ -308,19 +313,14 @@
     "Pre-training/Alignment/ORPO/img",
     "Pre-training/Alignment/TDPO/TDPO.md",
     "Pre-training/Alignment/ORPO",
-    "Pre-training/Alignment/TDPO/img",
     "Pre-training/Alignment/DPOP/DPOP.md",
-    "Pre-training/Alignment/TDPO",
     "Pre-training/Alignment/GRPO/GRPO.md",
     "Pre-training/Alignment/RLHFSum/RLHFSum.md",
     "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
-    "Pre-training/Prompt/Prompt.md",
     "DataRelated/NLGDataset/Dataset.md",
     "Pre-training/长度外推/SelfExtend/SelfExtend.md",
     "NLG/RAG/README.md",
     "Tool/Pytorch/transformers.md",
-    "DataRelated/PretrainDataset/PretrainDataset.md",
-    "DataRelated/NLGDataset/生成任务.md",
     "未命名.canvas"
   ]
 }
