@@ -20,12 +20,12 @@
             }
           },
           {
-            "id": "6416025f11e1325a",
+            "id": "ef2ffe5cfe509fb9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
+                "file": "Pre-training/LLMs/MoE/MoE.md",
                 "mode": "source",
                 "source": false
               }
@@ -50,18 +50,6 @@
               "type": "markdown",
               "state": {
                 "file": "Pre-training/Alignment/PPO/PPO.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5e62b0d15f9b5b64",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
                 "mode": "source",
                 "source": false
               }
@@ -128,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -275,15 +263,25 @@
   },
   "active": "07dd0447a894ac29",
   "lastOpenFiles": [
+    "Pre-training/LLMs/MoE/MoE.md",
+    "Pre-training/LLMs/MoE/img/Pasted image 20240629115016.png",
+    "Pre-training/LLMs/MoE/img/Pasted image 20240629114906.png",
+    "Pre-training/LLMs/MoE/img",
+    "News/Inbox.md",
+    "Pre-training/LLMs/Gemma/Gemma.md",
+    "Pre-training/LLMs/Gemma/img/Pasted image 20240629114208.png",
+    "Pre-training/LLMs/Gemma/img/Pasted image 20240629113935.png",
+    "Pre-training/LLMs/Gemma/img/Pasted image 20240629113749.png",
+    "Pre-training/LLMs/Gemma/img/Pasted image 20240629113514.png",
+    "Pre-training/LLMs/Gemma/img/Pasted image 20240629113000.png",
+    "Pre-training/LLMs/Gemma/img/Pasted image 20240629112131.png",
+    "Pre-training/LLMs/Gemma/img/Pasted image 20240629112040.png",
+    "Pre-training/LLMs/Gemma/img/Pasted image 20240629111943.png",
+    "Pre-training/LLMs/Gemma/img",
     "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
-    "Pre-training/InstructionPreTraining/img/Pasted image 20240626211910.png",
-    "Pre-training/InstructionPreTraining/img/Pasted image 20240626211612.png",
-    "Pre-training/InstructionPreTraining/img/Pasted image 20240626211412.png",
-    "Pre-training/InstructionPreTraining/img/Pasted image 20240626210735.png",
-    "Pre-training/InstructionPreTraining/img/Pasted image 20240626205754.png",
-    "Pre-training/InstructionPreTraining/img/Pasted image 20240626204443.png",
-    "Pre-training/InstructionPreTraining/img/Pasted image 20240626204153.png",
-    "Pre-training/InstructionPreTraining/img/Pasted image 20240626203827.png",
+    "Pre-training/LLMs/Gemma",
+    "Pre-training/README.md",
+    "Tool/Pytorch/transformers.md",
     "Pre-training/InstructionPreTraining/img",
     "Pre-training/Alignment/ReMax/ReMax.md",
     "Pre-training/InstructionPreTraining",
@@ -296,30 +294,21 @@
     "Pre-training/LLMs/Index-1.9B/Index-1.9B.md",
     "Pre-training/Alignment/PPO/PPO.md",
     "Pre-training/业界分享/Good_Articles.md",
-    "Pre-training/Alignment/PPO/img/Pasted image 20240622154108.png",
-    "Pre-training/Alignment/PPO/img/Pasted image 20240621175633.png",
     "Pre-training/Alignment/DPO/DPO.md",
     "Pre-training/LLMs/Nemotron-4/img",
     "Pre-training/LLMs/Nemotron-4",
     "Pre-training/LLMs/Index-1.9B/img",
-    "News/Inbox.md",
     "Pre-training/LLMs/Index-1.9B",
     "Pre-training/Alignment/PPO/img",
     "Pre-training/Alignment/README.md",
-    "Pre-training/Alignment/PPO",
     "Tool/Git/Git.md",
     "Pre-training/Alignment/ORPO/ORPO.md",
-    "Pre-training/Alignment/ORPO/img",
     "Pre-training/Alignment/TDPO/TDPO.md",
-    "Pre-training/Alignment/ORPO",
     "Pre-training/Alignment/DPOP/DPOP.md",
     "Pre-training/Alignment/GRPO/GRPO.md",
     "Pre-training/Alignment/RLHFSum/RLHFSum.md",
     "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
     "DataRelated/NLGDataset/Dataset.md",
-    "Pre-training/长度外推/SelfExtend/SelfExtend.md",
-    "NLG/RAG/README.md",
-    "Tool/Pytorch/transformers.md",
     "未命名.canvas"
   ]
 }
