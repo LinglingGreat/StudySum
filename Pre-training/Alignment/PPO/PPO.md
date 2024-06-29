@@ -656,4 +656,6 @@ reward模型和其他模型可以用不同的tokenizer，但是critic模型和ac
 
 [为什么RLHF中，PPO需要Critic模型而不是直接使用RewardModel - 风生水起 - 博客园](https://www.cnblogs.com/end/p/17481052.html)
 
+[解析 RLHF 微调三阶段](https://mp.weixin.qq.com/s/t41vKSLJ0p-oKMosFEqagQ)
+
 

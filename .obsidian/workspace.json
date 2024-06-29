@@ -116,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "Pre-training/Alignment/PPO/PPO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/transformers.md"
+                "file": "Pre-training/Alignment/PPO/PPO.md"
               }
             }
           },
@@ -261,8 +261,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "07dd0447a894ac29",
+  "active": "ef7cf03beef7230f",
   "lastOpenFiles": [
+    "Tool/Pytorch/transformers.md",
+    "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
     "Pre-training/LLMs/MoE/MoE.md",
     "Pre-training/LLMs/MoE/img/Pasted image 20240629115016.png",
     "Pre-training/LLMs/MoE/img/Pasted image 20240629114906.png",
@@ -281,11 +283,9 @@
     "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
     "Pre-training/LLMs/Gemma",
     "Pre-training/README.md",
-    "Tool/Pytorch/transformers.md",
     "Pre-training/InstructionPreTraining/img",
     "Pre-training/Alignment/ReMax/ReMax.md",
     "Pre-training/InstructionPreTraining",
-    "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
     "Pre-training/Prompt/Prompt.md",
     "Tool/Linux/Linux.md",
     "Speedup/Parallelism/README.md",
