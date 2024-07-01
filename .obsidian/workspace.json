@@ -78,9 +78,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "1ef77cf3028f0656",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -146,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/transformers.md"
+                "file": "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md"
               }
             }
           },
@@ -225,15 +237,24 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "07dd0447a894ac29",
+  "active": "1ef77cf3028f0656",
   "lastOpenFiles": [
+    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701171450.png",
+    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701170539.png",
+    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701165810.png",
+    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701165553.png",
+    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701163405.png",
+    "Pre-training/DataGen/SyntheticWithPersona/img",
+    "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
+    "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
+    "Tool/Pytorch/transformers.md",
+    "Pre-training/DataGen/SyntheticWithPersona",
     "Pre-training/LLMs/MoE/MoE.md",
     "Speedup/Parallelism/README.md",
     "Pre-training/Alignment/PPO/PPO.md",
     "DataRelated/NLGDataset/Dataset.md",
     "Tool/Linux/Linux.md",
     "Pre-training/Prompt/Prompt.md",
-    "Tool/Pytorch/transformers.md",
     "Speedup/README.md",
     "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
     "Pre-training/LLMs/MoE/img/Pasted image 20240629115016.png",
@@ -245,10 +266,6 @@
     "Pre-training/LLMs/Gemma/img/Pasted image 20240629113935.png",
     "Pre-training/LLMs/Gemma/img/Pasted image 20240629113749.png",
     "Pre-training/LLMs/Gemma/img/Pasted image 20240629113514.png",
-    "Pre-training/LLMs/Gemma/img/Pasted image 20240629113000.png",
-    "Pre-training/LLMs/Gemma/img/Pasted image 20240629112131.png",
-    "Pre-training/LLMs/Gemma/img/Pasted image 20240629112040.png",
-    "Pre-training/LLMs/Gemma/img/Pasted image 20240629111943.png",
     "Pre-training/LLMs/Gemma/img",
     "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
     "Pre-training/LLMs/Gemma",
@@ -263,16 +280,11 @@
     "Pre-training/LLMs/Nemotron-4/img",
     "Pre-training/LLMs/Nemotron-4",
     "Pre-training/LLMs/Index-1.9B/img",
-    "Pre-training/LLMs/Index-1.9B",
-    "Pre-training/Alignment/PPO/img",
     "Pre-training/Alignment/README.md",
     "Tool/Git/Git.md",
     "Pre-training/Alignment/ORPO/ORPO.md",
     "Pre-training/Alignment/TDPO/TDPO.md",
     "Pre-training/Alignment/DPOP/DPOP.md",
-    "Pre-training/Alignment/GRPO/GRPO.md",
-    "Pre-training/Alignment/RLHFSum/RLHFSum.md",
-    "Pre-training/explore/MultiTokenPredict/MultiTokenPredict.md",
     "未命名.canvas"
   ]
 }
