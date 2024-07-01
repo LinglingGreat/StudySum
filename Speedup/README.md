@@ -33,5 +33,7 @@ tags:
 [大模型训练及推理经典必读：FP8的what，why，how及其带来的机会？](https://mp.weixin.qq.com/s/Hyb04agEpGpwM4inn6CibA)
 
 
+[月之暗面kimi底层推理系统方案揭秘](https://mp.weixin.qq.com/s/To97I4bU30fQssqkESTOGA)
+
 
 
