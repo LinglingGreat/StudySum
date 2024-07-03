@@ -19,3 +19,5 @@ tags:
 
 [大模型训练十戒](https://mp.weixin.qq.com/s/kSSXKPxTyBj9QFUnnMcEDA)
 
+[ [2024智源大会速览] 大语言模型和AGI篇](https://zhuanlan.zhihu.com/p/706173121)
+
