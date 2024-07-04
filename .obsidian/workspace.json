@@ -56,6 +56,18 @@
             }
           },
           {
+            "id": "7f0413e3641a676e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "d1601f8bc2b807d7",
             "type": "leaf",
             "state": {
@@ -80,18 +92,6 @@
             }
           },
           {
-            "id": "1ef77cf3028f0656",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "98801ff418b6ab57",
             "type": "leaf",
             "state": {
@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -133,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "wsd",
+                "query": "doremi",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/业界分享/Good_Articles.md",
+                "file": "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/业界分享/Good_Articles.md"
+                "file": "Pre-training/DataGen/Cosmopedia/Cosmopedia.md"
               }
             }
           },
@@ -249,53 +249,55 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "98801ff418b6ab57",
+  "active": "7f0413e3641a676e",
   "lastOpenFiles": [
+    "Pre-training/LLMs/Gemma/Gemma.md",
+    "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
+    "Pre-training/DataGen/Cosmopedia",
+    "Tool/Pytorch/transformers.md",
+    "未命名.canvas",
+    "未命名 1.canvas",
+    "Pre-training/DataGen/WRAP/WRAP.md",
+    "Pre-training/Benchmark/CEval/CEval.md",
     "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
+    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240704155018.png",
+    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240704154910.png",
+    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240704154854.png",
+    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240704154814.png",
+    "Tool/Linux/Linux.md",
+    "Pre-training/README.md",
+    "Pre-training/LLMs/README.md",
+    "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701211245.png",
     "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701211050.png",
     "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701210932.png",
     "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701210451.png",
     "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701210411.png",
     "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701210306.png",
-    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701210246.png",
-    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701205552.png",
-    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701205456.png",
-    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240701205028.png",
     "Pre-training/DataGen/SyntheticWithPersona/img",
     "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
-    "Tool/Pytorch/transformers.md",
     "Pre-training/DataGen/SyntheticWithPersona",
     "Pre-training/LLMs/MoE/MoE.md",
     "Speedup/Parallelism/README.md",
     "Pre-training/Alignment/PPO/PPO.md",
     "DataRelated/NLGDataset/Dataset.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/Prompt/Prompt.md",
     "Speedup/README.md",
     "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
     "Pre-training/LLMs/MoE/img",
     "News/Inbox.md",
-    "Pre-training/LLMs/Gemma/Gemma.md",
     "Pre-training/LLMs/Gemma/img",
     "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
     "Pre-training/LLMs/Gemma",
-    "Pre-training/README.md",
     "Pre-training/InstructionPreTraining/img",
     "Pre-training/Alignment/ReMax/ReMax.md",
     "Pre-training/InstructionPreTraining",
     "Speedup/量化/模型量化.md",
     "Pre-training/LLMs/Index-1.9B/Index-1.9B.md",
-    "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/Alignment/DPO/DPO.md",
     "Pre-training/LLMs/Nemotron-4/img",
     "Pre-training/LLMs/Nemotron-4",
-    "Pre-training/LLMs/Index-1.9B/img",
     "Pre-training/Alignment/README.md",
-    "Tool/Git/Git.md",
-    "Pre-training/Alignment/ORPO/ORPO.md",
-    "Pre-training/Alignment/TDPO/TDPO.md",
-    "Pre-training/Alignment/DPOP/DPOP.md",
-    "未命名.canvas"
+    "Tool/Git/Git.md"
   ]
 }
