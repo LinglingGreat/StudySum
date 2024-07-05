@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/Alignment/PPO/PPO.md",
+                "file": "Pre-training/DataMix/RegMix/RegMix.md",
                 "mode": "source",
                 "source": false
               }
@@ -50,18 +50,6 @@
               "type": "markdown",
               "state": {
                 "file": "Tool/Linux/Linux.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7f0413e3641a676e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -170,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
+                "file": "Pre-training/LLMs/MoE/MoE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/DataGen/Cosmopedia/Cosmopedia.md"
+                "file": "Pre-training/LLMs/MoE/MoE.md"
               }
             }
           },
@@ -249,30 +237,38 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "7f0413e3641a676e",
+  "active": "ef2ffe5cfe509fb9",
   "lastOpenFiles": [
-    "Pre-training/DataGen/Cosmopedia/img/Pasted image 20240704173810.png",
-    "Pre-training/DataGen/Cosmopedia/img/Pasted image 20240704173534.png",
-    "Pre-training/DataGen/Cosmopedia/img/Pasted image 20240704173342.png",
-    "Pre-training/DataGen/Cosmopedia/img/Pasted image 20240704173153.png",
-    "Pre-training/DataGen/Cosmopedia/img/Pasted image 20240704173046.png",
-    "Pre-training/DataGen/Cosmopedia/img/Pasted image 20240704173015.png",
-    "Pre-training/DataGen/Cosmopedia/img/Pasted image 20240704173001.png",
-    "Pre-training/DataGen/Cosmopedia/img/Pasted image 20240704172856.png",
-    "Pre-training/DataGen/Cosmopedia/img/Pasted image 20240704172805.png",
+    "Pre-training/LLMs/MoE/img/Pasted image 20240704203551.png",
+    "Pre-training/DataMix/RegMix/RegMix.md",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704203203.png",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704203136.png",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704203012.png",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704202926.png",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704202744.png",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704202600.png",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704202455.png",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704202442.png",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704202107.png",
+    "Pre-training/DataMix/RegMix/img/Pasted image 20240704201115.png",
+    "Pre-training/DataMix/RegMix/img",
+    "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
+    "Pre-training/DataMix/RegMix",
+    "Pre-training/DataMix",
+    "Pre-training/S2A/S2A.md",
+    "Pre-training/explore/SPT/SPT.md",
+    "Pre-training/Alignment/PPO/PPO.md",
+    "Tool/Linux/Linux.md",
+    "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
+    "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
     "Pre-training/DataGen/Cosmopedia/img",
     "Pre-training/LLMs/Gemma/Gemma.md",
-    "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
     "Pre-training/DataGen/Cosmopedia",
     "Tool/Pytorch/transformers.md",
     "未命名.canvas",
     "未命名 1.canvas",
     "Pre-training/DataGen/WRAP/WRAP.md",
     "Pre-training/Benchmark/CEval/CEval.md",
-    "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
-    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240704155018.png",
-    "Pre-training/DataGen/SyntheticWithPersona/img/Pasted image 20240704154910.png",
-    "Tool/Linux/Linux.md",
     "Pre-training/README.md",
     "Pre-training/LLMs/README.md",
     "Pre-training/业界分享/Good_Articles.md",
@@ -281,7 +277,6 @@
     "Pre-training/DataGen/SyntheticWithPersona",
     "Pre-training/LLMs/MoE/MoE.md",
     "Speedup/Parallelism/README.md",
-    "Pre-training/Alignment/PPO/PPO.md",
     "DataRelated/NLGDataset/Dataset.md",
     "Pre-training/Prompt/Prompt.md",
     "Speedup/README.md",
@@ -291,13 +286,6 @@
     "Pre-training/LLMs/Gemma/img",
     "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
     "Pre-training/LLMs/Gemma",
-    "Pre-training/InstructionPreTraining/img",
-    "Pre-training/Alignment/ReMax/ReMax.md",
-    "Pre-training/InstructionPreTraining",
-    "Speedup/量化/模型量化.md",
-    "Pre-training/LLMs/Index-1.9B/Index-1.9B.md",
-    "Pre-training/Alignment/DPO/DPO.md",
-    "Pre-training/LLMs/Nemotron-4/img",
-    "Pre-training/Alignment/README.md"
+    "Pre-training/Alignment/ReMax/ReMax.md"
   ]
 }
