@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/LLMs/MoE/MoE.md",
+                "file": "Pre-training/LLMs/MoE/SkyworkMoE.md",
                 "mode": "source",
                 "source": false
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/MoE/MoE.md",
+                "file": "Pre-training/LLMs/MoE/SkyworkMoE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/MoE/MoE.md"
+                "file": "Pre-training/LLMs/MoE/SkyworkMoE.md"
               }
             }
           },
@@ -239,6 +239,10 @@
   },
   "active": "ef2ffe5cfe509fb9",
   "lastOpenFiles": [
+    "Pre-training/LLMs/MoE/img/Pasted image 20240705144817.png",
+    "Pre-training/LLMs/MoE/img/Pasted image 20240705141738.png",
+    "Tool/Linux/Linux.md",
+    "Pre-training/LLMs/MoE/SkyworkMoE.md",
     "Pre-training/LLMs/MoE/img/Pasted image 20240704203551.png",
     "Pre-training/DataMix/RegMix/RegMix.md",
     "Pre-training/DataMix/RegMix/img/Pasted image 20240704203203.png",
@@ -249,8 +253,6 @@
     "Pre-training/DataMix/RegMix/img/Pasted image 20240704202600.png",
     "Pre-training/DataMix/RegMix/img/Pasted image 20240704202455.png",
     "Pre-training/DataMix/RegMix/img/Pasted image 20240704202442.png",
-    "Pre-training/DataMix/RegMix/img/Pasted image 20240704202107.png",
-    "Pre-training/DataMix/RegMix/img/Pasted image 20240704201115.png",
     "Pre-training/DataMix/RegMix/img",
     "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
     "Pre-training/DataMix/RegMix",
@@ -258,7 +260,6 @@
     "Pre-training/S2A/S2A.md",
     "Pre-training/explore/SPT/SPT.md",
     "Pre-training/Alignment/PPO/PPO.md",
-    "Tool/Linux/Linux.md",
     "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
     "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
     "Pre-training/DataGen/Cosmopedia/img",
@@ -275,7 +276,6 @@
     "Pre-training/DataGen/SyntheticWithPersona/img",
     "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
     "Pre-training/DataGen/SyntheticWithPersona",
-    "Pre-training/LLMs/MoE/MoE.md",
     "Speedup/Parallelism/README.md",
     "DataRelated/NLGDataset/Dataset.md",
     "Pre-training/Prompt/Prompt.md",
