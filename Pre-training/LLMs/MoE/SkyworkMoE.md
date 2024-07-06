@@ -96,9 +96,81 @@ total loss function $L_{total}$ for training the Switch Transformer is a combina
 
 ## Training Techniques
 
+### gating logit normalization
+研究人员在训练过程中发现有一个现象，那就是有时gating layer会输出熵很高的分布，也就是分配给各个专家的概率接近平均分布。这样的结果就是MoE层的输出基本上相当于是各个专家的平均值，而不是一个weighted average。
+
+而出现这种现象说明gating layer没有很好地区分各个专家，无法把相应的输入分配给最合适的专家。
+
+针对这个问题，Skywork-MoE给出的方法就是在gating layer的softmax之前引入一个normalization step，如下式
+
+![](img/Pasted%20image%2020240706161312.png)
+
+其中  是一个超参$\lambda$。
+
+这样归一化之后我们就得到一个均值为0，而方差受$\lambda$控制的向量。大的$\lambda$值会使得softmax之后的分布更显著，更不均匀。这就相当于给softmax加上一个放大器，把原本不显著的差异进行放大。
+
+为了验证这个设计的有效性，Skywork-MoE在2.5B参数16个专家的MoE模型上，分别使用和不使用gating logit normalization进行了训练。
+
+两个模型的gating分布差异如下图所示，normalization确实可以增大各个专家分配到的概率的差异。
+
+![](img/Pasted%20image%2020240706161435.png)
+
+
+使用了normalization的模型在training loss和token drop rate上都有更好的表现，如下图所示。
+
+![](img/Pasted%20image%2020240706161513.png)
+
+而统计gating layer输出的分布中的Max1/Max2和Max2/Max3比值也同样说明了各个expert被更有效地区分开了。
+
+在千亿Skywork-MoE模型的训练中，使用了$\lambda=1$ 。
+
+### adaptive auxiliary loss coefficients
+
+一般来说，MoE模型在训练中都会加入一个auxiliary loss，帮助平衡专家的选择分布，提升训练效率，也增强专家的多样性。对于有M个MoE层的模型，最终loss如下式所示。
+
+![](img/Pasted%20image%2020240706161743.png)
+
+每个MoE层都有对应的auxiliary loss。
+
+Skywork-MoE认为每层的auxiliary loss的系数$\alpha$  不一定要相同，并且随着训练进行，在gating的平衡已经比较好的时候，可以放宽auxiliary loss的限制强度，避免影响模型的最终效果。
+
+基于这两个想法，Skywork-MoE提出adaptive auxiliary loss coefficients。
+
+每个MoE层的auxiliary loss有自己的系数，而这个系数和当前这个MoE层的token drop rate联系了起来。大的token drop rate表示gating的分配不平衡，因此要加强auxiliary loss的约束，反之则可以减小约束。
+
+对于第l个MoE层，在第i个step的时候，auxiliary loss的系数计算如下
+
+![](img/Pasted%20image%2020240706162008.png)
+
+其中d表示token drop rate，f是一个单调递增函数。 $\alpha$会随着训练，通过moving average更新。 $\beta$是moving average的权重，是一个超参。
+
+实际实现中，f设计成：
+
+![](img/Pasted%20image%2020240706162052.png)
+
+表示auxiliary loss coefficient对token drop rate的敏感程度。
+
+最终训练中，各个超参的设置为：
+
+![](img/Pasted%20image%2020240706162119.png)
+
 
 
 ## Skywork-MoE
+
+Skywork-MoE的模型设计：
+- Llama-like architecture
+- RoPE
+- RMSNorm
+- SwiGLU activation function
+
+![](img/Pasted%20image%2020240706160825.png)
+
+Skywork-MoE共有146B参数，16个专家，激活参数量为22B。
+
+训练集群用到了192个NVIDIAHGX-A800节点，共1536个A800-80G显卡。
+
+训练框架是基于Megatron搭建的，data parallelism开了ZeRO-1优化，训练速度能达到690token/GPU/second，GPU利用率是38%。
 
 
 
