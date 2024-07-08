@@ -155,6 +155,45 @@ Skywork-MoE认为每层的auxiliary loss的系数$\alpha$  不一定要相同�
 ![](img/Pasted%20image%2020240706162119.png)
 
 
+### 学习率
+MoE模型由于路由策略的存在，每个专家平均接受到的输入token数比global batch size要小。
+
+假设共有n个专家，激活专家数为k，那么平均每个专家接受到的输入只有模型输入的k/n。
+
+而有效batch size的减小意味着更容易引入noise，对此一般的应对方案就是减小learning rate，可以进行linear scaling（k/n），或者square root scaling（sqrt(k/n)）。
+
+那么减小learning rate是否能提升效果呢？Skywork-MoE用一个1.8B参数，共32个专家，激活专家数为2的模型，按square root scaling，进行了以下3个实验
+
+![](img/Pasted%20image%2020240706182801.png)
+
+所有模型在训了300B数据之后，lr会降到peak lr的10%，然后会再继续训10B，在这个过程里lr逐渐降为0。
+
+训练的loss如下图
+
+![](img/Pasted%20image%2020240706182816.png)
+
+虽然在300B的训练量下，减小lr有一点收益，但是随着最后10B的训练，三个模型都收敛到同样的loss。这说明前面的loss差异并不是不可弥补的，更可能只是因为在300B时三个模型的lr decay到不同的绝对值而已。
+
+这也说明根据专家数量减少MoE模型的训练学习率并没有太大必要。
+
+### 多样化初始化
+
+前面提到，用一个dense模型进行初始化，会导致各个专家相似度过高，从而损害MoE模型的效果。那么我们自然想到用多样化的几个dense模型进行MoE的初始化，效果是不是会更好。
+
+Skywork-MoE对此进行了实验。把原始dense模型分别用不同的100B数据进行训练，从而获得多个dense模型，并用这些多样化的dense模型初始化MoE模型。
+
+具体来说，基于原始dense模型$M_{base}$ ，用了中文、英文、代码三个不同的100B数据集进行训练，获得 $M_{cn}$, $M_{en}$, $M_{code}$三个dense模型。之后把 $M_{cn}$复制3份， $M_{en}$复制3份， $M_{code}$复制1份， $M_{base}$复制1份，共同初始化一个有8个专家的MoE模型。
+
+多样化和无多样化的初始化方法，训练loss对比如下
+
+![](img/Pasted%20image%2020240706183018.png)
+
+可以看到多样化的初始化方法确实有一点收益，不过随着训练进行，差异在逐渐减小。
+
+经过90B数据的训练之后，二者的loss只有不到0.01的差距。相较于dense模型的多次继续预训练成本，这个收益并不明显，因此Skywork-MoE最终没有采用多样化的初始化方法。
+
+
+
 
 ## Skywork-MoE
 
@@ -173,6 +212,19 @@ Skywork-MoE共有146B参数，16个专家，激活参数量为22B。
 训练框架是基于Megatron搭建的，data parallelism开了ZeRO-1优化，训练速度能达到690token/GPU/second，GPU利用率是38%。
 
 
+146B参数的Skywork-MoE是从Skywork-13B初始化而来的。
+
+训练数据使用了SkyPile中的一部分数据，再加上一批合成数据。
+
+中文、英文、代码数据的比例为7:2:1。
+
+Skywork-MoE在和一些主流模型，在一些benchmark上的对比如下
+
+![](img/Pasted%20image%2020240706183057.png)
+
+基本上达到了同归模型比较好的效果。
+
+
 
 ## 参考资料
 
@@ -181,5 +233,7 @@ Skywork-MoE共有146B参数，16个专家，激活参数量为22B。
 
 [全网最细致大模型MoE原理+代码手撕版](https://mp.weixin.qq.com/s/76a-7fDJumv6iB08L2BUKg)
 
-skywork-MoE
+[昆仑万维-SkyworkMoE 解析](https://mp.weixin.qq.com/s/FWWAkPHSI1utmlFghPnrpw)
+
+
 
