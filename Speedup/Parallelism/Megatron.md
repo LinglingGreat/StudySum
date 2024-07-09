@@ -5,4 +5,12 @@
 [图解大模型训练系列之：DeepSpeed-Megatron MoE并行训练（原理篇）](https://mp.weixin.qq.com/s/ak1wg7jerJrD51xzVmmUiw)
 
 
+## 实践
+
+代码框架：[GitHub - epfLLM/Megatron-LLM: distributed trainer for LLMs](https://github.com/epfLLM/Megatron-LLM)
+
+使用指南：[Getting started — Megatron-LLM 0.1.0 documentation](https://epfllm.github.io/Megatron-LLM/guide/getting_started.html)
+
+按照官方指南安装环境，安装apex
+
 
