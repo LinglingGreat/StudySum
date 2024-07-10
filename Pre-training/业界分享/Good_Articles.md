@@ -21,3 +21,5 @@ tags:
 
 [ [2024智源大会速览] 大语言模型和AGI篇](https://zhuanlan.zhihu.com/p/706173121)
 
+[LLM Continue Pretrain（2024版）](https://mp.weixin.qq.com/s/Uq8EPuh9AgOb-d3ZthoK9A)   #ContinualLearning 
+
