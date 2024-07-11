@@ -23,3 +23,9 @@ tags:
 
 [LLM Continue Pretrain（2024版）](https://mp.weixin.qq.com/s/Uq8EPuh9AgOb-d3ZthoK9A)   #ContinualLearning 
 
+[预训练LLM副本攻略：结构优化与超参数调整](https://zhuanlan.zhihu.com/p/707993464)   #预训练 
+
+[Extrinsic Hallucinations in LLMs | Lil'Log](https://lilianweng.github.io/posts/2024-07-07-hallucination/) #幻觉
+
+
+

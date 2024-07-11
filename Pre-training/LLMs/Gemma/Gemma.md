@@ -217,3 +217,6 @@ Gemma-2 27B和9B指令微调模型在Chatbot Arena中进行了盲测评估，由
 
 
 ## 参考资料
+
+[In this post, we take a deep dive into the architectural components of Gemma 2 such as Grouped Query Attention, Sliding Window Attention, RoPE Embeddings, Logit soft-capping & Model-merging!](https://amaarora.github.io/posts/2024-07-07%20Gemma.html)
+
