@@ -116,6 +116,18 @@
             }
           },
           {
+            "id": "34ed48e2392cbb1a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/LLMs/Deepseek/Deepseek.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "98801ff418b6ab57",
             "type": "leaf",
             "state": {
@@ -128,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -194,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "Pre-training/LLMs/Deepseek/Deepseek.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/transformers.md"
+                "file": "Pre-training/LLMs/Deepseek/Deepseek.md"
               }
             }
           },
@@ -273,8 +285,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "07dd0447a894ac29",
+  "active": "34ed48e2392cbb1a",
   "lastOpenFiles": [
+    "Tool/Pytorch/transformers.md",
     "Pre-training/BERTZip/模型压缩.md",
     "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/LLMs/Gemma/Gemma.md",
@@ -304,7 +317,6 @@
     "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
     "Pre-training/DataGen/Cosmopedia/img",
     "Pre-training/DataGen/Cosmopedia",
-    "Tool/Pytorch/transformers.md",
     "未命名.canvas",
     "未命名 1.canvas",
     "Pre-training/DataGen/WRAP/WRAP.md",

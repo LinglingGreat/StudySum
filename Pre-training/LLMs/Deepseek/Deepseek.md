@@ -135,3 +135,4 @@ DPO不会显著影响LLM的基础能力。
 
 
 ## 参考资料
+[DeepSeek模型解读:Scaling Law,MLA,MoE](https://mp.weixin.qq.com/s/Vmkd5Fq9AvSkZrMvjSRKlA)
