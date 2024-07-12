@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "fe914427c73fef36",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/BERTZip/模型压缩.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "df74110c3f0bd2d8",
             "type": "leaf",
             "state": {
@@ -116,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -182,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/业界分享/Good_Articles.md",
+                "file": "Pre-training/BERTZip/模型压缩.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/业界分享/Good_Articles.md"
+                "file": "Pre-training/BERTZip/模型压缩.md"
               }
             }
           },
@@ -261,10 +273,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "70609b450e973441",
+  "active": "fe914427c73fef36",
   "lastOpenFiles": [
-    "Pre-training/LLMs/Gemma/Gemma.md",
     "Pre-training/业界分享/Good_Articles.md",
+    "Pre-training/LLMs/Gemma/Gemma.md",
     "Speedup/Parallelism/Megatron.md",
     "Pre-training/DataMix/RegMix/RegMix.md",
     "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
