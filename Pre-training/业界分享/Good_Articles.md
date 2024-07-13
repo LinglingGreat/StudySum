@@ -27,5 +27,9 @@ tags:
 
 [Extrinsic Hallucinations in LLMs | Lil'Log](https://lilianweng.github.io/posts/2024-07-07-hallucination/) #幻觉
 
+[梳理一下MiniCPM](https://mp.weixin.qq.com/s/Tm06k77DNW0KI2-eqy6niA)
+
+[从零训练的 1B 以下小模型汇总](https://mp.weixin.qq.com/s/d1ypjLwaJKEV8Edfz83tVw)
+
 
 

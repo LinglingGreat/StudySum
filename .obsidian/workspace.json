@@ -44,36 +44,12 @@
             }
           },
           {
-            "id": "fe914427c73fef36",
+            "id": "ee8ee04670d519d1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/BERTZip/模型压缩.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "df74110c3f0bd2d8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/LLMs/Gemma/Gemma.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ef7cf03beef7230f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/DataMix/RegMix/RegMix.md",
+                "file": "Pre-training/LLMs/Sailor/Sailor.md",
                 "mode": "source",
                 "source": false
               }
@@ -114,33 +90,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "34ed48e2392cbb1a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/LLMs/Deepseek/Deepseek.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "98801ff418b6ab57",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Pre-training/业界分享/Good_Articles.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 9
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -206,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/LLMs/Deepseek/Deepseek.md",
+                "file": "Pre-training/LLMs/Sailor/Sailor.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -234,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/LLMs/Deepseek/Deepseek.md"
+                "file": "Pre-training/LLMs/Sailor/Sailor.md"
               }
             }
           },
@@ -285,16 +237,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "34ed48e2392cbb1a",
+  "active": "ee8ee04670d519d1",
   "lastOpenFiles": [
+    "Pre-training/Alignment/README.md",
+    "Pre-training/LLMs/Sailor/Sailor.md",
+    "Pre-training/LLMs/Sailor",
+    "Pre-training/业界分享/Good_Articles.md",
+    "News/Inbox.md",
+    "Pre-training/LLMs/README.md",
+    "Pre-training/LLMs/Deepseek/Deepseek.md",
     "Tool/Pytorch/transformers.md",
     "Pre-training/BERTZip/模型压缩.md",
-    "Pre-training/业界分享/Good_Articles.md",
     "Pre-training/LLMs/Gemma/Gemma.md",
     "Speedup/Parallelism/Megatron.md",
     "Pre-training/DataMix/RegMix/RegMix.md",
     "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
-    "News/Inbox.md",
     "Pre-training/LLMs/MoE/SkyworkMoE.md",
     "Pre-training/LLMs/MoE/img/Pasted image 20240706183057.png",
     "Pre-training/LLMs/MoE/img/Pasted image 20240706183018.png",
@@ -322,18 +279,13 @@
     "Pre-training/DataGen/WRAP/WRAP.md",
     "Pre-training/Benchmark/CEval/CEval.md",
     "Pre-training/README.md",
-    "Pre-training/LLMs/README.md",
     "Pre-training/DataGen/SyntheticWithPersona/img",
     "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
     "Pre-training/DataGen/SyntheticWithPersona",
     "Speedup/Parallelism/README.md",
     "DataRelated/NLGDataset/Dataset.md",
     "Pre-training/Prompt/Prompt.md",
-    "Speedup/README.md",
-    "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
     "Pre-training/LLMs/MoE/img",
-    "Pre-training/LLMs/Gemma/img",
-    "Pre-training/InstructionPreTraining/InstructionPreTraining.md",
-    "Pre-training/LLMs/Gemma"
+    "Pre-training/LLMs/Gemma/img"
   ]
 }
