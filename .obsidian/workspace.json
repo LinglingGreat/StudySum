@@ -239,6 +239,8 @@
   },
   "active": "ee8ee04670d519d1",
   "lastOpenFiles": [
+    "Pre-training/LLMs/Sailor/img/Pasted image 20240713155413.png",
+    "Pre-training/LLMs/Sailor/img",
     "Pre-training/Alignment/README.md",
     "Pre-training/LLMs/Sailor/Sailor.md",
     "Pre-training/LLMs/Sailor",
@@ -284,8 +286,6 @@
     "Pre-training/DataGen/SyntheticWithPersona",
     "Speedup/Parallelism/README.md",
     "DataRelated/NLGDataset/Dataset.md",
-    "Pre-training/Prompt/Prompt.md",
-    "Pre-training/LLMs/MoE/img",
-    "Pre-training/LLMs/Gemma/img"
+    "Pre-training/LLMs/MoE/img"
   ]
 }
