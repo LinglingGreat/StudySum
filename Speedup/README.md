@@ -35,5 +35,7 @@ tags:
 
 [月之暗面kimi底层推理系统方案揭秘](https://mp.weixin.qq.com/s/To97I4bU30fQssqkESTOGA)
 
+[Towards 100x Speedup: Full Stack Transformer Inference Optimization](https://yaofu.notion.site/Towards-100x-Speedup-Full-Stack-Transformer-Inference-Optimization-43124c3688e14cffaf2f1d6cbdf26c6c)
+
 
 

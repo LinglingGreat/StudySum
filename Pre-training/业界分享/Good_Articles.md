@@ -31,5 +31,9 @@ tags:
 
 [从零训练的 1B 以下小模型汇总](https://mp.weixin.qq.com/s/d1ypjLwaJKEV8Edfz83tVw)
 
+[Exploring the Potential of In-Context Learning: New Pathways for Enhancing Chat-Based Large Language Model Performance (In Refinement)](https://www.notion.so/c31d141411be4d0eb50473fe6abae1db?v=50264a9824494b6c836ba0c6f3bebd2f)
+
+[Thinking about High-Quality Human Data | Lil'Log](https://lilianweng.github.io/posts/2024-02-05-human-data-quality/)
+
 
 

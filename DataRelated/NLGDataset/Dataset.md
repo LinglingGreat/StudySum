@@ -39,6 +39,9 @@ c.ai的bot：[New Arrivals](https://rentry.org/cai-list)
 
 [大模型预训练中的数据处理及思考](https://mp.weixin.qq.com/s/oKMLhw5hk0LP85dtRAzBDg)
 
+[大模型时代，数据为王，在哪里寻找开源数据集？](https://mp.weixin.qq.com/s/ADGg6OCqjFQ-bLE-X-Q9DA)
+
+
 ## 微调数据集
 
 [H-D-T/Buzz · Datasets at Hugging Face](https://huggingface.co/datasets/H-D-T/Buzz) 一个3千万的数据集
