@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DataRelated/数据质量/README.md",
+                "file": "Speedup/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/数据质量/README.md",
+                "file": "Speedup/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/数据质量/README.md"
+                "file": "Speedup/README.md"
               }
             }
           },
@@ -251,6 +251,7 @@
   },
   "active": "ee8ee04670d519d1",
   "lastOpenFiles": [
+    "DataRelated/数据质量/README.md",
     "DataRelated/NLGDataset/Dataset.md",
     "Pre-training/业界分享/Good_Articles.md",
     "Speedup/README.md",
@@ -297,7 +298,6 @@
     "Pre-training/DataGen/WRAP/WRAP.md",
     "Pre-training/Benchmark/CEval/CEval.md",
     "Pre-training/README.md",
-    "Pre-training/DataGen/SyntheticWithPersona/img",
-    "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md"
+    "Pre-training/DataGen/SyntheticWithPersona/img"
   ]
 }

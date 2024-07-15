@@ -38,4 +38,6 @@ tags:
 [Towards 100x Speedup: Full Stack Transformer Inference Optimization](https://yaofu.notion.site/Towards-100x-Speedup-Full-Stack-Transformer-Inference-Optimization-43124c3688e14cffaf2f1d6cbdf26c6c)
 
 
+[OSDI 24 Serverless LLM：性能提升200倍](https://mp.weixin.qq.com/s/DoxSI5M-jcdlSg000VEIng)
+
 
