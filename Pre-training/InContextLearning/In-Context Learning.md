@@ -136,78 +136,44 @@ MetaAI的一篇工作[4]就很巧妙地把语言模型的一些任务转化成�
 
 [In-Context Learning玩法大全](https://mp.weixin.qq.com/s/NLWCuzcCdwljQfzu-Jd9lQ)
 
-[1]
+[Exploring the Potential of In-Context Learning: New Pathways for Enhancing Chat-Based Large Language Model Performance (In Refinement)](https://www.notion.so/c31d141411be4d0eb50473fe6abae1db?v=50264a9824494b6c836ba0c6f3bebd2f)
 
-MetaICL: Learning to Learn In Context: _https://aclanthology.org/2022.naacl-main.201/_
 
-[2]
 
-LaMDA: Language Models for Dialog Applications: _https://arxiv.org/abs/2201.08239_
+[1] MetaICL: Learning to Learn In Context: _https://aclanthology.org/2022.naacl-main.201/_
 
-[3]
+[2] LaMDA: Language Models for Dialog Applications: _https://arxiv.org/abs/2201.08239_
 
-Finetuned Language Models are Zero-Shot Learners: _https://openreview.net/forum?id=gEZrGCozdqR_
+[3] Finetuned Language Models are Zero-Shot Learners: _https://openreview.net/forum?id=gEZrGCozdqR_
 
-[4]
+[4] Improving In-Context Few-Shot Learning via Self-Supervised Training: _https://aclanthology.org/2022.naacl-main.260/_
 
-Improving In-Context Few-Shot Learning via Self-Supervised Training: _https://aclanthology.org/2022.naacl-main.260/_
+[5] Self-Generated In-Context Learning: Leveraging Auto-regressive Language Models as a Demonstration Generator: _https://arxiv.org/abs/2206.08082_
 
-[5]
+[6] Active Example Selection for In-Context Learning: _https://arxiv.org/abs/2211.04486_
 
-Self-Generated In-Context Learning: Leveraging Auto-regressive Language Models as a Demonstration Generator: _https://arxiv.org/abs/2206.08082_
+[7] Fantastically Ordered Prompts and Where to Find Them: Overcoming Few-Shot Prompt Order Sensitivity: _https://aclanthology.org/2022.acl-long.556/_
 
-[6]
+[8] Measuring and Narrowing the Compositionality Gap in Language Models: _https://doi.org/10.48550/arXiv.2210.03350_
 
-Active Example Selection for In-Context Learning: _https://arxiv.org/abs/2211.04486_
+[9] Language models are few-shot learners.: _https://arxiv.org/abs/2005.14165_
 
-[7]
+[10] Noisy Channel Language Model Prompting for Few-Shot Text Classification: _https://aclanthology.org/2022.acl-long.365/_
 
-Fantastically Ordered Prompts and Where to Find Them: Overcoming Few-Shot Prompt Order Sensitivity: _https://aclanthology.org/2022.acl-long.556/_
+[11] On the Effect of Pretraining Corpora on In-context Learning by a Large-scale Language Model: _https://aclanthology.org/2022.naacl-main.380/_
 
-[8]
+[12] On the Effect of Pretraining Corpora on In-context Learning by a Large-scale Language Model: _https://aclanthology.org/2022.naacl-main.380/_
 
-Measuring and Narrowing the Compositionality Gap in Language Models: _https://doi.org/10.48550/arXiv.2210.03350_
+[13] Emergent abilities of large language models.: _https://arxiv.org/abs/2206.07682_
 
-[9]
+[14] Language models are few-shot learners.: _https://arxiv.org/abs/2005.14165_
 
-Language models are few-shot learners.: _https://arxiv.org/abs/2005.14165_
+[15] Data distributional properties drive emergent in-context learning in transformers.: _https://arxiv.org/abs/2205.05055_
 
-[10]
+[16] An explanation of in-context learning as implicit bayesian inference: _https://arxiv.org/abs/2111.02080_
 
-Noisy Channel Language Model Prompting for Few-Shot Text Classification: _https://aclanthology.org/2022.acl-long.365/_
+[17] What can transformers learn in-context? A case study of simple function classes.: _https://arxiv.org/abs/2208.01066_
 
-[11]
+[18] Transformers learn in-context by gradient descent.: _https://arxiv.org/abs/2212.07677_
 
-On the Effect of Pretraining Corpora on In-context Learning by a Large-scale Language Model: _https://aclanthology.org/2022.naacl-main.380/_
-
-[12]
-
-On the Effect of Pretraining Corpora on In-context Learning by a Large-scale Language Model: _https://aclanthology.org/2022.naacl-main.380/_
-
-[13]
-
-Emergent abilities of large language models.: _https://arxiv.org/abs/2206.07682_
-
-[14]
-
-Language models are few-shot learners.: _https://arxiv.org/abs/2005.14165_
-
-[15]
-
-Data distributional properties drive emergent in-context learning in transformers.: _https://arxiv.org/abs/2205.05055_
-
-[16]
-
-An explanation of in-context learning as implicit bayesian inference: _https://arxiv.org/abs/2111.02080_
-
-[17]
-
-What can transformers learn in-context? A case study of simple function classes.: _https://arxiv.org/abs/2208.01066_
-
-[18]
-
-Transformers learn in-context by gradient descent.: _https://arxiv.org/abs/2212.07677_
-
-[19]
-
-In-context learning and induction heads: _https://arxiv.org/abs/2209.11895_
+[19] In-context learning and induction heads: _https://arxiv.org/abs/2209.11895_
