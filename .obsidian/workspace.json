@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DataRelated/NLGDataset/Dataset.md",
+                "file": "DataRelated/数据质量/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Speedup/README.md",
+                "file": "DataRelated/数据质量/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Speedup/README.md"
+                "file": "DataRelated/数据质量/README.md"
               }
             }
           },
@@ -249,10 +249,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "cbfe118131b64791",
+  "active": "ee8ee04670d519d1",
   "lastOpenFiles": [
-    "Pre-training/业界分享/Good_Articles.md",
     "DataRelated/NLGDataset/Dataset.md",
+    "Pre-training/业界分享/Good_Articles.md",
+    "Speedup/README.md",
     "Pre-training/DataGen/Stephanie/Stephanie.md",
     "Pre-training/DataGen/Stephanie/img/Pasted image 20240713175741.png",
     "Pre-training/DataGen/Stephanie/img/Pasted image 20240713175629.png",
@@ -297,7 +298,6 @@
     "Pre-training/Benchmark/CEval/CEval.md",
     "Pre-training/README.md",
     "Pre-training/DataGen/SyntheticWithPersona/img",
-    "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md",
-    "Speedup/Parallelism/README.md"
+    "Pre-training/DataGen/MAmmoTH2/MAmmoTH2.md"
   ]
 }
