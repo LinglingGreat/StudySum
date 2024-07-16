@@ -40,4 +40,6 @@ tags:
 
 [OSDI 24 Serverless LLM：性能提升200倍](https://mp.weixin.qq.com/s/DoxSI5M-jcdlSg000VEIng)
 
+[DeepSpeed Inference全栈优化，延迟降低7.3倍，吞吐提升1.5倍](https://mp.weixin.qq.com/s/fvJaREiR6FGuwWBRFafvbw)
+
 

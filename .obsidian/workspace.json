@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Speedup/Parallelism/README.md",
+                "file": "Speedup/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Speedup/Parallelism/README.md",
+                "file": "Speedup/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Speedup/Parallelism/README.md"
+                "file": "Speedup/README.md"
               }
             }
           },
@@ -275,10 +275,10 @@
   },
   "active": "c6edf1454debb5bb",
   "lastOpenFiles": [
+    "Speedup/Parallelism/README.md",
     "Speedup/Parallelism/BLOOM训练背后的技术.md",
     "Speedup/Parallelism/DeepSpeed之ZeRO系列.md",
     "Speedup/Parallelism/Megatron.md",
-    "Speedup/Parallelism/README.md",
     "Tool/Git/Git.md",
     "Template/普通模板.md",
     "Pre-training/LLMs/Gemma/Gemma.md",
