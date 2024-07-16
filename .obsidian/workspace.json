@@ -68,12 +68,12 @@
             }
           },
           {
-            "id": "e17291c65ad50acd",
+            "id": "338c077b82e9028f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Pre-training/InContextLearning/In-Context Learning.md",
+                "file": "Pre-training/LLMs/Gemma/Gemma.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,6 +104,18 @@
             }
           },
           {
+            "id": "c6edf1454debb5bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Speedup/Parallelism/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "07dd0447a894ac29",
             "type": "leaf",
             "state": {
@@ -116,7 +128,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -182,7 +194,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pre-training/InContextLearning/In-Context Learning.md",
+                "file": "Speedup/Parallelism/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pre-training/InContextLearning/In-Context Learning.md"
+                "file": "Speedup/Parallelism/README.md"
               }
             }
           },
@@ -261,9 +273,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e17291c65ad50acd",
+  "active": "c6edf1454debb5bb",
   "lastOpenFiles": [
+    "Speedup/Parallelism/BLOOM训练背后的技术.md",
+    "Speedup/Parallelism/DeepSpeed之ZeRO系列.md",
+    "Speedup/Parallelism/Megatron.md",
+    "Speedup/Parallelism/README.md",
+    "Tool/Git/Git.md",
+    "Template/普通模板.md",
+    "Pre-training/LLMs/Gemma/Gemma.md",
     "Speedup/README.md",
+    "Pre-training/InContextLearning/In-Context Learning.md",
     "DataRelated/数据质量/README.md",
     "DataRelated/NLGDataset/Dataset.md",
     "Pre-training/业界分享/Good_Articles.md",
@@ -283,8 +303,6 @@
     "Pre-training/LLMs/Deepseek/Deepseek.md",
     "Tool/Pytorch/transformers.md",
     "Pre-training/BERTZip/模型压缩.md",
-    "Pre-training/LLMs/Gemma/Gemma.md",
-    "Speedup/Parallelism/Megatron.md",
     "Pre-training/DataMix/RegMix/RegMix.md",
     "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
     "Pre-training/LLMs/MoE/SkyworkMoE.md",
@@ -300,16 +318,10 @@
     "Pre-training/DataMix/RegMix",
     "Pre-training/DataMix",
     "Pre-training/S2A/S2A.md",
-    "Pre-training/explore/SPT/SPT.md",
-    "Pre-training/Alignment/PPO/PPO.md",
-    "Pre-training/DataGen/Cosmopedia/Cosmopedia.md",
     "Pre-training/DataGen/Cosmopedia/img",
     "Pre-training/DataGen/Cosmopedia",
     "未命名.canvas",
     "未命名 1.canvas",
-    "Pre-training/DataGen/WRAP/WRAP.md",
-    "Pre-training/Benchmark/CEval/CEval.md",
-    "Pre-training/README.md",
     "Pre-training/DataGen/SyntheticWithPersona/img"
   ]
 }
