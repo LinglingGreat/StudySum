@@ -116,6 +116,18 @@
             }
           },
           {
+            "id": "5dd86a159a3a31bc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Pre-training/LLMs/Qwen/Qwen.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "07dd0447a894ac29",
             "type": "leaf",
             "state": {
@@ -128,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -157,7 +169,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "doremi",
+                "query": "GQA",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -194,7 +206,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Speedup/README.md",
+                "file": "Pre-training/LLMs/Qwen/Qwen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -222,7 +234,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Speedup/README.md"
+                "file": "Pre-training/LLMs/Qwen/Qwen.md"
               }
             }
           },
@@ -273,16 +285,34 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "c6edf1454debb5bb",
+  "active": "5dd86a159a3a31bc",
   "lastOpenFiles": [
+    "Pre-training/BaseStruct/PositionEncoding/位置编码.md",
+    "Speedup/README.md",
+    "Pre-training/BaseStruct/SWA/SWA.md",
+    "Pre-training/BaseStruct/SWA/img/Pasted image 20240718170427.png",
+    "Pre-training/BaseStruct/SWA/img/Pasted image 20240718165301.png",
+    "Pre-training/BaseStruct/SWA/img",
+    "Pre-training/BaseStruct/GQA/GQA.md",
+    "Pre-training/BaseStruct/SWA",
+    "Pre-training/LLMs/Gemma/Gemma.md",
+    "Pre-training/BaseStruct/GQA/img/Pasted image 20240718163122.png",
+    "Pre-training/BaseStruct/GQA/img",
+    "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
+    "Pre-training/BaseStruct/S2A/S2A.md",
+    "Pre-training/BaseStruct/Attention/Attention.md",
+    "Pre-training/BaseStruct",
+    "Pre-training/Attention/未命名",
+    "Pre-training/LLMs/Yi/Yi.md",
+    "Pre-training/BaseStruct/GQA",
+    "Pre-training/LLMs/Nemotron-4/Nemotron-4.md",
+    "Pre-training/LLMs/Deepseek/Deepseek.md",
     "Speedup/Parallelism/README.md",
     "Speedup/Parallelism/BLOOM训练背后的技术.md",
     "Speedup/Parallelism/DeepSpeed之ZeRO系列.md",
     "Speedup/Parallelism/Megatron.md",
     "Tool/Git/Git.md",
     "Template/普通模板.md",
-    "Pre-training/LLMs/Gemma/Gemma.md",
-    "Speedup/README.md",
     "Pre-training/InContextLearning/In-Context Learning.md",
     "DataRelated/数据质量/README.md",
     "DataRelated/NLGDataset/Dataset.md",
@@ -300,28 +330,10 @@
     "Pre-training/LLMs/Sailor",
     "News/Inbox.md",
     "Pre-training/LLMs/README.md",
-    "Pre-training/LLMs/Deepseek/Deepseek.md",
-    "Tool/Pytorch/transformers.md",
-    "Pre-training/BERTZip/模型压缩.md",
-    "Pre-training/DataMix/RegMix/RegMix.md",
-    "Pre-training/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
-    "Pre-training/LLMs/MoE/SkyworkMoE.md",
     "Pre-training/LLMs/MoE/img/Pasted image 20240706183057.png",
     "Pre-training/LLMs/MoE/img/Pasted image 20240706183018.png",
     "Pre-training/LLMs/MoE/img/Pasted image 20240706182816.png",
-    "Pre-training/LLMs/MoE/img/Pasted image 20240706182801.png",
-    "Pre-training/LLMs/MoE/img/Pasted image 20240706162119.png",
-    "Pre-training/LLMs/MoE/img/Pasted image 20240706162052.png",
-    "Tool/Linux/Linux.md",
-    "Pre-training/DataMix/RegMix/img",
-    "Pre-training/Branch-Train-MiX/Branch-Train-MiX.md",
-    "Pre-training/DataMix/RegMix",
-    "Pre-training/DataMix",
-    "Pre-training/S2A/S2A.md",
-    "Pre-training/DataGen/Cosmopedia/img",
-    "Pre-training/DataGen/Cosmopedia",
     "未命名.canvas",
-    "未命名 1.canvas",
-    "Pre-training/DataGen/SyntheticWithPersona/img"
+    "未命名 1.canvas"
   ]
 }

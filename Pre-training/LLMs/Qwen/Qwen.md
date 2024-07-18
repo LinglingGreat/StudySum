@@ -2,7 +2,7 @@
 title: Qwen
 created: 2023-10-06
 tags:
-  - 关键词
+  - LLM
 type: 论文
 papername: 
 conference: ACL/EMNLP/NAACL/EACL/COLING/SIGIR/AAAI/ICML/ICDM

@@ -24,7 +24,7 @@ BERT 包含 **12 个 Transformer 层**，每层接受一组 token 的 embeddings
 
 Transformer部分参考：
 
-[Transformer](../Transformer/Transformer.md)
+[Transformer](../BaseStruct/Transformer/Transformer.md)
 
 ### 输入表示
 

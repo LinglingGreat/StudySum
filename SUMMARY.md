@@ -251,11 +251,11 @@
     - 语义驱动可视化内容创造_微软
       * [语义驱动可视化内容创造](Pre-training/业界分享/语义驱动可视化内容创造_微软/语义驱动可视化内容创造.md)
   - Base
-    - [Attention](Pre-training/Attention/Attention.md)
+    - [Attention](Pre-training/BaseStruct/Attention/Attention.md)
     - Mask
-      * [NLP中的Mask](Pre-training/Mask/NLP中的Mask.md)
+      * [NLP中的Mask](Pre-training/BaseStruct/Mask/NLP中的Mask.md)
     - Position Encoding
-      * [位置编码](Pre-training/PositionEncoding/位置编码.md)
+      * [位置编码](Pre-training/BaseStruct/PositionEncoding/位置编码.md)
   - [BERT](Pre-training/BERT/BERT.md)
     - [ALBERT](Pre-training/BERT/ALBERT/ALBERT.md)
     - [Bert](Pre-training/BERT/bert/README.md)
@@ -309,7 +309,7 @@
   - [T 5](Pre-training/LLMs/T5/T5.md)
     - [Unified SKG](Pre-training/LLMs/T5/UnifiedSKG/UnifiedSKG.md)
     * [T 5](Pre-training/LLMs/T5/T5.md)
-  - [Transformer](Pre-training/Transformer/Transformer.md)
+  - [Transformer](Pre-training/BaseStruct/Transformer/Transformer.md)
   - [Uni LM](Pre-training/UniLM/UniLM.md)
   - [XL Net](Pre-training/XLNet/XLNet.md)
   * [预训练语言模型](Pre-training/预训练语言模型.md)

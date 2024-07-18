@@ -29,7 +29,7 @@ C++ makefile
 
 [BERT](Pre-training/BERT/BERT.md) ***
 
-[Transformer](Pre-training/Transformer/Transformer.md) ***
+[Transformer](Pre-training/BaseStruct/Transformer/Transformer.md) ***
 
 
 
