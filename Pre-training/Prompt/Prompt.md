@@ -137,9 +137,9 @@ Instruction Tuning：针对每个任务，单独生成instruction（hard token�
 
 [FLAN](../Alignment/FLAN/FLAN.md)
 
-[T0](../T0/T0.md)
+[T0](../Models/T0/T0.md)
 
-[InstructGPT](../LLMs/InstructGPT/InstructGPT.md)
+[InstructGPT](../Models/InstructGPT/InstructGPT.md)
 
 [SuperNaturalInstructions](../Benchmark/NaturalInstructions/SuperNaturalInstructions.md)
 

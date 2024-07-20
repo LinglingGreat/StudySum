@@ -6,7 +6,7 @@
 
 
 
-[LLMs](LLMs/README.md)
+[LLMs](Models/README.md)
 
 ## Prompt
 - [ ] todo

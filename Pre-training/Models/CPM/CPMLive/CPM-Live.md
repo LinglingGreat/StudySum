@@ -34,7 +34,7 @@ CPM-Ant 利用文本生成和空白填充作为其预训练目标。如下图所
 
 其中M是注意力掩码，⊙ 是 Hadamard 乘积。
 
-这部分可以参考[UniLM](../../../UniLM/UniLM.md)和[GLM](../../GLM/GLM.md)
+这部分可以参考[UniLM](../../UniLM/UniLM.md)和[GLM](../../GLM/GLM.md)
 
 为了进一步保证稳定训练，我们采用Pre-LN Residual结构为：
 
