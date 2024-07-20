@@ -3,6 +3,7 @@ title: README
 created: 2024-06-12
 tags:
   - alignment
+  - 总结
 ---
 ## RL: Policy-Based & Value Based
 
