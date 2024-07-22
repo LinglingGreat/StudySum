@@ -27,9 +27,9 @@ C++ makefile
 
 [fastText](TextClassification/fastText/fastText.md)
 
-[BERT](Pre-training/BERT/BERT.md) ***
+[BERT](PLM/BERT/BERT.md) ***
 
-[Transformer](Pre-training/BaseStruct/Transformer/Transformer.md) ***
+[Transformer](PLM/BaseStruct/Transformer/Transformer.md) ***
 
 
 

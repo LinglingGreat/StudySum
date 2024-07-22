@@ -82,6 +82,24 @@ Offline:
 - [ORPO](ORPO/ORPO.md)
 
 
+## 提高性能
+
+[FollowComplexInstruction](FollowComplexInstruction/FollowComplexInstruction.md) 
+- 具有复杂约束的数据相比单一约束具有更好的效果。
+- 先用弱LLM输出再由强LLM对错误的输出进行纠正细化，要优于直接用强LLM的输出（前者数据的微调效果更佳）。前者的数据还可以用来做偏好训练。
+
+[LearnFromFeedback](LearnFromFeedback/LearnFromFeedback.md)
+- 利用大型语言模型（LLM）(Mixtral-8x7B) 来识别和分类对话中包含反馈的文本片段。
+- 使用正面反馈样本进行微调，使用包括正面和负面样本的KTO偏好训练。
+
+[ArenaLearning](ArenaLearning/ArenaLearning.md)
+将数据分成多个批次。
+- 给定数据1，让模型v0和几个优秀的LLM PK，选出弱模型失败的那些数据，将强模型的输出作为groud truth去微调得到SFTv1。
+- 给定数据2，让模型SFTv1和几个优秀的LLM PK，选出弱模型失败的那些数据pair对，DPO训练得到DPOv1
+- 给定数据3，让模型DPOv1和几个优秀的LLM PK，选出弱模型失败的那些数据pair对，训练reward模型和PPOv1
+- 再用PPOv1重复迭代上述过程
+
+
 ## 参考资料
 
 [【RLHF】RL 究竟是如何与 LLM 做结合的？](https://zhuanlan.zhihu.com/p/675329917) (已整理)
