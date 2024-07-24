@@ -32,24 +32,24 @@
             }
           },
           {
-            "id": "7bdb2c5fa56586a9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Alignment/ArenaLearning/ArenaLearning.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "ad1f11596a13862c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "PLM/Alignment/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "43917687c7c6cd81",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Models/LLaMA/LLaMA3.md",
                 "mode": "source",
                 "source": false
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Alignment/README.md",
+                "file": "PLM/Models/LLaMA/LLaMA3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/README.md"
+                "file": "PLM/Models/LLaMA/LLaMA3.md"
               }
             }
           },
@@ -248,15 +248,21 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ad1f11596a13862c",
+  "active": "43917687c7c6cd81",
   "lastOpenFiles": [
+    "PLM/Models/LLaMA/img/Pasted image 20240724144934.png",
+    "PLM/Models/LLaMA/img/Pasted image 20240724144456.png",
+    "PLM/Models/LLaMA/LLaMA.md",
+    "PLM/Models/LLaMA/LLaMA3.md",
+    "PLM/Alignment/README.md",
+    "common.md",
     "PLM/Alignment/ArenaLearning/ArenaLearning.md",
+    "Speedup/README.md",
     "PLM/Alignment/ArenaLearning/img/Pasted image 20240720171738.png",
     "PLM/Alignment/ArenaLearning/img/Pasted image 20240720171516.png",
     "PLM/Alignment/ArenaLearning/img/Pasted image 20240720171315.png",
     "PLM/Alignment/ArenaLearning/img/Pasted image 20240720170626.png",
     "PLM/Alignment/ArenaLearning/img",
-    "PLM/Alignment/README.md",
     "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
     "Speedup/模型并行/模型并行训练.md",
     "PLM/Alignment/ArenaLearning",
@@ -268,7 +274,6 @@
     "PLM/Alignment/FollowComplexInstruction/FollowComplexInstruction.md",
     "PLM/Alignment/LearnFromFeedback",
     "PLM/Alignment/FollowComplexInstruction/img/Pasted image 20240720163336.png",
-    "PLM/Alignment/FollowComplexInstruction/img/Pasted image 20240720163309.png",
     "PLM/Alignment/FollowComplexInstruction/img",
     "PLM/Alignment/InstructionTuning/README.md",
     "PLM/Alignment/FollowComplexInstruction",
@@ -277,12 +282,10 @@
     "PLM/InContextLearning/In-Context Learning.md",
     "Tool/Pytorch/transformers.md",
     "Speedup/Speculative_decoding.md",
-    "Speedup/README.md",
     "Speedup/模型并行",
     "Speedup/Parallelism/DeepSpeed之ZeRO系列.md",
     "Speedup/Parallelism/Megatron.md",
     "Speedup/Parallelism/README.md",
-    "common.md",
     "News/Inbox.md",
     "PLM/业界分享/Good_Articles.md",
     "Tool/Git/Git.md",
@@ -293,8 +296,6 @@
     "PLM/BaseStruct/SWA/img",
     "PLM/BaseStruct/GQA/GQA.md",
     "PLM/BaseStruct/SWA",
-    "PLM/Models/Gemma/Gemma.md",
-    "PLM/Branch-Train-MiX/Branch-Train-MiX.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
