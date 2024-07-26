@@ -56,6 +56,18 @@
             }
           },
           {
+            "id": "121f5b56f36f7082",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Models/Nemotron-4/Nemotron-4.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "70609b450e973441",
             "type": "leaf",
             "state": {
@@ -104,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -170,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Models/LLaMA/LLaMA3.md",
+                "file": "PLM/Models/Nemotron-4/Nemotron-4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/LLaMA/LLaMA3.md"
+                "file": "PLM/Models/Nemotron-4/Nemotron-4.md"
               }
             }
           },
@@ -248,8 +260,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "43917687c7c6cd81",
+  "active": "121f5b56f36f7082",
   "lastOpenFiles": [
+    "PLM/Alignment/RewardModel/RewardModel.md",
+    "PLM/DataGen/HelpSteer2",
+    "PLM/Alignment/README.md",
+    "PLM/Alignment/RewardModel",
+    "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/Models/LLaMA/img/Pasted image 20240725173402.png",
     "PLM/Models/LLaMA/img/Pasted image 20240725172842.png",
     "PLM/Models/LLaMA/img/Pasted image 20240725172825.png",
@@ -257,8 +274,6 @@
     "PLM/Models/LLaMA/img/Pasted image 20240724144934.png",
     "PLM/Models/LLaMA/img/Pasted image 20240724144456.png",
     "PLM/Models/LLaMA/LLaMA.md",
-    "PLM/Models/LLaMA/LLaMA3.md",
-    "PLM/Alignment/README.md",
     "common.md",
     "PLM/Alignment/ArenaLearning/ArenaLearning.md",
     "Speedup/README.md",
@@ -270,7 +285,6 @@
     "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
     "Speedup/模型并行/模型并行训练.md",
     "PLM/Alignment/ArenaLearning",
-    "PLM/Alignment/LearnFromFeedback/img/Pasted image 20240720165705.png",
     "PLM/Alignment/LearnFromFeedback/img",
     "PLM/Alignment/FollowComplexInstruction/FollowComplexInstruction.md",
     "PLM/Alignment/LearnFromFeedback",
@@ -293,9 +307,6 @@
     "PLM/Models/Qwen/Qwen.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/BaseStruct/SWA/SWA.md",
-    "PLM/BaseStruct/SWA/img",
-    "PLM/BaseStruct/GQA/GQA.md",
-    "PLM/BaseStruct/SWA",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
