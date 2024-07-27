@@ -48,3 +48,10 @@ c.ai的bot：[New Arrivals](https://rentry.org/cai-list)
 
 [Eurus - a openbmb Collection](https://huggingface.co/collections/openbmb/eurus-660bc40bec5376b3adc9d1c5) Eurus模型用到的UltraInteract数据集，据他们说很好。
 
+有关COIG系列，我们开源了以下工作用于大家做中文SFT使用，其中每个集合都有一点点各自的问题，但是设计上因为成本等问题无法避免，我们列出了每个子集的设计目标和使用前可能需要进行的处理：
+1. https://huggingface.co/datasets/BAAI/COIG ，COIG第一版，其中有几个子集比较老，是当时数据来源比较稀少的情况下，选择了较为粗暴的方法。但是其中Leetcode，Human Value Alignment 3000，以及Counterfactual Correction Multi-round这三个集合质量较高，可以考虑采样使用。
+2. https://huggingface.co/datasets/BAAI/COIG-PC ，COIG-PC，target中文版的FLAN，但是由于原始中文互联网数据质量参差不齐，部分任务子集可能存在一些噪音数据，建议使用前自行清洗，同时存在着分布不均的情况。出于作为中文可被处理的任务集数据备份的目的，我们尽量全量备份和处理了所有可用数据。
+3. https://huggingface.co/datasets/BAAI/COIG-PC-core ，COIG-PC-core，在COIG-PC基础上使用GPT-4，人力清洗等方式筛选出来的干净的核心数据，可以采样或者全量使用提升模型的传统中文NLP任务理解和执行能力。(GPT-4只用于判分并未用于生成，所以也可以随便商用)
+4. https://huggingface.co/datasets/m-a-p/COIG-Kun ，https://huggingface.co/m-a-p/Kun-LabelModel，COIG-Kun，中文版的humpback，可以从预训练数据转译生成SFT数据，目前存在生成数据指令逻辑比较简单等问题，但是可以有效扩充SFT数据量尤其是垂域的SFT数据量。
+5. https://huggingface.co/datasets/m-a-p/COIG-CQIA ，中文版的LIMA，全人工爬取，精心挑选和修改后的数据集，可以直接作为提升中文基础能力的SFT集合。
+

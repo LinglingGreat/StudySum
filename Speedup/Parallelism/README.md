@@ -5,5 +5,3 @@
 
 [OneFlow —— 让每一位算法工程师都有能力训练 GPT - 知乎](https://zhuanlan.zhihu.com/p/371499074?utm_psn=1749361005107462144)
 
-[语言模型的训练时间：从估算到 FLOPs 推导](https://zhuanlan.zhihu.com/p/646905171)
-

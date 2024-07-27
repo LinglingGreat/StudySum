@@ -4,7 +4,7 @@ created: 2024-06-17
 tags:
   - 推理加速
 ---
-
+## 推理加速
 
 [GitHub - microsoft/DeepSpeed-MII: MII makes low-latency and high-throughput inference possible, powered by DeepSpeed.](https://github.com/microsoft/DeepSpeed-MII)
 
@@ -37,9 +37,20 @@ tags:
 
 [Towards 100x Speedup: Full Stack Transformer Inference Optimization](https://yaofu.notion.site/Towards-100x-Speedup-Full-Stack-Transformer-Inference-Optimization-43124c3688e14cffaf2f1d6cbdf26c6c)
 
-
 [OSDI 24 Serverless LLM：性能提升200倍](https://mp.weixin.qq.com/s/DoxSI5M-jcdlSg000VEIng)
 
 [DeepSpeed Inference全栈优化，延迟降低7.3倍，吞吐提升1.5倍](https://mp.weixin.qq.com/s/fvJaREiR6FGuwWBRFafvbw)
 
+[[TensorRT-LLM][5w字]🔥TensorRT-LLM 部署调优-指北](https://zhuanlan.zhihu.com/p/699333691)
+
+##  参数量、计算量、显存等
+
+[【Transformer】参数量、计算量、显存等分析](https://mp.weixin.qq.com/s/zZh1CaeozXBffImxnBTPtg)
+
+[语言模型的训练时间：从估算到 FLOPs 推导](https://zhuanlan.zhihu.com/p/646905171)
+
+[大模型训练需要花费多长时间：FLOPs的简单计算方法及calflop开源实现](https://mp.weixin.qq.com/s/nB-ldVgWJTJhwI-f7rO7IQ)
+
+https://huggingface.co/spaces/Jellyfish042/UncheatableEval
+压缩能力榜单
 
