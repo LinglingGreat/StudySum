@@ -237,26 +237,76 @@ SFT Data
 ## 能力提升
 
 ### 代码
+我们培训一位代码专家，用他在后续几轮培训后收集高质量的代码人工注释。这是通过对主要预训练运行进行分支并对主要 (>85%) 代码数据的 1T 令牌组合进行持续预训练来实现的。事实证明，对特定领域数据的持续预训练对于提高特定领域的性能是有效的（Gururangan 等人，2020）。我们遵循类似于 CodeLlama 的方法（Rozière 等人，2023）。对于最后几千个训练步骤，我们执行长上下文微调 (LCFT)，以在高质量的回购级代码数据组合上将专家的上下文长度扩展到 16K 个令牌。最后，我们遵循第 4.1 节中描述的类似的训练后建模方法来调整该模型，但主要针对代码的 SFT 和 DPO 数据混合除外。该模型还用于编码提示的拒绝采样（第 4.2.2 节）。
+
+在开发过程中，我们发现了代码生成中的关键问题，包括难以遵循指令、代码语法错误、错误的代码生成以及难以修复错误。虽然密集的人工注释理论上可以解决这些问题，但合成数据生成提供了一种成本更低、规模更大的补充方法，且不受注释者专业水平的限制。因此，我们使用 Llama 3 和代码专家来生成大量的合成 SFT 对话框。总共生成了2.7M的合成数据用于SFT
+- Synthetic data generation: execution feedback. 当使用更大、更强大的模型生成的数据进行训练时，8B 和 70B 模型显示出显着的性能改进。然而，我们最初的实验表明，使用 Llama 3 405B 自己生成的数据进行训练并没有什么帮助（甚至会降低性能）。为了解决这一限制，我们引入了执行反馈作为事实来源，使模型能够从错误中学习并保持在正轨上。特别是，我们生成约一百万个合成编码对话的大型数据集
+- Synthetic data generation: programming language translation.
+- Synthetic data generation: backtranslation.
+
+System prompt steering during rejection sampling. 在拒绝抽样过程中，我们使用了代码特定的系统提示来提高代码的可读性、文档记录、彻底性和特异性。系统提示如何帮助提高生成的代码质量的示例 - 它添加了必要的注释、使用信息更丰富的变量名称、节省内存等。
+
+Filtering training data with execution and model-as-judge signals. 
 
 
 ### 多语言
 
+为了收集更高质量的非英语人工注释，我们通过对预训练运行进行分支并继续对包含 90% 多语言标记的数据组合进行预训练来训练多语言专家。然后，我们该专家进行后训练。然后使用该专家模型收集非英语语言的更高质量注释，直到预训练完全完成。
+
+我们的多语言 SFT 数据主要来自下述来源。总体分布是 2.4% 的人工注释、44.2% 来自其他 NLP 任务的数据（改写成对话）、18.8% 的拒绝采样数据和 34.6% 的翻译推理数据。
+
 
 ### 数学和推理
 
+Addressing the lack of prompts: 我们从数学上下文中获取相关的预训练数据，并将其转换为问答格式，然后可用于监督微调。此外，我们还确定了模型表现不佳的数学技能，并积极从人类那里获取提示来教授模型这些技能。为了促进这一过程，我们创建了数学技能分类（Didolkar et al., 2024），并要求人们相应地提供相关提示/问题。
+
+Augmenting training data with step-wise reasoning traces： 我们使用 Llama 3 为一组提示生成分步解决方案。对于每个提示，模型都会产生不同数量的response。然后根据正确答案过滤这些response（Li et al., 2024a）。我们还进行自我验证，其中 Llama 3 用于验证特定的逐步解决方案对于给定问题是否有效。此过程通过消除模型未产生有效推理轨迹的实例来提高微调数据的质量。
+
+Filtering incorrect reasoning traces: 我们训练结果和逐步奖励模型（Lightman et al., 2023; Wang et al., 2023a）来过滤中间推理步骤不正确的训练数据。这些奖励模型用于剔除无效分步推理的数据，确保用于微调的高质量数据。对于更具挑战性的提示，我们使用蒙特卡罗树搜索（MCTS）和学习的逐步奖励模型来生成有效的推理轨迹，进一步增强高质量推理数据的收集
+
+Interleaving code and text reasoning: 我们提示 Llama 3 通过文本推理和相关 Python 代码的结合来解决推理问题（Gou 等人，2023）。以代码执行作为反馈信号，消除推理链无效的情况，保证推理过程的正确性。
+
+Learning from feedback and mistakes: 为了模拟人类反馈，我们利用不正确的generation（即导致错误推理轨迹的generation）并通过提示 Llama 3 来执行错误纠正得到正确的generation
 
 ### 长文本
 
+仅使用短上下文数据天真地应用我们现有的 SFT 配方会导致预训练的长上下文能力显着下降，这凸显了将长上下文数据合并到我们的 SFT 数据组合中的必要性。然而，在实践中，由于阅读冗长的上下文非常乏味且耗时，因此让人类注释此类示例在很大程度上是不切实际的，因此我们主要依靠合成数据来填补这一空白。我们使用 Llama 3 的早期版本来生成基于关键长上下文用例的合成数据：（可能是多回合）问答、长文档摘要以及代码存储库推理。
+
+我们根据序列长度（16K、32K、64K 和 128K）进一步对这些合成生成的样本进行分类，以实现更细粒度的输入长度定位。通过仔细的消融，我们观察到，将综合生成的长上下文数据的 0.1% 与原始短上下文数据混合可以优化短上下文和长上下文基准测试的性能。
+
+我们观察到，只要 SFT 模型适用于长上下文任务，在 DPO 中仅使用短上下文训练数据不会对长上下文性能产生负面影响。我们怀疑这是因为我们的 DPO 方案的优化器步骤比 SFT 少。鉴于这一发现，我们在长上下文 SFT 检查点之上保留了 DPO 的标准短上下文配方。
 
 ### 工具使用
 
+Search engine.
+
+Python interpreter.
+
+Mathematical computational engine.
+
+模型能够在聊天设置中使用这些工具来解决用户的查询，包括在多轮对话中。如果一个查询需要多次工具调用，模型可以编写分步计划，按顺序调用工具，并在每次工具调用后进行推理。我们还改进了 Llama 3 的零次工具使用功能 - 给定上下文中可能未见过的工具定义和用户查询，我们训练模型以生成正确的工具调用。
+
+我们依靠人类注释和偏好来教 Llama 3 使用工具。
 
 ### 事实性
 
+我们遵循的原则是，训练后应该使模型“知道它知道什么”，而不是添加知识（Gekhman 等人，2024；Mielke 等人，2020）。我们的主要方法涉及生成数据，使模型生成与预训练数据中存在的事实数据子集保持一致。为了实现这一目标，我们开发了一种知识探索技术，利用 Llama 3 的上下文能力。该数据生成过程涉及以下过程：
 
+1. Extract a data snippet from the pre-training data. 
+2. Generate a factual question about these snippets (context) by prompting Llama 3 
+3. Sample responses from Llama 3 to the question 
+4. Score the correctness of the generations using the original context as a reference and Llama 3 as a judge 
+5. Score the informativeness of the generations using Llama 3 as a judge 
+6. Generate a refusal for responses which are consistently informative and incorrect across the generations, using Llama 3
+
+我们使用知识探测生成的数据来鼓励模型只回答它所了解的问题，并拒绝回答那些它不确定的问题。此外，预训练数据并不总是与事实一致或正确。因此，我们还收集了一组有限的带标签的事实数据，这些数据涉及敏感主题，其中事实矛盾或不正确的陈述普遍存在。
 ### 可控性
 
+对于 Llama 3，我们专注于通过带有自然语言指令的系统提示来增强其可操纵性，特别是在响应长度、格式、语气和角色/角色方面。
 
+我们通过要求注释者为 Llama 3 设计不同的系统提示来收集一般英语类别中的可操纵性偏好样本。然后注释者与模型进行对话，以评估它们在对话过程中遵循系统提示中定义的指令的一致性。我们在下面展示了一个用于增强可操纵性的自定义系统提示示例：
+
+You are a helpful and cheerful AI Chatbot that acts as a meal plan assistant for busy families. The family consists of 2 adults, 3 teenagers, and 2 preschoolers. Plan two or three days at a time and use leftovers or extra ingredients for the second day’s plan. The user will let you know if they want two or three days. If they don’t, assume three days. Each plan should include breakfast, lunch, snack, and dinner. Ask the user if they approve of the plan or need adjustments. After they approve provide a grocery list with family size in mind. Always keep family preferences in mind and if there’s something that they don’t like provide a substitution. If the user is not feeling inspired then ask them what’s the one place they wish they could visit on vacation this week and then suggest meals based on that location’s culture. Weekend meals can be more complex. Weekday meals should be quick and easy. For breakfast and lunch, easy food like cereal, English muffins with pre-cooked bacon, and other quick easy foods are preferred. The family is busy. Be sure to ask if they have essentials and favorites on hand like coffee or energy drinks so they don’t forget to buy it. Remember to be budget-conscious unless it’s a special occasion.
 
 ## 视觉
 
