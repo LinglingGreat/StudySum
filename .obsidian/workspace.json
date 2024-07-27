@@ -56,18 +56,6 @@
             }
           },
           {
-            "id": "121f5b56f36f7082",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Models/Nemotron-4/Nemotron-4.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "70609b450e973441",
             "type": "leaf",
             "state": {
@@ -116,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -182,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Models/Nemotron-4/Nemotron-4.md",
+                "file": "PLM/Models/LLaMA/LLaMA3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/Nemotron-4/Nemotron-4.md"
+                "file": "PLM/Models/LLaMA/LLaMA3.md"
               }
             }
           },
@@ -260,13 +248,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "121f5b56f36f7082",
+  "active": "43917687c7c6cd81",
   "lastOpenFiles": [
+    "PLM/Models/LLaMA/img/Pasted image 20240727114525.png",
+    "PLM/Models/LLaMA/img/Pasted image 20240727114410.png",
+    "PLM/DataStrategy/RegMix/RegMix.md",
+    "PLM/DataStrategy/README.md",
+    "PLM/README.md",
+    "PLM/预训练语言模型.md",
+    "PLM/关于LLM的一些思考.md",
+    "PLM/Models/LLaMA/LLaMA3.md",
+    "Speedup/模型并行/模型并行训练.md",
+    "Speedup/README.md",
+    "PLM/Models/Nemotron-4/Nemotron-4.md",
     "PLM/Alignment/RewardModel/RewardModel.md",
     "PLM/DataGen/HelpSteer2",
     "PLM/Alignment/README.md",
     "PLM/Alignment/RewardModel",
-    "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/Models/LLaMA/img/Pasted image 20240725173402.png",
     "PLM/Models/LLaMA/img/Pasted image 20240725172842.png",
     "PLM/Models/LLaMA/img/Pasted image 20240725172825.png",
@@ -276,14 +274,11 @@
     "PLM/Models/LLaMA/LLaMA.md",
     "common.md",
     "PLM/Alignment/ArenaLearning/ArenaLearning.md",
-    "Speedup/README.md",
     "PLM/Alignment/ArenaLearning/img/Pasted image 20240720171738.png",
     "PLM/Alignment/ArenaLearning/img/Pasted image 20240720171516.png",
     "PLM/Alignment/ArenaLearning/img/Pasted image 20240720171315.png",
-    "PLM/Alignment/ArenaLearning/img/Pasted image 20240720170626.png",
     "PLM/Alignment/ArenaLearning/img",
     "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
-    "Speedup/模型并行/模型并行训练.md",
     "PLM/Alignment/ArenaLearning",
     "PLM/Alignment/LearnFromFeedback/img",
     "PLM/Alignment/FollowComplexInstruction/FollowComplexInstruction.md",
@@ -301,12 +296,6 @@
     "Speedup/Parallelism/Megatron.md",
     "Speedup/Parallelism/README.md",
     "News/Inbox.md",
-    "PLM/业界分享/Good_Articles.md",
-    "Tool/Git/Git.md",
-    "Tool/Linux/Linux.md",
-    "PLM/Models/Qwen/Qwen.md",
-    "PLM/BaseStruct/PositionEncoding/位置编码.md",
-    "PLM/BaseStruct/SWA/SWA.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
