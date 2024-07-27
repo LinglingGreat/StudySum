@@ -114,3 +114,5 @@ Offline:
 
 [人类偏好对齐训练技术解析](https://mp.weixin.qq.com/s/Zo274CCITKGRn0dKD8WNJA)
 
+[Alignment Guidebook](https://efficient-unicorn-451.notion.site/Alignment-Guidebook-e5c64df77c0a4b528b7951e87337fa78)
+

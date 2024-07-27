@@ -20,24 +20,24 @@
             }
           },
           {
-            "id": "d48108da15e90009",
+            "id": "079d58d01a17394f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "common.md",
+                "file": "Speedup/训练tips/训练tips.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "ad1f11596a13862c",
+            "id": "7c5a230bdb79a895",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/README.md",
+                "file": "Speedup/Megatron/Megatron.md",
                 "mode": "source",
                 "source": false
               }
@@ -50,18 +50,6 @@
               "type": "markdown",
               "state": {
                 "file": "PLM/Models/LLaMA/LLaMA3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b1a5ea16f1d13352",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DataRelated/NLGDataset/Dataset.md",
                 "mode": "source",
                 "source": false
               }
@@ -116,7 +104,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -145,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "flops",
+                "query": "DataComp-LM",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -182,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/NLGDataset/Dataset.md",
+                "file": "Speedup/Megatron/Megatron.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/NLGDataset/Dataset.md"
+                "file": "Speedup/Megatron/Megatron.md"
               }
             }
           },
@@ -243,7 +231,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -260,37 +248,46 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b1a5ea16f1d13352",
+  "active": "7c5a230bdb79a895",
   "lastOpenFiles": [
-    "DataRelated/NLGDataset/生成任务.md",
+    "Speedup/Megatron/img/Pasted image 20240727172721.png",
+    "Speedup/Megatron/img/Pasted image 20240727172348.png",
+    "Speedup/Megatron/img/Pasted image 20240727172338.png",
+    "Speedup/Megatron/img",
+    "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/对话数据集.md",
+    "DataRelated/NLGDataset/生成任务.md",
     "Speedup/README.md",
+    "Speedup/Megatron/Megatron.md",
+    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
+    "Speedup/DeepSpeed",
     "Speedup/Parallelism/README.md",
+    "Speedup/模型并行/模型并行训练.md",
+    "Speedup/训练tips/训练tips.md",
+    "Speedup/训练tips",
+    "Speedup/模型并行/img/Pasted image 20240727163446.png",
+    "Speedup/模型并行/img/Pasted image 20240727163259.png",
+    "Speedup/模型并行/img/Pasted image 20240727163130.png",
+    "Speedup/模型并行/img/Pasted image 20240727163034.png",
+    "Speedup/模型并行/img/Pasted image 20240727162440.png",
+    "Speedup/模型并行/img/Pasted image 20240727162305.png",
+    "Speedup/模型并行/img/Pasted image 20240727162248.png",
+    "News/Inbox.md",
+    "common.md",
+    "PLM/Alignment/README.md",
+    "PLM/Alignment/ArenaLearning/ArenaLearning.md",
     "PLM/README.md",
     "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/Models/LLaMA/img/Pasted image 20240727114525.png",
-    "PLM/Models/LLaMA/img/Pasted image 20240727114410.png",
     "PLM/DataStrategy/RegMix/RegMix.md",
     "PLM/DataStrategy/README.md",
     "PLM/预训练语言模型.md",
     "PLM/关于LLM的一些思考.md",
-    "Speedup/模型并行/模型并行训练.md",
     "PLM/Models/Nemotron-4/Nemotron-4.md",
     "PLM/Alignment/RewardModel/RewardModel.md",
     "PLM/DataGen/HelpSteer2",
-    "PLM/Alignment/README.md",
     "PLM/Alignment/RewardModel",
-    "PLM/Models/LLaMA/img/Pasted image 20240725173402.png",
-    "PLM/Models/LLaMA/img/Pasted image 20240725172842.png",
-    "PLM/Models/LLaMA/img/Pasted image 20240725172825.png",
-    "PLM/Models/LLaMA/img/Pasted image 20240725172304.png",
-    "PLM/Models/LLaMA/img/Pasted image 20240724144934.png",
-    "PLM/Models/LLaMA/img/Pasted image 20240724144456.png",
     "PLM/Models/LLaMA/LLaMA.md",
-    "common.md",
-    "PLM/Alignment/ArenaLearning/ArenaLearning.md",
-    "PLM/Alignment/ArenaLearning/img/Pasted image 20240720171738.png",
-    "PLM/Alignment/ArenaLearning/img/Pasted image 20240720171516.png",
     "PLM/Alignment/ArenaLearning/img",
     "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
     "PLM/Alignment/ArenaLearning",
@@ -299,15 +296,6 @@
     "PLM/Alignment/LearnFromFeedback",
     "PLM/Alignment/FollowComplexInstruction/img",
     "PLM/Alignment/InstructionTuning/README.md",
-    "PLM/Alignment/FollowComplexInstruction",
-    "PLM/PEFT/Finetune/Finetune.md",
-    "PLM/PEFT",
-    "PLM/InContextLearning/In-Context Learning.md",
-    "Tool/Pytorch/transformers.md",
-    "Speedup/Speculative_decoding.md",
-    "Speedup/模型并行",
-    "Speedup/Parallelism/DeepSpeed之ZeRO系列.md",
-    "Speedup/Parallelism/Megatron.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
