@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Speedup/Megatron/Megatron.md",
+                "file": "PLM/explore/PhysicsofLanguageModels/PhysicsofLanguageModels.md",
                 "mode": "source",
                 "source": false
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "DataComp-LM",
+                "query": "physi",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Speedup/Megatron/Megatron.md",
+                "file": "PLM/explore/PhysicsofLanguageModels/PhysicsofLanguageModels.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Speedup/Megatron/Megatron.md"
+                "file": "PLM/explore/PhysicsofLanguageModels/PhysicsofLanguageModels.md"
               }
             }
           },
@@ -250,35 +250,38 @@
   },
   "active": "7c5a230bdb79a895",
   "lastOpenFiles": [
-    "Speedup/Megatron/img/Pasted image 20240727172721.png",
-    "Speedup/Megatron/img/Pasted image 20240727172348.png",
-    "Speedup/Megatron/img/Pasted image 20240727172338.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727211858.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727211626.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727211426.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727211119.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727210938.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727210836.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727210452.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727210405.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727205836.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727205759.png",
+    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727205638.png",
+    "PLM/explore/PhysicsofLanguageModels/img",
+    "Speedup/Megatron/Megatron.md",
+    "PLM/explore/PhysicsofLanguageModels/PhysicsofLanguageModels.md",
+    "PLM/explore/PhysicsofLanguageModels",
     "Speedup/Megatron/img",
     "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "DataRelated/NLGDataset/生成任务.md",
     "Speedup/README.md",
-    "Speedup/Megatron/Megatron.md",
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "Speedup/DeepSpeed",
     "Speedup/Parallelism/README.md",
     "Speedup/模型并行/模型并行训练.md",
     "Speedup/训练tips/训练tips.md",
     "Speedup/训练tips",
-    "Speedup/模型并行/img/Pasted image 20240727163446.png",
-    "Speedup/模型并行/img/Pasted image 20240727163259.png",
-    "Speedup/模型并行/img/Pasted image 20240727163130.png",
-    "Speedup/模型并行/img/Pasted image 20240727163034.png",
-    "Speedup/模型并行/img/Pasted image 20240727162440.png",
-    "Speedup/模型并行/img/Pasted image 20240727162305.png",
-    "Speedup/模型并行/img/Pasted image 20240727162248.png",
     "News/Inbox.md",
     "common.md",
     "PLM/Alignment/README.md",
     "PLM/Alignment/ArenaLearning/ArenaLearning.md",
     "PLM/README.md",
     "PLM/Models/LLaMA/LLaMA3.md",
-    "PLM/Models/LLaMA/img/Pasted image 20240727114525.png",
     "PLM/DataStrategy/RegMix/RegMix.md",
     "PLM/DataStrategy/README.md",
     "PLM/预训练语言模型.md",
@@ -293,9 +296,6 @@
     "PLM/Alignment/ArenaLearning",
     "PLM/Alignment/LearnFromFeedback/img",
     "PLM/Alignment/FollowComplexInstruction/FollowComplexInstruction.md",
-    "PLM/Alignment/LearnFromFeedback",
-    "PLM/Alignment/FollowComplexInstruction/img",
-    "PLM/Alignment/InstructionTuning/README.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
