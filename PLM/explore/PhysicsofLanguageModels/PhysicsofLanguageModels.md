@@ -176,9 +176,64 @@ reverse knowledge search
 
 ![](img/Pasted%20image%2020240727211858.png)
 
+
+
+![](img/Pasted%20image%2020240727215156.png)
+
+![](img/Pasted%20image%2020240727215319.png)
+
+![](img/Pasted%20image%2020240727215432.png)
+
+ ![](img/Pasted%20image%2020240727215640.png)
+![](img/Pasted%20image%2020240727215725.png)
+
+![](img/Pasted%20image%2020240727215837.png)
+
+
 ### How to Learn From Mistakes
 
 ![](img/Pasted%20image%2020240727205836.png)
+
+![](img/Pasted%20image%2020240727220122.png)
+
+![](img/Pasted%20image%2020240727220207.png)
+
+![](img/Pasted%20image%2020240727220444.png)
+
+![](img/Pasted%20image%2020240727220601.png)
+
+
+![](img/Pasted%20image%2020240727220709.png)
+
+![](img/Pasted%20image%2020240727220645.png)
+
+ ![](img/Pasted%20image%2020240727220815.png)
+![](img/Pasted%20image%2020240727221010.png)
+![](img/Pasted%20image%2020240727221039.png)
+
+![](img/Pasted%20image%2020240727221810.png)
+
+![](img/Pasted%20image%2020240727221917.png)
+
+## Learning Hierarchical Language Structures
+
+![](img/Pasted%20image%2020240727221953.png)
+
+![](img/Pasted%20image%2020240727222341.png)
+
+ 
+
+![](img/Pasted%20image%2020240727222016.png)
+
+![](img/Pasted%20image%2020240727222029.png)
+
+![](img/Pasted%20image%2020240727222039.png)
+
+![](img/Pasted%20image%2020240727222049.png)
+
+![](img/Pasted%20image%2020240727222100.png)
+
+![](img/Pasted%20image%2020240727223850.png)
 
 
 
@@ -191,7 +246,7 @@ reverse knowledge search
 
 ## 未来方向
 
-
+![](img/Pasted%20image%2020240727224156.png)
 
 ## 主要收获
 
