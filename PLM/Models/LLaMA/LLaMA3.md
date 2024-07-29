@@ -48,29 +48,58 @@ Llama3 405B 之所以没有采用MOE，技术报告指出主要是考虑到Dense
 ## 预训练
 
 - 405B 参数
-- 15.6T 标记
+- 15.6T 标记，Llama-2的将近9倍（15.6T vs 1.8T）
 - 知识截止时间为 2023 年底
 
 - 8K 标记的上下文窗口
 - 在持续预训练阶段，上下文窗口增加到 128K
 
 数据清洗
-- PII（个人隐私数据）清洗
-- 自定义 HTML 解析器，从web数据中解析多样性的数据。保持数学和代码内容的结构。我们发现与纯文本相比，Markdown 对主要在 Web 数据上训练的模型的性能有害，因此我们删除了所有 Markdown 标记。
-- 去重：在 URL 级别、文档级别和行级别执行重复数据删除。我们删除每个 30M 文档桶中出现超过 6 次的行。尽管我们的手动定性分析表明，行级重复数据删除不仅可以删除各种网站中残留的样板文件（例如导航菜单、cookie 警告），还会删除频繁的高质量文本，但我们的实证评估显示出显着的改进。
-- 去重：n-gram 覆盖率，用于删除包含重复内容的行
-- 去黄：脏词计数，用于删除成人内容
-- 质量过滤：标记分布 KL 散度，用于过滤与训练语料库分布相比具有过多异常标记的文档
-- 质量过滤：基于模型的质量分类器，包括fasttext, roberta
-- 语言过滤：基于 fasttext 的模型，将文档分为 176 种语言。
+- personally identifiable information（PII）and safety filtering. 首先就是要清洗掉和个人信息相关，以及包含成人内容的数据。
+- 自定义 HTML 解析器，从web数据中解析多样性的数据。保持数学和代码内容的结构。对于数学相关的页面，特意保留了图片，因为很多公式都被渲染成了图片。我们发现与纯文本相比，Markdown 对主要在 Web 数据上训练的模型的性能有害，因此我们删除了所有 Markdown 标记。
+- 去重
+	- URL-level：对于同一个页面，只保留最新的版本。
+	
+	- Document-level：用MinHash做了文档级别的近似去重。
+	
+	- Line-level：和ccNet的做法相似，对于一个包含30M文档的bucket，如果某行数据重复出现超过6次就会被删除。人工检查发现这样做能够删掉一些如网页导航、cookie warnings这样的没太大价值的数据，但是也会删掉一些高频的高质量数据，不过从结果上来看总体的正收益是比较大的。
 
-数据比例
-- 在模型做细粒度的打标签工作，然后根据标签采样，配不同的量去试。知识分类器做分类
-- 在不同的小模型上做不同的配比实验，预测大模型的最优配比
-- 最终确定50% 的token是通用数据，25% 的数学和推理，17% 的代码，以及 8% 的多语言。
+数据质量清洗：
+- 参考《Scaling language models: Methods, analysis & insights from training gopher》，用n-gram coverage ratio过滤掉包含大量重复信息的内容（比如logging和error messages）；这些内容在大量重复的同时又不完全相同，所以可能在去重中会被漏掉。
+- 参考《Exploring the limits of transfer learning with a unified text-to-text transformer》，用dirty word counting过滤成人内容。
+- 通过token分布的KL散度过滤掉与训练语料库分布相比包含过量outlier token的内容。
 
-数据退火
-- 作者发现在大模型训练的最后阶段，用高质量的数据学习能提高性能。于是在最后40B数据上，作者逐渐将学习率衰减到0。并且发现，数据退火方法，可以用来筛数据，量少，效果明显，实验更高效。30%的新数据。
+Model-based quality filtering: 用Llama-2对数据质量做分类，然后用fasttext和DistilRoberta学习Llama-2给出的数据，用于对数据是否符合质量要求进行分类。
+
+Code and reasoning data：在代码和推理数据上，使用类似DeepSeek-Coder-V2的做法。针对包含数学推理、STEM领域推理以及与自然语言交织的代码网页，调整了HTML的提取规则、质量分类的prompt等。
+
+Multilingual data：对于多语言数据，在移除可能包含PII和成人内容的数据之后：
+
+- 用fasttext把数据进行176种语言的分类。
+    
+- 进行document-level和line-level的去重。
+    
+- 用每种语言各自的质量分类器过滤低质量数据。
+    
+并通过实验确定最终各种语言的占比，平衡英文和多语言的应答质量。
+
+**数据比例**
+
+不同来源和领域的数据配比会极大影响各个下游任务效果。这里主要用到knowledge classification和scaling law experiments来决定数据配比。
+
+- Knowledge classification：给数据进行领域的分类，并减少训练数据中某些种类的数据，比如arts和entertainment数据。
+    
+- Scaling laws for data mix：通过在规模较小的模型对不同的data mix分别跑scaling law的实验，来获取最佳的data mix。
+    
+- Data mix summary：最终的数据中，约50%属于general knowledge，25%属于数学和推理，17%的代码以及8%的多语言数据。
+
+**数据退火**
+
+在learning rate的退火阶段使用高质量的代码和数学数据可以提升在关键benchmark上的效果。参考《Datacomp-lm: In search of the next generation of training sets for language models》的做法，在退火阶段对高质量数据进行了upsampled。
+
+按这个做法，在GSM8k和MATH数据集上检测了8B模型，发现都有比较大的提升，但是405B模型的提升则不大，猜测可能是因为405B模型的in-context learning能力和推理能力本身已经比较强了，因此即使不在退火阶段使用相关高质量数据集，也已经效果比较好。
+
+另外，既然annealing加入对应数据可以提升下游任务的效果，那么就可以用annealing来检测数据质量了。通过在退火阶段加入不同的数据，观察对下游任务的影响，来判断所加数据是否是高质量数据，这和《Does your data spark joy?performance gains from domain upsampling at the end of training》的思路类似。
 
 
 三阶段训练法：(1) 初始训练 initial pre-training, (2) 长文训练 long-context pre-training, and (3) 退火训练 annealing
@@ -101,9 +130,9 @@ Llama3 405B 之所以没有采用MOE，技术报告指出主要是考虑到Dense
 
 - 模型架构与 llama 和 llama-2 相同，但有一些修改（再次证明质量数据仍然是王道！）
 
-- 具有 8 KV 头的 GQA
+- 具有 8 KV 头的 GQA，降低推理时KV cache的需求。
 
-- RoPE 频率增加到 500,000
+- RoPE 频率增加到 500,000，按《Effective long-context scaling of foundation models》的结果，这个数值足够支持32,768长度的窗口了。
 
 - 注意力掩码可防止同一序列内不同文档之间的自我注意力。样本间穿越在预训练阶段影响不大，以前大家也不在乎，但作者说在扩长序列时候影响很大。
 
@@ -119,12 +148,25 @@ Llama3 405B 之所以没有采用MOE，技术报告指出主要是考虑到Dense
 1.先建立计算最优模型在下游任务上的负对数似然与训练FLOPs之间的相关性。
 2.利用scalinglaw模型和使用更高计算FLOPs训练的旧模型，将下游任务上的负对数似然与benchmark的准确率指标关联上。作者在这步用了LLama2系列的模型
 
-作者在ARC上使用这个方法，能看出来拟合的还不错
+具体来说，对从40M到16B的模型进行不同FLOPs的训练，得到各个compute预算下的最佳规模。
 
 ![](img/Pasted%20image%2020240725172825.png)
 
+这里训练的时候根据模型大小使用了不同的lr，同时在不同的compute budget下使用了从250k到4M不等的batch size。
+
+基于这些实验结果，对给定compute budget C下的optimal number of training token  N*(C)进行拟合：
+
+![](img/Pasted%20image%2020240729134744.png)
+
+得到$(\alpha, A)=(0.53,0.29)$，从这里推算出3.8 x 10^25  FLOPs的计compute budget对应的最佳规模和数据量是402B和16.55T token。
+
+从这些实验结果还另外得到一个发现：随着compute budget的增加，IsoFLOPs的曲线逐渐变得平缓，这说明大规模的模型对规模和训练数据量的少量波动会更加robust，少量的波动不会对最终结果造成很大影响。
+
+在这个基础上，先拟合“各个compute budget下最佳模型在下游benchmark的正确答案上的Normalized NLL per Char”和FLOPs之间的线性关系，再拟合Normalized NLL per Char和下游任务accuracy的sigmoid关系。这样就建立了FLOPs和下游benchmark上accuracy的关系。在ARC Challenge任务上的拟合情况如下
+
 ![](img/Pasted%20image%2020240725172842.png)
 
+从结果上看，这个方法预测的405B效果基本准确，偏差很小。
 ## Infra
 
 - Llama 3 405B 在多达 16K H100 GPU 上进行训练，每个 GPU 以 700W TDP 运行，配备 80GB HBM3，使用 Meta 的 Grand Teton AI 服务器平台
