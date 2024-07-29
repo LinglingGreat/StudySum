@@ -178,6 +178,8 @@ CP并行策略的改进
 
 ![](img/Pasted%20image%2020240725173402.png)
 
+**总体流程**
+
 首先用人工标注数据训练RM模型，用来评价一个<Prompt,answer>数据的质量，然后用RM参与拒绝采样（Rejection Sampling），就是说对于一个人工Prompt，用模型生成若干个回答，RM给予质量打分，选择得分最高的保留作为SFT数据，其它抛掉。这样得到的SFT数据再加上专门增强代码、数学、逻辑能力的SFT数据一起，用来调整模型得到SFT模型。之后用人工标注数据来使用DPO模型调整LLM参数，DPO本质上是个二分类，就是从人工标注的<Prompt，Good Answer，Bad Answer>三元数据里学习，调整模型参数鼓励模型输出Good Answer，不输出Bad Answer。这算完成了一个迭代轮次的Post-Training。
 
 上述过程会反复迭代几次，每次的流程相同，不同的地方在于拒绝采样阶段用来对给定Prompt产生回答的LLM模型，会从上一轮流程最后产生的若干不同DPO模型（不同超参等）里选择最好的那个在下一轮拒绝采样阶段给Prompt生成答案。很明显，随着迭代的增加DPO模型越来越好，所以拒绝采样里能选出的最佳答案质量越来越高，SFT模型就越好，如此形成正反馈循环。
@@ -185,126 +187,464 @@ CP并行策略的改进
 可以看出，尽管RLHF 和DPO两种模式都包含RM，但是用的地方不一样，RLHF是把RM打分用在PPO强化学习阶段，而LLaMA 3则用RM来筛选高质量SFT数据。而且因为拒绝采样的回答是由LLM产生的，可知这里大量采用了合成数据来训练SFT模型。
 
 
-特殊token：使用新的多消息聊天协议的工具使用，该协议使用各种特殊标头和终止令牌。
+**特殊token**：使用新的多消息聊天协议的工具使用，该协议使用各种特殊标头和终止令牌。
 
-奖励建模
-- 对于奖励建模，训练目标是相同的，只是由于收益递减而删除了损失中的边际项
-- 过滤掉具有相似响应的样本后的偏好数据进行奖励模型的训练
-- 每个偏好排序样本都有两个或三个响应，其排序为：已编辑 > 已选择 > 已拒绝。除了好坏标注之外，增加一路对chosen的人工编辑，作为最优秀的质量样本。
-- 在训练期间将提示和多个响应连接成一行，并且响应随机打乱。在我们的消融中，这种方法提高了训练效率，而不会损失准确性。
 
-- 对于拒绝抽样，选择 K（范围从 10 到 30）个输出。
-- PagedAttention 用于实现有效的拒绝采样
+**奖励建模**
+- 和Llama-2相比，这次RM的一个变化是移除了训练时加入的margin term（用于把chosen和rejected response区分得更开），因为随着模型规模的增大，加入margin term收益越来越小了。
+- 同Llama-2一样，preference data中只有区分度比较大的数据对用于训练RM。
+- 过滤掉具有相似响应的样本后的偏好数据
+- 数据上，除了常规的chosen和rejected response之外，还引入了第三种 -- “edited response”，即在chosen的基础上通过（人工）编辑，进一步提升这条response的质量。这样每条ranking sample就可能有3条response（edited > chosen > rejected）。
+- 训练的时候，prompt和对应的多条随机打乱的response拼接在一起训练（prompt + resp_1 + resp_2 + resp_3），这和通常的做法，即每个response都拼接prompt有些不同（prompt + resp_1, prompt + resp_2, prompt + resp_3）。从结果上来看，都拼接到一起在accuracy上没有什么损失，而训练效率更高。
 
-监督微调
-- 对人工注释的提示用奖励模型进行拒绝采样，与真实数据和合成数据相结合得到SFT数据
+
+**监督微调**
+- 训练好的RM模型会用于rejection sampling，对human annotation prompt的不同生成结果进行过滤。与真实数据和合成数据相结合得到SFT数据
 - masking loss on prompt tokens
-- 使用 1e-5 的 lr 训练 8.5K 到 9K 步
+- 使用 1e-5 的 lr 训练 8.5K 到 9K 步。实践上这样的参数设置在多轮的post-training中都能保持较好的效果。
 
 直接偏好优化
-- 使用之前对齐轮次中表现最佳的模型收集偏好数据
+- 会用在上一轮post-training得到的最佳模型收集偏好数据对，这样能使得偏好数据的分布和强化学习时的policy model更一致。
+- 除了DPO以外，Meta也尝试了一些on-policy的方案，如PPO。但是相对来说，DPO消耗更少的计算资源，并且效果也更好，特别是在instruction following的能力上，所以还是选择在post-training使用DPO。
 - lr=1e-5 和 β=0.1
-- 屏蔽了诸如标题和终止标记之类的特殊标记loss以稳定训练。这些标记在chosen和rejected的响应中的同时存在会导致学习目标冲突。
-- 对chosen应用一个额外的负对数似然 (NLL) 损失项，其缩放系数为 0.2。（在IRPO论文里提到的方法，类似正负样本的精细化调权手段）
+- Masking out formatting tokens in DPO loss。把特殊token比如header和termination token屏蔽，不用于计算训练loss。因为使用这些token计算loss会使得模型在生成时，出现如复读机或者在不合适的地方截断的情况。这可能就是因为chosen repsponse和rejected response同时包含的这些特殊token，让模型在训练时要同时增大和较小它们的likelihood，导致冲突。
+- Regularization with NLL loss。除了DPO的常规loss，Meta额外加入了NLL损失项，这和《Iterative reasoning preference optimization》的做法类似，类似正负样本的精细化调权手段。这也有点像PPO里加入next token prediction loss，能使训练更加稳定，并能保持SFT学到的生成格式，并保持chosen response的log probability不下降（《Smaug: Fixing failure modes of preference optimisation with dpo-positive》）。其缩放系数为 0.2。
 
 模型融合
-- 权重平均，在RM, SFT, or DPO各个阶段对使用了不同数据/超参数的模型进行融合
+- 参考《Averaging weights leads to wider optima and better generalization》《Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time》和《Branch-train-merge: Embarrassingly parallel training of expert language models》，在RM、SFT和DPO阶段，分别把“用不同版本的数据和超参训练得到模型”进行平均，以获得最终模型。
 
 迭代式训练6次
 - 同LLama2，最新的模型采样最新的偏好数据，武当总云梯，左脚踩右脚
 
-偏好数据
-- 我们的偏好数据注释过程类似于 Llama 2。我们在每轮之后部署多个模型进行注释，并针对每个用户提示从两个不同模型中采样两个响应。这些模型可以使用不同的数据混合和对齐方法进行训练，从而允许不同的能力强度（例如，代码专业知识）和增加的数据多样性。我们要求注释者根据他们更喜欢所选响应而不是被拒绝的响应的程度，通过将其分类为四个级别之一来评估他们的偏好强度：明显更好、更好、稍微更好或稍微更好。我们还在偏好排名之后加入了编辑步骤，以鼓励注释者进一步改进首选响应。注释者直接编辑所选响应或通过反馈提示模型以完善其自己的响应。
+**偏好数据**
+
+首先，在每轮训练完后部署一批“在不同数据、超参、训练策略上训练”得到的模型，这些模型有各自的特点，比如有些擅长写代码，有些擅长数学推理。
+
+对于每个user prompt，从这些模型里采样两个response。之后标注人员给每对chosen和rejected response分成4类：
+
+- significantly better
+    
+- better
+    
+- slightly better
+    
+- marginally better
+    
+
+过程中标注人员也可以对chosen response进一步编辑，获得更好的response。
+
+下表给出了偏好数据的的统计：
 
 ![](img/Pasted%20image%2020240727114410.png)
 
-SFT Data
-- 人工注释收集的提示，使用拒绝采样（用最新的模型生成 K（范围从 10 到 30）个输出，奖励模型选出最好的）收集响应。
-- PagedAttention 用于实现高效的拒绝采样
-- 针对特定功能的合成数据
-- 少量人工整理数据
+相比Llama-2的数据，Llama-3所用的prompt和response的长度都有所增加，这说明Llama-3的任务复杂度提升了。
+
+在每一轮的post-training之后，都会分析当前版本模型效果不好的领域，并针对这些领域提升prompt的复杂度。
+
+每轮post-training中，训练RM的时候，会使用所有来自不同轮所收集到的偏好数据。而DPO训练则只会用到最新的偏好数据。
+
+对于RM和DPO，都只使用分类为significantly better 和 better的数据进行训练，而另外两类质量相近的偏好数据对则被丢弃。
+
+
+**SFT Data**
+
+SFT数据主要有这几个来源：
+
+- 人工收集的prompt，以及对应的通过拒绝采样得到的response
+    
+- 特定领域的合成数据（后面capacities部分会讲到）
+    
+- 少量人类真实数据
+    
+
+1、拒绝采样（RS）
+
+在RS阶段，每个prompt会从“最新的/领域最佳的chat模型”采样K个回复（一般10~30个），然后用RM选出最佳回复（《Constitutional AI: harmlessness from AI feedback》）。
+
+在靠后轮次的post-training里，RS引入了控制风格、格式、语气等特性的system prompt以更精细地控制数据质量。不同的领域（如代码、推理、工具使用等）可能会采用不同的prompt。
+
+PagedAttention 用于实现高效的拒绝采样
+
+2、数据组成
+
+下表给出了helpful数据中每个大类别的数据统计：
 
 ![](img/Pasted%20image%2020240727114525.png)
 
-数据清洗：在早期几轮中，我们观察到数据中常见的一些不良模式，例如过度使用表情符号或感叹号。因此，我们实施了一系列基于规则的数据删除和修改策略来过滤或清理有问题的数据。例如，为了缓解过度道歉的语气问题，我们识别过度使用的短语（例如“我很抱歉”或“我道歉”），并仔细平衡数据集中此类样本的比例。
+数据清洗：在post-training的前几轮中，研究人员发现数据中混入了一些包含过量emoji或者感叹号之类的数据，因此用专门的规则对发现的低质量pattern进行了清洗。此外有些数据还有overly-apologetic（比如模型经常回复“我很抱歉”）的问题，也会有规则识别如“I‘m sorry”这样的内容，并降低这类数据的比例。
 
 数据裁剪：我们还应用一系列基于模型的技术来删除低质量的训练样本并提高整体模型性能
 - 主题分类。微调llama3 8B。包括粗粒度和细粒度。
-- 质量打分。用reward模型和 “model-as-judge”的方法得到分数。取 RM 分数前四分之一的数据是高质量的。“model-as-judge”对每个样本进行三分制评分：一般英语数据（准确性、指令遵循和语气/表达）；编码数据（错误识别和表达）采用两分制评分用户意图），并将获得最高分数的样本视为高质量。 RM 和基于 Llama 的分数具有很高的分歧率，我们发现结合这些信号可以在我们的内部测试集上产生最佳的召回率。最终，我们选择由 RM 或基于 Llama 的过滤器标记为高质量的示例。
+- 质量打分。用reward模型和 “model-as-judge”的方法得到分数。取 RM 分数前四分之一的数据是高质量的。“model-as-judge”对每个样本进行三分制评分（使用特定的prompt（不同领域prompt可能不同））：一般英语数据（准确性、指令遵循和语气/表达）；编码数据（错误识别和表达）采用两分制评分用户意图），并将获得最高分数的样本视为高质量。 RM 和基于 Llama 的分数具有很高的分歧率，我们发现结合这些信号可以在我们的内部测试集上产生最佳的召回率。最终，我们选择由 RM 或基于 Llama 的过滤器标记为高质量的示例。
 - 难度打分。因为我们还对模型更复杂的示例的优先级感兴趣，所以我们使用两种难度度量对数据进行评分：Instag（Lu 等人，2023）和基于 Llama 的评分。对于 Instag，我们提示 Llama 3 70B 对 SFT 提示执行意图标记，其中更多意图意味着更多复杂性。我们还提示 Llama 3 以三分制衡量对话的难度（Liu et al., 2024c）。
 - 语义去重：我们首先使用 RoBERTa 对完整的对话进行聚类（Liu et al., 2019b），并在每个聚类中按质量分数 × 难度分数对它们进行排序。然后，我们通过迭代所有排序的示例来进行贪婪选择，并且仅保留最大余弦相似度小于集群中迄今为止看到的示例的阈值的示例。
 
 ## 能力提升
 
 ### 代码
-我们培训一位代码专家，用他在后续几轮培训后收集高质量的代码人工注释。这是通过对主要预训练运行进行分支并对主要 (>85%) 代码数据的 1T 令牌组合进行持续预训练来实现的。事实证明，对特定领域数据的持续预训练对于提高特定领域的性能是有效的（Gururangan 等人，2020）。我们遵循类似于 CodeLlama 的方法（Rozière 等人，2023）。对于最后几千个训练步骤，我们执行长上下文微调 (LCFT)，以在高质量的回购级代码数据组合上将专家的上下文长度扩展到 16K 个令牌。最后，我们遵循第 4.1 节中描述的类似的训练后建模方法来调整该模型，但主要针对代码的 SFT 和 DPO 数据混合除外。该模型还用于编码提示的拒绝采样（第 4.2.2 节）。
 
-在开发过程中，我们发现了代码生成中的关键问题，包括难以遵循指令、代码语法错误、错误的代码生成以及难以修复错误。虽然密集的人工注释理论上可以解决这些问题，但合成数据生成提供了一种成本更低、规模更大的补充方法，且不受注释者专业水平的限制。因此，我们使用 Llama 3 和代码专家来生成大量的合成 SFT 对话框。总共生成了2.7M的合成数据用于SFT
-- Synthetic data generation: execution feedback. 当使用更大、更强大的模型生成的数据进行训练时，8B 和 70B 模型显示出显着的性能改进。然而，我们最初的实验表明，使用 Llama 3 405B 自己生成的数据进行训练并没有什么帮助（甚至会降低性能）。为了解决这一限制，我们引入了执行反馈作为事实来源，使模型能够从错误中学习并保持在正轨上。特别是，我们生成约一百万个合成编码对话的大型数据集
-- Synthetic data generation: programming language translation.
-- Synthetic data generation: backtranslation.
+代码上，要提升的目标语言包括：Python, Java, Javascript, C/C++, Typescript, Rust, PHP, HTML/CSS, SQL, bash/shell。
 
-System prompt steering during rejection sampling. 在拒绝抽样过程中，我们使用了代码特定的系统提示来提高代码的可读性、文档记录、彻底性和特异性。系统提示如何帮助提高生成的代码质量的示例 - 它添加了必要的注释、使用信息更丰富的变量名称、节省内存等。
+代码能力提升的方法包括训练code expert、生成数据用于SFT训练、通过system prompt调整格式以及使用quality filter过滤低质量数据。
 
-Filtering training data with execution and model-as-judge signals. 
+#### Expert training
+
+首先，在主预训练模型的基础上，增加1T的代码继续预训练，其中>85%的样本是代码数据。然后采用和CodeLlama类似的方法训练code expert。
+
+在训练的最后几千个step，会加入repo-level的长代码数据，以提升code expert的长窗口能力（ 16K）。
+
+继续预训练之后会采用前面提到的方法进行post-training，只是所用数据主要是代码数据。
+
+得到的code expert用于：
+
+- 在主模型的post-training中获取高质量的代码数据
+    
+- code prompt的rejection sampling
+    
+
+#### 合成数据
+
+生成的代码会存在一些问题，包括难以遵循指令、语法错误、生成错误代码和难以修复错误等。
+
+虽然人工标注理论上可以解决这些问题，但合成数据的成本更低、更方便扩展到更大规模，因此还是使用Llama 3和code expert生成大量SFT合成数据。
+
+#### 代码生成的方法
+
+基于以下三个方法，一共生成了超过2.7M的代码SFT数据。
+
+1、执行反馈
+
+Llama-3的8B和70B模型在用更大的模型（比如405B）所生成的数据训练时，获得了明显的收益。但是405B模型在用自己生成的数据训练之后（毕竟这个规模下很难有更大的模型了），不仅没有提升，甚至还有些退化。
+
+为了解决这个问题，Meta引入了execution feedback，来对代码进行正确性校验，并让模型从错误中学习。
+
+具体来说，用以下的过程获得了1M左右的训练数据：
+
+（1）生成问题描述
+
+这一步生成大量涵盖广泛主题的编程问题描述。为了增加多样性，从不同的来源随机抽取代码片段，然后根据代码片对生成对应的问题描述。（《Magicoder: Empowering code generation with oss-instruct》）
+
+（2）Solution生成
+
+这一步用Llama-3生成代码问题的答案。
+
+这个过程中，会在prompt里加入优质代码的general rule，并要求模型在注释里给出思路。这两个做法能有效促进代码质量的提升。
+
+（3）正确性分析
+
+检查生成的solution正确性包括两个方面。
+
+一是静态分析，即通过parser和linter保证基础的语法正确性。
+
+另一个是动态检查，通过让模型给代码生成单元测试并执行来判断代码的正确性。
+
+（4）错误反馈 & 迭代修正
+
+对于有问题的代码，并不是直接舍弃，而是让模型修改优化。
+
+通过prompt把错误信息给到模型，不断迭代修改，直到代码通过所有单元测试。
+
+原数据里大概有20%的样本通过这样的修改才通过测试，说明如果不对正确性进行校验的话，会在训练数据里引入大量的错误信息。
+
+（5）微调 & 迭代优化
+
+微调迭代了多个round，每个round产生的模型都用来生成新的数据给下一次迭代训练。
+
+2、programming language translation
+
+不同语言的代码数据量有不平衡的情况，因此Meta基于Llama-3把高频语言的代码“翻译”成低频语言的数据，并通过syntax parsing, compilation, execution等来保证翻译数据的质量。（类似《Breaking language barriers in multilingual mathematical reasoning: Insights and observations》的思路）
+
+3、backtranslation
+
+在代码相关的能力如documentation、debugging和explanation上，执行+反馈的做法并不适用。
+
+因而采用一个多步方法backtranslation，从代码片段开始：
+
+- Generate：让模型先生成，比如文档，或者代码功能解释
+    
+- Backtranslate：再要求用生成的文档或者功能说明生成代码
+    
+- Filter：如果第二步生成的代码和原代码一致性够高，则说明生成的文档/代码解释好用，可作为训练数据
+    
+
+通过backtranslation，大约获得了1.2M的documentation、debugging和explanation等数据。
+
+#### 其他
+
+1、system prompt
+
+使用代码专用的system prompt可以提高生成数据的质量，下图是一个样例，右边多了comment，变量名更为合理，还更省空间。
+
+![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/Aj0FZbibW464iactcJwYsUrZcBMI7BgI5ZPcgBlGP4CyfD2ghlBrzBibr4gN47MickYydicpeAatcLhgsEBlWJeBpuQ/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+2、Filtering training data with execution and model-as-judge signals
+
+rejection sampling的过程会遇到有问题的代码，但是检验这些代码并不是想象中的那么straightforward，比如生成的内容可能包含了不能执行的内容（如伪代码），或者用户要求生成的是完整代码的一个小片段（无法单独执行），这些都无法直接通过单元测试来检验。
+
+因此使用“model-as-judge”的方法，即通过Llama-3对生成内容做正确性和风格好坏的二分类，只有当二者都被分为好，对应的代码数据才会被使用。
+
+但是这种方法会倾向于保留简单任务（因为复杂的任务更容易出现问题），导致模型在复杂问题上的能力受损。因此研究人员还专门人为地修改了困难任务上的response，直到这些response符合Llama-3的要求。
 
 
 ### 多语言
 
-为了收集更高质量的非英语人工注释，我们通过对预训练运行进行分支并继续对包含 90% 多语言标记的数据组合进行预训练来训练多语言专家。然后，我们该专家进行后训练。然后使用该专家模型收集非英语语言的更高质量注释，直到预训练完全完成。
+Llama-3支持8种语言：German, French, Italian, Portuguese, Hindi, Spanish, Thai。
 
-我们的多语言 SFT 数据主要来自下述来源。总体分布是 2.4% 的人工注释、44.2% 来自其他 NLP 任务的数据（改写成对话）、18.8% 的拒绝采样数据和 34.6% 的翻译推理数据。
+#### Expert training
+
+用包含超过90%的多语言（即除英语以外的语言）的data mix，对主预训练模型做继续预训练，之后再进行同code expert类似的post-training。得到的多语言expert model用于收集高质量的非英文数据。
+
+#### 多语言数据收集
+
+多语言的SFT数据中，包含：
+
+- 2.4%的人类数据
+    
+- 44.2%的NLP task数据
+    
+- 18.8%来自rejection sampling
+    
+- 34.6%来自translated reasoning data
+    
+
+1、人类数据
+
+这部分都是从native speaker收集的，大部分包含开放的多轮对话，代表了真实世界的数据。
+
+2、NLP task
+
+- 把常规NLP任务改写成对话格式。
+    
+- 为了提升语言的alignment，使用了来自《Parallel global voices: a collection of multilingual corpora with citizen media stories》和Wikimedia的parallel text。
+    
+- 用LID based filtering和Blaser2.0 （《Seamlessm4t—massively multilingual & multimodal machine translation》）清洗掉低质量数据。
+    
+
+3、拒绝采样数据
+
+相比英文数据，多语言数据的RS做了几点改动：
+
+- Generation：在post-training的前几轮中，使用0.2~1.0的随机温度来生成回复，以提升多样性。而在最后一轮中，则使用0.6的温度，以保持生成结果中创新性和流畅性的平衡。
+    
+- Selection：在RM模型之前，对prompt和response做了语言检查，保证语言的匹配性（比如不会出现一种语言问，另一种语言回答，除非明确要求）。
+    
+
+4、翻译数据
+
+大部分数据都没有做翻译，以避免引入翻译腔等问题，除了一个例外：synthetic quantitative reasoning data。
+
+这类数据的语言描述通常比较简单，所以翻译之后没有什么质量问题，而推理数据可以帮助改善多语言的定量推理能力。
 
 
 ### 数学和推理
 
-Addressing the lack of prompts: 我们从数学上下文中获取相关的预训练数据，并将其转换为问答格式，然后可用于监督微调。此外，我们还确定了模型表现不佳的数学技能，并积极从人类那里获取提示来教授模型这些技能。为了促进这一过程，我们创建了数学技能分类（Didolkar et al., 2024），并要求人们相应地提供相关提示/问题。
+reasoning被定义为“执行多步计算并得出最终正确答案”的能力。
 
-Augmenting training data with step-wise reasoning traces： 我们使用 Llama 3 为一组提示生成分步解决方案。对于每个提示，模型都会产生不同数量的response。然后根据正确答案过滤这些response（Li et al., 2024a）。我们还进行自我验证，其中 Llama 3 用于验证特定的逐步解决方案对于给定问题是否有效。此过程通过消除模型未产生有效推理轨迹的实例来提高微调数据的质量。
+reasoning能力的训练有几个挑战：
 
-Filtering incorrect reasoning traces: 我们训练结果和逐步奖励模型（Lightman et al., 2023; Wang et al., 2023a）来过滤中间推理步骤不正确的训练数据。这些奖励模型用于剔除无效分步推理的数据，确保用于微调的高质量数据。对于更具挑战性的提示，我们使用蒙特卡罗树搜索（MCTS）和学习的逐步奖励模型来生成有效的推理轨迹，进一步增强高质量推理数据的收集
+- 缺少prompt：这种高难度的任务数据相对较少
+    
+- 缺少正确的CoT：reasoning任务一般有多步，包含这些多步CoT的正确答案的数据也不多
+    
+- 错误的中间步骤：基于模型生成的CoT很容易有错误的中间步骤
+    
+- 使用外部工具：教会模型使用外部工具能极大提升效果，但这并不容易
+    
+- 训练与推理的差异：推理的时候可能需要在中间和用户进行交互获取反馈，这可能和训练数据不完全一致
+    
 
-Interleaving code and text reasoning: 我们提示 Llama 3 通过文本推理和相关 Python 代码的结合来解决推理问题（Gou 等人，2023）。以代码执行作为反馈信号，消除推理链无效的情况，保证推理过程的正确性。
+针对这些问题，Meta给出以下解决方案。
 
-Learning from feedback and mistakes: 为了模拟人类反馈，我们利用不正确的generation（即导致错误推理轨迹的generation）并通过提示 Llama 3 来执行错误纠正得到正确的generation
+1、解决缺少prompt的问题
+
+为了解决缺少prompt的问题，研究人员从数学相关的context抽取数据片段并转换为对话形式，用于SFT。
+
+对于模型表现不好的数学领域，专门收集了人类的prompt。为此构建了数学相关的分类体系（《Metacognitive capabilities of llms: An exploration in mathematical problem solving》），并让人类专家提供相应的prompt和问题。
+
+2、Augmenting training data with step-wise reasoning traces
+
+就是用Llama-3为一系列的prompt生成step-by-step的解决方案。
+
+对于每个prompt，模型会生成不同数量的结果。这些生成结果随后根据正确答案进行筛选（《Common 7b language models already possess strong math capabilities》）。
+
+此外还进行了自我验证，即使用Llama-3来验证给定的步骤解决方案对于特定问题是否有效。
+
+3、Filtering incorrect reasoning trace
+
+训练outcome RM和stepwise RM来把中间过程错误的数据清洗掉（《Let’s verify step by step》，《Math-shepherd:Verify and reinforce llms step-by-step without human annotations》）。
+
+对于更难的prompt，使用Monte Carlo Tree Search (MCTS)和stepwise RM来生成有效的推理轨迹（《Monte carlo tree search boosts reasoning via iterative preference learning》）。
+
+4、Interleaving code and text reasoning
+
+在文本推理之外，加上python code的执行反馈来对结果正确性做进一步确认（《Tora: A tool-integrated reasoning agent for mathematical problem solving》）。
+
+5、Learning from feedback and mistakes
+
+为了模仿人类的反馈，使用包含错误的生成结果，并要求模型给出修正（《Learning from mistakes makes llm better reasoner》，《Generating sequences by learning to self-correct》，《Self-refine: Iterative refinement with self-feedback》）。
 
 ### 长文本
 
-仅使用短上下文数据天真地应用我们现有的 SFT 配方会导致预训练的长上下文能力显着下降，这凸显了将长上下文数据合并到我们的 SFT 数据组合中的必要性。然而，在实践中，由于阅读冗长的上下文非常乏味且耗时，因此让人类注释此类示例在很大程度上是不切实际的，因此我们主要依靠合成数据来填补这一空白。我们使用 Llama 3 的早期版本来生成基于关键长上下文用例的合成数据：（可能是多回合）问答、长文档摘要以及代码存储库推理。
+在预训练的最后阶段，训练窗口从8k扩展到128k。
 
-我们根据序列长度（16K、32K、64K 和 128K）进一步对这些合成生成的样本进行分类，以实现更细粒度的输入长度定位。通过仔细的消融，我们观察到，将综合生成的长上下文数据的 0.1% 与原始短上下文数据混合可以优化短上下文和长上下文基准测试的性能。
+而和预训练相似，在post-training阶段也需要仔细平衡模型的短文本能力和长文本能力。
 
-我们观察到，只要 SFT 模型适用于长上下文任务，在 DPO 中仅使用短上下文训练数据不会对长上下文性能产生负面影响。我们怀疑这是因为我们的 DPO 方案的优化器步骤比 SFT 少。鉴于这一发现，我们在长上下文 SFT 检查点之上保留了 DPO 的标准短上下文配方。
+1、SFT
+
+如果直接把常规的、较短的SFT数据应用在预训练模型上做SFT，会使得预训练阶段得到的长文本能力退化，因此SFT阶段必须加上长数据。
+
+由于让人类来给出超长（128k）的SFT数据，难度太大耗时太长，并不现实，所以主要还是依赖合成数据。
+
+用早期的Llama-3版本来生成长文本关键场景的数据，比如多轮问答、长文本摘要和代码仓库级别的reasoning。
+
+（1）Question answering
+
+从预训练数据里筛选一些长文档，并把它们切分为8k的片段，之后让（短窗口）模型对随机选择的片段生成QA数据。长文本训练时则是把完整的文档和相关的QA作为输入。
+
+（2）Summarization
+
+摘要采用层次化的方式，即先用8k的模型对长文档的每个8k片段进行摘要，多个片段摘要合在一起再进行二次摘要，获得最终结果。
+
+此外，Meta还基于文档摘要生成QA对，要求模型回答那些需要对文档做全面理解的问题。
+
+（3）Long context code reasoning
+
+首先解析Python文件，识别导入语句并确定它们的依赖关系。
+
+接下来，对那些被至少五个其他文件使用的文件，随机删除一个，训练时要求模型识别哪些文件依赖于被删除的文件，并生成所需的缺失代码。
+
+以上这些数据都被分成16K, 32K, 64K和128K的长度，方便进行细粒度的微调。
+
+另外，消融实验发现，在原SFT数据中混入0.1%的这些合成的长文本，对模型的短文本和长文本能力都有提升。
+
+2、DPO
+
+实验发现DPO阶段仅使用短文本并不会对模型长文本能力造成明显影响，可能是因为DPO的更新步数比较少，因此DPO没有特意增加长文本数据。
+
 
 ### 工具使用
 
-Search engine.
+使用工具的能力可以拓展模型的能力边界，让模型从单纯的聊天机器人变成有用的智能助手。Llama-3被训练使用以下core tools：
 
-Python interpreter.
+- 搜索引擎：Brave Search
+    
+- Python interpreter：用于执行生成的代码
+    
+- Mathematical computational engine：Wolfram Alpha API
+    
 
-Mathematical computational engine.
+当用户的query需要用到多个工具时，Llama-3可以给出plan，对工具进行串行调用，并在每次调用之后进行推理整合。
 
-模型能够在聊天设置中使用这些工具来解决用户的查询，包括在多轮对话中。如果一个查询需要多次工具调用，模型可以编写分步计划，按顺序调用工具，并在每次工具调用后进行推理。我们还改进了 Llama 3 的零次工具使用功能 - 给定上下文中可能未见过的工具定义和用户查询，我们训练模型以生成正确的工具调用。
+除了core tool之外，Llama-3还有zero-shot的工具调用能力，能根据query调用此前没见过的用户定义的工具。
 
-我们依靠人类注释和偏好来教 Llama 3 使用工具。
+1、Implementation
+
+Meta将core tools实现为具有不同方法的Python对象。
+
+而zero-shot tool可以作为带有描述、文档（使用示例）的Python函数来实现，模型只需要函数的签名和文档字符串作为上下文来生成适当的调用。
+
+函数的定义和调用都转换为json格式，例如用于Web API调用。
+
+所有工具调用都由Python解释器执行，且需要在Llama-3的system prompt中启用（即告诉模型可以使用哪些工具能力）。core tool可以在system prompt中单独启用或禁用。
+
+2、Data collection
+
+与ToolFormer不同，Llama-3主要依赖人类的标注数据和偏好数据来训练。
+
+人类标注员对模型给出的多个message进行排序，如果两个都不好，就手动编辑一个好的，并让对话继续。
+
+工具使用的训练没有使用rejection sampling，因为实践上来看这样做没有效果。
+
+为了减少标注的人力投入，会先进行基本的finetune让模型具备基本的工具使用能力，并且会先从单轮对话开始，慢慢迭代到多轮对话。
+
+3、Tool datasets
+
+通过以下方法来获取数据。
+
+（1）Single-step tool use
+
+先用few-shot prompt让模型生成core tools的调用，之后要求模型基于用户query和调用结果回答问题。
+
+顺序如下：system prompt, user prompt, tool call, tool output, final answer。
+
+生成的数据里有30%的数据有诸如无法执行，或者有格式问题，就被清除掉了。
+
+（2）Multi-step tool use
+
+先让Llama-3生成至少需要调用2次core tool（可以相同也可以不同）的prompt，然后再用few shot prompt让Llama-3生成一个由交错推理步骤和工具调用组成的解决方案，和ReAct类似。下图是一个多步工具调用的例子：
+
+![](img/Pasted%20image%2020240729120624.png)
+
+
+（3）File uploads
+
+使用这些格式的文件：.txt, .docx, .pdf, .pptx, .xlsx, .csv, .tsv, .py, .json, .jsonl, .html, .xml。
+
+基于上传的文件，要求模型进行摘要生成、查找并修复错误、优化代码片段、执行数据分析和可视化等任务。下图是一个示例
+
+![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/Aj0FZbibW464iactcJwYsUrZcBMI7BgI5ZvhxWbSnyiaEovWWGKs44Kekum6zMdnMRhXA5NtA6eUHdDhpibPm5Vd3g/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+在使用这些合成数据进行了微调之后，Meta进一步收集了多样化且具有挑战性的任务数据，包括多轮交互、三个以上步骤的工具使用，以及工具调用未能得到满意答案的case。
+
+为了让模型避免对简单的query调用工具，使用了简单数学或问答数据集的query，及其不使用工具的response，但在system prompt中激活了工具。这样模型就能学到，即使工具时available的，但是对于简单问题可以不调用工具，避免了工具滥用。
+
+4、Zero-shot tool use data
+
+通过在一个大型的多样化（合成）数据集上微调，提高了Llama-3的zero-shot工具使用能力（函数调用）。
+
+数据包括函数定义、用户query和相应的调用。然后另一批从未见过的工具上进行评测。
+
+（1）Single, nested, and parallel function calling
+
+函数的调用情况有多重，可以是简单的单次调用，也可以是嵌套的（即将一个函数调用作为另一个函数的参数），或者是并行的（即模型返回一个独立的函数调用列表）。
+
+要生成多样化的工具调用数据并不容易（《Toolverifier: Generalization to new tools via self-verification》），因此通过在Stack里（《The stack: 3 tb of permissively licensed source code》）进行挖掘，确保函数调用和定义是真实的。即从里面提取出真实的函数调用和定义，过滤掉如文档有问题或者无法执行的函数，之后用Llama-3生成函数调用的query。
+
+（2）Multi-turn function calling
+
+参照《Api-bank: A comprehensive benchmark for tool-augmented llms》的做法，为带有函数调用的多轮对话生成了合成数据。
+
+通过使用不同的prompt，让Llama-3扮演不同的agent，分别用于生成domains, APIs, user queries, API calls, 和 responses。
 
 ### 事实性
 
-我们遵循的原则是，训练后应该使模型“知道它知道什么”，而不是添加知识（Gekhman 等人，2024；Mielke 等人，2020）。我们的主要方法涉及生成数据，使模型生成与预训练数据中存在的事实数据子集保持一致。为了实现这一目标，我们开发了一种知识探索技术，利用 Llama 3 的上下文能力。该数据生成过程涉及以下过程：
+Hallucination依然是大模型的一个问题。即使在模型不怎么了解的领域，模型也会给出很自信的回答，这就会给大模型的使用带来风险。
 
-1. Extract a data snippet from the pre-training data. 
-2. Generate a factual question about these snippets (context) by prompting Llama 3 
-3. Sample responses from Llama 3 to the question 
-4. Score the correctness of the generations using the original context as a reference and Llama 3 as a judge 
-5. Score the informativeness of the generations using Llama 3 as a judge 
-6. Generate a refusal for responses which are consistently informative and incorrect across the generations, using Llama 3
+Meta遵循的原则是，post-training应该使模型 “know what it knows” ，而不是增加知识（《Does fine-tuning llms on new knowledge encourage hallucinations?》，《Linguistic calibration through metacognition: aligning dialogue agent responses with expected correctness》）。
 
-我们使用知识探测生成的数据来鼓励模型只回答它所了解的问题，并拒绝回答那些它不确定的问题。此外，预训练数据并不总是与事实一致或正确。因此，我们还收集了一组有限的带标签的事实数据，这些数据涉及敏感主题，其中事实矛盾或不正确的陈述普遍存在。
+主要方法是生成数据 -- 生成与预训练数据中存在的实际数据保持一致的微调数据。
+
+为了实现这一点，Meta开发了一种基于Llama-3的in-context能力的knowledge probing技术。
+
+这个数据生成过程包括以下步骤：
+
+- 从预训练数据抽取一个片段
+    
+- 用Llama-3对这个片段生成一个事实性问题
+    
+- 用Llama-3采样这个问题的答案
+    
+- 用原片段的context对生成答案的正确性进行打分
+    
+- 对生成结果的informativeness进行打分
+    
+- 用Llama-3生成对“信息丰富但错误的response”的refusal
+    
+
+Meta使用knowledge probing生成的数据，来鼓励模型只回答它有知识的问题，并拒绝回答它不确定的问题。
+
+此外，预训练数据并不总是一致或正确的。因此还专门收集了一个数据集，处理那些事实矛盾或不正确陈述普遍存在的敏感话题。
 ### 可控性
 
-对于 Llama 3，我们专注于通过带有自然语言指令的系统提示来增强其可操纵性，特别是在响应长度、格式、语气和角色/角色方面。
+可操控性是指引导模型的行为和结果以满足开发者和用户需求的能力。
 
-我们通过要求注释者为 Llama 3 设计不同的系统提示来收集一般英语类别中的可操纵性偏好样本。然后注释者与模型进行对话，以评估它们在对话过程中遵循系统提示中定义的指令的一致性。我们在下面展示了一个用于增强可操纵性的自定义系统提示示例：
+由于Llama-3是一个通用的基础模型，它应该具备在不同使用场景下的可操控性。
+
+Meta主要通过system prompt来增强Llama-3的可操控性，特别是在response长度、格式、语气等方面。
+
+数据收集上，首先要求annotator为Llama-3设计不同的system prompt，然后，annotator与模型进行对话，评估模型在对话过程中遵循system prompt中定义指令的一致性，并收集偏好数据。
+
+以下是一个增强可操控性的system prompt例子：
 
 You are a helpful and cheerful AI Chatbot that acts as a meal plan assistant for busy families. The family consists of 2 adults, 3 teenagers, and 2 preschoolers. Plan two or three days at a time and use leftovers or extra ingredients for the second day’s plan. The user will let you know if they want two or three days. If they don’t, assume three days. Each plan should include breakfast, lunch, snack, and dinner. Ask the user if they approve of the plan or need adjustments. After they approve provide a grocery list with family size in mind. Always keep family preferences in mind and if there’s something that they don’t like provide a substitution. If the user is not feeling inspired then ask them what’s the one place they wish they could visit on vacation this week and then suggest meals based on that location’s culture. Weekend meals can be more complex. Weekday meals should be quick and easy. For breakfast and lunch, easy food like cereal, English muffins with pre-cooked bacon, and other quick easy foods are preferred. The family is busy. Be sure to ask if they have essentials and favorites on hand like coffee or energy drinks so they don’t forget to buy it. Remember to be budget-conscious unless it’s a special occasion.
 
@@ -387,6 +727,12 @@ You are a helpful and cheerful AI Chatbot that acts as a meal plan assistant for
 
 ## 总结
 
+- Llama-3不仅仅是一个模型，而且是一个巨大的工程
+    
+- 大量的工作仍然是在数据上，而且post-training的权重提高了许多
+    
+- 对各个领域数据的细致整理，也提醒开发者们，目前阶段的“通用能力”说到底还是多任务训练，而多任务，就需要一个领域一个领域踏实优化
+
 不断提升小模型效果的三个关键因素：
 
 **第一个武器是预训练阶段增加训练数据数量和质量**。
@@ -407,6 +753,8 @@ You are a helpful and cheerful AI Chatbot that acts as a meal plan assistant for
 [ LLama 405B 技术报告解读](https://mp.weixin.qq.com/s/8RYqgfuYga0YU8H8XqNNOA)
 
 [Meta Llama 3.1-405B AI 模型多项跑分超越 GPT-4o，如何评价该款模型？-张俊林的回答](https://www.zhihu.com/question/662354435/answer/3572364267)
+
+[Llama3.1--post-training要点一览](https://mp.weixin.qq.com/s/wSVi2csJ9weL57iB_2XgCg)
 
 
 
