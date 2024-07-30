@@ -41,16 +41,6 @@ c.ai的bot：[New Arrivals](https://rentry.org/cai-list)
 
 [大模型时代，数据为王，在哪里寻找开源数据集？](https://mp.weixin.qq.com/s/ADGg6OCqjFQ-bLE-X-Q9DA)
 
-## 预训练数据集
-
-“中文互联网语料库”（Chinese Corpora Internet, 简称CCI）首期开放的数据（CCI v1.0.0）规模为 104GB。数据集总体的时间跨度为2001年1月至2023年11月。数据地址： https://data.baai.ac.cn/details/BAAI-CCI
-
-书生·万卷
-
-**wudao数据集**
-
-**MVBNC数据集**
-
 
 ## 微调数据集
 

@@ -4,7 +4,7 @@
 
 ![](img/Pasted%20image%2020230227103950.png)
 
-
+[主流大语言模型的技术原理细节](https://mp.weixin.qq.com/s/P1enjLqH-UWNy7uaIviWRA) 1.比较 LLaMA、ChatGLM、Falcon 等大语言模型的细节：tokenizer、位置编码、Layer Normalization、激活函数等。2. 大语言模型的分布式训练技术：数据并行、张量模型并行、流水线并行、3D 并行、零冗余优化器 ZeRO、CPU 卸载技术 ZeRo-offload、混合精度训练、激活重计算技术、Flash Attention、Paged Attention。3. 大语言模型的参数高效微调技术：prompt tuning、prefix tuning、adapter、LLaMA-adapter、 LoRA。
 
 [LLMs](Models/README.md)
 

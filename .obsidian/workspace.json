@@ -37,7 +37,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/LLaMA/LLaMA3.md",
+                "file": "PLM/CL/Llama-3-SynE/Llama-3-SynE.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e126a12f888ac1dd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "93b1e8a0dab31aa3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DataRelated/NLGDataset/Dataset.md",
                 "mode": "source",
                 "source": false
               }
@@ -92,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -158,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Models/LLaMA/LLaMA3.md",
+                "file": "PLM/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/LLaMA/LLaMA3.md"
+                "file": "PLM/README.md"
               }
             }
           },
@@ -236,8 +260,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "43917687c7c6cd81",
+  "active": "e126a12f888ac1dd",
   "lastOpenFiles": [
+    "PLM/Agent/README.md",
+    "PLM/README.md",
+    "PLM/Agent",
+    "DataRelated/NLGDataset/PretrainDataset.md",
+    "DataRelated/NLGDataset/Dataset.md",
+    "DataRelated/NLGDataset/生成任务.md",
+    "DataRelated/NLGDataset/对话数据集.md",
+    "DataRelated/数据增强的方法.md",
+    "DataRelated/数据不均衡问题.md",
+    "PLM/CL/Llama-3-SynE/Llama-3-SynE.md",
+    "PLM/CL/Llama-3-SynE/img/Pasted image 20240730104647.png",
+    "PLM/CL/Llama-3-SynE/img/Pasted image 20240730104640.png",
+    "PLM/CL/Llama-3-SynE/img",
+    "PLM/Models/LLaMA/LLaMA3.md",
+    "PLM/CL/Llama-3-SynE",
     "PLM/Models/LLaMA/img/Pasted image 20240729134744.png",
     "PLM/Models/LLaMA/img/Pasted image 20240729120624.png",
     "Speedup/训练tips/训练tips.md",
@@ -248,16 +287,10 @@
     "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727222100.png",
     "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727222049.png",
     "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727222039.png",
-    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727222029.png",
-    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727222016.png",
-    "PLM/explore/PhysicsofLanguageModels/img/Pasted image 20240727221953.png",
     "PLM/explore/PhysicsofLanguageModels/img",
     "Speedup/Megatron/Megatron.md",
     "PLM/explore/PhysicsofLanguageModels",
     "Speedup/Megatron/img",
-    "DataRelated/NLGDataset/Dataset.md",
-    "DataRelated/NLGDataset/对话数据集.md",
-    "DataRelated/NLGDataset/生成任务.md",
     "Speedup/README.md",
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "Speedup/DeepSpeed",
@@ -268,22 +301,13 @@
     "common.md",
     "PLM/Alignment/README.md",
     "PLM/Alignment/ArenaLearning/ArenaLearning.md",
-    "PLM/README.md",
-    "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/DataStrategy/RegMix/RegMix.md",
     "PLM/DataStrategy/README.md",
     "PLM/预训练语言模型.md",
     "PLM/关于LLM的一些思考.md",
     "PLM/Models/Nemotron-4/Nemotron-4.md",
-    "PLM/Alignment/RewardModel/RewardModel.md",
     "PLM/DataGen/HelpSteer2",
     "PLM/Alignment/RewardModel",
-    "PLM/Models/LLaMA/LLaMA.md",
-    "PLM/Alignment/ArenaLearning/img",
-    "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
-    "PLM/Alignment/ArenaLearning",
-    "PLM/Alignment/LearnFromFeedback/img",
-    "PLM/Alignment/FollowComplexInstruction/FollowComplexInstruction.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

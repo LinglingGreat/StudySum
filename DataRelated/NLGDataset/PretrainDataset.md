@@ -5,6 +5,8 @@
 
 中文：wudao，wanjuan（中英），BAAI-CCI，tigerbot（中英），skywork，MVBNC（中英）
 
+- “中文互联网语料库”（Chinese Corpora Internet, 简称CCI）首期开放的数据（CCI v1.0.0）规模为 104GB。数据集总体的时间跨度为2001年1月至2023年11月。数据地址： https://data.baai.ac.cn/details/BAAI-CCI
+
 多语言混合：mC4，OSCAR，CC100，BigScienceROOT
 - CulturaX：对mC4和OSCAR进行清洗得到
 
