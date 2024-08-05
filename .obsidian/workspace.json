@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/BaseStruct/GQA/MQA&GQA.md",
+                "file": "Speedup/SentenceVAE/SentenceVAE.md",
                 "mode": "source",
                 "source": false
               }
@@ -154,7 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 243.5
+    "width": 394.5
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -170,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/BaseStruct/GQA/MQA&GQA.md",
+                "file": "Speedup/SentenceVAE/SentenceVAE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/BaseStruct/GQA/MQA&GQA.md"
+                "file": "Speedup/SentenceVAE/SentenceVAE.md"
               }
             }
           },
@@ -250,23 +250,27 @@
   },
   "active": "2c4104945f42a59b",
   "lastOpenFiles": [
-    "PLM/BaseStruct/MQA/MQA.md",
+    "Speedup/SentenceVAE/img/Pasted image 20240804164916.png",
+    "Speedup/SentenceVAE/SentenceVAE.md",
+    "PLM/README.md",
+    "Speedup/SentenceVAE/img/Pasted image 20240804180125.png",
+    "Speedup/SentenceVAE/img/Pasted image 20240804180053.png",
+    "Speedup/SentenceVAE/img/Pasted image 20240804180037.png",
+    "Speedup/SentenceVAE/img/Pasted image 20240804175807.png",
+    "Speedup/SentenceVAE/img/Pasted image 20240804175530.png",
+    "Speedup/SentenceVAE/img/Pasted image 20240804174420.png",
+    "Speedup/SentenceVAE/img/Pasted image 20240804174117.png",
+    "Speedup/SentenceVAE/img/Pasted image 20240804173821.png",
+    "Speedup/SentenceVAE/img/Pasted image 20240804173629.png",
+    "Speedup/SentenceVAE/img/Pasted image 20240804172804.png",
+    "Speedup/SentenceVAE/img",
     "PLM/BaseStruct/GQA/MQA&GQA.md",
+    "Speedup/SentenceVAE",
+    "PLM/BaseStruct/MQA/MQA.md",
     "PLM/BaseStruct/MQA",
     "PLM/Models/Mistral/Mistral.md",
-    "PLM/Models/Mistral/img/Pasted image 20240801115037.png",
-    "PLM/Models/Mistral/img/Pasted image 20240801115023.png",
-    "PLM/Models/Mistral/img/Pasted image 20240801115009.png",
-    "PLM/Models/Mistral/img/Pasted image 20240801114957.png",
-    "PLM/Models/Mistral/img/Pasted image 20240801114913.png",
-    "PLM/Models/Mistral/img/Pasted image 20240801114746.png",
-    "PLM/Models/Mistral/img/Pasted image 20240801114739.png",
-    "PLM/Models/Mistral/img/Pasted image 20240801114340.png",
-    "PLM/Models/Mistral/img/Pasted image 20240801114323.png",
-    "PLM/Models/Mistral/img/Pasted image 20240801114308.png",
     "PLM/Models/Mistral/Mistral系列.md",
     "News/Inbox.md",
-    "PLM/README.md",
     "DataRelated/NLGDataset/Dataset.md",
     "PLM/业界分享/Good_Articles.md",
     "Speedup/训练tips/训练tips.md",
@@ -292,10 +296,6 @@
     "Speedup/DeepSpeed",
     "Speedup/Parallelism/README.md",
     "Speedup/模型并行/模型并行训练.md",
-    "Speedup/训练tips",
-    "common.md",
-    "PLM/Alignment/README.md",
-    "PLM/DataGen/HelpSteer2",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
