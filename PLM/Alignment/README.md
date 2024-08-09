@@ -116,3 +116,5 @@ Offline:
 
 [Alignment Guidebook](https://efficient-unicorn-451.notion.site/Alignment-Guidebook-e5c64df77c0a4b528b7951e87337fa78)
 
+[A recipe for frontier model post-training](https://www.interconnects.ai/p/frontier-model-post-training)：Apple、Meta 和 Nvidia 都同意——合成数据、迭代训练、人类偏好标签和大量过滤。
+
