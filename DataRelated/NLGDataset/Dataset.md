@@ -42,6 +42,18 @@ c.ai的bot：[New Arrivals](https://rentry.org/cai-list)
 [大模型时代，数据为王，在哪里寻找开源数据集？](https://mp.weixin.qq.com/s/ADGg6OCqjFQ-bLE-X-Q9DA)
 
 
+## naturalinstructions
+
+https://instructions.apps.allenai.org/
+
+
+https://arxiv.org/abs/2204.07705
+
+Benchmarking Generalization via In-Context Instructions on 1,600+ Language Tasks
+
+涵盖了1600+个任务、70+个不同任务类型、50+种不同语言，用来测试生成模型的泛化性。
+
+
 ## 微调数据集
 
 [H-D-T/Buzz · Datasets at Hugging Face](https://huggingface.co/datasets/H-D-T/Buzz) 一个3千万的数据集
@@ -54,4 +66,6 @@ c.ai的bot：[New Arrivals](https://rentry.org/cai-list)
 3. https://huggingface.co/datasets/BAAI/COIG-PC-core ，COIG-PC-core，在COIG-PC基础上使用GPT-4，人力清洗等方式筛选出来的干净的核心数据，可以采样或者全量使用提升模型的传统中文NLP任务理解和执行能力。(GPT-4只用于判分并未用于生成，所以也可以随便商用)
 4. https://huggingface.co/datasets/m-a-p/COIG-Kun ，https://huggingface.co/m-a-p/Kun-LabelModel，COIG-Kun，中文版的humpback，可以从预训练数据转译生成SFT数据，目前存在生成数据指令逻辑比较简单等问题，但是可以有效扩充SFT数据量尤其是垂域的SFT数据量。
 5. https://huggingface.co/datasets/m-a-p/COIG-CQIA ，中文版的LIMA，全人工爬取，精心挑选和修改后的数据集，可以直接作为提升中文基础能力的SFT集合。
+
+[【LLM数据工程】LLMs-开源数据-微调数据集总结v2.0](https://mp.weixin.qq.com/s/srHuvjHzQqhRlX3aZfNDlw)
 
