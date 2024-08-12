@@ -172,3 +172,5 @@ prompt工程指南： https://github.com/promptslab/Awesome-Prompt-Engineering
 
 [GPT-4 提示词冠军如何写 prompt：CO-STAR 框架、文本分段、系统提示](https://mp.weixin.qq.com/s/GiQ1iIavCfLLTso6jhppvw)
 
+[Prompt Engineering Guide | Prompt Engineering Guide<!-- -->](https://www.promptingguide.ai/)
+
