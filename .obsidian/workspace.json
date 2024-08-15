@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/README.md",
+                "file": "PLM/DataGen/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/CL/README.md",
+                "file": "DataRelated/NLGDataset/对话数据集.md",
                 "mode": "source",
                 "source": false
               }
@@ -80,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "PLM/DataGen/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/transformers.md"
+                "file": "PLM/DataGen/README.md"
               }
             }
           },
@@ -224,16 +224,28 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "07dd0447a894ac29",
+  "active": "e7c7f77d00cd4271",
   "lastOpenFiles": [
-    "Tool/Git/Git.md",
+    "PLM/DataGen/img/Pasted image 20240815153426.png",
+    "PLM/DataGen/img/Pasted image 20240815153354.png",
+    "PLM/DataGen/img/Pasted image 20240815153313.png",
+    "PLM/DataGen/img/Pasted image 20240815153234.png",
+    "PLM/DataGen/img/Pasted image 20240815153208.png",
+    "PLM/DataGen/img/Pasted image 20240815153147.png",
+    "PLM/DataGen/img/Pasted image 20240815153036.png",
+    "PLM/DataGen/img",
+    "PLM/Alignment/README.md",
+    "PLM/DataGen/README.md",
+    "DataRelated/NLGDataset/对话数据集.md",
+    "Tool/Linux/Linux.md",
     "PLM/CL/README.md",
+    "Tool/Pytorch/transformers.md",
+    "Tool/Git/Git.md",
     "PLM/Prompt/Prompt.md",
     "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/NLGDataset/PretrainDataset.md",
     "PLM/README.md",
-    "PLM/Alignment/README.md",
     "PLM/DataGen/Cosmopedia/Cosmopedia.md",
     "PLM/RolePlay/CharacterGLM/CharacterGLM.md",
     "PLM/Models/Index-1.9B/Index-1.9B.md",
@@ -249,29 +261,17 @@
     "Speedup/SentenceVAE/img/Pasted image 20240804180125.png",
     "Speedup/SentenceVAE/img/Pasted image 20240804180053.png",
     "Speedup/SentenceVAE/img/Pasted image 20240804180037.png",
-    "Speedup/SentenceVAE/img/Pasted image 20240804175807.png",
-    "Speedup/SentenceVAE/img/Pasted image 20240804175530.png",
-    "Speedup/SentenceVAE/img/Pasted image 20240804174420.png",
-    "Speedup/SentenceVAE/img/Pasted image 20240804174117.png",
-    "Speedup/SentenceVAE/img/Pasted image 20240804173821.png",
-    "Speedup/SentenceVAE/img/Pasted image 20240804173629.png",
     "Speedup/SentenceVAE/img",
     "Speedup/SentenceVAE",
     "PLM/BaseStruct/MQA",
     "PLM/Models/Mistral/Mistral.md",
     "PLM/Models/Mistral/Mistral系列.md",
-    "News/Inbox.md",
-    "PLM/业界分享/Good_Articles.md",
-    "Speedup/训练tips/训练tips.md",
-    "PLM/CL/Llama-3-SynE/Llama-3-SynE.md",
-    "Tool/Linux/Linux.md",
     "PLM/Agent",
     "PLM/CL/Llama-3-SynE/img",
     "PLM/CL/Llama-3-SynE",
     "PLM/explore/PhysicsofLanguageModels/img",
     "PLM/explore/PhysicsofLanguageModels",
     "Speedup/Megatron/img",
-    "Speedup/DeepSpeed",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
