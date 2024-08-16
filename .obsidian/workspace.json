@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/DataGen/README.md",
+                "file": "PLM/Models/LLaMA/LLaMA3.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/DataGen/README.md",
+                "file": "PLM/Models/LLaMA/LLaMA3.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/DataGen/README.md"
+                "file": "PLM/Models/LLaMA/LLaMA3.md"
               }
             }
           },
@@ -226,6 +226,7 @@
   },
   "active": "e7c7f77d00cd4271",
   "lastOpenFiles": [
+    "PLM/DataGen/README.md",
     "PLM/DataGen/img/Pasted image 20240815153426.png",
     "PLM/DataGen/img/Pasted image 20240815153354.png",
     "PLM/DataGen/img/Pasted image 20240815153313.png",
@@ -235,7 +236,6 @@
     "PLM/DataGen/img/Pasted image 20240815153036.png",
     "PLM/DataGen/img",
     "PLM/Alignment/README.md",
-    "PLM/DataGen/README.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "Tool/Linux/Linux.md",
     "PLM/CL/README.md",
@@ -260,7 +260,6 @@
     "Speedup/SentenceVAE/img/Pasted image 20240804164916.png",
     "Speedup/SentenceVAE/img/Pasted image 20240804180125.png",
     "Speedup/SentenceVAE/img/Pasted image 20240804180053.png",
-    "Speedup/SentenceVAE/img/Pasted image 20240804180037.png",
     "Speedup/SentenceVAE/img",
     "Speedup/SentenceVAE",
     "PLM/BaseStruct/MQA",
