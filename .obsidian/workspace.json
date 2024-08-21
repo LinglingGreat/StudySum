@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/LLaMA/LLaMA3.md",
+                "file": "PLM/CL/D-CPTLaw/D-CPTLaw.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Models/LLaMA/LLaMA3.md",
+                "file": "PLM/CL/D-CPTLaw/D-CPTLaw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/LLaMA/LLaMA3.md"
+                "file": "PLM/CL/D-CPTLaw/D-CPTLaw.md"
               }
             }
           },
@@ -226,6 +226,15 @@
   },
   "active": "e7c7f77d00cd4271",
   "lastOpenFiles": [
+    "PLM/CL/D-CPTLaw/img/Pasted image 20240821192407.png",
+    "PLM/CL/D-CPTLaw/img/Pasted image 20240821192238.png",
+    "PLM/CL/D-CPTLaw/img",
+    "PLM/CL/README.md",
+    "PLM/CL/D-CPTLaw/D-CPTLaw.md",
+    "PLM/ScalingLaw/ScalingLaw.md",
+    "PLM/CL/D-CPTLaw",
+    "PLM/Alignment/PPO/PPO.md",
+    "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/DataGen/README.md",
     "PLM/DataGen/img/Pasted image 20240815153426.png",
     "PLM/DataGen/img/Pasted image 20240815153354.png",
@@ -238,7 +247,6 @@
     "PLM/Alignment/README.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "Tool/Linux/Linux.md",
-    "PLM/CL/README.md",
     "Tool/Pytorch/transformers.md",
     "Tool/Git/Git.md",
     "PLM/Prompt/Prompt.md",
@@ -255,22 +263,15 @@
     "PLM/RolePlay/RolePlaySum.md",
     "PLM/Models/Deepseek/Deepseek.md",
     "PLM/BaseStruct/GQA/MQA&GQA.md",
-    "PLM/BaseStruct/MQA/MQA.md",
-    "Speedup/SentenceVAE/SentenceVAE.md",
     "Speedup/SentenceVAE/img/Pasted image 20240804164916.png",
     "Speedup/SentenceVAE/img/Pasted image 20240804180125.png",
-    "Speedup/SentenceVAE/img/Pasted image 20240804180053.png",
     "Speedup/SentenceVAE/img",
     "Speedup/SentenceVAE",
     "PLM/BaseStruct/MQA",
-    "PLM/Models/Mistral/Mistral.md",
-    "PLM/Models/Mistral/Mistral系列.md",
     "PLM/Agent",
     "PLM/CL/Llama-3-SynE/img",
     "PLM/CL/Llama-3-SynE",
     "PLM/explore/PhysicsofLanguageModels/img",
-    "PLM/explore/PhysicsofLanguageModels",
-    "Speedup/Megatron/img",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
