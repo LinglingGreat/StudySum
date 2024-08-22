@@ -38,5 +38,9 @@
  [13] Knowledge Rumination for Pre-trained Language Models, https://arxiv.org/pdf/2305.08732.pdf  
  [14] Unlocking Temporal Question Answering for Large Language Models Using Code Execution, https://arxiv.org/pdf/2305.15014.pdf
 
-https://mp.weixin.qq.com/s/OmAdeQgyfTimJKg1wAjs8g
 
+
+[大模型表现好是源于对训练数据的记忆吗？请不要迷信大模型](https://mp.weixin.qq.com/s/OmAdeQgyfTimJKg1wAjs8g)
+
+[InterLM系列模型](https://mp.weixin.qq.com/s/D8Iv-PKS0O6YyaSsU4D2Dw)
+- 对齐阶段的一些trick还挺值得看看的
