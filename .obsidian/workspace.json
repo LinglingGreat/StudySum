@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/README.md",
+                "file": "PLM/Models/垂域大模型.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Models/README.md",
+                "file": "PLM/Models/垂域大模型.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/README.md"
+                "file": "PLM/Models/垂域大模型.md"
               }
             }
           },
@@ -226,10 +226,10 @@
   },
   "active": "e7c7f77d00cd4271",
   "lastOpenFiles": [
+    "PLM/Models/README.md",
     "PLM/Models/代码大模型.md",
     "PLM/Models/垂域大模型.md",
     "PLM/Models/LLaMA汉化工作.md",
-    "PLM/Models/README.md",
     "PLM/CL/D-CPTLaw/D-CPTLaw.md",
     "PLM/CL/D-CPTLaw/img/Pasted image 20240821203216.png",
     "PLM/CL/D-CPTLaw/img/Pasted image 20240821202917.png",
