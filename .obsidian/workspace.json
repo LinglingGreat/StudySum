@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/垂域大模型.md",
+                "file": "PLM/Models/AFM/AFM.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Models/垂域大模型.md",
+                "file": "PLM/Models/AFM/AFM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/垂域大模型.md"
+                "file": "PLM/Models/AFM/AFM.md"
               }
             }
           },
@@ -226,9 +226,13 @@
   },
   "active": "e7c7f77d00cd4271",
   "lastOpenFiles": [
-    "PLM/Models/README.md",
-    "PLM/Models/代码大模型.md",
+    "PLM/Models/Qwen/Qwen2.md",
+    "PLM/Models/AFM/AFM.md",
     "PLM/Models/垂域大模型.md",
+    "PLM/Models/AFM",
+    "PLM/Models/README.md",
+    "PLM/Models/Qwen/Qwen.md",
+    "PLM/Models/代码大模型.md",
     "PLM/Models/LLaMA汉化工作.md",
     "PLM/CL/D-CPTLaw/D-CPTLaw.md",
     "PLM/CL/D-CPTLaw/img/Pasted image 20240821203216.png",
@@ -262,16 +266,12 @@
     "PLM/DataGen/Cosmopedia/Cosmopedia.md",
     "PLM/RolePlay/CharacterGLM/CharacterGLM.md",
     "PLM/Models/Index-1.9B/Index-1.9B.md",
-    "PLM/DataGen/MAmmoTH2/MAmmoTH2.md",
-    "PLM/DataGen/Stephanie/Stephanie.md",
-    "PLM/DataGen/SyntheticWithPersona/SyntheticWithPersonahub.md",
     "Speedup/SentenceVAE/img",
     "Speedup/SentenceVAE",
     "PLM/BaseStruct/MQA",
     "PLM/Agent",
     "PLM/CL/Llama-3-SynE/img",
     "PLM/CL/Llama-3-SynE",
-    "PLM/explore/PhysicsofLanguageModels/img",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
