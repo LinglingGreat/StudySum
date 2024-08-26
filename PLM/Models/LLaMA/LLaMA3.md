@@ -28,7 +28,7 @@ institution:
 ![](img/Pasted%20image%2020240724144934.png)
 
 LLaMA-3特点
-- supports multilinguality, coding, reasoning, and tool usage
+- supports multilinguality, coding, reasoning, and tool usage。它支持至少八种语言（而Qwen 2能够处理20种语言）。
 - 最大的模型是405B的dense模型，支持128K
 
 训练高质量基座模型的三个关键点：data, scale, and managing complexity

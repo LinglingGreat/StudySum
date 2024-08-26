@@ -23,10 +23,16 @@ institution:
 
 框架图：
 
+Gemma 2 模型有三种规模：20 亿、90 亿和 270 亿参数。主要关注点是探索不必增加训练数据集规模的技术，而是开发相对较小且高效的 LLMs。
+
+值得注意的是，Gemma 2 具有 256k 词汇表大小。相比之下，Llama 2 使用的是 32k 词汇表，而 Llama 3 使用的是 128k 词汇表。
+
+此外，Gemma 2 采用滑动窗口注意力机制，类似于 Mistral 的早期模型，可能是为了减少内存成本。
+
 
 ## 背景
 
-除了Gemini模型外，Gemma这一系列轻量级的SOTA开放模型似乎与我们距离更近。它基于Gemini模型相同的研究和技术构建，旨在让每个人都拥有构建AI的工具。谷歌持续扩展Gemma家族，包括CodeGemma、RecurrentGemma和PaliGemma——每个模型都为不同的AI任务提供独特的能力，并且可以通过与Hugging Face、NVIDIA和Ollama等合作伙伴轻松访问。
+Gemma基于Gemini模型相同的研究和技术构建，旨在让每个人都拥有构建AI的工具。谷歌持续扩展Gemma家族，包括CodeGemma、RecurrentGemma和PaliGemma——每个模型都为不同的AI任务提供独特的能力，并且可以通过与Hugging Face、NVIDIA和Ollama等合作伙伴轻松访问。
 
 ![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/KmXPKA19gW8MLCL9iaF5aaZoibMeibp99bA4IDaaSiazJXfiakS0d8nRjqL7rx75CaPcf49IHrFGX6Yian0WibCHLy14w/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
@@ -104,6 +110,8 @@ Gemma Cookbook链接：https://github.com/google-gemini/gemma-cookbook
 
 ### 预训练
 
+Gemma 研究人员认为，即使是小模型也常常训练不足。然而，他们并不只是简单地增加训练数据集的规模，而是通过其他方法保持质量并取得改进，例如知识蒸馏，类似于苹果的做法。
+
 **数据**
 
 他们在主要为英文数据的13万亿token上对Gemma 2 27B进行了训练，并对9B模型进行了8万亿token的训练，对2.6B模型则进行了2万亿token的训练。这些token来自各种数据源，包括网页文档、代码和科学文章。模型并不是多模态的，也没有专门为最先进的多语言能力进行训练。
@@ -138,7 +146,7 @@ Tokenizer和Gemma1, Gemini一致：a SentencePiece tokenizer with split digits, 
 Gemma 2扩展了 Gemma 1.1 的后训练数据，混合了内部和外部公共数据。使用了LMSYS-chat-1M的prompt但没有用answer.
 
 - SFT：根据合成和真实的prompts进行行为克隆，并且主要由教师生成responses，这是一个更大的模型。We also run distillation from the teacher on the student’s distribution
-- RLHF：和Gemma v1.1类似的RLHF算法，但是不同的奖励模型，比policy模型大一个数量级。新的奖励模型也更注重对话能力，特别是多轮对话。
+- RLHF：和Gemma v1.1类似的RLHF算法，但是**不同的奖励模型，比policy模型大一个数量级**。新的奖励模型也更注重对话能力，特别是多轮对话。
 - 模型合并：我们对使用不同超参数运行的实验的模型进行平均
 - 数据过滤：使用合成数据时，我们会运行多个阶段的过滤，以删除显示某些个人信息、不安全或有毒的模型输出、错误的自我识别数据和重复的示例。继 Gemini 之后，我们发现，包含鼓励更好的上下文归因、对冲和拒绝（in-context attribution, hedging, and refusals）以最大限度地减少幻觉的数据子集可以提高事实性指标的性能，而不会降低模型在其他指标上的性能。
 

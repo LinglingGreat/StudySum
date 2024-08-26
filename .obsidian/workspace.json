@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "254c7e722a175ae9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Models/AFM/AFM.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "e126a12f888ac1dd",
             "type": "leaf",
             "state": {
@@ -80,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -224,34 +236,40 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e7c7f77d00cd4271",
+  "active": "254c7e722a175ae9",
   "lastOpenFiles": [
-    "PLM/Models/Qwen/Qwen2.md",
-    "PLM/Models/AFM/AFM.md",
-    "PLM/Models/垂域大模型.md",
-    "PLM/Models/AFM",
+    "PLM/Models/AFM/img/Pasted image 20240824171051.png",
+    "PLM/Models/AFM/img/Pasted image 20240824171000.png",
+    "PLM/Models/AFM/img/Pasted image 20240824170913.png",
+    "PLM/Models/AFM/img/Pasted image 20240824170718.png",
+    "PLM/Models/AFM/img/Pasted image 20240824170003.png",
+    "PLM/Models/AFM/img/Pasted image 20240824165956.png",
+    "PLM/Models/AFM/img/Pasted image 20240824165637.png",
+    "PLM/Models/AFM/img/Pasted image 20240824165601.png",
+    "PLM/Models/AFM/img/Pasted image 20240824165058.png",
+    "CV/README.md",
+    "CV/BLIP/BLIP.md",
     "PLM/Models/README.md",
-    "PLM/Models/Qwen/Qwen.md",
+    "PLM/Models/img/Pasted image 20240822203347.png",
+    "PLM/Models/img/Pasted image 20240822203322.png",
+    "PLM/Models/img",
     "PLM/Models/代码大模型.md",
+    "PLM/Models/垂域大模型.md",
     "PLM/Models/LLaMA汉化工作.md",
+    "PLM/Models/LLaMA/LLaMA3.md",
+    "PLM/Models/Gemma/Gemma.md",
+    "PLM/Models/AFM/AFM.md",
+    "PLM/Models/AFM/img",
+    "PLM/Models/Qwen/Qwen2.md",
+    "PLM/Models/AFM",
+    "PLM/Models/Qwen/Qwen.md",
     "PLM/CL/D-CPTLaw/D-CPTLaw.md",
-    "PLM/CL/D-CPTLaw/img/Pasted image 20240821203216.png",
-    "PLM/CL/D-CPTLaw/img/Pasted image 20240821202917.png",
-    "PLM/CL/D-CPTLaw/img/Pasted image 20240821202838.png",
-    "PLM/CL/D-CPTLaw/img/Pasted image 20240821202720.png",
-    "PLM/CL/D-CPTLaw/img/Pasted image 20240821201937.png",
-    "PLM/CL/D-CPTLaw/img/Pasted image 20240821201745.png",
-    "PLM/CL/D-CPTLaw/img/Pasted image 20240821200442.png",
-    "PLM/CL/D-CPTLaw/img/Pasted image 20240821192407.png",
-    "PLM/CL/D-CPTLaw/img/Pasted image 20240821192238.png",
     "PLM/CL/D-CPTLaw/img",
     "PLM/CL/README.md",
     "PLM/ScalingLaw/ScalingLaw.md",
     "PLM/CL/D-CPTLaw",
     "PLM/Alignment/PPO/PPO.md",
-    "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/DataGen/README.md",
-    "PLM/DataGen/img/Pasted image 20240815153426.png",
     "PLM/DataGen/img",
     "PLM/Alignment/README.md",
     "DataRelated/NLGDataset/对话数据集.md",
@@ -262,16 +280,10 @@
     "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/生成任务.md",
     "DataRelated/NLGDataset/PretrainDataset.md",
-    "PLM/README.md",
-    "PLM/DataGen/Cosmopedia/Cosmopedia.md",
-    "PLM/RolePlay/CharacterGLM/CharacterGLM.md",
-    "PLM/Models/Index-1.9B/Index-1.9B.md",
     "Speedup/SentenceVAE/img",
     "Speedup/SentenceVAE",
     "PLM/BaseStruct/MQA",
     "PLM/Agent",
-    "PLM/CL/Llama-3-SynE/img",
-    "PLM/CL/Llama-3-SynE",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

@@ -14,6 +14,7 @@ papername: BLIP Bootstrapping Language-Image Pre-training for Unified Vision-Lan
 
 代码：
 
+核心一是使用了Unified方式同时建模了多个Vision-Language任务，二是使用Bootstrapping策略优化了网上爬取的Noisy的图文pair数据
 
 ### 研究动机
 
