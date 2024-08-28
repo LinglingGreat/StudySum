@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/AFM/AFM.md",
+                "file": "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
                 "mode": "source",
                 "source": false
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Models/AFM/AFM.md",
+                "file": "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/AFM/AFM.md"
+                "file": "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md"
               }
             }
           },
@@ -238,6 +238,7 @@
   },
   "active": "254c7e722a175ae9",
   "lastOpenFiles": [
+    "PLM/Models/AFM/AFM.md",
     "PLM/Models/AFM/img/Pasted image 20240824171051.png",
     "PLM/Models/AFM/img/Pasted image 20240824171000.png",
     "PLM/Models/AFM/img/Pasted image 20240824170913.png",
@@ -251,14 +252,12 @@
     "CV/BLIP/BLIP.md",
     "PLM/Models/README.md",
     "PLM/Models/img/Pasted image 20240822203347.png",
-    "PLM/Models/img/Pasted image 20240822203322.png",
     "PLM/Models/img",
     "PLM/Models/代码大模型.md",
     "PLM/Models/垂域大模型.md",
     "PLM/Models/LLaMA汉化工作.md",
     "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/Models/Gemma/Gemma.md",
-    "PLM/Models/AFM/AFM.md",
     "PLM/Models/AFM/img",
     "PLM/Models/Qwen/Qwen2.md",
     "PLM/Models/AFM",

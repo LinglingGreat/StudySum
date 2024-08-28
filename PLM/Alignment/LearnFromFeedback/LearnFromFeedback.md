@@ -59,6 +59,28 @@ Feedback Taxonomy
 
 使用提取的反馈数据来训练语言模型，并通过与预训练模型的比较来评估性能提升。这包括使用正面样本进行微调，以及使用包括正面和负面样本的KTO偏好训练。
 
+prompt：
+
+```
+There are five different patterns in user responses subsequent to errors in assistant utterances:
+
+Repeat or Rephrase (UR1) - The user repeats or  rephrases their concern, e.g., Actually, I wanted...  
+Make Aware with Correction (UR2) - The user makes the system aware of the error and provides information to address what is missing or wrong in its utterance, e.g., No. I wanted you to...  
+Make Aware without Correction (UR3) - The user makes the system aware of the error without providing additional information, e.g., You’re wrong.  
+Ask for Clarification (UR4) - The user asks for  clarification, e.g., Are you sure? Is it really that...  Positive Feedback (UR5) - The user confirms that the assistant did a good job by directly saying so or thanking it, e.g., Thank you
+
+Given these guidelines, please recognize such user responses in the following dialogue. Please use the format: 
+{
+"User Response Pattern": [Insert User Response Pattern], 
+"User Response Text": [Insert User Response Text]
+}  
+If there is no feedback, use the following format: 
+{
+"User Response Pattern": "No Feedback", 
+"User Response Text": "" 
+}
+```
+
 
 ## 实验
 
