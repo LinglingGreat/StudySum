@@ -67,7 +67,8 @@ There are five different patterns in user responses subsequent to errors in assi
 Repeat or Rephrase (UR1) - The user repeats or  rephrases their concern, e.g., Actually, I wanted...  
 Make Aware with Correction (UR2) - The user makes the system aware of the error and provides information to address what is missing or wrong in its utterance, e.g., No. I wanted you to...  
 Make Aware without Correction (UR3) - The user makes the system aware of the error without providing additional information, e.g., You’re wrong.  
-Ask for Clarification (UR4) - The user asks for  clarification, e.g., Are you sure? Is it really that...  Positive Feedback (UR5) - The user confirms that the assistant did a good job by directly saying so or thanking it, e.g., Thank you
+Ask for Clarification (UR4) - The user asks for  clarification, e.g., Are you sure? Is it really that...  
+Positive Feedback (UR5) - The user confirms that the assistant did a good job by directly saying so or thanking it, e.g., Thank you
 
 Given these guidelines, please recognize such user responses in the following dialogue. Please use the format: 
 {
