@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
+                "file": "PLM/Models/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
+                "file": "PLM/Models/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md"
+                "file": "PLM/Models/README.md"
               }
             }
           },
@@ -238,6 +238,8 @@
   },
   "active": "254c7e722a175ae9",
   "lastOpenFiles": [
+    "PLM/README.md",
+    "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
     "PLM/Models/AFM/AFM.md",
     "PLM/Models/AFM/img/Pasted image 20240824171051.png",
     "PLM/Models/AFM/img/Pasted image 20240824171000.png",
@@ -278,7 +280,6 @@
     "PLM/Prompt/Prompt.md",
     "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/生成任务.md",
-    "DataRelated/NLGDataset/PretrainDataset.md",
     "Speedup/SentenceVAE/img",
     "Speedup/SentenceVAE",
     "PLM/BaseStruct/MQA",
