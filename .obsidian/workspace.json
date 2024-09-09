@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/README.md",
+                "file": "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
                 "mode": "source",
                 "source": false
               }
@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Models/README.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/README.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -236,10 +236,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "254c7e722a175ae9",
+  "active": "e9255d565c0b64ba",
   "lastOpenFiles": [
-    "PLM/README.md",
     "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
+    "PLM/README.md",
+    "PLM/Models/README.md",
     "PLM/Models/AFM/AFM.md",
     "PLM/Models/AFM/img/Pasted image 20240824171051.png",
     "PLM/Models/AFM/img/Pasted image 20240824171000.png",
@@ -252,7 +253,6 @@
     "PLM/Models/AFM/img/Pasted image 20240824165058.png",
     "CV/README.md",
     "CV/BLIP/BLIP.md",
-    "PLM/Models/README.md",
     "PLM/Models/img/Pasted image 20240822203347.png",
     "PLM/Models/img",
     "PLM/Models/代码大模型.md",

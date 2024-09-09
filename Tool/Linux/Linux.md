@@ -235,7 +235,7 @@ find /tmp -name 'mobi*' -type f -mmin +360 -o -name 'mobi*' -type d -mmin +360 -
 
 这个命令会列出符合条件的文件和文件夹列表，你可以先检查这个列表，确认没有问题后再执行删除操作。同样地，请谨慎操作，以免意外删除重要文件和文件夹。
 
-## 批量修改文件名(find & rename & sed)
+### 批量修改文件名(find & rename & sed)
 
 [批量修改文件名(find & rename & sed)\_wx608b59dedd9e5的技术博客\_51CTO博客](https://blog.51cto.com/u_15187242/3773168)
 
@@ -489,7 +489,11 @@ source $HOME/.bashrc
 nohup python graph_api.py > logs/graph.log & echo $! > graph.pid
 ```
 
+### 流量分析
 
+安装nethogs工具: centos系统 yum install 或者`rpm -ivh nethogs-0.8.5-9.el8.x86_64.rpm`
+
+执行nethogs命令即可。
 
 ## 压缩解压
 压缩成zip文件`zip -r xxx.zip 目录或文件`
