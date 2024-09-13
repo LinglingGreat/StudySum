@@ -80,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DataRelated/NLGDataset/Dataset.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DataRelated/NLGDataset/Dataset.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -224,12 +224,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e126a12f888ac1dd",
+  "active": "e9255d565c0b64ba",
   "lastOpenFiles": [
+    "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/Diamante/Diamante.md",
     "DataRelated/NLGDataset/NaturalConv/NaturalConv.md",
     "DataRelated/NLGDataset/PretrainDataset.md",
-    "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/Models/AFM/AFM.md",

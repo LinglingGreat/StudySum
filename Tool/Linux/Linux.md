@@ -579,6 +579,14 @@ done
 
 `netstat -apn | grep 4040`
 
+```bash
+# 使用 lsof 查看端口占用
+lsof -i :12222
+
+# 或者使用 netstat
+netstat -tuln | grep 12222
+```
+
 [mp.weixin.qq.com/s/l9k49nf93nj1o3oEx3ya6w](https://mp.weixin.qq.com/s/l9k49nf93nj1o3oEx3ya6w)
 
 最后一项显示的是pid和对应的名称
@@ -882,4 +890,96 @@ fi
 4. **查看 ACL 权限**: 为了确认您的权限已正确设定，可以查看这个目录的当前 ACL 配置： ```getfacl /path/to/directory ``` 通过以上步骤，您将能设置一个文件夹让特定用户访问。请注意，以上操作可能需要您具有管理权限，或至少对文件夹有适当的读写权限。
 
 [setfacl 命令，Linux setfacl 命令详解：设置文件访问控制列表 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/setfacl.html)
+
+## nginx
+
+```
+$HOME/nginx/sbin/nginx -s stop  # 先停止Nginx
+$HOME/nginx/sbin/nginx -c $HOME/nginx/conf/nginx.conf  # 启动Nginx
+$HOME/nginx/sbin/nginx -s reload # 重新启动
+nginx -t #测试配置是否正确
+```
+
+#### a. 下载并编译 Nginx
+
+首先，从 Nginx 官方网站 下载最新的源码包。然后编译并安装到你的用户目录下。
+
+```
+# 下载 Nginx 源码
+wget http://nginx.org/download/nginx-1.25.2.tar.gz
+tar -zxvf nginx-1.25.2.tar.gz
+cd nginx-1.25.2
+
+# 配置安装路径到用户目录
+./configure --prefix=$HOME/nginx --without-http_rewrite_module --without-http_gzip_module
+
+# 编译并安装
+make && make install
+```
+
+安装后，Nginx 会被放在 `$HOME/nginx` 目录中。
+
+#### b. 运行 Nginx
+
+使用编译好的 Nginx 可以在用户权限下运行。首先，进入 Nginx 安装目录并启动：
+
+`cd $HOME/nginx ./sbin/nginx`
+
+要停止 Nginx，可以使用以下命令：
+
+`./sbin/nginx -s stop`
+
+### 2. 配置 Nginx 负载均衡
+
+现在可以编辑 Nginx 的配置文件，配置路径通常在 `$HOME/nginx/conf/nginx.conf`。
+
+### 配置示例
+
+```nginx
+http {
+    upstream backend_servers {
+        server internal-service1:8080;
+        server internal-service2:8080;
+        server internal-service3:8080;
+    }
+
+    server {
+        listen 8081;  # 使用非特权端口（1024以上端口），因为没有root权限
+        server_name localhost;
+
+        location / {
+            proxy_pass http://backend_servers;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+}
+
+```
+
+你可以通过 `localhost:8081` 访问 Nginx，它会将请求负载均衡到内部的服务。
+
+
+
+### 3. 调整 Nginx 监听的端口
+
+由于你没有 `root` 权限，Nginx 不能监听 1024 以下的端口（如 80 或 443）。你可以让 Nginx 监听高端口。
+
+### 4. 运行和测试
+
+完成配置之后，可以通过以下命令来启动 Nginx：
+
+`$HOME/nginx/sbin/nginx -c $HOME/nginx/conf/nginx.conf`
+
+测试是否连通. `curl http://localhost:8081
+
+### 5. 设置开机自启动（可选）
+
+如果你想让 Nginx 自动在登录时启动，可以将启动命令添加到 `.bashrc` 或 `.bash_profile` 中：
+
+`echo "$HOME/nginx/sbin/nginx -c $HOME/nginx/conf/nginx.conf" >> ~/.bashrc`
+
+通过这种方式，即使你没有 `root` 权限，依然可以运行 Nginx 并实现负载均衡。
 
