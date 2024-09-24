@@ -80,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/transformers.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -224,8 +224,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "07dd0447a894ac29",
+  "active": "e9255d565c0b64ba",
   "lastOpenFiles": [
+    "Tool/Pytorch/transformers.md",
     "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
     "DataRelated/NLGDataset/Dataset.md",
@@ -267,7 +268,6 @@
     "PLM/Alignment/PPO/PPO.md",
     "PLM/DataGen/README.md",
     "PLM/DataGen/img",
-    "PLM/Alignment/README.md",
     "Speedup/SentenceVAE/img",
     "Speedup/SentenceVAE",
     "PLM/BaseStruct/MQA",
