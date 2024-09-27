@@ -6,6 +6,10 @@
 
 ![](img/Pasted%20image%2020240822203322.png)
 
+[LLM训练-pretrain- from ybq](https://zhuanlan.zhihu.com/p/718354385)
+
+
+
 ## 后训练
 
 似乎拒绝采样现在是后训练过程中常见的做法。然而，当谈到DPO或RLHF时，目前还没有一致的意见或偏好。
