@@ -8,6 +8,10 @@
 
 [LLM训练-pretrain- from ybq](https://zhuanlan.zhihu.com/p/718354385)
 
+[LLM预训练数据策略(一)](https://mp.weixin.qq.com/s/o03ftrLz8B1qSPpEStfYGg)
+
+[LLM高效预训练(二)](https://mp.weixin.qq.com/s/S_Nx5I4C2gxwumG4GMxkDg)
+
 
 
 ## 后训练

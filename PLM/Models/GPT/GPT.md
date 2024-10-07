@@ -64,6 +64,15 @@ OpenAI 团队明确地定义了用于评估 GPT-3 的不同设定，包括 zero-
 - Zero-Shot (0S)：零次样本除了不允许有任何演示外与单样本类似，仅为模型提供用于描述任务的自然语言指示。
 
 
+## o1
+
+[OpenAI o1 技术系列1：整体框架，利用Test-Time Scaling Law提升逻辑推理能力](https://mp.weixin.qq.com/s/HcW6pKSkOPyYFoFPMdez2g)
+
+- 参考了这个github仓库（https://github.com/hijkzzz/Awesome-LLM-Strawberry）,侧重对框架类研究成果进行细致的解读和展开.
+
+[张俊林详细拆解o1：OpenAI o1完整训练过程逆向推演](https://mp.weixin.qq.com/s/2rK59hPV8C_PeDsT8Ii73w)
+
+
 
 ## 参考资料
 
