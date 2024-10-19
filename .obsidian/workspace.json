@@ -56,6 +56,18 @@
             }
           },
           {
+            "id": "301b540a2c6a15d5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Alignment/PPO/PPO.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "fb4643a6d214bc33",
             "type": "leaf",
             "state": {
@@ -133,7 +145,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ditto",
+                "query": "图解大模型RLHF系列",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -154,8 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 394.5,
-    "collapsed": true
+    "width": 394.5
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -171,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Models/README.md",
+                "file": "PLM/Alignment/PPO/PPO.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -199,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/README.md"
+                "file": "PLM/Alignment/PPO/PPO.md"
               }
             }
           },
@@ -230,9 +241,19 @@
                 "searchQuery": ""
               }
             }
+          },
+          {
+            "id": "ced6064cb6f7af8e",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "PLM/Alignment/PPO/PPO.md"
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -250,16 +271,29 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "fb4643a6d214bc33",
+  "active": "301b540a2c6a15d5",
   "lastOpenFiles": [
+    "PLM/Alignment/PPO/img/Pasted image 20241018215026.png",
+    "PLM/Alignment/PPO/img/Pasted image 20241018214906.png",
+    "PLM/Alignment/PPO/img/Pasted image 20241018214823.png",
+    "PLM/Alignment/PPO/img/Pasted image 20241018214707.png",
+    "PLM/Alignment/PPO/img/Pasted image 20241018214652.png",
+    "PLM/Alignment/README.md",
+    "PLM/Alignment/PPO/PPO.md",
+    "PLM/Alignment/PPO/img/Pasted image 20241018212240.png",
+    "PLM/Alignment/PPO/img/Pasted image 20241018212148.png",
+    "PLM/Alignment/PPO/img/Pasted image 20241018211907.png",
+    "PLM/Alignment/PPO/img/Pasted image 20241018211716.png",
+    "PLM/Alignment/PPO/img/Pasted image 20241018211631.png",
+    "PLM/Alignment/PPO/img/Pasted image 20241018211423.png",
+    "Tool/Linux/Linux.md",
+    "Tool/Git/Git.md",
+    "PLM/Models/README.md",
     "PLM/README.md",
     "PLM/预训练语言模型.md",
     "PLM/Models/GPT/GPT.md",
-    "Tool/Linux/Linux.md",
     "Tool/Pytorch/transformers.md",
-    "PLM/Models/README.md",
     "PLM/关于LLM的一些思考.md",
-    "Tool/Git/Git.md",
     "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/Diamante/Diamante.md",
     "DataRelated/NLGDataset/NaturalConv/NaturalConv.md",
@@ -268,18 +302,8 @@
     "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/Models/AFM/AFM.md",
     "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
-    "PLM/Models/AFM/img/Pasted image 20240824171051.png",
-    "PLM/Models/AFM/img/Pasted image 20240824171000.png",
-    "PLM/Models/AFM/img/Pasted image 20240824170913.png",
-    "PLM/Models/AFM/img/Pasted image 20240824170718.png",
-    "PLM/Models/AFM/img/Pasted image 20240824170003.png",
-    "PLM/Models/AFM/img/Pasted image 20240824165956.png",
-    "PLM/Models/AFM/img/Pasted image 20240824165637.png",
-    "PLM/Models/AFM/img/Pasted image 20240824165601.png",
-    "PLM/Models/AFM/img/Pasted image 20240824165058.png",
     "CV/README.md",
     "CV/BLIP/BLIP.md",
-    "PLM/Models/img/Pasted image 20240822203347.png",
     "PLM/Models/img",
     "PLM/Models/代码大模型.md",
     "PLM/Models/垂域大模型.md",
@@ -288,10 +312,7 @@
     "PLM/Models/AFM/img",
     "PLM/Models/Qwen/Qwen2.md",
     "PLM/Models/AFM",
-    "PLM/Models/Qwen/Qwen.md",
-    "PLM/CL/D-CPTLaw/D-CPTLaw.md",
     "PLM/CL/D-CPTLaw/img",
-    "PLM/CL/README.md",
     "PLM/CL/D-CPTLaw",
     "PLM/DataGen/img",
     "Speedup/SentenceVAE/img",
