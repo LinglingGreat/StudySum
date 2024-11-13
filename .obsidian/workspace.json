@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DataRelated/NLGDataset/Dataset.md",
+                "file": "DataRelated/NLGDataset/对话数据集.md",
                 "mode": "source",
                 "source": false
               }
@@ -116,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -182,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md",
+                "file": "DataRelated/NLGDataset/对话数据集.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +210,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md"
+                "file": "DataRelated/NLGDataset/对话数据集.md"
               }
             }
           },
@@ -248,7 +248,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md"
+                "file": "DataRelated/NLGDataset/对话数据集.md"
               }
             }
           }
@@ -271,30 +271,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "301b540a2c6a15d5",
+  "active": "e126a12f888ac1dd",
   "lastOpenFiles": [
+    "DataRelated/NLGDataset/img/Pasted image 20241113111558.png",
+    "DataRelated/NLGDataset/img/Pasted image 20241113111552.png",
+    "DataRelated/NLGDataset/Dataset.md",
+    "Tool/Linux/Linux.md",
+    "Tool/Pytorch/transformers.md",
+    "PLM/Alignment/PPO/PPO.md",
     "PLM/Alignment/PPO/img/Pasted image 20241018215026.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018214906.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018214823.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018214707.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018214652.png",
     "PLM/Alignment/README.md",
-    "PLM/Alignment/PPO/PPO.md",
     "PLM/Alignment/PPO/img/Pasted image 20241018212240.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018212148.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018211907.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018211716.png",
-    "PLM/Alignment/PPO/img/Pasted image 20241018211631.png",
-    "PLM/Alignment/PPO/img/Pasted image 20241018211423.png",
-    "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
     "PLM/Models/README.md",
     "PLM/README.md",
     "PLM/预训练语言模型.md",
     "PLM/Models/GPT/GPT.md",
-    "Tool/Pytorch/transformers.md",
     "PLM/关于LLM的一些思考.md",
-    "DataRelated/NLGDataset/Dataset.md",
     "DataRelated/NLGDataset/Diamante/Diamante.md",
     "DataRelated/NLGDataset/NaturalConv/NaturalConv.md",
     "DataRelated/NLGDataset/PretrainDataset.md",
