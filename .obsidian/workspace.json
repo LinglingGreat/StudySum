@@ -61,19 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Prompt/Prompt工程优化.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "301b540a2c6a15d5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Alignment/PPO/PPO.md",
+                "file": "NLG/RAG/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -182,7 +170,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "PLM/Prompt/Prompt工程优化.md",
+                "file": "NLG/RAG/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -210,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Prompt/Prompt工程优化.md"
+                "file": "NLG/RAG/README.md"
               }
             }
           },
@@ -248,7 +236,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Prompt/Prompt工程优化.md"
+                "file": "NLG/RAG/README.md"
               }
             }
           }
@@ -273,11 +261,13 @@
   },
   "active": "abf287faa3bb1e0b",
   "lastOpenFiles": [
-    "PLM/Prompt/PPT/PPT.md",
+    "PLM/Models/README.md",
+    "NLG/RAG/README.md",
+    "PLM/Alignment/README.md",
     "PLM/Prompt/Prompt工程优化.md",
+    "PLM/Prompt/PPT/PPT.md",
     "PLM/Prompt/Prompt.md",
     "Tool/Linux/Linux.md",
-    "PLM/Models/README.md",
     "DataRelated/NLGDataset/对话数据集.md",
     "DataRelated/NLGDataset/img/Pasted image 20241113111558.png",
     "DataRelated/NLGDataset/img/Pasted image 20241113111552.png",
@@ -289,7 +279,6 @@
     "PLM/Alignment/PPO/img/Pasted image 20241018214823.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018214707.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018214652.png",
-    "PLM/Alignment/README.md",
     "PLM/Alignment/PPO/img/Pasted image 20241018212240.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018212148.png",
     "PLM/Alignment/PPO/img/Pasted image 20241018211907.png",
@@ -309,7 +298,6 @@
     "PLM/Models/img",
     "PLM/Models/代码大模型.md",
     "PLM/Models/垂域大模型.md",
-    "PLM/Models/LLaMA汉化工作.md",
     "PLM/Models/AFM/img",
     "PLM/Models/AFM",
     "PLM/CL/D-CPTLaw/img",
