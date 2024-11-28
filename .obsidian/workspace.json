@@ -20,18 +20,6 @@
             }
           },
           {
-            "id": "e7c7f77d00cd4271",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Models/LLaMA/LLaMA3.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "e126a12f888ac1dd",
             "type": "leaf",
             "state": {
@@ -50,18 +38,6 @@
               "type": "markdown",
               "state": {
                 "file": "Tool/Linux/Linux.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "abf287faa3bb1e0b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "NLG/RAG/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -170,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NLG/RAG/README.md",
+                "file": "Tool/Linux/Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -198,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NLG/RAG/README.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           },
@@ -236,7 +212,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "NLG/RAG/README.md"
+                "file": "Tool/Linux/Linux.md"
               }
             }
           }
@@ -259,16 +235,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "abf287faa3bb1e0b",
+  "active": "e9255d565c0b64ba",
   "lastOpenFiles": [
     "PLM/Models/README.md",
+    "News/Inbox.md",
+    "PLM/Models/LLaMA/LLaMA3.md",
+    "DataRelated/NLGDataset/对话数据集.md",
+    "Tool/Linux/Linux.md",
     "NLG/RAG/README.md",
     "PLM/Alignment/README.md",
     "PLM/Prompt/Prompt工程优化.md",
     "PLM/Prompt/PPT/PPT.md",
     "PLM/Prompt/Prompt.md",
-    "Tool/Linux/Linux.md",
-    "DataRelated/NLGDataset/对话数据集.md",
     "DataRelated/NLGDataset/img/Pasted image 20241113111558.png",
     "DataRelated/NLGDataset/img/Pasted image 20241113111552.png",
     "DataRelated/NLGDataset/Dataset.md",
@@ -290,14 +268,12 @@
     "DataRelated/NLGDataset/Diamante/Diamante.md",
     "DataRelated/NLGDataset/NaturalConv/NaturalConv.md",
     "DataRelated/NLGDataset/PretrainDataset.md",
-    "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/Models/AFM/AFM.md",
     "PLM/Alignment/LearnFromFeedback/LearnFromFeedback.md",
     "CV/README.md",
     "CV/BLIP/BLIP.md",
     "PLM/Models/img",
     "PLM/Models/代码大模型.md",
-    "PLM/Models/垂域大模型.md",
     "PLM/Models/AFM/img",
     "PLM/Models/AFM",
     "PLM/CL/D-CPTLaw/img",
