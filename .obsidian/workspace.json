@@ -16,7 +16,9 @@
                 "file": "News/Inbox.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Inbox"
             }
           },
           {
@@ -28,7 +30,9 @@
                 "file": "DataRelated/NLGDataset/对话数据集.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "对话数据集"
             }
           },
           {
@@ -40,7 +44,9 @@
                 "file": "Tool/Linux/Linux.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Linux"
             }
           },
           {
@@ -52,7 +58,9 @@
                 "file": "PLM/Models/README.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           },
           {
@@ -64,7 +72,9 @@
                 "file": "Tool/Git/Git.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Git"
             }
           },
           {
@@ -76,7 +86,9 @@
                 "file": "Tool/Pytorch/transformers.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "transformers"
             }
           }
         ],
@@ -100,7 +112,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -115,7 +129,9 @@
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -123,7 +139,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -154,7 +172,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": false
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Linux 的反向链接列表"
             }
           },
           {
@@ -165,7 +185,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -175,7 +197,9 @@
               "type": "outline",
               "state": {
                 "file": "Tool/Linux/Linux.md"
-              }
+              },
+              "icon": "lucide-list",
+              "title": "Linux 的大纲"
             }
           },
           {
@@ -183,7 +207,9 @@
             "type": "leaf",
             "state": {
               "type": "todo",
-              "state": {}
+              "state": {},
+              "icon": "checkmark",
+              "title": "Todo List"
             }
           },
           {
@@ -191,7 +217,9 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           },
           {
@@ -203,7 +231,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
             }
           },
           {
@@ -213,7 +243,9 @@
               "type": "file-properties",
               "state": {
                 "file": "Tool/Linux/Linux.md"
-              }
+              },
+              "icon": "lucide-info",
+              "title": "Linux的笔记属性"
             }
           }
         ],
