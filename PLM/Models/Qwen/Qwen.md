@@ -3,11 +3,13 @@ title: Qwen
 created: 2023-10-06
 tags:
   - LLM
+  - 大模型
 type: 论文
 papername: 
 conference: ACL/EMNLP/NAACL/EACL/COLING/SIGIR/AAAI/ICML/ICDM
 year: 
 institution:
+  - 阿里
 ---
 
 # 论文基本信息
