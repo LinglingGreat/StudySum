@@ -55,6 +55,7 @@
 
 故事生成的系列论文和数据等： https://github.com/yingpengma/Awesome-Story-Generation
 
+[浙大、微软等发布最新综述，深入探索语音对话模型的前沿进展](https://mp.weixin.qq.com/s/49LriNT5aOt6Mm3yfq4RHA) 
 
 ## 训练情况对比
 
