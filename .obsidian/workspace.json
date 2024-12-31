@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -278,8 +278,9 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "2e5c2458802abfaf",
+  "active": "e9255d565c0b64ba",
   "lastOpenFiles": [
+    "NLG/RAG/RAGSum/README.md",
     "NLG/RAG/RAGSum/img/Pasted image 20241227163252.png",
     "NLG/RAG/RAGSum/img/Pasted image 20241227163236.png",
     "NLG/RAG/RAGSum/img/Pasted image 20241227163217.png",
@@ -290,10 +291,8 @@
     "NLG/RAG/RAGSum/img/Pasted image 20241227162230.png",
     "NLG/RAG/RAGSum/img/Pasted image 20241227161702.png",
     "NLG/RAG/RAGSum/img/Pasted image 20241227161449.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227161422.png",
     "NLG/RAG/RAGSum/img",
     "NLG/RAG/README.md",
-    "NLG/RAG/RAGSum/README.md",
     "NLG/RAG/RAGSum",
     "NLG/RAG/Memory/EVE_Memory.md",
     "NLG/RAG/Memory",
