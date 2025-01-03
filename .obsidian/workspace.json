@@ -36,31 +36,17 @@
             }
           },
           {
-            "id": "2e5c2458802abfaf",
+            "id": "49f6adeb36b9f93a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NLG/RAG/RAGSum/README.md",
+                "file": "PLM/2024paperlist.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
-            "id": "fb4643a6d214bc33",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
+              "title": "2024paperlist"
             }
           },
           {
@@ -92,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -278,11 +264,16 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "fb4643a6d214bc33",
+  "active": "49f6adeb36b9f93a",
   "lastOpenFiles": [
+    "PLM/README.md",
+    "PLM/2024paperlist.md",
+    "PLM/预训练语言模型.md",
+    "PLM/关于LLM的一些思考.md",
     "PLM/Models/README.md",
-    "NLG/RAG/RAGSum/README.md",
     "Tool/Linux/Linux.md",
+    "NLG/RAG/RAGSum/README.md",
+    "PLM/Models/Qwen/Qwen2.5.md",
     "NLG/RAG/RAGSum/img/Pasted image 20241227163252.png",
     "NLG/RAG/RAGSum/img/Pasted image 20241227163236.png",
     "NLG/RAG/RAGSum/img/Pasted image 20241227163217.png",
@@ -303,7 +294,6 @@
     "PLM/Models/Phi",
     "Tool/Git/Git.md",
     "News/Inbox.md",
-    "PLM/Models/Qwen/Qwen2.5.md",
     "PLM/Models/Qwen/Qwen2.md",
     "PLM/Models/Qwen/Qwen.md",
     "DataRelated/NLGDataset/对话数据集.md",
@@ -315,10 +305,7 @@
     "PLM/Prompt/Prompt.md",
     "DataRelated/NLGDataset/Dataset.md",
     "PLM/Alignment/PPO/PPO.md",
-    "PLM/README.md",
-    "PLM/预训练语言模型.md",
     "PLM/Models/GPT/GPT.md",
-    "PLM/关于LLM的一些思考.md",
     "DataRelated/NLGDataset/Diamante/Diamante.md",
     "PLM/Models/img",
     "PLM/Models/AFM/img",
