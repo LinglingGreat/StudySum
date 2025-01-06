@@ -256,7 +256,7 @@ CP并行策略的改进
 - 除了DPO以外，Meta也尝试了一些on-policy的方案，如PPO。但是相对来说，DPO消耗更少的计算资源，并且效果也更好，特别是在instruction following的能力上，所以还是选择在post-training使用DPO。
 - lr=1e-5 和 β=0.1
 - Masking out formatting tokens in DPO loss。把特殊token比如header和termination token屏蔽，不用于计算训练loss。因为使用这些token计算loss会使得模型在生成时，出现如复读机或者在不合适的地方截断的情况。这可能就是因为chosen repsponse和rejected response同时包含的这些特殊token，让模型在训练时要同时增大和较小它们的likelihood，导致冲突。
-- Regularization with NLL loss。除了DPO的常规loss，Meta额外加入了NLL损失项，这和《Iterative reasoning preference optimization》的做法类似，类似正负样本的精细化调权手段。这也有点像PPO里加入next token prediction loss，能使训练更加稳定，并能保持SFT学到的生成格式，并保持chosen response的log probability不下降（《Smaug: Fixing failure modes of preference optimisation with dpo-positive》）。其缩放系数为 0.2。
+- Regularization with NLL loss。除了DPO的常规loss，Meta额外加入了NLL损失项，这和《Iterative reasoning preference optimization》的做法类似，类似正负样本的精细化调权手段。这也有点像PPO里加入next token prediction loss，能使训练更加稳定，并能保持SFT学到的生成格式，并保持chosen response的log probability不下降（《Smaug: Fixing failure modes of preference optimisation with dpo-positive》）。其缩放系数为 0.2。(加上NLL loss的好处是，防止chosen response的log probability下降。坏处是，chosen response如果本身不够好，加这个SFT loss可能也不太好，需要具体问题具体分析。)
 
 模型融合
 - 参考《Averaging weights leads to wider optima and better generalization》《Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time》和《Branch-train-merge: Embarrassingly parallel training of expert language models》，在RM、SFT和DPO阶段，分别把“用不同版本的数据和超参训练得到模型”进行平均，以获得最终模型。
@@ -803,6 +803,8 @@ You are a helpful and cheerful AI Chatbot that acts as a meal plan assistant for
 [Meta Llama 3.1-405B AI 模型多项跑分超越 GPT-4o，如何评价该款模型？-张俊林的回答](https://www.zhihu.com/question/662354435/answer/3572364267)
 
 [Llama3.1--post-training要点一览](https://mp.weixin.qq.com/s/wSVi2csJ9weL57iB_2XgCg)
+
+[从Llama 3报告出发的LLM基本技术整理](https://zhuanlan.zhihu.com/p/713794852)
 
 
 
