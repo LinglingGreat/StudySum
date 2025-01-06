@@ -41,12 +41,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/2024paperlist.md",
+                "file": "PLM/Models/Qwen/Qwen2.5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024paperlist"
+              "title": "Qwen2.5"
+            }
+          },
+          {
+            "id": "64812fcc8f101429",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Models/LLaMA/LLaMA3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LLaMA3"
             }
           },
           {
@@ -78,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -264,16 +278,16 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "49f6adeb36b9f93a",
+  "active": "64812fcc8f101429",
   "lastOpenFiles": [
-    "PLM/README.md",
+    "PLM/Models/Qwen/Qwen2.5.md",
     "PLM/2024paperlist.md",
+    "PLM/README.md",
     "PLM/预训练语言模型.md",
     "PLM/关于LLM的一些思考.md",
     "PLM/Models/README.md",
     "Tool/Linux/Linux.md",
     "NLG/RAG/RAGSum/README.md",
-    "PLM/Models/Qwen/Qwen2.5.md",
     "NLG/RAG/RAGSum/img/Pasted image 20241227163252.png",
     "NLG/RAG/RAGSum/img/Pasted image 20241227163236.png",
     "NLG/RAG/RAGSum/img/Pasted image 20241227163217.png",

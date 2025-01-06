@@ -36,6 +36,8 @@ LLaMA-3特点
 - 训练了一个405B的dense模型，用了15.6T tokens。we also train our smaller models for much longer than is compute-optimal. 结果是更好
 - 选择dense架构而不是MOE，训练更稳定；采用SFT，RS(拒绝采样), DPO而不是难以训练和扩展的PPO
 
+[沐神](https://zhida.zhihu.com/search?content_id=246751270&content_type=Article&match_order=2&q=%E6%B2%90%E7%A5%9E&zhida_source=entity)：15个T可能是目前在公有的网络上面，能够抓到的文本数据的一个大概的上限，这个"上限"的意思是指，与其再找一些增量的数据，不如去调整现有的数据的质量。
+
 多模态部分
 - 多模态预训练包括用于图像和语音的单独编码器 
 - 图像编码器在图像文本对上预训练，而语音编码器以自监督方式进行预训练，通过离散令牌表示重建屏蔽输入 
