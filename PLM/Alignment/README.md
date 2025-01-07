@@ -128,3 +128,5 @@ Offline:
 
 [A recipe for frontier model post-training](https://www.interconnects.ai/p/frontier-model-post-training)：Apple、Meta 和 Nvidia 都同意——合成数据、迭代训练、人类偏好标签和大量过滤。
 
+[Llama3.1，DeepSeek-V3，TÜLU 3，Qwen2.5后训练合集](https://zhuanlan.zhihu.com/p/12862210431)
+
