@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/Tulu/Tulu3.md",
+                "file": "PLM/Alignment/PPO/PPO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Tulu3"
+              "title": "PPO"
             }
           },
           {
@@ -210,10 +210,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "PLM/Alignment/PPO/PPO.md"
               },
               "icon": "lucide-list",
-              "title": "Linux 的大纲"
+              "title": "PPO 的大纲"
             }
           },
           {
@@ -256,10 +256,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Tool/Linux/Linux.md"
+                "file": "PLM/Alignment/PPO/PPO.md"
               },
               "icon": "lucide-info",
-              "title": "Linux的笔记属性"
+              "title": "PPO的笔记属性"
             }
           },
           {
@@ -273,12 +273,11 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 477.5,
-    "collapsed": true
+    "width": 477.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -292,10 +291,10 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "49ce2afdd90804b4",
+  "active": "a587b5911d49c840",
   "lastOpenFiles": [
-    "PLM/Alignment/README.md",
     "PLM/Alignment/Tulu/Tulu3.md",
+    "PLM/Alignment/README.md",
     "PLM/Alignment/Tulu",
     "PLM/Agent/README.md",
     "PLM/Models/LLaMA/LLaMA3.md",

@@ -394,7 +394,67 @@ where x is the prompt, y is the response, and $\textbf{I}(s_t = [\text{EOS}])$ i
   
 需要注意的是， Rt 的设计并不只有这一种。deepspeed在自己的代码注释中也有提过，可以尝试把最后一个时刻的 RT 替换成所有token的即时奖励的平均值。如果站在这个角度理解的话，我们同样也可以尝试在每一个位置的奖励衡量上引入 Rt 。
 
-代码实现
+伪代码解析：
+
+```python
+def compute_rewards(self, prompts, log_probs, ref_log_probs, reward_score,
+                        action_mask):
+        """
+        reward_function：计算最终的reward分数
+        复习一下几个相关参数的默认值：
+        self.kl_ctl = 0.1
+        self.clip_reward_value = 5
+
+        对于batch中的某个prompt来说，它最终的reward分数为：
+        (1) 先计算actor和ref_model的logit相似度： -self.kl_ctl * (log_probs - ref_log_probs)
+            其实写成self.kl_ctl * (ref_log_probs - log_probs)更好理解些
+            这个值越大，说明ref_model对actor生成的结果的认可度越高（即表明rlhf没有训歪），
+            没有训歪的情况下我们也应该给模型一些奖励，这个奖励就是self.kl_ctl * (ref_log_probs - log_probs)
+
+        （2）由于我们只取最后一个token对应位置的分数作为reward_score，因此我们只需要：
+            self.kl_ctl * (ref_log_probs - log_probs)的最后一位 + reward_score
+
+         (3) 同时我们对reward_score也做了大小限制，最大不超过self.clip_reward_value（超过统一给成self.clip_reward_value），
+             最小不低于-self.clip_reward_value（低于统一给成-self.clip_reward_value）
+
+         (4) 最后返回的rewards大小为：（batch_size, 各条数据的长度），对batch中的每条数据来说：
+             - response的最后一位：self.kl_ctl * (ref_log_probs - log_probs)的最后一位 + reward_score
+             - response的其余位置：self.kl_ctl * (ref_log_probs - log_probs)
+
+        """
+
+        kl_divergence_estimate = -self.kl_ctl * (log_probs - ref_log_probs)
+        rewards = kl_divergence_estimate
+        # ---------------------------------------------------------------------------------------------------
+        # response开始的位置
+        # （因为我们对prompt做过padding处理，因此batch中每个prompt长度一致，也就意味着每个response开始的位置一致）
+        # （所以这里start是不加s的，只是一个int）
+        # ---------------------------------------------------------------------------------------------------
+        start = prompts.shape[1] - 1
+        # ---------------------------------------------------------------------------------------------------
+        # response结束的位置
+        # （因为一个batch中，每个response的长度不一样，所以response的结束位置也不一样）
+        # （所以这里end是加s的，ends的尺寸是(batch_size,)
+        # ---------------------------------------------------------------------------------------------------
+        ends = start + action_mask[:, start:].sum(1) + 1
+        # ---------------------------------------------------------------------------------------------------
+        # 对rewards_score做限制
+        # ---------------------------------------------------------------------------------------------------
+        reward_clip = torch.clamp(reward_score, -self.clip_reward_value,
+                                  self.clip_reward_value)
+        batch_size = log_probs.shape[0]
+        for j in range(batch_size):
+            rewards[j, start:ends[j]][-1] += reward_clip[j] # 
+
+        return rewards
+```
+
+注意输入输出的维度，`prompts` 是一个 `[batch size, padded prompt length]` 的 matrix，`ref_log_probs` 和 `log_probs` 是 `[batch size, padded prompt with response length]` 大小的矩阵，然后只有从 `prompt` 结束到 `response` 结束这一块儿的 `reward` 才会实际有作用，`prompt` 的 `reward` 是不计算的。
+
+`prompt` 有统一的 `padding`，所以 `response` 的 `start` 位置是唯一的，而 `ends` 则通过 `action_mask` 中的 1 元素的截止为止计算得到。最后，在这个 `batch` 中，每个 `prompt` 的 `reward` 的结尾那个 `token` 加上 `reward_score` 进过 clip 得到的 `reward`。
+
+
+代码实现：
 
 ```python
 def compute_approx_kl(
