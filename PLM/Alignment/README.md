@@ -130,3 +130,5 @@ Offline:
 
 [Llama3.1，DeepSeek-V3，TÜLU 3，Qwen2.5后训练合集](https://zhuanlan.zhihu.com/p/12862210431)
 
+[拒绝采样](https://zhuanlan.zhihu.com/p/3907736367)
+
