@@ -56,3 +56,8 @@ Baichuan-NPC大模型使用了思维链对齐技术，使得模型的思考过�
 
 [通用大模型向左，角色大模型向右](https://mp.weixin.qq.com/s/QXzGwAkgi58XFnbo80FIZg)
 
+[浅谈 role play](https://zhuanlan.zhihu.com/p/718761737)（蛮值得看看的）
+- 怎么做？预训练，SFT，RLHF，Eval
+- **role_play 模型真正需要学会的是：去掉 [llm 模型](https://zhida.zhihu.com/search?content_id=247854601&content_type=Article&match_order=1&q=llm+%E6%A8%A1%E5%9E%8B&zhida_source=entity)骨子里的彬彬有礼、有问必答**。
+- **用户 query 的多样性，才是训 role_play 模型真正的核心**！你必须让模型见到各种诡异的、奇葩的 query，给他构造各种角度刁钻的对话 sesion。让模型先经历一下我们的的毒打，它才能尽可能的应付用户的毒打。（建议GPT4分别扮演用户和角色来回对话）
+- roleplay为什么火起来？为什么不火了？

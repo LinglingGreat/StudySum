@@ -50,17 +50,17 @@
             }
           },
           {
-            "id": "63bef2861fdf5165",
+            "id": "ff7a1b10741c3b89",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/BaseStruct/PositionEncoding/位置编码.md",
+                "file": "PLM/RolePlay/RolePlaySum.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "位置编码"
+              "title": "RolePlaySum"
             }
           },
           {
@@ -196,10 +196,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/BaseStruct/PositionEncoding/位置编码.md"
+                "file": "PLM/RolePlay/RolePlaySum.md"
               },
               "icon": "lucide-list",
-              "title": "位置编码 的大纲"
+              "title": "RolePlaySum 的大纲"
             }
           },
           {
@@ -242,10 +242,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/BaseStruct/PositionEncoding/位置编码.md"
+                "file": "PLM/RolePlay/RolePlaySum.md"
               },
               "icon": "lucide-info",
-              "title": "位置编码的笔记属性"
+              "title": "RolePlaySum的笔记属性"
             }
           },
           {
@@ -263,7 +263,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 477.5
+    "width": 346.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -277,9 +277,10 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "63bef2861fdf5165",
+  "active": "ff7a1b10741c3b89",
   "lastOpenFiles": [
     "PLM/Alignment/PPO/PPO.md",
+    "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/Alignment/Tulu/Tulu3.md",
     "PLM/Alignment/README.md",
     "PLM/Alignment/Tulu",
@@ -320,7 +321,6 @@
     "Tool/Pytorch/transformers.md",
     "PLM/Prompt/Prompt工程优化.md",
     "PLM/Prompt/PPT/PPT.md",
-    "PLM/Prompt/Prompt.md",
     "PLM/Models/img",
     "PLM/Models/AFM/img",
     "PLM/Models/AFM",
