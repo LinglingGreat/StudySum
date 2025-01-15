@@ -895,4 +895,5 @@ reward模型和其他模型可以用不同的tokenizer，但是critic模型和ac
 
 [图解大模型RLHF系列之：人人都能看懂的PPO原理与源码解读](https://zhuanlan.zhihu.com/p/677607581)
 
+[如何让 RLHF 训练更稳定？](https://zhuanlan.zhihu.com/p/16734946629)
 
