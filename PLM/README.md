@@ -57,6 +57,11 @@
 
 [浙大、微软等发布最新综述，深入探索语音对话模型的前沿进展](https://mp.weixin.qq.com/s/49LriNT5aOt6Mm3yfq4RHA) 
 
+## Infra
+
+[Imbue-70B 的 AI Infra：从0到1搭建和运维4088 H100集群的最佳实践](https://mp.weixin.qq.com/s/2NOgUkVRDIKiFlpQsP5U4w)
+
+
 ## 训练情况对比
 
 

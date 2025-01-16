@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md",
+                "file": "PLM/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PPO"
+              "title": "README"
             }
           },
           {
@@ -182,10 +182,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md"
+                "file": "PLM/README.md"
               },
               "icon": "lucide-list",
-              "title": "PPO 的大纲"
+              "title": "README 的大纲"
             }
           },
           {
@@ -228,10 +228,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md"
+                "file": "PLM/README.md"
               },
               "icon": "lucide-info",
-              "title": "PPO的笔记属性"
+              "title": "README的笔记属性"
             }
           },
           {
@@ -265,8 +265,8 @@
   },
   "active": "49ce2afdd90804b4",
   "lastOpenFiles": [
-    "PLM/Alignment/README.md",
     "PLM/Alignment/PPO/PPO.md",
+    "PLM/Alignment/README.md",
     "PLM/RolePlay/RolePlaySum.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/Alignment/Tulu/Tulu3.md",
