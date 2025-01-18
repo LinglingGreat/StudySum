@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/DPO/DPO.md",
+                "file": "PLM/Models/Minimax/Minimax01.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DPO"
+              "title": "Minimax01"
             }
           }
         ],
@@ -168,10 +168,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/DPO/DPO.md"
+                "file": "PLM/Models/Minimax/Minimax01.md"
               },
               "icon": "lucide-list",
-              "title": "DPO 的大纲"
+              "title": "Minimax01 的大纲"
             }
           },
           {
@@ -214,10 +214,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Alignment/DPO/DPO.md"
+                "file": "PLM/Models/Minimax/Minimax01.md"
               },
               "icon": "lucide-info",
-              "title": "DPO的笔记属性"
+              "title": "Minimax01的笔记属性"
             }
           },
           {
@@ -251,11 +251,25 @@
   },
   "active": "c464753fd7b957d8",
   "lastOpenFiles": [
+    "PLM/Models/Minimax/img/Pasted image 20250118144046.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118144025.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118143918.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118143817.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118142529.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118142446.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118142230.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118142218.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118141952.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118141725.png",
+    "PLM/Models/Minimax/img/Pasted image 20250118135901.png",
+    "PLM/Models/Minimax/img",
+    "PLM/Alignment/DPO/DPO.md",
+    "PLM/Models/Minimax/Minimax01.md",
+    "PLM/Models/Minimax",
     "Tool/Linux/Linux.md",
     "PLM/README.md",
     "Tool/Git/Git.md",
     "PLM/DataStrategy/README.md",
-    "PLM/Alignment/DPO/DPO.md",
     "PLM/Alignment/README.md",
     "PLM/ScalingLaw/ScalingLaw.md",
     "PLM/ScalingLaw.md",
@@ -274,29 +288,15 @@
     "PLM/关于LLM的一些思考.md",
     "PLM/Models/README.md",
     "NLG/RAG/RAGSum/README.md",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227163252.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227163236.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227163217.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227163156.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227162857.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227162806.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227162616.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227162230.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227161702.png",
-    "NLG/RAG/RAGSum/img/Pasted image 20241227161449.png",
     "NLG/RAG/RAGSum/img",
     "NLG/RAG/README.md",
     "NLG/RAG/RAGSum",
     "NLG/RAG/Memory/EVE_Memory.md",
     "NLG/RAG/Memory",
-    "PLM/Models/Phi/Phi-4.md",
     "PLM/Models/Phi/img",
     "PLM/Models/Phi",
-    "News/Inbox.md",
     "PLM/Models/img",
     "PLM/Models/AFM/img",
-    "PLM/Models/AFM",
-    "PLM/CL/D-CPTLaw/img",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
