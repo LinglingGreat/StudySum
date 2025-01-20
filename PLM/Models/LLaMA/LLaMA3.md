@@ -226,88 +226,40 @@ CP并行策略的改进
 
 ![](img/Pasted%20image%2020240725173402.png)
 
-**总体流程**
+### 总体流程
 
-首先用人工标注数据训练RM模型，用来评价一个<Prompt,answer>数据的质量，然后用RM参与拒绝采样（Rejection Sampling），就是说对于一个人工Prompt，用模型生成若干个回答，RM给予质量打分，选择得分最高的保留作为SFT数据，其它抛掉。这样得到的SFT数据再加上专门增强代码、数学、逻辑能力的SFT数据一起，用来调整模型得到SFT模型。之后用人工标注数据来使用DPO模型调整LLM参数，DPO本质上是个二分类，就是从人工标注的<Prompt，Good Answer，Bad Answer>三元数据里学习，调整模型参数鼓励模型输出Good Answer，不输出Bad Answer。这算完成了一个迭代轮次的Post-Training。
+	迭代式的，总共做了6轮。每轮的核心操作是：Reward Modeling，Rejection Sampling，SFT，DPO。
+	数据构成主要是SFT data和Preference data。而Reward Modeling和DPO，对Preference data又有不同的使用方式。
+	RM：用人工标注数据训练RM模型，用来评价一个<Prompt,answer>数据的质量。
+	- SFT data：每轮Rejection Sampling的结果 + 针对特定能力（代码、数学、逻辑能力）的合成数据 + 少量的人工标注数据。
+	然后用于SFT训练模型
+	- Preference data：每一轮训练都构建一批新的人工标注的Preference data，Preference data积累式地增长。
+	然后用于DPO训练模型
+	Model Averaging：每个RM、SFT或DPO阶段，使用不同的data mix或超参数进行实验所获得的模型进行加权平均。
+
+什么是拒绝采样（Rejection Sampling）？对于一个人工Prompt，用模型生成若干个回答，RM给予质量打分，选择得分最高的保留作为SFT数据，其它抛掉。
+
+什么是DPO？DPO本质上是个二分类，就是从人工标注的<Prompt，Good Answer，Bad Answer>三元数据里学习，调整模型参数鼓励模型输出Good Answer，不输出Bad Answer。
 
 上述过程会反复迭代几次，每次的流程相同，不同的地方在于拒绝采样阶段用来对给定Prompt产生回答的LLM模型，会从上一轮流程最后产生的若干不同DPO模型（不同超参等）里选择最好的那个在下一轮拒绝采样阶段给Prompt生成答案。很明显，随着迭代的增加DPO模型越来越好，所以拒绝采样里能选出的最佳答案质量越来越高，SFT模型就越好，如此形成正反馈循环。
 
 可以看出，尽管RLHF 和DPO两种模式都包含RM，但是用的地方不一样，RLHF是把RM打分用在PPO强化学习阶段，而LLaMA 3则用RM来筛选高质量SFT数据。而且因为拒绝采样的回答是由LLM产生的，可知这里大量采用了合成数据来训练SFT模型。
 
-
 **特殊token**：使用新的多消息聊天协议的工具使用，该协议使用各种特殊标头和终止令牌。
 
-
-**奖励建模**
-- 和Llama-2相比，这次RM的一个变化是移除了训练时加入的margin term（用于把chosen和rejected response区分得更开），因为随着模型规模的增大，加入margin term收益越来越小了。
-- 同Llama-2一样，preference data中只有区分度比较大的数据对用于训练RM。
-- 过滤掉具有相似响应的样本后的偏好数据
-- 数据上，除了常规的chosen和rejected response之外，还引入了第三种 -- “edited response”，即在chosen的基础上通过（人工）编辑，进一步提升这条response的质量。这样每条ranking sample就可能有3条response（edited > chosen > rejected）。
-- 训练的时候，prompt和对应的多条随机打乱的response拼接在一起训练（prompt + resp_1 + resp_2 + resp_3），这和通常的做法，即每个response都拼接prompt有些不同（prompt + resp_1, prompt + resp_2, prompt + resp_3）。从结果上来看，都拼接到一起在accuracy上没有什么损失，而训练效率更高。
-
-
-**监督微调**
-- 训练好的RM模型会用于rejection sampling，对human annotation prompt的不同生成结果进行过滤。与真实数据和合成数据相结合得到SFT数据
-- masking loss on prompt tokens
-- 使用 1e-5 的 lr 训练 8.5K 到 9K 步。实践上这样的参数设置在多轮的post-training中都能保持较好的效果。
-
-直接偏好优化
-- 会用在上一轮post-training得到的最佳模型收集偏好数据对，这样能使得偏好数据的分布和强化学习时的policy model更一致。
-- 除了DPO以外，Meta也尝试了一些on-policy的方案，如PPO。但是相对来说，DPO消耗更少的计算资源，并且效果也更好，特别是在instruction following的能力上，所以还是选择在post-training使用DPO。
-- lr=1e-5 和 β=0.1
-- Masking out formatting tokens in DPO loss。把特殊token比如header和termination token屏蔽，不用于计算训练loss。因为使用这些token计算loss会使得模型在生成时，出现如复读机或者在不合适的地方截断的情况。这可能就是因为chosen repsponse和rejected response同时包含的这些特殊token，让模型在训练时要同时增大和较小它们的likelihood，导致冲突。
-- Regularization with NLL loss。除了DPO的常规loss，Meta额外加入了NLL损失项，这和《Iterative reasoning preference optimization》的做法类似，类似正负样本的精细化调权手段。这也有点像PPO里加入next token prediction loss，能使训练更加稳定，并能保持SFT学到的生成格式，并保持chosen response的log probability不下降（《Smaug: Fixing failure modes of preference optimisation with dpo-positive》）。其缩放系数为 0.2。(加上NLL loss的好处是，防止chosen response的log probability下降。坏处是，chosen response如果本身不够好，加这个SFT loss可能也不太好，需要具体问题具体分析。)
-
-模型融合
-- 参考《Averaging weights leads to wider optima and better generalization》《Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time》和《Branch-train-merge: Embarrassingly parallel training of expert language models》，在RM、SFT和DPO阶段，分别把“用不同版本的数据和超参训练得到模型”进行平均，以获得最终模型。
-
-迭代式训练6次
-- 同LLama2，最新的模型采样最新的偏好数据，武当总云梯，左脚踩右脚
-
-**偏好数据**
-
-首先，在每轮训练完后部署一批“在不同数据、超参、训练策略上训练”得到的模型，这些模型有各自的特点，比如有些擅长写代码，有些擅长数学推理。
-
-对于每个user prompt，从这些模型里采样两个response。之后标注人员给每对chosen和rejected response分成4类：
-
-- significantly better
-    
-- better
-    
-- slightly better
-    
-- marginally better
-    
-
-过程中标注人员也可以对chosen response进一步编辑，获得更好的response。
-
-下表给出了偏好数据的的统计：
-
-![](img/Pasted%20image%2020240727114410.png)
-
-相比Llama-2的数据，Llama-3所用的prompt和response的长度都有所增加，这说明Llama-3的任务复杂度提升了。
-
-在每一轮的post-training之后，都会分析当前版本模型效果不好的领域，并针对这些领域提升prompt的复杂度。
-
-每轮post-training中，训练RM的时候，会使用所有来自不同轮所收集到的偏好数据。而DPO训练则只会用到最新的偏好数据。
-
-对于RM和DPO，都只使用分类为significantly better 和 better的数据进行训练，而另外两类质量相近的偏好数据对则被丢弃。
-
+### SFT
 
 **SFT Data**
 
 SFT数据主要有这几个来源：
 
 - 人工收集的prompt，以及对应的通过拒绝采样得到的response
-    
 - 特定领域的合成数据（后面capacities部分会讲到）
-    
 - 少量人类真实数据
-    
 
 1、拒绝采样（RS）
 
-在RS阶段，每个prompt会从“最新的/领域最佳的chat模型”采样K个回复（一般10~30个），然后用RM选出最佳回复（《Constitutional AI: harmlessness from AI feedback》）。
+在RS阶段，每个prompt会从 **“最新的/领域最佳的chat模型”采样K个回复（一般10~30个）**，然后用RM选出最佳回复（《Constitutional AI: harmlessness from AI feedback》）。
 
 在靠后轮次的post-training里，RS引入了控制风格、格式、语气等特性的system prompt以更精细地控制数据质量。不同的领域（如代码、推理、工具使用等）可能会采用不同的prompt。
 
@@ -319,13 +271,70 @@ PagedAttention 用于实现高效的拒绝采样
 
 ![](img/Pasted%20image%2020240727114525.png)
 
-数据清洗：在post-training的前几轮中，研究人员发现数据中混入了一些包含过量emoji或者感叹号之类的数据，因此用专门的规则对发现的低质量pattern进行了清洗。此外有些数据还有overly-apologetic（比如模型经常回复“我很抱歉”）的问题，也会有规则识别如“I‘m sorry”这样的内容，并降低这类数据的比例。
+
+- 训练好的RM模型会用于rejection sampling，对human annotation prompt的不同生成结果进行过滤。与真实数据和合成数据相结合得到SFT数据
+- masking loss on prompt tokens
+- 使用 1e-5 的 lr 训练 8.5K 到 9K 步。实践上这样的参数设置在多轮的post-training中都能保持较好的效果。
+- 高质量数据源进行多轮重复训练(epochs multiple times)。例如一个特别优质的coding示例可能被训练3-4次。
+- 普通质量数据进行降采样(downsamples)。质量一般的数据可能只用1次或被随机抽样部分使用。
+
+
+### 偏好数据
+
+首先，**在每轮训练完后部署一批“在不同数据、超参、训练策略上训练”得到的模型，这些模型有各自的特点**，比如有些擅长写代码，有些擅长数学推理。
+
+对于每个user prompt，从这些模型里采样两个response。之后标注人员给每对chosen和rejected response分成4类：
+
+- significantly better
+- better
+- slightly better
+- marginally better
+
+过程中标注人员也可以对chosen response进一步编辑，获得更好的response。
+
+下表给出了偏好数据的的统计：
+
+![](img/Pasted%20image%2020240727114410.png)
+
+相比Llama-2的数据，Llama-3所用的prompt和response的长度都有所增加，这说明Llama-3的任务复杂度提升了。
+
+在每一轮的post-training之后，**都会分析当前版本模型效果不好的领域，并针对这些领域提升prompt的复杂度**。
+
+每轮post-training中，**训练RM的时候，会使用所有来自不同轮所收集到的偏好数据。而DPO训练则只会用到最新的偏好数据**。
+
+对于RM和DPO，都只使用分类为significantly better 和 better的数据进行训练，而另外两类质量相近的偏好数据对则被丢弃。
+
+### RM&DPO
+
+**奖励建模**
+- 和Llama-2相比，这次RM的一个变化是移除了训练时加入的margin term（用于把chosen和rejected response区分得更开），因为随着模型规模的增大，加入margin term收益越来越小了。
+- 同Llama-2一样，preference data中只有区分度比较大的数据对用于训练RM。
+- 过滤掉具有相似响应的样本后的偏好数据
+- 数据上，除了常规的chosen和rejected response之外，还引入了第三种 -- “edited response”，即在chosen的基础上通过（人工）编辑，进一步提升这条response的质量。这样每条ranking sample就可能有3条response（edited > chosen > rejected）。
+- 训练的时候，prompt和对应的多条随机打乱的response拼接在一起训练（prompt + resp_1 + resp_2 + resp_3），这和通常的做法，即每个response都拼接prompt有些不同（prompt + resp_1, prompt + resp_2, prompt + resp_3）。从结果上来看，都拼接到一起在accuracy上没有什么损失，而训练效率更高。
+- 每次训练都会使用所有的Preference data，且都是从Pre-trained checkpoint开始训练的
+
+**直接偏好优化**
+- 会用在上一轮post-training得到的最佳模型收集偏好数据对，这样能使得偏好数据的分布和强化学习时的policy model更一致。
+- 除了DPO以外，Meta也尝试了一些on-policy的方案，如PPO。但是相对来说，DPO消耗更少的计算资源，并且效果也更好，特别是在instruction following的能力上，所以还是选择在post-training使用DPO。
+- lr=1e-5 和 β=0.1
+- Masking out formatting tokens in DPO loss。把特殊token比如header和termination token屏蔽，不用于计算训练loss。因为使用这些token计算loss会使得模型在生成时，出现如复读机或者在不合适的地方截断的情况。这可能就是因为chosen repsponse和rejected response同时包含的这些特殊token，让模型在训练时要同时增大和较小它们的likelihood，导致冲突。
+- Regularization with NLL loss。除了DPO的常规loss，Meta额外加入了NLL损失项，这和《Iterative reasoning preference optimization》的做法类似，类似正负样本的精细化调权手段。这也有点像PPO里加入next token prediction loss，能使训练更加稳定，并能保持SFT学到的生成格式，并保持chosen response的log probability不下降（《Smaug: Fixing failure modes of preference optimisation with dpo-positive》）。其缩放系数为 0.2。(加上NLL loss的好处是，防止chosen response的log probability下降。坏处是，chosen response如果本身不够好，加这个SFT loss可能也不太好，需要具体问题具体分析。)（其实就是SFT loss）
+
+### 模型融合
+
+- 参考《Averaging weights leads to wider optima and better generalization》《Model soups: averaging weights of multiple fine-tuned models improves accuracy without increasing inference time》和《Branch-train-merge: Embarrassingly parallel training of expert language models》，在RM、SFT和DPO阶段，分别把“用不同版本的数据和超参训练得到模型”进行平均，以获得最终模型。
+
+
+### 数据清洗
+
+在post-training的前几轮中，研究人员发现数据中混入了一些包含过量emoji或者感叹号之类的数据，因此用专门的规则对发现的低质量pattern进行了清洗。此外有些数据还有overly-apologetic（比如模型经常回复“我很抱歉”）的问题，也会有规则识别如“I‘m sorry”这样的内容，并降低这类数据的比例。
 
 数据裁剪：我们还应用一系列基于模型的技术来删除低质量的训练样本并提高整体模型性能
-- 主题分类。微调llama3 8B。包括粗粒度和细粒度。
-- 质量打分。用reward模型和 “model-as-judge”的方法得到分数。取 RM 分数前四分之一的数据是高质量的。“model-as-judge”对每个样本进行三分制评分（使用特定的prompt（不同领域prompt可能不同））：一般英语数据（准确性、指令遵循和语气/表达）；编码数据（错误识别和表达）采用两分制评分用户意图），并将获得最高分数的样本视为高质量。 RM 和基于 Llama 的分数具有很高的分歧率，我们发现结合这些信号可以在我们的内部测试集上产生最佳的召回率。最终，我们选择由 RM 或基于 Llama 的过滤器标记为高质量的示例。
-- 难度打分。因为我们还对模型更复杂的示例的优先级感兴趣，所以我们使用两种难度度量对数据进行评分：Instag（Lu 等人，2023）和基于 Llama 的评分。对于 Instag，我们提示 Llama 3 70B 对 SFT 提示执行意图标记，其中更多意图意味着更多复杂性。我们还提示 Llama 3 以三分制衡量对话的难度（Liu et al., 2024c）。
-- 语义去重：我们首先使用 RoBERTa 对完整的对话进行聚类（Liu et al., 2019b），并在每个聚类中按质量分数 × 难度分数对它们进行排序。然后，我们通过迭代所有排序的示例来进行贪婪选择，并且仅保留最大余弦相似度小于集群中迄今为止看到的示例的阈值的示例。
+- **主题分类**。微调llama3 8B。包括粗粒度和细粒度。
+- **质量打分**。用reward模型和 “model-as-judge”的方法得到分数。取 RM 分数前四分之一的数据是高质量的。“model-as-judge”对每个样本进行三分制评分（使用特定的prompt（不同领域prompt可能不同））：一般英语数据（准确性、指令遵循和语气/表达）；编码数据（错误识别和表达）采用两分制评分用户意图），并将获得最高分数的样本视为高质量。 RM 和基于 Llama 的分数具有很高的分歧率，我们发现结合这些信号可以在我们的内部测试集上产生最佳的召回率。最终，我们选择由 RM 或基于 Llama 的过滤器标记为高质量的示例。
+- **难度打分**。因为我们还对模型更复杂的示例的优先级感兴趣，所以我们使用两种难度度量对数据进行评分：Instag（Lu 等人，2023）和基于 Llama 的评分。对于 Instag，我们提示 Llama 3 70B 对 SFT 提示执行意图标记，其中更多意图意味着更多复杂性。我们还提示 Llama 3 以三分制衡量对话的难度（Liu et al., 2024c）。
+- **语义去重**：我们首先使用 RoBERTa 对完整的对话进行聚类（Liu et al., 2019b），并在每个聚类中按质量分数 × 难度分数对它们进行排序。然后，我们通过迭代所有排序的示例来进行贪婪选择，并且仅保留最大余弦相似度小于集群中迄今为止看到的示例的阈值的示例。
 
 ## 能力提升
 

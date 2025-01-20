@@ -231,7 +231,15 @@ Offline:
 
 6、DPO和RLHF根据个人理解，对chosen-rejected数据的质量需求是不同的，选择RLHF仍然是更好的选择，对于显存不够的部分人来说，可以例如lora，将actor和ref共用一个，critic和reward共用一个，把显存从4x降低为2x。宁可这样也尽量把显存尽可能用来提高critic模型的参数量。
 
+## 后训练总结
 
+LLaMA3：[Post-training](../Models/LLaMA/LLaMA3.md#Post-training)
+
+DeepSeekv3: [Post-Training](../Models/Deepseek/Deepseekv3.md#Post-Training)
+
+Tuluv3: [核心亮点](Tulu/Tulu3.md#核心亮点)
+
+Qwen2.5: [后训练](../Models/Qwen/Qwen2.5.md#后训练)
 
 ## 参考资料
 
@@ -251,7 +259,7 @@ Offline:
 
 [A recipe for frontier model post-training](https://www.interconnects.ai/p/frontier-model-post-training)：Apple、Meta 和 Nvidia 都同意——合成数据、迭代训练、人类偏好标签和大量过滤。
 
-[Llama3.1，DeepSeek-V3，TÜLU 3，Qwen2.5后训练合集](https://zhuanlan.zhihu.com/p/12862210431)
+[Llama3.1，DeepSeek-V3，TÜLU 3，Qwen2.5后训练合集](https://zhuanlan.zhihu.com/p/12862210431) (已整理)
 
 [拒绝采样](https://zhuanlan.zhihu.com/p/3907736367)
 
