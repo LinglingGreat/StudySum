@@ -4,7 +4,9 @@ created: 2024-07-18
 tags:
   - attention
 ---
+## MHA&MQA&GQA
 
+MQA 提出时间挺早的，是 **Noam Shazeer** 这位谷歌老炮 19 年提出的。而 Noam 也是 Transformer 结构提出者之一，现在也就理所当然地早就不在 Google，是 Character.ai 的合伙人。
 
 ![](img/Pasted%20image%2020240718163122.png)
 
@@ -32,10 +34,6 @@ MQA 和 GQA 形式在推理加速方面，主要是通过两方面来完成：
 2. KV cache 变小了 head_num 倍，也就是显存中需要保存的 tensor 变小了，**空出来空间就可以加大 batch size**，从而又能提高利用率。
 
 如果要用 MQA 和 GQA，可以是从头训练的时候就加上，也可以像 GQA 论文里面一样，用已有的开源模型，挑一些头取个 mean 用来初始化 MQA 或 GQA 继续训练一段时间。
-# MQA
-MQA 提出时间挺早的，是 **Noam Shazeer** 这位谷歌老炮 19 年提出的。而 Noam 也是 Transformer 结构提出者之一，现在也就理所当然地早就不在 Google，是 Character.ai 的合伙人。
-
-
 
 
 # GQA

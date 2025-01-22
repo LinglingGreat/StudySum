@@ -235,7 +235,7 @@ Offline:
 
 LLaMA3：[Post-training](../Models/LLaMA/LLaMA3.md#Post-training)
 
-DeepSeekv3: [Post-Training](../Models/DeepSeek/Deepseekv3.md#Post-Training)
+DeepSeekv3: [Post-Training](../Models/DeepSeek/DeepSeekv3.md#Post-Training)
 
 Tuluv3: [核心亮点](Tulu/Tulu3.md#核心亮点)
 

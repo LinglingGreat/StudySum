@@ -181,3 +181,7 @@ Kimi 技术团队设计的简单而有效的 RL 框架离不开两个关键要�
 
 
 ## 参考资料
+
+如何评价 Kimi 发布的多模态推理模型 k1.5？ - Flood Sung的回答 - 知乎
+https://www.zhihu.com/question/10114790245/answer/84028353434
+
