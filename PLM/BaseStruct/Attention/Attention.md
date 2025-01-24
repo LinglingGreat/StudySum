@@ -162,3 +162,6 @@ class Self_Attention_Muti_Head(nn.Module):
 [白话attention（上）](https://zhuanlan.zhihu.com/p/73357761)
 
 [超详细图解Self-Attention的那些事儿](https://mp.weixin.qq.com/s/t2CY0xFFB1gwXChlDhlE3g)
+
+[[浅谈] 分析一下各种softmax attention的变种](https://zhuanlan.zhihu.com/p/18416338998) 
+
