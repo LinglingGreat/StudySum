@@ -39,7 +39,7 @@ institution:
 
 ### Multi-Head Latent Attention
 
-
+看deepseekv2报告
 ### DeepSeekMoE with Auxiliary-Loss-Free Load Balancing
 
 与 GShard (Lepikhin et al., 2021) 等传统 MoE 架构相比，DeepSeekMoE 使用更细粒度的专家，并将一些专家隔离为共享专家。
