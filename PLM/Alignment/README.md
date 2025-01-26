@@ -241,6 +241,23 @@ Tuluv3: [核心亮点](Tulu/Tulu3.md#核心亮点)
 
 Qwen2.5: [后训练](../Models/Qwen/Qwen2.5.md#后训练)
 
+
+1. 数据合成已成为工业界主流LLM后训练的基本方案
+2. 善用LLM-as-judge和拒绝采样技术。在偏好数据的构造上，Llama3、Qwen2、Baichuan2、AFM均采用拒绝采样(Rejection sampling)技术。用不同规模、不同参数的模型多次采样，再使用LLM和人工评估构造偏好样本对。
+3. Instag ([Lu et al., 2023](https://link.zhihu.com/?target=https%3A//openreview.net/forum%3Fid%3DpszewhybU9)) 方法，最初出现在Qwen技术报告中，随后又出现在了Llama3、Qwen2、Yi三个模型的技术报告中。
+4. 重点能力需要单独优化，如代码、多语言、数学、推理、长上下文、工具使用、指令遵循。
+5. 模型合并。使用不同版本的数据或超参数训练多个模型，最后平均模型参数，可以实现更均衡的性能。Llama3、Gemma2和Baichuan2均采用了模型合并技术。
+6. 强化学习。Llama3和Qwen2都只用了改良版的DPO，而没有使用PPO在线学习，说明PPO虽然上限高，但有一定门槛。各模型强化学习技术总结如下表。
+
+| 模型                    | 偏好对齐技术                       |
+| --------------------- | ---------------------------- |
+| Llama3                | 迭代式DPO                       |
+| Qwen2、Yi-Lightning    | offline DPO + online DPO     |
+| ChatGLM4              | DPO + PPO                    |
+| Deepseek-V2、Baichuan2 | GRPO                         |
+| Nemotron-4            | 迭代式DPO+RPO                   |
+| AFM                   | 综合RS、DPO、IPO，以及改进版在线RL：MDLOO |
+
 ## 参考资料
 
 [【RLHF】RL 究竟是如何与 LLM 做结合的？](https://zhuanlan.zhihu.com/p/675329917) (已整理)
@@ -260,6 +277,8 @@ Qwen2.5: [后训练](../Models/Qwen/Qwen2.5.md#后训练)
 [A recipe for frontier model post-training](https://www.interconnects.ai/p/frontier-model-post-training)：Apple、Meta 和 Nvidia 都同意——合成数据、迭代训练、人类偏好标签和大量过滤。
 
 [Llama3.1，DeepSeek-V3，TÜLU 3，Qwen2.5后训练合集](https://zhuanlan.zhihu.com/p/12862210431) (已整理)
+
+[工业界主流大语言模型后训练(Post-Training)技术总结](https://zhuanlan.zhihu.com/p/987052830)
 
 [拒绝采样](https://zhuanlan.zhihu.com/p/3907736367)
 

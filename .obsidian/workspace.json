@@ -97,16 +97,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/o1related/DeepSeekR/R1-related.md",
+                "file": "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "R1-related"
+              "title": "DeepSeek-R1"
+            }
+          },
+          {
+            "id": "9d9ecf4975d49e9c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Alignment/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -210,10 +224,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/o1related/DeepSeekR/R1-related.md"
+                "file": "PLM/Alignment/README.md"
               },
               "icon": "lucide-list",
-              "title": "R1-related 的大纲"
+              "title": "README 的大纲"
             }
           },
           {
@@ -256,10 +270,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/o1related/DeepSeekR/R1-related.md"
+                "file": "PLM/Alignment/README.md"
               },
               "icon": "lucide-info",
-              "title": "R1-related的笔记属性"
+              "title": "README的笔记属性"
             }
           },
           {
@@ -291,13 +305,13 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "ebf3c7f2eaa6eecc",
+  "active": "9d9ecf4975d49e9c",
   "lastOpenFiles": [
+    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
+    "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/o1related/DeepSeekR/img/Pasted image 20250126142023.png",
     "PLM/o1related/DeepSeekR/img/Pasted image 20250126142001.png",
     "PLM/o1related",
-    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
-    "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/Agent/Operator/OpenAI-operator.md",
     "PLM/Agent/README.md",
     "PLM/Agent/Operator",
@@ -322,7 +336,6 @@
     "PLM/Models/DeepSeek/img/Pasted image 20250122141318.png",
     "PLM/Models/DeepSeek/img/Pasted image 20250122141056.png",
     "PLM/Alignment/PPO/PPO.md",
-    "PLM/Models/DeepSeek/img/Pasted image 20250122135817.png",
     "PLM/BaseStruct/GQA/MQA&GQA.md",
     "PLM/Models/DeepSeek/DeepSeek.md",
     "PLM/Alignment/Tulu/Tulu3.md",
