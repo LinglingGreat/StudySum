@@ -69,7 +69,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/Kimi/Kimik1.5.md",
+                "file": "PLM/o1related/Kimi/Kimik1.5.md",
                 "mode": "source",
                 "source": false
               },
@@ -83,16 +83,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/aya-expanse/aya-expanse.md",
+                "file": "PLM/Agent/Operator/OpenAI-operator.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "aya-expanse"
+              "title": "OpenAI-operator"
+            }
+          },
+          {
+            "id": "ebf3c7f2eaa6eecc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/o1related/DeepSeekR/R1-related.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "R1-related"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -196,10 +210,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/aya-expanse/aya-expanse.md"
+                "file": "PLM/o1related/DeepSeekR/R1-related.md"
               },
               "icon": "lucide-list",
-              "title": "aya-expanse 的大纲"
+              "title": "R1-related 的大纲"
             }
           },
           {
@@ -242,10 +256,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Models/aya-expanse/aya-expanse.md"
+                "file": "PLM/o1related/DeepSeekR/R1-related.md"
               },
               "icon": "lucide-info",
-              "title": "aya-expanse的笔记属性"
+              "title": "R1-related的笔记属性"
             }
           },
           {
@@ -277,24 +291,32 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "f82221060f60f52a",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
-    "PLM/Models/DeepSeek/DeepSeekv2.md",
+    "PLM/o1related",
+    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
+    "PLM/o1related/DeepSeekR/R1-related.md",
+    "PLM/Agent/Operator/OpenAI-operator.md",
+    "PLM/Agent/README.md",
+    "PLM/Agent/Operator",
+    "PLM/CoT/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
+    "PLM/CoT/CoT.md",
+    "PLM/CoT/ProgramofThoughts/ProgramofThoughts.md",
     "PLM/Models/aya-expanse/aya-expanse.md",
+    "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/Models/aya-expanse",
     "PLM/Models/DeepSeek/img/Pasted image 20250124160346.png",
     "PLM/BaseStruct/Attention/Attention.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
-    "PLM/Models/DeepSeekR/DeepSeek-R1.md",
-    "PLM/Models/Kimi/Kimik1.5.md",
+    "PLM/o1related/Kimi/Kimik1.5.md",
     "Speedup/基础概念/分布式训练框架的编程基础.md",
     "Tool/Pytorch/Pytorch.md",
     "Speedup/基础概念",
-    "PLM/Models/Kimi/img/Pasted image 20250123204127.png",
-    "PLM/Models/Kimi/img/Pasted image 20250123204051.png",
-    "PLM/Models/Kimi/img/Pasted image 20250123204033.png",
-    "PLM/Models/Kimi/img/Pasted image 20250123204003.png",
-    "PLM/Models/Kimi/img/Pasted image 20250123203915.png",
+    "PLM/o1related/Kimi/img/Pasted image 20250123204127.png",
+    "PLM/o1related/Kimi/img/Pasted image 20250123204051.png",
+    "PLM/o1related/Kimi/img/Pasted image 20250123204033.png",
+    "PLM/o1related/Kimi/img/Pasted image 20250123204003.png",
+    "PLM/o1related/Kimi/img/Pasted image 20250123203915.png",
     "PLM/Models/DeepSeek/img/Pasted image 20250122141318.png",
     "PLM/Models/DeepSeek/img/Pasted image 20250122141056.png",
     "PLM/Alignment/PPO/PPO.md",
@@ -306,10 +328,10 @@
     "PLM/Models/Minimax/Minimax01.md",
     "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
-    "PLM/Models/Kimi/img",
-    "PLM/Models/DeepSeekR/img",
-    "PLM/Models/Kimi",
-    "PLM/Models/DeepSeekR",
+    "PLM/o1related/Kimi/img",
+    "PLM/o1related/DeepSeekR/img",
+    "PLM/o1related/Kimi",
+    "PLM/o1related/DeepSeekR",
     "PLM/Alignment/README.md",
     "PLM/Models/Qwen/Qwen2.5.md",
     "PLM/Alignment/Tulu/img",
@@ -317,14 +339,6 @@
     "PLM/Models/Minimax/img",
     "PLM/Alignment/DPO/DPO.md",
     "PLM/Models/Minimax",
-    "PLM/README.md",
-    "PLM/DataStrategy/README.md",
-    "PLM/ScalingLaw/ScalingLaw.md",
-    "PLM/ScalingLaw.md",
-    "Tool/Pytorch/transformers.md",
-    "PLM/RolePlay/RolePlaySum.md",
-    "PLM/BaseStruct/PositionEncoding/位置编码.md",
-    "PLM/Alignment/Tulu",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

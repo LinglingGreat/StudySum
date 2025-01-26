@@ -93,7 +93,7 @@ MultiArith直接能让GPT-3从17提升到78，换到PaLM上稍微小点，25到6
 
 ## Program of Thoughts
 
-[ProgramofThoughts](../ProgramofThoughts/ProgramofThoughts.md)
+[ProgramofThoughts](ProgramofThoughts/ProgramofThoughts.md)
 
 
 ## React
