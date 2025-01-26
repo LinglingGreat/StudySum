@@ -136,10 +136,19 @@ def get_batch_logps(
     - 通常用于计算损失函数（如负对数似然损失）或评估模型的预测质量。
 
 
-## 核心亮点
+## DPO 是如何简化 RLHF 的
+
+![](img/Pasted%20image%2020250126174234.png)
+
+![](img/Pasted%20image%2020250126174250.png)
+
+![](img/Pasted%20image%2020250126174303.png)
 
 
 ## 主要收获
 
 
 ## 参考资料
+
+[DPO 是如何简化 RLHF 的](https://zhuanlan.zhihu.com/p/671780768)
+

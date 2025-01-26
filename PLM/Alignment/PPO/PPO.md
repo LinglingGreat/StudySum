@@ -386,6 +386,8 @@ $$\text{KL}(t) = \log({\pi_{\theta_{\text{old}}}(a_t|s_t)^{\text{RL}}}/{\pi^{\te
 
 where x is the prompt, y is the response, and $\textbf{I}(s_t = [\text{EOS}])$ is the identity function that represents whether t is the last token.
 
+注意这里是KL散度的蒙特卡洛近似，**采样动作的权重已经隐含在数据分布中**。无需显式乘以 πold(a∣s)。
+
 汇总的$r(s_t, a_t)$是 PPO 想要优化的奖励。
 
 ![](img/Pasted%20image%2020241018211907.png)
