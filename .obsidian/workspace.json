@@ -291,8 +291,10 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "ebf3c7f2eaa6eecc",
   "lastOpenFiles": [
+    "PLM/o1related/DeepSeekR/img/Pasted image 20250126142023.png",
+    "PLM/o1related/DeepSeekR/img/Pasted image 20250126142001.png",
     "PLM/o1related",
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "PLM/o1related/DeepSeekR/R1-related.md",
@@ -321,7 +323,6 @@
     "PLM/Models/DeepSeek/img/Pasted image 20250122141056.png",
     "PLM/Alignment/PPO/PPO.md",
     "PLM/Models/DeepSeek/img/Pasted image 20250122135817.png",
-    "PLM/Models/DeepSeek/img/Pasted image 20250122135806.png",
     "PLM/BaseStruct/GQA/MQA&GQA.md",
     "PLM/Models/DeepSeek/DeepSeek.md",
     "PLM/Alignment/Tulu/Tulu3.md",
@@ -338,7 +339,6 @@
     "PLM/Models/LLaMA/LLaMA3.md",
     "PLM/Models/Minimax/img",
     "PLM/Alignment/DPO/DPO.md",
-    "PLM/Models/Minimax",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
