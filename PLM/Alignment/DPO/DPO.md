@@ -144,6 +144,14 @@ def get_batch_logps(
 
 ![](img/Pasted%20image%2020250126174303.png)
 
+## DPO训练时，为什么chosen和rejected的reward一起下降
+
+[百面LLM-7](https://zhuanlan.zhihu.com/p/686122806)
+
+[【不靠谱】有关DPO训练时，为什么chosen和rejected的reward一起下降的猜想](https://zhuanlan.zhihu.com/p/694381064)
+
+[DPO正例概率不应该下降？DPO在实践中的反思与改进](https://zhuanlan.zhihu.com/p/698852522)
+
 
 ## 主要收获
 
@@ -151,4 +159,6 @@ def get_batch_logps(
 ## 参考资料
 
 [DPO 是如何简化 RLHF 的](https://zhuanlan.zhihu.com/p/671780768)
+
+[dpo 的局限性](https://zhuanlan.zhihu.com/p/1082394115)
 

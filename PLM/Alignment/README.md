@@ -282,3 +282,7 @@ Qwen2.5: [后训练](../Models/Qwen/Qwen2.5.md#后训练)
 
 [拒绝采样](https://zhuanlan.zhihu.com/p/3907736367)
 
+[RLHF 常见的思维误区](https://zhuanlan.zhihu.com/p/17657567877)
+
+[用强化学习进行反思与自我更正](https://zhuanlan.zhihu.com/p/16073876742)
+
