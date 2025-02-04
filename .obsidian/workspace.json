@@ -50,20 +50,6 @@
             }
           },
           {
-            "id": "645816ac7c7db661",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Alignment/PPO/PPO.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "PPO"
-            }
-          },
-          {
             "id": "fa8a69c31a435893",
             "type": "leaf",
             "state": {
@@ -83,30 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/o1related/Kimi/Kimik1.5.md",
+                "file": "PLM/o1related/rStar-Math/rStar-Math.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kimik1.5"
-            }
-          },
-          {
-            "id": "f82221060f60f52a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Agent/Operator/OpenAI-operator.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "OpenAI-operator"
+              "title": "rStar-Math"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -210,10 +182,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md"
+                "file": "PLM/o1related/rStar-Math/rStar-Math.md"
               },
               "icon": "lucide-list",
-              "title": "PPO 的大纲"
+              "title": "rStar-Math 的大纲"
             }
           },
           {
@@ -256,10 +228,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md"
+                "file": "PLM/o1related/rStar-Math/rStar-Math.md"
               },
               "icon": "lucide-info",
-              "title": "PPO的笔记属性"
+              "title": "rStar-Math的笔记属性"
             }
           },
           {
@@ -291,18 +263,25 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "645816ac7c7db661",
+  "active": "40259021d404b8ea",
   "lastOpenFiles": [
+    "PLM/o1related/rStar-Math/img/Pasted image 20250204120051.png",
+    "PLM/o1related/rStar-Math/img",
+    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
+    "PLM/o1related/rStar-Math/rStar-Math.md",
+    "PLM/o1related/rStar-Math",
+    "PLM/Models/DeepSeek/DeepSeekv3.md",
+    "PLM/o1related/Kimi/Kimik1.5.md",
+    "PLM/Agent/Operator/OpenAI-operator.md",
+    "Tool/Git/Git.md",
+    "PLM/Alignment/PPO/PPO.md",
     "PLM/Alignment/DPO/DPO.md",
     "PLM/Alignment/DPO/img/Pasted image 20250126174303.png",
     "PLM/Alignment/DPO/img/Pasted image 20250126174250.png",
     "PLM/Alignment/DPO/img/Pasted image 20250126174234.png",
     "Tool/Pytorch/transformers.md",
-    "Tool/Git/Git.md",
     "Tool/README.md",
     "Tool/Linux/Linux.md",
-    "PLM/Agent/Operator/OpenAI-operator.md",
-    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "PLM/Alignment/README.md",
     "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/o1related/DeepSeekR/img/Pasted image 20250126142023.png",
@@ -318,8 +297,6 @@
     "PLM/Models/aya-expanse",
     "PLM/Models/DeepSeek/img/Pasted image 20250124160346.png",
     "PLM/BaseStruct/Attention/Attention.md",
-    "PLM/Models/DeepSeek/DeepSeekv3.md",
-    "PLM/o1related/Kimi/Kimik1.5.md",
     "Speedup/基础概念/分布式训练框架的编程基础.md",
     "Tool/Pytorch/Pytorch.md",
     "Speedup/基础概念",
@@ -327,18 +304,13 @@
     "PLM/o1related/Kimi/img/Pasted image 20250123204051.png",
     "PLM/o1related/Kimi/img/Pasted image 20250123204033.png",
     "PLM/o1related/Kimi/img/Pasted image 20250123204003.png",
-    "PLM/Alignment/PPO/PPO.md",
     "PLM/BaseStruct/GQA/MQA&GQA.md",
     "PLM/Models/DeepSeek/DeepSeek.md",
     "PLM/Alignment/Tulu/Tulu3.md",
-    "PLM/Models/Minimax/Minimax01.md",
     "PLM/o1related/Kimi/img",
     "PLM/o1related/DeepSeekR/img",
     "PLM/o1related/Kimi",
     "PLM/o1related/DeepSeekR",
-    "PLM/Models/Qwen/Qwen2.5.md",
-    "PLM/Alignment/Tulu/img",
-    "PLM/Models/Minimax/img",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
