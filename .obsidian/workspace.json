@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/o1related/README.md",
+                "file": "PLM/Alignment/DPO/DPO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "DPO"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "图解大模型RLHF系列",
+                "query": "prm",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -182,10 +182,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/o1related/README.md"
+                "file": "PLM/Alignment/DPO/DPO.md"
               },
               "icon": "lucide-list",
-              "title": "README 的大纲"
+              "title": "DPO 的大纲"
             }
           },
           {
@@ -228,10 +228,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/o1related/README.md"
+                "file": "PLM/Alignment/DPO/DPO.md"
               },
               "icon": "lucide-info",
-              "title": "README的笔记属性"
+              "title": "DPO的笔记属性"
             }
           },
           {
@@ -265,15 +265,19 @@
   },
   "active": "40259021d404b8ea",
   "lastOpenFiles": [
-    "PLM/Alignment/DPO/DPO.md",
     "PLM/o1related/README.md",
+    "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
+    "PLM/CoT/CoT.md",
+    "PLM/Alignment/GRPO/GRPO.md",
+    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
+    "BasicKnow/others/待整合.md",
+    "PLM/Models/DeepSeek/DeepSeekv3.md",
+    "PLM/Alignment/DPO/DPO.md",
     "PLM/Alignment/README.md",
     "PLM/o1related/rStar-Math/rStar-Math.md",
     "PLM/o1related/rStar-Math/img/Pasted image 20250204120051.png",
     "PLM/o1related/rStar-Math/img",
-    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "PLM/o1related/rStar-Math",
-    "PLM/Models/DeepSeek/DeepSeekv3.md",
     "PLM/o1related/Kimi/Kimik1.5.md",
     "PLM/Agent/Operator/OpenAI-operator.md",
     "Tool/Git/Git.md",
@@ -290,8 +294,6 @@
     "PLM/o1related",
     "PLM/Agent/README.md",
     "PLM/Agent/Operator",
-    "PLM/CoT/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
-    "PLM/CoT/CoT.md",
     "PLM/CoT/ProgramofThoughts/ProgramofThoughts.md",
     "PLM/Models/aya-expanse/aya-expanse.md",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
@@ -305,8 +307,6 @@
     "PLM/o1related/Kimi/img/Pasted image 20250123204051.png",
     "PLM/o1related/Kimi/img/Pasted image 20250123204033.png",
     "PLM/BaseStruct/GQA/MQA&GQA.md",
-    "PLM/Models/DeepSeek/DeepSeek.md",
-    "PLM/Alignment/Tulu/Tulu3.md",
     "PLM/o1related/Kimi/img",
     "PLM/o1related/DeepSeekR/img",
     "PLM/o1related/Kimi",

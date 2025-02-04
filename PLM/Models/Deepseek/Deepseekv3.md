@@ -162,3 +162,4 @@ DeepSeek-V3 不是仅预测下一个单个标记，而是通过 MTP 技术预测
 
 [【LLM技术报告】DeepSeek-V3技术报告（全文）](https://zhuanlan.zhihu.com/p/14890557782)
 
+[DeepSeek-V3细节探索](https://mp.weixin.qq.com/s/alKnPog2LYSRQdm9wy1_QA)

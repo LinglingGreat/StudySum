@@ -36,3 +36,7 @@ deepseek 反驳 prm 路线的三个理由是：
 大道至简的 o1 - ybq的文章 - 知乎
 https://zhuanlan.zhihu.com/p/19838650037
 
+[OpenAi-O1推理范式最新思路汇总-Search-o1、Sky-T1、rStar-Math：兼看注视检测任务](https://mp.weixin.qq.com/s/IqEJb8Rpzp6L0FDr1QYhVA)
+
+[聊聊PRM（过程奖励模型）](https://mp.weixin.qq.com/s/6oYbFzo7I1uYrtOOeheshA)
+

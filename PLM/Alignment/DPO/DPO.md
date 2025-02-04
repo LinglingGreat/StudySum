@@ -162,3 +162,5 @@ def get_batch_logps(
 
 [dpo 的局限性](https://zhuanlan.zhihu.com/p/1082394115)
 
+[理解DPO的Reference Model](https://mp.weixin.qq.com/s/60jnAfy6AXA-mjwbB92JtQ)
+
