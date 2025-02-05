@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/README.md",
+                "file": "PLM/Alignment/DPO/trl_vs_openrlhf.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "trl_vs_openrlhf"
             }
           }
         ],
@@ -182,10 +182,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/README.md"
+                "file": "PLM/Alignment/DPO/trl_vs_openrlhf.md"
               },
               "icon": "lucide-list",
-              "title": "README 的大纲"
+              "title": "trl_vs_openrlhf 的大纲"
             }
           },
           {
@@ -228,10 +228,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Alignment/README.md"
+                "file": "PLM/Alignment/DPO/trl_vs_openrlhf.md"
               },
               "icon": "lucide-info",
-              "title": "README的笔记属性"
+              "title": "trl_vs_openrlhf的笔记属性"
             }
           },
           {
@@ -249,7 +249,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 346.5
+    "width": 346.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -265,10 +266,13 @@
   },
   "active": "40259021d404b8ea",
   "lastOpenFiles": [
+    "PLM/Alignment/DPO/DPO.md",
+    "PLM/Alignment/DPO/trl_vs_openrlhf.md",
+    "PLM/Alignment/PPO/PPO.md",
+    "PLM/Alignment/README.md",
     "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/BaseStruct/Attention/Attention.md",
     "PLM/Models/Phi/Phi-4.md",
-    "PLM/Alignment/DPO/DPO.md",
     "PLM/o1related/README.md",
     "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
     "PLM/CoT/CoT.md",
@@ -276,7 +280,6 @@
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "BasicKnow/others/待整合.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
-    "PLM/Alignment/README.md",
     "PLM/o1related/rStar-Math/rStar-Math.md",
     "PLM/o1related/rStar-Math/img/Pasted image 20250204120051.png",
     "PLM/o1related/rStar-Math/img",
@@ -284,7 +287,6 @@
     "PLM/o1related/Kimi/Kimik1.5.md",
     "PLM/Agent/Operator/OpenAI-operator.md",
     "Tool/Git/Git.md",
-    "PLM/Alignment/PPO/PPO.md",
     "PLM/Alignment/DPO/img/Pasted image 20250126174303.png",
     "PLM/Alignment/DPO/img/Pasted image 20250126174250.png",
     "PLM/Alignment/DPO/img/Pasted image 20250126174234.png",
@@ -302,7 +304,6 @@
     "PLM/Models/aya-expanse",
     "PLM/Models/DeepSeek/img/Pasted image 20250124160346.png",
     "Speedup/基础概念/分布式训练框架的编程基础.md",
-    "Tool/Pytorch/Pytorch.md",
     "Speedup/基础概念",
     "PLM/o1related/Kimi/img/Pasted image 20250123204127.png",
     "PLM/o1related/Kimi/img/Pasted image 20250123204051.png",

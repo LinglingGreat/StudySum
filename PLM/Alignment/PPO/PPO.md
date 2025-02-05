@@ -899,3 +899,11 @@ reward模型和其他模型可以用不同的tokenizer，但是critic模型和ac
 
 [如何让 RLHF 训练更稳定？](https://zhuanlan.zhihu.com/p/16734946629)
 
+[授人以渔：巧用 o1 学 ppo](https://zhuanlan.zhihu.com/p/12621744754)
+
+[图解OpenRLHF中基于Ray的分布式训练流程](https://zhuanlan.zhihu.com/p/12871616401)
+
+[人人都能看懂的RL-PPO理论知识](https://zhuanlan.zhihu.com/p/7461863937)
+
+[浅析以 OpenRLHF 为代表的 post-training 系统的计算流程](https://zhuanlan.zhihu.com/p/16370000391)
+
