@@ -165,3 +165,5 @@ class Self_Attention_Muti_Head(nn.Module):
 
 [[浅谈] 分析一下各种softmax attention的变种](https://zhuanlan.zhihu.com/p/18416338998) 
 
+[手写 Self-Attention 的四重境界，从 self-attention 到 multi-head self-attention | chaofa用代码打点酱油](https://bruceyuan.com/hands-on-code/from-self-attention-to-multi-head-self-attention.html)
+

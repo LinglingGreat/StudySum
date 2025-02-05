@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/DPO/DPO.md",
+                "file": "PLM/BaseStruct/Attention/Attention.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DPO"
+              "title": "Attention"
             }
           }
         ],
@@ -182,10 +182,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/DPO/DPO.md"
+                "file": "PLM/BaseStruct/Attention/Attention.md"
               },
               "icon": "lucide-list",
-              "title": "DPO 的大纲"
+              "title": "Attention 的大纲"
             }
           },
           {
@@ -228,10 +228,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Alignment/DPO/DPO.md"
+                "file": "PLM/BaseStruct/Attention/Attention.md"
               },
               "icon": "lucide-info",
-              "title": "DPO的笔记属性"
+              "title": "Attention的笔记属性"
             }
           },
           {
@@ -265,6 +265,8 @@
   },
   "active": "40259021d404b8ea",
   "lastOpenFiles": [
+    "PLM/Models/Phi/Phi-4.md",
+    "PLM/Alignment/DPO/DPO.md",
     "PLM/o1related/README.md",
     "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
     "PLM/CoT/CoT.md",
@@ -272,7 +274,6 @@
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "BasicKnow/others/待整合.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
-    "PLM/Alignment/DPO/DPO.md",
     "PLM/Alignment/README.md",
     "PLM/o1related/rStar-Math/rStar-Math.md",
     "PLM/o1related/rStar-Math/img/Pasted image 20250204120051.png",
@@ -306,7 +307,6 @@
     "PLM/o1related/Kimi/img/Pasted image 20250123204127.png",
     "PLM/o1related/Kimi/img/Pasted image 20250123204051.png",
     "PLM/o1related/Kimi/img/Pasted image 20250123204033.png",
-    "PLM/BaseStruct/GQA/MQA&GQA.md",
     "PLM/o1related/Kimi/img",
     "PLM/o1related/DeepSeekR/img",
     "PLM/o1related/Kimi",

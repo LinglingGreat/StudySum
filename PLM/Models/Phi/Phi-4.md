@@ -216,3 +216,6 @@ PTS 的二分搜索算法并不保证总是找到所有关键标记，但它只�
 
 
 ## 参考资料
+
+[微软开源大模型Phi-4技术报告解读](https://mp.weixin.qq.com/s/FPWH5W6VQaXYoQjrWnR4OA)
+
