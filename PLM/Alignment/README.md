@@ -286,3 +286,5 @@ Qwen2.5: [后训练](../Models/Qwen/Qwen2.5.md#后训练)
 
 [用强化学习进行反思与自我更正](https://zhuanlan.zhihu.com/p/16073876742)
 
+[人人都能看懂的RL-PPO理论知识](https://zhuanlan.zhihu.com/p/7461863937)
+

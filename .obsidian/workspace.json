@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/o1related/DeepSeekR/R1-related.md",
+                "file": "PLM/Alignment/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "R1-related"
+              "title": "README"
             }
           }
         ],
@@ -182,10 +182,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/o1related/DeepSeekR/R1-related.md"
+                "file": "PLM/Alignment/README.md"
               },
               "icon": "lucide-list",
-              "title": "R1-related 的大纲"
+              "title": "README 的大纲"
             }
           },
           {
@@ -228,10 +228,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/o1related/DeepSeekR/R1-related.md"
+                "file": "PLM/Alignment/README.md"
               },
               "icon": "lucide-info",
-              "title": "R1-related的笔记属性"
+              "title": "README的笔记属性"
             }
           },
           {
@@ -265,6 +265,7 @@
   },
   "active": "40259021d404b8ea",
   "lastOpenFiles": [
+    "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/BaseStruct/Attention/Attention.md",
     "PLM/Models/Phi/Phi-4.md",
     "PLM/Alignment/DPO/DPO.md",
@@ -290,7 +291,6 @@
     "Tool/Pytorch/transformers.md",
     "Tool/README.md",
     "Tool/Linux/Linux.md",
-    "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/o1related/DeepSeekR/img/Pasted image 20250126142023.png",
     "PLM/o1related/DeepSeekR/img/Pasted image 20250126142001.png",
     "PLM/o1related",
