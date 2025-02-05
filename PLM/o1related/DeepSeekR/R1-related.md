@@ -65,3 +65,9 @@ The goal of this repo is to build the missing pieces of the R1 pipeline such tha
     - `generate.py`: generate synthetic data from a model using [Distilabel](https://github.com/argilla-io/distilabel).
 - `Makefile` contains an easy to run command for each step in the R1 pipeline leveraging the scipts above.
 
+## ragen
+
+https://github.com/ZihanWang314/ragen
+
+**RAGEN** is the first reproduction of the **DeepSeek-R1(-Zero)** methods for _training agentic models_.  
+_We strongly believe in the future of RL + LLM + Agents. The release is a minimally viable leap forward._
