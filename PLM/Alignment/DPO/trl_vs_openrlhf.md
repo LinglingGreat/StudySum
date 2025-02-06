@@ -4,6 +4,8 @@ created: 2025-02-05
 tags:
   - 代码对比
 ---
+两者的核心是一样的，只是写法不一样。
+
 # main函数
 
 trl
@@ -16,7 +18,7 @@ trl
 
 train_dataloader
 `get_train_dataloader`
-- 通过调用concatenated_forward函数, 计算reference_chosen_logps和reference_rejected_logps。然后再调用父函数。
+- 通过调用`concatenated_forward`函数, 计算reference_chosen_logps和reference_rejected_logps。然后再调用父函数。
 ```python
 # pad_sequence()函数进行pad, prompt会进行左pad，其他进行右pad
 data_collator = DPODataCollatorWithPadding(
@@ -25,7 +27,7 @@ data_collator = DPODataCollatorWithPadding(
                 is_encoder_decoder=self.is_encoder_decoder,
             )
 dataloader_params = {
-            "batch_size": self._train_batch_size,  # torch.cuda.device_count()*per_device_batch_size
+            "batch_size": self._train_batch_size,  # torch.cuda.device_count()*per_device_batch_size=1*per_device_batch_size
             "collate_fn": data_collator,
             "num_workers": self.args.dataloader_num_workers,
             "pin_memory": self.args.dataloader_pin_memory,
@@ -33,7 +35,7 @@ dataloader_params = {
         }
 if not isinstance(train_dataset, torch.utils.data.IterableDataset):
 	dataloader_params["sampler"] = self._get_train_sampler() # 等价于RandomSampler(self.train_dataset)
-	dataloader_params["drop_last"] = self.args.dataloader_drop_last
+	dataloader_params["drop_last"] = self.args.dataloader_drop_last # 默认false
 	dataloader_params["worker_init_fn"] = seed_worker
 	dataloader_params["prefetch_factor"] = self.args.dataloader_prefetch_factor
 return self.accelerator.prepare(DataLoader(train_dataset, **dataloader_params))
@@ -62,7 +64,7 @@ train_dataloader = strategy.setup_dataloader(
         batch_size=args.micro_train_batch_size,
         pin_memory=True,
         shuffle=True,
-        collate_fn=train_dataset.packing_collate_fn if args.packing_samples else train_dataset.collate_fn,
+        collate_fn=train_dataset.packing_collate_fn if args.packing_samples else train_dataset.collate_fn,  # 改写过了，和trl一致。
         drop_last=True,
         sampler=None,
         consumed_samples=0,
@@ -70,6 +72,7 @@ train_dataloader = strategy.setup_dataloader(
 
 
 if sampler is None:
+	# num_replicas=总卡数，rank=当前卡的rank，[0, num_replicas - 1]之间
 	num_replicas = dist.get_world_size() // self.ring_attn_size
 	rank = dist.get_rank() // self.ring_attn_size
 	sampler = DistributedSampler(
@@ -207,8 +210,11 @@ def sft_loss(logits, labels):
 ## openrlhf
 只继承ABC基类
 `__init__`
-- 支持packing_samples，有个nll_loss
+- 支持packing_samples，有个nll_loss（等价于trl中的sft_loss）
 `fit`
+- 遍历train_dataloader中的data，调用concatenated_forward函数,计算chosen_logps和reference_chosen_logps, chosen_logits, aux_loss，nll_loss等。其中nll_loss和sft_loss是一样的
+- 然后计算DPOLoss得到preference_loss, chosen_reward, reject_reward
+- loss = preference_loss + aux_loss * self.args.aux_loss_coef + nll_loss * self.args.nll_loss_coef
 
 `DPOLoss`和trl是一样的
 ```python
@@ -232,8 +238,6 @@ rejected_rewards = self.beta * (policy_rejected_logps - reference_rejected_logps
 return loss, chosen_rewards, rejected_rewards
 ```
 
-`evaluate`
-
-`concatenated_forward`
+`evaluate`和fit差不多
 
 
