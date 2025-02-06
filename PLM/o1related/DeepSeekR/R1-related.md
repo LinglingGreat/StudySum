@@ -71,3 +71,8 @@ https://github.com/ZihanWang314/ragen
 
 **RAGEN** is the first reproduction of the **DeepSeek-R1(-Zero)** methods for _training agentic models_.  
 _We strongly believe in the future of RL + LLM + Agents. The release is a minimally viable leap forward._
+
+## Deepseek-R1-Zero复现
+
+[Deepseek R1 Zero成功复现, 三阶段RL，Response长度涨幅超50%，涌现语言混杂，double-check, Verify, Let's Summarize！](https://zhuanlan.zhihu.com/p/21290410831)
+
