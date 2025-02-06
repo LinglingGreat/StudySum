@@ -221,9 +221,7 @@ def _get_reward_model(base_pretrained_model, base_llm_model, head_prefix="value_
 ```python
 # len(prompts_dataloader) = len(prompts_dataset) // (args.micro_rollout_batch_size * num_process)
 num_update_steps_per_episodes = (
-        int(len(prompts_dataloader) * (args.micro_rollout_batch_size / args.micro_train_batch_size))
-        * args.max_epochs
-        // strategy.accumulated_gradient
+        len(prompts_dataset) * args.n_samples_per_prompt // args.train_batch_size * args.max_epochs
     )
 
 max_steps = math.ceil(args.num_episodes * num_update_steps_per_episodes)
