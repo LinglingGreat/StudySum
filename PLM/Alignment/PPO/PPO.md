@@ -597,23 +597,7 @@ def ppo_train(self, global_steps=0):
 ```
 
 
-
-### PolicyLoss-actor模型
-
-主要用到了优势advantages，新旧策略的对数概率。
-
-![](img/Pasted%20image%2020241018211716.png)
-
-![](img/Pasted%20image%2020241018205717.png)
-
-![](img/Pasted%20image%2020241018210332.png)
-
-
-
-那么怎么得到这个优势advantages呢？
-
-先来看看如何计算公式中的即时奖励Rt
-#### 计算每个token的奖励和KL惩罚-token粒度的即时奖励
+### 计算每个token的奖励和KL惩罚-token粒度的即时奖励
 
 
 ![](img/Pasted%20image%2020240622154108.png)
@@ -749,35 +733,8 @@ def compute_reward(
     return reward, kl
 ```
 
-### 重新设计优势
-![](img/Pasted%20image%2020241018212148.png)
 
-![](img/Pasted%20image%2020241018212240.png)
-
-一些额外的信息：
-
-优势函数可以用以下方式定义：`Advantage(s, a) = Q(s, a) - V(s)`
-
-其中，`Advantage(s, a)`表示在状态 `s` 下采取动作 `a` 的优势函数值，`Q(s, a)` 表示状态动作对 `(s, a)` 的动作值函数（也称为动作优势函数），`V(s)` 表示状态值函数。
-
-优势函数的作用在于帮助评估当前动作的相对价值，以便在策略更新过程中确定应采取的动作。通过比较不同动作的优势函数值，可以决定哪些动作是更好的选择。正的优势函数值表示执行的动作比平均水平更好，而负的优势函数值表示执行的动作比平均水平更差。
-
-状态动作对的长期价值涉及更长时间尺度上的评估，它考虑了智能体在当前状态下选择不同动作所导致的未来回报的累积。长期价值可以表示为状态值函数（State Value Function）或动作值函数（Action Value Function）。
-
-状态值函数（V-function）表示在给定状态下，智能体从该状态开始执行一系列动作，然后按照某个策略进行决策，从而获得的预期累积回报。**状态值函数估计了智能体处于某个状态时所能获得的长期价值，反映了状态的优劣程度。**
-
-动作值函数（Q-function）则表示在给定状态下，智能体选择某个动作后，按照某个策略进行决策，从该状态转移到下一个状态并获得预期累积回报的价值。**动作值函数估计了在给定状态下采取不同动作的长期价值，可以帮助智能体选择在每个状态下最优的动作。**
-
-长期价值考虑了智能体在未来的决策过程中所能获得的累积回报，相比之下，即时奖励只提供了当前动作的即时反馈。长期价值对智能体的决策具有更全面的影响，可以帮助智能体更好地评估当前状态和动作的长期效果，并指导智能体在长期时间尺度上作出更优的决策。
-
-**Generalized Advantage Estimation (GAE)**: GAE [5], a $\text{TD}(\lambda)$ return estimation method, is used to estimate token-wise rewards in PPO. In practice, we typically set $\lambda = 1$, transforming the GAE method into a Monte Carlo estimation method.
-
-- **优势（Advantages）**：表示在特定状态下采取某个动作相对于平均水平的好坏程度。通过计算优势函数，可以更好地指导策略的更新，使得策略更倾向于选择优势较大的动作。
-- **回报（Returns）**：表示从某个时间步开始到未来所有时间步的折扣累积奖励。回报用于衡量整个序列的表现，通过回报可以评估策略的整体效果。
-
-![](img/Pasted%20image%2020240621175633.png)
-
-![](img/Pasted%20image%2020241018202821.png)
+### 优势计算代码
 
 输入
 - `values`：形状为 `(batch_size, response_size)` 的张量，表示每个时间步的价值估计。
@@ -892,16 +849,8 @@ def normalize(self, attribute: str, strategy) -> None:
             setattr(item, attribute, (items[i] - mean) * rstd)
 ```
 
-### 引入新约束
 
-前面提到过，如果我们想让一个batch的经验值被重复使用ppo_epochs次，等价于我们想要Actor在这个过程中，模拟和环境交互ppo_epochs次。举个例子：
-
-- 如果1个batch的经验值只使用1次，那么在本次更新完后，Actor就吃新的batch，正常和环境交互，产出新的经验值
-- 但如果1个batch的经验值被使用ppo_epochs次，在这ppo_epochs中，Actor是不吃任何新数据，不做任何交互的，所以我们只能让Actor“模拟”一下和环境交互的过程，吐出一些新数据出来。
-
-![](img/Pasted%20image%2020241018214652.png)
-
-![](img/Pasted%20image%2020241018214707.png)
+### PolicyLoss-actor模型
 
 ```python
 class PolicyLoss(nn.Module):
@@ -930,11 +879,8 @@ class PolicyLoss(nn.Module):
         return loss
 ```
 
-### 总结
 
-![](img/Pasted%20image%2020241018214823.png)
-
-#### GPTLMLoss-actor模型
+### GPTLMLoss-actor模型
 
 基于交叉熵损失的，用于训练语言模型，使其能够更好地预测下一个词。
 
@@ -958,7 +904,7 @@ class GPTLMLoss(nn.Module):
         return self.loss(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
 ```
 
-#### ValueLoss-critic模型
+### ValueLoss-critic模型
 
 ![](img/Pasted%20image%2020241018214906.png)
 
@@ -1114,8 +1060,66 @@ reward模型和其他模型可以用不同的tokenizer，但是critic模型和ac
 
 
 
-## 未来方向
+## old
 
+### PolicyLoss-actor模型
+
+主要用到了优势advantages，新旧策略的对数概率。
+
+![](img/Pasted%20image%2020241018211716.png)
+
+![](img/Pasted%20image%2020241018205717.png)
+
+![](img/Pasted%20image%2020241018210332.png)
+
+
+
+### 重新设计优势(可以不看)
+![](img/Pasted%20image%2020241018212148.png)
+
+![](img/Pasted%20image%2020241018212240.png)
+
+一些额外的信息：
+
+优势函数可以用以下方式定义：`Advantage(s, a) = Q(s, a) - V(s)`
+
+其中，`Advantage(s, a)`表示在状态 `s` 下采取动作 `a` 的优势函数值，`Q(s, a)` 表示状态动作对 `(s, a)` 的动作值函数（也称为动作优势函数），`V(s)` 表示状态值函数。
+
+优势函数的作用在于帮助评估当前动作的相对价值，以便在策略更新过程中确定应采取的动作。通过比较不同动作的优势函数值，可以决定哪些动作是更好的选择。正的优势函数值表示执行的动作比平均水平更好，而负的优势函数值表示执行的动作比平均水平更差。
+
+状态动作对的长期价值涉及更长时间尺度上的评估，它考虑了智能体在当前状态下选择不同动作所导致的未来回报的累积。长期价值可以表示为状态值函数（State Value Function）或动作值函数（Action Value Function）。
+
+状态值函数（V-function）表示在给定状态下，智能体从该状态开始执行一系列动作，然后按照某个策略进行决策，从而获得的预期累积回报。**状态值函数估计了智能体处于某个状态时所能获得的长期价值，反映了状态的优劣程度。**
+
+动作值函数（Q-function）则表示在给定状态下，智能体选择某个动作后，按照某个策略进行决策，从该状态转移到下一个状态并获得预期累积回报的价值。**动作值函数估计了在给定状态下采取不同动作的长期价值，可以帮助智能体选择在每个状态下最优的动作。**
+
+长期价值考虑了智能体在未来的决策过程中所能获得的累积回报，相比之下，即时奖励只提供了当前动作的即时反馈。长期价值对智能体的决策具有更全面的影响，可以帮助智能体更好地评估当前状态和动作的长期效果，并指导智能体在长期时间尺度上作出更优的决策。
+
+**Generalized Advantage Estimation (GAE)**: GAE [5], a $\text{TD}(\lambda)$ return estimation method, is used to estimate token-wise rewards in PPO. In practice, we typically set $\lambda = 1$, transforming the GAE method into a Monte Carlo estimation method.
+
+- **优势（Advantages）**：表示在特定状态下采取某个动作相对于平均水平的好坏程度。通过计算优势函数，可以更好地指导策略的更新，使得策略更倾向于选择优势较大的动作。
+- **回报（Returns）**：表示从某个时间步开始到未来所有时间步的折扣累积奖励。回报用于衡量整个序列的表现，通过回报可以评估策略的整体效果。
+
+![](img/Pasted%20image%2020240621175633.png)
+
+![](img/Pasted%20image%2020241018202821.png)
+
+
+### 引入新约束(可以不看)
+
+前面提到过，如果我们想让一个batch的经验值被重复使用ppo_epochs次，等价于我们想要Actor在这个过程中，模拟和环境交互ppo_epochs次。举个例子：
+
+- 如果1个batch的经验值只使用1次，那么在本次更新完后，Actor就吃新的batch，正常和环境交互，产出新的经验值
+- 但如果1个batch的经验值被使用ppo_epochs次，在这ppo_epochs中，Actor是不吃任何新数据，不做任何交互的，所以我们只能让Actor“模拟”一下和环境交互的过程，吐出一些新数据出来。
+
+![](img/Pasted%20image%2020241018214652.png)
+
+![](img/Pasted%20image%2020241018214707.png)
+
+
+### 总结
+
+![](img/Pasted%20image%2020241018214823.png)
 
 
 ## 主要收获
