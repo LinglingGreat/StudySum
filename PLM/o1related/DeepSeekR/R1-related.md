@@ -48,6 +48,8 @@ Twitter thread: [https://x.com/jiayi_pirate/status/1882839370505621655](https:/
 
 Full experiment log: [https://wandb.ai/jiayipan/TinyZero](https://wandb.ai/jiayipan/TinyZero)
 
+code: [GitHub - Jiayi-Pan/TinyZero: Clean, minimal, accessible reproduction of DeepSeek R1-Zero](https://github.com/Jiayi-Pan/TinyZero)
+
 Works for model <= 1.5B. For Qwen2.5-0.5B base, we know it fails to learn reasoning.
 
 **3B+ model** In this case, the base model is able to develop sophisticated reasoning skills.
@@ -75,4 +77,8 @@ _We strongly believe in the future of RL + LLM + Agents. The release is a minima
 ## Deepseek-R1-Zero复现
 
 [Deepseek R1 Zero成功复现, 三阶段RL，Response长度涨幅超50%，涌现语言混杂，double-check, Verify, Let's Summarize！](https://zhuanlan.zhihu.com/p/21290410831)
+
+代码：[GitHub - Unakar/Logic-RL](https://github.com/Unakar/Logic-RL)
+
+
 
