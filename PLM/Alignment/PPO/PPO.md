@@ -239,6 +239,49 @@ actor这个优化目标的改写我们已经很熟悉了，**但对于critic los
 
 ### PPO前身：TRPO
 
+![](img/Pasted%20image%2020250206183515.png)
+
+### PPO做法1：PPO-Clip
+
+![](img/Pasted%20image%2020250206183531.png)
+
+![](img/Pasted%20image%2020250206183540.png)
+
+### PPO做法2：PPO-Penalty
+
+![](img/Pasted%20image%2020250206183555.png)
+
+### PPO中的critic loss
+
+在PPO的原始论文中，并没有对critic和actor拆分成两个网络以后的critic loss形式做详细介绍，所以这部分的解读我直接以deepspeed-chat的rlhf实现为例，讲一下critic loss的实现。  
+  
+  
+我们知道，PPO的更新步骤是：
+
+```python
+# 对于每一个batch的数据
+for i in steps: 
+    # 先收集经验值
+    exps = generate_experience(prompts, actor, critic, reward, ref)
+    # 一个batch的经验值将被用于计算ppo_epochs次loss，更新ppo_epochs次模型
+    # 这也意味着，当你计算一次新loss时，你用的是更新后的模型
+    for j in ppo_epochs:
+        actor_loss = cal_actor_loss(exps, actor)
+        critic_loss = cal_critic_loss(exps, critic)
+        
+        actor.backward(actor_loss)
+        actor.step()
+        
+        critc.backward(critic_loss)
+        critic.step()
+```
+
+在以上的讲解中，我们已经知道actor是在PPO epoch中使用同一批数据做迭代更新的。但是同时，critic也是在迭代更新的。为什么critic要做迭代更新？**因为** Vπ **是和** π **挂钩的，如果你的策略参数已经更新了，你必须有一个新的critic来衡量新策略的价值。**
+
+![](img/Pasted%20image%2020250206183651.png)
+
+![](img/Pasted%20image%2020250206183704.png)
+
 
 
 ### PPO的训练流程
