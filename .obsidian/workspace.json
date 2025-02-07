@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/Loss/Loss函数总结.md",
+                "file": "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Loss函数总结"
+              "title": "DeepSeek-R1"
             }
           }
         ],
@@ -183,13 +183,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/Loss/Loss函数总结.md",
+                "file": "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Loss函数总结 的大纲"
+              "title": "DeepSeek-R1 的大纲"
             }
           },
           {
@@ -269,6 +269,9 @@
   },
   "active": "40259021d404b8ea",
   "lastOpenFiles": [
+    "PLM/Alignment/Loss/Loss函数总结.md",
+    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
+    "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/Alignment/Loss/img/Pasted image 20250207150602.png",
     "PLM/Alignment/Loss/img/Pasted image 20250207150536.png",
     "PLM/Alignment/Loss/img/Pasted image 20250207150351.png",
@@ -279,16 +282,12 @@
     "PLM/Alignment/Loss/img/Pasted image 20250207140711.png",
     "PLM/Alignment/Loss/img/Pasted image 20250207115849.png",
     "PLM/Alignment/Loss/img/Pasted image 20250207115837.png",
-    "PLM/Alignment/Loss/img/Pasted image 20250207115807.png",
     "PLM/Alignment/Loss/img",
     "PLM/Alignment/PPO/Reward模型.md",
-    "PLM/Alignment/Loss/Loss函数总结.md",
     "PLM/Alignment/Loss",
     "PLM/Alignment/README.md",
     "PLM/Alignment/PPO/PPO.md",
     "PLM/Alignment/DPO/trl_vs_openrlhf.md",
-    "PLM/o1related/DeepSeekR/R1-related.md",
-    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "Tool/Git/Git.md",
     "Tool/Linux/Linux.md",
     "PLM/Alignment/Tulu/Tulu3.md",

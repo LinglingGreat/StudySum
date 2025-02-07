@@ -177,3 +177,12 @@ Monte Carlo Tree Search (MCTS)：受 AlphaGo（Silver 等人，2017b）和 Alpha
 
 
 ## 参考资料
+
+[There May Not be Aha Moment in R1-Zero-like Training — A Pilot Study](https://oatllm.notion.site/oat-zero)
+
+1. **There may NOT be Aha moment in R1-Zero-like training.** Instead, we found Aha moment (such as self-reflection patterns) appears at epoch 0, namely base models. We observe that all models (except Llama-3.x series) already exhibit self-reflection patterns without any post-training.
+2. We found **Superficial Self-Reflection (SSR)** from base models’ responses, in which case self-reflections do not necessarily lead to correct final answers.
+3. We took **a closer look at R1-Zero-like training via RL**, and found that the increasing response length phenomenon is not due to the emergence of self-reflection, but a consequence of RL optimizing well-designed rule-based reward functions.
+
+
+
