@@ -615,6 +615,10 @@ where x is the prompt, y is the response, and $\textbf{I}(s_t = [\text{EOS}])$ i
 
 汇总的$r(s_t, a_t)$是 PPO 想要优化的奖励。
 
+给定一个 transformer 和任何一个 string，我都可以将整个 string 输入给 reward model 做一次 forward pass，得到每个位置的 token 的 logit。我们取出最后一个 token 的 logit，经过 logit processor 处理，再过一次 softmax 并取 log，得到此处的 log prob。此外，我们也可以对最后一个 token 的 logit 进行其他操作，譬如 pooling 和 projection 等等，拿到 embedding、reward 或者 value。由此可见，对于 string 里的每个 token，我们都可以得到前述所有计算值，但是在 RLHF 中，我们会用到 response 中每个 token 的 log prob 和 value，但是 reward 只会用最后一个 token 的 reward。
+
+reward的计算公式：
+
 ![](img/Pasted%20image%2020241018211907.png)
 
 为什么只有最后一个时刻的 Rt 被纳入了考量呢？这是因为在Reward模型训练阶段，就是用这个位置的 Rt 来表示对完整的prompt + response的奖励预测（但不妨碍你理解成是执行完 AT 的即时奖励），然后用这个指标来做模型eval的（但是Reward训练阶段算loss时，还是考虑了response部分所有token输出的reward值）。所以到了RLHF的场景下，其余时刻的即时奖励，我们就用“Actor是否遵循了Ref的约束”来进行评价。  
@@ -852,6 +856,8 @@ def normalize(self, attribute: str, strategy) -> None:
 
 ### PolicyLoss-actor模型
 
+![](img/Pasted%20image%2020250207115148.png)
+
 ```python
 class PolicyLoss(nn.Module):
     """
@@ -915,6 +921,9 @@ class GPTLMLoss(nn.Module):
 **ValueLoss**：PPO clips the value function like the PPO’s clipped surrogate objective. Given $V_{targ} = returns = advantages + values$, PPO fits the value network by minimizing the following loss:
 
 $$ Loss_v = \max[(V_{\theta_t} - V_{targ})^2, (\text{clip}(V_{\theta_t}, V_{\theta_{t-1}} - \epsilon, V_{\theta_{t-1}} + \epsilon) - V_{targ})^2] \ \ \ (3) $$
+![](img/Pasted%20image%2020250207115320.png)
+
+
 代码实现
 
 ```python
@@ -1151,4 +1160,6 @@ reward模型和其他模型可以用不同的tokenizer，但是critic模型和ac
 [人人都能看懂的RL-PPO理论知识](https://zhuanlan.zhihu.com/p/7461863937)
 
 [浅析以 OpenRLHF 为代表的 post-training 系统的计算流程](https://zhuanlan.zhihu.com/p/16370000391)
+
+[图解OpenRLHF中基于Ray的分布式训练流程](https://zhuanlan.zhihu.com/p/12871616401)
 
