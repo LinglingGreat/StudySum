@@ -81,4 +81,7 @@ _We strongly believe in the future of RL + LLM + Agents. The release is a minima
 代码：[GitHub - Unakar/Logic-RL](https://github.com/Unakar/Logic-RL)
 
 
+[DeepSeek R1 Zero中文复现教程来了！](https://mp.weixin.qq.com/s/Z7P61IV3n4XYeC0Et_fvwg)
+
+
 

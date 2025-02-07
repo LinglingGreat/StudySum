@@ -12,6 +12,8 @@ huggingface-cli download Qwen/Qwen2-0.5B-Instruct --local-dir Qwen2-0.5B-Instruc
 
 export HF_ENDPOINT=https://hf-mirror.com
 
+（取消用unset HF_ENDPOINT）
+
 export HF_HUB_ENABLE_HF_TRANSFER=1
 
 huggingface-cli download HuggingFaceH4/ultrachat_200k --repo-type dataset
