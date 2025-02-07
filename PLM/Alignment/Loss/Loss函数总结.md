@@ -37,6 +37,11 @@ class GPTLMLoss(nn.Module):
 ```
 
 没啥多说的，最常见的 gpt loss 函数，也就是 pretrain / sft 的 loss 函数，通过 self.IGNORE_INDEX 来实现 prompt 的 loss_mask 。
+- **`logits`**: 这是模型输出的未归一化的概率分布，形状通常为 `(batch_size, sequence_length, vocab_size)`，其中 `vocab_size` 是词汇表的大小。
+- **`contiguous()`**: 这个操作确保张量在内存中是连续存储的，这在后续的视图操作（如 `view`）中是必要的。
+- **`labels`**: 这是目标序列，形状通常为 `(batch_size, sequence_length)`
+- **`shift_logits.view(-1, shift_logits.size(-1))`**: 这里将 `shift_logits` 从形状 `(batch_size, sequence_length - 1, vocab_size)` 展平为 `(batch_size * (sequence_length - 1), vocab_size)`。这样做的目的是将所有的预测 logits 放在一个二维张量中，方便计算损失。
+- **`shift_labels.view(-1)`**: 这里将 `shift_labels` 从形状 `(batch_size, sequence_length - 1)` 展平为 `(batch_size * (sequence_length - 1))`。这样做的目的是将所有的目标标签放在一个一维张量中，方便计算损失。
 
 ### KDLoss
 
@@ -45,6 +50,12 @@ class GPTLMLoss(nn.Module):
 class KDLoss(nn.Module):
     """
     Language Model Knowledge Distillation Loss
+
+	1. 将教师模型的 logits 转换为概率分布。
+	2. 将学生模型的 logits 转换为对数概率分布。
+	3. 计算教师模型概率分布与学生模型对数概率分布的逐元素乘积。
+	4. 忽略学生模型 logits 中的无穷大值。
+	5. 对每个位置的损失求和，并根据有效位置的掩码计算平均损失。
     """
 
     def __init__(self):
@@ -67,11 +78,7 @@ class KDLoss(nn.Module):
 
 言归正传，我们都知道知识蒸馏是用 KL 散度作为 loss 函数的，但代码里也没看见 KL [散度公式](https://zhida.zhihu.com/search?content_id=250280707&content_type=Article&match_order=1&q=%E6%95%A3%E5%BA%A6%E5%85%AC%E5%BC%8F&zhida_source=entity)啊，不妨一起简单推导下。
 
-KL(P||Q)=∑iP(i)(log⁡P(i)−log⁡Q(i))
-
-其中，P(i) 是教师模型的概率分布， Q(i) 是学生模型的概率分布。在实际的优化过程中，KL 散度中的第一项 ∑iP(i)log⁡P(i) 是关于教师模型的熵，对于学生模型的[参数优化](https://zhida.zhihu.com/search?content_id=250280707&content_type=Article&match_order=1&q=%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96&zhida_source=entity)是一个常数，可丢弃。因此，我们通常只需要最小化第二项，即[交叉熵损失](https://zhida.zhihu.com/search?content_id=250280707&content_type=Article&match_order=1&q=%E4%BA%A4%E5%8F%89%E7%86%B5%E6%8D%9F%E5%A4%B1&zhida_source=entity)：
-
-CrossEntropy=−∑iP(i)log⁡Q(i)
+![](img/Pasted%20image%2020250207140711.png)
 
 知识蒸馏本身没啥痛点，只要能解决 seq_len * vocab_size 大小的 logits 通讯问题，这就是个简单纯粹有效的优化小模型的极佳方案。不过传统的 KL 往往是 [soft_label](https://zhida.zhihu.com/search?content_id=250280707&content_type=Article&match_order=1&q=soft_label&zhida_source=entity) 和 hard_label 的加权组合，这在 OpenRLHF 的代码中没有体现出来，大家有需要的话可以自行实践：
 
@@ -83,6 +90,38 @@ lm_loss = F.cross_entropy(
 )
 total_loss = alpha * lm_loss + beta * distil_loss
 ```
+
+ **`prod_probs = torch.masked_fill(teacher_probs * logprobs, inf_mask, 0)`**
+
+- **`teacher_probs * logprobs`**: 计算教师模型的概率分布与学生模型的对数概率分布的逐元素乘积。这一步是为了计算蒸馏损失中的交叉熵项。
+    
+- **`torch.masked_fill`**: 将 `inf_mask` 为 `True` 的位置的值替换为 `0`，避免无穷大值对损失计算的影响。
+    
+- **`prod_probs`**: 这是逐元素乘积的结果，形状与 `logits` 相同。
+    
+
+---
+
+ **`x = torch.sum(prod_probs, dim=-1).view(-1)`**
+
+- **`torch.sum(prod_probs, dim=-1)`**: 在最后一个维度（`dim=-1`，即词汇表维度）上对 `prod_probs` 求和，得到每个位置（token）的蒸馏损失值。
+    
+- **`.view(-1)`**: 将结果展平为一维张量，形状为 `(batch_size * sequence_length,)`。
+    
+- **`x`**: 这是每个位置的蒸馏损失值。
+
+
+**`distil_loss = -torch.sum(x * mask.view(-1), dim=0) / torch.sum(mask.view(-1), dim=0)`**
+
+- **`mask.view(-1)`**: 将 `mask` 展平为一维张量，形状为 `(batch_size * sequence_length,)`。
+    
+- **`x * mask.view(-1)`**: 将蒸馏损失值 `x` 与掩码相乘，忽略无效位置的损失。
+    
+- **`torch.sum(x * mask.view(-1), dim=0)`**: 对所有有效位置的损失求和。
+    
+- **`torch.sum(mask.view(-1), dim=0)`**: 计算有效位置的总数。
+    
+- **`distil_loss`**: 计算蒸馏损失的平均值，即有效位置的损失总和除以有效位置的数量。
 
 ## DPO 家族
 
@@ -131,7 +170,7 @@ class DPOLoss(nn.Module):
 
 除了原始的 loss 函数，OpenRLHF 为我们提供了额外两个选项：
 
-**IPO**：论文中的 loss 表达式 E(yw,yl)∼D[(hπ(yw,yl)−τ−12)2]
+![](img/Pasted%20image%2020250207141510.png)
 
 我没有实践过这个算法就不多评价了，似乎重点是加了一个正则项。
 
@@ -204,16 +243,13 @@ class KTOLoss(nn.Module):
         return losses, chosen_rewards, rejected_rewards, KL
 ```
 
-kto 的 loss 函数，对标 dpo 的一个工作。这个算法我之前也没有实践过，但是“kto 不需要偏好 pair 对”这一优点吸引了我，所以也简单研究了一下它的原理和实现代码。
-
-kto 的算法思想说是借鉴了“[前景理论](https://zhida.zhihu.com/search?content_id=250280707&content_type=Article&match_order=1&q=%E5%89%8D%E6%99%AF%E7%90%86%E8%AE%BA&zhida_source=entity)”，这个概念对我一个程序员来说太高深了，还是直接去讨论一下算法怎么实现的吧。
+kto 的算法思想说是借鉴了“[前景理论](https://zhida.zhihu.com/search?content_id=250280707&content_type=Article&match_order=1&q=%E5%89%8D%E6%99%AF%E7%90%86%E8%AE%BA&zhida_source=entity)”。
 
 kto 的训练数据是 prompt + response + label，这个 label 就是 1 或者 -1，代表着 response 的质量是否被认可。label 是 1 的被称为正例，label 是 -1 的被称为负例。我们看到 loss 函数中要做一个判断 if policy_chosen_logps.shape[0] != 0 的操作，这是因为如果该条训练数据为负例，那么 policy_chosen_logps 这个变量就是一个空 [tensor](https://zhida.zhihu.com/search?content_id=250280707&content_type=Article&match_order=1&q=tensor&zhida_source=entity)，反之亦然。和 dpo 相比最大的区别是：dpo 的每一条 prompt 需要同时具有正例和负例，kto 的每一条 prompt 则只需要有正例或负例中的一个即可。
 
 kto 正例和负例的 loss 函数分别如下所示：
 
-- Lchosen=1−σ(β(log⁡πθ(a|s)πref(a|s)−KL))
-- Lrejected=1−σ(β(KL−log⁡πθ(a|s)πref(a|s)))
+![](img/Pasted%20image%2020250207141931.png)
 
 1 - sigmoid 是一个单调递减函数，这说明：kto 的 loss 函数在正例中鼓励策略模型尽量大于参考点 KL，在负例中则鼓励模型尽量小于参考点 KL，也是一个比较明显的学习正例打压负例的损失函数。self.desirable_weight 和 self.undesirable_weight 则是正向和负向样本各自的权重损失，调参用的。
 
@@ -295,10 +331,7 @@ class PolicyLoss(nn.Module):
 
 rlhf 中，actor_model （也就是被优化的模型）的 loss 函数，大概是三个步骤：
 
-- 计算新旧策略的概率比例 ratio=exp⁡(log⁡πθ(a|s)−log⁡πθold(a|s))=πθ(a|s)πθold(a|s)
-- 利用[优势函数](https://zhida.zhihu.com/search?content_id=250280707&content_type=Article&match_order=1&q=%E4%BC%98%E5%8A%BF%E5%87%BD%E6%95%B0&zhida_source=entity)指导更新方向；
-- 限制策略更新幅度 LCLIP(θ)=Et[min(ratiot⋅At,clip(ratiot,1−ϵ,1+ϵ)⋅At)]
-- -torch.min(surr1, surr2)，选择未剪辑和剪辑后损失项的最小值。取负号是因为在最小化损失函数，但 PPO 的目标是最大化期望收益。
+![](img/Pasted%20image%2020250207142237.png)
 
 代码写的很清晰简洁，和 ppo 论文完全吻合，上面的两个公式也都是 ppo 论文的原始公式。对这里的代码实现有疑惑的，可以结合 ppo 论文一起读。
 
@@ -335,10 +368,7 @@ class ValueLoss(nn.Module):
 
 rlhf 中，critic_model 的 loss 函数。
 
-- 如果不剪辑损失函数： LVF(θ)=12Et[(Vθ(st)−Rt)2]
-- 如果要剪辑损失函数，便需要对价值函数的更新进行剪辑，防止价值估计发生过大的变化，和上面的 policy model 的剪辑是一个道理： Vclipped=Vθold(s)+clip(Vθ(s)−Vθold(s),−ϵ,ϵ)
-- 剪辑的损失函数： LVF(θ)=12Et[max((Vθ(st)−Rt)2,(Vclipped−Rt)2)] 。也就是说，如果有剪辑，通过 torch.max(surr1, surr2) 选择让 loss 最大化的更新策略；
-- loss 最终乘以 0.5，也算是平方误差损失函数中常见的缩放因子了。
+![](img/Pasted%20image%2020250207142428.png)
 
 这里我之前被一个地方绊住过，可以分享一下我曾经的疑惑点：clamp 的意义既然是防止模型进行较大的参数更新，那为什么 value function 的 loss 还要选 torch.max() 呢，不应该是 torch.min() 更合理吗？
 
@@ -350,6 +380,10 @@ surr1，surr2 分别代表使用 values_clipped 和 values 进行模型更新的
 - surr1 > surr2：说明用更保守的更新策略 values_clipped，得到了更大的 loss。模型期望的更新幅度小，训练动力还大，没有比这更好的事情了。
 
 ### PairWiseLoss
+
+![](img/Pasted%20image%2020250207150351.png)
+
+
 
 ```python3
 class PairWiseLoss(nn.Module):
@@ -373,6 +407,12 @@ class PairWiseLoss(nn.Module):
 
 这个 margin 和 dpo 的 reference_model 非常类似，都是常量。我曾经疑惑过这种常量是不是没啥大用，后来动手求了求导就明白了：这些被 logsigmoid() 包裹起来的常量，会影响梯度的大小，决定梯度在什么情况下趋近于零，进而也会影响模型训练的动力。
 
+我们再看下PairWiseLoss的曲线图，如图9所示。当 chosen_reward−reject_reward<0 时loss急剧上升，表示正例样本的得分小于负例样本的得分，产出较大的loss， 回传产生较大梯度更新模型。当 chosen_reward−reject_reward>0 loss基本趋近于0，表示正例得分大于负例的得分是合理的，不产生loss。**我们也可以看到PairWiseLoss有个良好的属性：自带margin效果**。因为在0附近也会产生一定的loss，来更新模型，拉大正负例的差距。
+
+![](img/Pasted%20image%2020250207150602.png)
+
+
+
 ### LogExpLoss
 
 ```python3
@@ -389,11 +429,30 @@ class LogExpLoss(nn.Module):
         return loss
 ```
 
-看上去是用 log(1+e−x) 取代了 −log(sigmoid(x)) ，这妥妥的就是一个等价变化啊。
+看上去是用 $log(1+e^{−x})$ 取代了 −log(sigmoid(x)) ，这妥妥的就是一个等价变化啊。
+
+![](img/Pasted%20image%2020250207150536.png)
+
+
 
 ### PRMLoss
 
-```python3
+来自gemini-2.0-flash-001的解释
+
+**代码功能：**
+
+这段代码定义了一个名为 `PRMLoss` 的自定义损失函数，用于训练一个“过程奖励模型”（Process Reward Model，PRM）。PRM 的目标是预测一个过程或序列的奖励得分或概率。 这种模型常用于强化学习、模仿学习或偏好建模等领域。
+
+**核心概念：**
+
+- **过程奖励模型 (PRM)：** PRM 学习一个奖励函数，这个函数可以给出一个过程或动作序列的奖励值。 比如，一个机器人完成一系列动作，PRM 可以评估这组动作的好坏，给出奖励或惩罚。
+- **占位符 Token (Placeholder Token)：** 占位符 Token 用于在输入序列中标记特定的位置。PRM 只需要在这些位置进行奖励预测。 这相当于告诉模型：“我只关心这些地方的预测结果”。 这样可以避免模型学习整个序列中所有 token 的奖励，提高效率和准确性。
+- **硬标签 (Hard Labels) vs. 软标签 (Soft Labels)：**
+    - **硬标签：** 硬标签是离散的类别标签，比如 "奖励" 和 "非奖励"。 例如，可以使用 token ID 1 表示 "奖励"，token ID 2 表示 "非奖励"。
+    - **软标签：** 软标签表示奖励的概率。 例如，0.8 表示 80% 的可能性是奖励。
+- **受限词汇表 (Reduced Vocabulary)：** `reward_token_ids` 参数允许我们训练模型，只区分与奖励相关的有限数量的 token，而不是整个词汇表。 比如，只区分 "好" 和 "坏" 两个 token，可以提高模型性能和效率。
+
+```python
 class PRMLoss(nn.Module):
     """
     Process Reward Model Loss
@@ -403,16 +462,23 @@ class PRMLoss(nn.Module):
         super().__init__()
         self.IGNORE_INDEX = -100
         self.loss = nn.CrossEntropyLoss(ignore_index=self.IGNORE_INDEX)
+        # 占位符 token 的 ID。模型会学习预测 _这个 token 所在位置_ 的奖励。
         self.placeholder_token_id = placeholder_token_id
+        #  (可选) 一个 token ID 列表，表示奖励相关的 token。
+		# - `None`： 模型会尝试预测 _所有 token_ 作为奖励。
+		# - `[10, 20]` (例子)： 模型只会学习区分 token 10 (奖励) 和 token 20 (非奖励)。
         self.reward_token_ids = reward_token_ids
 
     def forward(self, inputs: torch.Tensor, logits: torch.Tensor, labels: torch.Tensor, *, return_acc: bool = False):
+		#  创建一个布尔掩码。 只有输入序列中占位符 token 的位置为 `True`，其他位置为 `False`。
         placeholder_mask = inputs == self.placeholder_token_id
+        # 根据掩码过滤 `logits` 和 `labels`。 只保留占位符 token 位置的值。 这样就只在需要预测奖励的位置计算损失。
         logits = logits[placeholder_mask]
         labels = labels[placeholder_mask]
 
         if labels.dtype == torch.float:
             # soft label
+            # 如果标签是浮点数，则将其视为软标签。 代码提取奖励和非奖励 token 的 logit，并将标签转换为适合交叉熵损失的格式。
             assert len(self.reward_token_ids) == 2, "reward_token_ids should have 2 tokens for soft labels"
             logits = logits[..., self.reward_token_ids]
             positive_labels = labels.to(logits.dtype)
@@ -421,6 +487,7 @@ class PRMLoss(nn.Module):
             labels = torch.stack([positive_labels, negative_labels], dim=-1)
         elif self.reward_token_ids is not None:
             # hard label with reward_token_ids set. (otherwise the whole vocab will be trained together.)
+            # 提取与 `reward_token_ids` 对应的 logit，并将原始标签 ID 映射到简化词汇表中的索引 (0 表示第一个 `reward_token_ids`，1 表示第二个，依此类推)。 这样可以确保标签与正在考虑的简化 logit 集对齐。
             logits = logits[..., self.reward_token_ids]
             # this is slow....
             for i, token in enumerate(self.reward_token_ids):
@@ -436,7 +503,7 @@ class PRMLoss(nn.Module):
         return loss, acc
 ```
 
-[当红炸子鸡](https://zhida.zhihu.com/search?content_id=250280707&content_type=Article&match_order=1&q=%E5%BD%93%E7%BA%A2%E7%82%B8%E5%AD%90%E9%B8%A1&zhida_source=entity)，学界认为的通往 o1 的钥匙，process_reward_model 的 loss 函数。出于对 o1 的尊重，我逐行解读一下这个 loss 。
+
 
 首先看下 PRM 训练集合的样子：
 
