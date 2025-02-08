@@ -1163,3 +1163,5 @@ reward模型和其他模型可以用不同的tokenizer，但是critic模型和ac
 
 [图解OpenRLHF中基于Ray的分布式训练流程](https://zhuanlan.zhihu.com/p/12871616401)
 
+[The 37 Implementation Details of Proximal Policy Optimization · The ICLR Blog Track](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/) (PPO训练的trick)
+
