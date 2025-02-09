@@ -258,6 +258,7 @@ Qwen2.5: [后训练](../Models/Qwen/Qwen2.5.md#后训练)
 | Nemotron-4            | 迭代式DPO+RPO                   |
 | AFM                   | 综合RS、DPO、IPO，以及改进版在线RL：MDLOO |
 
+
 ## 参考资料
 
 [【RLHF】RL 究竟是如何与 LLM 做结合的？](https://zhuanlan.zhihu.com/p/675329917) (已整理)

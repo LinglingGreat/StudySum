@@ -92,3 +92,6 @@ GRPO 认为，直接退化为 Policy Gradient 是不是有点过于原始，
 
 
 ## 参考资料
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/20021693569?utm_psn=1871540714904616960)
+

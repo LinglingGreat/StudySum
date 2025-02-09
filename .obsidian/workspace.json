@@ -64,17 +64,17 @@
             }
           },
           {
-            "id": "5efae434ed137e23",
+            "id": "1838cb65a169f00e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md",
+                "file": "PLM/业界分享/面试题/LLM面试题.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PPO"
+              "title": "LLM面试题"
             }
           },
           {
@@ -211,13 +211,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md",
+                "file": "PLM/业界分享/面试题/LLM面试题.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "PPO 的大纲"
+              "title": "LLM面试题 的大纲"
             }
           },
           {
@@ -295,13 +295,17 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "5efae434ed137e23",
+  "active": "1838cb65a169f00e",
   "lastOpenFiles": [
-    "Tool/Pytorch/transformers.md",
-    "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
-    "PLM/Models/DeepSeek/DeepSeek.md",
+    "PLM/业界分享/面试题/LLM面试题.md",
+    "Tool/Pytorch/transformers.md",
+    "PLM/Alignment/README.md",
+    "PLM/业界分享/面试题",
+    "PLM/Alignment/PPO/PPO.md",
     "PLM/Alignment/GRPO/GRPO.md",
+    "PLM/o1related/DeepSeekR/R1-related.md",
+    "PLM/Models/DeepSeek/DeepSeek.md",
     "未命名.canvas",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
@@ -320,8 +324,6 @@
     "PLM/Alignment/Loss/img",
     "PLM/Alignment/PPO/Reward模型.md",
     "PLM/Alignment/Loss",
-    "PLM/Alignment/README.md",
-    "PLM/Alignment/PPO/PPO.md",
     "PLM/Alignment/DPO/trl_vs_openrlhf.md",
     "Tool/Linux/Linux.md",
     "PLM/Alignment/Tulu/Tulu3.md",
@@ -342,7 +344,6 @@
     "PLM/Models/aya-expanse",
     "Speedup/基础概念",
     "PLM/o1related/Kimi/img",
-    "PLM/o1related/DeepSeekR/img",
     "未命名 1.canvas"
   ]
 }
