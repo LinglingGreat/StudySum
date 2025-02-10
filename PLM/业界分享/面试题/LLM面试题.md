@@ -122,6 +122,21 @@ Figure: Blue points: training data point ; Red points: novel data points to be s
 
 ## **提问**：DPO的变体有哪些，主要解决DPO的什么问题？
 
+**回答：**
+
+- RSO [1]：由于DPO的[蒙特卡洛采样](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E9%87%87%E6%A0%B7&zhida_source=entity)很难达到，所以其实DPO几乎是off-policy的[采样方式](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=%E9%87%87%E6%A0%B7%E6%96%B9%E5%BC%8F&zhida_source=entity)，RSO主要从DPO的采样方式来解决DPO的问题。它使用拒绝采样的方法来优化模型，不直接修改模型参数。
+- Iterative DPO [2]：同样由于DPO的蒙特卡洛采样很难达到，所以通过[on-policy](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=on-policy&zhida_source=entity)的方式采样来替代off-policy的采样。它通过多次迭代来逐步优化模型，每次迭代都基于上一次的结果进行调整。
+- IPO [3]：由于BT model的目标是最大化正负response的reward gap，但其实其中忽略了真实情况下我们组的pair可能会有噪音，那么无限去扩大reward gap其实是不准确的，也就是overfit了preference的pair数据，那么解决方案是需要限制这个gap的范围。
+- DPOP [4]：由于LLM model很难区分[编辑距离](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB&zhida_source=entity)较小的pair，那么当持续去区分这批case的时候，模型效果会崩塌，现象是正例子和负例子的概率都往下掉。那么DPOP用了一个新项来惩罚正例往下掉的pair，使得正例概率继续提升。
+
+[1] Liu T, Zhao Y, Joshi R, et al. Statistical rejection sampling improves preference optimization[J]. arXiv preprint arXiv:2309.06657, 2023.
+
+[2] Yuan W, Pang R Y, Cho K, et al. Self-rewarding language models[J]. arXiv preprint arXiv:2401.10020, 2024.
+
+[3] Azar M G, Rowland M, Piot B, et al. A general theoretical paradigm to understand learning from human preferences[J]. arXiv preprint arXiv:2310.12036, 2023.
+
+[4] Pal A, Karkhanis D, Dooley S, et al. Smaug: Fixing Failure Modes of Preference Optimisation with DPO-Positive[J]. arXiv preprint arXiv:2402.13228, 2024.
+
 
 
 ## 参考资料

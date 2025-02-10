@@ -127,7 +127,7 @@ total_loss = alpha * lm_loss + beta * distil_loss
 
 ### DPOLoss
 
-```python3
+```python
 class DPOLoss(nn.Module):
     """
     DPO Loss
