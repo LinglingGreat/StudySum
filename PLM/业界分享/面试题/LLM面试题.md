@@ -124,7 +124,7 @@ Figure: Blue points: training data point ; Red points: novel data points to be s
 
 **回答：**
 
-- RSO [1]：由于DPO的[蒙特卡洛采样](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E9%87%87%E6%A0%B7&zhida_source=entity)很难达到，所以其实DPO几乎是off-policy的[采样方式](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=%E9%87%87%E6%A0%B7%E6%96%B9%E5%BC%8F&zhida_source=entity)，RSO主要从DPO的采样方式来解决DPO的问题。它使用拒绝采样的方法来优化模型，不直接修改模型参数。
+- RSO [1]：由于DPO的[蒙特卡洛采样](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E9%87%87%E6%A0%B7&zhida_source=entity)很难达到，所以其实DPO几乎是off-policy的[采样方式](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=%E9%87%87%E6%A0%B7%E6%96%B9%E5%BC%8F&zhida_source=entity)，RSO主要从DPO的采样方式来解决DPO的问题。
 - Iterative DPO [2]：同样由于DPO的蒙特卡洛采样很难达到，所以通过[on-policy](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=on-policy&zhida_source=entity)的方式采样来替代off-policy的采样。它通过多次迭代来逐步优化模型，每次迭代都基于上一次的结果进行调整。
 - IPO [3]：由于BT model的目标是最大化正负response的reward gap，但其实其中忽略了真实情况下我们组的pair可能会有噪音，那么无限去扩大reward gap其实是不准确的，也就是overfit了preference的pair数据，那么解决方案是需要限制这个gap的范围。
 - DPOP [4]：由于LLM model很难区分[编辑距离](https://zhida.zhihu.com/search?content_id=240837368&content_type=Article&match_order=1&q=%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB&zhida_source=entity)较小的pair，那么当持续去区分这批case的时候，模型效果会崩塌，现象是正例子和负例子的概率都往下掉。那么DPOP用了一个新项来惩罚正例往下掉的pair，使得正例概率继续提升。
@@ -136,6 +136,43 @@ Figure: Blue points: training data point ; Red points: novel data points to be s
 [3] Azar M G, Rowland M, Piot B, et al. A general theoretical paradigm to understand learning from human preferences[J]. arXiv preprint arXiv:2310.12036, 2023.
 
 [4] Pal A, Karkhanis D, Dooley S, et al. Smaug: Fixing Failure Modes of Preference Optimisation with DPO-Positive[J]. arXiv preprint arXiv:2402.13228, 2024.
+
+[一些RLHF的平替汇总](https://mp.weixin.qq.com/s/Gjng5jKNc7igblOfHNMYZQ)
+
+## **提问：**如何在公开数据集中筛选合适自己模型的sft数据？
+
+- 利用sft model和pretrain model的关系筛选模型的sft数据：
+
+- IFD方法 [1]：利用以下公式进行数据选择： rθ(Q,A)=Pθ(A|Q)/Pθ(A) 。这个公式其实是计算pretrain model生成对齐后模型的answer的难度（在 prompt的condition 下生成A的概率）。这个概率越低，越说明生成难度高，那么[sft模型](https://zhida.zhihu.com/search?content_id=241026411&content_type=Article&match_order=1&q=sft%E6%A8%A1%E5%9E%8B&zhida_source=entity)学习到的对齐规律越多，那么我们更应该选择这个sft数据。
+
+![](https://pic3.zhimg.com/v2-5f827469a56fe1828f65da3fafc47eb8_1440w.jpg)
+
+- Hybrid Method （混合了多种之前列举的指标和方法。）：例如 What MakeGood Data for Alignment? A Comprehensive Study of Automatic Data Selectionin Instruction Tuning [2] 文章，从complexity，[diversity](https://zhida.zhihu.com/search?content_id=241026411&content_type=Article&match_order=1&q=diversity&zhida_source=entity)和quality三个方向对sft数据建模，训练了多个模型对各个指标维度进行分别衡量。
+
+![](https://pic3.zhimg.com/v2-0a8d75e21061628ef917fc3a2d89a730_1440w.jpg)
+
+[1] Li M, Zhang Y, Li Z, et al. From quantity to quality: Boosting llm performance with self-guided data selection for instruction tuning[J]. arXiv preprint arXiv:2308.12032, 2023.
+
+[2] Liu W, Zeng W, He K, et al. What makes good data for alignment? a comprehensive study of automatic data selection in instruction tuning[J]. arXiv preprint arXiv:2312.15685, 2023.
+
+## **提问：**如果我们把推理结果相关的多个关键段落按照下列规则藏在一段文章里：
+
+- A：关键段落藏在头部
+- B：关键段落藏在尾部
+- C：关键段落藏在中间
+- D：关键段落随机分布在文章中
+
+然后，把文章交给大模型，并要求它生成正确的推理过程和结果。请按照模型能预测正确推理过程和结果的概率对这几个规则排序？
+
+**回答：**B > A > C > D. 这是一个经典的长文本的大海捞针的问题，整体而言，模型的attention分布集中在头部和尾部，中间的attention较少，那么B > A > C。最后还有如果分散在文章中，这个结论就更难获得。Mistral 70B的研究结果如下：
+
+![](https://picx.zhimg.com/v2-3e3df2b2c71fb5592393a6023ad53fdb_1440w.jpg)
+
+更多结论可以参考论文 Same Task, More Tokens: the Impact of Input Length on the Reasoning Performance of Large Language Models [1]。
+
+## **提问：** Pair RM是什么形式的RM，相比于原RM形式有什么好处？
+
+**回答：** 原RM是BT model形式的RM，每个sample组成形式是（prompt，answer)，通过maximize positive sample和negative sample的gap来完成pointwise的rank。Pair RM是pairwise rank，数据组成形式是（prompt，pos_answer, neg_answer）. Pair RM的好处是pos answer和neg answer可以互相在context下看到两者，那么可以通过字面的比较找到两者的diff，整体解释性和[泛化能力](https://zhida.zhihu.com/search?content_id=241149187&content_type=Article&match_order=1&q=%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B&zhida_source=entity)都会比普通RM好。**因为普通RM很容易overfit原数据，很难找到真正diff地pattern。**现在[Alpaca-Eval](https://zhida.zhihu.com/search?content_id=241149187&content_type=Article&match_order=1&q=Alpaca-Eval&zhida_source=entity) [1]榜单上就有Pair RM的身影，而且Pair RM整体很小 [2]，效果很好。
 
 
 

@@ -148,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -253,13 +253,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/DPO/DPO.md",
+                "file": "PLM/业界分享/面试题/LLM面试题.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "DPO 的大纲"
+              "title": "LLM面试题 的大纲"
             }
           },
           {
@@ -337,8 +337,9 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "efaebb94fb972e30",
+  "active": "1838cb65a169f00e",
   "lastOpenFiles": [
+    "PLM/Alignment/DPO/DPO.md",
     "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/Alignment/Loss/Loss函数总结.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
@@ -353,7 +354,6 @@
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
     "PLM/o1related/DeepSeekR/R1-related.md",
-    "PLM/Alignment/DPO/DPO.md",
     "PLM/Alignment/README.md",
     "PLM/业界分享/面试题",
     "PLM/Alignment/PPO/PPO.md",
