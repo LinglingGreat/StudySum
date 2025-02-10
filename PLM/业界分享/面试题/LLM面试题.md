@@ -115,3 +115,12 @@ Figure: Blue points: training data point ; Red points: novel data points to be s
 ![](https://pic3.zhimg.com/v2-5035db54296d19455f86a80951477c18_1440w.jpg)
 
 
+## 参考资料
+
+百面LLM： https://www.zhihu.com/column/c_1747590116120698880 
+
+LLM常见面试问题- SFT篇 - 技术微佬的文章 - 知乎
+https://zhuanlan.zhihu.com/p/714687583
+
+[什么是Cosine优化器？在大模型中应该怎么设置cosine优化器的周期比较好？](https://zhuanlan.zhihu.com/p/685354437)
+

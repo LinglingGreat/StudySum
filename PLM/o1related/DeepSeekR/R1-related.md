@@ -83,5 +83,14 @@ _We strongly believe in the future of RL + LLM + Agents. The release is a minima
 
 [DeepSeek R1 Zero中文复现教程来了！](https://mp.weixin.qq.com/s/Z7P61IV3n4XYeC0Et_fvwg)
 
+[关于zero-rl的碎碎念和想法](https://zhuanlan.zhihu.com/p/22288441283)
+1. 不同的[rl算法](https://zhida.zhihu.com/search?content_id=253479911&content_type=Article&match_order=3&q=rl%E7%AE%97%E6%B3%95&zhida_source=entity)，在base-rl上的差异性不显著。lr、warmup等等也没特别大的影响。
+	1. 调整这些参数，reward/response-length 不会同步增长（response-length会和任务特性相关，有些任务容易涨比如text-game，有些不容易涨比如math）。
+	2. 容易饱和（比如跑不到100个step，效果就不涨了）。
+	3. 最朴素的方法可能是最有效的。比如 reinforce以及使用ppo的loss-objective就足够用了。
+2. 是否加入kl约束会有比较大的影响。
+	1. 加入kl会限制模型的exploration。而base上的rl，前期的exploration更重要。
 
+3. 使用的prompt-template影响也较大。
+	1. 如果使用的template不恰当，可能最后会训出来一个 类instruct风格的模型（也侧面证明 base-model大概率刷了类似的数据，否则，rl不太可能探索出这种风格）。
 
