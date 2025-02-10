@@ -93,5 +93,7 @@ GRPO 认为，直接退化为 Policy Gradient 是不是有点过于原始，
 
 ## 参考资料
 
-[Site Unreachable](https://zhuanlan.zhihu.com/p/20021693569?utm_psn=1871540714904616960)
+[GRPO：Group Relative Policy Optimization](https://zhuanlan.zhihu.com/p/20021693569?utm_psn=1871540714904616960)
+
+[从PPO到Reinforce++，再对比GRPO](https://zhuanlan.zhihu.com/p/22023807402)
 

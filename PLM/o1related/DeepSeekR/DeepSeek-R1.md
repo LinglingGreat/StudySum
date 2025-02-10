@@ -187,4 +187,4 @@ Monte Carlo Tree Search (MCTS)：受 AlphaGo（Silver 等人，2017b）和 Alpha
 
 [DeepSeek R1 论文解读&关键技术点梳理](https://mp.weixin.qq.com/s/wckZqmgSmocnIgUPcg5QcQ)
 
-
+DeepSeek-R1的100问： https://blog.sciencenet.cn/blog-439941-1469698.html

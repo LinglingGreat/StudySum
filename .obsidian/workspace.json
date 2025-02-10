@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "Tool/Pytorch/Pytorch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "transformers"
+              "title": "Pytorch"
             }
           },
           {
@@ -111,12 +111,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/o1related/README.md",
+                "file": "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "DeepSeek-R1"
             }
           },
           {
@@ -134,7 +134,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -239,13 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/DPO/trl_vs_openrlhf.md",
+                "file": "PLM/业界分享/面试题/LLM面试题.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "trl_vs_openrlhf 的大纲"
+              "title": "LLM面试题 的大纲"
             }
           },
           {
@@ -323,21 +323,25 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "e33d85c048fa08e5",
+  "active": "1838cb65a169f00e",
   "lastOpenFiles": [
-    "PLM/o1related/README.md",
-    "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
+    "PLM/业界分享/面试题/img/Pasted image 20250210154618.png",
+    "PLM/业界分享/面试题/img",
+    "Tool/Pytorch/Pytorch.md",
+    "Tool/Pytorch/transformers.md",
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
-    "PLM/o1related/DeepSeekR/R1-related.md",
+    "PLM/Alignment/GRPO/GRPO.md",
+    "PLM/o1related/README.md",
+    "PLM/Alignment/DPO/trl_vs_openrlhf.md",
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
+    "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
+    "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/Alignment/Loss/Loss函数总结.md",
     "PLM/Alignment/DPO/DPO.md",
     "PLM/业界分享/面试题/LLM面试题.md",
-    "Tool/Pytorch/transformers.md",
     "PLM/Alignment/README.md",
     "PLM/业界分享/面试题",
     "PLM/Alignment/PPO/PPO.md",
-    "PLM/Alignment/GRPO/GRPO.md",
     "PLM/Models/DeepSeek/DeepSeek.md",
     "未命名.canvas",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
@@ -356,22 +360,18 @@
     "PLM/Alignment/Loss/img",
     "PLM/Alignment/PPO/Reward模型.md",
     "PLM/Alignment/Loss",
-    "PLM/Alignment/DPO/trl_vs_openrlhf.md",
     "Tool/Linux/Linux.md",
     "PLM/Alignment/Tulu/Tulu3.md",
     "PLM/BaseStruct/Attention/Attention.md",
     "PLM/Models/Phi/Phi-4.md",
     "PLM/CoT/CoT.md",
     "BasicKnow/others/待整合.md",
-    "PLM/o1related/rStar-Math/rStar-Math.md",
     "PLM/o1related/rStar-Math/img",
     "PLM/o1related/rStar-Math",
-    "PLM/o1related/Kimi/Kimik1.5.md",
     "PLM/o1related",
     "PLM/Agent/Operator",
     "PLM/Models/aya-expanse",
     "Speedup/基础概念",
-    "PLM/o1related/Kimi/img",
     "未命名 1.canvas"
   ]
 }

@@ -83,7 +83,25 @@ DataLoader(dataset, batch_size=1, shuffle=False, sampler=None, num_workers=0, co
     
 -   sampler： 样本抽样，后续会详细介绍
     
--   num_workers：使用多进程加载的进程数，0代表不使用多进程
+- `num_workers`：使用多进程加载的进程数，默认值为 0，表示数据将在主进程中加载。
+1. 作用：
+    - 当 num_workers > 0 时，DataLoader 使用多进程来并行加载数据。
+    - 这可以显著提高数据加载的速度，特别是当数据预处理比较耗时或者 I/O 操作较多时。
+2. 性能影响：
+    - 增加 num_workers 通常可以提高数据加载速度。
+    - 但是，使用过多的 workers 可能会导致 CPU 过载或内存使用过高。
+3. 选择合适的值：
+    - 一般建议将 num_workers 设置为机器 CPU 核心数的 2-4 倍。
+    - 具体的最优值需要根据数据集大小、数据预处理复杂度、硬件配置等因素来实验确定。
+4. 注意事项：
+    - 在 Windows 系统上，多进程可能会有一些限制和性能问题。
+    - 在使用多 GPU 训练时，总的 worker 数量应考虑所有 GPU 的情况。
+5. 内存使用：
+    - 每个 worker 都会复制一份数据集，因此增加 num_workers 会增加内存使用。
+- 每次dataloader加载数据时：dataloader一次性创建num_worker个worker，（也可以说dataloader一次性创建num_worker个工作进程，worker也是普通的工作进程），并用batch_sampler将指定batch分配给指定worker，worker将它负责的batch加载进RAM。
+- 然后，dataloader从RAM中找本轮迭代要用的batch，如果找到了，就使用。如果没找到，就要num_worker个worker继续加载batch到内存，直到dataloader在RAM中找到目标batch。一般情况下都是能找到的，因为batch_sampler指定batch时当然优先指定本轮要用的batch。
+- num_worker设置得大，好处是寻batch速度快，因为下一轮迭代的batch很可能在上一轮/上上一轮...迭代时已经加载好了。坏处是内存开销大，也加重了CPU负担（worker加载数据到RAM的进程是CPU复制的嘛）。num_workers的经验设置值是自己电脑/服务器的CPU核心数，如果CPU很强、RAM也很充足，就可以设置得更大些。
+- 如果num_worker设为0，意味着每一轮迭代时，dataloader不再有自主加载数据到RAM这一步骤（因为没有worker了），而是在RAM中找batch，找不到时再加载相应的batch。缺点当然是速度更慢。
     
 -   collate_fn： 如何将多个样本数据拼接成一个batch，一般使用默认的拼接方式即可
     

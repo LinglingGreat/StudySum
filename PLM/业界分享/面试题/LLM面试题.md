@@ -1,32 +1,32 @@
 
-**提问**：DPO的第0步loss是固定的么？如果固定，是多少？
+## **提问**：DPO的第0步loss是固定的么？如果固定，是多少？
 
 **回答**：loss=−logsigmoid(β−β) 。这个数应该=0.693。
 
 
 
-**提问**：如果预训练[阶段模型](https://zhida.zhihu.com/search?content_id=240476043&content_type=Article&match_order=1&q=%E9%98%B6%E6%AE%B5%E6%A8%A1%E5%9E%8B&zhida_source=entity)训练句子的时候没有加BOS Token，但是预测的时候增加了BOS Token，或者训练的时候加了BOS token, 但是预测的时候没有加BOS Token, benchmark预测会有啥问题？
+## **提问**：如果预训练[阶段模型](https://zhida.zhihu.com/search?content_id=240476043&content_type=Article&match_order=1&q=%E9%98%B6%E6%AE%B5%E6%A8%A1%E5%9E%8B&zhida_source=entity)训练句子的时候没有加BOS Token，但是预测的时候增加了BOS Token，或者训练的时候加了BOS token, 但是预测的时候没有加BOS Token, benchmark预测会有啥问题？
 
 **回答**：benchmark会直接崩溃，之前gemma-2b是训的时候带BOS，预测忘加了，benchmark全崩了。那聚焦背后的真正原因是，一个句子的第一个Token在模型中会吸收大量attention，那么当你预测的时候改变了第一个Token，句子的预测会改变比较大，因为第一个Token改变了，而预测中大量attention来自第一个Token，所以预测的时候大量benchmark效果会不好。
 
 
-**提问**：DPO是一个on-policy还是off-policy的算法，以及这样的算法有什么优劣？
+## **提问**：DPO是一个on-policy还是off-policy的算法，以及这样的算法有什么优劣？
 
 **回答：** DPO是一个off-policy的算法，因为训练DPO的pair数据不一定来自ref policy或者sft policy。优势是不需要对模型进行采样，然后标注，直接可以拿已有的数据集进行训练，这样的情况下包括采样的成本和标注的成本都可以节约。劣势是效果很难保证，尤其是你的模型本身能力和发布的pair数据不匹配的时候。相比而言，PPO是一个on-policy的算法，整体效果会比DPO要好。
 
 
-**提问**：DPO公式是由PPO的objective公式推导过来的，为什么DPO是[off-policy算法](https://zhida.zhihu.com/search?content_id=240562968&content_type=Article&match_order=1&q=off-policy%E7%AE%97%E6%B3%95&zhida_source=entity)，而PPO是on-policy算法，到底哪一步推导出了问题？
+## **提问**：DPO公式是由PPO的objective公式推导过来的，为什么DPO是[off-policy算法](https://zhida.zhihu.com/search?content_id=240562968&content_type=Article&match_order=1&q=off-policy%E7%AE%97%E6%B3%95&zhida_source=entity)，而PPO是on-policy算法，到底哪一步推导出了问题？
 
 **回答**：[Site Unreachable](https://zhuanlan.zhihu.com/p/685948009)
 
 
 
-**提问**：DPO为什么会在学习过程中training positive的概率和training negative的概率都同时下降？
+## **提问**：DPO为什么会在学习过程中training positive的概率和training negative的概率都同时下降？
 
 **回答**：[Site Unreachable](https://zhuanlan.zhihu.com/p/686122806)
 
 
-**提问**：在PPO过程中，[reward model](https://zhida.zhihu.com/search?content_id=240631896&content_type=Article&match_order=1&q=reward+model&zhida_source=entity)的效果上会有什么问题？
+## **提问**：在PPO过程中，[reward model](https://zhida.zhihu.com/search?content_id=240631896&content_type=Article&match_order=1&q=reward+model&zhida_source=entity)的效果上会有什么问题？
 
 **回答**：在模型PPO过程中，reward model的准确率逐渐下降，这就是俗称的reward model的OOD问题，因为reward model的训练样本一般来自[sft模型](https://zhida.zhihu.com/search?content_id=240631896&content_type=Article&match_order=1&q=sft%E6%A8%A1%E5%9E%8B&zhida_source=entity)的responses，那么在PPO过程中，policy model刚开始和sft生成的response很相似，所以reward model准确率较高，但是在逐渐偏离sft的时候，reward model的准确率会持续下降，这基本就是现阶段reward model的主要问题。我个人认为AGI过程中，一定需要一个generalize 很强的reward model，就是所谓的global reward model or world model. 这里我也参考了一篇OpenAI blog的愿景：
 
@@ -39,14 +39,14 @@
 其中2就是OpenAI对reward model的一个设想。
 
 
-**提问**：SFT [packing](https://zhida.zhihu.com/search?content_id=240699804&content_type=Article&match_order=1&q=packing&zhida_source=entity)对SFT训练的影响是什么？
+## **提问**：SFT [packing](https://zhida.zhihu.com/search?content_id=240699804&content_type=Article&match_order=1&q=packing&zhida_source=entity)对SFT训练的影响是什么？
 
 **回答：** SFT packing以后其实是削弱了模型对难的短query和短答案的拟合。在无sft packing得情况下，假设[batch_size](https://zhida.zhihu.com/search?content_id=240699804&content_type=Article&match_order=1&q=batch_size&zhida_source=entity) = 1，那么如果有个短query和短答案在这个batch里，其余补充padding，那么这个batch的gradient全是这个短文本的gradient，模型对这个query的拟合能力会变强。但是如果SFT packing以后，多个短文本在一个样本中，这个batch的gradient会被稀释，短文本的拟合就不会特别强。但拟合能力似乎和泛化不可以挂钩，我们初步观察[sft packing](https://zhida.zhihu.com/search?content_id=240699804&content_type=Article&match_order=2&q=sft+packing&zhida_source=entity)和non sft packing的效果差不了很多。
 
 补充, 今天review了一下之前实验，在数据量小，或者特定困难的数据上，sft packing是有损泛化效果的，但在大批量数据上是无损泛化效果的。除此之外经群友补充，non-packing的方式会影响模型续写的效果，因此会影响一些benchmark效果。
 
 
-**提问**：如何解决[reward model](https://zhida.zhihu.com/search?content_id=240746384&content_type=Article&match_order=1&q=reward+model&zhida_source=entity)的OOD的问题？
+## **提问**：如何解决[reward model](https://zhida.zhihu.com/search?content_id=240746384&content_type=Article&match_order=1&q=reward+model&zhida_source=entity)的OOD的问题？
 
 **回答：** 现阶段解决reward model的OOD普遍解决方法，就是Llama2 [1]的做法，也就是在训练过一段时间RLHF以后，重新对policy采样pair对，人标数据然后继续训练reward model。但这种方式就是太费人力，感觉并不是持久之道。
 
@@ -58,7 +58,7 @@
 个人觉得如何做出泛化能力比较强的rm会是一个比较难，也是比较限制模型发展的问题。
 
 
-**提问**：[RLHF](https://zhida.zhihu.com/search?content_id=240791813&content_type=Article&match_order=1&q=RLHF&zhida_source=entity)中PPO有什么问题，为什么大家都设计很多方法去替代它。
+## **提问**：[RLHF](https://zhida.zhihu.com/search?content_id=240791813&content_type=Article&match_order=1&q=RLHF&zhida_source=entity)中PPO有什么问题，为什么大家都设计很多方法去替代它。
 
 **回答：**
 
@@ -67,7 +67,7 @@
 3. PPO的调超参数会比较困难，需要一些炼丹高手和经验去做。
 
 
-**提问**：SFT[阶段模型](https://zhida.zhihu.com/search?content_id=240873941&content_type=Article&match_order=1&q=%E9%98%B6%E6%AE%B5%E6%A8%A1%E5%9E%8B&zhida_source=entity)可以学习新知识么？
+## **提问**：SFT[阶段模型](https://zhida.zhihu.com/search?content_id=240873941&content_type=Article&match_order=1&q=%E9%98%B6%E6%AE%B5%E6%A8%A1%E5%9E%8B&zhida_source=entity)可以学习新知识么？
 
 **回答：**虽然理论上可以，但很少，且不推荐sft阶段去学习知识。在LIMA原文中就表述过同样一个假设：
 
@@ -82,7 +82,7 @@
 最后，如果希望sft学习新知识，不如把这部分sft的新知识组织好放入pre-train or post-train阶段更为合适。
 
 
-**提问**：建立sft数据主要需要关注什么方面？
+## **提问**：建立sft数据主要需要关注什么方面？
 
 **回答：**
 
@@ -96,7 +96,7 @@
 1. SFT阶段不能太多的知识注入：过多的知识注入，或者超过模型能力本身的回答过多会导致[对齐税](https://zhida.zhihu.com/search?content_id=240902032&content_type=Article&match_order=1&q=%E5%AF%B9%E9%BD%90%E7%A8%8E&zhida_source=entity)，这是OpenAI的blog也曾经提到的，这就是我为什么不建议模型过多在SFT阶段学习知识，会影响其学习指令遵循的能力。
 
 
-**提问：**提升sft的prompt的多样性有什么好的方法？
+## **提问：** 提升sft的prompt的多样性有什么好的方法？
 
 **回答：**
 
@@ -113,6 +113,15 @@ Figure: Blue points: training data point ; Red points: novel data points to be s
 - 从complexity角度，对于prompt直接进行难度的升级，所以即使在同一个语意空间的prompt也会变得diverse。比较著名的是Wizard 方法 [3]，通过GPT4进行prompt难度升级，然后构成complexity丰富的prompt。
 
 ![](https://pic3.zhimg.com/v2-5035db54296d19455f86a80951477c18_1440w.jpg)
+
+## **提问**：在什么情况下DPO exactly 数学上等同于 PPO。
+
+![](img/Pasted%20image%2020250210154618.png)
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/687067338)
+
+## **提问**：DPO的变体有哪些，主要解决DPO的什么问题？
+
 
 
 ## 参考资料
