@@ -84,7 +84,7 @@ if sampler is None:
 		drop_last=drop_last,
 		consumed_samples=consumed_samples,
 	)
-
+# 没有设置num_workers，默认为0
 return DataLoader(
 	replay_buffer,
 	batch_size=batch_size,

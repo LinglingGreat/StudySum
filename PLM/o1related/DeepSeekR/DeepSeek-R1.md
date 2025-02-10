@@ -185,4 +185,6 @@ Monte Carlo Tree Search (MCTS)：受 AlphaGo（Silver 等人，2017b）和 Alpha
 3. We took **a closer look at R1-Zero-like training via RL**, and found that the increasing response length phenomenon is not due to the emergence of self-reflection, but a consequence of RL optimizing well-designed rule-based reward functions.
 
 
+[DeepSeek R1 论文解读&关键技术点梳理](https://mp.weixin.qq.com/s/wckZqmgSmocnIgUPcg5QcQ)
+
 
