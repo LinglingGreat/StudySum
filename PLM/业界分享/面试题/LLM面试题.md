@@ -174,6 +174,193 @@ Figure: Blue points: training data point ; Red points: novel data points to be s
 
 **回答：** 原RM是BT model形式的RM，每个sample组成形式是（prompt，answer)，通过maximize positive sample和negative sample的gap来完成pointwise的rank。Pair RM是pairwise rank，数据组成形式是（prompt，pos_answer, neg_answer）. Pair RM的好处是pos answer和neg answer可以互相在context下看到两者，那么可以通过字面的比较找到两者的diff，整体解释性和[泛化能力](https://zhida.zhihu.com/search?content_id=241149187&content_type=Article&match_order=1&q=%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B&zhida_source=entity)都会比普通RM好。**因为普通RM很容易overfit原数据，很难找到真正diff地pattern。**现在[Alpaca-Eval](https://zhida.zhihu.com/search?content_id=241149187&content_type=Article&match_order=1&q=Alpaca-Eval&zhida_source=entity) [1]榜单上就有Pair RM的身影，而且Pair RM整体很小 [2]，效果很好。
 
+## **提问：** 为什么G4-turbo在topp=0.0的情况下，还不能保证预测稳定性？（社区最近广泛讨论的问题）
+
+附社区具体问题：
+
+> 我构造了一个测试场景来测试该问题：  
+> 使用英文翻译为中文的任务，输入token量大于1k，输出token量也大于1k。总体控制在4k context范围内，方便兼顾到老版本模型和其他供应商的模型。  
+> 所有测试中输入prompt完全一致。  
+> 设置temperature=0，固定seed  
+> 对于每个模型请求至少20次，计算输出token序列结果之间的最大相同前缀的平均长度，越大说明第一个分歧token出现的越晚。  
+> 备注：0613版本的模型并不支持seed，也不会输出 system_fingerprint 。  
+> gpt-3.5-turbo-0613模型的结果是最符合一般人预期的，在这种[贪心解码](https://zhida.zhihu.com/search?content_id=241175789&content_type=Article&match_order=1&q=%E8%B4%AA%E5%BF%83%E8%A7%A3%E7%A0%81&zhida_source=entity)的策略下，平均相同长度超过500。  
+> gpt-4-0613与从1106开始的所有后续模型的平均相同长度大多在60-90的范围内。**对于我的测试案例，超过100token的输出时，大概率结果不会完全一致。**  
+> 作者：孔某人  
+> 链接：[https://zhuanlan.zhihu.com/p/688676344](https://zhuanlan.zhihu.com/p/688676344)
+
+**回答：**预测稳定性在[LLM](https://zhida.zhihu.com/search?content_id=241175789&content_type=Article&match_order=1&q=LLM&zhida_source=entity)中一直是一个问题，我通过现在的现象分析一下可能存在的问题：
+
+1. 如[swtheking：大模型的面试题系列-1](https://zhuanlan.zhihu.com/p/684958325)所讲的一种原因，由于模型预测时候，Open-AI会收集当时多个请求同时组batch，那么预测由于padding的影响，本身就会产出token level的不一致，当然这个不一致影响比较大，因为第一个token不一致后续都会不一致。
+2. 更极端的组batch的方式是，把多个请求pack在一起，然后使用block diagonal attention的方式进行预测，那么这个预测会比1方式更严重影响预测稳定性，因为pad更多个token。（ 
+    
+    [@王焱](https://www.zhihu.com/people/7c894b915042fe363aed838b276951eb)
+    
+     提供）
+3. 预测中融合算子的加速，以及算子计算顺序的问题影响的预测结果。因为对于不同的硬件适配，甚至在同一硬件的算子计算顺序的随机性也能带来token level的不一致，但这种不一致概率较小。
+4. 除此之外，[tensor parallel](https://zhida.zhihu.com/search?content_id=241175789&content_type=Article&match_order=1&q=tensor+parallel&zhida_source=entity)，data parallel以及batchsize变化会导致内部选择kennel不一致（计算算子不一致），那么导致效果的diff（比如vllm框架下）。
+5. 可能存在类似投机解码类更高效的解码方式带来的预测不稳定。当然[投机解码](https://zhida.zhihu.com/search?content_id=241175789&content_type=Article&match_order=2&q=%E6%8A%95%E6%9C%BA%E8%A7%A3%E7%A0%81&zhida_source=entity)理论上不会带来预测不稳定。
+6. Sparse MOE的一些问题存在，Continuous batching 的时候因为每个 batch 的 case 不一样导致超 capacity factor 的时候会丢不同 token 导致不 [deterministic](https://zhida.zhihu.com/search?content_id=241175789&content_type=Article&match_order=1&q=deterministic&zhida_source=entity)，参考[Non-determinism in GPT-4 is caused by Sparse MoE](https://link.zhihu.com/?target=https%3A//152334h.github.io/blog/non-determinism-in-gpt-4/%23are-you-really-sure-it-isnt-hardware)。（[Yao Fu](https://link.zhihu.com/?target=https%3A//yaofu.notion.site/Yao-Fu-s-Blog-b536c3d6912149a395931f1e871370db) 提供）
+
+从 
+
+[@孔某人](https://www.zhihu.com/people/4e46fd4005e7434340ea1e82ac641a6d)
+
+ 观测到的现象可以推测，
+
+- GPT3.5-turbo由于模型小，可能没有进行组batch的操作，仅仅是某些[融合算子](https://zhida.zhihu.com/search?content_id=241175789&content_type=Article&match_order=2&q=%E8%9E%8D%E5%90%88%E7%AE%97%E5%AD%90&zhida_source=entity)加速导致了算子计算顺序不一致带来的不稳定。
+- G4-turbo和G4也许使用了组batch的形式，或者pack多个user query的形式进行预测推理，导致了很多预测不稳定。
+- 也许在大模型下有类似投机解码类更高效的解码方式带来的预测不稳定。
+
+## **提问：** BT model （DPO，RM的训练形式）的问题在哪？
+
+**回答：**
+
+BT model loss形式如下：
+
+loss=−logsigmoid(pos−neg)
+
+- 最大化正负例子的差距得到的模型会塌缩成只有正例子的空间，失去所有负例子的概率。在DPO中就是只会生成正例，负例子输出概率为0。在RM中正例子会无限接近于1，负例子会无限接近于0。那么这样的模型是没有entropy的，抗噪声能力会减弱。如果正负pair标错了，会导致严重后果。
+- 忽略语意或字面上差别较小的pos sample和neg sample，过度关注语意或字面上差别较大的pos sample和neg sample，也就是比较容易学的case，并overfit。这是logsigmoid函数的问题，用[hinge loss](https://zhida.zhihu.com/search?content_id=241198497&content_type=Article&match_order=1&q=hinge+loss&zhida_source=entity)这类loss可以缓解这一问题。
+- 不能找出[全序关系](https://zhida.zhihu.com/search?content_id=241198497&content_type=Article&match_order=1&q=%E5%85%A8%E5%BA%8F%E5%85%B3%E7%B3%BB&zhida_source=entity)，如果数据集里有A > B, B > C, C > A这种[偏序关系](https://zhida.zhihu.com/search?content_id=241198497&content_type=Article&match_order=1&q=%E5%81%8F%E5%BA%8F%E5%85%B3%E7%B3%BB&zhida_source=entity)，并不能找到它的nash equivalence的点，只会学乱。
+
+## **提问：** 在LLM中，假设我们可以在不同层中，交换两个位置token的[embedding](https://zhida.zhihu.com/search?content_id=241245066&content_type=Article&match_order=1&q=embedding&zhida_source=entity)，那么是偏顶层对最后预测的影响大，还是底层对最后预测的影响大？
+
+**回答：**
+
+有两个观点：
+
+顶层：
+
+- 因为第n层的第m个token会看到下面n-1层前m-1个token的所有attention模式(对所有前面token的attention)，那么如果你交换的是第k层（k << n）的(m-1)个token和前面任一token，那么在第k层可以兼容这个模式，所以预测影响不会特别大。相反如果在最顶层，那么第(m-1)个token和第m - j (j > 1)个token交换，那么第m个token只有一个错误的[attention模式](https://zhida.zhihu.com/search?content_id=241245066&content_type=Article&match_order=2&q=attention%E6%A8%A1%E5%BC%8F&zhida_source=entity)可以看到（最后的错误模式），那么预测影响很大。
+- 底层的typo错误会在模型中间被减弱，被LLM兼容。还有之前有对bert模型进行分析，BERT Rediscovers the Classical NLP Pipeline [1], BERT分析底层是[词法分析](https://zhida.zhihu.com/search?content_id=241245066&content_type=Article&match_order=1&q=%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90&zhida_source=entity)，高层是语义分析, 因此模型可能在高层影响更大。
+- 第n层改变某个token等于前n-1层这个位置的token的作用都被修改了。
+
+底层：
+
+- 底层是等于是从句子角度改了两个词的位置，从底层进行修改了句子的顺序。
+
+我个人觉得是**顶层比较大**，**因为改顶层的embedding相当于底层把顺序换了，而且删了下面很多层的作用。**除此之外[GPT4](https://zhida.zhihu.com/search?content_id=241245066&content_type=Article&match_order=1&q=GPT4&zhida_source=entity)也是可以兼容顺序错乱的情况的。
+
+最后附几个insightful的实验
+
+1. In-Context Learning Creates Task Vectors [1]发现，[大模型](https://zhida.zhihu.com/search?content_id=241245066&content_type=Article&match_order=1&q=%E5%A4%A7%E6%A8%A1%E5%9E%8B&zhida_source=entity)在模型的中下层主要是做task classification任务，在上层才是做预测任务，它也曾经做过类似实验，只是选择的是特定的token交换（[ICL](https://zhida.zhihu.com/search?content_id=241245066&content_type=Article&match_order=1&q=ICL&zhida_source=entity)中demonstrations的最后一个token和classification任务的最后一个预测token对换），发现是底层影响没有上层高。具体也可以看我的blog [2]。
+
+![](https://pica.zhimg.com/v2-11c5aad0dc052afa5332468e26e6c66a_1440w.jpg)
+
+![](https://pica.zhimg.com/v2-72fa0b3f3e56e543f57a5ee4c5cf5278_1440w.jpg)
+
+2. GPT4对打乱文字顺序的兼容性很强，这可能是训过类似数据的原因。[4]
+
+![](https://pica.zhimg.com/v2-2d4eea847807f7b7bce78a3f2d9a92b8_1440w.jpg)
+
+[1] Tenney I, Das D, Pavlick E. BERT rediscovers the classical NLP pipeline[J]. arXiv preprint arXiv:1905.05950, 2019.
+
+[2] Hendel R, Geva M, Globerson A. In-context learning creates task vectors[J]. arXiv preprint arXiv:2310.15916, 2023.
+
+[3] [https://difficult-link-dd7.notion.site/c31d141411be4d0eb50473fe6abae1db?v=50264a9824494b6c836ba0c6f3bebd2f](https://link.zhihu.com/?target=https%3A//difficult-link-dd7.notion.site/c31d141411be4d0eb50473fe6abae1db%3Fv%3D50264a9824494b6c836ba0c6f3bebd2f)
+
+[4] Cao Q, Kojima T, Matsuo Y, et al. Unnatural error correction: Gpt-4 can almost perfectly handle unnatural scrambled text[C]//Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. 2023: 8898-8913.
+
+## **提问：** 在预训练中的学到的代码数据和文本数据，在SFT中哪种数据的模式越难被改变，或者说知识注入越难？
+
+**回答：** 是代码数据，因为在预训练中代码数据的确定性更高，ppl更低，记忆越深刻，而文本数据变化更大，ppl更高，熵更高。在SFT过程中，改变文本数据比较容易，因为本身ppl就会高，但代码数据会比较难，因为本身ppl会比较低，或者说代码数据的生成确定性更高，少量样本很难对其内部改变，只能大段替换。
+
+## **提问：** 什么样的数据格式在SFT或者ICL阶段可以提升模型的reasoning的能力？
+
+**回答：**
+
+数学[reasoning](https://zhida.zhihu.com/search?content_id=241354744&content_type=Article&match_order=2&q=reasoning&zhida_source=entity)上是有三种形式可以显著提高效果模型的reasoning的能力 [1]
+
+- Reverse ： 128 + 367 = 495 -> 128 + 367 = ^594, 因为人就是反着计算的，从个位数到百位数。
+- COT or POT (Simplified Scratchpad): 把这个计算过程列举下来，用自然语言，符号或者代码形式呈现。
+- Detailed Scratchpad：把整个思考过程详细地用自然语言和符号表达出来。
+
+![](https://pic2.zhimg.com/v2-6142d053cde90342c01315e9fc668ccb_1440w.jpg)
+
+整体上Detailed Scratchpad需要的总条数最少就能达到100%在加法上的效果，但是其实总token数和plain需要差不多数量达到最好的效果。
+
+[1] Lee N, Sreenivasan K, Lee J D, et al. Teaching arithmetic to small transformers[J]. arXiv preprint arXiv:2307.03381, 2023.
+
+## **提问：** In context learning中下面哪一项比较重要：
+
+1）input distribution
+
+2）output distribution
+
+3）input-output mapping
+
+4）the sample order
+
+5）the formatting of the demonstrations
+
+**回答：**1）2）4）5）比较重要，3）有的说比较重要，有的说不是特别重要。
+
+1）2）重要来自下面实验 [1]：在使用gold label（正确的label）并不比random label的效果高多少，但是比无ICL高很多（无ICL就没有了input distribution和output distribution了）。
+
+![](https://pic3.zhimg.com/v2-567bc490afffd326d55d20c62e1eff7e_1440w.jpg)
+
+Figure: Min et al compare three different methods: 1) **No-examples**: the LM conditions on the test input only, with no examples. This is typical zero-shot inference, first done by GPT-2/GPT-3. 2) **Examples with ground truth outputs**: the LM conditions on the concatenation of a few in-context examples and the test input. This is a typical in-context learning method, and by default, all outputs in the prompt are ground truth. 3) **Examples with random outputs**: the LM conditions on in-context examples and the test input, but now, each output in the prompt is randomly sampled from the output set (labels in the classification tasks; a set of answer options in the multi-choice tasks).
+
+4)实验来源于论文 [2]: 无论few shot有多少个shot，不同模型只要重新排列demonstrations，分类准确率效果variance很大。
+
+![](https://pic1.zhimg.com/v2-abf797c943f735f7442fb35e9f4997fe_1440w.jpg)
+
+5）的细节可以看[swtheking：大模型的面试题系列-27](https://zhuanlan.zhihu.com/p/689508595)：因为ICL和SFT同源，COT数据在ICL中可以prompt更好的reasoning数据 。
+
+4）在[1]论文中看上去不是很重要，但是在[openai](https://zhida.zhihu.com/search?content_id=241400305&content_type=Article&match_order=1&q=openai&zhida_source=entity)的论文中有一些不一样的结论 [3],
+
+![](https://pic3.zhimg.com/v2-d90ac756918aa251fc1df572483c53a2_1440w.jpg)
+
+Figure : Few-shot prompting becomes competitive with finetuning for large models; weak-to- strong learning is qualitatively similar in the prompting setting. (a) Average [zero-shot](https://zhida.zhihu.com/search?content_id=241400305&content_type=Article&match_order=2&q=zero-shot&zhida_source=entity) (single dashed), 5-shot (double dashed) and finetuning (solid) accuracy with ground truth labels as a function of strong student size. (b) Average 5-shot with weak labels (colored dashed) accuracy as a function of student model size. Hue of line indicates size of weak supervisor. Zero-shot and 5-shot same as in panel a. (c) Average weak-to-strong performance for 5-shot prompting (dashed with crosses), naive finetuning (dashed thin) and finetuning with the confidence loss (solid with triangle) as a function of student model compute. Results are averaged across 7 NLP tasks. Few-shot weak- to-strong performance becomes competitive with or outperforms finetuning for the largest strong students, though finetuning with the confidence loss does better.
+
+这里的中间图片发现，黑色的虚线是ICL中用了gold label，而蓝色的虚线是小模型用gold label finetune以后生成的weak label（准确率是90左右），但效果却差了很多。和[1]可能的区别是任务的难度，整体这里的任务难度会高一些（虽然都是[classification](https://zhida.zhihu.com/search?content_id=241400305&content_type=Article&match_order=2&q=classification&zhida_source=entity)，但是这里任务是 22 popular NLP classification datasets covering ethics, commonsense reasoning, natural language inference, sentiment analysis, and other domains. ）。
+
+最后还有更多细节可以看我的blog：
+
+[Exploring the Potential of In-Context Learning: New Pathways for Enhancing Chat-Based Large Language Model Performance](https://link.zhihu.com/?target=https%3A//www.notion.so/c31d141411be4d0eb50473fe6abae1db%3Fv%3D50264a9824494b6c836ba0c6f3bebd2f)
+
+[1]Sang Michael Xie and Sewon Min. "How does in-context learning work? A framework for understanding the differences from traditional supervised learning ".
+
+[2]Lu Y, Bartolo M, Moore A, et al. Fantastically ordered prompts and where to find them: Overcoming few-shot prompt order [sensitivity](https://zhida.zhihu.com/search?content_id=241400305&content_type=Article&match_order=1&q=sensitivity&zhida_source=entity)[J]. arXiv preprint arXiv:2104.08786, 2021.
+
+[3]Burns C, Izmailov P, Kirchner J H, et al. Weak-to-strong generalization: Eliciting strong capabilities with weak supervision[J]. arXiv preprint arXiv:2312.09390, 2023.
+
+## **提问：** 如何在predict阶段提升一个大模型的回答质量？
+
+**回答：**有以下三种主流的做法：
+
+- 促使模型给予COT形式的回答，会提升模型的输出质量。其中包括提示词"think step by step"，以及prompt中加入COT形式回答的例子，都会促使模型有COT的回答，来提升模型输出质量。
+- Self consistency [1] 或者 universal self-consistency [2]的方法。这一系列的方法主要是利用模型多个答案[ensemble](https://zhida.zhihu.com/search?content_id=241430254&content_type=Article&match_order=1&q=ensemble&zhida_source=entity)的思想提升模型的效果。Self consistency使用在数学领域，在模型生成多个答案的时候，利用答案结果的一致性判断哪个答案是正确的：一般模型解数学题的时候会生成COT过程和答案，最终多个结果用投票方式决定使用哪个答案作为最终答案。对于universal self-consistency是把self consistency方法推广到所有领域，最终是把多个答案再次输入模型判断哪几个答案是一致的，并输出最终结果。
+
+![](https://pic3.zhimg.com/v2-a6b37e4ae2dbe039a1dc6fd11e7a634c_1440w.jpg)
+
+- Self-debug或者反思[3]，把模型结果和**现实交互反馈**再次喂给模型，让其反思和debug，那么会提升模型最终效果。
+
+![](https://pic3.zhimg.com/v2-0eb271c697bd7a45cdf0838e22cb48c6_1440w.jpg)
+
+这三种做法后续的大融合就是类似于lang chain或者agent的思路。本质是让大模型这种[概率模型](https://zhida.zhihu.com/search?content_id=241430254&content_type=Article&match_order=1&q=%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B&zhida_source=entity)一次生成对的答案的概率不是特别高（> 90%），需要在多轮对话反馈(这种反馈可以来源于工具或者人的监督)以后修正其答案，提升答案质量才能完全为人所用。
+
+[1]Wang X, Wei J, Schuurmans D, et al. Self-consistency improves chain of thought reasoning in language models[J]. arXiv preprint arXiv:2203.11171, 2022.
+
+[2]Chen X, Aksitov R, Alon U, et al. Universal self-consistency for large language model generation[J]. arXiv preprint arXiv:2311.17311, 2023.
+
+[3]Chen X, Lin M, Schärli N, et al. Teaching large language models to self-debug[J]. arXiv preprint arXiv:2304.05128, 2023.
+
+## **提问：** In Context Learning和SFT的关系是什么？
+
+**回答：** ICL是一种特殊的SFT。在论文 EXPLORING THE RELATIONSHIP BETWEEN IN- CONTEXT LEARNING AND INSTRUCTION TUNING [1] 中，用很多实验证明了ICL和SFT在改变LLM内部embedding维度有诸多相似。
+
+![](https://pic3.zhimg.com/v2-f28f11dea02d773da1987c99bdb6b31e_1440w.jpg)
+
+- ICL和SFT（IT）在最终模型state上是相似的：其中用 hanchor 是普通输入一个query得到的最后一个词最后一层的表示，而 hICL 是ICL+一个query的最后一个词最后一层的表示，最后 hIT 是SFT后的一个query预测阶段的query最后一个词最后一层的表示。
+
+![](https://pic4.zhimg.com/v2-103e13e34539e2d55a89e1c75b4587d9_1440w.jpg)
+
+图a）中显示了ICL和SFT的最后表示相似度很高，但ICL和Anchor，以及SFT和Anchor的最后表示相似度很低。  
+  
+[1] Duan H, Tang Y, Yang Y, et al. Exploring the relationship between in-context learning and instruction tuning[J]. arXiv preprint arXiv:2311.10367, 2023.
+
 
 
 ## 参考资料
