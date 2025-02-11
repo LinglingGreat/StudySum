@@ -94,3 +94,6 @@ _We strongly believe in the future of RL + LLM + Agents. The release is a minima
 3. 使用的prompt-template影响也较大。
 	1. 如果使用的template不恰当，可能最后会训出来一个 类instruct风格的模型（也侧面证明 base-model大概率刷了类似的数据，否则，rl不太可能探索出这种风格）。
 
+
+[R1-ZERO 尝试复现的一些现象分享](https://zhuanlan.zhihu.com/p/22517127574)
+
