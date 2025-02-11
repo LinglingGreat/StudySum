@@ -96,4 +96,7 @@ _We strongly believe in the future of RL + LLM + Agents. The release is a minima
 
 
 [R1-ZERO 尝试复现的一些现象分享](https://zhuanlan.zhihu.com/p/22517127574)
-
+- 格式奖励很好学
+- 难的query上 格式奖励更容易hack
+- **难的query上 似乎更容易出现accuracy 与 response 同增的情况**
+- 

@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -267,13 +267,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/o1related/DeepSeekR/R1-related.md",
+                "file": "PLM/业界分享/面试题/LLM面试题.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "R1-related 的大纲"
+              "title": "LLM面试题 的大纲"
             }
           },
           {
@@ -351,8 +351,9 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "fa8a69c31a435893",
+  "active": "1838cb65a169f00e",
   "lastOpenFiles": [
+    "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "PLM/Alignment/README.md",
@@ -368,7 +369,6 @@
     "PLM/o1related/README.md",
     "PLM/Alignment/DPO/trl_vs_openrlhf.md",
     "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
-    "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/业界分享/面试题",
     "PLM/Alignment/PPO/PPO.md",
     "PLM/Models/DeepSeek/DeepSeek.md",
