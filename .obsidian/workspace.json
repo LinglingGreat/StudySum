@@ -134,6 +134,20 @@
             }
           },
           {
+            "id": "c7ca1c716b8f283e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Alignment/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
             "id": "e33d85c048fa08e5",
             "type": "leaf",
             "state": {
@@ -148,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -253,13 +267,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/面试题/LLM面试题.md",
+                "file": "PLM/Alignment/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "LLM面试题 的大纲"
+              "title": "README 的大纲"
             }
           },
           {
@@ -337,21 +351,21 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "1838cb65a169f00e",
+  "active": "c7ca1c716b8f283e",
   "lastOpenFiles": [
-    "PLM/Alignment/DPO/DPO.md",
+    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
+    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "PLM/业界分享/面试题/LLM面试题.md",
+    "PLM/Alignment/DPO/DPO.md",
     "PLM/Alignment/Loss/Loss函数总结.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/业界分享/面试题/img/Pasted image 20250210154618.png",
     "PLM/业界分享/面试题/img",
     "Tool/Pytorch/Pytorch.md",
     "Tool/Pytorch/transformers.md",
-    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "PLM/Alignment/GRPO/GRPO.md",
     "PLM/o1related/README.md",
     "PLM/Alignment/DPO/trl_vs_openrlhf.md",
-    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
     "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/Alignment/README.md",

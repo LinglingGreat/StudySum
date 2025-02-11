@@ -112,7 +112,7 @@ Offline:
 
 ## 大模型微调经验与认知
 
-**关于continue:**
+### **关于continue:**
 
 1.pre-train大模型的知识来自于pt阶段，如果你想引入一些新的知识，那CPT是一个不错的选择。
 
@@ -140,7 +140,7 @@ Offline:
 
 13.这里吐槽一下Trainer，到现在都不支持最小lr参数。
 
-**关于SFT**
+### **关于SFT**
 
 1.请勿迷信3个epoch的训练，实测1个epoch就能对话。当然，更多的epoch确实会让模型的评测效果更佳。
 
@@ -189,7 +189,7 @@ Offline:
 
 12.个人使用这种技术路线，感觉还是比较work的。由于CPT成本太大，未设置更多的消融实验。那除此以外是否有其他技术路线呢？答案或许是Lora？
 
-**关于Lora:**
+### **关于Lora:**
 
 1.个人对lora使用得不多，之前仅仅是了解原理+会用，没有深入探索过一些参数。最近尝试理解一下。
 
@@ -231,6 +231,99 @@ Offline:
 
 6、DPO和RLHF根据个人理解，对chosen-rejected数据的质量需求是不同的，选择RLHF仍然是更好的选择，对于显存不够的部分人来说，可以例如lora，将actor和ref共用一个，critic和reward共用一个，把显存从4x降低为2x。宁可这样也尽量把显存尽可能用来提高critic模型的参数量。
 
+
+### 什么是 LLM 中的 RL
+
+如果我们从 loss 函数的角度来看 sft 和 rlhf，会发现二者在本质上没有差别：无非都是一个[条件概率公式](https://zhida.zhihu.com/search?content_id=253488549&content_type=Article&match_order=1&q=%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F&zhida_source=entity)嘛，围绕着 next_token 的 probability 做文章。只不过在实现细节上，sft 的 next_token 有一个明确的 target，距离这个 target 远 loss 就大，否则 loss 就小；rlhf 的 next_token 则是有一个 reward，如果这个 reward 高就鼓励它，reward 低就打压它。
+
+至于其他区别，那仅仅是两种算法的习惯性用法不同而已。比如 reference_model，有人规定 sft 的时候不能加 reference_model 了吗？这里明确给出个结论：不仅能加，而且有效。我和 
+
+[@真中合欢](https://www.zhihu.com/people/bf1764dccc55b8f831b89c9103f41564)
+
+ 做过很鲁棒的实验，无论是 [pretrain](https://zhida.zhihu.com/search?content_id=253488549&content_type=Article&match_order=1&q=pretrain&zhida_source=entity) 或者 sft，只要让模型在不想学习的数据（有点脏但不得不用）上加 reference_model，就能有效果。
+
+那么，既然两种算法在 loss 函数上没有本质区别，他们的区别又体现在哪里呢？我个人的观点是：**explore**。这也是我对强化学习的理解：“自己玩，旁人来纠正”。具体来说，下列七个算法，除了算法 1 和算法 2，我认为均属于强化学习范畴。
+
+> 除了特别严谨的强化学习论文，目前基本上都不区分 online / offline 和 on policy / off policy 这两个概念了，本文暂且视为是同一个概念。此外，我会用 ppo 作为默认强化算法，不再和 grpo 等进行区分。
+
+1. 指定 response 的 sft
+2. 指定 response 的 dpo （在算法 1 的基础上引入负例）
+3. offline reject sampling + sft
+4. offline reject sampling + dpo
+5. online reject sampling + sft （在算法 3 的基础上，把 explore 粒度从 epoch 变成 batch）
+6. online reject sampling + dpo
+7. ppo（兜兜转转一大圈，算法 6 不过是算法 7 的下位代替者罢了）
+
+post-training 阶段的所有算法都在做一件事：**输出当前文本下的 next_token，然后纠错**。只不过 **sft 在强制学，rlhf 在 explore 学，强制学进步快，explore 学根基稳**。
+
+因此，“直接对模型上 ppo 算法就能起效果”这一结论对算法从业者来说完全不吃惊。sft 本就不是训 LLM 的必备环节，只不过是能让模型提点最快的一种方案而已。但如果说 sft 完全无用也属实是过激了，毕竟只看 loss 函数的话完全可以这么理解：sft 就是在每个 token 粒度都有一个 reward_model 的 ppo 算法。
+
+“explore 的学习方式”是否在理论上具有优越性，我没有充分的证据，我只是在实验阶段中有些经验而已：“如果不让模型用 explore 的方式进行训练，3 个 epoch 的 sft 真的背不下来一些知识，更多 epoch 则会[过拟合](https://zhida.zhihu.com/search?content_id=253488549&content_type=Article&match_order=1&q=%E8%BF%87%E6%8B%9F%E5%90%88&zhida_source=entity)十分严重，这在 math 集合上的实验结论十分明显。”（ 
+
+[@真中合欢](https://www.zhihu.com/people/bf1764dccc55b8f831b89c9103f41564)
+
+ 曾经和我分享过一些实验现象，说是他观察到 on-policy 得到的数据，在训 sft 的时候梯度噪声会更少，梯度噪声指梯度大但对模型更新无帮助）
+
+如果用人的思维方式来分析，就很好理解了：一字不落的背下来一篇文章很难，但如果只背个大概，用自己的理解去复述这篇文章的内容，无关痛痒的说错几个字不去管，关健结论说错了就纠偏，自然背的会更快一些。
+
+### [post training](https://zhida.zhihu.com/search?content_id=253488549&content_type=Article&match_order=1&q=post+training&zhida_source=entity) 算法的统一建模
+
+deepseek 在去年的时候，就已经在技术报告里指出过，sft 和 rlhf 算法在 loss 函数的设计上没有本质区别。具体来说，deepseek 认为 post training 算法包括三要素：启动数据，reward function，token 粒度的 gradient coefficient。sft 的 Gradient Coefficient 是 1，ppo 的 Gradient Coefficient 是 Advantage。
+
+具体内容如下图所示，大家也可以找原论文重新拜读一下，这里就不逐一分析了。
+
+![](https://pic3.zhimg.com/v2-23555cb7d4f8826db6df6d8335415242_1440w.jpg)
+
+统一建模
+
+![](https://picx.zhimg.com/v2-bd6b90316dbd59c38d4ccb13900cd6d9_1440w.jpg)
+
+sft
+
+![](https://pica.zhimg.com/v2-36a6542218704ec49a09a2631ada51a2_1440w.jpg)
+
+reject sampling sft
+
+![](https://pic3.zhimg.com/v2-9615d66cad6172b49365d2ca0ba8b6fa_1440w.jpg)
+
+online reject sampling sft
+
+![](https://pic2.zhimg.com/v2-17063dfc87d4b00912c4bad19ef06247_1440w.jpg)
+
+dpo
+
+![](https://pic2.zhimg.com/v2-8e06651aa9908d1b61873731ea5a0087_1440w.jpg)
+
+ppo
+
+### RL 为什么难训
+
+有了前面这些铺垫，我也可以说一下我对 rl 训练容易崩溃的一些理解了。我觉着 rl 不如 sft 稳定，问题出就出在 token 粒度的 reward 是否准确这一点上。
+
+前面说了，sft 的训练过程，是每个 token 都有一个明确的 target 存在的，其优化目标很纯粹，增大这个 target 的概率。我很难想出这种训练方式会存在标签不合理的地方，即使是你正走在一条正确的道路上，却被强制拉到另一条正确的道路上，好像也没啥太大影响吧。
+
+但 rl 不同，每个 token 的 reward 是由整个句子的 reward 回传回来的（带上 value function 的预测），试想一个句子“**中国的首都不是南京，是北京**”，因为太过啰嗦被打上了一个较低的 reward，那问题是“**是南京**”这三个 token 做错了什么，在上个 token 的回答是“**不**”的情况下，这三个 token 已经是当下最优的 token 了。此时，如果 value function 能救回来还好，但显然不太容易。这里注意，传统的 rl，每一个 action 是能有一个及时回报的，但 rlhf 算法中是没有的，它只有折扣累积回报（rlhf 中，每个 action 的及时回报，要么被设置成 0，要么被设置成 kl_penalty），这也进一步导致了 token 级别 reward 的不准确。
+
+就这，还都是建立在整个 response 的 reward 打分准确的基础上，打不准就更头大了。如何给每个 token 一个正确的打分，那就是 ppo / grpo / rloo 等算法各自的努力方向了，它们的出发点和实现方式各不相同，甚至对 KL_penalty 施加的位置都不同，有的放进 reward 中，有的放进 advantage 中。熟优熟劣，就要靠各位的实验结论和理论推导了，我暂时没有结论。
+
+啰哩啰嗦那么多，其实就是想说因为 label 不准， rl 天生比 sft 不太好训练，因此才需要那么多的调参工作。也正是因为 token 粒度的 reward 不准， rl 后的模型出现一些诡异回复也就不那么难理解了。再次提醒，不管什么算法，你只要把 reference_model 的 KL_penalty 开得足够大，都会稳如泰山。
+
+更多理论知识，推荐阅读：[真中合欢：LLM实践--理解Language Model是如何到PPO的 理论篇](https://zhuanlan.zhihu.com/p/19223907990)
+
+### Reward hacking
+
+非强化出身的我，早期常被 [reward hacking](https://zhida.zhihu.com/search?content_id=253488549&content_type=Article&match_order=1&q=reward+hacking&zhida_source=entity) 这个概念给唬到，总觉着背后有什么高大上的理论。其实，所谓的 reward hacking，归根结底就是训练者考虑不充分，既要又要导致的。
+
+我很早做过一些和 R1 思路类似的 rule-based rl 实验，得到的实验现象别说 aha-moment 了，直接就是模型越训越短。这是 [reward-hacking](https://zhida.zhihu.com/search?content_id=253488549&content_type=Article&match_order=1&q=reward-hacking&zhida_source=entity) 吗？当然是，是训练原因导致的吗？不是，完全是因为 prompt 太简单了或是模型背过这道题，模型根本不需要 cot 过程就能直接说出来答案，说的越多就错的越狠。这一点，[kimi](https://zhida.zhihu.com/search?content_id=253488549&content_type=Article&match_order=1&q=kimi&zhida_source=entity) 的技术报告提到过，如果模型不 cot 就能直接说出答案，需要删掉这些 prompt。
+
+我还有过一版 rule-based rl 实验，reward 是通过模型来判别 ground_truth 是否出现在 response 里来确定的。训练过程中 reward 确实嘎嘎上涨，模型的 response 却全都是“ …… 这个题选<im_start><im_start> A <im_start>” 这种。这能怪模型 reward-hacking 了吗？怪不了一点，但凡多说一句“如果格式不符合标准，就打 0 分”，也就不会出现这种现象。
+
+所以，**reward hacking 其实就是模型以训练者不期望的方式找到了提高 reward 的方法**。训练者期待的是模型有条不紊的进行分析，模型找到的法子是“直接说答案吧，要不蒙一个选项吧，输出点乱码扰乱下 attention 吧，多复述一下 prompt 吧 ……” 我们想要的是模型按照某种方法提高 reward，但我们设计的 reward 函数却只在乎 reward，而不在乎“按照某种方法”，那么自然而然的就会不符合预期。
+
+万变不离其宗，有多少人工就有多少智能。sft 要时刻留意数据质量，rlhf 则是要时刻留意 reward 的打分是否准确或者说是 reward 的设计是否合理，后者一点都不比洗数据轻松。
+
+
+
 ## 后训练总结
 
 LLaMA3：[Post-training](../Models/LLaMA/LLaMA3.md#Post-training)
@@ -242,12 +335,12 @@ Tuluv3: [核心亮点](Tulu/Tulu3.md#核心亮点)
 Qwen2.5: [后训练](../Models/Qwen/Qwen2.5.md#后训练)
 
 
-1. 数据合成已成为工业界主流LLM后训练的基本方案
-2. 善用LLM-as-judge和拒绝采样技术。在偏好数据的构造上，Llama3、Qwen2、Baichuan2、AFM均采用拒绝采样(Rejection sampling)技术。用不同规模、不同参数的模型多次采样，再使用LLM和人工评估构造偏好样本对。
-3. Instag ([Lu et al., 2023](https://link.zhihu.com/?target=https%3A//openreview.net/forum%3Fid%3DpszewhybU9)) 方法，最初出现在Qwen技术报告中，随后又出现在了Llama3、Qwen2、Yi三个模型的技术报告中。
-4. 重点能力需要单独优化，如代码、多语言、数学、推理、长上下文、工具使用、指令遵循。
-5. 模型合并。使用不同版本的数据或超参数训练多个模型，最后平均模型参数，可以实现更均衡的性能。Llama3、Gemma2和Baichuan2均采用了模型合并技术。
-6. 强化学习。Llama3和Qwen2都只用了改良版的DPO，而没有使用PPO在线学习，说明PPO虽然上限高，但有一定门槛。各模型强化学习技术总结如下表。
+8. 数据合成已成为工业界主流LLM后训练的基本方案
+9. 善用LLM-as-judge和拒绝采样技术。在偏好数据的构造上，Llama3、Qwen2、Baichuan2、AFM均采用拒绝采样(Rejection sampling)技术。用不同规模、不同参数的模型多次采样，再使用LLM和人工评估构造偏好样本对。
+10. Instag ([Lu et al., 2023](https://link.zhihu.com/?target=https%3A//openreview.net/forum%3Fid%3DpszewhybU9)) 方法，最初出现在Qwen技术报告中，随后又出现在了Llama3、Qwen2、Yi三个模型的技术报告中。
+11. 重点能力需要单独优化，如代码、多语言、数学、推理、长上下文、工具使用、指令遵循。
+12. 模型合并。使用不同版本的数据或超参数训练多个模型，最后平均模型参数，可以实现更均衡的性能。Llama3、Gemma2和Baichuan2均采用了模型合并技术。
+13. 强化学习。Llama3和Qwen2都只用了改良版的DPO，而没有使用PPO在线学习，说明PPO虽然上限高，但有一定门槛。各模型强化学习技术总结如下表。
 
 | 模型                    | 偏好对齐技术                       |
 | --------------------- | ---------------------------- |
@@ -289,3 +382,4 @@ Qwen2.5: [后训练](../Models/Qwen/Qwen2.5.md#后训练)
 
 [人人都能看懂的RL-PPO理论知识](https://zhuanlan.zhihu.com/p/7461863937)
 
+[如何理解 LLM 中的 RL 算法？](https://zhuanlan.zhihu.com/p/22331625359)
