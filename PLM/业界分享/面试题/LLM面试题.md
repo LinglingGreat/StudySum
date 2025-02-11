@@ -394,6 +394,179 @@ SFT阶段做RLHF本质是强化学习的一个分支Hindsight relabeling [4] 的
 [4] Andrychowicz M, Wolski F, Ray A, et al. Hindsight experience replay[J]. Advances in neural information processing systems, 2017, 30.
 
 
+## **提问：** 如何看待各种ppo [rlhf](https://zhida.zhihu.com/search?content_id=241624841&content_type=Article&match_order=1&q=rlhf&zhida_source=entity)的平替算法dpo/kto/rrhf/slic/orpo/samug/remax等算法号称性能等能超过[ppo](https://zhida.zhihu.com/search?content_id=241624841&content_type=Article&match_order=2&q=ppo&zhida_source=entity)？
+
+**回答：**
+
+那么我把[PPO算法](https://zhida.zhihu.com/search?content_id=241624841&content_type=Article&match_order=1&q=PPO%E7%AE%97%E6%B3%95&zhida_source=entity)的优点列为以下几点，如果后续有算法可以做到，maybe可以平替：
+
+1. On policy采样：on policy采样目前看来是最高效的拟合[蒙特卡洛采样](https://zhida.zhihu.com/search?content_id=241624841&content_type=Article&match_order=1&q=%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E9%87%87%E6%A0%B7&zhida_source=entity)方式。举个例子，如果不使用on policy采样，你[随机采样](https://zhida.zhihu.com/search?content_id=241624841&content_type=Article&match_order=1&q=%E9%9A%8F%E6%9C%BA%E9%87%87%E6%A0%B7&zhida_source=entity)到一个模型generate概率差值很大的两个response，如果符合人类preference，那么本身就不需要排序，如果不符合，你也很难通过RLHF纠正它。如果强行纠正，会破坏模型本来的平衡。
+2. Credit Assign: 由于value model的存在，其实PPO会很好的把reward分配给不同的token，那么一些关键的token会合理地分配一个高reward，一些不关键的token会分配一个低reward。
+3. Rank Model：PPO内部其实是一种内置的rank model，比较的是高reward和低reward的response，只是高和低一直是动态的变化的。为什么[rejection sampling](https://zhida.zhihu.com/search?content_id=241624841&content_type=Article&match_order=1&q=rejection+sampling&zhida_source=entity)这类的算法无法work，因为preference data中的噪声，你选出的Top 1大概率不是Top 1。
+
+更多内容：[Site Unreachable](https://zhuanlan.zhihu.com/p/690724347)
+
+## **提问：** 如何处理[reward model](https://zhida.zhihu.com/search?content_id=241682255&content_type=Article&match_order=1&q=reward+model&zhida_source=entity)中的噪声数据？
+
+**回答：**这个问题首先需要回答reward model的噪声来自哪几个方面：
+
+- 如果reward model的pair数据来自人标注的，那么人类的preference的倾向性以及标注人员的专业性会带来一定的[bias](https://zhida.zhihu.com/search?content_id=241682255&content_type=Article&match_order=1&q=bias&zhida_source=entity)，也就是之前广泛研究的众包系统的Noise。
+- 如果reward model的pair数据来自AI，例如[GPT4](https://zhida.zhihu.com/search?content_id=241682255&content_type=Article&match_order=1&q=GPT4&zhida_source=entity)，那么这种倾向性也很严重，比如length bias。（严格来说，这属于bias，不能算噪声。）
+
+那么如何去噪，这里可以使用一些古早的方式：
+
+预测阶段去噪声：
+
+1. Ensumble model去噪声，也就是ensemble多个rm model的checkpoint进行预测减少噪声的影响（model merge）。
+2. Margin 去噪声，只有预测的pair的分数大于一定阈值的时候，进行预测减少噪声。
+
+数据阶段去噪声：
+
+1. Multiview去噪声，用多个模型进行训练，然后预测训练集合，全部可以预测正确pair保留下来，有对有错的可以丢弃或者交给人标注。
+2. Active Learning思路去噪声，训练一个模型，然后把margin小于一定阈值的送给标注人员去噪声。
+
+最后这些思路我没有真正实践过，也没有刻意比较过哪种方法好坏，但基本这些方法在之前的对话系统工作中和 
+
+[@王焱](https://www.zhihu.com/people/7c894b915042fe363aed838b276951eb)
+
+ 一起实践过，都比较有效。
+
+## **提问：** 现在主流实现RM有几种，是怎么做的？
+
+**回答：**
+
+1）是主流Instruct GPT [1] 提出的，就是在整个句子之后插入一个新token位置，这个token是只有0-1两个选择，在实现上trl库其实是利用最后一个token后加一层MLP（或两层MLP）然后进行BT model的loss，进行pair-wise的训练。当然我也见过有一种改进就是0-1的二分类预测 [2]，这种做法比较适合有明确正误标准的方向，比如数学，代码和推理。
+
+2）是phi-2-math [3] 使用的，使用全序列token进行预测，也就是在全序列的token的logit后都加入MLP层进行二分类，然后对这些所有token进行BT model的loss，进行[pair-wise](https://zhida.zhihu.com/search?content_id=241822855&content_type=Article&match_order=2&q=pair-wise&zhida_source=entity)的训练。这种做法本质是类似RL中[Reinforce算法](https://zhida.zhihu.com/search?content_id=241822855&content_type=Article&match_order=1&q=Reinforce%E7%AE%97%E6%B3%95&zhida_source=entity)的做法，然后把所有的token赋予最后的[reward值](https://zhida.zhihu.com/search?content_id=241822855&content_type=Article&match_order=1&q=reward%E5%80%BC&zhida_source=entity)，这样的做法好处其实是变相地增加了样本量，坏处是增加了大量噪声。和Reinforce算法一样是无bias，但高variance的做法。最终效果取决于变相增加的样本量是否能抵抗住高variance。在数学上使用合理地原因是，数学是过程式学习，过程中每一个token都很重要。**这种做法类似于没钱版本的verify step by step** [4]。
+
+[1] Ouyang L, Wu J, Jiang X, et al. Training language models to follow instructions with human feedback[J]. Advances in neural information [processing systems](https://zhida.zhihu.com/search?content_id=241822855&content_type=Article&match_order=1&q=processing+systems&zhida_source=entity), 2022, 35: 27730-27744.
+
+[2] Dubois Y, Li C X, Taori R, et al. Alpacafarm: A simulation framework for methods that learn from human feedback[J]. Advances in Neural Information Processing Systems, 2024, 36.
+
+[3] Liu B, Bubeck S, Eldan R, et al. Tinygsm: achieving> 80% on gsm8k with small language models[J]. arXiv preprint arXiv:2312.09241, 2023.
+
+[4] Lightman H, Kosaraju V, Burda Y, et al. Let's Verify Step by Step[J]. arXiv preprint arXiv:2305.20050, 2023.
+
+## **提问：** 现有的rm模型泛化能力怎么样？
+
+**回答：** 现有rm模型似乎泛化能力非常有限，原因是很多论文提出很难看到rm模型在scale model size以后有更多的收益[1]。如果把rm当做一种instruct任务，如果你用同样的数据进行训练LLM，理论上[泛化能力](https://zhida.zhihu.com/search?content_id=242007524&content_type=Article&match_order=3&q=%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B&zhida_source=entity)应该可以随着模型变大而获得更强的能力，因为你的[底座模型](https://zhida.zhihu.com/search?content_id=242007524&content_type=Article&match_order=1&q=%E5%BA%95%E5%BA%A7%E6%A8%A1%E5%9E%8B&zhida_source=entity)的能力变大了。但现阶段，甚至在alpaca eval榜单上能看到[bert](https://zhida.zhihu.com/search?content_id=242007524&content_type=Article&match_order=1&q=bert&zhida_source=entity)训练出的rm效果很好，那么显然rm的整体scale是没有特别的收益的。那么后续怎么提升rm模型能更好地利用大模型[基座](https://zhida.zhihu.com/search?content_id=242007524&content_type=Article&match_order=1&q=%E5%9F%BA%E5%BA%A7&zhida_source=entity)的能力将是rm研究的重要方向。
+
+[1] Huang S, Noukhovitch M, Hosseini A, et al. The N+ Implementation Details of RLHF with PPO: A Case Study on TL; DR Summarization[J]. arXiv preprint arXiv:2403.17031, 2024.
+
+## **提问：** 请问模型在SFT后会出现“复读机”情况该如何debug（可以是各种形式上的复读，比如复读最后1-N个token，复读训练数据很少出现的token，复读大段有逻辑的文字），以及出现的原因是什么？
+
+**回答：**复读机问题是一个偏向[LLM](https://zhida.zhihu.com/search?content_id=242122203&content_type=Article&match_order=1&q=LLM&zhida_source=entity)早期的问题，也就是pretrain模型能力不强的时候才会发生的问题。
+
+如果debug会发现，复读机的本质是，复读的那部分数据不能给予更多的信息，所以模型attention时候会跳过这部分信息依然从之前的context后进行预测。也就是`<context> -> 复读数据 & <context, 复读数据> -> 复读数据`。之前的做法一般会搞一个复读的penalty阻止这一现象，现在几乎没用了。
+
+那为什么sft以后会发生这种情况？
+
+**因为当sft数据的能力远大于pre-train model的本身能力，尤其你试图想overfit这部分数据的时候。**
+
+在overfit的过程中，模型会为了记住这部分数据，而过多修改原先的attention模式，且会打乱原始pretrain模型的原始分布。之前国内经常发现这种问题，就是总是想用比较低水平的模型硬distill G4的效果，那么最终结局就是复读机，但现在大家pre-train做起来以后，这个问题几乎不存在了。
+
+---
+
+最近好像大家又开始聊复读机的问题，在pretrain完模型更严重（我倒是没遇到过）。猜测模型在这个context下大概率只能输出这个token，那就是在这个位置塌缩了，因此模型遇到数据多样性不够的情况下，某些位置倾向性输出固定内容。但这种位置确定性塌缩会泛化到新数据上，感觉是模型承载力不足。所以导致“复读机”的问题应该主要有两个因素：1）模型承载能力（模型大小，[模型结构](https://zhida.zhihu.com/search?content_id=242122203&content_type=Article&match_order=1&q=%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84&zhida_source=entity)），2）[数据多样性](https://zhida.zhihu.com/search?content_id=242122203&content_type=Article&match_order=2&q=%E6%95%B0%E6%8D%AE%E5%A4%9A%E6%A0%B7%E6%80%A7&zhida_source=entity)。
+
+补充：确实sft数据训练过少的情况也会导致复读，本质还是模型一般学不会何时停止输出结果，因为pre-train的时候一般是packing，那么基本不太会学会输出`<eos>`，所以[pre-train模型](https://zhida.zhihu.com/search?content_id=242122203&content_type=Article&match_order=1&q=pre-train%E6%A8%A1%E5%9E%8B&zhida_source=entity)一般都是会复读的。
+
+## 大模型lr退火阶段的模型变化和启示
+
+**minicpm[1]的实验结果：**
+
+- 在lr退火阶段，模型的loss会迅速下降。
+
+![](https://pic4.zhimg.com/v2-d36d83ddf64bfb00bae788a3e12c4815_1440w.jpg)
+
+- 在lr退火阶段，引入高质量数据，模型效果会提升。
+
+![](https://picx.zhimg.com/v2-1a1073199d1694d95ac62ca0ec447f69_1440w.jpg)
+
+1. A-1: 2.4B model, decay using only [pre-training](https://zhida.zhihu.com/search?content_id=242147517&content_type=Article&match_order=1&q=pre-training&zhida_source=entity) data, followed by 4B token SFT.
+2. A-2: 2.4B model, decay using the aforementioned high-quality data unlabeled data and SFT data mixed into pre-training data, also followed by 4B token SFT.
+3. B-1: 1.2B model, decay using only pre-training data, followed by 6B token SFT.
+4. B-2: 1.2B model, decay using only pre-training data, followed by 12B token SFT.
+5. B-3: 1.2B model, annealing using the aforementioned high-quality data + SFT data mixed into pre-training data, also followed by 6B token SFT.
+
+以上现象说明：大模型的lr退火阶段非常特殊（区别于模型lr未退火阶段），模型内部参数此时的变化会影响最终模型的效果。那我们想问一个问题：
+
+> 模型退火阶段，模型参数的变化到底是如何的？和退火前的[模型参数](https://zhida.zhihu.com/search?content_id=242147517&content_type=Article&match_order=2&q=%E6%A8%A1%E5%9E%8B%E5%8F%82%E6%95%B0&zhida_source=entity)变化有何不同？
+
+---
+
+**分析现象：**
+
+- 在lr比较小阶段整体loss迅速下降，反而在lr大的时候loss下降速度不快。这个现象应该和loss的landscape相关，我们可以假设loss的landscape是下面的形式：
+
+![](https://pic3.zhimg.com/v2-6f5dbe2c7e8dd27216ce36ec4aae403e_1440w.jpg)
+
+loss，纵轴是loss，横轴是step（有点丑，用chatgpt画了两次表达不了我的意思）
+
+那么这个loss图片里存在两个[sharp minimum](https://zhida.zhihu.com/search?content_id=242147517&content_type=Article&match_order=1&q=sharp+minimum&zhida_source=entity)，当lr比较大的时候，会跳过这些sharp minimum，所以整体下降速度不快，但当lr比较小，退火的时候会进入sharp minimum，下降速度比较快。当然真实的[loss landscape](https://zhida.zhihu.com/search?content_id=242147517&content_type=Article&match_order=1&q=loss+landscape&zhida_source=entity)是多维度且更加复杂。（打个比喻，可能退火的时候类似进行了一种洞形式的空间，而loss landscape大体上看是个平原）。
+
+- 在退火阶段加入更多高质量数据能获得loss更低点。
+
+在这个“洞空间”内，由于minimum更加sharp，需要的gradient需要更加准确，配合着小lr才能获得红色的最低点。而更加高质量的数据可以提升gradient的准确性。
+
+**问题回答：**
+
+模型退火阶段，模型参数的变化到底是如何的？和退火前的模型参数变化有何不同？
+
+猜测：**模型预测中某些特定context的特定位置塌缩成[长尾分布](https://zhida.zhihu.com/search?content_id=242147517&content_type=Article&match_order=1&q=%E9%95%BF%E5%B0%BE%E5%88%86%E5%B8%83&zhida_source=entity)。**
+
+Loss迅速下降代表Cross Entropy迅速下降，压缩过程剧烈。那么猜测在这段lr下降过程中，说明**有一些位置**的token快速overfit了训练集合里的token分布，而形成长尾分布。也就是说对于下一个词预测更加确定，**某些context**后的next word prediction预测空间塌缩成只有_几个词_占据90%以上，其余词占据10%左右的[概率空间](https://zhida.zhihu.com/search?content_id=242147517&content_type=Article&match_order=1&q=%E6%A6%82%E7%8E%87%E7%A9%BA%E9%97%B4&zhida_source=entity)。**对于lr退火前，我个人猜测这些特定位置的词仍然保持着和别的位置一样的非长尾分布**，具体而言，就是可能_100-200个词_占据90%以上。（斜体的几个和100-200这些数字都是猜测，需要真实实验观测）。
+
+**进一步的思考和猜测：**
+
+- 这些特定位置大概是表达什么的位置？猜测：大概是一些事实型的答案和知识类的答案。
+
+相比于无意义的形容词和语言结构的变化，更大概率塌缩的是事实型的答案，比如2024年的美国总统**拜登**，那么预计**拜登**这个词会迅速塌缩，然后成为事实型答案。
+
+- 用这个理论解释为什么[sft模型](https://zhida.zhihu.com/search?content_id=242147517&content_type=Article&match_order=1&q=sft%E6%A8%A1%E5%9E%8B&zhida_source=entity)无法学习新知识？
+
+相比于pre-train未退火阶段，大量位置的token还未塌缩，退火后的模型想在sft阶段学习新知识比较困难，因为一般sft阶段设置lr = 退火后的lr，那么这些token很难被修改，如果多次训练，强行修改容易把整个预训练学到的知识打乱。（这里的知识特指常识类别的知识。对于一些新的领域的知识或许能看到泛化性，但记忆和泛化效果应该不如，re-warmup然后退火这种[post-train](https://zhida.zhihu.com/search?content_id=242147517&content_type=Article&match_order=1&q=post-train&zhida_source=entity)。）
+
+- 那么想压缩新知识进入模型应该怎么办？
+
+借用之前一篇post-train论文[2]的方法, 需要我们混合一部分新数据加上老数据训练模型（老数据防止遗忘）。
+
+6. 要经历re-warm up，让模型从之前的“洞穴”内出来，也就是图上红色的sharp minimum出来。
+7. 然后经历高lr，寻找新的洞穴。
+8. 在新的洞穴开始重新塌缩某些位置的概率空间。
+
+[1] Hu S, Tu Y, Han X, et al. MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies[J]. arXiv preprint arXiv:2404.06395, 2024.
+
+[2] Ibrahim A, Thérien B, Gupta K, et al. Simple and Scalable Strategies to Continually Pre-train Large Language Models[J]. arXiv preprint arXiv:2403.08763, 2024.
+
+## 对于两个100B的数据集1 & 2（假设分布差距比较大），那么如果需要顺序训练数据集，也就是在数据集1训完以后post-train数据集2，我们应该怎么做能达到几乎合并训（数据集1&2）的效果：
+
+![](img/Pasted%20image%2020250211133440.png)
+
+结论：当replay的数据量和原始数据量成正比时，几乎等同于混合训练。
+
+这个结论在论文 Simple and Scalable Strategies to Continually Pre-train Large Language Models [1]证实，当然它列举了三要素：
+
+- rewarm-up (但好像实验结论反而是是否warm up不重要)。
+- re-decay。
+- 当[分布差异](https://zhida.zhihu.com/search?content_id=242411567&content_type=Article&match_order=1&q=%E5%88%86%E5%B8%83%E5%B7%AE%E5%BC%82&zhida_source=entity)不是特别大的时候replay 5%原始数据，当分布差异特别大的时候10%-20%原始数据。
+
+最终实验结果如下：
+
+![](https://pic4.zhimg.com/v2-1608ed307a7558678360f8dbb2852641_1440w.jpg)
+
+405M模型对比,左图是分布差距不大的两个数据集，右图分布差距较大
+
+![](https://pic3.zhimg.com/v2-b98a9efe6fef1c08b9694883449cd190_1440w.jpg)
+
+405M v.s. 10B模型对比
+
+![](https://picx.zhimg.com/v2-c4ba2af43e8f5f7685fe840d03aa8995_1440w.jpg)
+
+Bench mark效果，差距不大
+
+[1] Ibrahim A, Thérien B, Gupta K, et al. Simple and Scalable Strategies to Continually Pre-train Large Language Models[J]. arXiv preprint arXiv:2403.08763, 2024.
+
 
 
 ## 参考资料
