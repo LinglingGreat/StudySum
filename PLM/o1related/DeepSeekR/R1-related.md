@@ -58,6 +58,8 @@ Works for model <= 1.5B. For Qwen2.5-0.5B base, we know it fails to learn reason
 
 [GitHub - huggingface/open-r1: Fully open reproduction of DeepSeek-R1](https://github.com/huggingface/open-r1)
 
+[Open-R1: Update #1](https://huggingface.co/blog/open-r1/update-1)
+
 The goal of this repo is to build the missing pieces of the R1 pipeline such that everybody can reproduce and build on top of it. The project is simple by design and mostly consists of:
 
 - `src/open_r1` contains the scripts to train and evaluate models as well generate synthetic data:

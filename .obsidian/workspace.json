@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -267,13 +267,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/面试题/LLM面试题.md",
+                "file": "PLM/o1related/DeepSeekR/R1-related.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "LLM面试题 的大纲"
+              "title": "R1-related 的大纲"
             }
           },
           {
@@ -351,14 +351,14 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "1838cb65a169f00e",
+  "active": "fa8a69c31a435893",
   "lastOpenFiles": [
+    "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/业界分享/面试题/img/Pasted image 20250211133440.png",
     "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "PLM/Alignment/README.md",
-    "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/Alignment/DPO/DPO.md",
     "PLM/Alignment/Loss/Loss函数总结.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
@@ -385,7 +385,6 @@
     "PLM/Alignment/Loss/img/Pasted image 20250207141931.png",
     "PLM/Alignment/Loss/img/Pasted image 20250207141510.png",
     "PLM/Alignment/Loss/img/Pasted image 20250207140711.png",
-    "PLM/Alignment/Loss/img/Pasted image 20250207115849.png",
     "PLM/Alignment/Loss/img",
     "PLM/Alignment/PPO/Reward模型.md",
     "PLM/Alignment/Loss",

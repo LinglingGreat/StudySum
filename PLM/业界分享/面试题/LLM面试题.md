@@ -567,6 +567,161 @@ Bench mark效果，差距不大
 
 [1] Ibrahim A, Thérien B, Gupta K, et al. Simple and Scalable Strategies to Continually Pre-train Large Language Models[J]. arXiv preprint arXiv:2403.08763, 2024.
 
+## DPOP，也就是Smaug: Fixing Failure Modes of Preference Optimization with DPO-Positive论文中发现了DPO一个缺点，也就是positive和negative的probability同时下降，这里他给的[数学证明](https://zhida.zhihu.com/search?content_id=242565859&content_type=Article&match_order=1&q=%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E&zhida_source=entity)是对的嘛？如果是错的，请指出错误？（这里可以先看论文的数学证明）
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/694960319)
+
+## **提问：** 在PPO阶段为什么需要在把actor freeze 50步？模型这里在做什么？
+
+**回答：**在internlm2 [1]和secret of RLHF [2]中都有提及，可以稳定value network的学习。
+
+本质这个过程是在学习一个Dense reward model，或者说 token-wise reward model。在actor freeze 50步中，只有value network在被训练，且由于ref model和actor model一致，那么[KL散度](https://zhida.zhihu.com/search?content_id=242835782&content_type=Article&match_order=1&q=KL%E6%95%A3%E5%BA%A6&zhida_source=entity)的那部分loss为0。因此模型只做了图中从actor model采集experience，然后用reward model计算sentence reward，然后通过GAE来分别计算A advantage函数，最后通过采样中的P(s_t, a_t, s_(t+1))来聚合v_t,计算出token wise的reward，最后训练value network。
+
+![](https://pic1.zhimg.com/v2-51e7c65b90d7310e02df1ff8e3d16c62_1440w.jpg)
+
+其中GAE的计算如下, 参考[3]：
+
+![](https://pic3.zhimg.com/v2-ed9c5622e52bf32cf9aa88d8e80b7a58_1440w.jpg)
+
+[1] Cai Z, Cao M, Chen H, et al. Internlm2 technical report[J]. arXiv preprint arXiv:2403.17297, 2024.
+
+[2] Zheng R, Dou S, Gao S, et al. Secrets of rlhf in large language models part i: Ppo[J]. arXiv preprint arXiv:2307.04964, 2023.
+
+[3] [https://newfacade.github.io/notes-on-reinforcement-learning/17-ppo-trl.html](https://link.zhihu.com/?target=https%3A//newfacade.github.io/notes-on-reinforcement-learning/17-ppo-trl.html)
+
+## 为什么我们一直要追求更大的模型，更大的模型到底会带来什么？
+
+**回答：**
+
+1. 在经典论文scaling law [1]中，提出更大的模型可以得到更低的test loss，也就是更好的[泛化能力](https://zhida.zhihu.com/search?content_id=242942485&content_type=Article&match_order=1&q=%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B&zhida_source=entity)，或者说是更高效的压缩能力。
+
+![](https://pic3.zhimg.com/v2-ff7f297a985edb19bbddff96740e32d6_1440w.jpg)
+
+2. 在Codex [2]中提出更大的模型可以得到更低的systax error. 这个应该算是[test loss](https://zhida.zhihu.com/search?content_id=242942485&content_type=Article&match_order=2&q=test+loss&zhida_source=entity)更低的副产物。以及更受instruction中error影响的问题，这可能是由于更大的模型中transformer predictor的拟合能力更强，更能受context的影响。
+
+![](https://picx.zhimg.com/v2-0506a2fde9468cd6f4d2e6c4ca76f731_1440w.jpg)
+
+1. 自我评估能力（self-reward）随着模型变大涌现出来的能力 [3].
+
+![](https://pic1.zhimg.com/v2-b6dab0cb259ff0fd0f44c90e2e7cfc78_1440w.jpg)
+
+在小模型中几乎等于随机猜测，等模型接近Large水平（62B），自我评估达到60以上。
+
+[1] Kaplan J, McCandlish S, Henighan T, et al. Scaling laws for neural language models[J]. arXiv preprint arXiv:2001.08361, 2020.
+
+[2] Chen M, Tworek J, Jun H, et al. Evaluating large language models trained on code[J]. arXiv preprint arXiv:2107.03374, 2021.
+
+[3] Luo L, Lin Z, Liu Y, et al. Critique ability of large language models[J]. arXiv preprint arXiv:2310.04815, 2023.
+
+## ROPE公式中的base是越大越能适应长文本还是越小越能适应长文本？
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/698397614)
+
+## 在[LLM](https://zhida.zhihu.com/search?content_id=243647663&content_type=Article&match_order=1&q=LLM&zhida_source=entity)中选择像传统RL中value network和[policy network](https://zhida.zhihu.com/search?content_id=243647663&content_type=Article&match_order=1&q=policy+network&zhida_source=entity)共享底座会有问题吗？如果有解释一下为什么？
+
+**回答：这种做法是有问题的。**但甚至在主流的[TRL库](https://zhida.zhihu.com/search?content_id=243647663&content_type=Article&match_order=1&q=TRL%E5%BA%93&zhida_source=entity)中使用的就是value network和policy network共享底座的方式，其motivation是为了降低显存。具体而言，这种方式仅仅在policy network后加了一层[MLP](https://zhida.zhihu.com/search?content_id=243647663&content_type=Article&match_order=1&q=MLP&zhida_source=entity), 也就是ValueHead,代表value network， 细节可以参考我们写的一个TRL库的[RLHF](https://zhida.zhihu.com/search?content_id=243647663&content_type=Article&match_order=1&q=RLHF&zhida_source=entity)的介绍[1]。
+
+这种做法的问题是共享底座，两个network会互相影响学习。当reward normalize做的不好的时候（比如过度稀疏，比如variance较大），value network学习会占主导，影响policy的学习。当降低value network的loss占比的时候，value network又很难学好，那么token-wise reward学得很差。根据[PPO](https://zhida.zhihu.com/search?content_id=243647663&content_type=Article&match_order=1&q=PPO&zhida_source=entity)的GAE:
+
+Advantage(T)=∑t≥Tγt−Trt−Value(T)
+
+那么Advantage函数会学的很不稳定，那么会影响整个policy的学习，因此也学习不到好的policy。这样可能在某些简单场景下效果还行，但复杂场景下是不行的。
+
+附：为什么在传统RL中这一套共享参数是make sense的，但在LLM领域却是不好的呢？
+
+答：关键传统RL中一般是learn from zero，那么value network和policy network都是从头学的，所以影响不太大。但LLM是先模仿学习出policy，然后试图用rm来纠正这个policy。那么这个policy初始化的value network带来的bias太大，让rm很难纠正。（ps，还有就是底座模型太大，但value头太小了，就一层[mlp](https://zhida.zhihu.com/search?content_id=243647663&content_type=Article&match_order=1&q=mlp&zhida_source=entity)，这个bias也是确实太大）。
+
+附：改进方案？
+
+实在想共享参数，那就多加几层MLP在policy network上构造value network。
+
+[1] [Reinforcement Learning From Human Feedback](https://link.zhihu.com/?target=https%3A//newfacade.github.io/notes-on-reinforcement-learning/17-ppo-trl.html)
+
+## 为什么Position Embedding和ROPE中不同维度需要设置不同的三角函数？
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/699926500)
+
+## Deepseek math中GRPO [1]和[DPO](https://zhida.zhihu.com/search?content_id=243921181&content_type=Article&match_order=1&q=DPO&zhida_source=entity)，PPO的关系？
+
+**回答：**GRPO执行图如下：
+
+![](https://picx.zhimg.com/v2-a821614abbb7887dee42e5010cf240ad_1440w.jpg)
+
+他们相对于PPO有两个比较重要的改变
+
+1. 抛弃了PPO的[GAE](https://zhida.zhihu.com/search?content_id=243921181&content_type=Article&match_order=1&q=GAE&zhida_source=entity)和value-network
+2. 选择对于一个Q采样多次，且在这批次内进行reward normalize
+
+对于第一次操作主要目的是为了降低显存占用，这个目的很充分，尤其在很大的模型下，省下不少资源。但带来的弊端就是缺少了token-wise reward的预估，且抛弃了GAE这种TD & MC learning的方式，采取了纯[蒙特卡洛](https://zhida.zhihu.com/search?content_id=243921181&content_type=Article&match_order=1&q=%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B&zhida_source=entity)采样的方式。那么势必会一定带来很大的gradient预估的variance。那他们后续采用的方式，是在同一个query state s_0下多次采样来降低预估的variance。(这样有点像DPO的方式，DPO降低variance的方式本质也是在同一个query state下进行两次采样进行对比学习)。
+
+从传统RL方向看：GRPO可以对应于Reinforce-baseline-meta learning算法。特殊性在于它把游戏按照query state划分成了多个子游戏，用一个policy分别在不同子游戏内做Reinforce-baseline算法，相当于[meta learning](https://zhida.zhihu.com/search?content_id=243921181&content_type=Article&match_order=2&q=meta+learning&zhida_source=entity)版本的Reinforce-baseline算法。
+
+整体在reward model打的reward比较准确下，比DPO采样效率更高，variance更低。比PPO采样效率略低，但节省内存。
+
+附录：给我们一个PPO的改进的方向，**也就是在不同query-state下做PPO-[meta-learning](https://zhida.zhihu.com/search?content_id=243921181&content_type=Article&match_order=1&q=meta-learning&zhida_source=entity)**。
+
+[1] Shao Z, Wang P, Zhu Q, et al. Deepseekmath: Pushing the limits of mathematical reasoning in open language models[J]. arXiv preprint arXiv:2402.03300, 2024.
+
+## 为什么长文本训练中需要[高频外推](https://zhida.zhihu.com/search?content_id=243964032&content_type=Article&match_order=1&q=%E9%AB%98%E9%A2%91%E5%A4%96%E6%8E%A8&zhida_source=entity)，低频内插？
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/701251673)
+
+## 稳定PPO训练的trick有哪些？
+
+1. reward normalize：使用历史获得过的所有 reward 的均值和[方差](https://zhida.zhihu.com/search?content_id=244413677&content_type=Article&match_order=1&q=%E6%96%B9%E5%B7%AE&zhida_source=entity)进行标准化 [1]。
+2. token KL penalty**：**限制模型更新方向 [1]。
+3. Critic Model：使用 RM 初始化 Critic，并在 PPO 正式训练之前先进行 Critic 预训练 [1]。
+4. Global Gradient Clipping [1]。
+5. 使用相对较小的 Experience Buffer [1]。
+6. **Pretrain Loss：**在 PPO 训练 loss 中加入 Pretrain Language Model Loss [1]。
+7. 按照各个task对不同reward 进行normalize [2]。
+8. 训练[reward model](https://zhida.zhihu.com/search?content_id=244413677&content_type=Article&match_order=1&q=reward+model&zhida_source=entity)的时候，加上L2 normalize [2]。
+
+  
+[1] [何枝：【RLHF】怎样让 PPO 训练更稳定？早期人类征服 RLHF 的驯化经验](https://zhuanlan.zhihu.com/p/666455333)
+
+[2] ChatGLM-RLHF: Practices of Aligning Large Language Models with Human Feedback
+
+## 如何在RLHF中做state探索？
+
+在传统RL中，state探索是一个很重要的方向，因为模型永远无法预估好完全没见过的state的value。当然对于和原始state分布相近的state，模型可以泛化出来。但当遇到的state分布和曾经见过的state分布相差越来越远的时候，这个评估会越来越不准确，具体理论可以看 [1]。
+
+在RLHF中，我们首先收集pair数据进行[reward model](https://zhida.zhihu.com/search?content_id=244628532&content_type=Article&match_order=1&q=reward+model&zhida_source=entity)训练，然后用reward model对[LLM](https://zhida.zhihu.com/search?content_id=244628532&content_type=Article&match_order=1&q=LLM&zhida_source=entity)进行RL训练。当LLM刚开始训练的时候，生成的response（state），reward model是见过的。但当训练过久以后，生成的response逐渐偏离原始policy的response分布。那么这里面有一部分是准确的（离原始response分布相近），另一部分则是不准确的（离原始response分布相远）。如下图：
+
+![](https://picx.zhimg.com/v2-e1feebbb4e57f07274bceb0b1ebbd32f_1440w.jpg)
+
+在[LLama2](https://zhida.zhihu.com/search?content_id=244628532&content_type=Article&match_order=1&q=LLama2&zhida_source=entity) [2]中, 使用边训边标的方式来解决这个问题，也就是训一段时间，收集数据进行标注。但这种标注方法太过于耗费人力。尤其是标注的某些部分（离原始response分布相近的state）本身reward是依然准确的，标注所以是被浪费了。
+
+因此，为了减少人力浪费，用最节省的方式进行标注，论文 [3]提出一个[active learning](https://zhida.zhihu.com/search?content_id=244628532&content_type=Article&match_order=1&q=active+learning&zhida_source=entity)的方式完成探索潜在高分state。具体来说，他们在[DPO loss](https://zhida.zhihu.com/search?content_id=244628532&content_type=Article&match_order=1&q=DPO+loss&zhida_source=entity)后新加了一项探索loss：
+
+![](https://pic1.zhimg.com/v2-313412c74f2b11f22755bceb52f389a6_1440w.jpg)
+
+这里的第二项的目的是让模型生成更多sft model中生成不了的response。
+
+Tips：这里和降低[KL散度](https://zhida.zhihu.com/search?content_id=244628532&content_type=Article&match_order=1&q=KL%E6%95%A3%E5%BA%A6&zhida_source=entity)的weight区别是，降低KL散度weight能让sft model生成很多高得分却偏离sft model的response，但是不能保留那些低得分但偏离sft model的response（也就是上图中y_u右边部分）。
+
+对于新的loss，模型可以采样出更多偏离reward response原始分布的response，提高标注的sample efficiency，降低成本。
+
+[1] Liu Z, Lu M, Xiong W, et al. Maximize to explore: One objective function fusing estimation, planning, and exploration[J]. Advances in Neural Information Processing Systems, 2024, 36.
+
+[2] Touvron H, Martin L, Stone K, et al. Llama 2: Open foundation and fine-tuned chat models[J]. arXiv preprint arXiv:2307.09288, 2023.
+
+[3] Zhang S, Yu D, Sharma H, et al. Self-Exploring Language Models: Active Preference Elicitation for Online Alignment[J]. arXiv preprint arXiv:2405.19332, 2024.
+
+## 为什么[SAC](https://zhida.zhihu.com/search?content_id=245118822&content_type=Article&match_order=1&q=SAC&zhida_source=entity) [1]算法在RL届和[PPO](https://zhida.zhihu.com/search?content_id=245118822&content_type=Article&match_order=1&q=PPO&zhida_source=entity)平分秋色，甚至于略胜一筹，而在[LLM](https://zhida.zhihu.com/search?content_id=245118822&content_type=Article&match_order=1&q=LLM&zhida_source=entity)届却无人问津？
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/706444920)
+
+## 同等[MOE模型](https://zhida.zhihu.com/search?content_id=245318723&content_type=Article&match_order=1&q=MOE%E6%A8%A1%E5%9E%8B&zhida_source=entity)的loss能下降到和同等规模Dense模型的水准吗？
+
+这是显然不能的，因为MOE在训练中每个token forward和backward的实际的激活参数是远少于同等规模的Dense 模型的（Btw，尽管Dense模型训练完也是个偏向sparse的模型，也就是有少量神经元被激活，但是在训练中，Dense模型是可以自由选择激活哪部分神经元的。而Sparse Moe，通过训练路由来控制哪个token激活哪部分的expert，本质差距还蛮远的。）。那么从DeepseekV2-MOE-236B [1]来看，激活21B，总参 236B，等效一个 90B 的Dense，从Deepseek-Coder-MOE-16B [1]，激活2.4B，总参数16B，等效于一个7B模型。（等效计算是和激活参数，总参数都挂钩的函数计算出来的。）
+
+最后推荐一下[deepmind](https://zhida.zhihu.com/search?content_id=245318723&content_type=Article&match_order=1&q=deepmind&zhida_source=entity)的moe scaling law，这个是群内skywork的小伙伴推荐的。
+
+[1] Zhu Q, Guo D, Shao Z, et al. [DeepSeek-Coder-V2](https://zhida.zhihu.com/search?content_id=245318723&content_type=Article&match_order=1&q=DeepSeek-Coder-V2&zhida_source=entity): Breaking the Barrier of Closed-Source Models in Code Intelligence[J]. arXiv preprint arXiv:2406.11931, 2024.
+
+[2] Clark A, de Las Casas D, Guy A, et al. Unified scaling laws for routed language models[C]//International conference on machine learning. PMLR, 2022: 4057-4086.
+
 
 
 ## 参考资料
