@@ -34,6 +34,7 @@ tags:
 我们写了一个博客有更多的细节 https://hkust-nlp.notion.site/simplerl-reason
 我们也完全开源了训练代码 https://github.com/hkust-nlp/simpleRL-reason
 
+基于OpenRLHF框架
 ## TinyZero-3B+RL
 
 ![](img/Pasted%20image%2020250126142023.png)
@@ -59,6 +60,7 @@ Works for model <= 1.5B. For Qwen2.5-0.5B base, we know it fails to learn reason
 [GitHub - huggingface/open-r1: Fully open reproduction of DeepSeek-R1](https://github.com/huggingface/open-r1)
 
 [Open-R1: Update #1](https://huggingface.co/blog/open-r1/update-1)
+- 包括了R1相关的项目资源、数据集资源
 
 The goal of this repo is to build the missing pieces of the R1 pipeline such that everybody can reproduce and build on top of it. The project is simple by design and mostly consists of:
 
@@ -76,14 +78,34 @@ https://github.com/ZihanWang314/ragen
 **RAGEN** is the first reproduction of the **DeepSeek-R1(-Zero)** methods for _training agentic models_.  
 _We strongly believe in the future of RL + LLM + Agents. The release is a minimally viable leap forward._
 
-## Deepseek-R1-Zero复现
+[我们在Gym-Sokoban](https://github.com/mpSchrader/gym-sokoban)任务中在 Qwen-2.5-{0.5B, 3B}-{Instruct, None} 和 DeepSeek-R1-Distill-Qwen-1.5B 上运行 RAGEN 。
+
+关于推箱子任务（来自官方仓库）：推箱子是日语中“仓库管理员”的意思，也是一款传统视频游戏。这款游戏是一款运输拼图游戏，玩家必须将房间内的所有箱子推到存储位置/目标上。犯下不可逆转的错误的可能性使得这些拼图游戏极具挑战性，尤其是对于强化学习算法而言，因为强化学习算法大多缺乏提前思考的能力。
+
+损失曲线尚未收敛（因为我们的计算能力目前有限……）。但我们已经看到了一些趋势：
+
+- 尽管在开始时指导微调模型表现更好，但它们并没有明显优于仅预训练的模型。
+- 3B模型的表现也优于0.5B模型，但在40步左右时优势也不是那么明显。
+- 有趣的是，目前 R1 蒸馏的 1.5B 模型表现不如 0.5B 模型。
+
+致谢：veRL和TinyZero
+
+## Logic-RL
+
+使用veRL框架
 
 [Deepseek R1 Zero成功复现, 三阶段RL，Response长度涨幅超50%，涌现语言混杂，double-check, Verify, Let's Summarize！](https://zhuanlan.zhihu.com/p/21290410831)
+- 代码：[GitHub - Unakar/Logic-RL](https://github.com/Unakar/Logic-RL)
+- 飞书：[逻辑Puzzle上Deepseek R1 Zero成功复现, 三阶段RL，Response长度涨幅超50%，涌现语言混杂，double-check, Verify, Let's Summarize！ - 飞书云文档](https://evxpwrsfkdb.feishu.cn/docx/NokEdaMBmo6aqZxVdxkcSm2cnab)
+- 
 
-代码：[GitHub - Unakar/Logic-RL](https://github.com/Unakar/Logic-RL)
-
+## unlock-deepseek
 
 [DeepSeek R1 Zero中文复现教程来了！](https://mp.weixin.qq.com/s/Z7P61IV3n4XYeC0Et_fvwg)
+- [GitHub - datawhalechina/unlock-deepseek: DeepSeek 系列工作解读、扩展和复现。](https://github.com/datawhalechina/unlock-deepseek)
+
+## Deepseek-R1-Zero复现心得
+
 
 [关于zero-rl的碎碎念和想法](https://zhuanlan.zhihu.com/p/22288441283)
 1. 不同的[rl算法](https://zhida.zhihu.com/search?content_id=253479911&content_type=Article&match_order=3&q=rl%E7%AE%97%E6%B3%95&zhida_source=entity)，在base-rl上的差异性不显著。lr、warmup等等也没特别大的影响。
