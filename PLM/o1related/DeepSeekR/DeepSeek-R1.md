@@ -40,6 +40,14 @@ institution:
 
 ![](img/Pasted%20image%2020250121103056.png)
 
+## 核心亮点
+
+- MOE架构，创新包括颗粒度更细的专家划分，以及具备更强泛化能力的共享专家。还优化了训练过程中的负载均衡和路由机制。传统的MoE模型在训练时计算开销较大，但DeepSeek的方法在保持推理高效的同时，也让训练变得更高效。
+- 使用MLA（Multi-head Latent Attention，多头潜在注意力）。推理的最大瓶颈之一在于内存占用：不仅需要加载整个模型，还要加载整个上下文窗口（context window）。而上下文窗口在内存中非常昂贵，因为每个token都需要存储一个Key-Value。**DeepSeekMLA让Key-Value存储得以压缩，从而大幅降低推理时的内存使用。**
+- multi-token预测
+- 训练成本低。DeepSeek-V3的完整训练仅耗费2.788M GPU小时。假设H800 GPU的租赁价格为$2/GPU小时，我们的总训练成本仅为$557.6万。
+- FP8训练。虽然参数存储时使用BF16或FP32精度，但在计算时会降低到FP8精度。
+- 使用RL（强化学习）而不是RLHF（基于人类反馈的强化学习）
 
 ## 相关研究
 
@@ -190,4 +198,6 @@ Monte Carlo Tree Search (MCTS)：受 AlphaGo（Silver 等人，2017b）和 Alpha
 DeepSeek-R1的100问： https://blog.sciencenet.cn/blog-439941-1469698.html
 
 [Deepseek R1可能找到了超越人类的办法](https://mazzzystar.com/2025/01/30/chatgpt-to-deepseek-r1-zh)
+
+[一篇关于 DeepSeek 的深度答疑！](https://mp.weixin.qq.com/s/339TGIGWA1GBkwaYWSL8gg)
 
