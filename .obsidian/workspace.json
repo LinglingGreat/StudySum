@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 10
       }
     ],
     "direction": "vertical"
@@ -267,13 +267,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/transformers.md",
+                "file": "PLM/Alignment/PPO/PPO.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "transformers 的大纲"
+              "title": "PPO 的大纲"
             }
           },
           {
@@ -351,16 +351,17 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "18f7bcb0e4437570",
+  "active": "c7ca1c716b8f283e",
   "lastOpenFiles": [
+    "Speedup/模型并行/模型并行训练.md",
+    "PLM/Alignment/PPO/PPO.md",
+    "Tool/Pytorch/transformers.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/Git/Git.md",
     "Tool/Linux/Linux.md",
-    "PLM/Alignment/PPO/PPO.md",
     "PLM/Alignment/README.md",
     "PLM/Alignment/PPO/Reward模型.md",
     "PLM/Alignment/Loss/Loss函数总结.md",
-    "Speedup/模型并行/模型并行训练.md",
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "PLM/o1related/DeepSeekR/R1-related.md",
     "Tool/python/Anaconda.md",
@@ -374,7 +375,6 @@
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/业界分享/面试题/img/Pasted image 20250210154618.png",
     "PLM/业界分享/面试题/img",
-    "Tool/Pytorch/transformers.md",
     "PLM/Alignment/GRPO/GRPO.md",
     "PLM/o1related/README.md",
     "PLM/Alignment/DPO/trl_vs_openrlhf.md",

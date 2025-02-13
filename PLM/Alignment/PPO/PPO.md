@@ -156,7 +156,6 @@ $V_π(s_t)=E_π(G_t|s_t)$
 
 ![](img/Pasted%20image%2020250206172830.png)
 
-![](img/Pasted%20image%2020250206172926.png)
 
 ### Critic优化目标
 
@@ -301,8 +300,8 @@ for i in steps:
 - 训练时，数据只需要有prompt字段，也就是输入即可。回复会用Actor实时生成。
 
 学习率参考
-- actor模型的学习率一般是SFT模型最后的学习率的1/10。
-- critic模型的学习率是SFT模型最后的学习率的将近2倍。
+- **actor模型的学习率一般是SFT模型最后的学习率的1/10**。
+- **critic模型的学习率是SFT模型最后的学习率的将近2倍**。
 
 ![](img/Pasted%20image%2020240621141211.png)
 
@@ -329,6 +328,8 @@ for i in steps:
 ### reward模型
 
 Reward Model用于计算生成token At 的即时收益，它就是RW阶段所训练的奖励模型，在RLHF过程中，它的参数是冻结的。
+
+**t时刻状态s的总收益 = 身处状态s能带来的即时收益 + 从状态s出发后能带来的未来收益。**
 
 ![](img/Pasted%20image%2020241018211423.png)
 
@@ -1160,8 +1161,6 @@ reward模型和其他模型可以用不同的tokenizer，但是critic模型和ac
 [人人都能看懂的RL-PPO理论知识](https://zhuanlan.zhihu.com/p/7461863937)
 
 [浅析以 OpenRLHF 为代表的 post-training 系统的计算流程](https://zhuanlan.zhihu.com/p/16370000391)
-
-[图解OpenRLHF中基于Ray的分布式训练流程](https://zhuanlan.zhihu.com/p/12871616401)
 
 [The 37 Implementation Details of Proximal Policy Optimization · The ICLR Blog Track](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/) (PPO训练的trick)
 
