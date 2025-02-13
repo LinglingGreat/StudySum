@@ -37,6 +37,14 @@ source ~/.bashrc
 
 重现环境： `conda env create -f environment.yml`
 
+## 安装gcc
+
+```bash
+conda install -c conda-forge gcc
+conda install -c conda-forge gxx
+```
+
+`export LD_LIBRARY_PATH=~/miniconda3/envs/env_name/lib/:$LD_LIBRARY_PATH`
 
 
 ## 参考资料
