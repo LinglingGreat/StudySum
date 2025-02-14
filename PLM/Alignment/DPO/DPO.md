@@ -28,7 +28,7 @@ institution:
 
 ![](img/Pasted%20image%2020240615170451.png)
 
-[[源码](https://link.zhihu.com/?target=https%3A//github.com/huggingface/trl/blob/main/trl/trainer/dpo_trainer.py)] 中计算 loss 的部分（最简单的sigmoid损失函数）：
+[源码](https://link.zhihu.com/?target=https%3A//github.com/huggingface/trl/blob/main/trl/trainer/dpo_trainer.py) 中计算 loss 的部分（最简单的sigmoid损失函数）：
 
 ```python
 def dpo_loss(
@@ -143,6 +143,8 @@ def get_batch_logps(
 ![](img/Pasted%20image%2020250126174250.png)
 
 ![](img/Pasted%20image%2020250126174303.png)
+
+**DPO算法的目的是最大化奖励模型(此处的奖励模型即为训练的策略)，使得奖励模型对chosen和rejected数据的差值最大，进而学到人类偏好。**
 
 ## DPO训练时，为什么chosen和rejected的reward一起下降
 
