@@ -16,7 +16,7 @@ institution:
 
 作者：
 
-链接：
+链接：DeepSeekMath, https://arxiv.org/pdf/2402.03300
 
 代码：
 
@@ -27,9 +27,9 @@ institution:
 
 在 ReMax 中我们提到：使用一种好的方法来计算 baseline 是丢掉 Critic 网络的关键。
 
-在 [[DeepSpeek-v2](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2405.04434)] 的 RLHF 过程中，这个思路也有被使用，
+在 [DeepSpeek-v2](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2405.04434) 的 RLHF 过程中，这个思路也有被使用，
 
-不过计算 baseline 的方式稍有不同，文章中将其称为 [[GRPO](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2402.03300)]。
+不过计算 baseline 的方式稍有不同，文章中将其称为 [GRPO](https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2402.03300)。
 
 GRPO 认为，直接退化为 Policy Gradient 是不是有点过于原始，
 
@@ -44,9 +44,7 @@ GRPO 认为，直接退化为 Policy Gradient 是不是有点过于原始，
 但现在的问题是：公式中的Ai 在 PPO 中是需要通过 Critic 去参与计算的$(r+V_s{next}-V_s)$, 
 可是GRPO 里没有 Critic 啊，这咋计算！
 
-我们回想一下：Critic 的目标是去估计一个状态的期望值（从而降低方差），而期望的近义词是均值，
-
-**那我们直接暴力的去采样 N 次求均值来代替这个期望不就好了！**
+我们回想一下：Critic 的目标是去估计一个状态的期望值（从而降低方差），而期望的近义词是均值，**那我们直接暴力的去采样 N 次求均值来代替这个期望不就好了！**
 
 没错，这就是 GRPO 暴力且有效的方法：
 
