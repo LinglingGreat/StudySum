@@ -101,3 +101,7 @@ def forward(
                 return reward
 ```
 
+## 参考资料
+
+[让 LLM 来评判 | 奖励模型相关内容](https://mp.weixin.qq.com/s/xiQblwvDY8cGz1A42Yb82g)
+

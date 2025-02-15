@@ -385,7 +385,7 @@ surr1，surr2 分别代表使用 values_clipped 和 values 进行模型更新的
 
 
 
-```python3
+```python
 class PairWiseLoss(nn.Module):
     """
     Pairwise Loss for Reward Model
