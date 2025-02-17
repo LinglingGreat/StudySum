@@ -64,20 +64,6 @@
             }
           },
           {
-            "id": "cad13ac94d6cf1ce",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/python/Anaconda.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Anaconda"
-            }
-          },
-          {
             "id": "1838cb65a169f00e",
             "type": "leaf",
             "state": {
@@ -92,45 +78,17 @@
             }
           },
           {
-            "id": "efaebb94fb972e30",
+            "id": "6205edb56ec3bf73",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/DPO/DPO.md",
+                "file": "PLM/Alignment/Loss/Loss函数总结.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DPO"
-            }
-          },
-          {
-            "id": "08cf2738869e9b53",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Alignment/RewardModel/RewardModel.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "RewardModel"
-            }
-          },
-          {
-            "id": "1428bbd6b6330080",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/BaseStruct/Attention/Attention.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Attention"
+              "title": "Loss函数总结"
             }
           },
           {
@@ -148,17 +106,31 @@
             }
           },
           {
-            "id": "c7ca1c716b8f283e",
+            "id": "a4f77bc4b08c06b8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md",
+                "file": "PLM/Models/DeepSeek/DeepSeekv3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PPO"
+              "title": "DeepSeekv3"
+            }
+          },
+          {
+            "id": "aafe45fcdfd90a24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/BaseStruct/PositionEncoding/位置编码.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "位置编码"
             }
           }
         ],
@@ -267,13 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/RewardModel/RewardModel.md",
+                "file": "PLM/Models/DeepSeek/DeepSeekv3.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "RewardModel 的大纲"
+              "title": "DeepSeekv3 的大纲"
             }
           },
           {
@@ -351,40 +323,40 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "08cf2738869e9b53",
+  "active": "a4f77bc4b08c06b8",
   "lastOpenFiles": [
+    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
+    "Tool/Linux/Linux.md",
     "PLM/Alignment/Loss/Loss函数总结.md",
-    "PLM/Alignment/PPO/PPO.md",
-    "PLM/Alignment/README.md",
+    "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/Alignment/DPO/DPO.md",
+    "Speedup/模型并行/模型并行训练.md",
+    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
+    "PLM/BaseStruct/GQA/MQA&GQA.md",
+    "PLM/BaseStruct/Attention/Attention.md",
+    "PLM/BaseStruct/PositionEncoding/位置编码.md",
+    "PLM/Alignment/PPO/PPO.md",
+    "PLM/Alignment/RewardModel/RewardModel.md",
+    "PLM/Alignment/README.md",
     "PLM/Alignment/GRPO/GRPO.md",
     "PLM/Alignment/ReMax/ReMax.md",
     "PLM/Alignment/PPO/img/Pasted image 20250214104100.png",
-    "Speedup/模型并行/模型并行训练.md",
     "Tool/Pytorch/transformers.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/Git/Git.md",
-    "Tool/Linux/Linux.md",
     "PLM/Alignment/PPO/Reward模型.md",
-    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "PLM/o1related/DeepSeekR/R1-related.md",
     "Tool/python/Anaconda.md",
-    "PLM/BaseStruct/Attention/Attention.md",
     "Speedup/训练tips/训练tips.md",
     "Speedup/基础概念/分布式训练框架的编程基础.md",
-    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
-    "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/业界分享/面试题/img/Pasted image 20250211133440.png",
-    "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/业界分享/面试题/img/Pasted image 20250210154618.png",
     "PLM/业界分享/面试题/img",
     "PLM/o1related/README.md",
     "PLM/Alignment/DPO/trl_vs_openrlhf.md",
     "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
     "PLM/业界分享/面试题",
-    "PLM/Models/DeepSeek/DeepSeek.md",
     "未命名.canvas",
-    "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/Alignment/Loss/img/Pasted image 20250207150602.png",
     "PLM/Alignment/Loss/img/Pasted image 20250207150536.png",
     "PLM/Alignment/Loss/img/Pasted image 20250207150351.png",
