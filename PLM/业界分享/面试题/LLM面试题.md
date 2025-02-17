@@ -722,6 +722,30 @@ Tips：这里和降低[KL散度](https://zhida.zhihu.com/search?content_id=24462
 
 [2] Clark A, de Las Casas D, Guy A, et al. Unified scaling laws for routed language models[C]//International conference on machine learning. PMLR, 2022: 4057-4086.
 
+## 以下是两个[RLHF算法](https://zhida.zhihu.com/search?content_id=245473544&content_type=Article&match_order=1&q=RLHF%E7%AE%97%E6%B3%95&zhida_source=entity)不同种decoding的结果：
+
+RLHF算法一：
+
+1）抽样10次，top_p = 0.7, temperature = 0.95, [pass@1](https://zhida.zhihu.com/search?content_id=245473544&content_type=Article&match_order=1&q=pass%401&zhida_source=entity) = 0.7
+
+1) Greedy decoding, pass@1 = 0.78
+
+RLHF算法二：
+
+1）抽样10次，top_p = 0.7, temperature = 0.95, pass@1 = 0.72
+
+2) Greedy decoding, pass@1 = 0.75
+
+请问算法一和算法二哪个是[PPO算法](https://zhida.zhihu.com/search?content_id=245473544&content_type=Article&match_order=1&q=PPO%E7%AE%97%E6%B3%95&zhida_source=entity)，哪个是[DPO算法](https://zhida.zhihu.com/search?content_id=245473544&content_type=Article&match_order=1&q=DPO%E7%AE%97%E6%B3%95&zhida_source=entity)？假设RM噪声较小。
+
+**回答：**这是我真实训练发现的一个现象，这里实际中算法一是PPO，算法二是DPO算法。其中原因是：
+
+1）当使用DPO算法时，正确的response在被maximize，错误的responses在被minimize，但是由于DPO不能分辩token-wise的reward，那么虽然整体正确的response概率在增大，但某几个在正确response中关键的token未必能增大，甚至到达top 1。所以greedy的效果可能没有那么好。但随机pass@1的效果会还不错（因为整体的概率提升了）。
+
+2）当使用PPO算法的时候，由于使用的是[weighted logistics regression](https://zhida.zhihu.com/search?content_id=245473544&content_type=Article&match_order=1&q=weighted+logistics+regression&zhida_source=entity)，那么在token维度，如果这个token可以获得的未来reward大于现在的state value，那么这个token就会被增强，而reward 得分最高的token会被最大化增强。因此Greedy的效果一定会很快的提升，但依然有部分和Greedy很像的response也被增强了，因为reward model使用的是[BT model](https://zhida.zhihu.com/search?content_id=245473544&content_type=Article&match_order=1&q=BT+model&zhida_source=entity)，很多错误但和正确很像的response的得分也很高。所以pass@1反而没那么高。
+
+评论区有不同见解，[Site Unreachable](https://zhuanlan.zhihu.com/p/708037980)
+
 
 
 ## 参考资料

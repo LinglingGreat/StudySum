@@ -4,7 +4,7 @@ created: 2025-01-26
 tags:
   - o1-related
 ---
-## qwen2.5-Math-7B+RL
+## simplerl-reason
 
 ![](img/Pasted%20image%2020250126142001.png)
 
@@ -58,6 +58,7 @@ Works for model <= 1.5B. For Qwen2.5-0.5B base, we know it fails to learn reason
 ## openr1
 
 [GitHub - huggingface/open-r1: Fully open reproduction of DeepSeek-R1](https://github.com/huggingface/open-r1)
+- 由huggingface组建，在MATH-500任务上接近deepseek的指标，可以在open-r1/open-r1-eval-leaderboard查看指标的排行榜。
 
 [Open-R1: Update #1](https://huggingface.co/blog/open-r1/update-1)
 - 包括了R1相关的项目资源、数据集资源
@@ -71,12 +72,15 @@ The goal of this repo is to build the missing pieces of the R1 pipeline such tha
     - `generate.py`: generate synthetic data from a model using [Distilabel](https://github.com/argilla-io/distilabel).
 - `Makefile` contains an easy to run command for each step in the R1 pipeline leveraging the scipts above.
 
+
 ## ragen
 
 https://github.com/ZihanWang314/ragen
 
 **RAGEN** is the first reproduction of the **DeepSeek-R1(-Zero)** methods for _training agentic models_.  
 _We strongly believe in the future of RL + LLM + Agents. The release is a minimally viable leap forward._
+
+RAGEN 是用于训练智能体模型的 DeepSeek-R1 (-Zero) 方法的首次复现，主要在gym-sokoban（传统的推箱子游戏）任务上进行训练。
 
 [我们在Gym-Sokoban](https://github.com/mpSchrader/gym-sokoban)任务中在 Qwen-2.5-{0.5B, 3B}-{Instruct, None} 和 DeepSeek-R1-Distill-Qwen-1.5B 上运行 RAGEN 。
 
@@ -104,6 +108,76 @@ _We strongly believe in the future of RL + LLM + Agents. The release is a minima
 [DeepSeek R1 Zero中文复现教程来了！](https://mp.weixin.qq.com/s/Z7P61IV3n4XYeC0Et_fvwg)
 - [GitHub - datawhalechina/unlock-deepseek: DeepSeek 系列工作解读、扩展和复现。](https://github.com/datawhalechina/unlock-deepseek)
 
+## mini-deepseek-r1
+
+[deep-learning-pytorch-huggingface/training/mini-deepseek-r1-aha-grpo.ipynb at main · philschmid/deep-learning-pytorch-huggingface · GitHub](https://github.com/philschmid/deep-learning-pytorch-huggingface/blob/main/training/mini-deepseek-r1-aha-grpo.ipynb)
+
+用 GRPO 和倒计时游戏复制出一个简单版本的 R1。
+
+在大约 50 步时，模型学会了正确的格式，即...\n...;在 100 步时，解方程的成功率约为 25%，并且模型开始用文字进行 “推理”;在 200 步时，收敛变慢，成功率约为 40%。模型开始学习一种新的“格式”，它通过尝试不同的组合并检查结果来解方程，这种方式类似于编程解决问题的方式；在 450 步时，解方程的成功率为 50%，性能仍然在缓慢提升，并且模型保持了从 200 步开始的新格式。
+
+## open-thoughts
+
+[GitHub - open-thoughts/open-thoughts: Open Thoughts: Fully Open Data Curation for Thinking Models](https://github.com/open-thoughts/open-thoughts)
+
+该项目目标是策划一个**推理数据集**来训练最先进的小型推理模型，该模型在数学和代码推理基准上超越DeepSeek-R1-Distill-Qwen-32B和DeepSeek-R1-Distill-Qwen-7B 。
+
+## unsloth-Reasoning - GRPO
+
+项目地址： https://docs.unsloth.ai/basics/reasoning-grpo 
+
+使用 GRPO（强化学习微调的一部分）通过 Unsloth 训练自己的 DeepSeek-R1 推理模型。
+
+DeepSeek 的 GRPO（组相对策略优化）是一种无需价值函数模型的强化学习技术，能够高效优化响应并降低内存和计算成本。借助 Unsloth，仅需 7GB VRAM 即可在本地训练高达 15B 参数的推理模型（如 Llama 3.1、Phi-4、Mistral 或 Qwen2.5），而此前类似任务需要 2xA100 GPU（160GB VRAM）。GRPO 现已支持 QLoRA 和 LoRA，可将标准模型转化为成熟的推理模型。测试显示，仅训练 Phi-4 100 步，GRPO 模型已能生成思考 token 并给出正确答案，显著优于未使用 GRPO 的模型。
+
+## oat-zero
+
+项目地址： https://github.com/sail-sg/oat-zero
+
+DeepSeek-R1-Zero 的轻量级复制品，对自我反思行为进行了深入分析。
+
+DeepSeek-R1-Zero 最鼓舞人心的结果之一是通过纯强化学习 (RL) 实现**“顿悟时刻”**。在顿悟时刻，模型会学习自我反思等新兴技能，这有助于它进行情境搜索来解决复杂的推理问题。
+
+在 R1-Zero 发布后的短短几天内，多个项目在较小规模（例如 1B 到 7B）上独立“复现”了类似 R1-Zero 的训练，并且都观察到了 Aha 时刻，这通常通过模型响应长度的突然增加来衡量。按照他们的设置仔细检查了类似 R1-Zero 的训练过程，并分享了以下发现：
+
+- 在类似 R1-Zero 的训练中，可能不存在顿悟时刻。相反，发现顿悟时刻（例如自我反思模式）出现在第 0 个时期，即基础模型中。
+    
+- 从基础模型的反应中发现了**肤浅**的自我反思（SSR），在这种情况下自我反思并不一定会导致正确的最终答案。
+    
+- 通过 RL 仔细研究了类似 R1-Zero 的训练，发现响应长度增加的现象不是由于自我反思的出现，而是 RL 优化精心设计的基于规则的奖励函数的结果。
+
+## deepscaler
+
+> 项目地址：**https://github.com/agentica-project/deepscaler**
+
+> 只用4500美元成本，就能成功复现DeepSeek？就在刚刚，UC伯克利团队只用简单的RL微调，就训出了DeepScaleR-1.5B-Preview，15亿参数模型直接吊打o1-preview，震撼业内。
+
+第一步，研究人员会训练模来型进行短思考。他们使用DeepSeek的GRPO方法，设定了8k的上下文长度来训练模型，以鼓励高效思考。经过1000步训练后，模型的token使用量减少了3倍，并比基础模型提升了5%。接下来，模型被训练进行长思考。强化学习训练扩展到16K和24K token，以解决更具挑战性、以前未解决的问题。随着响应长度增加，平均奖励也随之提高，24K的魔力，就让模型最终超越了o1-preview！
+
+![](img/Pasted%20image%2020250217115706.png)
+
+近日，来自UC伯克利的研究团队基于Deepseek-R1-Distilled-Qwen-1.5B，通过简单的强化学习（RL）微调，得到了全新的DeepScaleR-1.5B-Preview。在AIME2024基准中，模型的Pass@1准确率达高达43.1% ——不仅比基础模型提高了14.3%，而且在只有1.5B参数的情况下超越了OpenAI o1-preview！
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/1FD1x61uYVcxXAZapw1KzmphgKz8PDsaq8Ccsicjrw30s6LgRQ992cicZqsVWGIZ61TucnglW1hWRuR2lFB35D5Q/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1&wx_co=1)
+
+## grpo_demo
+
+项目地址：https://gist.github.com/willccbb/4676755236bb08cab5f4e54a0475d6fb 原始的 grpo_demo.py 帖子
+
+## 数据集
+
+- **open-r1/OpenR1-Math-220k**:OpenR1-Math-220k 是一个大规模数学推理数据集，包含 220k 道数学题，每道题都有DeepSeek R1针对 NuminaMath 1.5 中的问题生成的 2 到 4 条推理痕迹。
+    
+- **OpenThoughts-114k**：拥有 114,000 个高质量示例，涵盖数学、科学、代码和谜题等。
+    
+- **bespokelabs/Bespoke-Stratos-17k**：对伯克利 Sky-T1 数据的复制，使用 DeepSeek-R1 创建了一个包含问题、推理过程和答案的数据集。
+    
+- **R1-Distill-SFT**：目前有 17000 个样本，目的是创建数据以支持 Open-R1 项目。
+    
+- **cognitivecomputations/dolphin-r1**：包含 80 万个样本的数据集，其中的数据来自 DeepSeek-R1 和 Gemini flash 的生成结果，同时还有来自 Dolphin chat 的 20 万个样本。
+    
+- **GSM8K**:GSM8K（小学数学 8K）是一个包含 8.5K 道高质量、语言多样化的小学数学应用题的数据集。该数据集的创建是为了支持需要多步推理的基本数学问题的问答任务。
+
 ## Deepseek-R1-Zero复现心得
 
 
@@ -123,4 +197,8 @@ _We strongly believe in the future of RL + LLM + Agents. The release is a minima
 - 格式奖励很好学
 - 难的query上 格式奖励更容易hack
 - **难的query上 似乎更容易出现accuracy 与 response 同增的情况**
-- 
+
+## 参考资料
+
+[DeepSeek-R1复现方案梳理](https://mp.weixin.qq.com/s/3LzuD1yWuGiHnP3xGYls0w)
+

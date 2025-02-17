@@ -146,6 +146,21 @@ def get_batch_logps(
 
 **DPO算法的目的是最大化奖励模型(此处的奖励模型即为训练的策略)，使得奖励模型对chosen和rejected数据的差值最大，进而学到人类偏好。**
 
+dpo 从头到尾都在以 reward_model 的方式让模型学习 evaluate 能力，但是却并没有证明一个重要假设：“**模型的 evaluate 能力和 generate 能力到底是不是相互促进的？**” dpo 后的模型具有了更强的 evaluate 能力，但我们的目标是提升模型的 generate 能力啊。如果这个基本假设不成立，那 dpo 的学习过程就没有什么价值。
+
+也正是因为 dpo 是在让模型具有 reward_model 的能力，所以它并不在乎模型能不能说出一个好的句子，只在乎 loss margin 是否在变大。大家训练 dpo 的时候，基本都遇到过 good_sentence 和 bad_sentence 的 loss 都上升的尴尬现象，往往需要我们加系数和调参数才能解决。
+
+reward_model 的训练方式根本不在乎模型的 generate 能力，因此稳定训练的 dpo 需要魔改 loss 函数。
+
+
+
+
+Reference model起到的第一个作用就是**在KL散度中限制Policy Model，让它不要偏离Reference Model太远**。
+
+![图片](https://mmbiz.qpic.cn/mmbiz_png/wAPfqDgY33pwmtfcFiajggichSFEpkmiapJSC3UIlJf1dc2JRRXctjgbDnAS0fibacvrVmz4lr4woaJrUnYOURxxBA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+公式左边是DPO对于第t个token的损失函数，右边就是一个非常标准的Advantage函数定义（详见Actor Critic)。这个结论就非常地强，意思就是说，我虽然没有Value Model，并且训练还是样本级别的pair-wise数据，但是我证明了加上Reference Model之后，相当于引入了一个**细粒度的Value Model**和一个**细粒度的Reward Model**，等价于PPO中Advantage的计算。
+
 ## DPO训练时，为什么chosen和rejected的reward一起下降
 
 [百面LLM-7](https://zhuanlan.zhihu.com/p/686122806)
@@ -153,6 +168,19 @@ def get_batch_logps(
 [【不靠谱】有关DPO训练时，为什么chosen和rejected的reward一起下降的猜想](https://zhuanlan.zhihu.com/p/694381064)
 
 [DPO正例概率不应该下降？DPO在实践中的反思与改进](https://zhuanlan.zhihu.com/p/698852522)
+
+在以下情况中正例的概率就可能下降：
+
+1. 如果正例并不是一个绝对意义上好的回复而仅仅是相对于负例而言更好，正例的概率降低才是正常的，因为**当前样本的正例可能也是其他样本中的负例（如果正例的某个模式出现在其他样本的负例中也会导致该正例的概率下降）**。
+2. 即使数据中的正例可以看作是绝对意义上的好的回复，**但如果query存在多个绝对意义上好的回复，该正例的概率也可能因为其他好回复概率的上升而下降**（参考章节三思考2中提到的场景）。
+
+此外，文无第一，**对于很多任务而言不存在绝对的正确性，不同模型的偏好可能不同，即使某个正例在某个评估标准下没有正确性问题，逻辑也很好，它的概率在训练过程中仍然可能会被降低，因为模型受到其他数据的激发可能认为其他形式的输出更好（比如把解释放在后面而不是放在前面），提升了其他形式输出的概率，进而导致该正例概率的下降**。我们在实验中观察到，正例概率的下降很多时候不是核心答案概率下降导致的，而是模型倾向的回复话术改变了，标注正例的回复话术和模型倾向不一致导致的概率下降。如标注正例是以『这句话。。。』开头，而采用greedy search策略，模型倾向于以『根据文本内容。。。』开头，且该话术在DPO中相较于[SFT](https://zhida.zhihu.com/search?content_id=243430776&content_type=Article&match_order=1&q=SFT&zhida_source=entity)的概率是提升的，此时标注正例开头tokens的概率很多时候就下降了，而这些tokens并不会影响核心答案的正确性。
+
+## MOE相关
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/708990463)
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/709101537)
 
 
 ## 主要收获
