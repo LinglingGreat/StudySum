@@ -143,6 +143,12 @@ attn(X).shape
 # torch.Size([2, 32, 4096])
 ```
 
+# MLA
+
+[Multi-Head Latent Attention](../../Models/DeepSeek/DeepSeekv2.md#Multi-Head%20Latent%20Attention)
+- 对key和value进行低秩联合压缩
+- MHA 需要为每个 token 缓存 $2n_hd_hl$ 元素。（$n_h$ 为注意力头的数量，$d_h$ 为每个头的维度，l是层数）
+- MLA需要缓存$d_cl$元素（$d_c<<n_hd_h$)
 
 # 参考资料
 

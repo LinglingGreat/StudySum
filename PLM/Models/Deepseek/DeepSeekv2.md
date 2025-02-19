@@ -135,3 +135,5 @@ ROPE
 
 [再读MLA，还有多少细节是你不知道的](https://zhuanlan.zhihu.com/p/19585986234)
 
+[deepseek技术解读(1)-彻底理解MLA（Multi-Head Latent Attention）](https://zhuanlan.zhihu.com/p/16730036197)
+

@@ -90,68 +90,60 @@ Multi-attention
 代码实现
 
 ```python
-# Muti-head Attention 机制的实现
-from math import sqrt
+```python
 import torch
-import torch.nn
-
-
-class Self_Attention(nn.Module):
-    # input : batch_size * seq_len * input_dim
-    # q : batch_size * input_dim * dim_k
-    # k : batch_size * input_dim * dim_k
-    # v : batch_size * input_dim * dim_v
-    def __init__(self,input_dim,dim_k,dim_v):
-        super(Self_Attention,self).__init__()
-        self.q = nn.Linear(input_dim,dim_k)
-        self.k = nn.Linear(input_dim,dim_k)
-        self.v = nn.Linear(input_dim,dim_v)
-        self._norm_fact = 1 / sqrt(dim_k)
-        
-    
-    def forward(self,x):
-        Q = self.q(x) # Q: batch_size * seq_len * dim_k
-        K = self.k(x) # K: batch_size * seq_len * dim_k
-        V = self.v(x) # V: batch_size * seq_len * dim_v
-         
-        atten = nn.Softmax(dim=-1)(torch.bmm(Q,K.permute(0,2,1))) * self._norm_fact # Q * K.T() # batch_size * seq_len * seq_len
-        
-        output = torch.bmm(atten,V) # Q * K.T() * V # batch_size * seq_len * dim_v
-        
+import torch.nn.functional as F
+ 
+class SelfAttention(torch.nn.Module):
+    def __init__(self, input_dim, heads):
+        super(SelfAttention, self).__init__()
+        self.input_dim = input_dim
+        self.heads = heads
+        self.head_dim = input_dim // heads
+ 
+        self.W_q = torch.nn.Linear(input_dim, input_dim)
+        self.W_k = torch.nn.Linear(input_dim, input_dim)
+        self.W_v = torch.nn.Linear(input_dim, input_dim)
+ 
+        self.W_o = torch.nn.Linear(input_dim, input_dim)
+ 
+    def forward(self, x):
+        batch_size = x.shape[0]
+ 
+        # Linear transformation to get Q, K, V
+        Q = self.W_q(x)
+        K = self.W_k(x)
+        V = self.W_v(x)
+ 
+        # Reshape Q, K, V to have multiple heads
+        Q = Q.view(batch_size, -1, self.heads, self.head_dim).permute(0, 2, 1, 3)
+        K = K.view(batch_size, -1, self.heads, self.head_dim).permute(0, 2, 1, 3)
+        V = V.view(batch_size, -1, self.heads, self.head_dim).permute(0, 2, 1, 3)
+ 
+        # Compute attention scores
+        scores = torch.matmul(Q, K.permute(0, 1, 3, 2)) / (self.head_dim ** 0.5)
+        attention_weights = F.softmax(scores, dim=-1)
+ 
+        # Apply attention weights to V
+        attention_output = torch.matmul(attention_weights, V)
+ 
+        # Reshape and concatenate heads
+        attention_output = attention_output.permute(0, 2, 1, 3).contiguous()
+        attention_output = attention_output.view(batch_size, -1, self.input_dim)
+ 
+        # Final linear transformation
+        output = self.W_o(attention_output)
+ 
         return output
-    
-    
-class Self_Attention_Muti_Head(nn.Module):
-    # input : batch_size * seq_len * input_dim
-    # q : batch_size * input_dim * dim_k
-    # k : batch_size * input_dim * dim_k
-    # v : batch_size * input_dim * dim_v
-    def __init__(self,input_dim,dim_k,dim_v,nums_head):
-        super(Self_Attention_Muti_Head,self).__init__()
-        assert dim_k % nums_head == 0
-        assert dim_v % nums_head == 0
-        self.q = nn.Linear(input_dim,dim_k)
-        self.k = nn.Linear(input_dim,dim_k)
-        self.v = nn.Linear(input_dim,dim_v)
-        
-        self.nums_head = nums_head
-        self.dim_k = dim_k
-        self.dim_v = dim_v
-        self._norm_fact = 1 / sqrt(dim_k)
-        
-    
-    def forward(self,x):
-        Q = self.q(x).reshape(-1,x.shape[0],x.shape[1],self.dim_k // self.nums_head) 
-        K = self.k(x).reshape(-1,x.shape[0],x.shape[1],self.dim_k // self.nums_head) 
-        V = self.v(x).reshape(-1,x.shape[0],x.shape[1],self.dim_v // self.nums_head)
-        print(x.shape)
-        print(Q.size())
-
-        atten = nn.Softmax(dim=-1)(torch.matmul(Q,K.permute(0,1,3,2))) # Q * K.T() # batch_size * seq_len * seq_len
-        
-        output = torch.matmul(atten,V).reshape(x.shape[0],x.shape[1],-1) # Q * K.T() * V # batch_size * seq_len * dim_v
-        
-        return output
+ 
+# 使用示例
+input_dim = 64
+seq_length = 10
+heads = 8
+input_data = torch.randn(1, seq_length, input_dim)  # 生成随机输入数据
+self_attention = SelfAttention(input_dim, heads)
+output = self_attention(input_data)
+print(output.shape)  # 输出形状：torch.Size([1, 10, 64])
 ```
 
 

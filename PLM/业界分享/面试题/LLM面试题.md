@@ -746,6 +746,40 @@ RLHF算法二：
 
 评论区有不同见解，[Site Unreachable](https://zhuanlan.zhihu.com/p/708037980)
 
+## [RLHF](https://zhida.zhihu.com/search?content_id=245000024&content_type=Article&match_order=1&q=RLHF&zhida_source=entity)的performance上界是什么？达到这个上届是trivial的事情嘛？
+
+**回答：**RLHF的performance上界就是[rm模型](https://zhida.zhihu.com/search?content_id=245000024&content_type=Article&match_order=1&q=rm%E6%A8%A1%E5%9E%8B&zhida_source=entity)的泛化上界，也就是rm模型下的Best of N的效果。这就是为什么OpenAI评价RM的一个主要指标是[BON](https://zhida.zhihu.com/search?content_id=245000024&content_type=Article&match_order=1&q=BON&zhida_source=entity) [1]。
+
+![](https://picx.zhimg.com/v2-97b072dcf234d0fdbff4dd762abd5275_1440w.jpg)
+
+达到这个上届明显不是trivial的事情，原因如下：
+
+1）评判任务本身难度低于生成任务，评判任务的拟合能力就会高于生成任务，在超级大模型下，由于泛化和拟合是几乎同时增长的（也就几乎不存在过拟合，[Grokking](https://zhida.zhihu.com/search?content_id=245000024&content_type=Article&match_order=1&q=Grokking&zhida_source=entity)理论 [2]）, 因此RM泛化也比RLHF强。
+
+2）Pre-train模型固有的bias很高。尽管RM也是Fine-Tune pre-train model，但由于是单个reward预测，不影响原始模型生成的response分布，所以并不会特别大地影响pre-train 原始的response distribution。但是RLHF不一样，它需要将新的信息压缩回Pre-train model，有一些数据本身而言就是很难压缩回Pre-train model。
+
+[1] [Lightman H](https://zhida.zhihu.com/search?content_id=245000024&content_type=Article&match_order=1&q=Lightman+H&zhida_source=entity), [Kosaraju V](https://zhida.zhihu.com/search?content_id=245000024&content_type=Article&match_order=1&q=Kosaraju+V&zhida_source=entity), [Burda Y](https://zhida.zhihu.com/search?content_id=245000024&content_type=Article&match_order=1&q=Burda+Y&zhida_source=entity), et al. Let's verify step by step[J]. arXiv preprint arXiv:2305.20050, 2023.
+
+[2] Power A, Burda Y, Edwards H, et al. Grokking: Generalization beyond overfitting on small algorithmic datasets[J]. arXiv preprint arXiv:2201.02177, 2022.
+
+## 在longcontext的继续训练中，短文本能力会损失，为什么？以及该怎么做，能补回模型的短文能力？
+
+**回答：**
+
+1）只训练长文本的时候，短文本的能力会被遗忘。但由于长文本一般数据量不多，所以这个原因比较弱。
+
+2）由于在训练长文本的时候，我们需要修改[rope base](https://zhida.zhihu.com/search?content_id=247868293&content_type=Article&match_order=1&q=rope+base&zhida_source=entity)，那么整体模型的attention score会因为rope的变化而变化。具体而言，变化趋势是[远程衰减](https://zhida.zhihu.com/search?content_id=247868293&content_type=Article&match_order=1&q=%E8%BF%9C%E7%A8%8B%E8%A1%B0%E5%87%8F&zhida_source=entity)减弱，也就是模型比较难分辨近距离和远距离的token。那么对于代码，数学这种很依赖近距离token做reasoning的task，掉点明显。
+
+举个例子，为什么代码数学很依赖远程衰减。比如if C, D .... if A, B。当远程衰减变弱，模型基本在预测到B的时候，区分不了前置条件是A还是C，那么预测就会失败。
+
+那么我们需要做的就是混合短文本对，整体长文本进行继续训练，那么最好混合的短文本就是代码数学等文本。因为他们对短程依赖较多，比较能帮助模型维持短文本能力。具体细节可以看我们的论文：[https://huggingface.co/papers/2409.00509](https://link.zhihu.com/?target=https%3A//huggingface.co/papers/2409.00509)。
+
+## MOE相关
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/708990463)
+
+[Site Unreachable](https://zhuanlan.zhihu.com/p/709101537)
+
 
 
 ## 参考资料

@@ -176,12 +176,6 @@ Reference model起到的第一个作用就是**在KL散度中限制Policy Model�
 
 此外，文无第一，**对于很多任务而言不存在绝对的正确性，不同模型的偏好可能不同，即使某个正例在某个评估标准下没有正确性问题，逻辑也很好，它的概率在训练过程中仍然可能会被降低，因为模型受到其他数据的激发可能认为其他形式的输出更好（比如把解释放在后面而不是放在前面），提升了其他形式输出的概率，进而导致该正例概率的下降**。我们在实验中观察到，正例概率的下降很多时候不是核心答案概率下降导致的，而是模型倾向的回复话术改变了，标注正例的回复话术和模型倾向不一致导致的概率下降。如标注正例是以『这句话。。。』开头，而采用greedy search策略，模型倾向于以『根据文本内容。。。』开头，且该话术在DPO中相较于[SFT](https://zhida.zhihu.com/search?content_id=243430776&content_type=Article&match_order=1&q=SFT&zhida_source=entity)的概率是提升的，此时标注正例开头tokens的概率很多时候就下降了，而这些tokens并不会影响核心答案的正确性。
 
-## MOE相关
-
-[Site Unreachable](https://zhuanlan.zhihu.com/p/708990463)
-
-[Site Unreachable](https://zhuanlan.zhihu.com/p/709101537)
-
 
 ## 主要收获
 
