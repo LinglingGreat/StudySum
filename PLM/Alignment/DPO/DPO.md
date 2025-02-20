@@ -152,14 +152,50 @@ dpo 从头到尾都在以 reward_model 的方式让模型学习 evaluate 能力�
 
 reward_model 的训练方式根本不在乎模型的 generate 能力，因此稳定训练的 dpo 需要魔改 loss 函数。
 
+## reference模型的作用
 
+从DPO最初始的RL优化目标来看，Reference model起到的第一个作用就是**在KL散度中限制Policy Model，让它不要偏离Reference Model太远**。事实上DPO的灵魂也在于此，没有了Reference Model的偏好优化损失，其实就是一个普通的Ranking Loss罢了。
 
+[From r to Q∗: Your Language Model is Secretly a Q-Function](https://link.zhihu.com/?target=https%3A//cn.bing.com/fd/ls/GLinkPing.aspx%3FIG%3D5498F8C437B342958A4C2424A72A6AE5%26%26ID%3DSERP%2C5175.2%26SUIH%3DKWsjordAO3H-wMQHtnpZpw%26redir%3DaHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC82OTM2NjUxNjg)来进一步理解Reference Model的重要性。
 
-Reference model起到的第一个作用就是**在KL散度中限制Policy Model，让它不要偏离Reference Model太远**。
+**DPO中的细粒度对齐**
+
+我们首先来看看作者的第一个重要结论:
 
 ![图片](https://mmbiz.qpic.cn/mmbiz_png/wAPfqDgY33pwmtfcFiajggichSFEpkmiapJSC3UIlJf1dc2JRRXctjgbDnAS0fibacvrVmz4lr4woaJrUnYOURxxBA/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
-公式左边是DPO对于第t个token的损失函数，右边就是一个非常标准的Advantage函数定义（详见Actor Critic)。这个结论就非常地强，意思就是说，我虽然没有Value Model，并且训练还是样本级别的pair-wise数据，但是我证明了加上Reference Model之后，相当于引入了一个**细粒度的Value Model**和一个**细粒度的Reward Model**，等价于PPO中Advantage的计算。
+公式左边是DPO对于第t个token的损失函数，右边就是一个非常标准的Advantage函数定义（详见Actor Critic)。这个结论就非常地强，意思就是说，我虽然没有Value Model，并且训练还是样本级别的pair-wise数据，但是我证明了加上Reference Model之后，相当于引入了一个**细粒度的Value Model**和一个**细粒度的Reward Model**，等价于PPO中Advantage的计算。PPO的优点，其中很重要的一个点就是Value Model可以带来细粒度的监督，而似乎DPO看来也具备同样的性质？ 我们进一步来分析看一下这个结论:
+
+  
+![](https://pic3.zhimg.com/v2-9ac8eecdce77adc18b192e2c04ed66be_1440w.jpg)
+
+![](https://pic2.zhimg.com/v2-e6a9223522c376ff8b9b74c600916273_1440w.jpg)
+
+观察上面的公式5和7，将公式7带入公式5，给公式5两边取log，再移项，便可以得到第一个重要结论。所以我们进一步分析一下这两个式子的含义。
+
+先看公式5，原文说公式5是公式2的固定点解(the fixed point solution)，所以我们贴出公式2：
+
+![](https://pic2.zhimg.com/v2-d37779fdd928b95d027c37282db52993_1440w.jpg)
+
+公式2是PPO+KL约束的优化目标，注意H是熵的意思，结合一下熵的定义-plog(p)，可以发现，这里是故意将KL Penalty改写成了 log⁡πref+entropy 的形式，所以这两项之前都有一个 β 。注意这里是非常重要的一个技巧，从而成功把优化目标转化成了 r+log⁡πref ，并且套进了entropy bonus形式的PPO公式。下图是带entropy bonus的PPO，S就是熵。
+
+![](https://pica.zhimg.com/v2-1e43e53742f4cfd1759e32b7eb812ade_1440w.jpg)
+
+优化目标转变了之后，公式7也就顺利成章可以得出了，5和7一结合，就自然完成了公式1的推导。完成了推导之后，再来看一个实际的例子:
+
+![](https://picx.zhimg.com/v2-4bd54655dfe6c56323c473b494ddd645_1440w.jpg)
+
+左边是一个DPO的测试正样本，右边是一个DPO的测试负样本，颜色越深代表token对应的奖励越高，可以看到负样本中有问题的token "250", "great management" 都得到了相对更低的奖励值(Q值)，从而细粒度级别的优化。
+
+**与搜索的联系**
+
+现有的很多工作都在考虑利用value model来指导搜索，由于DPO训练后的对数概率直接就能代表Q函数，
+
+![](https://pic3.zhimg.com/v2-9a77b89cfe0ebff69a9388a5b5eaaa6e_1440w.jpg)
+
+通过公式13的推导，可以很容易发现只需要基于DPO优化后的policy模型来进行搜索，就可以达到利用value model进行搜索的效果。这一点其实也很容易通过一个事实来验证: DPO训练后的模型的pass@k总是明显高于SFT模型。作者同样也观察到用beam size为5进行beam search，就可以有10~15%的胜率提升，和value model guided beam search接近。
+
+本文是DPO原作者为DPO书写的正名之作，深刻理解本文胜过阅读十篇所谓DPO的改进，非常有益于进一步做出好的Offline RL工作。并且我觉得本文可能更加能够印证**[GRPO](https://zhida.zhihu.com/search?content_id=249317057&content_type=Article&match_order=1&q=GRPO&zhida_source=entity)等no-critic方法的意义**(可能REINFORCE+KL真的就够了)，也印证了为啥目前多个大厂最后还是选择了GRPO而不是PPO。最后，在我看来DPO的细粒度优化还是有很大的改善空间的，尽管理论很美好，但现实总是残酷，混沌，并且不可测。未来DPO的改进，相信还是要落在细粒度建模上的。
 
 ## DPO训练时，为什么chosen和rejected的reward一起下降
 

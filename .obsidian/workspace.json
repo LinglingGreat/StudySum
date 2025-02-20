@@ -162,7 +162,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -267,13 +267,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/BaseStruct/PositionEncoding/位置编码.md",
+                "file": "PLM/Alignment/DPO/DPO.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "位置编码 的大纲"
+              "title": "DPO 的大纲"
             }
           },
           {
@@ -351,14 +351,16 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "d6fd585ce9072cbe",
+  "active": "e14815c265975807",
   "lastOpenFiles": [
+    "Tool/Pytorch/transformers.md",
+    "PLM/BaseStruct/PositionEncoding/位置编码.md",
+    "PLM/Models/Minimax/Minimax01.md",
     "PLM/Alignment/DPO/DPO.md",
     "PLM/Alignment/Loss/Loss函数总结.md",
     "PLM/Alignment/PPO/PPO.md",
     "PLM/o1related/DeepSeekR/R1-related.md",
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
-    "PLM/Models/Minimax/Minimax01.md",
     "Speedup/显存预估/参数量计算量预估.md",
     "Speedup/基础概念/分布式训练框架的编程基础.md",
     "Speedup/显存预估",
@@ -381,8 +383,6 @@
     "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/BaseStruct/Transformer/Transformer.md",
     "PLM/Alignment/GRPO/GRPO.md",
-    "PLM/BaseStruct/PositionEncoding/位置编码.md",
-    "PLM/LongContext/LongContext.md",
     "PLM/o1related/DeepSeekR/img/Pasted image 20250217115706.png",
     "PLM/Alignment/PPO/img/Pasted image 20250214104100.png",
     "PLM/业界分享/面试题/img/Pasted image 20250211133440.png",
