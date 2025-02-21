@@ -60,6 +60,16 @@ Embedding之后的序列会输入Encoder。在最底层的block中，x将直接�
 ![image-20210829120024927](img/image-20210829120024927.png)
 
 
+在Transformer架构中，**前馈神经网络（Feed-Forward Network, FFN）的参数量最大** 。 
+**FFN的作用**
+-  **特征增强**：对自注意力输出的特征进行非线性变换，增强模型的表达能力。
+-  **跨维度映射**：通过扩展和压缩维度，捕捉更复杂的语义关系。
+- **与注意力互补**：自注意力关注全局依赖，FFN则聚焦局部特征的非线性组合
+
+[聊一聊Transformer中的FFN](https://zhuanlan.zhihu.com/p/685943779)
+
+![](img/Pasted%20image%2020250220210315.png)
+
 
 
 

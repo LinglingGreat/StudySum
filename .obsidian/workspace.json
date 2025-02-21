@@ -78,20 +78,6 @@
             }
           },
           {
-            "id": "ebd527e660e5982f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "DeepSeek-R1"
-            }
-          },
-          {
             "id": "c3defbd6f45ea2ff",
             "type": "leaf",
             "state": {
@@ -134,6 +120,34 @@
             }
           },
           {
+            "id": "e86c254896c693be",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/BaseStruct/Transformer/Transformer.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Transformer"
+            }
+          },
+          {
+            "id": "38538af998ec21bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/预训练语言模型.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "预训练语言模型"
+            }
+          },
+          {
             "id": "d6fd585ce9072cbe",
             "type": "leaf",
             "state": {
@@ -162,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -194,7 +208,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "rope",
+                "query": "FFN",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -267,13 +281,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/DPO/DPO.md",
+                "file": "PLM/业界分享/面试题/LLM面试题.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "DPO 的大纲"
+              "title": "LLM面试题 的大纲"
             }
           },
           {
@@ -351,16 +365,34 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "e14815c265975807",
+  "active": "1838cb65a169f00e",
   "lastOpenFiles": [
+    "PLM/o1related/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221164305.png",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221164138.png",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221162023.png",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221161859.png",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221161705.png",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221161105.png",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221155622.png",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221154759.png",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221154640.png",
+    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221154402.png",
+    "PLM/o1related/Open-Reasoner-Zero/img",
+    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
+    "PLM/o1related/Open-Reasoner-Zero",
+    "PLM/o1related/DeepSeekR/R1-related.md",
+    "PLM/BaseStruct/Transformer/Transformer.md",
+    "PLM/预训练语言模型.md",
+    "PLM/NLGSum/预训练时代下的文本生成｜模型 & 技巧.md",
+    "BasicKnow/others/神经网络概述.md",
+    "BasicKnow/LossFunction/常用损失函数.md",
+    "PLM/Alignment/DPO/DPO.md",
     "Tool/Pytorch/transformers.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/Models/Minimax/Minimax01.md",
-    "PLM/Alignment/DPO/DPO.md",
     "PLM/Alignment/Loss/Loss函数总结.md",
     "PLM/Alignment/PPO/PPO.md",
-    "PLM/o1related/DeepSeekR/R1-related.md",
-    "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "Speedup/显存预估/参数量计算量预估.md",
     "Speedup/基础概念/分布式训练框架的编程基础.md",
     "Speedup/显存预估",
@@ -372,34 +404,15 @@
     "PLM/Models/DeepSeek/DeepSeekv3.md",
     "PLM/o1related/Kimi/Kimik1.5.md",
     "PLM/o1related/ReFT/ReFT.md",
-    "PLM/o1related/Kimi/img/Pasted image 20250219124244.png",
-    "PLM/o1related/Kimi/img/Pasted image 20250219124226.png",
     "PLM/o1related/README.md",
     "PLM/o1related/ReFT",
-    "PLM/o1related/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
-    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
-    "Speedup/Megatron/Megatron.md",
-    "Speedup/模型并行/模型并行训练.md",
-    "PLM/业界分享/面试题/LLM面试题.md",
-    "PLM/BaseStruct/Transformer/Transformer.md",
-    "PLM/Alignment/GRPO/GRPO.md",
-    "PLM/o1related/DeepSeekR/img/Pasted image 20250217115706.png",
-    "PLM/Alignment/PPO/img/Pasted image 20250214104100.png",
-    "PLM/业界分享/面试题/img/Pasted image 20250211133440.png",
-    "PLM/业界分享/面试题/img/Pasted image 20250210154618.png",
     "PLM/业界分享/面试题/img",
     "PLM/业界分享/面试题",
     "未命名.canvas",
-    "PLM/Alignment/Loss/img/Pasted image 20250207150602.png",
-    "PLM/Alignment/Loss/img/Pasted image 20250207150536.png",
-    "PLM/Alignment/Loss/img/Pasted image 20250207150351.png",
-    "PLM/Alignment/Loss/img/Pasted image 20250207142428.png",
     "PLM/Alignment/Loss/img",
     "PLM/Alignment/Loss",
     "PLM/o1related/rStar-Math/img",
     "PLM/o1related/rStar-Math",
-    "PLM/o1related",
-    "PLM/Agent/Operator",
     "未命名 1.canvas"
   ]
 }
