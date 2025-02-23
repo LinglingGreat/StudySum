@@ -100,7 +100,7 @@ RAGEN 是用于训练智能体模型的 DeepSeek-R1 (-Zero) 方法的首次复�
 
 [Deepseek R1 Zero成功复现, 三阶段RL，Response长度涨幅超50%，涌现语言混杂，double-check, Verify, Let's Summarize！](https://zhuanlan.zhihu.com/p/21290410831)
 - 代码：[GitHub - Unakar/Logic-RL](https://github.com/Unakar/Logic-RL)
-- 飞书：[逻辑Puzzle上Deepseek R1 Zero成功复现, 三阶段RL，Response长度涨幅超50%，涌现语言混杂，double-check, Verify, Let's Summarize！ - 飞书云文档](https://evxpwrsfkdb.feishu.cn/docx/NokEdaMBmo6aqZxVdxkcSm2cnab)
+- 飞书：[逻辑Puzzle上Deepseek R1 Zero成功复现, 三阶段RL，Response长度涨幅超50%，涌现语言混杂，double-check, Verify, Let's Summarize！ - 飞书云文档](http s://evxpwrsfkdb.feishu.cn/docx/NokEdaMBmo6aqZxVdxkcSm2cnab)
 - 
 
 ## unlock-deepseek

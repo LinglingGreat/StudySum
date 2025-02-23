@@ -176,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -208,7 +208,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "FFN",
+                "query": "tag:#td",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -281,13 +281,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/面试题/LLM面试题.md",
+                "file": "PLM/o1related/DeepSeekR/R1-related.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "LLM面试题 的大纲"
+              "title": "R1-related 的大纲"
             }
           },
           {
@@ -365,8 +365,11 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "1838cb65a169f00e",
+  "active": "c3defbd6f45ea2ff",
   "lastOpenFiles": [
+    "PLM/BaseStruct/Transformer/Transformer.md",
+    "PLM/o1related/ReFT/ReFT.md",
+    "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/o1related/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221164305.png",
     "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221164138.png",
@@ -382,7 +385,6 @@
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "PLM/o1related/Open-Reasoner-Zero",
     "PLM/o1related/DeepSeekR/R1-related.md",
-    "PLM/BaseStruct/Transformer/Transformer.md",
     "PLM/预训练语言模型.md",
     "PLM/NLGSum/预训练时代下的文本生成｜模型 & 技巧.md",
     "BasicKnow/others/神经网络概述.md",
@@ -403,7 +405,6 @@
     "PLM/BaseStruct/GQA/MQA&GQA.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
     "PLM/o1related/Kimi/Kimik1.5.md",
-    "PLM/o1related/ReFT/ReFT.md",
     "PLM/o1related/README.md",
     "PLM/o1related/ReFT",
     "PLM/业界分享/面试题/img",
