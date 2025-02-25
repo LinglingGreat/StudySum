@@ -65,6 +65,7 @@ Embedding之后的序列会输入Encoder。在最底层的block中，x将直接�
 -  **特征增强**：对自注意力输出的特征进行非线性变换，增强模型的表达能力。
 -  **跨维度映射**：通过扩展和压缩维度，捕捉更复杂的语义关系。
 - **与注意力互补**：自注意力关注全局依赖，FFN则聚焦局部特征的非线性组合
+- FFN的加入**引入了非线性(ReLu激活函数)，变换了attention output的空间, 从而增加了模型的表现能力**。
 
 [聊一聊Transformer中的FFN](https://zhuanlan.zhihu.com/p/685943779)
 
@@ -178,6 +179,21 @@ Encoder中的Multi-Head Attention是基于Self-Attention地，Decoder中的第�
 
 在神经网络进行训练之前，都需要对于输入数据进行Normalize归一化，目的有二：1，能够加快训练的速度。2.提高训练的稳定性。
 
+Layer Normalization，其作用是**规范优化空间，加速收敛**。  
+
+1. **计算均值和方差**：对于给定层的每个输入样本，计算该层所有激活值的均值和方差。
+2. **规范化**：使用计算出的均值和方差来规范化每个激活值，确保输出分布具有统一的均值和方差。
+3. **重新缩放和偏移**：引入两个**可学习参数**（缩放因子和偏移项）来恢复在规范化过程中可能丢失的表达能力。
+
+![](img/Pasted%20image%2020250224144435.png)
+  
+
+![](https://pic1.zhimg.com/v2-3b5d6ae0e8c6adaaf3cc8ec4dfccbc64_1440w.jpg)
+
+当我们使用梯度下降算法做优化时，我们可能会对输入数据进行归一化，但是经过网络层作用后，我们的数据已经不是归一化的了。**随着网络层数的增加，数据分布不断发生变化，偏差越来越大，导致我们不得不使用更小的学习率来稳定梯度**。Layer Normalization 的作用就是**保证数据特征分布的稳定性，将数据标准化到ReLU激活函数的作用区域**，可以使得激活函数更好的发挥作用
+
+
+
 Batch Normalization，这个技巧能够让模型收敛的更快。但是Batch Normalization有一个问题——**它需要一个minibatch的数据，而且这个minibatch不能太小(比如1)**。另外一个问题就是**它不能用于RNN，因为同样一个节点在不同时刻的分布是明显不同的**。当然有一些改进的方法使得可以对RNN进行Batch Normalization，比如论文[Recurrent Batch Normalization](https://arxiv.org/abs/1603.09025)
 
 Transformer里使用了另外一种Normalization技巧，叫做Layer Normalization。
@@ -191,6 +207,7 @@ BN是对于相同的维度进行归一化，但是咱们NLP中输入的都是词
 因为LayerNorm的每个样本都是独立计算的，因此minibatch可以很小甚至可以是1。实验证明LayerNorm不仅在普通的神经网络中有效，而且对于RNN也非常有效。
 
 BatchNorm看起来比较直观，我们在数据预处理也经常会把输入Normalize成均值为0，方差为1的数据，只不过它引入了可以学习的参数使得模型可以更加需要重新缓慢(不能剧烈)的调整均值和方差。而LayerNorm似乎有效奇怪，比如第一个特征是年龄，第二个特征是身高，把一个人的这两个特征求均值和方差似乎没有什么意义。论文里有一些讨论，都比较抽象。当然把身高和年龄平均并没有什么意义，但是对于其它层的特征，我们通过平均”期望”它们的取值范围大体一致，也可能使得神经网络调整参数更加容易，如果这两个特征实在有很大的差异，模型也可以学习出合适的参数让它来把取值范围缩放到更合适的区间。
+
 
 **为什么不用BN而用LN？**
 
@@ -238,9 +255,13 @@ BatchNorm看起来比较直观，我们在数据预处理也经常会把输入No
 
 ## 优缺点
 
+传统seq2seq最大的问题在于**将Encoder端的所有信息压缩到一个固定长度的向量中**，并将其作为Decoder端首个隐藏状态的输入，来预测Decoder端第一个单词(token)的隐藏状态。在输入序列比较长的时候，这样做显然会损失Encoder端的很多信息，而且这样一股脑的把该固定向量送入Decoder端，Decoder端不能够关注到其想要关注的信息。并且模型计算不可并行，计算隐层状态 ht ​​依赖于 ht−1 以及状态 t 时刻的输入，因此需要耗费大量时间。
+
+**Transformer优点**：transformer架构完全依赖于Attention机制，解决了输入输出的长期依赖问题，并且拥有并行计算的能力，大大减少了计算资源的消耗。[self-attention](https://zhida.zhihu.com/search?content_id=157275555&content_type=Article&match_order=1&q=self-attention&zhida_source=entity)模块，让源序列和目标序列首先“自关联”起来，这样的话，源序列和目标序列自身的embedding表示所蕴含的信息更加丰富，而且后续的[FFN层](https://zhida.zhihu.com/search?content_id=157275555&content_type=Article&match_order=1&q=FFN%E5%B1%82&zhida_source=entity)也增强了模型的表达能力。[Muti-Head Attention](https://zhida.zhihu.com/search?content_id=157275555&content_type=Article&match_order=1&q=Muti-Head+Attention&zhida_source=entity)模块使得Encoder端拥有并行计算的能力
+
 **优点**：（1）虽然Transformer最终也没有逃脱传统学习的套路，Transformer也只是一个全连接（或者是一维卷积）加Attention的结合体。但是其设计已经足够有创新，因为其抛弃了在NLP中最根本的RNN或者CNN并且取得了非常不错的效果，算法的设计非常精彩，值得每个深度学习的相关人员仔细研究和品位。（2）Transformer的设计最大的带来性能提升的关键是将任意两个单词的距离是1，这对解决NLP中棘手的长期依赖问题是非常有效的。（3）Transformer不仅仅可以应用在NLP的机器翻译领域，甚至可以不局限于NLP领域，是非常有科研潜力的一个方向。（4）算法的并行性非常好，符合目前的硬件（主要指GPU）环境。
 
-**缺点**：（1）粗暴的抛弃RNN和CNN虽然非常炫技，但是它也使模型丧失了捕捉局部特征的能力，RNN + CNN + Transformer的结合可能会带来更好的效果。（2）Transformer失去的位置信息其实在NLP中非常重要，而论文中在特征向量中加入Position Embedding也只是一个权宜之计，并没有改变Transformer结构上的固有缺陷。 #td 
+**缺点**：（1）粗暴的抛弃RNN和CNN虽然非常炫技，但是它也使模型丧失了捕捉局部特征的能力，RNN + CNN + Transformer的结合可能会带来更好的效果。（2）Transformer失去的位置信息其实在NLP中非常重要，而论文中在特征向量中加入Position Embedding也只是一个权宜之计，并没有改变Transformer结构上的固有缺陷。 
 
 ## 代码
 
@@ -683,3 +704,4 @@ Transformer不能捕获长距离信息，本质原因还是因为计算量过大
 
 https://amatriain.net/blog/transformer-models-an-introduction-and-catalog-2d1e9039f376/?continueFlag=9b76108503b8b1f75193d9be9ae5b05c
 
+[Transformer - Attention is all you need](https://zhuanlan.zhihu.com/p/311156298)

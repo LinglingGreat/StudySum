@@ -101,6 +101,25 @@ def forward(
                 return reward
 ```
 
+## reward hacking
+
+[Amodei et al. (2016)](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/1606.06565) 指出了在 RL 训练中缓解reward hacking的一些方向：
+
+1. _对抗性奖励函数。_ 我们将奖励函数本身视为一个自适应 AI 智能体，它可以适应模型发现的新技巧，即在奖励很高但人类评分很低的情况下。
+2. _模型前瞻。_ 可以根据未来预期状态给予奖励；例如，如果 AI 智能体要替换奖励函数，它将获得负奖励。
+3. _对抗性盲化。_ 我们可以用某些变量来蒙蔽模型，这样 AI 智能体就无法学习使其能够破解奖励函数的信息。
+4. _精心设计。_ 通过精心设计可以避免某些针对系统设计的reward hacking；例如，对 AI 智能体进行沙箱化，以将其行为与奖励信号隔离开来。
+5. _奖励上限 (Reward capping)._ 这种策略旨在简单地限制最大可能的奖励，从而有效防止 AI 智能体通过破解来获得超高回报策略的罕见情况。  
+    
+6. _反例抵抗 (Counterexample resistance)._ 提高对抗鲁棒性应有助于增强奖励函数的鲁棒性。  
+    
+7. _多种奖励的组合 (Combination of multiple rewards)._ 结合不同类型的奖励可以增加破解的难度。  
+    
+8. _奖励预训练 (Reward pretraining)._ 我们可以从 (状态, 奖励) 样本的集合中学习奖励函数。然而，这种监督训练设置的质量会影响结果，可能带来其他问题。[RLHF](https://link.zhihu.com/?target=https%3A//lilianweng.github.io/posts/2021-01-02-controllable-text-generation/%23rl-fine-tuning-with-human-preferences) 依赖于此，但学习到的标量奖励模型很容易学习到不期望的特性。  
+    
+9. _变量漠视 (Variable indifference)._ 目标是要求 AI 智能体优化环境中的某些变量，而忽略其他变量。  
+    
+10. _绊线 (Trip wires)._ 我们可以故意引入一些漏洞，并设置监控和警报，以便在任何漏洞被利用进行reward hacking时发出警报。 在强化学习（RL）设置中，如果人类反馈以对AI 智能体行为的_批准_形式出现，[Uesato et al. (2020)](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/2011.08827) 提出了使用**解耦批准**来防止奖励篡改。如果反馈以 $(s, a)$ (状态，行为) 为条件，一旦这个状态-行为对发生了奖励篡改，我们就永远无法获得状态 $s$ 下行为 $a$ 的未被破坏的反馈。解耦意味着用于收集反馈的查询行为是从在世界中采取的行为独立采样的。甚至在行为在世界中执行之前就收到了反馈，从而防止了该行为破坏其自身的反馈。
 ## 参考资料
 
 [让 LLM 来评判 | 奖励模型相关内容](https://mp.weixin.qq.com/s/xiQblwvDY8cGz1A42Yb82g)

@@ -50,31 +50,17 @@
             }
           },
           {
-            "id": "18f7bcb0e4437570",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Pytorch/transformers.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "transformers"
-            }
-          },
-          {
             "id": "c3defbd6f45ea2ff",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/o1related/ReFT/ReFT.md",
+                "file": "PLM/o1related/DeepSeekR/R1-related.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ReFT"
+              "title": "R1-related"
             }
           },
           {
@@ -120,20 +106,6 @@
             }
           },
           {
-            "id": "6cd0e639cb632e96",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/BaseStruct/Attention/Attention.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Attention"
-            }
-          },
-          {
             "id": "d6fd585ce9072cbe",
             "type": "leaf",
             "state": {
@@ -162,7 +134,7 @@
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -267,13 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/BaseStruct/Attention/Attention.md",
+                "file": "PLM/o1related/DeepSeekR/R1-related.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Attention 的大纲"
+              "title": "R1-related 的大纲"
             }
           },
           {
@@ -351,17 +323,27 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "6cd0e639cb632e96",
+  "active": "c3defbd6f45ea2ff",
   "lastOpenFiles": [
-    "PLM/BaseStruct/Transformer/Transformer.md",
-    "PLM/BaseStruct/Attention/Attention.md",
-    "PLM/预训练语言模型.md",
-    "Tool/Pytorch/transformers.md",
-    "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/o1related/ReFT/ReFT.md",
+    "Tool/Linux/Linux.md",
+    "PLM/BaseStruct/Transformer/Transformer.md",
+    "PLM/BaseStruct/PositionEncoding/位置编码.md",
+    "PLM/Alignment/PPO/PPO.md",
+    "PLM/Alignment/RewardModel/RewardModel.md",
+    "Speedup/FlashAttention/FlashAttention.md",
+    "Tool/Git/Git.md",
+    "Tool/python/Anaconda.md",
+    "Tool/Pytorch/Pytorch.md",
+    "Tool/Pytorch/transformers.md",
+    "Tool/python/Deepspeed.md",
+    "PLM/o1related/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
+    "PLM/BaseStruct/Attention/Attention.md",
+    "PLM/BaseStruct/Transformer/img/Pasted image 20250224144435.png",
+    "PLM/预训练语言模型.md",
+    "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/o1related/DeepSeekR/DeepSeek-R1.md",
     "PLM/o1related/DeepSeekR/R1-related.md",
-    "PLM/o1related/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221164305.png",
     "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221164138.png",
     "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221162023.png",
@@ -371,27 +353,17 @@
     "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221155622.png",
     "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221154759.png",
     "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221154640.png",
-    "PLM/o1related/Open-Reasoner-Zero/img/Pasted image 20250221154402.png",
     "PLM/o1related/Open-Reasoner-Zero/img",
     "PLM/o1related/Open-Reasoner-Zero",
     "PLM/NLGSum/预训练时代下的文本生成｜模型 & 技巧.md",
     "BasicKnow/others/神经网络概述.md",
     "BasicKnow/LossFunction/常用损失函数.md",
     "PLM/Alignment/DPO/DPO.md",
-    "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/Models/Minimax/Minimax01.md",
     "PLM/Alignment/Loss/Loss函数总结.md",
-    "PLM/Alignment/PPO/PPO.md",
     "Speedup/显存预估/参数量计算量预估.md",
     "Speedup/基础概念/分布式训练框架的编程基础.md",
     "Speedup/显存预估",
-    "Speedup/README.md",
-    "Speedup/训练tips/训练tips.md",
-    "Speedup/FlashAttention/FlashAttention.md",
-    "PLM/BaseStruct/GQA/MQA&GQA.md",
-    "PLM/Models/DeepSeek/DeepSeekv3.md",
-    "PLM/o1related/Kimi/Kimik1.5.md",
-    "PLM/o1related/README.md",
     "PLM/o1related/ReFT",
     "PLM/业界分享/面试题/img",
     "PLM/业界分享/面试题",
