@@ -231,3 +231,5 @@ https://zhuanlan.zhihu.com/p/19838650037
 
 [聊聊Reasoning Model的精巧实现（ReFT, Kimi K1.5, DeepSeek R1）](https://zhuanlan.zhihu.com/p/20356958978)
 
+[GitHub - zzli2022/Awesome-System2-Reasoning-LLM](https://github.com/zzli2022/Awesome-System2-Reasoning-LLM)
+
