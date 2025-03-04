@@ -60,3 +60,20 @@ https://huggingface.co/spaces/Jellyfish042/UncheatableEval
 [【分布式训练技术分享七】聊聊字节 AML 万卡工作 MegaScale: Scaling Large Language Model Training to More Than 10,000 GPUs - 知乎](https://zhuanlan.zhihu.com/p/684619370)
 
 [OneFlow —— 让每一位算法工程师都有能力训练 GPT - 知乎](https://zhuanlan.zhihu.com/p/371499074?utm_psn=1749361005107462144)
+
+
+
+## DeepSeek开源项目
+
+[FlashMLA](FlashMLA/FlashMLA.md)
+
+[DeepEP](DeepEP/DeepEP.md)
+
+[DeepGEMM](DeepGEMM/DeepGEMM.md)
+
+[DualPipe&EPLB](DualPipe/DualPipe&EPLB.md)
+
+[DeepSeek-V3 / R1 推理系统概览](https://zhuanlan.zhihu.com/p/27181462601)
+
+**优化目标是：更大的吞吐，更低的延迟。**
+
