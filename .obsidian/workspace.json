@@ -50,20 +50,6 @@
             }
           },
           {
-            "id": "c3defbd6f45ea2ff",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/CoT/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
             "id": "6205edb56ec3bf73",
             "type": "leaf",
             "state": {
@@ -134,20 +120,6 @@
             }
           },
           {
-            "id": "10b2262ec99c3f38",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/CoT/demystify-long-cot/demystify-long-cot.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "demystify-long-cot"
-            }
-          },
-          {
             "id": "ca7f2c3aa3e7bfd9",
             "type": "leaf",
             "state": {
@@ -162,7 +134,7 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -267,13 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/CoT/demystify-long-cot/demystify-long-cot.md",
+                "file": "Tool/Git/Git.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "demystify-long-cot 的大纲"
+              "title": "Git 的大纲"
             }
           },
           {
@@ -351,8 +323,11 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "10b2262ec99c3f38",
+  "active": "d1601f8bc2b807d7",
   "lastOpenFiles": [
+    "PLM/CoT/README.md",
+    "PLM/Alignment/PPO/PPO.md",
+    "PLM/CoT/demystify-long-cot/demystify-long-cot.md",
     "PLM/CoT/demystify-long-cot/img/Pasted image 20250304110924.png",
     "PLM/CoT/demystify-long-cot/img/Pasted image 20250304105135.png",
     "PLM/CoT/demystify-long-cot/img/Pasted image 20250304104856.png",
@@ -363,11 +338,8 @@
     "PLM/CoT/demystify-long-cot/img/Pasted image 20250304101219.png",
     "PLM/CoT/demystify-long-cot/img/Pasted image 20250304101157.png",
     "PLM/CoT/demystify-long-cot/img/Pasted image 20250304100726.png",
-    "PLM/CoT/demystify-long-cot/img/Pasted image 20250304100048.png",
     "PLM/CoT/demystify-long-cot/img",
     "PLM/CoT/Kimi/Kimik1.5.md",
-    "PLM/CoT/README.md",
-    "PLM/CoT/demystify-long-cot/demystify-long-cot.md",
     "PLM/CoT/CoT.md",
     "PLM/CoT/demystify-long-cot",
     "Speedup/README.md",
@@ -385,7 +357,6 @@
     "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "Tool/Linux/Linux.md",
     "PLM/CoT/DeepSeekR/R1-related.md",
-    "PLM/Alignment/PPO/PPO.md",
     "PLM/CoT/ReFT/ReFT.md",
     "PLM/BaseStruct/Transformer/Transformer.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
