@@ -133,8 +133,7 @@
               "title": "R1-related"
             }
           }
-        ],
-        "currentTab": 8
+        ]
       }
     ],
     "direction": "vertical"
@@ -239,13 +238,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/CoT/DeepSeekR/R1-related.md",
+                "file": "News/Inbox.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "R1-related 的大纲"
+              "title": "Inbox 的大纲"
             }
           },
           {
@@ -323,10 +322,11 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "d1126392193d687e",
+  "active": "72f00fb46c6ee819",
   "lastOpenFiles": [
-    "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
+    "Tool/Linux/Linux.md",
     "PLM/CoT/DeepSeekR/R1-related.md",
+    "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "PLM/Alignment/PPO/PPO.md",
     "Tool/Git/Git.md",
     "PLM/CoT/README.md",
@@ -357,7 +357,6 @@
     "Speedup/DeepEP",
     "Speedup/FlashMLA",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
-    "Tool/Linux/Linux.md",
     "PLM/CoT/ReFT/ReFT.md",
     "PLM/BaseStruct/Transformer/Transformer.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
