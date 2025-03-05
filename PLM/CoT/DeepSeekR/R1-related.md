@@ -104,6 +104,10 @@ RAGEN 是用于训练智能体模型的 DeepSeek-R1 (-Zero) 方法的首次复�
 
 [摸着Logic-RL，复现7B - R1 zero](https://zhuanlan.zhihu.com/p/25982514066)
 
+7b模型+数学和逻辑推理，bs=8,rollout=8,kl=0.001,len=4096
+
+更长的回答不一定是更好的推理过程；语言混合现象会阻碍推理；thinking token的频率提高并不一定有帮助。sft倾向于记忆，而rl更容易泛化。cold start可以做的稍微好一点，但不一定有必要；课程学习依然是有用的。
+
 ## unlock-deepseek
 
 [DeepSeek R1 Zero中文复现教程来了！](https://mp.weixin.qq.com/s/Z7P61IV3n4XYeC0Et_fvwg)
@@ -199,7 +203,29 @@ DeepSeek-R1-Zero 最鼓舞人心的结果之一是通过纯强化学习 (RL) 实
 - 难的query上 格式奖励更容易hack
 - **难的query上 似乎更容易出现accuracy 与 response 同增的情况**
 
+
+[Courage：Deepseek-R1-Zero复现实验](https://zhuanlan.zhihu.com/p/27100972384)
+
+- 目前的RL微调模型相比DeepSeek-R1蒸馏的模型依然差距显著；也许就像deepseek-r1论文中提到的，用很强的大模型对小模型蒸馏比直接对小模型做RL效果更好；
+
+- aha moment在很早的step中就已经出现，说明base模型中已经存在拟人化的反思行为，并不是强化学习凭空激发出来的；即便反思，最后结果也可能是错的；
+
+- kl在前期可能确实没必要，即不需要让模型和base距离比较近；当模型能力增长到一定程度后，再增加kl，防止模型泛化能力变差；
+
+- 简单题（GSM8K&Math）并不会出现response、reward同时增长的现象；
+
+- RL scaling law：（采样）数据越多效果越好；
+
+- 即便不加think step by step，模型也可以出现“思考”行为；这说明强化学习不仅仅是通过“prompt内化”来提高模型思考能力，而是自我探索出提高模型思考能力的思维方式；
+
+- reward设计非常影响RL微调效果，需要一定的实验探索；对于数学题来说，只要规定了回答正确得1分，格式是否惩罚结果都差不多；
+
+- 32B比14B具有更高的训练和测试精度；14B比32B的最终回复长度更长，可能因为14B基座能力差，所以需要更多的推理时间/长度才能效果好；
+
+
 ## 参考资料
 
 [DeepSeek-R1复现方案梳理](https://mp.weixin.qq.com/s/3LzuD1yWuGiHnP3xGYls0w)
+
+[llm+rl训练项目的一些takeaway](https://zhuanlan.zhihu.com/p/27973092256)(持续更新中)
 

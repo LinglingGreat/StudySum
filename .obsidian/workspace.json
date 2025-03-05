@@ -120,21 +120,21 @@
             }
           },
           {
-            "id": "ca7f2c3aa3e7bfd9",
+            "id": "d1126392193d687e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Speedup/DualPipe/DualPipe&EPLB.md",
+                "file": "PLM/CoT/DeepSeekR/R1-related.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DualPipe&EPLB"
+              "title": "R1-related"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -239,13 +239,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "PLM/CoT/DeepSeekR/R1-related.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Git 的大纲"
+              "title": "R1-related 的大纲"
             }
           },
           {
@@ -323,10 +323,13 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "d1601f8bc2b807d7",
+  "active": "d1126392193d687e",
   "lastOpenFiles": [
-    "PLM/CoT/README.md",
+    "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
+    "PLM/CoT/DeepSeekR/R1-related.md",
     "PLM/Alignment/PPO/PPO.md",
+    "Tool/Git/Git.md",
+    "PLM/CoT/README.md",
     "PLM/CoT/demystify-long-cot/demystify-long-cot.md",
     "PLM/CoT/demystify-long-cot/img/Pasted image 20250304110924.png",
     "PLM/CoT/demystify-long-cot/img/Pasted image 20250304105135.png",
@@ -354,15 +357,12 @@
     "Speedup/DeepEP",
     "Speedup/FlashMLA",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
-    "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "Tool/Linux/Linux.md",
-    "PLM/CoT/DeepSeekR/R1-related.md",
     "PLM/CoT/ReFT/ReFT.md",
     "PLM/BaseStruct/Transformer/Transformer.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/Alignment/RewardModel/RewardModel.md",
     "Speedup/FlashAttention/FlashAttention.md",
-    "Tool/Git/Git.md",
     "Tool/python/Anaconda.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/Pytorch/transformers.md",
