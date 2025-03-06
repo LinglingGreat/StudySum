@@ -148,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -253,13 +253,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/DataStrategy/PreSelect/PreSelect.md",
+                "file": "PLM/CoT/DeepSeekR/R1-related.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "PreSelect 的大纲"
+              "title": "R1-related 的大纲"
             }
           },
           {
@@ -337,8 +337,10 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "8bffc972b81b9cd5",
+  "active": "d1126392193d687e",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "PLM/DataStrategy/PreSelect/PreSelect.md",
     "PLM/DataStrategy/PreSelect/img/Pasted image 20250305194055.png",
     "PLM/DataStrategy/PreSelect/img/Pasted image 20250305194039.png",
     "PLM/DataStrategy/PreSelect/img/Pasted image 20250305194023.png",
@@ -349,11 +351,9 @@
     "PLM/DataStrategy/PreSelect/img/Pasted image 20250305192621.png",
     "PLM/DataStrategy/PreSelect/img",
     "PLM/CoT/CoD/CoD.md",
-    "PLM/DataStrategy/PreSelect/PreSelect.md",
     "PLM/DataStrategy/PreSelect",
     "PLM/CoT/CoD/img/Pasted image 20250305190612.png",
     "PLM/CoT/CoD/img/Pasted image 20250305190555.png",
-    "PLM/CoT/CoD/img/Pasted image 20250305190540.png",
     "PLM/CoT/CoD/img",
     "PLM/CoT/CoT.md",
     "PLM/CoT/ProgramofThoughts/ProgramofThoughts.md",
@@ -362,7 +362,6 @@
     "PLM/CoT/cognitive_behaviors/cognitiva_behaviors.md",
     "News/Inbox.md",
     "PLM/CoT/cognitive_behaviors",
-    "Tool/Linux/Linux.md",
     "PLM/CoT/DeepSeekR/R1-related.md",
     "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "PLM/Alignment/PPO/PPO.md",

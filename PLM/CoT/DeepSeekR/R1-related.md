@@ -210,11 +210,11 @@ DeepSeek-R1-Zero 最鼓舞人心的结果之一是通过纯强化学习 (RL) 实
 
 - aha moment在很早的step中就已经出现，说明base模型中已经存在拟人化的反思行为，并不是强化学习凭空激发出来的；即便反思，最后结果也可能是错的；
 
-- kl在前期可能确实没必要，即不需要让模型和base距离比较近；当模型能力增长到一定程度后，再增加kl，防止模型泛化能力变差；
+- 由于base模型输出一般比较差，kl在前期可能确实没必要，即不需要让模型和base距离比较近；当模型能力增长到一定程度后，再增加kl，防止模型泛化能力变差；
 
-- 简单题（GSM8K&Math）并不会出现response、reward同时增长的现象；
+- 简单题（GSM8K&Math）并不会出现response、reward同时增长的现象；可能因为GSM8K&Math对于模型很简单，不需要长思维链的训练准确率就可以达到90%；简单题难以提升困难Benchmark的分数，难题可以显著提升困难Benchmark的分数；简单题训练时依然存在Aha moment，说明base模型本身具有拟人化的反思能力；
 
-- RL scaling law：（采样）数据越多效果越好；
+- RL scaling law：（采样）数据越多效果越好；另外一个好处是：采样越多，advantage估计的越准；n_samples_per_prompt=1时不会出现response、reward同时增长的现象；可能因为n_samples_per_prompt=1时模型探索太少，没有发现长思维链的好处；
 
 - 即便不加think step by step，模型也可以出现“思考”行为；这说明强化学习不仅仅是通过“prompt内化”来提高模型思考能力，而是自我探索出提高模型思考能力的思维方式；
 
