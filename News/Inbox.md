@@ -186,8 +186,6 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 
 ## 2025.3
 
-Cognitive Behaviors that Enable Self-Improving Reasoners, or, Four Habits of Highly Effective STaRs
-- [为什么Qwen能自我改进推理，Llama却不行？斯坦福找到了原理](https://mp.weixin.qq.com/s/OvS61OrDp6rB-R5ELg48Aw)
 
 
 
