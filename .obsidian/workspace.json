@@ -153,16 +153,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/CoT/DeepSeekR/R1-related.md",
+                "file": "PLM/CoT/DeepSeekR/LogicRL/LogicRL复现.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "R1-related"
+              "title": "LogicRL复现"
+            }
+          },
+          {
+            "id": "700701a53cb53b1e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/CoT/cognitive_behaviors/cognitiva_behaviors.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "cognitiva_behaviors"
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -219,7 +233,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 287.5
+    "width": 224.5
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -267,13 +281,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/PPO/PPO.md",
+                "file": "PLM/CoT/cognitive_behaviors/cognitiva_behaviors.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "PPO 的大纲"
+              "title": "cognitiva_behaviors 的大纲"
             }
           },
           {
@@ -333,11 +347,12 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
-    "width": 346.5
+    "width": 462.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -351,9 +366,22 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "47a3b358c533f22d",
+  "active": "700701a53cb53b1e",
   "lastOpenFiles": [
+    "PLM/CoT/DeepSeekR/LogicRL/LogicRL复现.md",
+    "PLM/CoT/DeepSeekR/LogicRL/img/Pasted image 20250308144128.png",
+    "PLM/CoT/DeepSeekR/LogicRL/img/Pasted image 20250308143552.png",
+    "PLM/CoT/DeepSeekR/LogicRL/img/Pasted image 20250308141510.png",
+    "PLM/CoT/DeepSeekR/LogicRL/img/Pasted image 20250308140002.png",
+    "PLM/CoT/DeepSeekR/LogicRL/img/Pasted image 20250308135230.png",
+    "PLM/CoT/cognitive_behaviors/cognitiva_behaviors.md",
+    "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
+    "PLM/CoT/DeepSeekR/LogicRL/img/Pasted image 20250308141630.png",
+    "PLM/CoT/DeepSeekR/LogicRL/img/Pasted image 20250308135030.png",
+    "PLM/CoT/DeepSeekR/LogicRL/img",
     "PLM/CoT/DeepSeekR/R1-related.md",
+    "PLM/CoT/DeepSeekR/LogicRL",
+    "PLM/Alignment/PPO/PPO.md",
     "Speedup/量化/模型量化.md",
     "Speedup/量化/img/Pasted image 20250307134524.png",
     "Speedup/量化/img/Pasted image 20250307134504.png",
@@ -366,13 +394,6 @@
     "Tool/Git/Git.md",
     "PLM/DataStrategy/PreSelect/PreSelect.md",
     "PLM/DataStrategy/PreSelect/img/Pasted image 20250305194055.png",
-    "PLM/DataStrategy/PreSelect/img/Pasted image 20250305194039.png",
-    "PLM/DataStrategy/PreSelect/img/Pasted image 20250305194023.png",
-    "PLM/DataStrategy/PreSelect/img/Pasted image 20250305193954.png",
-    "PLM/DataStrategy/PreSelect/img/Pasted image 20250305193922.png",
-    "PLM/DataStrategy/PreSelect/img/Pasted image 20250305192914.png",
-    "PLM/DataStrategy/PreSelect/img/Pasted image 20250305192831.png",
-    "PLM/DataStrategy/PreSelect/img/Pasted image 20250305192621.png",
     "PLM/DataStrategy/PreSelect/img",
     "PLM/CoT/CoD/CoD.md",
     "PLM/DataStrategy/PreSelect",
@@ -381,11 +402,8 @@
     "PLM/CoT/ProgramofThoughts/ProgramofThoughts.md",
     "PLM/Prompt/PPT/PPT.md",
     "PLM/CoT/CoD",
-    "PLM/CoT/cognitive_behaviors/cognitiva_behaviors.md",
     "News/Inbox.md",
     "PLM/CoT/cognitive_behaviors",
-    "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
-    "PLM/Alignment/PPO/PPO.md",
     "PLM/CoT/README.md",
     "PLM/CoT/demystify-long-cot/demystify-long-cot.md",
     "PLM/CoT/demystify-long-cot/img",
@@ -393,11 +411,8 @@
     "PLM/CoT/demystify-long-cot",
     "Speedup/DualPipe/DualPipe&EPLB.md",
     "Speedup/EPLB/EPLB.md",
-    "Speedup/EPLB",
     "Speedup/FlashMLA/FlashMLA.md",
-    "Speedup/DualPipe",
     "Speedup/DeepEP/DeepEP.md",
-    "Speedup/DeepGEMM/DeepGEMM.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
