@@ -416,6 +416,7 @@ def _get_reward_model(base_pretrained_model, base_llm_model, head_prefix="value_
     # 更新迭代数，相当于过了多少遍数据
     parser.add_argument("--num_episodes", type=int, default=1)
     # 生成的总batch_size，生成总量达到这个batch_size会进行PPO更新
+    # 每一个step的训练，其实都是rollout_batch_size*n_samples_per_prompt条数据。
     parser.add_argument("--rollout_batch_size", type=int, default=512)
     # 每次batch生成时候的size，也就是单张卡generate时候的输入batch大小
     parser.add_argument("--micro_rollout_batch_size", type=int, default=8)
