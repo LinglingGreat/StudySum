@@ -33,6 +33,8 @@ tags:
 |                          |                                 |                                 |                          |                        |
 我们从qwen2.5-Math-7B的base model开始直接做RL。没有SFT和reward model ，RL只用了8000条MATH数据做verification，模型最后pass@1 acc 33.3% on AIME, 62.5% on AMC, and 77.2% on MATH，超过了qwen2.5-math-7B-instruct，也comparable to 一些很强的7B baselines，但是这些方法用的数据量都比我们多至少50倍，也相对更复杂。我们也看到了long cot和self reflection的涌现
 
+我们的许多实验是在发布DeepSeek-R1之前完成的。主要区别在于我们使用PPO而不是GRPO。
+
 我们写了一个博客有更多的细节 https://hkust-nlp.notion.site/simplerl-reason
 我们也完全开源了训练代码 https://github.com/hkust-nlp/simpleRL-reason
 
