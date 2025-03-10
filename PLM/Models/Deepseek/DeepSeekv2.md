@@ -11,7 +11,7 @@ institution:
   - DeepSeek
 ---
 
-## 论文基本信息
+# 论文基本信息
 
 标题：DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model
 
@@ -24,7 +24,7 @@ institution:
 框架图：
 
 
-## 背景
+# 背景
 我们提出了 DeepSeek-V2，一种强大的专家混合 (MoE) 语言模型，其特点是经济的训练和高效的推理。它总共包括236B个参数，其中每个令牌激活21B个参数，并支持128K令牌的上下文长度。 DeepSeek-V2采用多头潜在注意力（MLA）和DeepSeekMoE等创新架构。 MLA 通过将键值 (KV) 缓存显着压缩为潜在向量来保证高效推理，而 DeepSeekMoE 则可以通过稀疏计算以经济的成本训练强大的模型。与 DeepSeek 67B 相比，DeepSeek-V2 性能显着增强，同时节省了 42.5% 的训练成本，减少了 93.3% 的 KV 缓存，最大生成吞吐量提升至 5.76 倍。我们在由 8.1T 代币组成的高质量多源语料库上对 DeepSeek-V2 进行预训练，并进一步进行监督微调（SFT）和强化学习（RL）以充分释放其潜力。评估结果显示，即使只有21B个激活参数，DeepSeek-V2及其聊天版本仍然达到了开源模型中顶级的性能
 
 ![](img/Pasted%20image%2020250122112029.png)
@@ -32,13 +32,13 @@ institution:
 我们构建了由 8.1T 令牌组成的高质量、多源预训练语料库。与DeepSeek 67B（我们之前版本）（DeepSeek-AI，2024）使用的语料库相比，该语料库的数据量特别是中文数据量更大，数据质量更高。我们首先在完整的预训练语料库上预训练 DeepSeek-V2。然后，我们收集 150 万个对话会话，其中涵盖数学、代码、写作、推理、安全等各个领域，为 DeepSeek-V2 聊天 (SFT) 执行监督微调 (SFT)。最后，我们遵循 DeepSeekMath (Shao et al., 2024) 采用组相对策略优化 (GRPO) 进一步使模型与人类偏好保持一致，并生成 DeepSeek-V2 Chat (RL)。
 
 
-## 架构
+# 架构
 
 ![](img/Pasted%20image%2020250122113329.png)
 
 总的来说，DeepSeek-V2 仍然采用 Transformer 架构（Vaswani 等人，2017），其中每个 Transformer 块由一个注意力模块和一个前馈网络（FFN）组成。然而，对于注意力模块和 FFN，我们设计并采用了创新的架构。为了引起注意，我们设计了MLA，它利用低秩键值联合压缩来消除推理时键值缓存的瓶颈，从而支持高效的推理。对于 FFN，我们采用 DeepSeekMoE 架构（Dai et al., 2024），这是一种高性能 MoE 架构，能够以经济的成本训练强大的模型。 DeepSeek-V2 的架构如图 2 所示。
 
-### Multi-Head Latent Attention
+## Multi-Head Latent Attention
 
 ![](img/Pasted%20image%2020250122114057.png)
 
@@ -73,8 +73,269 @@ ROPE
 
 ![](img/Pasted%20image%2020250122120132.png)
 
+## 手撕MLA
 
-### DeepSeekMoE
+![](img/Pasted%20image%2020250309130156.png)
+
+![](img/Pasted%20image%2020250309130210.png)
+![](img/Pasted%20image%2020250309130223.png)
+
+```json
+// config_671B
+{
+    "vocab_size": 129280,
+    "dim": 7168,
+    "inter_dim": 18432,
+    "moe_inter_dim": 2048,
+    "n_layers": 61,
+    "n_dense_layers": 3,
+    "n_heads": 128,
+    "n_routed_experts": 256,
+    "n_shared_experts": 1,
+    "n_activated_experts": 8,
+    "n_expert_groups": 8,
+    "n_limited_groups": 4,
+    "route_scale": 2.5,
+    "score_func": "sigmoid",
+    "q_lora_rank": 1536,
+    "kv_lora_rank": 512,
+    "qk_nope_head_dim": 128,
+    "qk_rope_head_dim": 64,
+    "v_head_dim": 128,
+    "dtype": "fp8"
+}
+```
+
+MLA的输入及配置参数参考如下：
+
+```python
+def forward(
+    self,
+    x: torch.Tensor,
+    start_pos: int,
+    freqs_cis: torch.Tensor,
+    mask: Optional[torch.Tensor],
+):
+    """
+    Forward pass for the Multi-Headed Attention Layer (MLA).
+
+    Args:
+        x (torch.Tensor): Input tensor of shape (batch_size=2, seq_len=1, dim=7168).
+        start_pos (int): Starting position in the sequence for caching. (seq_len, d//2)
+                         KV cache 起始填充位置以通过：推理过程中记录上一个预测的token生成KV填充至
+                         KV cache lists的结束的位置end_pos计算得到。
+        freqs_cis (torch.Tensor): Precomputed complex exponential values for rotary embeddings.
+        mask (Optional[torch.Tensor]): Mask tensor to exclude certain positions from attention.
+
+    Returns:
+        torch.Tensor: Output tensor with the same shape as the input.
+
+    """
+    pass
+
+if __name__ == "__main__":
+    args = Model671BArgs
+    bs = 2
+    seq_len = 1
+    d = args.dim  # 7168
+    x = torch.randn(bs, seq_len, d)
+
+    attn_norm = RMSNorm(args.dim)
+    x = attn_norm(x)
+
+    start_pos = 0
+    mask = None
+    attn = MLA(args)
+
+    freqs_cis = precompute_freqs_cis(args)
+    freqs_cis = freqs_cis[start_pos : start_pos + seq_len]
+    # x = x.to(torch.bfloat16)
+    x = attn(x, start_pos, freqs_cis, mask=mask)
+```
+
+### Step1: 计算Query
+
+对输入的第t个token，先做低秩压缩， 然后右乘升维映射矩阵恢复原始特征维度。Query分两部分：不带位置编码的 qtC 和带RoPE旋转位置编码的 qtR。参考公式 (6)～(8)，由于源代码中输入token的_shape=(batch_size, seq_len, dim)_为行向量。 因此，矩阵右乘更加符合习惯思维。下面我会改写此公式，并更新公式的计算顺序以及各个数学量描述，便于大家结合代码理解。
+
+![](img/Pasted%20image%2020250309134138.png)
+
+![](img/Pasted%20image%2020250309134219.png)
+
+完整的代码实现如下所示：
+
+```python
+"""
+x (torch.Tensor): Input tensor of shape (batch_size=1, seq_len=1, dim=7168).
+self.wq_a.weight^T : 对应公式中的W^{DQ}
+self.wq_b.weight^T : 对应公式中的W^{UQR}
+ColumnParallelLinear 对Linear做了一层封装，适配分布式训练，切割输出特征，沿着列方向实现并行。
+"""
+self.wq_b = ColumnParallelLinear(self.q_lora_rank, self.n_heads * self.qk_head_dim)  # 1536 -> 128*192=24576
+# b,s,d=7168 => b,s,d_c=1536 => bs,s,nh*(dh+dq')=128*192=24576
+q = self.wq_b(self.q_norm(self.wq_a(x)))
+q = q.view(bsz, seqlen, self.n_local_heads, self.qk_head_dim)  # b,s,128,192
+# (b, s, 128, 192) => (b, s, 128, 128)|(b, s, 128, 64)
+q_nope, q_pe = torch.split(q, [self.qk_nope_head_dim, self.qk_rope_head_dim], dim=-1)  
+
+# 加上RoPE旋转位置编码得到带相对位置信息的Query(q_pe):
+q_pe = apply_rotary_emb(
+    q_pe, freqs_cis
+)  #  (2, 1, 128, 64) | (1,32) => (2, 1, 128, 64)
+```
+
+MLA在给定attention层下，先降维再升维到给定维度的Query参数量计算如下：
+
+_7168 * 1536 + 1536 * 16384 = 36175872_
+
+MHA计算量则为： _7168 * 16384 = 117440512_
+
+MHA参数量是MLA的3.2x，单层attention layer的参数量下降就挺明显的。参数量下降，训练推理过程的计算量和显存都会下降，训练过程其梯度也会下降，有效减小了推理成本并提升了模型的吞吐量。论文中其实给出了另一种加速视角：**减少训练过程中激活占用的显存。**
+
+> For the attention queries, we also perform a low-rank compression, which can reduce the activation memory during training
+
+### Step2：计算KV，更新KV Cache：
+
+对输入的第t个token特征向量 ht ，先做低秩压缩，然后右乘升维映射矩阵恢复原始特征维度。
+
+![](img/Pasted%20image%2020250309132320.png)
+![](img/Pasted%20image%2020250309132408.png)
+
+```python
+kv = self.wkv_a(x)  # (2,1,7168) => (2,1,512+64=576) 
+kv, k_pe = torch.split(
+            kv, [self.kv_lora_rank, self.qk_rope_head_dim], dim=-1
+        )  # (2,100,576) => (2,100,512) 和 (2,100,64)
+k_pe = apply_rotary_emb(k_pe.unsqueeze(2), freqs_cis)  # (2,1,1,64)
+# self.kv_cache预设一个大一点的全零张量(8,16384,512)缓存kv
+self.kv_cache[:bsz, start_pos:end_pos] = self.kv_norm(kv)  # (2,1,512) palce into (:2,0:1,512)
+# self.pe_cache预设一个大一点的全零张量(8,16384,64) 缓存key的位置编码, 这里命名有点迷惑性, 不如叫:self.k_pe_cache?
+self.pe_cache[:bsz, start_pos:end_pos] = k_pe.squeeze(2)  # (2,1,64) palce into (:2,0:1,64)
+```
+
+_**P.S.**_ MLA KVCache缓存了低秩压缩的 ctKV,ktR ，而不是升维后的Key和Value，前者在单层attention layer下大小为 dc （在DeepSeekV3-671B大模型中=512），后者缓存大小为 2nhdh （在DeepSeekV3-671B大模型中=128x(128+128)=32768）, 前者缓存成本减小了32768/512=64x。额外增加的缓存 ktR 为 dhR（在DeepSeekV3-671B大模型中=64 << 512，增加少量的缓存，但是，却带来相对位置编码信息） 。
+### Step3：计算单层Attention
+
+![](img/Pasted%20image%2020250309132615.png)
+
+```python
+# 先reshape，再split效果和上述公式一致
+q = q.view(bsz, seqlen, self.n_local_heads, self.qk_head_dim)  # b, s, 128, 192
+q_nope, q_pe = torch.split(
+    q, [self.qk_nope_head_dim, self.qk_rope_head_dim], dim=-1
+)  # (2,1,128,192) => (2,1,128,128),(2,1,128,64)
+
+# 加上RoPE旋转位置编码得到带相对位置信息的Query(q_pe):
+q_pe = apply_rotary_emb(
+    q_pe, freqs_cis
+)  #  (2, 1, 128, 64) | (1,32) => (2, 1, 128, 64)
+```
+
+
+$∑_{j=1}^tc_j^{KV}$ ：对应源代码中 self.kv_cache[:bsz,:end_pos] ;
+
+```python
+# 这里注意下，当前token计算的kv会经过RMSNorm后缓存到KVCache中
+self.wkv_b = ColumnParallelLinear(
+            self.kv_lora_rank, self.n_heads * (self.qk_nope_head_dim + self.v_head_dim)
+        )  # 512 => 128*(128+128)=32768
+kv = self.wkv_a(x)  # (2,1,7168) => (2,1,512+64=576)
+kv, k_pe = torch.split(
+    kv, [self.kv_lora_rank, self.qk_rope_head_dim], dim=-1
+)  # (2,1,576) => (2,1,512),(2,1,64)
+self.kv_cache[:bsz, start_pos:end_pos] = self.kv_norm(kv)  # (2,1,512) palce into (:2,0:1,512)
+```
+
+完整的代码如实现如下:
+
+```python
+self.wkv_b = ColumnParallelLinear(
+            self.kv_lora_rank, self.n_heads * (self.qk_nope_head_dim + self.v_head_dim)
+        )  # 512 => 128*(128+128)=32768
+wkv_b = (
+    self.wkv_b.weight
+    if self.wkv_b.scale is None
+    else weight_dequant(self.wkv_b.weight, self.wkv_b.scale, block_size)
+)
+wkv_b = wkv_b.view(
+    self.n_local_heads, -1, self.kv_lora_rank
+)  # (128*(128+128)=32768, 512) => (128, 256, 512)
+q_nope = torch.einsum(
+    "bshd,hdc->bshc", q_nope, wkv_b[:, : self.qk_nope_head_dim]
+)  # (2,1,128,128) einsum (128,128,512) => (2,1,128,512)
+self.kv_cache[:bsz, start_pos:end_pos] = self.kv_norm(
+    kv
+)  # (2,1,512) palce into (:2,0:1,512)
+self.pe_cache[:bsz, start_pos:end_pos] = k_pe.squeeze(
+    2
+)  # (2,1,64)  palce into (:2,0:1,64)
+# (2,1,128,512) einsum (2,1,512) => (2,1,128,1)
+# (2,1,128,64) einsum (2,1,64) => (2,1,128,1)
+scores = (
+    torch.einsum("bshc,btc->bsht", q_nope, self.kv_cache[:bsz, :end_pos])
+    + torch.einsum("bshr,btr->bsht", q_pe, self.pe_cache[:bsz, :end_pos])
+)
+```
+
+基于公式（2-6）（3-2），构建完整的attention公式如下：
+
+![](img/Pasted%20image%2020250309132817.png)
+
+大功告成，至此，更新后的公式和源代码可以一一对应了。
+
+```python
+# ot attention计算结果如下：
+self.softmax_scale = self.qk_head_dim**-0.5
+# 需要注意的是，如果推理的序列大于训练的序列长度，需要动态调整softmax_scale
+if args.max_seq_len > args.original_seq_len:
+    mscale = 0.1 * args.mscale * math.log(args.rope_factor) + 1.0
+    self.softmax_scale = self.softmax_scale * mscale * mscale
+
+scores = (
+    torch.einsum("bshc,btc->bsht", q_nope, self.kv_cache[:bsz, :end_pos])
+    + torch.einsum("bshr,btr->bsht", q_pe, self.pe_cache[:bsz, :end_pos])
+) * self.softmax_scale
+
+scores = scores.softmax(dim=-1, dtype=torch.float32).type_as(x)
+x = torch.einsum(
+    "bsht,btc->bshc", scores, self.kv_cache[:bsz, :end_pos]
+)  # (2,1,128,512)
+x = torch.einsum(
+    "bshc,hdc->bshd", x, wkv_b[:, -self.v_head_dim :]
+)  #  (2,1,128,512) (128,-128:,512) -> (2,1,128,128)
+```
+
+_**P.S.**_源代码中使用了大量的[PyTorch爱因斯坦求和](https://link.zhihu.com/?target=https%3A//pytorch.org/docs/stable/generated/torch.einsum.html%23torch-einsum)方法，给人直观感受是非常简洁。但如果没有熟练掌握它，可能未必能灵活使用。这部分也可以借用torch.bmm转换为传统的矩阵乘法，变成我们熟悉的味道。举个例子：_torch.einsum("bshc,btc->bsht", q_nope, self.kv_cache[:bsz, :end_pos])_的等效计算方法见如下单元测试：
+
+```python
+import torch
+
+b, s, h, c = 2, 1, 128, 512  # 示例维度
+t = 1  # 目标KVCache序列长度
+
+# 方法一：使用传统的矩阵乘法方法
+q_nope = torch.randn(b, s, h, c)
+kv_cache = torch.randn(b, t, c)
+q_reshaped = q_nope.view(b, s * h, c)  # shape: (b, s*h, c)
+kv_transposed = kv_cache.transpose(1, 2)  # shape: (b, c, t)
+scores = torch.bmm(q_reshaped, kv_transposed)  # shape: (b, s*h, t)
+scores = scores.view(b, s, h, t)  # shape: (b, s, h, t)
+
+# 方法二：使用爱因斯坦求和方法
+scores_einsum = torch.einsum("bshc,btc->bsht", q_nope, kv_cache)
+
+# 检查两种方法的结果是否一致
+print(torch.allclose(scores, scores_einsum, atol=1e-6))  # 应输出 True
+```
+
+### **备注：解耦Query和Key，单独做旋转位置编码：**
+
+为什么需要接耦Query和Key？这个问题酱紫思考，如果我们不做解耦，直接加上旋转位置编码RoPE，会是什么结果呢？参考论文公式(10)，我们需要更新下等号右侧softmax内分子表达式和各个数学量描述，将投影矩阵左乘转换为矩阵右乘：
+
+![](img/Pasted%20image%2020250309132954.png)
+![](img/Pasted%20image%2020250309133236.png)
+
+**_P.S._** 虽然，MLA的低秩压缩的KVcache有效的减少了缓存大小。但是，为了引入相对位置编码，又增加了部分的计算量。但是，Q/K/V的低秩压缩带来参数量的下降又弥补了上述缺失，从而有效的减小了训练（减小了梯度和激活大小）/推理过程的显存以及计算量。总体来说，MLA称的上是推理加速非常有效的一种注意力机制变种。
+## DeepSeekMoE
 
 对于 FFN，我们采用 DeepSeekMoE 架构（Dai 等人，2024）。 DeepSeekMoE有两个关键思想：将专家细分为更细的粒度，以实现更高的专家专业化和更准确的知识获取；以及隔离一些共享专家，以减轻路由专家之间的知识冗余。在激活和总专家参数数量相同的情况下，DeepSeekMoE 可以大幅优于 GShard（Lepikhin 等人，2021）等传统 MoE 架构。
 
@@ -90,7 +351,7 @@ ROPE
 
 虽然平衡损失旨在鼓励平衡负载，但重要的是要承认它们不能保证严格的负载平衡。为了进一步减轻负载不平衡造成的计算浪费，我们在训练过程中引入了设备级令牌丢弃策略。该方法首先计算每个设备的平均计算预算，这意味着每个设备的容量因子相当于 1.0。然后，受到里克尔梅等人的启发。 （2021），我们在每台设备上丢弃亲和力分数最低的令牌，直到达到计算预算。此外，我们确保属于大约 10% 训练序列的 token 永远不会被丢弃。这样，我们就可以根据效率要求灵活决定是否在推理过程中丢弃token，始终保证训练和推理的一致性。
 
-## 预训练
+# 预训练
 
 在保持与 DeepSeek 67B（DeepSeek-AI，2024）相同的数据处理阶段的同时，我们扩展了数据量并提高了数据质量。为了扩大我们的预训练语料库，我们探索互联网数据的潜力并优化我们的清理流程，从而恢复大量误删除的数据。此外，我们纳入了更多的中文数据，旨在更好地利用中文互联网上的语料库。除了数据量，我们还关注数据质量。我们利用各种来源的高质量数据丰富了我们的预训练语料库，同时改进了基于质量的过滤算法。改进后的算法保证了大量无益数据被剔除，而有价值的数据大部分被保留。此外，我们从预训练语料库中过滤掉有争议的内容，以减轻特定区域文化引入的数据偏差。附录 E 详细讨论了这种过滤策略的影响。
 
@@ -104,7 +365,7 @@ ROPE
 
 我们还对模型进行了 1000 个步骤的训练，序列长度为 32K，批量大小为 576 个序列。尽管训练仅在 32K 的序列长度下进行，但该模型在以 128K 的上下文长度进行评估时仍然表现出稳健的性能。如图 4 所示，“大海捞针”(NIAH) 测试的结果表明 DeepSeek-V2 在高达 128K 的所有上下文窗口长度上都表现良好。
 
-## Alignment
+# Alignment
 
 基于我们之前的研究（DeepSeek-AI，2024），我们整理了指令调整数据集以包含 150 万个实例，其中 120 万个用于帮助的实例和 30 万个用于安全的实例。与初始版本相比，我们提高了数据质量，以减轻幻觉反应并提高写作水平。我们对 DeepSeek-V2 进行了 2 个 epoch 的微调，学习率设置为 5 × 10−6。
 
@@ -122,7 +383,7 @@ ROPE
 
 
 
-## 讨论
+# 讨论
 
 围绕大型 SFT 语料库必要性的讨论一直是激烈争论的话题。之前的工作（Young et al., 2024；Zhou et al., 2024）认为少于 10K 个 SFT 数据实例就足以产生令人满意的结果。然而，在我们的实验中，我们观察到如果我们使用的实例少于 10K，IFEval 基准的性能会显着下降。一种可能的解释是，语言模型需要一定量的数据来开发特定技能。尽管所需的数据量可能会随着模型大小的增加而减少，但不能完全消除。我们的观察强调，迫切需要足够的数据来为法学硕士配备所需的能力。此外，SFT 数据的质量也至关重要，特别是对于涉及写作或开放式问题的任务。
 
@@ -131,9 +392,10 @@ ROPE
 在我们的偏好对齐实验中，我们发现在线方法明显优于离线方法。因此，我们投入了巨大的努力来实现在线 RL 框架来对齐 DeepSeek-V2。关于线上或线下偏好调整的结论在不同的背景下可能会有所不同，我们为未来的工作保留对它们之间更彻底的比较和分析。
 
 
-## 参考资料
+# 参考资料
 
 [再读MLA，还有多少细节是你不知道的](https://zhuanlan.zhihu.com/p/19585986234)
 
 [deepseek技术解读(1)-彻底理解MLA（Multi-Head Latent Attention）](https://zhuanlan.zhihu.com/p/16730036197)
 
+[手撕DeepSeek-MLA-多头潜在注意力机制](https://zhuanlan.zhihu.com/p/23062701108)

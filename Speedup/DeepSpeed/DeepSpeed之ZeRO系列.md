@@ -1,15 +1,21 @@
+虽然数据并行是一种有效的训练扩展方法，但在每个 DP 等级上对优化器状态、梯度和参数的简单复制会引入显著的内存冗余。ZeRO 通过在数据并行维度上对优化器状态、梯度和参数进行分区来消除内存冗余，同时仍然允许使用全套参数进行计算。这有时需要 DP 等级(rank)之间进行更多通信，这些等级可能完全重叠，也可能不完全重叠。
+
 ## DeepSpeed集成
 
 DeepSpeed支持
 
-1. 优化器状态分区（ZeRO stage 1）
-2. 梯度分区（ZeRO stage 2）
-3. 参数分区（ZeRO stage 3）
+1. ZeRO-1：优化器状态分区
+2. ZeRO-2：优化器状态 + 梯度分区
+3. ZeRO-3（也称为 FSDP，即“全分片数据并行”）：优化器状态 + 梯度 + 参数分区
 4. 自定义混合精度训练处理
 5. 一系列基于CUDA扩展的快速优化器
 6. ZeRO-Offload 到 CPU 和 NVMe
 
 ZeRO-Offload有其自己的专门论文：[ZeRO-Offload: Democratizing Billion-Scale Model Training](https://arxiv.org/abs/2101.06840)。而NVMe支持在论文[ZeRO-Infinity: Breaking the GPU Memory Wall for Extreme Scale Deep Learning](https://arxiv.org/abs/2104.07857)中进行了描述。
+
+当我们说分区时，它意味着沿着 DP 轴，因为 ZeRO 是数据并行的一部分。我们稍后会看到我们可以沿着其他轴进行分区。
+
+您可能遗漏了我们可以分片的内容中的激活。由于模型的每个 DP 副本都会收到不同的微批次，因此每个 DP 等级上的激活也不同，因此它们不会重复，因此无法分片！
 
 DeepSpeed ZeRO-2主要用于训练，因为它的特性对推理没有用处。
 

@@ -1,4 +1,4 @@
-
+Flash Attention 由[Tri Dao](https://tridao.me/)引入，并提议通过编写自定义 CUDA 内核来优化注意力计算，使其速度更快且内存效率更高。Flash Attention 背后的想法是高效利用 GPU 的各种内存，避免过度依赖最慢的内存：GPU 的全局内存。
 ## 为什么要优化
 
 为什么我们要对Transformer进行加速，换句话说Transformer时间复杂度如何，有什么缺点呢？
@@ -23,6 +23,11 @@
 
 因此，**Attention 的总计算复杂度为 O(n^2 * d * h)，约为O(n^2）时间复杂度。**
 
+注意力机制的基本实现涉及内存和工作器之间的大量传输。它需要在 HBM 中实现 S 和 P 矩阵，这意味着结果需要发送到 HBM，然后返回 SRAM 进行下一步计算：
+
+![](img/Pasted%20image%2020250309182229.png)
+
+由于 HBM 中的带宽要低得多，这给注意力计算带来了严重的瓶颈。
 ## flashAttention加速的基础
 
 **flashAtention其加速的原理是非常简单的，也是最基础和常见的系统性能优化的手段，即通过利用更高速的上层存储计算单元，减少对低速更下层存储器的访问次数，来提升模型的训练性能。**
@@ -32,6 +37,8 @@
 FlashAttention的核心原理是通过将输入**分块**并在每个块上执行注意力操作，从而减少对高带宽内存（HBM）的读写操作。具体而言，FlashAttention使用平铺和重计算等经典技术，将输入块从HBM加载到SRAM（快速缓存），在SRAM上执行注意力操作，并将结果更新回HBM。FlashAttention减少了内存读写量，从而实现了**2-4倍**的时钟时间加速。
 
 ![](img/Pasted%20image%2020240424194314.png)
+
+![](img/Pasted%20image%2020250309182310.png)
 
 
 **虽然说flashAttention对Transformer加速的原理非常简单，然而在Transformer诞生的初期由于硬件上的一些限制，使得flashAttention并没有那么快的出现，直到A100 GPU架构的问世。**
@@ -243,6 +250,8 @@ flashAttention是软硬一体优化的优秀案例，就像它严重依赖于GPU
 ## FlashAttention V3: 比V2更快、支持Hopper FP8
 
 FlashAttention V3最近正式发布，FP16比FA2更快，支持Hopper FP8。
+
+优化最新 Hopper（H100）架构上对 FP8 和 Tensor Core 的支持
 
 ## 参考资料
 
