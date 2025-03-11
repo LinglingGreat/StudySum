@@ -1050,6 +1050,17 @@ All-to-All 方法通常以稍微复杂的通信模式为代价提供更好的内
 
 然而，我们仍然知道 TP 无法很好地跨节点扩展，那么如果模型权重不能轻易地适应 1 个节点，我们该怎么办？另一种并行度，即我们的第四种并行度，称为**管道并行度**，可以解决这个问题！
 
+### OpenRLHF兼容
+
+Ring Attention(Liu, H.2023)[^30]是谷歌提出的用于处理超长序列的高效注意力机制。其核心思想是将输入序列分块分布在多个设备上，通过环形通信传递中间结果（如键值缓存），使每个设备逐步计算注意力而不需全局存储整个序列，从而突破单设备内存限制，支持极长上下文。
+
+在OpenRLFH中有两个关键参数
+
+- ring_attn_size：环形组设备数，通常等于总设备数（全环）或其因数（多子环）。
+- ring_head_stride：注意力头在环形中的分布间隔，用于负载均衡。例如步长2时，设备0处理头0,2,4...，设备1处理头1,3,5...。有足够内存的话，该值越大，训练越快
+
+
+
 ## 流水线并行
 
 [模型并行训练](模型并行训练.md)
@@ -1552,3 +1563,54 @@ Transformer 模型中有很多地方可以应用这种“融合”方法：每�
 
 [混合精度训练](../量化/混合精度训练.md)
 
+## optimizers
+
+[Trainer](https://huggingface.co/docs/transformers/main/en/trainer?galore=GaLore+optimizer+with+layerwise+optimization#optimizations)
+
+### torch.compile
+
+[torch.compile](https://huggingface.co/docs/transformers/main/en/perf_torch_compile) can significantly speed up training and reduce computational overhead.
+
+```python
+from transformers import TrainingArguments
+
+training_args = TrainingArguments(
+    torch.compile=True,
+    torch.compile_backend="inductor",
+    torch_compile_mode="default",
+    ...,
+)
+```
+
+### GaLore
+
+[梯度低秩投影 (GaLore)](https://hf.co/papers/2403.03507)在训练大型语言模型 (LLM) 时可显著减少内存使用量。GaLore 的主要优势之一是_全参数学习，不同于_[LoRA](https://hf.co/papers/2106.09685)等低秩自适应方法，后者可产生更好的模型性能。
+
+选择一个 GaLore 优化器（`"galore_adamw"`, `"galore_adafactor"`, `"galore_adamw_8bit`”）并将其传递给[TrainingArguments](https://huggingface.co/docs/transformers/main/en/main_classes/trainer#transformers.TrainingArguments)`optim`中的参数。使用参数指定要适配的模块（可以是字符串列表、正则表达式或完整路径）。
+
+目前不支持分布式训练（在transformers中）
+
+
+### Liger
+
+[Liger Kernel](https://github.com/linkedin/Liger-Kernel)是 RMNSorm、RoPE、SwiGLU、CrossEntropy、FusedLinearCrossEntropy 等层的集合，这些层已融合到单个 Triton 内核中，用于训练 LLM。这些内核还与 FlashAttention、FSDP 和 DeepSpeed 兼容。因此，Liger Kernel 可以提高多 GPU 训练吞吐量并减少内存使用量。这对于多头训练和支持更大的词汇量、更大的批次大小和更长的上下文长度非常有用。
+
+`pip install liger-kernel`
+
+```python
+from transformers import TrainingArguments
+
+training_args = TrainingArguments(
+    output_dir="your-model",
+    learning_rate=2e-5,
+    per_device_train_batch_size=16,
+    per_device_eval_batch_size=16,
+    num_train_epochs=2,
+    weight_decay=0.01,
+    eval_strategy="epoch",
+    save_strategy="epoch",
+    load_best_model_at_end=True,
+    push_to_hub=True,
+    use_liger_kernel=True
+)
+```

@@ -248,6 +248,15 @@ Copied
     }
 }
 
+### ZeRO++
+
+[ZeRO++ - DeepSpeed](https://www.deepspeed.ai/tutorials/zeropp/)
+
+![](img/Pasted%20image%2020250310203520.png)
+图 1：ZeRO++ 项目亮点图片。左上角子图显示，与 ZeRO 第 3 阶段相比，ZeRO++ 将通信量减少了 4 倍。右上角子图显示了 ZeRO++ 在 RLHF 模型训练中的表现，其中 ZeRO++ 实现了 RLHF 训练速度提高 1.3 倍，令牌生成速度提高 2.x 倍。
+
+
+
 ## NVMe 支持
 
 ZeRO-Infinity 通过使用 NVMe 内存扩展 GPU 和 CPU 内存，从而允许训练非常大的模型。由于智能分区和平铺算法，在offload期间每个 GPU 需要发送和接收非常小量的数据，因此 NVMe 被证明适用于训练过程中提供更大的总内存池。ZeRO-Infinity 需要启用 ZeRO-3。

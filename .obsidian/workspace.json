@@ -36,6 +36,34 @@
             }
           },
           {
+            "id": "47deb552ab780cc8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Speedup/模型并行/ultrascale_notebook.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ultrascale_notebook"
+            }
+          },
+          {
+            "id": "15b317ed97f0006b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "DeepSpeed之ZeRO系列"
+            }
+          },
+          {
             "id": "e9255d565c0b64ba",
             "type": "leaf",
             "state": {
@@ -120,7 +148,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -152,7 +180,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "lim",
+                "query": "zero++",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -225,13 +253,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Speedup/README.md",
+                "file": "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大纲"
+              "title": "DeepSpeed之ZeRO系列 的大纲"
             }
           },
           {
@@ -309,22 +337,25 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "f26334c24af3d7de",
+  "active": "15b317ed97f0006b",
   "lastOpenFiles": [
-    "Speedup/DualPipe/DualPipe&EPLB.md",
-    "Speedup/README.md",
-    "Speedup/DeepGEMM/DeepGEMM.md",
+    "Speedup/DeepSpeed/img/Pasted image 20250310203520.png",
+    "Speedup/DeepSpeed/img",
+    "Speedup/模型并行/ultrascale_notebook.md",
+    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
+    "PLM/Alignment/PPO/PPO.md",
+    "Speedup/模型并行/模型并行训练.md",
     "Speedup/DeepEP/DeepEP.md",
+    "Speedup/README.md",
     "Speedup/FlashMLA/FlashMLA.md",
+    "Speedup/DualPipe/DualPipe&EPLB.md",
+    "Speedup/DeepGEMM/DeepGEMM.md",
     "Speedup/量化/模型量化.md",
     "Speedup/量化/混合精度训练.md",
     "News/Inbox.md",
     "PLM/DataStrategy/PreSelect/PreSelect.md",
     "PLM/CoT/DeepSeekR/R1-related.md",
     "Tool/Linux/Linux.md",
-    "Speedup/模型并行/ultrascale_notebook.md",
-    "Speedup/模型并行/模型并行训练.md",
-    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "Speedup/量化/img/Pasted image 20250309183458.png",
     "Speedup/量化/img/Pasted image 20250309183247.png",
     "Speedup/量化/img/Pasted image 20250309183230.png",
@@ -345,10 +376,8 @@
     "PLM/BaseStruct/Transformer/Transformer.md",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
-    "PLM/Alignment/PPO/PPO.md",
     "PLM/CoT/cognitive_behaviors/cognitiva_behaviors.md",
     "PLM/CoT/DeepSeekR/LogicRL/LogicRL复现.md",
-    "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "PLM/CoT/DeepSeekR/LogicRL/img",
     "PLM/CoT/DeepSeekR/LogicRL",
     "Speedup/量化/img",
@@ -356,7 +385,6 @@
     "PLM/DataStrategy/PreSelect",
     "PLM/CoT/CoD/img",
     "PLM/CoT/CoD",
-    "PLM/CoT/cognitive_behaviors",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
