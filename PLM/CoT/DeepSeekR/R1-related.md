@@ -232,6 +232,22 @@ DeepSeek-R1-Zero 最鼓舞人心的结果之一是通过纯强化学习 (RL) 实
 
 - 32B比14B具有更高的训练和测试精度；14B比32B的最终回复长度更长，可能因为14B基座能力差，所以需要更多的推理时间/长度才能效果好；
 
+[32b R1-Zero复现，聚焦scaling](https://mp.weixin.qq.com/s/yksjeB41XFBYbS-bWYhbXw)
+7B模型：
+- 不使用fomat reward的话，eval的效果会低一些，response lens也不能观测到增长的趋势，这个可能和模型大小有关，也和探索空间过大有关
+- 一个ppo epoch的mini-batch切分不能太多次更新，太offpolicy的话会导致训练缓慢甚至训崩，ppo对这个很敏感，我们尝试用simpleRL的超参发现并不好用
+- GRPO在效果和效率上与PPO差别不大，而且超参更好调，scaling的话grpo会更好
+- qwen-7bmath的反思行为在初始阶段就会多于qwen-7b，这和math的cpt应该是有比较大的关系
+- qwen-7bmath并没观测到resps lens明显变长，可能是和训练集数量比较少有关，但是观察输出发现7bmath会吐很多代码等无关信息，所以后续大size不选用math系列
+- 可以用pass8或者16描述模型上限，这对后续指标观察意义比较大，pass1应该随着训练逼近pass8，如果pass1，pass8，train acc都不涨了那就说明算法应该出问题了
+
+32B模型
+- 更大size的模型更容易涌现long cot
+- 反思与正确反思是逐步增加的（这个在7b模型上的增速缓慢），lens也随之增加，eval的效果也在逐渐变好
+- 大temperature更有助于反思出现，与反思行为的进一步增加，模型的行为是先出现大量无效反思的探索，然后逐渐通过rl学习到有效反思
+- gbz调大是必须的
+- 课程学习会有较大收益
+
 
 # An Empirical Study on Eliciting and Improving R1-like Reasoning Models
 
