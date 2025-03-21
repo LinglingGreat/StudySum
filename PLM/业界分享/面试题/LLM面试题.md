@@ -20,12 +20,6 @@
 **回答**：[Site Unreachable](https://zhuanlan.zhihu.com/p/685948009)
 
 
-
-## **提问**：DPO为什么会在学习过程中training positive的概率和training negative的概率都同时下降？
-
-**回答**：[Site Unreachable](https://zhuanlan.zhihu.com/p/686122806)
-
-
 ## **提问**：在PPO过程中，[reward model](https://zhida.zhihu.com/search?content_id=240631896&content_type=Article&match_order=1&q=reward+model&zhida_source=entity)的效果上会有什么问题？
 
 **回答**：在模型PPO过程中，reward model的准确率逐渐下降，这就是俗称的reward model的OOD问题，因为reward model的训练样本一般来自[sft模型](https://zhida.zhihu.com/search?content_id=240631896&content_type=Article&match_order=1&q=sft%E6%A8%A1%E5%9E%8B&zhida_source=entity)的responses，那么在PPO过程中，policy model刚开始和sft生成的response很相似，所以reward model准确率较高，但是在逐渐偏离sft的时候，reward model的准确率会持续下降，这基本就是现阶段reward model的主要问题。我个人认为AGI过程中，一定需要一个generalize 很强的reward model，就是所谓的global reward model or world model. 这里我也参考了一篇OpenAI blog的愿景：
