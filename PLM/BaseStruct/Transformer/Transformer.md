@@ -192,7 +192,26 @@ Layer Normalization，其作用是**规范优化空间，加速收敛**。
 
 当我们使用梯度下降算法做优化时，我们可能会对输入数据进行归一化，但是经过网络层作用后，我们的数据已经不是归一化的了。**随着网络层数的增加，数据分布不断发生变化，偏差越来越大，导致我们不得不使用更小的学习率来稳定梯度**。Layer Normalization 的作用就是**保证数据特征分布的稳定性，将数据标准化到ReLU激活函数的作用区域**，可以使得激活函数更好的发挥作用
 
+代码
 
+```python
+class LayerNorm(nn.Module):
+	def __init__(self, features, eps=1e-6):
+        #初始化函数有两个参数，一个是features,表示词嵌入的维度,另一个是eps它是一个足够小的数，在规范化公式的分母中出现,防止分母为0，默认是1e-6。
+		super(LayerNorm, self).__init__()
+        #根据features的形状初始化两个参数张量a2，和b2，第一初始化为1张量，也就是里面的元素都是1，第二个初始化为0张量，也就是里面的元素都是0，这两个张量就是规范化层的参数。因为直接对上一层得到的结果做规范化公式计算，将改变结果的正常表征，因此就需要有参数作为调节因子，使其即能满足规范化要求，又能不改变针对目标的表征，最后使用nn.parameter封装，代表他们是模型的参数
+		self.a_2 = nn.Parameter(torch.ones(features))
+		self.b_2 = nn.Parameter(torch.zeros(features))
+        #把eps传到类中
+		self.eps = eps
+	
+	def forward(self, x):
+        #输入参数x代表来自上一层的输出，在函数中，首先对输入变量x求其最后一个维度的均值，并保持输出维度与输入维度一致，接着再求最后一个维度的标准差，然后就是根据规范化公式，用x减去均值除以标准差获得规范化的结果。
+        #最后对结果乘以我们的缩放参数，即a2,*号代表同型点乘，即对应位置进行乘法操作，加上位移参b2，返回即可
+		mean = x.mean(-1, keepdim=True)
+		std = x.std(-1, keepdim=True)
+		return self.a_2 * (x - mean) / (std + self.eps) + self.b_2
+```
 
 Batch Normalization，这个技巧能够让模型收敛的更快。但是Batch Normalization有一个问题——**它需要一个minibatch的数据，而且这个minibatch不能太小(比如1)**。另外一个问题就是**它不能用于RNN，因为同样一个节点在不同时刻的分布是明显不同的**。当然有一些改进的方法使得可以对RNN进行Batch Normalization，比如论文[Recurrent Batch Normalization](https://arxiv.org/abs/1603.09025)
 

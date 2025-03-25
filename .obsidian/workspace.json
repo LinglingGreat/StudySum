@@ -78,17 +78,17 @@
             }
           },
           {
-            "id": "d6fd585ce9072cbe",
+            "id": "f612726314e92ce5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/RolePlay/claude_character.md",
+                "file": "Tool/Pytorch/Pytorch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "claude_character"
+              "title": "Pytorch"
             }
           },
           {
@@ -253,13 +253,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/RolePlay/claude_character.md",
+                "file": "Tool/Pytorch/Pytorch.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "claude_character 的大纲"
+              "title": "Pytorch 的大纲"
             }
           },
           {
@@ -337,11 +337,13 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "d6fd585ce9072cbe",
+  "active": "f612726314e92ce5",
   "lastOpenFiles": [
-    "PLM/RolePlay/RolePlaySum.md",
-    "PLM/RolePlay/claude_character.md",
+    "Tool/Pytorch/transformers.md",
     "PLM/BaseStruct/Transformer/Transformer.md",
+    "PLM/BaseStruct/Attention/Attention.md",
+    "PLM/RolePlay/claude_character.md",
+    "PLM/RolePlay/RolePlaySum.md",
     "PLM/BaseStruct/PositionEncoding/位置编码.md",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
     "PLM/CoT/DeepSeekR/R1-related.md",
@@ -354,7 +356,6 @@
     "PLM/Alignment/README.md",
     "Tool/Linux/Linux.md",
     "Tool/python/Debug.md",
-    "Tool/Pytorch/transformers.md",
     "Speedup/README.md",
     "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "Speedup/模型并行/ultrascale_notebook.md",
@@ -367,7 +368,6 @@
     "Speedup/DualPipe/DualPipe&EPLB.md",
     "Speedup/DeepGEMM/DeepGEMM.md",
     "Speedup/量化/模型量化.md",
-    "Speedup/量化/混合精度训练.md",
     "Speedup/量化/img/Pasted image 20250309183458.png",
     "Speedup/量化/img/Pasted image 20250309183247.png",
     "Speedup/量化/img/Pasted image 20250309183230.png",

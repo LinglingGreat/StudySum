@@ -179,11 +179,40 @@ print(result)
 
 > 任何一个in-place改变张量的操作后面都固定一个`_`。例如`x.copy_(y)`、`x.t_()`将更改x
 
-
+### 乘法
 
 torch.mm 和 torch.mul 的区别？ torch.mm是矩阵相乘，torch.mul是按元素相乘
 
 torch.manual_seed(1)的作用？ 设置随机种子，使实验结果可以复现
+
+1. 点乘（Element-wise multiplication）：  
+    点乘是一种逐元素相乘的操作，适用于具有相同形状的两个张量。点乘会按照元素对应位置相乘的方式处理两个张量中的每个元素。在PyTorch中，可以使用`torch.mul()`函数或`*`运算符进行点乘。  
+    示例代码：
+    
+    1. `import torch`
+    2. `a = torch.tensor([1, 2, 3])`
+    3. `b = torch.tensor([4, 5, 6])`
+    4. `result = a * b  # 结果为 [4, 10, 18]`
+    
+2. 批量点乘（Batchwise multiplication）：  
+    批量点乘是一种逐批次相乘的操作，适用于具有不同维度的两个张量。在PyTorch中，可以使用`torch.bmm()`函数进行批量点乘。该函数接受两个张量作为参数，并将它们的最后一维进行匹配，然后逐元素相乘。  
+    示例代码：
+    
+    1. `import torch`
+    2. `a = torch.tensor([[1, 2], [3, 4]])`
+    3. `b = torch.tensor([[5, 6], [7, 8]])`
+    4. `result = torch.bmm(a, b)  # 结果为 [[19, 22], [43, 50]]`
+    
+3. 矩阵乘法（Matrix multiplication）：  
+    矩阵乘法是线性代数中的基本运算之一，适用于两个矩阵之间的相乘。在PyTorch中，可以使用`torch.matmul()`函数或`@`运算符进行矩阵乘法。该函数接受两个矩阵作为参数，并按照矩阵乘法的规则进行计算。  
+    示例代码：
+    
+    1. `import torch`
+    2. `a = torch.tensor([[1, 2], [3, 4]])`
+    3. `b = torch.tensor([[5, 6], [7, 8]])`
+    4. `result = torch.matmul(a, b)  # 结果为 [[19, 22], [43, 50]]`
+    
+    除了上述三种乘法操作外，PyTorch还提供了其他一些高级的乘法函数和运算符，如`torch.einsum()`用于执行爱因斯坦求和约定，以及`torch.mm()`用于执行矩阵乘法。
 
 ### 索引
 
