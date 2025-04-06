@@ -22,20 +22,6 @@
             }
           },
           {
-            "id": "f26334c24af3d7de",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Speedup/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
             "id": "e9255d565c0b64ba",
             "type": "leaf",
             "state": {
@@ -78,20 +64,6 @@
             }
           },
           {
-            "id": "f612726314e92ce5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Pytorch/Pytorch.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Pytorch"
-            }
-          },
-          {
             "id": "a9f78be2b97c3702",
             "type": "leaf",
             "state": {
@@ -111,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Agent/README.md",
+                "file": "PLM/Alignment/RewardModel/ITS_GRM/ITS_GRM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "ITS_GRM"
             }
           },
           {
@@ -132,51 +104,9 @@
               "icon": "lucide-file",
               "title": "DeepSeek-R1"
             }
-          },
-          {
-            "id": "47a3b358c533f22d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Alignment/GRPO/GRPO.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "GRPO"
-            }
-          },
-          {
-            "id": "43e470287be01216",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Alignment/DPO/DPO.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "DPO"
-            }
-          },
-          {
-            "id": "e3a73082b9728826",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/业界分享/面试题/LLM面试题.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "LLM面试题"
-            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -281,13 +211,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Agent/README.md",
+                "file": "PLM/Alignment/RewardModel/ITS_GRM/ITS_GRM.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大纲"
+              "title": "ITS_GRM 的大纲"
             }
           },
           {
@@ -367,6 +297,12 @@
   },
   "active": "915ea14943f571c7",
   "lastOpenFiles": [
+    "News/Inbox.md",
+    "Speedup/README.md",
+    "PLM/Alignment/RewardModel/ITS_GRM/ITS_GRM.md",
+    "PLM/Alignment/RewardModel/RewardModel.md",
+    "PLM/Alignment/RewardModel/ITS_GRM",
+    "PLM/Agent/README.md",
     "Tool/Pytorch/transformers.md",
     "Tool/Pytorch/Pytorch.md",
     "PLM/BaseStruct/Transformer/Transformer.md",
@@ -385,17 +321,12 @@
     "PLM/Alignment/README.md",
     "Tool/Linux/Linux.md",
     "Tool/python/Debug.md",
-    "Speedup/README.md",
     "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "Speedup/模型并行/ultrascale_notebook.md",
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "Speedup/DeepSpeed/img/Pasted image 20250310203520.png",
     "Speedup/DeepSpeed/img",
     "Speedup/模型并行/模型并行训练.md",
-    "Speedup/DeepEP/DeepEP.md",
-    "Speedup/FlashMLA/FlashMLA.md",
-    "Speedup/DualPipe/DualPipe&EPLB.md",
-    "Speedup/DeepGEMM/DeepGEMM.md",
     "Speedup/量化/img/Pasted image 20250309183458.png",
     "Speedup/量化/img/Pasted image 20250309183247.png",
     "Speedup/量化/img/Pasted image 20250309183230.png",
@@ -412,7 +343,6 @@
     "PLM/DataStrategy/PreSelect/img",
     "PLM/DataStrategy/PreSelect",
     "PLM/CoT/CoD/img",
-    "PLM/CoT/CoD",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
