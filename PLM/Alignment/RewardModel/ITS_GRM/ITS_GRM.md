@@ -39,11 +39,23 @@ institution:
 
 
 ## 相关研究
-有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？
+
 
 
 
 ## 核心亮点
+
+不同RM方法的比较：
+
+![](img/Pasted%20image%2020250406151247.png)
+
+生成式方法有scalar，semi-scalar, and generative
+- scalar：输入query和response，输出标量值作为reward
+- semi-scalar：除了输出标量值之外，还会输出文本描述（critique）
+- generative：只生成 critiques 作为文本 reward，可以从中提取 reward 值。
+打分方法有pointwise and pairwise
+- pointwise：给每个response一个分数
+- pairwise：从给定候选中选出最好的response
 
 
 

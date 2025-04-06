@@ -281,7 +281,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 462.5
+    "width": 462.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -297,6 +298,8 @@
   },
   "active": "915ea14943f571c7",
   "lastOpenFiles": [
+    "PLM/Alignment/RewardModel/ITS_GRM/img/Pasted image 20250406151247.png",
+    "PLM/Alignment/RewardModel/ITS_GRM/img",
     "News/Inbox.md",
     "Speedup/README.md",
     "PLM/Alignment/RewardModel/ITS_GRM/ITS_GRM.md",
@@ -326,7 +329,6 @@
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "Speedup/DeepSpeed/img/Pasted image 20250310203520.png",
     "Speedup/DeepSpeed/img",
-    "Speedup/模型并行/模型并行训练.md",
     "Speedup/量化/img/Pasted image 20250309183458.png",
     "Speedup/量化/img/Pasted image 20250309183247.png",
     "Speedup/量化/img/Pasted image 20250309183230.png",
@@ -342,7 +344,6 @@
     "Speedup/量化/img",
     "PLM/DataStrategy/PreSelect/img",
     "PLM/DataStrategy/PreSelect",
-    "PLM/CoT/CoD/img",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
