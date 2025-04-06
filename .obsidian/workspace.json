@@ -92,6 +92,34 @@
             }
           },
           {
+            "id": "a9f78be2b97c3702",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/Pytorch/transformers.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "transformers"
+            }
+          },
+          {
+            "id": "915ea14943f571c7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Agent/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
             "id": "94b0fbc19ec71cdc",
             "type": "leaf",
             "state": {
@@ -148,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -253,13 +281,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Pytorch/Pytorch.md",
+                "file": "PLM/Agent/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Pytorch 的大纲"
+              "title": "README 的大纲"
             }
           },
           {
@@ -337,9 +365,10 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "f612726314e92ce5",
+  "active": "915ea14943f571c7",
   "lastOpenFiles": [
     "Tool/Pytorch/transformers.md",
+    "Tool/Pytorch/Pytorch.md",
     "PLM/BaseStruct/Transformer/Transformer.md",
     "PLM/BaseStruct/Attention/Attention.md",
     "PLM/RolePlay/claude_character.md",
@@ -367,7 +396,6 @@
     "Speedup/FlashMLA/FlashMLA.md",
     "Speedup/DualPipe/DualPipe&EPLB.md",
     "Speedup/DeepGEMM/DeepGEMM.md",
-    "Speedup/量化/模型量化.md",
     "Speedup/量化/img/Pasted image 20250309183458.png",
     "Speedup/量化/img/Pasted image 20250309183247.png",
     "Speedup/量化/img/Pasted image 20250309183230.png",
