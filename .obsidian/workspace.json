@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
+                "file": "PLM/CoT/DAPO/DAPO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DeepSeek-R1"
+              "title": "DAPO"
             }
           },
           {
@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -296,28 +296,32 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "a9f78be2b97c3702",
+  "active": "94b0fbc19ec71cdc",
   "lastOpenFiles": [
+    "PLM/CoT/DAPO/img/Pasted image 20250408202652.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408202636.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408202552.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408202541.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408202459.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408202440.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408202356.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408202305.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408202254.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408201826.png",
+    "PLM/CoT/DAPO/img/Pasted image 20250408201750.png",
+    "PLM/CoT/DAPO/img",
+    "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
+    "PLM/CoT/DAPO/DAPO.md",
+    "PLM/CoT/DAPO",
+    "Tool/Pytorch/transformers.md",
     "PLM/Alignment/RewardModel/SPCT/SPCT.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
-    "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406181026.png",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406180948.png",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406164332.png",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406163922.png",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406163858.png",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406163154.png",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406162509.png",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406161730.png",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406160430.png",
-    "PLM/Alignment/RewardModel/SPCT/img/Pasted image 20250406160219.png",
     "PLM/Alignment/RewardModel/SPCT/img",
     "News/Inbox.md",
     "Speedup/README.md",
     "PLM/Alignment/RewardModel/RewardModel.md",
     "PLM/Alignment/RewardModel/SPCT",
     "PLM/Agent/README.md",
-    "Tool/Pytorch/transformers.md",
     "Tool/Pytorch/Pytorch.md",
     "PLM/BaseStruct/Transformer/Transformer.md",
     "PLM/BaseStruct/Attention/Attention.md",
@@ -334,16 +338,12 @@
     "Tool/Linux/Linux.md",
     "Tool/python/Debug.md",
     "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
-    "Speedup/模型并行/ultrascale_notebook.md",
-    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "Speedup/DeepSpeed/img",
     "Speedup/模型并行/img1",
     "Speedup/notebook",
     "PLM/CoT/DeepSeekR/LogicRL/img",
     "PLM/CoT/DeepSeekR/LogicRL",
     "Speedup/量化/img",
-    "PLM/DataStrategy/PreSelect/img",
-    "PLM/DataStrategy/PreSelect",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
