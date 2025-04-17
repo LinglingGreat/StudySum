@@ -75,7 +75,14 @@ institution:
 
 ![](img/Pasted%20image%2020250119145934.png)
 
-选取了几个公开的数据集，包括:WildChat, OpenAssistant, NoRobots, FLAN v2等，用以确保多样性。除此之外，为了确保一些特定能力，还用了OpenMathInstrct, Evol-CodeAlpaca等数学代码相关的数据集。 基本上这一步就是一个大大的数据收集工。质量好点的开源数据都给用上了。
+训练数据的**多样性**对于模型的泛化、避免模型遗忘以及使模型对不常见的输入具有鲁棒性至关重要，据此选取了几个公开的数据集，包括:
+- WildChat（真实的用户和模型交互的数据）
+- OpenAssistant（由志愿者创建，用于一般聊天）
+- NoRobots（由专家为广泛的开放式类别进行标注）
+- FLAN v2（经典 NLP 任务的大型汇总）
+-  UltraFeedback 的去污染子集（这里面包括FalseQA、UltraChat、Evol-Instruct、FLAN v2，在早期研究中显示出对通用偏好调整有很强的性能表现）
+
+除此之外，为了确保一些特定能力，还用了OpenMathInstrct, Evol-CodeAlpaca等数学代码相关的数据集。 基本上这一步就是一个大大的数据收集工。质量好点的开源数据都给用上了。
 
 除此之外还做了一些数据合成，借助的是所谓的persona-driven的方法，通过让LLM来扮演不同角色从而生成不同的指令。
 
