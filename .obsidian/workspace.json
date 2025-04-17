@@ -50,6 +50,20 @@
             }
           },
           {
+            "id": "347f2ac347429dcb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Alignment/Tulu/Tulu3.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Tulu3"
+            }
+          },
+          {
             "id": "6205edb56ec3bf73",
             "type": "leaf",
             "state": {
@@ -106,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -296,24 +310,26 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "94b0fbc19ec71cdc",
+  "active": "347f2ac347429dcb",
   "lastOpenFiles": [
+    "PLM/Alignment/Tulu/img/Pasted image 20250416180051.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250416175913.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250416173744.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250416173538.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250416173522.png",
+    "Tool/Git/Git.md",
+    "Tool/Pytorch/transformers.md",
+    "Tool/Linux/Linux.md",
+    "PLM/CoT/DAPO/DAPO.md",
     "PLM/CoT/DAPO/img/Pasted image 20250408202652.png",
     "PLM/CoT/DAPO/img/Pasted image 20250408202636.png",
     "PLM/CoT/DAPO/img/Pasted image 20250408202552.png",
     "PLM/CoT/DAPO/img/Pasted image 20250408202541.png",
     "PLM/CoT/DAPO/img/Pasted image 20250408202459.png",
     "PLM/CoT/DAPO/img/Pasted image 20250408202440.png",
-    "PLM/CoT/DAPO/img/Pasted image 20250408202356.png",
-    "PLM/CoT/DAPO/img/Pasted image 20250408202305.png",
-    "PLM/CoT/DAPO/img/Pasted image 20250408202254.png",
-    "PLM/CoT/DAPO/img/Pasted image 20250408201826.png",
-    "PLM/CoT/DAPO/img/Pasted image 20250408201750.png",
     "PLM/CoT/DAPO/img",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
-    "PLM/CoT/DAPO/DAPO.md",
     "PLM/CoT/DAPO",
-    "Tool/Pytorch/transformers.md",
     "PLM/Alignment/RewardModel/SPCT/SPCT.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
     "PLM/Alignment/RewardModel/SPCT/img",
@@ -335,9 +351,7 @@
     "PLM/Alignment/DPO/DPO.md",
     "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/Alignment/README.md",
-    "Tool/Linux/Linux.md",
     "Tool/python/Debug.md",
-    "PLM/CoT/Open-Reasoner-Zero/Open-Reasoner-Zero.md",
     "Speedup/DeepSpeed/img",
     "Speedup/模型并行/img1",
     "Speedup/notebook",

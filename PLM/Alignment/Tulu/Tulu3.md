@@ -7,28 +7,58 @@ tags:
 type: 论文
 papername: 
 conference: ACL/EMNLP/NAACL/EACL/COLING/SIGIR/AAAI/ICML/ICDM
-year: 
+year: 2024
 institution:
+  - AllenAI
 ---
 
 ## 论文基本信息
 
-标题：
+标题：TÜLU 3: Pushing Frontiers in Open Language Model Post-Training
 
-作者：
+作者：allenai团队
 
-链接：
+链接：https://arxiv.org/abs/2411.15124
 
-代码：
+亮点：报告详细，并且开源了用于训练的所有数据集、用于数据管理和评估的强大工具包、训练代码、模型。
+- Tulu 3 405B: https://hf.co/allenai/Llama-3.1-Tulu-3-405B
+- TÜLU 3 70B https://hf.co/allenai/Llama-3.1-Tulu-3-70B  
+- TÜLU 3 8B https://hf.co/allenai/Llama-3.1-Tulu-3-8B  
+- TÜLU 3 DATA https://hf.co/collections/allenai/tulu-3-datasets673b8df14442393f7213f372  
+- TÜLU 3 Code https://github.com/allenai/open-instruct  
+- TÜLU 3 EVAL https://github.com/allenai/olmes  
+- Demo https://playground.allenai.org/
 
-框架图：
+模型和代码，模型包括SFT后的、DPO后的以及最终版本的，还有RM模型。
+
+![](img/Pasted%20image%2020250416173522.png)
+
+数据集，不管是模型用了的还是没用的，都在这里了。
+
+![](img/Pasted%20image%2020250416173538.png)
+
+这是把能开源的全都开源了！
+
+核心框架：
+
+![](img/Pasted%20image%2020250416173744.png)
+
+包括仔细的数据管理、严格的实验和评估、创新的训练方法。
+
+团队先是确定了一组训练后需要改进的核心技能（例如，推理、数学、编码、安全、精确指令跟随、知识回忆等），并建立了一个评估框架，以建立明确的绩效目标，并指导模型改进。
+
+![](img/Pasted%20image%2020250416180051.png)
+
+模型的训练包括SFT、DPO、RLVR。通过识别技能缺陷并完善数据组合、方法和参数，确保核心技能在整个训练过程中的平衡表现。
+
+模型评测结果概览：
+
+![](img/Pasted%20image%2020250416175913.png)
 
 
 ## 背景
 
-TÜLU 3 成功的关键因素植根于仔细的数据管理、严格的实验和评估、创新的方法以及改进的训练基础设施。
 
-我们专注于知识回忆、推理、数学、编码、指令遵循、一般聊天和安全等核心技能。
 
 ## 核心亮点
 
