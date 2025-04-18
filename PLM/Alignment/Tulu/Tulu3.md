@@ -82,11 +82,15 @@ institution:
 - FLAN v2（经典 NLP 任务的大型汇总）
 -  UltraFeedback 的去污染子集（这里面包括FalseQA、UltraChat、Evol-Instruct、FLAN v2，在早期研究中显示出对通用偏好调整有很强的性能表现）
 
-除此之外，为了确保一些特定能力，还用了OpenMathInstrct, Evol-CodeAlpaca等数学代码相关的数据集。 基本上这一步就是一个大大的数据收集工。质量好点的开源数据都给用上了。
+ 根据早期研究，一些功能，如复杂推理、编码和精确的指令跟随，受益于混合额外的数据。因此为了确保一些特定能力，还包括了以下数据集：用于数学推理的 OpenMathInstruct和 NuminaMath，用于编码的 Evol-CodeAlpaca，用于精确教学跟踪的 Daring-Anteater 的子集，用于多语言的 Aya，用于科学文献理解的 SciRIFF和 TableGPT处理与表相关的任务。
 
 除此之外还做了一些数据合成，借助的是所谓的persona-driven的方法，通过让LLM来扮演不同角色从而生成不同的指令。
 
 最后还做了Prompt的去污染，防止污染测试集。
+
+![](img/Pasted%20image%2020250417193826.png)
+
+
 
 ### 有监督微调
 
