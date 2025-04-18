@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -310,8 +310,9 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "347f2ac347429dcb",
+  "active": "e9255d565c0b64ba",
   "lastOpenFiles": [
+    "PLM/Alignment/Tulu/Tulu3.md",
     "PLM/Alignment/Tulu/img/Pasted image 20250417193826.png",
     "PLM/Alignment/Tulu/img/Pasted image 20250417115403.png",
     "PLM/Alignment/Tulu/img/Pasted image 20250417115352.png",
@@ -326,7 +327,6 @@
     "Tool/Linux/Linux.md",
     "PLM/CoT/DAPO/DAPO.md",
     "PLM/CoT/DAPO/img/Pasted image 20250408202652.png",
-    "PLM/CoT/DAPO/img/Pasted image 20250408202636.png",
     "PLM/CoT/DAPO/img",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
     "PLM/CoT/DAPO",

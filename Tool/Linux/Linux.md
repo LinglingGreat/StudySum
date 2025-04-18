@@ -997,3 +997,86 @@ http {
 
 通过这种方式，即使你没有 `root` 权限，依然可以运行 Nginx 并实现负载均衡。
 
+## k8s
+
+### 服务启动
+
+```Markdown
+kubectl apply -f model.yaml
+```
+
+查看部署了哪些服务deployment/pod：
+
+```Markdown
+kubectl get deployment
+kubectl get pods -o wide
+```
+
+查看pod启动后的log
+
+```Markdown
+kubectl logs -f your_pod_name
+```
+
+进入pod内部
+
+```Plain
+kubectl exec -it <pod-name> -- /bin/bash
+```
+
+删除服务，谨慎使用：
+- 注意，使用deployment启动的服务，不要直接删除pod，删除了会自动重启。**需要用`delete deployment <name>`进行删除
+
+```Bash
+kubectl delete deployment  <name>
+```
+
+### 滚动重启
+
+1. 滚动重启 Deployment:（**deployment**名字叫做：xx-name）
+    
+
+```Bash
+kubectl rollout restart deployment/xx-name
+```
+
+2. 扩展 Deployment 到 5 个副本:
+    
+
+```Bash
+kubectl scale deployment/xx-name --replicas=5
+```
+
+4. 查看 Deployment 的滚动更新状态:
+    
+
+```Bash
+kubectl rollout status deployment/xx-name
+```
+
+5. 如果需要，回滚到之前的版本:
+    
+
+```Bash
+kubectl rollout undo deployment/xx-name
+```
+
+6. 暂停滚动更新（如果你需要暂停正在进行的更新）:
+    
+
+```Bash
+kubectl rollout pause deployment/xx-name
+```
+
+7. 恢复已暂停的滚动更新:
+    
+
+```Bash
+kubectl rollout resume deployment/xx-name
+```
+
+Deployment 的详细信息:
+
+```Bash
+kubectl describe deployment xx-name
+```
