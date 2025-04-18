@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -310,23 +310,24 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "e9255d565c0b64ba",
+  "active": "347f2ac347429dcb",
   "lastOpenFiles": [
+    "PLM/Alignment/Tulu/img/Pasted image 20250418162904.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250418162129.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250418162058.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250418160352.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250418152533.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250418151939.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250418151852.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250418150901.png",
+    "PLM/Alignment/Tulu/img/Pasted image 20250418150727.png",
+    "Tool/Linux/Linux.md",
     "PLM/Alignment/Tulu/Tulu3.md",
     "PLM/Alignment/Tulu/img/Pasted image 20250417193826.png",
     "PLM/Alignment/Tulu/img/Pasted image 20250417115403.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250417115352.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250417113830.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250416180051.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250416175913.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250416173744.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250416173538.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250416173522.png",
     "Tool/Git/Git.md",
     "Tool/Pytorch/transformers.md",
-    "Tool/Linux/Linux.md",
     "PLM/CoT/DAPO/DAPO.md",
-    "PLM/CoT/DAPO/img/Pasted image 20250408202652.png",
     "PLM/CoT/DAPO/img",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
     "PLM/CoT/DAPO",
@@ -351,7 +352,6 @@
     "PLM/Alignment/DPO/DPO.md",
     "PLM/业界分享/面试题/LLM面试题.md",
     "PLM/Alignment/README.md",
-    "Tool/python/Debug.md",
     "Speedup/DeepSpeed/img",
     "Speedup/模型并行/img1",
     "Speedup/notebook",
