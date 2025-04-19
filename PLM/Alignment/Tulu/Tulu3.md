@@ -97,9 +97,11 @@ Tulu3先是确定了一组训练后需要改进的核心技能（例如，推理
 
 ### 有监督微调
 
+#### 数据和实验
+
 首先是对数据集的过滤清洗、重新生成
 - 对于有response的提示（比如公开数据集），如果response是人类编写的或者是前沿模型（比如GPT-4o）生成的，那么就保留
-- 过滤调空回复，或者包含模型信息、开发者信息的回复
+- 过滤空回复，或者包含模型信息、开发者信息的回复
 - 对于弱模型生成的回复，或者没有回复的提示（比如persona prompts），使用GPT-4o生成回复。
 
 为了设计最终的 SFT 数据组合，首先构建了特定于技能的数据混合和模型，保留导致单个技能最佳表现的混合，而忽略其他评估。这样做是为了在给定设置下近似每个评估的上限。
@@ -119,6 +121,8 @@ Tulu3先是确定了一组训练后需要改进的核心技能（例如，推理
 - 特定的数学SFT 数据（前面提到的针对特定技能会混合一些额外的数据）大大提高了 GSM8K 和 MATH的性能。
 - （图4）SFT 数据越多，模型平均性能会不断改进。有趣的是，TruthfulQA 性能实际上会随着混合数据量的增加而下降。
 
+#### 训练参数
+
 ![](img/Pasted%20image%2020250418151852.png)
 
 （表14）还尝试了SFT阶段采用不同的随机种子（真·玄学调参），最终选择效果最好的SFT模型。这里的model soup指的是不同模型权重合并后得到的模型，Tulu3采取的是线性合并，mergekit工具。
@@ -133,7 +137,7 @@ SFT阶段的超参数如下，最大长度居然只有4096。
 ![](img/Pasted%20image%2020250418152533.png)
 
 
-**Batch Aggregation**
+#### Batch Aggregation
 
 TÜLU 3注意到Open-Instruct框架训练的SFT模型与在其他环境(如TPU)上训练的模型之间存在性能差距。这个问题主要是由于Transformers中loss aggregation的一个问题：在不考虑梯度累积或分布式训练设置的情况下对padding tokens的损失进行平均。
 
@@ -154,89 +158,135 @@ $L=(l_{n1}/n1+l_{n2}/n2)/2$
 
 ### 偏好优化
 
-首先是方法上，标准的DPO长这样：
+#### 数据构造和消融实验
 
-![](img/Pasted%20image%2020250418162058.png)
-
-而Tulu3使用了length-normalized DPO，在标准DPO基础上，对数概率对长度进行归一化，这有助于减轻人类和模型偏好中常见的长度偏差。
-
-![](img/Pasted%20image%2020250418162129.png)
-
-
-然后是数据的构造，通过调整和改进 UltraFeedback pipeline来产生偏好数据。包括3个步骤：prompt选择，模型池中的模型生成回答，用LLM-as-a-judge的方法来做偏好标注，形成偏好数据集。
+首先是数据的构造，通过调整和改进 UltraFeedback pipeline来产生偏好数据。包括3个步骤：prompt选择，模型池中的模型生成回答，用LLM-as-a-judge的方法来做偏好标注，形成偏好数据集。
 - prompt选择：给定表 7 （prompt数据合集）中的一组提示，精选了包括 SFT 期间使用的提示，以及从相同来源进行二次采样但未用于 SFT 的提示。还包括来自其他来源的提示，例如没有 TruthfulQA 实例的 Ultrafeedback 版本，或者通过向提示添加新的 IF 约束。
 - 回复生成：对于给定的提示，从模型池（包括开源模型、闭源模型）中随机抽样四个模型以生成响应。也生成了一批on-policy数据，其中一个回复是on-policy model生成的，另一个回复是off-policy models生成的。
 - 偏好标注：用GPT-4o-2024-0806打分，从帮助性、遵循指示、诚实和真实几个维度，1-5分。将评分最高的响应作为chosen，并从具有较低平均值的响应中随机抽样作为reject。
 
 ![](img/Pasted%20image%2020250418162904.png)
 
-然后做数据消融实验，表15是最终的数据混合情况，表16是包含/排除某些数据集对性能的影响情况。
+然后做数据消融实验，表15是最终的数据混合情况，表16是包含/排除某些数据集对性能的影响情况。8B模型最终用了271k的偏好数据，70B模型用了334k的偏好数据。
 
 ![](img/Pasted%20image%2020250418180730.png)
 
 ![](img/Pasted%20image%2020250418180757.png)
 
 最后得出了几个结论:
+1. Prompts的多样性很重要。增加唯一提示(Unique Prompts)的数量可以提高下游 DPO 性能，但是增加重复提示的数量不一定会提高下游DPO性能，建议花更多精力在收集唯一的提示数据和合适的数据混合上。
+2. 重复使用 SFT阶段中的提示会带来收益，但使用SFT阶段未使用的提示效果更好。在Tulu3中，把两者结合效果是最好的。
+3. On-policy数据（偏好对中肯定有一个是从当前模型采样生成的回复）相比off-policy 数据效果更好，两者结合效果最好（把on-policy回复和off-policy回复放一起，平等对待，通过打分选取pair对）。
+4. GPT-4o-2024-08-06做裁判的效果最好。Tulu3测试了GPT-4（GPT-4-turbo-2024-04-09、GPT-4o-2024-08-06、gpt-4o-mini-2024-07-18）和 Llama 3.1（70B 和 405B）。GPT-4o、Llama 3.1 405B 和 GPT-4 Turbo的表现类似，GPT-4o略微领先。
+5. Tulu3的数据混合性能超过了UltraFeedback和Helpsteer2，论文中将其归因于UltraFeedback回复中使用的模型性能普遍低于Tulu3中普遍使用的70B模型。
+6. 在针对指令遵循、编码和数学技能的三个角色偏好数据集中，只有 Tülu 3 Persona IF 提高了平均评估分数和目标 IFEval 分数，其他两个数据没有对评估产生影响。
+7. 添加由 WildChat 提示和使用Tulu3的合成偏好数据pipeline获得的pair对组成的偏好数据通常会提高 DPO 性能。将 SFT 训练期间看到的 WildChat 提示添加到 DPO 组合中，比将未使用的提示与重复使用的 WildChat 提示相结合，平均性能更好。
+8. 比较了使用几个数据集的原始偏好对，和Tulu3的合成偏好数据pipeline相比，哪个效果更好。实验了Helpsteer2、Ultrafeedback 和 MultiPref这几个数据集，Tulu3的合成偏好数据pipeline生成的数据DPO性能更好。
+9. 指令遵循数据集。IF-persona 偏好数据显著提高了 IFEval 分数，同时对平均性能的损害最小。IF-augmented数据集仅将 IFEval 性能提高了 1 分，同时也略微损害了平均性能。将 IF-persona 与 IF-augmented-verified 相结合可获得最佳的 IFEval 性能，但平均值略低。
+	1. Persona IF：将If-Persona-Sft变成偏好数据，使用GPT-4o改写prompt中的约束，并生成新回复，新回复不符合原始prompt中的全部约束，将新回复作为rejected，和原始回复组成pair对。
+	2. IF-augmented：前面prompt构建部分已经说过构造方法了，(chosen, rejected)来自合成偏好数据pipeline。通过约束验证函数只保留chosen符合约束的数据，得到IF-augmented-verified.
+	3. WildChat IF：用GPT-4从WildChat筛选出那些prompt中含约束的数据。
 
-1. Prompts的多样性大大影响了DPO的效果。(SFT，DPO的Scaling Law)
-2. 只增加数量，但是Prompt的多样性不增加，其实模型效果是会退化的。
-3. DPO阶段，复用SFT阶段的Prompt，会带来一定收益，但还是采用新的Prompt效果更佳。
-4. On-policy Data（模型采样出来的pair）相比off-policy data效果更好。
-5. GPT-4o-2024-08-06是标注能力最强的模型 (用它标注的结果做DPO效果最佳，和Llama405b打平)。这里还把Llama 3.1 405b拿出来试了下，看来4o的参数效率还是很领先的。
+![](img/Pasted%20image%2020250419100851.png)
 
-![](img/Pasted%20image%2020250119151148.png)
+![](img/Pasted%20image%2020250419102355.png)
 
+![](img/Pasted%20image%2020250419103305.png)
 
+![](img/Pasted%20image%2020250419105321.png)
 
-本阶段最后选择的学习率是5e-7，并且只需要训练一轮。另外作者用的是Length-normalized DPO，顾名思义，给对数概率和除了个权重。TÜLU 3场景中，不同RL算法的实验结论是，length-normalized DPO效果最好，SimPO甚至性能不如SFT-base。
+#### 偏好优化算法和超参数
 
-![](img/Pasted%20image%2020250119150632.png)
+Tulu3使用早期的 SFT 检查点和 UltraFeedback 数据集做了算法和超参数的消融选择。尝试了DPO 、 SimPO 和length-normalized DPO，根据实验效果最终选择了length-normalized DPO。
 
-![](img/Pasted%20image%2020250119151214.png)
+标准的DPO长这样：
 
+![](img/Pasted%20image%2020250418162058.png)
 
+length-normalized DPO在标准DPO基础上，对数概率对长度进行归一化，这有助于减轻人类和模型偏好中常见的长度偏差。
 
+![](img/Pasted%20image%2020250418162129.png)
 
+顺便看看SimPO的公式，虽然Tulu3的实验中看SimPO的效果很差，还不如SFT Base.
 
-![](img/Pasted%20image%2020250119150651.png)
+![](img/Pasted%20image%2020250419110110.png)
 
+在此基础了做了超参数的选择，降低了 70B 训练的学习率并增加了批量大小，因为在对较大的模型进行 SFT 时，降低学习率并增加批量大小是很常见的。
 
+不同的数据混合下，最佳的学习率是有差异的，一个是2.0 × 10-7，一个是5.0 × 10-7。
+
+![](img/Pasted%20image%2020250419105928.png)
+
+Tulu3还尝试了PPO，用DPO的早期偏好数据混合训练RM，保持DPO和PPO使用相同的prompt数据混合，没怎么调参数，也只训练了一次RM。训练结果是PPO和DPO性能相似，但是PPO需要更多的计算资源。鉴于资源有限且RM不好评估，因此Tulu3还是使用了DPO训练，在RLVR中会使用PPO。
+
+![](img/Pasted%20image%2020250419110939.png)
+
+![](img/Pasted%20image%2020250419111210.png)
+
+另外，在DPO训练过程中，缓存DPO Log Probs，以及对Chosen，Rejected序列进行Separate Forward，会降低GPU显存的占用。
 
 ### 强化学习
 
-RLVR（RL with verifiable rewards）
+RLVR（Reinforcement Learning with Verifiable Rewards） 利用了现有的 RLHF 目标，但用验证函数取代了奖励模型，如图 18 上所示。当应用于具有可验证答案的领域时，例如数学和可验证的指令遵循，RLVR 展示了对 GSM8K 等基准测试的针对性改进，同时保持其他任务的性能。
 
-![](https://pic4.zhimg.com/v2-420ceb691fc2ee3e98c252d8469b3bdd_1440w.jpg)
+![](img/Pasted%20image%2020250419113249.png)
 
 ![](img/Pasted%20image%2020250119151321.png)
 
-直接基于GroundTruth来判断答案是否正确，然后应用PPO来进行训练。其实就是基于Rule-Based RM做RL的另一种说法。不同于DeepSeek-V3和Qwen2.5采取的GRPO，RLVR的算法采取了PPO。PPO需要value model，但reward model目前是一个verifier，所以TÜLU 3使用General RM来初始化value model。
+直接基于Rule-Based RM，答案正确才有奖励得分，然后应用PPO来进行训练。
 
-发现:
+训练数据集采用GSM8K, MATH, IFEval（表22），将数据集合并得到30,000个prompts及其ground truth。训练细节：
+- 使用General RM来初始化value model。
+- 禁用Dropout
+- 使用 SFT 数据集进行训练并在 epoch 之间shuffle，Tulu3训练了100, 000/7, 473 ≈ 13 epochs，并在最后一个epoch中，每40-100步跑一次评估，选择在development evaluation set上评估结果最好的checkpoint。
+- 对于没有EOS token结束的response给予惩罚
+- 对Advantage做标准化
 
-1. 这样可以直接在目标领域(比如数学)改善效果，其实这也是一个趋势了，代码生成，数学推理这些可自动验证的领域后面应该都会跟上。
-2. Value Model最好从一个通用的RM上去初始化。
-3. 用RM产生的分数反而会产生噪音。(所以在能用规则验证的地方，还是不要用模型了吧)
+做了超参数选择、RM初始化模型对比、RM模型+可验证奖励、从更弱的SFT模型初始化训练等实验。
 
-### 其它发现
+![](img/Pasted%20image%2020250419114825.png)
 
-1. 在线的DPO没生效。
-2. 拒绝采样也没怎么生效。
+![](img/Pasted%20image%2020250419115026.png)
 
-### 尾声:
+![](img/Pasted%20image%2020250419115043.png)
 
-本文看起来朴实无华，但对于整个后训练链路的探索，还是很有价值的。不管是RLVR，还是在线DPO的失败，其实应该都体现的是在本文中RM的失败，RM的过拟合，噪音，Hacking等问题，依然是值得大家去警惕的。
 
-## 实验
+发现：
+1. RLVR 可以提高目标领域中的性能。
+2. 从通用的RM上去初始化Value Model，比从SFT模型初始化好。
+3. 仅使用可验证的奖励优于使用奖励模型中的分数。使用 RM 的分数进行可验证奖励的训练似乎会引入更多噪音，尤其是在平均分数中。
+4. 从 SFT 和 DPO 开始可以带来相同水平的可验证奖励，但与从 DPO 模型开始相比，从 SFT 模型开始会产生更大的 KL。因为 SFT 模型在 GSM8K 上的表现远不及 DPO 模型。然而，从更强的模型开始通常会带来更好的测试集性能。
+5. 更大的KL偏离通常会导致更低的平均分数。
 
+此外，采取了异步训练方式，使得模型推理的时候同时进行模型训练，减少GPU空闲时间。
+
+最终采用DPO模型作为初始化模型训练，训练后提升了MATH, GSM8k, and IFEval的性能。
+
+![](img/Pasted%20image%2020250419121229.png)
+
+
+
+### 讨论
+将上述流程应用到405B模型上，训练需要32个节点，因此通信、速度等也是一个挑战。
+
+由于405B模型经过 SFT 和 DPO 训练就达到了 GSM8K性能的饱和，以及 IFEval 数据在初始 RLVR 运行中没有太大帮助。因此，对于 Tülu 3 405B RLVR，只使用了 MATH训练集。只经过 25 个 RLVR 训练步骤，MATH 性能就提高了 5 分以上，并且随着训练的增加而继续提高。
+
+其他发现
+1. 在线的DPO没生效。估计是RM没训练好。
+2. 拒绝采样（生成n个回复，用LLM排名，不断迭代）也没怎么生效。比较依赖于强大的judges。
 
 
 ## 未来方向
 
-
+1. 长上下文和多轮次数据。Tulu3的训练数据长度都很短，基本上低于2048 tokens，在长上下文成为趋势的现在显得太短了。
+2. 多语言训练。Tulu3基本上只考虑了英文，多语言的训练涉及到跨语言对齐、数据平衡等。
+3. 工具使用和Agent。训练模型去使用工具是一个很自然的事情，你不能期待依赖模型权重就能够做到所有事情。
 
 ## 主要收获
 
+论文中还花了比较多的篇幅介绍Tulu3的评估框架，包括使用了哪些任务/数据集做评估，评估的方式（zero-shot/few-shot/cot，prompt等），这部分内容因为我不太感兴趣就没仔细看了。有感兴趣的可以自行去看论文。
+
+我觉得这篇论文值得我们学习的就是把所有能开源的东西都开源了，数据不一定能直接拿来用去训练，但作为prompt来源是没问题的，不需要再去大力搜集各种prompt了。论文也写的很详细，实验做的很仔细。包括PPO、在线DPO的失败，也毫不避讳地说明了RM训练的失败，虽然是2024年的论文（提交了很多个arxiv版本，最早是2024年11月，最新一版是2025年4月份的），但目前也没有一个公认的训练出好的RM以及如何评估RM的方法。仍旧是后续需要探索的方向。
 
 ## 参考资料
 
