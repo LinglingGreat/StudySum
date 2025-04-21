@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Git/Git.md",
+                "file": "PLM/Forgetting/Forgetting_李宏毅.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Git"
+              "title": "Forgetting_李宏毅"
             }
           },
           {
@@ -298,19 +298,23 @@
   },
   "active": "d1601f8bc2b807d7",
   "lastOpenFiles": [
-    "PLM/Alignment/Tulu/Tulu3.md",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419121229.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419115043.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419115026.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419114825.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419113249.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419111210.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419110939.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419110110.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419105928.png",
-    "PLM/Alignment/Tulu/img/Pasted image 20250419105321.png",
-    "Tool/Linux/Linux.md",
+    "PLM/Forgetting/img/Pasted image 20250421164722.png",
+    "PLM/Forgetting/img/Pasted image 20250421164614.png",
+    "PLM/Forgetting/img/Pasted image 20250421164444.png",
+    "PLM/Forgetting/img/Pasted image 20250421164201.png",
+    "PLM/Forgetting/img/Pasted image 20250421164008.png",
+    "PLM/Forgetting/img/Pasted image 20250421163832.png",
+    "PLM/Forgetting/img/Pasted image 20250421163639.png",
+    "PLM/Forgetting/img/Pasted image 20250421162929.png",
+    "PLM/Forgetting/img/Pasted image 20250421162011.png",
+    "PLM/Forgetting/img/Pasted image 20250421161502.png",
+    "PLM/Forgetting/img/Pasted image 20250421161351.png",
+    "PLM/Forgetting/img",
     "Tool/Git/Git.md",
+    "PLM/Forgetting/Forgetting_李宏毅.md",
+    "PLM/Forgetting",
+    "PLM/Alignment/Tulu/Tulu3.md",
+    "Tool/Linux/Linux.md",
     "Tool/Pytorch/transformers.md",
     "PLM/CoT/DAPO/DAPO.md",
     "PLM/CoT/DAPO/img",
@@ -336,13 +340,10 @@
     "PLM/Alignment/Loss/Loss函数总结.md",
     "PLM/Alignment/DPO/DPO.md",
     "PLM/业界分享/面试题/LLM面试题.md",
-    "PLM/Alignment/README.md",
     "Speedup/DeepSpeed/img",
     "Speedup/模型并行/img1",
     "Speedup/notebook",
     "PLM/CoT/DeepSeekR/LogicRL/img",
-    "PLM/CoT/DeepSeekR/LogicRL",
-    "Speedup/量化/img",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
