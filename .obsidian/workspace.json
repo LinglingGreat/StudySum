@@ -36,20 +36,6 @@
             }
           },
           {
-            "id": "d1601f8bc2b807d7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Forgetting/Forgetting_李宏毅.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Forgetting_李宏毅"
-            }
-          },
-          {
             "id": "6205edb56ec3bf73",
             "type": "leaf",
             "state": {
@@ -83,30 +69,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/CoT/DAPO/DAPO.md",
+                "file": "PLM/CoT/语言模型如何进行深度思考.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DAPO"
+              "title": "语言模型如何进行深度思考"
             }
           },
           {
-            "id": "ff78063cfc41d774",
+            "id": "9e90fe45367591b4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/DeepSeek/DeepSeekv3.md",
+                "file": "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DeepSeekv3"
+              "title": "DeepSeek-R1"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -211,13 +197,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Alignment/RewardModel/ITS_GRM/ITS_GRM.md",
+                "file": "PLM/CoT/语言模型如何进行深度思考.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ITS_GRM 的大纲"
+              "title": "语言模型如何进行深度思考 的大纲"
             }
           },
           {
@@ -277,7 +263,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -296,29 +282,31 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "d1601f8bc2b807d7",
+  "active": "94b0fbc19ec71cdc",
   "lastOpenFiles": [
-    "PLM/Forgetting/img/Pasted image 20250421164722.png",
-    "PLM/Forgetting/img/Pasted image 20250421164614.png",
-    "PLM/Forgetting/img/Pasted image 20250421164444.png",
-    "PLM/Forgetting/img/Pasted image 20250421164201.png",
-    "PLM/Forgetting/img/Pasted image 20250421164008.png",
-    "PLM/Forgetting/img/Pasted image 20250421163832.png",
-    "PLM/Forgetting/img/Pasted image 20250421163639.png",
-    "PLM/Forgetting/img/Pasted image 20250421162929.png",
-    "PLM/Forgetting/img/Pasted image 20250421162011.png",
-    "PLM/Forgetting/img/Pasted image 20250421161502.png",
-    "PLM/Forgetting/img/Pasted image 20250421161351.png",
+    "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
+    "PLM/CoT/语言模型如何进行深度思考.md",
+    "PLM/CoT/img/Pasted image 20250501175450.png",
+    "PLM/CoT/img/Pasted image 20250501172610.png",
+    "PLM/CoT/img/Pasted image 20250501172557.png",
+    "PLM/CoT/img/Pasted image 20250501172546.png",
+    "PLM/CoT/img/Pasted image 20250501172537.png",
+    "PLM/CoT/img/Pasted image 20250501172527.png",
+    "PLM/CoT/img/Pasted image 20250501172519.png",
+    "PLM/CoT/img/Pasted image 20250501172510.png",
+    "PLM/CoT/img/Pasted image 20250501172501.png",
+    "PLM/CoT/img/Pasted image 20250501172450.png",
+    "PLM/CoT/README.md",
+    "PLM/CoT/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
+    "PLM/CoT/DAPO/DAPO.md",
+    "Tool/Linux/Linux.md",
+    "PLM/Forgetting/Forgetting_李宏毅.md",
     "PLM/Forgetting/img",
     "Tool/Git/Git.md",
-    "PLM/Forgetting/Forgetting_李宏毅.md",
     "PLM/Forgetting",
     "PLM/Alignment/Tulu/Tulu3.md",
-    "Tool/Linux/Linux.md",
     "Tool/Pytorch/transformers.md",
-    "PLM/CoT/DAPO/DAPO.md",
     "PLM/CoT/DAPO/img",
-    "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
     "PLM/CoT/DAPO",
     "PLM/Alignment/RewardModel/SPCT/SPCT.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
@@ -337,9 +325,6 @@
     "PLM/CoT/DeepSeekR/R1-related.md",
     "PLM/Alignment/GRPO/GRPO.md",
     "PLM/Alignment/PPO/PPO.md",
-    "PLM/Alignment/Loss/Loss函数总结.md",
-    "PLM/Alignment/DPO/DPO.md",
-    "PLM/业界分享/面试题/LLM面试题.md",
     "Speedup/DeepSpeed/img",
     "Speedup/模型并行/img1",
     "Speedup/notebook",
