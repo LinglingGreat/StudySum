@@ -1012,6 +1012,16 @@ kubectl get deployment
 kubectl get pods -o wide
 ```
 
+```
+# scaledobject名字是config里面的名字 
+kubectl get scaledobject 
+kubectl describe scaledobject <name> 
+
+# hpa的名字是自动启的，每次查看一下 
+kubectl get hpa 
+kubectl describe hpa <your hpa name>
+```
+
 查看pod启动后的log
 
 ```Markdown

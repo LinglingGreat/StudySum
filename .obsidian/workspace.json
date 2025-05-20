@@ -64,20 +64,6 @@
             }
           },
           {
-            "id": "d40ee8ca01035e86",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/CoT/深度思考模型/语言模型如何进行深度思考.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "语言模型如何进行深度思考"
-            }
-          },
-          {
             "id": "f16650dde2cb328c",
             "type": "leaf",
             "state": {
@@ -92,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -198,13 +184,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/CoT/深度思考模型/别让推理模型想太多.md",
+                "file": "Tool/Linux/Linux.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "别让推理模型想太多 的大纲"
+              "title": "Linux 的大纲"
             }
           },
           {
@@ -283,10 +269,12 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "f16650dde2cb328c",
+  "active": "e9255d565c0b64ba",
   "lastOpenFiles": [
-    "PLM/CoT/深度思考模型/语言模型如何进行深度思考.md",
     "PLM/CoT/深度思考模型/别让推理模型想太多.md",
+    "Tool/Pytorch/transformers.md",
+    "PLM/CoT/深度思考模型/语言模型如何进行深度思考.md",
+    "Tool/Linux/Linux.md",
     "PLM/CoT/深度思考模型/img/别让推理模型想太多-20250505174439.png",
     "PLM/CoT/深度思考模型/img/别让推理模型想太多-20250505174418.png",
     "PLM/CoT/深度思考模型/img/别让推理模型想太多-20250505174407.png",
@@ -297,14 +285,12 @@
     "PLM/CoT/深度思考模型/img/别让推理模型想太多-20250505174309.png",
     "PLM/CoT/深度思考模型/img/别让推理模型想太多-20250505174259.png",
     "PLM/CoT/深度思考模型/img/别让推理模型想太多-20250505174248.png",
-    "Tool/Pytorch/transformers.md",
     "PLM/CoT/深度思考模型/img",
     "PLM/CoT/深度思考模型",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
     "PLM/CoT/README.md",
     "PLM/CoT/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
     "PLM/CoT/DAPO/DAPO.md",
-    "Tool/Linux/Linux.md",
     "PLM/Forgetting/Forgetting_李宏毅.md",
     "PLM/Forgetting/img",
     "Tool/Git/Git.md",
