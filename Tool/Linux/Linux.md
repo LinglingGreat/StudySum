@@ -999,6 +999,23 @@ http {
 
 ## k8s
 
+### 查看事件
+
+#### 检查集群事件
+
+```Bash
+kubectl get events --sort-by='.lastTimestamp'
+kubectl get events --sort-by=.metadata.creatioonTimestamp | grep vip
+```
+
+#### 查看可用gpu
+
+```bash
+kubectl describe nodes | grep -E "nvidia.com/gpu|HolderIdentity:"  
+```
+
+kubectl describe nodes | grep -A 10 "Allocated resources"
+
 ### 服务启动
 
 ```Markdown
