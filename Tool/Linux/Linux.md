@@ -1107,3 +1107,11 @@ Deployment 的详细信息:
 ```Bash
 kubectl describe deployment xx-name
 ```
+
+```bash
+# 使用下面的命令，可以在本地访问promethus里面的监控数据 
+kubectl port-forward -n monitoring svc/prometheus-k8s 9090:9090 
+
+# grafana监控转发 
+kubectl port-forward svc/grafana -n monitoring 8082:3000
+```
