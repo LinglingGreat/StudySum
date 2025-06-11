@@ -1115,3 +1115,417 @@ kubectl port-forward -n monitoring svc/prometheus-k8s 9090:9090
 # grafana监控转发 
 kubectl port-forward svc/grafana -n monitoring 8082:3000
 ```
+
+
+# 安装网络监控系统指南
+
+为了实时监控您的网络连接和性能，特别是与远程 Redis 服务器的连接，我推荐几种可在线查看的网络监控解决方案。以下是详细的安装和配置指南：
+
+## 1. Netdata - 轻量级实时监控系统
+
+Netdata 是一个非常轻量级但功能强大的实时性能监控工具，特别适合监控网络连接。
+
+### 安装步骤
+
+```bash
+# 一键安装脚本
+bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+
+# 或者通过包管理器安装
+# 对于基于 Debian/Ubuntu 的系统
+apt update
+apt install netdata
+
+# 对于基于 RHEL/CentOS 的系统
+yum install epel-release
+yum install netdata
+```
+
+### 配置网络监控
+
+```bash
+# 编辑配置文件
+nano /etc/netdata/netdata.conf
+
+# 确保以下部分存在并正确配置
+[web]
+    bind to = 0.0.0.0
+    allow connections from = *
+    allow dashboard from = *
+
+# 重启服务
+systemctl restart netdata
+```
+
+### 访问监控面板
+- 打开浏览器访问 `http://服务器IP:19999`
+- 查看 "Network Interfaces" 和 "Network Stack" 部分
+
+### 添加 Redis 连接监控
+```bash
+# 创建自定义监控脚本
+mkdir -p /usr/local/bin/netdata-custom
+nano /usr/local/bin/netdata-custom/redis_connection_monitor.sh
+
+# 添加以下内容
+#!/bin/bash
+REDIS_HOST="your_redis_server_ip"
+REDIS_PORT="6379"
+
+# 获取连接状态
+ESTABLISHED=$(netstat -an | grep $REDIS_HOST:$REDIS_PORT | grep ESTABLISHED | wc -l)
+TIME_WAIT=$(netstat -an | grep $REDIS_HOST:$REDIS_PORT | grep TIME_WAIT | wc -l)
+CLOSE_WAIT=$(netstat -an | grep $REDIS_HOST:$REDIS_PORT | grep CLOSE_WAIT | wc -l)
+
+# 输出结果给Netdata
+echo "BEGIN redis_connections.connections $1"
+echo "SET established $ESTABLISHED"
+echo "SET time_wait $TIME_WAIT"
+echo "SET close_wait $CLOSE_WAIT"
+echo "END"
+
+# 设置执行权限
+chmod +x /usr/local/bin/netdata-custom/redis_connection_monitor.sh
+
+# 配置Netdata使用此脚本
+nano /etc/netdata/charts.d.conf
+# 添加: redis_connection_monitor=yes
+```
+
+## 2. Prometheus + Grafana - 企业级监控方案
+
+对于更强大的监控需求，Prometheus 配合 Grafana 是理想选择。
+
+### 安装 Prometheus
+
+```bash
+# 下载Prometheus
+cd /tmp
+wget https://github.com/prometheus/prometheus/releases/download/v2.37.0/prometheus-2.37.0.linux-amd64.tar.gz
+tar xvfz prometheus-*.tar.gz
+cd prometheus-*
+
+# 创建目录
+sudo mkdir -p /etc/prometheus /var/lib/prometheus
+
+# 复制文件
+sudo cp prometheus /usr/local/bin/
+sudo cp promtool /usr/local/bin/
+sudo cp -r consoles/ console_libraries/ /etc/prometheus/
+
+# 创建配置文件
+sudo nano /etc/prometheus/prometheus.yml
+
+# 添加基本配置
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+  
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']
+```
+
+### 安装 Node Exporter（系统监控）
+
+```bash
+# 下载Node Exporter
+cd /tmp
+wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
+tar xvfz node_exporter-*.tar.gz
+cd node_exporter-*
+
+# 复制文件
+sudo cp node_exporter /usr/local/bin/
+
+# 创建systemd服务
+sudo nano /etc/systemd/system/node_exporter.service
+
+# 添加以下内容
+[Unit]
+Description=Node Exporter
+After=network.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/node_exporter
+
+[Install]
+WantedBy=multi-user.target
+
+# 创建用户
+sudo useradd -rs /bin/false node_exporter
+
+# 启动服务
+sudo systemctl daemon-reload
+sudo systemctl start node_exporter
+sudo systemctl enable node_exporter
+```
+
+### 创建 Prometheus 服务
+
+```bash
+# 创建systemd服务
+sudo nano /etc/systemd/system/prometheus.service
+
+# 添加以下内容
+[Unit]
+Description=Prometheus
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=prometheus
+Group=prometheus
+Type=simple
+ExecStart=/usr/local/bin/prometheus \
+    --config.file /etc/prometheus/prometheus.yml \
+    --storage.tsdb.path /var/lib/prometheus/ \
+    --web.console.templates=/etc/prometheus/consoles \
+    --web.console.libraries=/etc/prometheus/console_libraries
+
+[Install]
+WantedBy=multi-user.target
+
+# 创建用户
+sudo useradd -rs /bin/false prometheus
+
+# 设置权限
+sudo chown prometheus:prometheus /etc/prometheus /var/lib/prometheus -R
+sudo chown prometheus:prometheus /usr/local/bin/prometheus /usr/local/bin/promtool
+
+# 启动服务
+sudo systemctl daemon-reload
+sudo systemctl start prometheus
+sudo systemctl enable prometheus
+```
+
+### 安装 Grafana
+
+```bash
+# 添加Grafana仓库
+# 对于Debian/Ubuntu
+sudo apt-get install -y apt-transport-https software-properties-common
+sudo wget -q -O /usr/share/keyrings/grafana.key https://packages.grafana.com/gpg.key
+echo "deb [signed-by=/usr/share/keyrings/grafana.key] https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+sudo apt-get update
+sudo apt-get install grafana
+
+# 对于RHEL/CentOS
+sudo nano /etc/yum.repos.d/grafana.repo
+# 添加以下内容
+[grafana]
+name=grafana
+baseurl=https://packages.grafana.com/oss/rpm
+repo_gpgcheck=1
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.grafana.com/gpg.key
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+
+# 安装
+sudo yum install grafana
+
+# 启动服务
+sudo systemctl daemon-reload
+sudo systemctl start grafana-server
+sudo systemctl enable grafana-server
+```
+
+### 配置 Grafana
+
+1. 访问 `http://服务器IP:3000`
+2. 默认用户名/密码：admin/admin
+3. 添加 Prometheus 数据源
+4. 导入网络监控仪表板（ID: 1860）
+
+## 3. 简单的网络监控脚本（带Web界面）
+
+如果您需要一个更简单的解决方案，可以使用以下自定义脚本：
+
+```bash
+# 安装必要的包
+sudo apt-get install apache2 php php-json
+
+# 创建监控脚本
+sudo mkdir -p /opt/network-monitor
+sudo nano /opt/network-monitor/monitor.sh
+
+# 添加以下内容
+#!/bin/bash
+REDIS_HOST="your_redis_server_ip"
+REDIS_PORT="6379"
+OUTPUT_DIR="/var/www/html/network-stats"
+mkdir -p $OUTPUT_DIR
+
+while true; do
+    # 获取时间戳
+    TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+    
+    # 网络连接状态
+    CONNECTIONS=$(netstat -an | grep $REDIS_HOST:$REDIS_PORT | awk '{print $6}' | sort | uniq -c)
+    
+    # Ping延迟
+    PING_RESULT=$(ping -c 1 $REDIS_HOST | grep "time=" | awk -F "time=" '{print $2}' | awk '{print $1}')
+    
+    # 保存数据
+    echo "{\"timestamp\":\"$TIMESTAMP\",\"ping\":\"$PING_RESULT\",\"connections\":\"$CONNECTIONS\"}" >> $OUTPUT_DIR/data.json
+    
+    # 保持最新的1000条记录
+    tail -1000 $OUTPUT_DIR/data.json > $OUTPUT_DIR/data.json.tmp
+    mv $OUTPUT_DIR/data.json.tmp $OUTPUT_DIR/data.json
+    
+    # 每10秒采集一次
+    sleep 10
+done
+
+# 设置执行权限
+sudo chmod +x /opt/network-monitor/monitor.sh
+
+# 创建systemd服务
+sudo nano /etc/systemd/system/network-monitor.service
+
+# 添加以下内容
+[Unit]
+Description=Network Monitor Service
+After=network.target
+
+[Service]
+ExecStart=/opt/network-monitor/monitor.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+# 启动服务
+sudo systemctl daemon-reload
+sudo systemctl start network-monitor
+sudo systemctl enable network-monitor
+```
+
+### 创建Web界面
+
+```bash
+# 创建HTML文件
+sudo nano /var/www/html/network-monitor.html
+
+# 添加以下内容
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redis Network Monitor</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { width: 80%; margin: 0 auto; }
+        .chart-container { height: 400px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redis Network Monitor</h1>
+        <div class="chart-container">
+            <canvas id="pingChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <canvas id="connectionsChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // 加载数据
+        async function loadData() {
+            const response = await fetch('network-stats/data.json');
+            const text = await response.text();
+            const lines = text.trim().split('\n');
+            return lines.map(line => JSON.parse(line));
+        }
+
+        // 更新图表
+        async function updateCharts() {
+            const data = await loadData();
+            
+            // 准备数据
+            const labels = data.map(item => item.timestamp);
+            const pingData = data.map(item => parseFloat(item.ping));
+            
+            // Ping图表
+            const pingCtx = document.getElementById('pingChart').getContext('2d');
+            new Chart(pingCtx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Ping Latency (ms)',
+                        data: pingData,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+            
+            // 连接状态图表
+            // 这里需要解析连接数据，根据实际格式调整
+        }
+
+        // 初始加载
+        updateCharts();
+        
+        // 每30秒刷新一次
+        setInterval(updateCharts, 30000);
+    </script>
+</body>
+</html>
+```
+
+## 4. 使用 Smokeping 监控网络延迟
+
+Smokeping 专门用于监控网络延迟和丢包率，非常适合监控到 Redis 服务器的网络质量。
+
+```bash
+# 安装Smokeping
+# 对于Debian/Ubuntu
+sudo apt-get install smokeping
+
+# 对于RHEL/CentOS
+sudo yum install epel-release
+sudo yum install smokeping
+
+# 配置Smokeping
+sudo nano /etc/smokeping/config.d/Targets
+
+# 添加Redis服务器监控
++ Redis
+menu = Redis Server
+title = Redis Server Connection
+++ RedisServer
+menu = Redis Main Server
+title = Redis Server Latency
+host = your_redis_server_ip
+
+# 重启服务
+sudo systemctl restart smokeping
+
+# 访问Web界面
+# 通常在 http://服务器IP/smokeping/smokeping.cgi
+```
+
+## 推荐选择
+
+1. **简单快速方案**：Netdata - 安装简单，几分钟内即可运行，提供丰富的实时数据
+2. **企业级方案**：Prometheus + Grafana - 更强大、可扩展，但设置较复杂
+3. **专注网络延迟**：Smokeping - 专门针对网络延迟监控，图表直观
+4. **轻量级自定义**：自定义脚本 - 最轻量，但功能有限
+
+无论选择哪种方案，建议配置告警功能，在网络连接出现异常时及时通知您。这样您就可以实时监控与 Redis 服务器的连接情况，更容易发现凌晨超时问题的根本原因。
