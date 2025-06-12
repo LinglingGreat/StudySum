@@ -1030,6 +1030,9 @@ kubectl get pods -o wide
 ```
 
 ```
+# 显示 Pod 的详细信息，包括事件历史、容器状态等
+kubectl describe pod your_pod_name
+
 # scaledobject名字是config里面的名字 
 kubectl get scaledobject 
 kubectl describe scaledobject <name> 
