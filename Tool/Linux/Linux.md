@@ -1005,7 +1005,7 @@ http {
 
 ```Bash
 kubectl get events --sort-by='.lastTimestamp'
-kubectl get events --sort-by=.metadata.creatioonTimestamp | grep vip
+kubectl get events --sort-by=.metadata.creationTimestamp | grep vip
 ```
 
 #### 查看可用gpu
