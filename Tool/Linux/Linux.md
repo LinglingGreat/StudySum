@@ -20,7 +20,7 @@ Ubuntu的默认root密码是随机的，即每次开机都有一个新的 root�
 
 [Linux命令发送Http的get或post请求(curl和wget两种方法)](https://blog.csdn.net/cyl937/article/details/52850304 "Linux命令发送Http的get或post请求(curl和wget两种方法)")
 
-## 问题解决
+# 问题解决
 
 ### Linux运行文件时报错：bash: \$'\r': command not found
 
@@ -64,7 +64,7 @@ Ubuntu的默认root密码是随机的，即每次开机都有一个新的 root�
 
 [服务器上运行程序Out of memory 解决办法](https://www.cnblogs.com/E-Dreamer-Blogs/p/10507015.html "服务器上运行程序Out of memory 解决办法")
 
-## 常用命令
+# 常用命令
 
 ### 机器自身情况
 
@@ -638,7 +638,57 @@ source /ssdwork/miniconda3/etc/profile.d/conda.sh
 [修改conda环境和缓存默认路径](https://blog.csdn.net/javastart/article/details/102563461)
 
 
-## slurm
+
+# 定时任务
+
+在 Linux 系统中，有几种方式可以查询定时任务：
+
+## 1. 查看 crontab 定时任务
+
+**查看当前用户的 crontab 任务**：
+
+`crontab -l`
+
+**查看特定用户的 crontab 任务**（需要 root 权限）：
+
+`crontab -u username -l`
+
+## 2. 查看系统级定时任务
+
+**查看系统 crontab 配置文件**：
+
+`cat /etc/crontab`
+
+**查看 cron 目录下的定时任务**：
+
+`ls -l /etc/cron.d/ ls -l /etc/cron.daily/ ls -l /etc/cron.hourly/ ls -l /etc/cron.weekly/ ls -l /etc/cron.monthly/`
+
+## 3. 查看 systemd 定时器（现代 Linux 系统）
+
+**列出所有定时器**：
+
+`systemctl list-timers --all`
+
+## 4. 查看 at 任务（一次性定时任务）
+
+`atq`
+
+或
+
+`at -l`
+
+## 5. 查看 anacron 任务
+
+`cat /etc/anacrontab`
+
+## 6. 查看 cron 服务状态
+
+`systemctl status cron    # 对于使用 systemd 的系统 service cron status      # 对于使用 SysV init 的系统`
+
+这些命令可以帮助您全面了解系统上配置的各种定时任务。
+
+
+# slurm
 
 查看节点信息`sinfo -N`或者`sinfo`
 - alloc——节点在用
@@ -836,7 +886,7 @@ sleep 2m
 done
 ```
 
-## 权限
+# 权限
 
 ### 修改账号创建文件默认权限
 
@@ -905,7 +955,7 @@ fi
 
 [setfacl 命令，Linux setfacl 命令详解：设置文件访问控制列表 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/setfacl.html)
 
-## nginx
+# nginx
 
 ```
 $HOME/nginx/sbin/nginx -s stop  # 先停止Nginx
@@ -997,7 +1047,7 @@ http {
 
 通过这种方式，即使你没有 `root` 权限，依然可以运行 Nginx 并实现负载均衡。
 
-## k8s
+# k8s
 
 ### 查看事件
 
