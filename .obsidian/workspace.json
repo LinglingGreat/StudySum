@@ -121,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 327.50390243530273,
-    "collapsed": true
+    "width": 327.50390243530273
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -172,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "CV/SpeechLLM/可以听和说的语音语言模型.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Linux 的大纲"
+              "title": "可以听和说的语音语言模型 的大纲"
             }
           },
           {
@@ -238,7 +237,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -259,17 +258,17 @@
   },
   "active": "e9255d565c0b64ba",
   "lastOpenFiles": [
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202747.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202735.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202721.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202708.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202655.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202642.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202630.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202618.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202606.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720202551.png",
     "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173949.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173933.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173921.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173908.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173855.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173841.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173826.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173814.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173800.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173745.png",
-    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173733.png",
     "CV/SpeechLLM/img",
     "Tool/Linux/Linux.md",
     "CV/SpeechLLM/可以听和说的语音语言模型.md",
