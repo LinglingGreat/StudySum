@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "CV/SpeechLLM/可以听和说的语音语言模型.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Linux"
+              "title": "可以听和说的语音语言模型"
             }
           },
           {
@@ -121,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 327.50390243530273
+    "width": 327.50390243530273,
+    "collapsed": true
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -258,23 +259,27 @@
   },
   "active": "e9255d565c0b64ba",
   "lastOpenFiles": [
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173949.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173933.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173921.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173908.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173855.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173841.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173826.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173814.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173800.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173745.png",
+    "CV/SpeechLLM/img/可以听和说的语音语言模型-20250720173733.png",
+    "CV/SpeechLLM/img",
+    "Tool/Linux/Linux.md",
+    "CV/SpeechLLM/可以听和说的语音语言模型.md",
+    "CV/SpeechLLM",
     "News/Inbox.md",
     "PLM/ModelMerge/ModelMerge_李宏毅.md",
     "PLM/Forgetting/Forgetting_李宏毅.md",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706170533.png",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706170522.png",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706170510.png",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706170459.png",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706170449.png",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706165514.png",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706165348.png",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706164204.png",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706164148.png",
-    "PLM/ModelMerge/img/ModelMerge_李宏毅-20250706164131.png",
     "PLM/ModelMerge/img",
     "PLM/ModelMerge",
     "Tool/Pytorch/transformers.md",
-    "Tool/Linux/Linux.md",
     "PLM/explore/ModelEdit/模型编辑.md",
     "PLM/explore/ModelEdit/img",
     "PLM/Benchmark/Evaluation/浅析模型评估方式.md",
@@ -290,8 +295,6 @@
     "PLM/CoT/README.md",
     "PLM/CoT/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
     "PLM/CoT/DAPO/DAPO.md",
-    "PLM/Forgetting/img",
-    "PLM/Forgetting",
     "PLM/Alignment/Tulu/Tulu3.md",
     "PLM/Alignment/RewardModel/SPCT/SPCT.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
@@ -302,7 +305,6 @@
     "PLM/BaseStruct/Transformer/Transformer.md",
     "PLM/BaseStruct/Attention/Attention.md",
     "PLM/RolePlay/claude_character.md",
-    "PLM/RolePlay/RolePlaySum.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
