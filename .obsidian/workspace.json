@@ -255,8 +255,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 462.5,
-    "collapsed": true
+    "width": 462.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -272,6 +271,8 @@
   },
   "active": "69bc87c2a2be6400",
   "lastOpenFiles": [
+    "PLM/Models/Kimi/img/Kimi2-20250722204018.png",
+    "PLM/Models/Kimi/img",
     "PLM/CoT/Kimi/Kimik1.5.md",
     "PLM/Models/Kimi/Kimi2.md",
     "PLM/BaseStruct/Architecture/Comparision.md",
@@ -306,7 +307,6 @@
     "PLM/Benchmark/Evaluation/浅析模型评估方式.md",
     "PLM/explore/ModelEdit",
     "Tool/Git/Git.md",
-    "PLM/Benchmark/Evaluation/img",
     "PLM/CoT/深度思考模型/别让推理模型想太多.md",
     "PLM/CoT/深度思考模型/语言模型如何进行深度思考.md",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
@@ -317,7 +317,6 @@
     "PLM/Alignment/RewardModel/SPCT/SPCT.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
     "Speedup/README.md",
-    "PLM/Alignment/RewardModel/RewardModel.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
