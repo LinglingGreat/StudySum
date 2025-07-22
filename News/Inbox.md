@@ -184,9 +184,6 @@ Introducing OpenChat 3.6.   Surpassed official Llama3-Instruct—with 1-2M synth
 [here is my meticulously curated (and highly biased) summer paper reading list](https://x.com/jxmnop/status/1800292343343693934)
 
 
-## 2025.3
-
-
 
 
 
