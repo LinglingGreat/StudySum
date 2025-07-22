@@ -3,6 +3,7 @@ title: Kimik1.5
 created: 2025-01-21
 tags:
   - cot
+  - LLM
 type: 论文
 papername: 
 conference: ACL/EMNLP/NAACL/EACL/COLING/SIGIR/AAAI/ICML/ICDM

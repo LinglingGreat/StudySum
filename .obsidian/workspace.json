@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/BaseStruct/Architecture/Comparision.md",
+                "file": "PLM/Models/Kimi/Kimi2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Comparision"
+              "title": "Kimi2"
             }
           },
           {
@@ -110,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:模型融合",
+                "query": "kimi",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/BaseStruct/Architecture/Comparision.md",
+                "file": "PLM/Models/Kimi/Kimi2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Comparision 的大纲"
+              "title": "Kimi2 的大纲"
             }
           },
           {
@@ -272,6 +272,10 @@
   },
   "active": "69bc87c2a2be6400",
   "lastOpenFiles": [
+    "PLM/CoT/Kimi/Kimik1.5.md",
+    "PLM/Models/Kimi/Kimi2.md",
+    "PLM/BaseStruct/Architecture/Comparision.md",
+    "PLM/Models/Kimi",
     "PLM/BaseStruct/Architecture/img/Comparision-20250722185541.png",
     "PLM/BaseStruct/Architecture/img/Comparision-20250722185440.png",
     "PLM/BaseStruct/Architecture/img/Comparision-20250722185226.png",
@@ -282,10 +286,8 @@
     "PLM/BaseStruct/Architecture/img/Comparision-20250722173244.png",
     "PLM/BaseStruct/Architecture/img/Comparision-20250722173145.png",
     "PLM/BaseStruct/Architecture/img/Comparision-20250722165900.png",
-    "PLM/BaseStruct/Architecture/img/Comparision-20250722164035.png",
     "PLM/BaseStruct/Architecture/img",
     "PLM/Models/README.md",
-    "PLM/BaseStruct/Architecture/Comparision.md",
     "PLM/BaseStruct/Architecture",
     "PLM/BaseStruct/GQA/MQA&GQA.md",
     "PLM/README.md",
@@ -306,7 +308,6 @@
     "Tool/Git/Git.md",
     "PLM/Benchmark/Evaluation/img",
     "PLM/CoT/深度思考模型/别让推理模型想太多.md",
-    "PLM/Benchmark/Evaluation",
     "PLM/CoT/深度思考模型/语言模型如何进行深度思考.md",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
     "PLM/CoT/README.md",
@@ -317,7 +318,6 @@
     "PLM/Models/DeepSeek/DeepSeekv3.md",
     "Speedup/README.md",
     "PLM/Alignment/RewardModel/RewardModel.md",
-    "PLM/Agent/README.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
