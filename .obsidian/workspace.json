@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/Kimi/Kimi2.md",
+                "file": "PLM/Models/Kimi/Kimi-K2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kimi2"
+              "title": "Kimi-K2"
             }
           },
           {
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/Kimi/Kimi2.md",
+                "file": "PLM/Models/Kimi/Kimi-K2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Kimi2 的大纲"
+              "title": "Kimi-K2 的大纲"
             }
           },
           {
@@ -269,8 +269,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 462.5,
-    "collapsed": true
+    "width": 462.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -294,7 +293,7 @@
     "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
     "PLM/Models/README.md",
-    "PLM/Models/Kimi/Kimi2.md",
+    "PLM/Models/Kimi/Kimi-K2.md",
     "PLM/Models/Kimi/img/Kimi2-20250723171049.png",
     "PLM/Models/Kimi/img/Kimi2-20250723170735.png",
     "PLM/Models/Kimi/img/Kimi2-20250723165034.png",
