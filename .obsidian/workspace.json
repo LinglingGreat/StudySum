@@ -36,20 +36,6 @@
             }
           },
           {
-            "id": "69bc87c2a2be6400",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Models/Kimi/Kimi-K2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Kimi-K2"
-            }
-          },
-          {
             "id": "6d901cb86da5e3ce",
             "type": "leaf",
             "state": {
@@ -92,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -199,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/Kimi/Kimi-K2.md",
+                "file": "Tool/Linux/Linux.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Kimi-K2 的大纲"
+              "title": "Linux 的大纲"
             }
           },
           {
@@ -283,8 +269,10 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "69bc87c2a2be6400",
+  "active": "0bff3209a9a7e303",
   "lastOpenFiles": [
+    "PLM/Models/README.md",
+    "PLM/Models/Kimi/Kimi-K2.md",
     "PLM/Models/Kimi/img/Kimi2-20250726210104.png",
     "PLM/Models/Kimi/img/Kimi2-20250726204328.png",
     "PLM/Models/Kimi/img/Kimi2-20250726204303.png",
@@ -292,14 +280,11 @@
     "PLM/Models/Kimi/img/Kimi2-20250726202625.png",
     "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
-    "PLM/Models/README.md",
-    "PLM/Models/Kimi/Kimi-K2.md",
     "PLM/Models/Kimi/img/Kimi2-20250723171049.png",
     "PLM/Models/Kimi/img/Kimi2-20250723170735.png",
     "PLM/Models/Kimi/img/Kimi2-20250723165034.png",
     "PLM/Models/Kimi/img/Kimi2-20250723142908.png",
     "PLM/Models/Kimi/img/Kimi2-20250723142841.png",
-    "PLM/Models/Kimi/img/Kimi2-20250723142602.png",
     "PLM/Models/Kimi/img",
     "PLM/CoT/Kimi/Kimik1.5.md",
     "PLM/BaseStruct/Architecture/Comparision.md",
