@@ -1061,7 +1061,8 @@ kubectl get events --sort-by=.metadata.creationTimestamp | grep vip
 #### 查看可用gpu
 
 ```bash
-kubectl describe nodes | grep -E "nvidia.com/gpu|HolderIdentity:"  
+kubectl describe nodes | grep -E "nvidia.com/gpu|HolderIdentity:" 
+kubectl describe nodes | grep -E "nvidia.com/gpu|name:"
 ```
 
 kubectl describe nodes | grep -A 10 "Allocated resources"
