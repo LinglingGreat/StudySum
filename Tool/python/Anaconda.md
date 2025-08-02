@@ -29,7 +29,18 @@ source ~/.bashrc
 
 指定目录创建环境 `conda create -p ~/miniconda3/envs/test_pretrain --clone ll_pretrain`
 
+## 源设置
 
+```
+conda list --show-channel-urls
+conda config --show channels  # 查看当前频道顺序
+conda config --add channels pytorch
+conda config --add channels nvidia
+conda config --add channels conda-forge
+conda config --add channels bioconda
+conda config --add channels intel
+
+```
 
 ## 环境迁移
 
@@ -46,6 +57,17 @@ conda install -c conda-forge gxx
 
 `export LD_LIBRARY_PATH=~/miniconda3/envs/env_name/lib/:$LD_LIBRARY_PATH`
 
+## flash-attention
+
+```
+# Uninstall existing package
+pip uninstall -y flash-attn
+```
+
+`pip install flash-attn==2.7.3 --no-build-isolation`
+
+- - **`--no-build-isolation`**: Ensures the build uses your environment's PyTorch.
+- import flash_attn_2_cuda as flash_attn_gpu报错undefined symbol的时候可以尝试这个方法
 
 ## 参考资料
 
