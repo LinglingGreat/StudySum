@@ -78,6 +78,34 @@
             }
           },
           {
+            "id": "e38b46a53e4a5634",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/业界分享/其他分享/关于AI_Infra的一切-阶跃星辰朱亦博.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "关于AI_Infra的一切-阶跃星辰朱亦博"
+            }
+          },
+          {
+            "id": "b68c74054c1b854d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "强化学习大师课-清华叉院助理教授吴翼"
+            }
+          },
+          {
             "id": "3384b3915576ccd5",
             "type": "leaf",
             "state": {
@@ -92,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -199,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/python/Anaconda.md",
+                "file": "PLM/业界分享/其他分享/关于AI_Infra的一切-阶跃星辰朱亦博.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Anaconda 的大纲"
+              "title": "关于AI_Infra的一切-阶跃星辰朱亦博 的大纲"
             }
           },
           {
@@ -269,7 +297,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 462.5
+    "width": 462.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -283,10 +312,14 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "bf233564f481d5ca",
+  "active": "e38b46a53e4a5634",
   "lastOpenFiles": [
-    "Tool/python/Python.md",
+    "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
+    "PLM/业界分享/其他分享/关于AI_Infra的一切-阶跃星辰朱亦博.md",
+    "PLM/业界分享/其他分享/Agent开发的上半场—环境、Tools和Context如何决定Agent.md",
     "Tool/python/Anaconda.md",
+    "PLM/业界分享/其他分享",
+    "Tool/python/Python.md",
     "Tool/Linux/Linux.md",
     "Tool/Pytorch/Pytorch.md",
     "Tool/python/transformers.md",
@@ -322,15 +355,11 @@
     "PLM/explore/ModelEdit/模型编辑.md",
     "PLM/explore/ModelEdit/img",
     "PLM/Benchmark/Evaluation/浅析模型评估方式.md",
-    "PLM/explore/ModelEdit",
     "PLM/CoT/深度思考模型/别让推理模型想太多.md",
     "PLM/CoT/深度思考模型/语言模型如何进行深度思考.md",
     "PLM/CoT/DeepSeekR/DeepSeek-R1.md",
     "PLM/CoT/README.md",
     "PLM/CoT/MCTS树搜索会是复刻OpenAI O1的有效方法吗.md",
-    "PLM/CoT/DAPO/DAPO.md",
-    "PLM/Alignment/Tulu/Tulu3.md",
-    "PLM/Alignment/RewardModel/SPCT/SPCT.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
