@@ -50,6 +50,20 @@
             }
           },
           {
+            "id": "a135218c79aed4c9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/python/Megatron-Swift/Megatron-Swift.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Megatron-Swift"
+            }
+          },
+          {
             "id": "b180f1d7fee2795d",
             "type": "leaf",
             "state": {
@@ -106,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -213,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
+                "file": "Tool/python/Megatron-Swift/Megatron-Swift.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "强化学习大师课-清华叉院助理教授吴翼 的大纲"
+              "title": "Megatron-Swift 的大纲"
             }
           },
           {
@@ -298,16 +312,18 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "b68c74054c1b854d",
+  "active": "a135218c79aed4c9",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Tool/python/Megatron-Swift/Megatron-Swift.md",
+    "Tool/python/Megatron-Swift",
+    "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
     "PLM/Models/Baichuan/Baichuan-M2.md",
     "PLM/Models/Baichuan/img/Baichuan-M2-20250818195951.png",
     "PLM/Models/Baichuan/img/Baichuan-M2-20250818193616.png",
     "PLM/Models/Baichuan/Baichuan.md",
-    "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
     "News/Inbox.md",
     "PLM/Models/README.md",
-    "Tool/Linux/Linux.md",
     "Tool/Docker/Docker.md",
     "Tool/python/Anaconda.md",
     "PLM/业界分享/其他分享/关于AI_Infra的一切-阶跃星辰朱亦博.md",
@@ -342,7 +358,6 @@
     "PLM/ModelMerge/img",
     "PLM/ModelMerge",
     "PLM/explore/ModelEdit/模型编辑.md",
-    "PLM/explore/ModelEdit/img",
     "PLM/Benchmark/Evaluation/浅析模型评估方式.md",
     "PLM/CoT/深度思考模型/别让推理模型想太多.md",
     "未命名.canvas",
