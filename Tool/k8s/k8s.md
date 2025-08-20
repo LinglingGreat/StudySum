@@ -1,3 +1,6 @@
+### 安装
+
+https://github.com/vllm-project/production-stack/blob/main/tutorials/00-install-kubernetes-env.md
 
 
 ### 查看事件
