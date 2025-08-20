@@ -28,3 +28,6 @@
     
 - https://github.com/modelscope/ms-swift/issues/5435
 
+但是Qwen-A3B DPO训练保存的时候会报错cannot allocate memory，看起来是内存不足。单节点训练，内存一共是1T。
+
+不用Megatron训练，用swift训练，
