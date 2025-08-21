@@ -1,9 +1,9 @@
-### 安装
+# 安装
 
 https://github.com/vllm-project/production-stack/blob/main/tutorials/00-install-kubernetes-env.md
 
 
-### 查看事件
+# 查看事件
 
 #### 检查集群事件
 
@@ -21,7 +21,7 @@ kubectl describe nodes | grep -E "nvidia.com/gpu|name:"
 
 kubectl describe nodes | grep -A 10 "Allocated resources"
 
-### 服务启动
+# 服务启动
 
 ```Markdown
 kubectl apply -f model.yaml
@@ -66,7 +66,7 @@ kubectl exec -it <pod-name> -- /bin/bash
 kubectl delete deployment  <name>
 ```
 
-### 滚动重启
+# 滚动重启
 
 1. 滚动重启 Deployment:（**deployment**名字叫做：xx-name）
     
@@ -123,3 +123,84 @@ kubectl port-forward -n monitoring svc/prometheus-k8s 9090:9090
 # grafana监控转发 
 kubectl port-forward svc/grafana -n monitoring 8082:3000
 ```
+
+# 节点故障迁移
+
+要将 Kubernetes 集群中一个故障节点上的服务迁移到另一个节点，可以按照以下步骤操作：
+    
+
+3. 将故障节点标记为不可调度：
+    
+    ```Plain
+    kubectl cordon xxxx
+    ```
+    
+      这会防止新的 Pod 被调度到这个节点上。
+  
+
+4. 驱逐故障节点上的 Pod：
+    
+    ```Plain
+    kubectl drain xxxx --ignore-daemonsets --delete-emptydir-data
+    ```
+    
+      这个命令会将节点上的 Pod 安全地驱逐到其他可用节点。
+    
+
+5. 如果某些 Pod 无法自动迁移（例如，没有控制器管理的 Pod），你可能需要手动删除它们：
+    
+    ```Plain
+    kubectl delete pod <pod-name> --force --grace-period=0
+    ```
+    
+
+
+6. 检查 Pod 是否已经在其他节点上重新创建：
+    
+    ```Plain
+    kubectl get pods -o wide
+    ```
+    
+
+7. 如果有些 Pod 没有自动重新创建，检查它们的部署或 StatefulSet：
+    
+    ```Plain
+    kubectl get deployments
+    kubectl get statefulsets
+    ```
+    
+      可能需要手动扩展或重新创建这些资源。
+
+
+8. 如果故障节点已经修复，可以重新加入集群：
+    
+    ```Plain
+    kubectl uncordon xxxx
+    ```
+    
+
+  
+
+9. 如果故障节点需要永久移除，可以从集群中删除它：
+    
+    ```Plain
+    kubectl delete node 192.168.125.15
+    ```
+    
+
+  
+
+注意事项：
+
+- 确保集群中有足够的资源来容纳被迁移的 Pod。
+    
+- 对于有状态应用，可能需要额外的数据迁移步骤。
+    
+- 某些 DaemonSet 管理的 Pod 可能无法被驱逐，这是正常的。
+    
+- 在生产环境中执行这些操作时要格外小心，最好先在测试环境中演练。
+    
+
+  
+
+通过这些步骤，你应该能够将服务从故障节点迁移到集群中的其他健康节点。
