@@ -113,7 +113,7 @@ nc -vz <MASTER_ADDR> <MASTER_PORT>
 
 之前试过docker run的时候用`--network=host`，却发现无法连通，即使单节点也无法启动训练脚本。
 
-## 多节点训练-k8s
+## 多节点训练-k8s-gpt版本-不好用
 
 脚本
 
@@ -278,6 +278,7 @@ spec:
 
 ```
 
+
 ```bash
 # 查看状态
 kubectl describe pod megatron-0
@@ -292,3 +293,8 @@ kubectl get pods -l app=megatron -o wide
 kubectl delete statefulset megatron
 
 ```
+
+但是这个会一直重启运行，即使成功了也会再次运行。
+
+## 多节点训练-k8s-deepseek版本
+
