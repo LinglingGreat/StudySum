@@ -113,6 +113,12 @@ nc -vz <MASTER_ADDR> <MASTER_PORT>
 
 之前试过docker run的时候用`--network=host`，却发现无法连通，即使单节点也无法启动训练脚本。
 
+但是如果不加的话虽然可以启动，但是无法通信。
+
+网上有一个建立docker之间通信的方案：[docker容器中deepspeed多机多卡集群分布式训练大模型\_deepspeed多机多卡训练-CSDN博客](https://blog.csdn.net/Q2024107/article/details/146428595)
+
+但是运行`docker swarm join`的时候就报错无法连接了，可能是防火墙的问题。没有root权限比较难搞。
+
 ## 多节点训练-k8s-gpt版本-不好用
 
 脚本
@@ -298,3 +304,357 @@ kubectl delete statefulset megatron
 
 ## 多节点训练-k8s-deepseek版本
 
+```yaml
+# direct-gpu-training.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: training-master
+spec:
+  selector:
+    role: master
+  ports:
+    - protocol: TCP
+      port: 29500
+      name: training
+  clusterIP: None
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: training-worker
+spec:
+  selector:
+    role: worker
+  ports:
+    - protocol: TCP
+      port: 29500
+      name: training
+  clusterIP: None
+---
+# Master Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: training-master
+  labels:
+    role: master
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: training-container
+    image: nvidia/cuda:11.8.0-runtime-ubuntu22.04
+    command: ["/bin/bash", "/data/train.sh"]
+    env:
+    - name: MASTER_ADDR
+      value: "training-master"
+    - name: MASTER_PORT
+      value: "29500"
+    - name: NODE_RANK
+      value: "0"
+    - name: NPROC_PER_NODE
+      value: "4"
+    - name: NNODES
+      value: "3"
+    - name: CUDA_VISIBLE_DEVICES
+      value: "0,1,2,3"
+    resources:
+      requests:
+        cpu: "16"
+        memory: 100G
+        nvidia.com/gpu: 4  # 请求 GPU
+      limits:
+        cpu: "16"
+        memory: 100G
+        nvidia.com/gpu: 4  # GPU 上限
+    volumeMounts:
+    - name: local-data
+      mountPath: /data
+  volumes:
+  - name: local-data
+    hostPath:
+      path: /path/to/your/local/data
+      type: Directory
+---
+# Worker 1 Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: training-worker-1
+  labels:
+    role: worker
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: training-container
+    image: nvidia/cuda:11.8.0-runtime-ubuntu22.04
+    command: ["/bin/bash", "/data/train.sh"]
+    env:
+    - name: MASTER_ADDR
+      value: "training-master"
+    - name: MASTER_PORT
+      value: "29500"
+    - name: NODE_RANK
+      value: "1"
+    - name: NPROC_PER_NODE
+      value: "4"
+    - name: NNODES
+      value: "3"
+    - name: CUDA_VISIBLE_DEVICES
+      value: "0,1,2,3"
+    resources:
+      requests:
+        cpu: "16"
+        memory: 100G
+        nvidia.com/gpu: 4  # 请求 GPU
+      limits:
+        cpu: "16"
+        memory: 100G
+        nvidia.com/gpu: 4  # GPU 上限
+    volumeMounts:
+    - name: local-data
+      mountPath: /data
+  volumes:
+  - name: local-data
+    hostPath:
+      path: /path/to/your/local/data
+      type: Directory
+---
+# Worker 2 Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: training-worker-2
+  labels:
+    role: worker
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: training-container
+    image: nvidia/cuda:11.8.0-runtime-ubuntu22.04
+    command: ["/bin/bash", "/data/train.sh"]
+    env:
+    - name: MASTER_ADDR
+      value: "training-master"
+    - name: MASTER_PORT
+      value: "29500"
+    - name: NODE_RANK
+      value: "2"
+    - name: NPROC_PER_NODE
+      value: "4"
+    - name: NNODES
+      value: "3"
+    - name: CUDA_VISIBLE_DEVICES
+      value: "0,1,2,3"
+    resources:
+      requests:
+        cpu: "16"
+        memory: 100G
+        nvidia.com/gpu: 4  # 请求 GPU
+      limits:
+        cpu: "16"
+        memory: 100G
+        nvidia.com/gpu: 4  # GPU 上限
+    volumeMounts:
+    - name: local-data
+      mountPath: /data
+  volumes:
+  - name: local-data
+    hostPath:
+      path: /path/to/your/local/data
+      type: Directory
+
+```
+
+
+```bash
+# 启动任务
+kubectl apply -f xxx.yaml
+
+# 删除所有训练相关的资源
+kubectl delete -f direct-gpu-training.yaml
+
+# 或者逐个删除
+kubectl delete pod training-master training-worker-1 training-worker-2
+kubectl delete service training-master training-worker
+```
+
+
+# 使用 py-spy 诊断训练卡住问题
+
+`py-spy dump --pid xxx` 是一个非常强大的 Python 诊断工具命令，**确实可以帮助您排查训练卡在哪个位置**。
+
+## py-spy 是什么
+
+`py-spy` 是一个 Python 程序的性能分析工具，它可以在不修改代码、不重启进程的情况下：
+1. 查看 Python 程序的当前调用栈（堆栈跟踪）
+2. 分析性能瓶颈
+3. 诊断死锁或卡住的问题
+
+## 如何使用 py-spy 诊断训练卡住问题
+
+### 1. 首先进入容器并安装 py-spy
+
+```bash
+# 进入训练容器
+kubectl exec -it training-master -- /bin/bash
+
+# 安装 py-spy (如果容器内没有)
+pip install py-spy
+
+# 或者直接下载预编译版本 (如果没有pip)
+curl -L https://github.com/benfred/py-spy/releases/download/v0.3.14/py-spy-v0.3.14-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+cp py-spy /usr/local/bin/
+```
+
+### 2. 找到 Python 进程的 PID
+
+```bash
+# 在容器内查看进程
+ps aux | grep python
+
+# 或者直接查找训练进程
+pgrep -f "python.*train"
+
+# 输出示例:
+# root        123   0.0  0.0   1234  1234 pts/0    S+   00:00   0:00 python train.py
+# 这里的 123 就是 PID
+```
+
+### 3. 使用 py-spy 查看调用栈
+
+```bash
+# 查看当前所有线程的堆栈
+py-spy dump --pid 123
+
+# 或者生成火焰图 (更直观)
+py-spy record -o profile.svg --pid 123 --duration 10
+```
+
+### 4. 分析 py-spy 输出
+
+`py-spy dump` 的输出会显示每个线程当前执行到的代码位置，例如：
+
+```
+Thread 0x7F8A1B7FE700 (idle): "MainThread"
+    train (train.py:123)
+    main (main.py:45)
+    <module> (__main__.py:1)
+
+Thread 0x7F8A1AFFD700 (running): "DataLoader"
+    __getitem__ (dataset.py:67)
+    _get_batch (dataloader.py:234)
+    run (threading.py:870)
+```
+
+从输出中您可以看到：
+- 主线程卡在 `train.py` 的第 123 行
+- 数据加载线程正在运行
+
+## 常见卡住的原因及解决方案
+
+根据您的描述卡在 `[INFO:swift] The training of Epoch 0 starts...`，可能的原因包括：
+
+### 1. 数据加载问题
+```bash
+# 如果py-spy显示卡在数据加载相关代码
+py-spy dump --pid xxx | grep -i data
+```
+
+**解决方案**：
+- 检查数据路径是否正确
+- 减少数据加载 workers 数量
+- 使用更小的测试数据集验证
+
+### 2. 分布式通信问题（NCCL）
+```bash
+# 检查是否有NCCL相关线程卡住
+py-spy dump --pid xxx | grep -i nccl
+```
+
+**解决方案**：
+- 检查网络连通性
+- 调整 NCCL 环境变量
+- 增加 NCCL 超时时间
+
+### 3. 资源等待
+```bash
+# 检查是否在等待某些资源
+py-spy dump --pid xxx | grep -i wait
+```
+
+**解决方案**：
+- 检查 GPU 内存是否足够
+- 检查共享内存设置
+
+### 4. 死锁或条件竞争
+
+**解决方案**：
+- 检查多线程/多进程同步代码
+- 使用更简单的配置测试
+
+## 完整诊断流程
+
+```bash
+# 1. 进入容器
+kubectl exec -it training-master -- /bin/bash
+
+# 2. 安装py-spy (如果需要)
+pip install py-spy || curl -L https://github.com/benfred/py-spy/releases/download/v0.3.14/py-spy-v0.3.14-x86_64-unknown-linux-gnu.tar.gz | tar -xz && cp py-spy /usr/local/bin/
+
+# 3. 找到PID
+PID=$(pgrep -f "python.*train")
+echo "Python PID: $PID"
+
+# 4. 获取堆栈信息
+py-spy dump --pid $PID
+
+# 5. 如果还需要更多信息，生成火焰图
+py-spy record -o /data/profile.svg --pid $PID --duration 30
+
+# 6. 退出容器并将火焰图拷贝出来
+exit
+kubectl cp training-master:/data/profile.svg ./profile.svg
+```
+
+## 其他有用的诊断命令
+
+```bash
+# 查看进程状态
+cat /proc/$PID/status
+
+# 查看进程打开的文件
+ls -la /proc/$PID/fd
+
+# 查看进程内存映射
+cat /proc/$PID/maps
+
+# 查看进程限制
+cat /proc/$PID/limits
+
+# 使用strace跟踪系统调用 (高级)
+strace -p $PID -f -o strace.out
+```
+
+## 预防措施
+
+1. **添加超时机制**：在训练代码中添加超时检查
+2. **增加日志**：在关键步骤添加更详细的日志
+3. **使用检查点**：定期保存训练状态，便于恢复
+4. **监控资源**：实时监控 GPU、内存、网络使用情况
+
+## 示例：分析后的行动
+
+假设 `py-spy dump` 显示卡在数据加载器，您可以：
+
+```bash
+# 临时减少数据加载workers
+export NUM_WORKERS=1
+
+# 或者跳过数据预处理
+export SKIP_PREPROCESS=true
+
+# 重新启动训练
+```
+
+通过使用 `py-spy`，您应该能够精确地找到代码卡住的位置，从而有针对性地解决问题。这个工具特别适合诊断这种"看似正常但实际已卡住"的情况。
