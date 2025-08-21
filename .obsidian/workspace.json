@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/k8s/k8s.md",
+                "file": "Tool/Megatron-Swift/Megatron-Swift.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "k8s 的大纲"
+              "title": "Megatron-Swift 的大纲"
             }
           },
           {
@@ -298,11 +298,11 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "a135218c79aed4c9",
+  "active": "80ac2919c1a3bb92",
   "lastOpenFiles": [
+    "Tool/k8s/k8s.md",
     "Tool/Linux/Linux.md",
     "Tool/Megatron-Swift/Megatron-Swift.md",
-    "Tool/k8s/k8s.md",
     "Tool/Docker/Docker.md",
     "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
     "Tool/python/Python.md",
