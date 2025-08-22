@@ -415,3 +415,146 @@ spec:
 两者配合使用可以实现精细化的资源管理：LimitRange 确保"每个容器都合理"，ResourceQuota 确保"所有容器加起来不超过总量"。
 
 对于您的训练任务，建议同时使用两者来确保资源既充足又不会过度占用集群资源。
+
+# 节点资源隔离
+
+当然可以！实现这个需求是 Kubernetes 的经典用例之一。核心思路是 **“节点选择 + 资源隔离”**。
+
+主要有两种方法，可以结合使用以达到最佳效果：
+
+1.  **节点选择器 (NodeSelector)**：将节点打上标签，然后让特定 Namespace 中的 Pod 只能选择带有该标签的节点。
+2.  **污点和容忍度 (Taints and Tolerations)**：给节点打上“污点”，只有拥有对应“容忍度”的 Pod 才能被调度到该节点。
+
+通常，将两者结合是最佳实践。下面我将详细说明操作步骤。
+
+---
+
+### 方法一：节点选择器 (NodeSelector) - 最简单常用
+
+这种方法更像是“吸引”特定 Pod 到特定节点，但无法严格阻止其他 Pod（如果其他 Pod 也设置了相同的节点选择器，它依然可以调度上来）。因此，我们通常用方法二来加强限制。
+
+**步骤：**
+
+1.  **给目标节点打上专属标签**
+    假设你的节点叫 `k8s-node-1`，你想把它分配给 `my-namespace` 这个命名空间。
+    ```bash
+    kubectl label nodes <你的节点名称> dedicated-for=my-namespace
+    ```
+    *   `dedicated-for=my-namespace` 是你自定义的标签，键值对可以按需修改。
+
+2.  **在 Namespace 的 Pod 配置中指定节点选择器**
+    在你部署到 `my-namespace` 的 Pod 或 Deployment 的 YAML 文件中，添加 `nodeSelector` 字段。
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: my-app-pod
+      namespace: my-namespace # 确保指定了命名空间
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+      nodeSelector:
+        dedicated-for: my-namespace # 必须与节点标签匹配
+    ```
+
+**效果：** 当你创建这个 Pod 时，Kubernetes 调度器会只寻找带有 `dedicated-for=my-namespace` 标签的节点，从而将 Pod 调度到指定的节点上。
+
+**缺点：** 如果其他命名空间的 Pod 也故意或无意地设置了相同的 `nodeSelector`，它们仍然可以被调度到该节点上。这不是严格的隔离。
+
+---
+
+### 方法二：污点和容忍度 (Taints and Tolerations) - 实现严格隔离
+
+这种方法更像是“排斥”所有 Pod，只允许特定的 Pod 上来。这是实现严格隔离的关键。
+
+**步骤：**
+
+1.  **给目标节点打上污点 (Taint)**
+    这个污点会阻止所有没有对应容忍度的 Pod 调度到该节点。
+
+    ```bash
+    kubectl taint nodes <你的节点名称> dedicated=my-namespace:NoSchedule
+    ```
+    *   `dedicated=my-namespace`：是污点的键值。
+    *   `NoSchedule`：是效果，表示绝不调度不匹配的 Pod（已运行的不会被驱逐）。
+
+2.  **为特定 Namespace 中的 Pod 添加容忍度 (Toleration)**
+    在 `my-namespace` 中的 Pod 配置里，添加对应的容忍度，这样它们就能“忍受”这个污点，从而被调度。
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: my-app-pod
+      namespace: my-namespace
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+      tolerations:
+      - key: "dedicated"
+        operator: "Equal"
+        value: "my-namespace"
+        effect: "NoSchedule"
+    ```
+
+**效果：** 该节点因为有了污点，所有其他 Pod（没有设置容忍度的）都无法被调度上来。只有 `my-namespace` 中拥有精确匹配容忍度的 Pod 才能被调度。这就实现了严格的隔离。
+
+---
+
+### ✅ 最佳实践：组合使用 (节点选择器 + 污点和容忍度)
+
+将两者结合，既能明确地将 Pod 吸引到正确节点，又能严格阻止其他 Pod 的调度，是最可靠、最清晰的方式。
+
+**操作总结：**
+
+1.  **标记并污染节点：**
+    ```bash
+    # 1. 给节点打上标签
+    kubectl label nodes <node-name> dedicated-for=my-namespace
+    # 2. 给节点打上污点
+    kubectl taint nodes <node-name> dedicated=my-namespace:NoSchedule
+    ```
+
+2.  **在 `my-namespace` 的 Deployment/Pod YAML 中配置：**
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: my-deployment
+      namespace: my-namespace
+    spec:
+      template:
+        spec:
+          containers:
+          - name: nginx
+            image: nginx
+          # 使用节点选择器 (吸引)
+          nodeSelector:
+            dedicated-for: my-namespace
+          # 添加容忍度 (允许被调度)
+          tolerations:
+          - key: "dedicated"
+            operator: "Equal"
+            value: "my-namespace"
+            effect: "NoSchedule"
+    ```
+
+### 额外增强：网络策略 (NetworkPolicy)
+
+如果你希望不仅是在调度层面，还在网络层面进行隔离（例如，即使有其他 Pod  somehow 调度到了这个节点，也无法与 `my-namespace` 的 Pod 通信），你可以使用 **NetworkPolicy**。
+
+1.  **确保你的 Kubernetes 集群安装了 CNI 网络插件并支持 NetworkPolicy**（如 Calico, Cilium, WeaveNet 等）。
+2.  **创建一个默认拒绝所有流量的策略**，然后只允许 `my-namespace` 内部的流量。但这通常是针对 Pod 网络而非节点的，可以作为命名空间级别的额外安全措施。
+
+### 总结
+
+| 方法 | 优点 | 缺点 | 隔离强度 |
+| :--- | :--- | :--- | :--- |
+| **仅节点选择器** | 简单直观 | 无法阻止其他 Pod 通过相同选择器调度上来 | 弱 |
+| **仅污点/容忍度** | 严格隔离 | 配置稍复杂，需要管理污点和容忍度的匹配 | **强** |
+| **组合使用** | **严格隔离，意图清晰** | 需要两步配置 | **非常强（推荐）** |
+
+要实现你的需求，**强烈建议采用“组合使用”的方案**。

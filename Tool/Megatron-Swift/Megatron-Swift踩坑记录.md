@@ -141,6 +141,8 @@ export MEGATRON_LM_PATH='/xxx/Megatron-LM'
 
 安装flash_attention：`pip install flash_attn-2.7.3+cu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl`
 
+测试flash_attention正常：`import flash_attn_2_cuda as flash_attn_gpu`（因为每次都是这里报错）
+
 安装apex：
 
 ```bash
@@ -155,6 +157,8 @@ pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation -
 安装Megatron
 
 `pip install git+https://github.com/NVIDIA/Megatron-LM.git@core_r0.13.0`
+
+然后就可以训练啦～
 
 ## swift 3.7.1-docker
 
@@ -409,6 +413,8 @@ kubectl delete statefulset megatron
 
 ## 多节点训练-k8s-deepseek版本
 
+### 基础脚本
+
 DeepSeek给的版本，很不错，能够成功运行了。
 
 ```yaml
@@ -592,8 +598,317 @@ kubectl delete service training-master training-worker
 
 那么就研究如何在k8s里用上宿主机的IB卡，提升多节点训练的效率。
 
+### IB配置
+
 还是问DeepSeek，它告诉我需要安装 NVIDIA 的 Kubernetes Device Plugin 来暴露 IB 设备，虽然它给的安装方法我跑不起来，但是根据它给的链接，我找到了相关的Github仓库，就是这个：[GitHub - Mellanox/k8s-rdma-shared-dev-plugin](https://github.com/Mellanox/k8s-rdma-shared-dev-plugin)
 
+按照指南操作：
+> 
+> **1.** Use CNI plugin such as Contiv, Calico, Cluster（这一步啥也没做）
+> 
+> Make sure to configure ib0 or appropriate IPoIB netdevice as the parent netdevice for creating overlay/virtual netdevices.
+> 
+> **2.** Create ConfigMap and deploy Device Plugin
+> 
+> Deploy device plugin and create config map to describe mode as "hca" mode. This is per node configuration.
+> 
+> ```
+> cd deployment/k8s/base
+> kubectl apply -k .
+> ```
+> 
+> **3.** Create Test pod
+> 
+> Create test pod which requests 1 vhca resource.
+> 
+> ```
+> kubectl create -f example/test-hca-pod.yaml
+> ```
+> 
+> Deploy the device plugin with CDI support
+> 
+> To use the device plugin with [CDI](https://github.com/cncf-tags/container-device-interface) support, do the following:
+> 
+> ```
+> cd deployment/k8s/base/overlay
+> kubectl apply -k .
+> ```
+
+让DeepSeek解释每一步在做什么：
+
+#### 1. **使用 CNI 插件（如 Contiv, Calico, Cluster）**
+
+**含义**：
+
+- **CNI (Container Network Interface)**：是 Kubernetes 的网络插件标准，Calico、Cilium、Flannel 等都是具体的 CNI 插件，负责为 Pod 分配 IP 地址并管理网络连通性。
+    
+- **`ib0`**：这是宿主机上 IP over InfiniBand (IPoIB) 网络接口的名称。它是在物理 IB 网卡之上创建的一个 IP 协议接口。
+    
+- **`parent netdevice`**：在很多 CNI 配置中，你需要指定一个物理网络接口作为“父接口”，CNI 插件会基于它为 Pod 创建虚拟网络接口（veth pair 等）。
+    
+
+**操作目的**：  
+这一步是**配置 Kubernetes 集群的底层网络**，确保 Pod 的网络流量（尤其是 RDMA 流量）能够正确地通过高速的 IB 网络 (`ib0`) 进行传输，而不是通过普通的以太网（如 `eth0`）。你需要查阅你所使用的 CNI 插件（如 Calico）的文档，来配置如何将 `ib0` 作为其底层父接口。
+#### 2. **创建 ConfigMap 并部署设备插件**
+
+**含义**：
+
+- **Device Plugin**：这是一个运行在每个节点上的 DaemonSet Pod。它的作用是向 Kubernetes 汇报节点上的特殊硬件资源（这里指 RDMA 设备），并负责在 Pod 启动时将设备挂载到容器中。
+    
+- **ConfigMap**：一种 Kubernetes 资源，用于保存配置文件。这里用它来告诉设备插件应以哪种模式工作。
+    
+- **`"hca" mode`**：`HCA` (Host Channel Adapter) 是 InfiniBand 网卡的术语。这种模式意味着插件将**直接暴露物理 RDMA 设备**给 Pod。
+    
+
+**操作目的**：  
+这一步是**安装并配置 RDMA 设备插件本身**。通过运行 `kubectl apply -k .`（`kustomize` 命令），你会部署一个包含以下内容的 DaemonSet：
+
+- 设备插件的 Pod
+    
+- 所需的 RBAC 权限（ServiceAccount, Role, RoleBinding）
+    
+- 一个 ConfigMap，其中设置了 `config.json` 指定模式为 `"hca"`
+    
+
+部署后，每个节点上都会运行一个设备插件 Pod，它会让 Kubernetes 调度器知道这个节点有 RDMA 设备资源（例如 `rdma/hca: 1`）。
+
+#### 3. **创建测试 Pod**
+
+**含义**：
+
+- **`requests 1 vhca resource`**：在 Pod 的资源配置中，你需要像请求 CPU、内存一样，请求 RDMA 资源。`vhca` 可能指一个虚拟化的 HCA 资源。Pod 会向 Kubernetes 申请一个 `rdma/hca` 资源。
+    
+
+**操作目的**：  
+这一步是**验证设备插件是否工作正常**。`example/test-hca-pod.yaml` 是一个示例 Pod 的配置文件。
+
+创建这个 Pod 后，如果它能成功启动（`Running` 状态），并且你能 `exec` 进入容器执行 `ibv_devices` 等命令看到 RDMA 设备，就证明整个流程从调度到设备挂载都是成功的。
+
+#### 4. **部署支持 CDI 的设备插件**
+
+**含义**：
+
+- **CDI (Container Device Interface)**：这是一个更新的、更通用的标准，用于将设备注入到容器中。它旨在取代和扩展最初的 `device plugin` 框架的功能。
+    
+- **Overlay**：在 Kustomize 中，`overlay` 通常用于基于一个基础配置（`base`）生成一个具有差异化配置的新版本。
+    
+
+**操作目的**：  
+这一步提供了**另一种部署设备插件的方式**。它部署的是同一个设备插件，但可能是配置为使用更新的 CDI 接口来向容器提供设备，而不是传统的设备插件方式。这通常能提供更好的灵活性和功能。命令 `kubectl apply -k .` 会应用 `overlay` 目录下的配置，部署支持 CDI 的设备插件版本。
+
+### 更新训练脚本
+
+配置完成后，更新训练文件中的参数，新版配置：
+
+```
+# direct-gpu-training.yaml
+# 为了让节点能够相互发现,需要创建服务
+apiVersion: v1
+kind: Service
+metadata:
+  name: training-master
+  namespace: my-training
+spec:
+  selector:
+    role: master
+  ports:
+    - protocol: TCP
+      port: 29500
+      name: training
+  clusterIP: None
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: training-worker
+  namespace: my-training
+spec:
+  selector:
+    role: worker
+  ports:
+    - protocol: TCP
+      port: 29500
+      name: training
+  clusterIP: None
+---
+# Master Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: training-master
+  namespace: my-training
+  labels:
+    role: master
+spec:
+  restartPolicy: OnFailure
+  # 这是节点调度的策略，可以忽略
+  tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "my-training"
+    effect: "NoSchedule"
+  containers:
+  - name: training-container
+    image: modelscope-registry.cn-hangzhou.cr.aliyuncs.com/modelscope-repo/modelscope:ubuntu22.04-cuda12.6.3-py311-torch2.7.1-vllm0.10.0-modelscope1.28.2-swift3.7.1
+    # 添加安全上下文和设备请求
+    securityContext:
+      capabilities:
+        add: ["IPC_LOCK", "SYS_RESOURCE", "NET_RAW", "NET_ADMIN"]
+    command: ["/bin/bash", "/app/examples/train/megatron/rlhf/dpo/moe_qwen.sh"]
+    env:
+    - name: MASTER_ADDR
+      value: "training-master.my-training.svc.cluster.local"
+    - name: MASTER_PORT
+      value: "29500"
+    - name: NODE_RANK
+      value: "0"
+    - name: NPROC_PER_NODE
+      value: "8"
+    - name: NNODES
+      value: "2"
+    # - name: CUDA_VISIBLE_DEVICES
+    #   value: "0,1"
+    - name: MEGATRON_LM_PATH
+      value: "/app/Megatron-LM"
+    - name: MODELSCOPE_CACHE
+      value: "/app/shared"
+    - name: NCCL_DEBUG
+      value: "INFO"
+    - name: NCCL_IB_DISABLE
+      value: "0"  # 确保启用IB
+    # - name: NCCL_IB_HCA
+    #   value: "mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4"  # 根据实际情况调整
+    # - name: NCCL_IB_GID_INDEX
+    #   value: "3"
+    # - name: NCCL_IB_TC
+    #   value: "136"
+    # - name: NCCL_IB_QPS_PER_CONNECTION
+    #   value: "4"
+    # - name: NCCL_IB_RETRY_CNT
+    #   value: "7"
+    # - name: NCCL_IB_TIMEOUT
+    #   value: "22"
+    # - name: NCCL_IB_SL
+    #   value: "0"
+    # - name: NCCL_SOCKET_IFNAME
+    #   value: "ib0"  # 使用IB接口而不是以太网
+    resources:
+      requests:
+        cpu: "32"
+        memory: 512G
+        nvidia.com/gpu: 8  # 请求 GPU
+        rdma/hca_shared_devices_a: 1  # 请求IB设备
+      limits:
+        cpu: "64"
+        memory: 512G
+        nvidia.com/gpu: 8  # GPU 上限
+        rdma/hca_shared_devices_a: 1  # 请求IB设备
+    volumeMounts:
+      - name: dshm
+        mountPath: /dev/shm  # 挂载更大的共享内存
+      - name: workdir
+        mountPath: /app
+      # - name: ib-devices
+      #   mountPath: /dev/infiniband
+      # - name: ib-config
+      #   mountPath: /etc/libibverbs.d
+      # - name: ib-libraries
+      #   mountPath: /usr/lib64/libibverbs
+  volumes:
+    # - name: ib-devices
+    #   hostPath:
+    #     path: /dev/infiniband
+    # - name: ib-config
+    #   hostPath:
+    #     path: /etc/libibverbs.d
+    # - name: ib-libraries
+    #   hostPath:
+    #     path: /usr/lib64/libibverbs
+    - name: dshm
+      # emptyDir:
+      #   medium: Memory
+      #   sizeLimit: 50Gi  # 根据需要调整
+      hostPath:
+        path: /dev/shm
+        type: Directory
+    - name: workdir
+      hostPath:
+        path: /xxx/ms-swift
+        type: Directory
+---
+# Worker 1 Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: training-worker-1
+  namespace: my-training
+  labels:
+    role: worker
+spec:
+  restartPolicy: OnFailure
+  tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "my-training"
+    effect: "NoSchedule"
+  containers:
+  - name: training-container
+    image: modelscope-registry.cn-hangzhou.cr.aliyuncs.com/modelscope-repo/modelscope:ubuntu22.04-cuda12.6.3-py311-torch2.7.1-vllm0.10.0-modelscope1.28.2-swift3.7.1
+    securityContext:
+      capabilities:
+        add: ["IPC_LOCK", "SYS_RESOURCE", "NET_RAW", "NET_ADMIN"]
+    command: ["/bin/bash", "/app/examples/train/megatron/rlhf/dpo/moe_qwen.sh"]
+    env:
+    - name: MASTER_ADDR
+      value: "training-master.my-training.svc.cluster.local"
+    - name: MASTER_PORT
+      value: "29500"
+    - name: NODE_RANK
+      value: "1"
+    - name: NPROC_PER_NODE
+      value: "8"
+    - name: NNODES
+      value: "2"
+    # - name: CUDA_VISIBLE_DEVICES
+    #   value: "0,1"
+    - name: MEGATRON_LM_PATH
+      value: "/app/Megatron-LM"
+    - name: MODELSCOPE_CACHE
+      value: "/app/shared"
+    - name: NCCL_DEBUG
+      value: "INFO"
+    - name: NCCL_IB_DISABLE
+      value: "0"  # 确保启用IB
+    resources:
+      requests:
+        cpu: "32"
+        memory: 512G
+        nvidia.com/gpu: 8  # 请求 GPU
+        rdma/hca_shared_devices_a: 1  # 请求IB设备
+      limits:
+        cpu: "64"
+        memory: 512G
+        nvidia.com/gpu: 8  # GPU 上限
+        rdma/hca_shared_devices_a: 1  # 请求IB设备
+    volumeMounts:
+      - name: dshm
+        mountPath: /dev/shm  # 挂载更大的共享内存
+      - name: workdir
+        mountPath: /app
+  volumes:
+    - name: dshm
+      # emptyDir:
+      #   medium: Memory
+      #   sizeLimit: 50Gi  # 根据需要调整
+      hostPath:
+        path: /dev/shm
+        type: Directory
+    - name: workdir
+      hostPath:
+        path: /xxx/ms-swift
+        type: Directory
+
+```
 
 
 # 使用 py-spy 诊断训练卡住问题
