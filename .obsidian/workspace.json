@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
+                "file": "Tool/k8s/k8s.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Megatron-Swift踩坑记录 的大纲"
+              "title": "k8s 的大纲"
             }
           },
           {
@@ -312,10 +312,10 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "80ac2919c1a3bb92",
+  "active": "a135218c79aed4c9",
   "lastOpenFiles": [
-    "Tool/k8s/k8s.md",
     "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
+    "Tool/k8s/k8s.md",
     "Tool/Docker/Docker.md",
     "Tool/python/Anaconda.md",
     "Tool/python/Python.md",

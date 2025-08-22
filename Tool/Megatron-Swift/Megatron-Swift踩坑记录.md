@@ -1,13 +1,32 @@
 
+## 总结
+
+目标是DPO训练Qwen3-A3B，transformers训练速度太慢了。
+
+个人用transformers框架的训练速度是13.6w的数据，2个节点，训练了152小时。
+
+用Megatron-Swift的训练速度是7.6w的数据，1个节点，预估需要16个小时（正在训练，没结束）。
+
+是之前速度的10倍！
+
+官方文档也披露了SFT的速度对比，也是10倍的提升：
+
+使用 `megatron sft` 和 `swift sft` 在对 Qwen3-30B-A3B 模型进行全参数微调的训练速度和 GPU 显存使用对比情况如下：
+
+|Megatron-LM|DeepSpeed-ZeRO2|DeepSpeed-ZeRO3|
+|---|---|---|---|
+|训练速度|9.6s/it|-|91.2s/it|
+|显存使用|16 * 60GiB|OOM|16 * 80GiB|
+
 ## 官方文档
 
 训练指南：[Megatron-SWIFT训练 — swift 3.8.0.dev0 文档](https://swift.readthedocs.io/zh-cn/latest/Instruction/Megatron-SWIFT%E8%AE%AD%E7%BB%83.html)
 
+Qwen3最佳实践：[Qwen3最佳实践 — swift 3.8.0.dev0 文档](https://swift.readthedocs.io/zh-cn/latest/BestPractices/Qwen3%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html)
+
 常见问题：[常见问题整理 — swift 3.8.0.dev0 文档](https://swift.readthedocs.io/zh-cn/latest/Instruction/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86.html)
 
-## 背景
 
-目标是DPO训练Qwen3-A3B，transformers训练速度太慢了。
 
 训练脚本是官方提供的[ms-swift/examples/train/megatron/rlhf/dpo/moe.sh at main · modelscope/ms-swift · GitHub](https://github.com/modelscope/ms-swift/blob/main/examples/train/megatron/rlhf/dpo/moe.sh)：
 

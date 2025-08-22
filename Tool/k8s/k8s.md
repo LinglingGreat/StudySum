@@ -558,3 +558,55 @@ spec:
 | **组合使用** | **严格隔离，意图清晰** | 需要两步配置 | **非常强（推荐）** |
 
 要实现你的需求，**强烈建议采用“组合使用”的方案**。
+
+好的，取消 Kubernetes 节点的污点（Taint）非常简单。污点由 `key`、`value`（可选）和 `effect` 组成，取消时需要指定这些信息。
+
+### 使用 `kubectl taint` 命令取消污点
+
+取消污点的命令语法是：
+
+```bash
+kubectl taint nodes <节点名称> <key>[: <effect>]-
+```
+
+**注意命令末尾的减号 `-`，这是删除操作的关键。**
+
+---
+
+#### 操作步骤：
+
+1.  **首先，查看节点当前的污点，确认要删除的污点信息。**
+    ```bash
+    kubectl describe node <节点名称> | grep Taints
+    ```
+    输出示例：
+    ```
+    Taints:             dedicated=my-namespace:NoSchedule
+    ```
+
+2.  **根据污点的组成，选择对应的删除命令：**
+
+    *   **如果污点有 `key`, `value` 和 `effect`**（例如 `dedicated=my-namespace:NoSchedule`）：
+        ```bash
+        # 语法：kubectl taint nodes <node-name> key=value:effect-
+        kubectl taint nodes k8s-worker-1 dedicated=my-namespace:NoSchedule-
+        ```
+
+    *   **如果污点只有 `key` 和 `effect`，没有 `value`**（例如 `key1:NoSchedule`）：
+        ```bash
+        # 语法：kubectl taint nodes <node-name> key:effect-
+        kubectl taint nodes k8s-worker-1 key1:NoSchedule-
+        ```
+
+    *   **如果你想删除某个 `key` 的所有污点**（无论其 `value` 和 `effect` 是什么），可以使用：
+        ```bash
+        # 语法：kubectl taint nodes <node-name> key-
+        kubectl taint nodes k8s-worker-1 dedicated-
+        ```
+        *这条命令会删除所有 `key` 为 `dedicated` 的污点。*
+
+3.  **验证污点是否已成功取消。**
+    ```bash
+    kubectl describe node <节点名称> | grep Taints
+    ```
+    如果成功，输出通常会显示 `Taints: <none>`。
