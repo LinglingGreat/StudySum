@@ -479,7 +479,7 @@ kubectl delete pod training-master training-worker-1 training-worker-2
 kubectl delete service training-master training-worker
 ```
 
-能跑通，但是训练特别特别慢，等了1、2个小时才出第一个step的日志。。。单节点就很快。
+能跑通，但是训练特别特别慢，等了1、2个小时才出第一个step的日志。。。单节点就很快。可能是没用上宿主机的IB卡。
 
 # 使用 py-spy 诊断训练卡住问题
 

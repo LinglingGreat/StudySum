@@ -39,7 +39,12 @@ conda config --add channels nvidia
 conda config --add channels conda-forge
 conda config --add channels bioconda
 conda config --add channels intel
+```
 
+```
+pip install cnpip
+cnpip list
+cnpip set xxx
 ```
 
 ## 环境迁移
