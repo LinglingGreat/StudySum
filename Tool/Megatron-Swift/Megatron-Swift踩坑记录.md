@@ -1,25 +1,97 @@
 
+## 官方文档
+
 训练指南：[Megatron-SWIFT训练 — swift 3.8.0.dev0 文档](https://swift.readthedocs.io/zh-cn/latest/Instruction/Megatron-SWIFT%E8%AE%AD%E7%BB%83.html)
 
 常见问题：[常见问题整理 — swift 3.8.0.dev0 文档](https://swift.readthedocs.io/zh-cn/latest/Instruction/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86.html)
 
+## 背景
+
+目标是DPO训练Qwen3-A3B，transformers训练速度太慢了。
+
+训练脚本是官方提供的[ms-swift/examples/train/megatron/rlhf/dpo/moe.sh at main · modelscope/ms-swift · GitHub](https://github.com/modelscope/ms-swift/blob/main/examples/train/megatron/rlhf/dpo/moe.sh)：
+
+```bash
+# 8 * 65GiB; 13s/it
+# Note: "ms-swift<3.8" does not support DPO packing; please remove --packing true.
+PYTORCH_CUDA_ALLOC_CONF='expandable_segments:True' \
+NPROC_PER_NODE=8 \
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
+megatron rlhf \
+    --rlhf_type dpo \
+    --load Qwen3-30B-A3B-Instruct-2507-mcore \
+    --dataset AI-ModelScope/orpo-dpo-mix-40k \
+    --split_dataset_ratio 0.01 \
+    --packing true \
+    --tensor_model_parallel_size 4 \
+    --expert_tensor_parallel_size 1 \
+    --expert_model_parallel_size 8 \
+    --moe_permute_fusion true \
+    --moe_grouped_gemm true \
+    --moe_shared_expert_overlap true \
+    --moe_aux_loss_coeff 1e-3 \
+    --micro_batch_size 1 \
+    --global_batch_size 4 \
+    --recompute_granularity full \
+    --recompute_method uniform \
+    --recompute_num_layers 1 \
+    --max_epochs 1 \
+    --finetune true \
+    --cross_entropy_loss_fusion true \
+    --lr 1e-5 \
+    --lr_warmup_fraction 0.05 \
+    --min_lr 1e-6 \
+    --save megatron_output/Qwen3-30B-A3B-Instruct-2507 \
+    --eval_interval 200 \
+    --save_interval 200 \
+    --max_length 8192 \
+    --num_workers 8 \
+    --dataset_num_proc 8 \
+    --no_save_optim true \
+    --no_save_rng true \
+    --sequence_parallel true \
+    --attention_backend flash \
+    --optimizer_cpu_offload true \
+    --use_precision_aware_optimizer true \
+    --optimizer_offload_fraction 1 \
+    --beta 0.1 \
+    --loss_type sigmoid
+```
+
+注意这里的模型Qwen3-30B-A3B-Instruct-2507-mcore是用Qwen3-30B-A3B-Instruct-2507转换得到的，转换的命令如下(替换成你自己的模型路径)
+
+```bash
+CUDA_VISIBLE_DEVICES=0 \
+swift export \
+    --model /models/Qwen3-30B-A3B-Instruct-2507 \
+    --to_mcore true \
+    --torch_dtype bfloat16 \
+    --output_dir /models/Qwen3-30B-A3B-Instruct-2507-mcore \
+    --test_convert_precision true
+```
+
 
 ## swift 3.6.4版本
 
+	这部分主要是记录踩的坑，可以不看
+
+先尝试了swift 3.6.4，本地安装总是有各种各样的问题（参考下方swift 3.7.1本地安装），所以用了docker镜像去跑。
+
+用swift3.6.4镜像，先尝试了训练脚本examples/train/megatron/sft.sh（因为速度比较快）可以正常训练和保存checkpoint。
+
+但是在脚本里加上export MEGATRON_LM_PATH='/app/Megatron-LM'，其中Megatron-LM是克隆的Megatron-LM.git@core_r0.13.0，理论上和前一种训练状况是一样的，但是！一到保存的时候就会报错！而且报错信息非常地无效，也就是说看不出来是为什么报的错！
+
 一开始以为最新的megatron-LM有问题，用这个就会保存不成功。不用这个就可以。
 
-- 但是我用的是分支啊，这个分支又没变应该。
+- 但是我用的是分支啊，这个分支又没变。到现在也不知道原因是什么，也不想去追究了，于我无益。
     
+后来又尝试训练Qwen-A3B DPO，特别慢，这个版本不支持expert_tensor_parallel_size，所以老是OOM。这个时候看到出来了3.7.1的镜像，于是放弃3.6.4了。
 
-用swift3.6.4镜像，训练脚本examples/train/megatron/sft.sh可以正常训练和保存checkpoint。
+## swift 3.7.1本地安装
 
-但是在脚本里加上export MEGATRON_LM_PATH='/app/Megatron-LM'，其中Megatron-LM是克隆的Megatron-LM.git@core_r0.13.0，理论上和前一种训练状况是一样的，但是保存的时候就会报错，且报错信息不完善，原因未知
-    
-- swift 3.6.4版本训练Qwen-A3B DPO，特别慢，不支持expert_tensor_parallel_size，老是OOM
+	这部分主要是记录踩的坑，可以不看
 
-## swift 3.7.1安装
-
-官方指南：
+参考官方指南安装：
 
 ```bash
 # Recommended PyTorch version: 2.5 / 2.6
@@ -50,25 +122,58 @@ export MODELSCOPE_CACHE='/xxx/shared'
 export MEGATRON_LM_PATH='/xxx/Megatron-LM'
 ```
 
-安装transformer-engine
+安装环境之前可以进行`module load cuda/12.6` 以及高版本gcc的load，防止安装过程中的版本不匹配、gcc版本过低等报错。
 
-- 用的是`conda install -c conda-forge transformer-engine-torch`，pip安装总是不成功。
-- 但是这样安装之后似乎torch又有问题。。。会报错ModuleNotFoundError: Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+先安装pytorch，因为2.7版本下安装的flash-attention用不了会报错，所以安装的是2.6版本
 
+`pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu126`
+
+然后可以安装swift `pip install ms-swift -U`，也可以源码安装
+
+接着安装transformer-engine
+
+- 看了看官方README，用`conda install -c conda-forge transformer-engine-torch`就成功了，pip安装总是不成功。
+- 但是后来发现！这样安装之后torch又有问题。。。会报错ModuleNotFoundError: Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?，以及前面还有个torch的报错
+- 网上说需要重新安装torch和transformers，但是重新安装torch的时候又报了别的错，人都麻了。
+- 还是用朴素的pip吧，`pip install --no-build-isolation transformer_engine[pytorch]`，仔细看看报错torch/include/ATen/cudnn/cudnn-wrapper.h:3:10: fatal error: cudnn.h: No such file or directory。确实我们的机器上没有安装cudnn
+- 那就手动装一个，装到虚拟环境里`conda install -c nvidia cudnn`
+- 然后再装transformer_engine，居然成功了？就这么简单？还是得仔细看看报错信息，不懂就问DeepSeek。
+
+安装flash_attention：`pip install flash_attn-2.7.3+cu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl`
+
+安装apex：
+
+```bash
+# apex
+git clone https://github.com/NVIDIA/apex
+cd apex
+# https://github.com/modelscope/ms-swift/issues/4176
+git checkout e13873debc4699d39c6861074b9a3b2a02327f92
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+```
+
+安装Megatron
+
+`pip install git+https://github.com/NVIDIA/Megatron-LM.git@core_r0.13.0`
 
 ## swift 3.7.1-docker
 
-用swift 3.7.1呢，总是到保存模型哪一步就报错，太奇怪了！
+更新了swift 3.7.1，训练qwen2.5-7b模型是可以的。也可以正常保存。Qwen-A3B DPO也可以正常保存了！是镜像的问题！相关issue：
 
-更新了swift 3.7.1，训练qwen2.5-7b模型是可以的。也可以正常保存。Qwen-A3B DPO也可以正常保存了！是镜像的问题！
-
-- pip install git+[https://github.com/modelscope/ms-swift.git@release/3.7](https://github.com/modelscope/ms-swift.git@release/3.7)
-    
 - https://github.com/modelscope/ms-swift/issues/5435
 
-但是Qwen-A3B DPO训练保存的时候会报错cannot allocate memory，看起来是内存不足。单节点训练，内存一共是1T。
+- pip install git+[https://github.com/modelscope/ms-swift.git@release/3.7](https://github.com/modelscope/ms-swift.git@release/3.7)
 
-不用Megatron训练，用swift训练，会报错。
+另外还需要手动下载Megatron-LM的core_r0.13.0分支（参考官方指南），然后export MEGATRON_LM_PATH='/xxx/Megatron-LM'，否则会报错No module named 'megatron.training'
+
+但是新的问题又来了：Qwen-A3B DPO训练保存的时候会报错cannot allocate memory，看起来是内存不足。单节点训练，内存一共是1T。
+
+不用Megatron训练，用swift训练，也不行，要么报错，要么特别慢。自从看过Megatron的训练速度，真是忍受不了别的速度了。也有其他人尝试用swift训练，真是特别慢：
+- [使用deepspeed zer3训练Qwen3-30B-A3B-Instruct-2507时 加载完模型和数据 训练进度条会卡住不动 · Issue #5400 · modelscope/ms-swift · GitHub](https://github.com/modelscope/ms-swift/issues/5400)
+
+所以接下来要尝试用多节点训练，宿主机上多节点训练倒是会，docker的多节点训练怎么弄呢？
+
+	多节点训练这块，紧急求助了DeepSeek和ChatGPT（都是官网上用，GPT也用思考模式，非会员），用下来总体感受是，DeepSeek还是更好用，它给我的方案更好用，正确率更高，出错的概率比GPT要低。
 
 ## 多节点训练-docker
 
@@ -82,66 +187,14 @@ docker run --rm -it --gpus all -p 29500:29500 \
   -v xxx/datasets:/datasets \
   -e NNODES=2 \
   -e NODE_RANK=0 \
-  -e MASTER_ADDR=主节点IP \
+  -e MASTER_ADDR=主节点宿主机IP \
   -e MASTER_PORT=29500 \
   -e NPROC_PER_NODE=8 \
   modelscope-registry.cn-hangzhou.cr.aliyuncs.com/modelscope-repo/modelscope:ubuntu22.04-cuda12.6.3-py311-torch2.7.1-vllm0.10.0-modelscope1.28.2-swift3.7.1 \
   bash -c "cd /app && /bin/bash examples/train/megatron/multi-node/node1_moe.sh"
 ```
 
-node1_moe.sh
-
-```bash
-# For more information on multi-node training launch methods, refer to:
-# https://github.com/modelscope/ms-swift/tree/main/examples/train/multi-node
-
-export MEGATRON_LM_PATH='/app/Megatron-LM'
-export MODELSCOPE_CACHE='/app/shared'
-timestamp=$(date +%Y%m%d-%H%M%S)
-
-PYTORCH_CUDA_ALLOC_CONF='expandable_segments:True' \
-megatron rlhf \
-    --rlhf_type dpo \
-    --load /models/Qwen3-30B-A3B-Instruct-2507-mcore \
-    --dataset '/datasets/02.parquet' \
-            '/datasets/01.parquet' \
-    --custom_register_path /app/examples/custom/mydataset.py \
-    --split_dataset_ratio 0.01 \
-    --pipeline_model_parallel_size 2 \
-    --tensor_model_parallel_size 4 \
-    --expert_tensor_parallel_size 1 \
-    --expert_model_parallel_size 8 \
-    --moe_permute_fusion true \
-    --moe_grouped_gemm true \
-    --moe_shared_expert_overlap true \
-    --moe_aux_loss_coeff 1e-3 \
-    --rpo_alpha 1 \
-    --micro_batch_size 1 \
-    --global_batch_size 128 \
-    --packing true \
-    --recompute_granularity full \
-    --recompute_method uniform \
-    --recompute_num_layers 1 \
-    --max_epochs 1 \
-    --finetune true \
-    --cross_entropy_loss_fusion true \
-    --lr 5e-6 \
-    --lr_warmup_fraction 0.05 \
-    --min_lr 5e-7 \
-    --save megatron_output/Qwen3-30B-A3B-Instruct-2507 \
-    --eval_interval 10 \
-    --save_interval 10 \
-    --max_length 8192 \
-    --num_workers 8 \
-    --dataset_num_proc 8 \
-    --no_save_optim true \
-    --no_save_rng true \
-    --sequence_parallel true \
-    --attention_backend flash \
-    --use_precision_aware_optimizer true \
-    --beta 0.1 \
-    --loss_type sigmoid #> megatron_output/Qwen3-30B-A3B-Instruct-2507/moe_qwen_${timestamp}.log &
-```
+此处的node1_moe.sh和前面的训练脚本其实是一样的
 
 主节点上启动后，去工作节点的宿主机上看看能不能连通：
 
@@ -149,17 +202,31 @@ megatron rlhf \
 nc -vz <MASTER_ADDR> <MASTER_PORT>
 ```
 
-之前试过docker run的时候用`--network=host`，却发现无法连通，即使单节点也无法启动训练脚本。
-
-但是如果不加的话虽然可以启动，但是无法通信。
+发现无法连通，求助AI助手，都说加上`--network=host`，但是我试过也不能连通。
 
 网上有一个建立docker之间通信的方案：[docker容器中deepspeed多机多卡集群分布式训练大模型\_deepspeed多机多卡训练-CSDN博客](https://blog.csdn.net/Q2024107/article/details/146428595)
 
-但是运行`docker swarm join`的时候就报错无法连接了，可能是防火墙的问题。没有root权限比较难搞。
+但是运行`docker swarm join`的时候就报错无法连接了，可能是防火墙的问题。没有root权限比较难搞。感觉这条路又死了，嗯还有一个方案就是在k8s上弄。
 
 ## 多节点训练-k8s-gpt版本-不好用
 
-脚本
+总结来说，gpt先后给了我2个方案，第一个是使用StatefulSet，第二个是使用Job。
+
+前者不好用的原因是restartPolicy只支持Always，也就是说，**StatefulSet PodTemplate 中的容器一旦退出，无论成功还是失败，都会被 Kubernetes 自动重启**，即使训练完成了也还是会启动。显然这不是我想要的。
+
+后者是一次性任务，训练结束 Pod 停掉，不重启。方案其实是对的，但是gpt给我的yaml配置文件不对，导致我在测试的时候报错，解析不了MASTER_ADDR，这显然不可行，因为我是要多节点训练的。
+
+**StatefulSet vs Job**
+- StatefulSet 会保证 Pod 名称固定（`megatron-0.megatron`），DNS 解析可靠。
+- Job 创建 Pod 名称是随机的（如 `megatron-job-xxxxx`），没有固定的 `megatron-0`，所以用 `megatron-0.megatron` 解析失败。
+
+StatefulSet 主要用于：
+
+- **有状态服务**（比如数据库、分布式训练节点）
+- **保证 Pod 姓名固定** (`megatron-0`、`megatron-1`)
+- **保证卷和 DNS 稳定**
+
+相关脚本
 
 ```
 # Kubernetes YAML for Megatron multi-node training (StatefulSet + Headless Service)
@@ -342,6 +409,8 @@ kubectl delete statefulset megatron
 
 ## 多节点训练-k8s-deepseek版本
 
+DeepSeek给的版本，很不错，能够成功运行了。
+
 ```yaml
 # direct-gpu-training.yaml
 apiVersion: v1
@@ -517,7 +586,15 @@ kubectl delete pod training-master training-worker-1 training-worker-2
 kubectl delete service training-master training-worker
 ```
 
-能跑通，但是训练特别特别慢，等了1、2个小时才出第一个step的日志。。。单节点就很快。可能是没用上宿主机的IB卡。
+能跑通，但是训练特别特别慢，等了1、2个小时才出第一个step的日志。。。单节点就很快。
+
+后来想了想，可能是没用上宿主机的IB卡，所以训练很慢。
+
+那么就研究如何在k8s里用上宿主机的IB卡，提升多节点训练的效率。
+
+还是问DeepSeek，它告诉我需要安装 NVIDIA 的 Kubernetes Device Plugin 来暴露 IB 设备，虽然它给的安装方法我跑不起来，但是根据它给的链接，我找到了相关的Github仓库，就是这个：[GitHub - Mellanox/k8s-rdma-shared-dev-plugin](https://github.com/Mellanox/k8s-rdma-shared-dev-plugin)
+
+
 
 # 使用 py-spy 诊断训练卡住问题
 

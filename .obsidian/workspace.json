@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tool/Megatron-Swift/Megatron-Swift.md",
+                "file": "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Megatron-Swift"
+              "title": "Megatron-Swift踩坑记录"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Megatron-Swift/Megatron-Swift.md",
+                "file": "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Megatron-Swift 的大纲"
+              "title": "Megatron-Swift踩坑记录 的大纲"
             }
           },
           {
@@ -314,13 +314,13 @@
   },
   "active": "80ac2919c1a3bb92",
   "lastOpenFiles": [
+    "Tool/k8s/k8s.md",
+    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
+    "Tool/Docker/Docker.md",
     "Tool/python/Anaconda.md",
     "Tool/python/Python.md",
-    "Tool/Megatron-Swift/Megatron-Swift.md",
     "Speedup/Megatron/Megatron.md",
-    "Tool/k8s/k8s.md",
     "Tool/Linux/Linux.md",
-    "Tool/Docker/Docker.md",
     "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
     "Tool/k8s",
     "Tool/python/训练仓库.md",
