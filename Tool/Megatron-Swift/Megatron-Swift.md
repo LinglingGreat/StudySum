@@ -17,8 +17,46 @@
     
 - swift 3.6.4版本训练Qwen-A3B DPO，特别慢，不支持expert_tensor_parallel_size，老是OOM
 
+## swift 3.7.1安装
 
-## swift 3.7.1
+官方指南：
+
+```bash
+# Recommended PyTorch version: 2.5 / 2.6
+pip install pybind11
+
+# transformer_engine
+# If an installation error occurs, you can refer to this issue for resolution: https://github.com/modelscope/ms-swift/issues/3793
+pip install --no-build-isolation transformer_engine[pytorch]
+# Or install using the following command
+# pip install --no-build-isolation git+https://github.com/NVIDIA/TransformerEngine.git@release_v2.5#egg=transformer_engine[pytorch]
+
+# apex
+git clone https://github.com/NVIDIA/apex
+cd apex
+# https://github.com/modelscope/ms-swift/issues/4176
+git checkout e13873debc4699d39c6861074b9a3b2a02327f92
+pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" ./
+
+# megatron-core
+pip install git+https://github.com/NVIDIA/Megatron-LM.git@core_r0.13.0
+
+# If you are using multi-node training, please additionally set the `MODELSCOPE_CACHE` environment variable to a shared storage path.
+# This will ensure that the dataset cache is shared, thereby speeding up preprocessing.
+export MODELSCOPE_CACHE='/xxx/shared'
+
+# Megatron-LM
+# The training module in the dependent library Megatron-LM will be cloned and installed by swift via `git clone`. Alternatively, you can use the environment variable `MEGATRON_LM_PATH` to point to the path of an already downloaded repository (in offline environments, use the [core_r0.13.0 branch](https://github.com/NVIDIA/Megatron-LM/tree/core_r0.13.0)).
+export MEGATRON_LM_PATH='/xxx/Megatron-LM'
+```
+
+安装transformer-engine
+
+- 用的是`conda install -c conda-forge transformer-engine-torch`，pip安装总是不成功。
+- 但是这样安装之后似乎torch又有问题。。。会报错ModuleNotFoundError: Could not import module 'PreTrainedModel'. Are this object's requirements defined correctly?
+
+
+## swift 3.7.1-docker
 
 用swift 3.7.1呢，总是到保存模型哪一步就报错，太奇怪了！
 
