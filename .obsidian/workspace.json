@@ -92,18 +92,6 @@
             }
           },
           {
-            "id": "7cf3d7f21579a956",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.9.10"
-              },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.9.10"
-            }
-          },
-          {
             "id": "6043c519df68a1f0",
             "type": "leaf",
             "state": {
@@ -132,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -325,15 +313,15 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "7cf3d7f21579a956",
+  "active": "80ac2919c1a3bb92",
   "lastOpenFiles": [
-    "Tool/k8s/k8s.md",
+    "Tool/Linux/Linux.md",
     "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
+    "Tool/k8s/k8s.md",
     "Tool/Docker/Docker.md",
     "Tool/python/Anaconda.md",
     "Tool/python/Python.md",
     "Speedup/Megatron/Megatron.md",
-    "Tool/Linux/Linux.md",
     "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
     "Tool/k8s",
     "Tool/python/训练仓库.md",
