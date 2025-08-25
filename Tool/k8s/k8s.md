@@ -30,6 +30,8 @@ kubectl top pods -A --sort-by memory
 # 查询节点的内存/cpu情况
 kubectl top nodes
 
+kubectl describe node <节点名称>
+
 # 查询所有失败的pod
 kubectl get pods -A --field-selector status.phase=Failed
 # 清理
