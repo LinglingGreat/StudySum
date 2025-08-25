@@ -21,6 +21,21 @@ kubectl describe nodes | grep -E "nvidia.com/gpu|name:"
 
 kubectl describe nodes | grep -A 10 "Allocated resources"
 
+#### 查看节点状态
+
+```bash
+# 获取所有命名空间中 Pod 的内存使用情况
+kubectl top pods -A --sort-by memory
+
+# 查询节点的内存/cpu情况
+kubectl top nodes
+
+# 查询所有失败的pod
+kubectl get pods -A --field-selector status.phase=Failed
+# 清理
+kubectl delete pods -A --field-selector status.phase=Failed
+```
+
 # 服务启动
 
 ```Markdown
