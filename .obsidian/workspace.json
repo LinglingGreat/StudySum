@@ -329,6 +329,8 @@
   },
   "active": "822da0b6aedf4f2f",
   "lastOpenFiles": [
+    "PLM/Models/GLM/img/GLM4.5-20250831180001.png",
+    "PLM/Models/GLM/img/GLM4.5-20250831175833.png",
     "PLM/Models/GLM/img/GLM4.5-20250831165430.png",
     "PLM/Models/GLM/img/GLM4.5-20250831165134.png",
     "PLM/Models/GLM/img/GLM4.5-20250831162123.png",
@@ -363,8 +365,6 @@
     "Tool/Pytorch/Pytorch.md",
     "Tool/python/transformers.md",
     "Tool/Git/Git.md",
-    "PLM/Models/Kimi/img/Kimi2-20250726210104.png",
-    "PLM/Models/Kimi/img/Kimi2-20250726204328.png",
     "PLM/Models/Kimi/img",
     "PLM/CoT/Kimi/Kimik1.5.md",
     "PLM/BaseStruct/Architecture/Comparision.md",
