@@ -220,7 +220,7 @@ kubectl port-forward svc/grafana -n monitoring 8082:3000
 9. 如果故障节点需要永久移除，可以从集群中删除它：
     
     ```Plain
-    kubectl delete node 192.168.125.15
+    kubectl delete node xxxx
     ```
     
 
