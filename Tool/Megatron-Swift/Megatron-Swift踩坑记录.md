@@ -171,6 +171,26 @@ export MEGATRON_LM_PATH='/xxx/Megatron-LM'
 - 那就手动装一个，装到虚拟环境里`conda install -c nvidia cudnn`
 - 然后再装transformer_engine，居然成功了？就这么简单？还是得仔细看看报错信息，不懂就问DeepSeek。
 
+如果还是不行的话，设置一下环境变量：
+
+```bash
+# 查找 cudnn.h 文件位置
+find $CONDA_PREFIX -name "cudnn.h" 2>/dev/null
+
+# 查找 libcudnn 库文件位置
+find $CONDA_PREFIX -name "libcudnn*" 2>/dev/null | head -1
+
+# 设置头文件路径（通常为 $CONDA_PREFIX/include）
+export CUDNN_INCLUDE_DIR=$CONDA_PREFIX/include
+
+# 设置库文件路径（通常为 $CONDA_PREFIX/lib）
+export CUDNN_LIBRARY_DIR=$CONDA_PREFIX/lib
+
+# 验证设置
+echo "CUDNN_INCLUDE_DIR: $CUDNN_INCLUDE_DIR"
+echo "CUDNN_LIBRARY_DIR: $CUDNN_LIBRARY_DIR"
+```
+
 安装flash_attention：`pip install flash_attn-2.7.3+cu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl`
 
 测试flash_attention正常：`import flash_attn_2_cuda as flash_attn_gpu`（因为每次都是这里报错）
