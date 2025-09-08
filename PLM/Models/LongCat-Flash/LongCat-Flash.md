@@ -21,7 +21,7 @@ institution:
 
 代码：https://github.com/meituan-longcat/LongCat-Flash-Chat
 
-前往 https://longcat.ai/ ，立即与 LongCat-Flash-Chat 开启对话。
+前往 https://longcat.ai/ ，立即与 LongCat-Flash-Chat 开启对话。该模型是一个非思考模型。
 
 框架图：
 
@@ -45,15 +45,9 @@ institution:
 
 [Site Unreachable](https://www.alphaxiv.org/overview/2410.07348v1)
 
-LongCat的MoE模式与常规的MoE不同，
+下一个Token预测表现出固有的计算异构性。难的Token可能需要耗费更多的计算资源才能预测准确，而简单的Token，可能极少的计算就能预测。推测解码也证明了这种现象，小型的草稿模型能够可靠地预测大模型的大多数简单Token。
 
-因为现在大模型预测下一个Token的特性，在直觉上，我们会觉得，难的Token应该耗费更多的计算才能预测准确，而简单的Token，可能极少的计算就能预测。
-
-那对MoE专家来说，就是有的Token可能不需要那么专家来解决问题，
-
-LongCat对此引入了零计算专家（Zero-Computation Experts），
-
-零计算专家，是直接返回输入内容作为输出，没有不引入任何额外计算，所以当路由器选中零计算专家时，相当于跳过一次 Expert FFN 计算，实现不同Token消耗不同算了的需求。
+那对MoE专家来说，就是有的Token可能不需要那么多专家来解决问题，LongCat对此引入了零计算专家（Zero-Computation Experts），零计算专家，是直接返回输入内容作为输出，没有不引入任何额外计算，所以当路由器选中零计算专家时，相当于跳过一次 Expert FFN 计算，实现不同Token消耗不同算力的需求。
 
 ![图片](https://mmbiz.qpic.cn/mmbiz_png/iceGibVicRfib5m7fN3Uib3TI0ujjxq8icFPeW7c4eDrpaBBNWCwH1cvvsc3ncicM3AfhbLBAOPU0qvIibW250icRH7P3sg/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=2)
 
@@ -70,6 +64,13 @@ LongCat对此引入了零计算专家（Zero-Computation Experts），
 Token使用标准专家示例如下，可以发现一些连词、标点等，需要的专家计算就比较少。
 
 ![图片](https://mmbiz.qpic.cn/mmbiz_png/iceGibVicRfib5m7fN3Uib3TI0ujjxq8icFPeWdzSSL92YqD6hiaqn6p8UK7DnpIu4G81ImvLlSRpvibnCQTTRSG0e8LPA/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=4)
+
+图中可以看到
+- 使用零计算专家的性能相比不使用来说，Loss更低。
+- LongCat-Flash训练过程中的平均激活的专家数量是8个，对应着27B参数量。
+- 激活的FFN专家数量的标准差增长到3，表明模型能够根据输入复杂度动态调整每个token的计算资源
+
+![](img/LongCat-Flash-20250908192440.png)
 
 ## 快捷连接 MoE
 

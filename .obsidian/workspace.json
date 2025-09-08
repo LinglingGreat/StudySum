@@ -297,7 +297,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 462.5
+    "width": 308.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -314,6 +314,8 @@
   },
   "active": "1c3551db2d04f220",
   "lastOpenFiles": [
+    "PLM/Models/LongCat-Flash/img/LongCat-Flash-20250908192440.png",
+    "PLM/Models/LongCat-Flash/img",
     "PLM/InContextLearning/In-Context Learning.md",
     "PLM/Models/LongCat-Flash/LongCat-Flash.md",
     "PLM/Models/LongCat-Flash",
@@ -353,13 +355,11 @@
     "Tool/Megatron-Swift",
     "PLM/Models/Baichuan/Baichuan-M2.md",
     "PLM/Models/Baichuan/img/Baichuan-M2-20250818195951.png",
-    "PLM/Models/Baichuan/Baichuan.md",
     "PLM/业界分享/其他分享",
     "PLM/Models/Kimi/img",
     "PLM/Models/Kimi",
     "PLM/BaseStruct/Architecture/img",
     "PLM/BaseStruct/Architecture",
-    "CV/SpeechLLM/img",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
