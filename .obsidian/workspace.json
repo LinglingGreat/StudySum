@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/Inbox.md",
+                "file": "News/本周论文汇总(9.20).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Inbox"
+              "title": "本周论文汇总(9.20)"
             }
           },
           {
@@ -212,13 +212,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "News/Inbox.md",
+                "file": "News/本周论文汇总(9.20).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Inbox 的大纲"
+              "title": "本周论文汇总(9.20) 的大纲"
             }
           },
           {
@@ -299,8 +299,22 @@
   },
   "active": "72f00fb46c6ee819",
   "lastOpenFiles": [
+    "News/img/本周论文汇总(9.20)-20250920235723.png",
+    "News/img/本周论文汇总(9.20)-20250920235550.png",
+    "News/img/本周论文汇总(9.20)-20250920235443.png",
+    "News/img/本周论文汇总(9.20)-20250920235416.png",
+    "News/img/本周论文汇总(9.20)-20250920235346.png",
+    "News/img/本周论文汇总(9.20)-20250920235216.png",
+    "News/img/本周论文汇总(9.20)-20250920234638.png",
+    "News/img/本周论文汇总(9.20)-20250920233922.png",
+    "News/img/本周论文汇总(9.20)-20250920222559.png",
+    "News/img/本周论文汇总(9.20)-20250920215333.png",
+    "News/img/本周论文汇总(9.-9.20)-20250920215238.png",
+    "News/img",
+    "News/Inbox.md",
+    "News/本周论文汇总(9.20).md",
+    "Tool/k8s/k8s.md",
     "PLM/Models/LongCat-Flash/LongCat-Flash.md",
-    "PLM/Models/LongCat-Flash/img/LongCat-Flash-20250908192440.png",
     "PLM/Models/LongCat-Flash/img",
     "PLM/InContextLearning/In-Context Learning.md",
     "PLM/Models/LongCat-Flash",
@@ -311,26 +325,15 @@
     "PLM/Pretrain/InstructionPreTraining/InstructionPreTraining.md",
     "PLM/LongContext/RecurrentGPT/RecurrentGPT.md",
     "PLM/CoT/rStar2-Agent/rStar2-Agent.md",
-    "News/Inbox.md",
     "PLM/CoT/rStar-Math/rStar-Math.md",
     "PLM/CoT/rStar2-Agent",
     "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
     "Tool/python/Anaconda.md",
     "Tool/Docker/Docker.md",
     "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
-    "Tool/k8s/k8s.md",
     "PLM/Models/GLM/GLM4.5.md",
-    "PLM/Models/GLM/img/GLM4.5-20250831180001.png",
-    "PLM/Models/GLM/img/GLM4.5-20250831175833.png",
-    "PLM/Models/GLM/img/GLM4.5-20250831165430.png",
-    "PLM/Models/GLM/img/GLM4.5-20250831165134.png",
-    "PLM/Models/GLM/img/GLM4.5-20250831162123.png",
-    "PLM/Models/GLM/img/GLM4.5-20250831152459.png",
-    "PLM/Models/GLM/img/GLM4.5-20250831151741.png",
-    "PLM/Models/GLM/img/GLM4.5-20250831151451.png",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
     "PLM/Models/Kimi/Kimi-K2.md",
-    "PLM/Models/GLM/img/GLM4.5-20250831113829.png",
     "PLM/Models/GLM/GLM.md",
     "Tool/Linux/Linux.md",
     "Tool/python/Python.md",
@@ -338,12 +341,10 @@
     "Tool/k8s",
     "Tool/python/训练仓库.md",
     "Tool/Megatron-Swift",
-    "PLM/Models/Baichuan/Baichuan-M2.md",
     "PLM/业界分享/其他分享",
     "PLM/Models/Kimi/img",
     "PLM/Models/Kimi",
     "PLM/BaseStruct/Architecture/img",
-    "PLM/BaseStruct/Architecture",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
