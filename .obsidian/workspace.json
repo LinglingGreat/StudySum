@@ -105,7 +105,8 @@
               "title": "Docker"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -137,7 +138,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "rstar",
+                "query": "GLIBCXX",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -212,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "News/本周论文汇总(9.20).md",
+                "file": "Tool/k8s/k8s.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "本周论文汇总(9.20) 的大纲"
+              "title": "k8s 的大纲"
             }
           },
           {
@@ -297,8 +298,13 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "72f00fb46c6ee819",
+  "active": "a135218c79aed4c9",
   "lastOpenFiles": [
+    "Tool/Linux/Linux.md",
+    "Tool/python/Anaconda.md",
+    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
+    "Tool/k8s/k8s.md",
+    "News/本周论文汇总(9.20).md",
     "News/img/本周论文汇总(9.20)-20250920235723.png",
     "News/img/本周论文汇总(9.20)-20250920235550.png",
     "News/img/本周论文汇总(9.20)-20250920235443.png",
@@ -309,11 +315,8 @@
     "News/img/本周论文汇总(9.20)-20250920233922.png",
     "News/img/本周论文汇总(9.20)-20250920222559.png",
     "News/img/本周论文汇总(9.20)-20250920215333.png",
-    "News/img/本周论文汇总(9.-9.20)-20250920215238.png",
     "News/img",
     "News/Inbox.md",
-    "News/本周论文汇总(9.20).md",
-    "Tool/k8s/k8s.md",
     "PLM/Models/LongCat-Flash/LongCat-Flash.md",
     "PLM/Models/LongCat-Flash/img",
     "PLM/InContextLearning/In-Context Learning.md",
@@ -327,15 +330,12 @@
     "PLM/CoT/rStar2-Agent/rStar2-Agent.md",
     "PLM/CoT/rStar-Math/rStar-Math.md",
     "PLM/CoT/rStar2-Agent",
-    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
-    "Tool/python/Anaconda.md",
     "Tool/Docker/Docker.md",
     "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
     "PLM/Models/GLM/GLM4.5.md",
     "PLM/Models/DeepSeek/DeepSeekv3.md",
     "PLM/Models/Kimi/Kimi-K2.md",
     "PLM/Models/GLM/GLM.md",
-    "Tool/Linux/Linux.md",
     "Tool/python/Python.md",
     "Speedup/Megatron/Megatron.md",
     "Tool/k8s",

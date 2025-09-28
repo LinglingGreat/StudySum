@@ -168,7 +168,7 @@ kubectl port-forward svc/grafana -n monitoring 8082:3000
 3. 将故障节点标记为不可调度：
     
     ```Plain
-    kubectl cordon xxxx
+      xxxx
     ```
     
       这会防止新的 Pod 被调度到这个节点上。
