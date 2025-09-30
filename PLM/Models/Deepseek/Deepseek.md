@@ -15,13 +15,11 @@ institution:
 
 标题：DeepSeek LLM Scaling Open-Source Language Models with Longtermism
 
-作者：
+论文地址：https://arxiv.org/abs/2401.02954
 
-链接：
+模型地址：https://huggingface.co/collections/deepseek-ai/deepseek-llm-65f2964ad8a0a29fe39b71d8
 
-代码：
-
-框架图：
+Github地址：https://github.com/deepseek-ai/DeepSeek-LLM
 
 
 ## 核心亮点
