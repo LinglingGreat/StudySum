@@ -78,20 +78,6 @@
             }
           },
           {
-            "id": "0599fa347538e0ac",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Models/DeepSeek/DeepSeek.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "DeepSeek"
-            }
-          },
-          {
             "id": "c48060fa323e145a",
             "type": "leaf",
             "state": {
@@ -159,7 +145,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -279,7 +266,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -299,11 +286,12 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "122ac70375d4dd76",
+  "active": "bb2fda3c447a41f6",
   "lastOpenFiles": [
+    "PLM/Models/DeepSeek/DeepSeekv3.md",
+    "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/Models/DeepSeek/DeepSeek.md",
     "PLM/Models/DeepSeek/README.md",
-    "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/Models/Qwen/Qwen3-Omni/Qwen3-Omni.md",
     "PLM/Models/Qwen/Qwen3-VL/Qwen3-VL.md",
     "PLM/Models/Qwen/Qwen-Image/Qwen-Image.md",
@@ -344,7 +332,6 @@
     "Tool/Docker/Docker.md",
     "PLM/业界分享/其他分享/强化学习大师课-清华叉院助理教授吴翼.md",
     "PLM/Models/GLM/GLM4.5.md",
-    "PLM/Models/DeepSeek/DeepSeekv3.md",
     "Tool/k8s",
     "Tool/Megatron-Swift",
     "未命名.canvas",
