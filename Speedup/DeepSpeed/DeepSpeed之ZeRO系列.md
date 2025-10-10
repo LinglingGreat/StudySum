@@ -637,6 +637,8 @@ DeepSpeed Zero Stage 本质上是一种“节省显存”的数据并行，是�
 
 **例如，Zero Stage 3 加载时将模型参数进行切片存储到不同的GPU上，每个GPU只保留参数的1/N。计算时，每个GPU跑不同的数据，然后GPU之间进行参数通信，保证每个GPU下的batch都能通过模型全部参数，而不是局部参数。（主要利用all-gather收集参数，reduce-scatter规约计算）**
 
+[ZeRO & DeepSpeed: New system optimizations enable training models with over 100 billion parameters - Microsoft Research](https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/)
+
 ## zero3和megatron对比
 Zero3（DeepSpeed ZeRO Stage 3）和Megatron的模型并行是两种不同的大规模模型训练优化技术，主要区别体现在并行策略、通信机制和应用目标上：
 
