@@ -74,6 +74,41 @@ pip uninstall -y flash-attn
 - - **`--no-build-isolation`**: Ensures the build uses your environment's PyTorch.
 - import flash_attn_2_cuda as flash_attn_gpu报错undefined symbol的时候可以尝试这个方法
 
+## 安装vllm报错_OpNamespace
+
+[[Bug]: MoE models fail at startup: AttributeError: '_OpNamespace' '_moe_C' object has no attribute '](https://github.com/vllm-project/vllm/issues/18967#issuecomment-3316224755)。
+
+需要从源码编译安装vllm
+
+```
+# 1. 创建conda环境 
+conda create -n vllm0.11 python=3.12 -y conda activate vllm0.11 
+# 2. 配置pip镜像源并安装uv 
+pip config set global.index-url [http://mirrors.aliyun.com/pypi/simple](http://mirrors.aliyun.com/pypi/simple) 
+pip config set install.trusted-host [mirrors.aliyun.com](http://mirrors.aliyun.com) 
+pip install uv 
+# 3. 设置uv镜像源 
+export UV_DEFAULT_INDEX="[https://mirrors.aliyun.com/pypi/simple/](https://mirrors.aliyun.com/pypi/simple/)" 
+# 4. 安装gcc, g++ 12 
+conda install -c conda-forge gcc_linux-64=12 gxx_linux-64=12 -y 
+# 5. 设置conda环境的gcc, g++为默认编译器 
+# 创建符号链接，将conda环境的编译器设为默认 
+cd /home/xxx/miniconda3/envs/vllm0.11/bin/ 
+ln -sf x86_64-conda-linux-gnu-gcc gcc 
+ln -sf x86_64-conda-linux-gnu-g++ g++ 
+# 添加conda环境的bin目录到PATH最前面 
+export PATH=/home/xxx/miniconda3/envs/vllm0.11/bin:$PATH 
+# 验证编译器版本 
+gcc --version 
+g++ --version 
+# 6. 加载CUDA模块（如果需要） 
+module load cuda/12.8 
+# 7. 安装vllm git clone --branch v0.11.0 [https://github.com/vllm-project/vllm.git](https://github.com/vllm-project/vllm.git) 
+cd vllm 
+uv pip install -e .
+```
+
+
 ## 参考资料
 
 [https://blog.csdn.net/weixin_41010198/article/details/106188880](https://blog.csdn.net/weixin_41010198/article/details/106188880)
