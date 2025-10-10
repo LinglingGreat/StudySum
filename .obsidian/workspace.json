@@ -301,10 +301,12 @@
   },
   "active": "468ffcc48e526336",
   "lastOpenFiles": [
+    "Speedup/DeepSpeed/img/DeepSpeed之ZeRO系列-20251010220230.png",
+    "Tool/Linux/Linux.md",
+    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "Tool/python/Deepspeed.md",
     "Tool/python/Anaconda.md",
     "Tool/python/Python.md",
-    "Tool/Linux/Linux.md",
     "PLM/Models/Qwen/Qwen3-Omni/Qwen3-Omni.md",
     "PLM/Models/DeepSeek/DeepSeekV3.2/DeepSeekV3.2.md",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20250930201501.png",
@@ -344,8 +346,6 @@
     "PLM/Pretrain/README.md",
     "PLM/PEFT/LORA/LORA.md",
     "PLM/PEFT/Finetune/Finetune.md",
-    "PLM/Pretrain/InstructionPreTraining/InstructionPreTraining.md",
-    "PLM/LongContext/RecurrentGPT/RecurrentGPT.md",
     "PLM/CoT/rStar2-Agent",
     "未命名.canvas",
     "未命名 1.canvas"
