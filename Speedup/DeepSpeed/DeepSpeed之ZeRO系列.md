@@ -1,4 +1,4 @@
-虽然数据并行是一种有效的训练扩展方法，但在每个 DP 等级上对优化器状态、梯度和参数的简单复制会引入显著的内存冗余。ZeRO 通过在数据并行维度上对优化器状态、梯度和参数进行分区来消除内存冗余，同时仍然允许使用全套参数进行计算。这有时需要 DP 等级(rank)之间进行更多通信，这些等级可能完全重叠，也可能不完全重叠。
+
 
 ## DeepSpeed集成
 
@@ -80,8 +80,6 @@ deepspeed --num_gpus=1 examples/pytorch/translation/run_translation.py \
 注意：
 
 - 如果您需要在特定的 GPU 上运行，而不是 GPU 0，则无法使用 `CUDA_VISIBLE_DEVICES` 来限制可用 GPU 的可见范围。相反，您必须使用以下语法：
-    
-    Copied
     
     deepspeed --include localhost:1 examples/pytorch/translation/run_translation.py ...
     
@@ -241,8 +239,6 @@ Stage 0 禁用了所有类型的分片，只是将 DeepSpeed 作为 DDP 使用�
 ### ZeRO-1 配置
 
 Stage 1 等同于 Stage 2 减去梯度分片。您可以尝试使用以下配置，仅对优化器状态进行分片，以稍微加速：
-
-Copied
 
 {
     "zero_optimization": {
@@ -419,8 +415,6 @@ DeepSpeed支持`LRRangeTest`、`OneCycle`、`WarmupLR`和`WarmupDecayLR`学习�
 DeepSpeed支持完整的fp32和fp16混合精度。
 
 由于fp16混合精度具有更小的内存需求和更快的速度，唯一不使用它的时候是当您使用的模型在这种训练模式下表现不佳时。通常，当模型没有在fp16混合精度下进行预训练时（例如，bf16预训练模型经常出现这种情况），会出现这种情况。这样的模型可能会发生溢出或下溢，导致 `NaN` 损失。如果是这种情况，那么您将希望使用完整的fp32模式，通过显式禁用默认启用的fp16混合精度模式：
-
-Copied
 
 {
     "fp16": {
@@ -629,17 +623,6 @@ SW: Model with 2783M total params, 65M largest layer params.
 - 尽管 DeepSpeed 有一个可安装的 PyPI 包，但强烈建议从源代码安装它，以最好地匹配您的硬件，如果您需要启用某些功能，如 1-bit Adam，这些功能在 pypi 发行版中不可用。
 - 您不必使用🤗 Transformers的 `Trainer` 来使用 DeepSpeed - 您可以使用任何模型与自己的训练器，您还需要根据 [DeepSpeed 集成说明](https://www.deepspeed.ai/getting-started/#writing-deepspeed-models) 调整后者。
 
-## DeepSpeed Zero Stage 3 到底是什么并行？数据并行还是模型并行？
-
-> 大模型训练通常会用到：  
-> 1、[数据并行](https://zhida.zhihu.com/search?content_id=241897162&content_type=Article&match_order=1&q=%E6%95%B0%E6%8D%AE%E5%B9%B6%E8%A1%8C&zhida_source=entity)（Data Parallelism）  
-> 2、[模型并行](https://zhida.zhihu.com/search?content_id=241897162&content_type=Article&match_order=1&q=%E6%A8%A1%E5%9E%8B%E5%B9%B6%E8%A1%8C&zhida_source=entity)：包括[张量并行](https://zhida.zhihu.com/search?content_id=241897162&content_type=Article&match_order=1&q=%E5%BC%A0%E9%87%8F%E5%B9%B6%E8%A1%8C&zhida_source=entity)（Tensor Parallelism）和流水线并行（Pipeline Parallelism）
-
-DeepSpeed Zero Stage 本质上是一种“节省显存”的数据并行，是一种 Fully Sharded Data Parallelism。
-
-**例如，Zero Stage 3 加载时将模型参数进行切片存储到不同的GPU上，每个GPU只保留参数的1/N。计算时，每个GPU跑不同的数据，然后GPU之间进行参数通信，保证每个GPU下的batch都能通过模型全部参数，而不是局部参数。（主要利用all-gather收集参数，reduce-scatter规约计算）**
-
-[ZeRO & DeepSpeed: New system optimizations enable training models with over 100 billion parameters - Microsoft Research](https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/)
 
 ## zero3和megatron对比
 Zero3（DeepSpeed ZeRO Stage 3）和Megatron的模型并行是两种不同的大规模模型训练优化技术，主要区别体现在并行策略、通信机制和应用目标上：
