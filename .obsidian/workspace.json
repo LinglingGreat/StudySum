@@ -134,7 +134,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -327,8 +327,9 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "3fe0029819ff53e3",
+  "active": "a1273637705442ac",
   "lastOpenFiles": [
+    "PLM/Alignment/Training-FreeGRPO/Training-FreeGRPO.md",
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014175553.png",
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014175431.png",
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014175257.png",
@@ -338,14 +339,12 @@
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014170931.png",
     "PLM/Alignment/Training-FreeGRPO/img",
     "PLM/Agent/ACE/ACE.md",
-    "PLM/Alignment/Training-FreeGRPO/Training-FreeGRPO.md",
     "PLM/Agent/ACE",
     "PLM/Alignment/GRSP/GRSP.md",
     "PLM/Alignment/Training-FreeGRPO",
     "PLM/Alignment/GRSP/img/GRSP-20251014165317.png",
     "PLM/Alignment/GRSP/img/GRSP-20251014165119.png",
     "PLM/Alignment/GRSP/img/GRSP-20251014165103.png",
-    "PLM/Alignment/GRSP/img/GRSP-20251014164649.png",
     "PLM/Alignment/GRSP/img",
     "PLM/Models/TRM/TRM.md",
     "PLM/Alignment/GRSP",
