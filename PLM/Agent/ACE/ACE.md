@@ -17,11 +17,7 @@ institution:
 
 标题：Agentic Context Engineering: Evolving Contexts for Self-Improving Language Models
 
-作者：
-
 链接：http://arxiv.org/abs/2510.04618
-
-代码：
 
 
 ![](img/ACE-20251015112042.png)
@@ -136,6 +132,7 @@ ACE的Generator、Reflector、Curator都使用同一个LLM：非思考模式的D
 ![](img/ACE-20251015175901.png)
 
 ![](img/ACE-20251015180111.png)
+
 ---
 
 ## 四、优点与创新点
@@ -187,8 +184,6 @@ ACE的Generator、Reflector、Curator都使用同一个LLM：非思考模式的D
 ---
 
 ## 六、可能的未来方向 / 拓展思考
-
-根据这篇论文及其设计，我觉得以下方向比较值得探索：
 
 - 在 **更多任务 / 多模态场景** 中验证 ACE（如医学问答、法律判例推理、多模态 agent 等）。
     
