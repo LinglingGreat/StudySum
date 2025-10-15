@@ -23,7 +23,6 @@ institution:
 
 代码：
 
-框架图：
 
 ![](img/ACE-20251015112042.png)
 
@@ -46,6 +45,8 @@ institution:
 ---
 
 ## 二、ACE 的核心方法
+
+![](img/ACE-20251015173211.png)
 
 ACE 的核心理念是：将上下文视为一个 “进化式的剧本／注记库 (playbook)” — 它不断积累、反思、更新，而不是被整体重写。ACE 将这个过程拆分为三个角色（模块）：
 
@@ -98,13 +99,20 @@ ACE 的核心理念是：将上下文视为一个 “进化式的剧本／注记
 
 对比 baselines 包括：
 
-- In-Context Learning (ICL)
+- Base LLM：直接提示LLM生成
+
+- In-Context Learning (ICL)：带上few-shot（在不超出上下文长度的前提下尽可能多地提供训练样本）
     
 - 剪枝／优化 prompt 的方法如 MIPROv2
     
-- GEPA（genetic-Pareto prompt evolution）
+- GEPA（genetic-Pareto prompt evolution）：经验上看，该方法比强化学习（如 GRPO）或传统 prompt 优化（如 MIPROv2）更好；
+	- 收集模型的执行轨迹（推理过程、工具调用、输出结果等）；
+	- 用自然语言反思（reflection）分析错误、归因、提出改进；
+	- 使用遗传算法 + Pareto 优化，保留表现最好的 prompt 作为“前沿”（frontier），防止陷入局部最优。
     
-- Dynamic Cheatsheet（一个自适应记忆 / 策略积累方法）
+- Dynamic Cheatsheet（一个自适应记忆 / 策略积累方法）：模型在任务过程中不断记录自己的输入、输出、策略、代码片段等；这些被存入一个外部记忆（cheatsheet）；之后遇到类似任务时，可直接检索和复用这些经验。
+
+ACE的Generator、Reflector、Curator都使用同一个LLM：非思考模式的DeepSeek-V3.1
     
 
 ### 性能提升
@@ -125,11 +133,12 @@ ACE 的核心理念是：将上下文视为一个 “进化式的剧本／注记
 
 总的来说，ACE 在准确性、效率、自适应能力三方面都有较为令人信服的提升。
 
+![](img/ACE-20251015175901.png)
+
+![](img/ACE-20251015180111.png)
 ---
 
 ## 四、优点与创新点
-
-下面是我认为这篇论文比较突出的贡献和优点：
 
 1. **结构化、增量的上下文更新**  
      将上下文更新设计为 “delta 条目 + 合并” 的方式，是对“单次重写整个上下文”策略的一个有意义的改进。这种方式更可控，也更有利于保留历史知识和防止坍缩。
