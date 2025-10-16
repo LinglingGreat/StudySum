@@ -64,20 +64,6 @@
             }
           },
           {
-            "id": "59668b5c543bfd05",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Agent/ACE/ACE.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "ACE"
-            }
-          },
-          {
             "id": "a135218c79aed4c9",
             "type": "leaf",
             "state": {
@@ -120,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -313,8 +299,9 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "59668b5c543bfd05",
+  "active": "3fe0029819ff53e3",
   "lastOpenFiles": [
+    "PLM/Agent/ACE/ACE.md",
     "PLM/Agent/ACE/img/ACE-20251015180111.png",
     "PLM/Agent/ACE/img/ACE-20251015175901.png",
     "PLM/Agent/ACE/img/ACE-20251015173211.png",
@@ -325,7 +312,6 @@
     "Tool/k8s/k8s.md",
     "CourseNote/NanoGPT",
     "PLM/Models/Qwen/Qwen3-Omni/Qwen3-Omni.md",
-    "PLM/Agent/ACE/ACE.md",
     "Tool/python/Anaconda.md",
     "PLM/Alignment/GRSP/GRSP.md",
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014175553.png",
@@ -334,7 +320,6 @@
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014174515.png",
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014173501.png",
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014171712.png",
-    "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014170931.png",
     "PLM/Alignment/Training-FreeGRPO/img",
     "PLM/Agent/ACE",
     "PLM/Alignment/Training-FreeGRPO",
