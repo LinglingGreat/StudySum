@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Alignment/Training-FreeGRPO/Training-FreeGRPO.md",
+                "file": "PLM/Agent/Tongyi-DeepReSearch/Tongyi-DeepSearch.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Training-FreeGRPO"
+              "title": "Tongyi-DeepSearch"
             }
           },
           {
@@ -177,7 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 271.50390243530273
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -315,9 +315,11 @@
   },
   "active": "3fe0029819ff53e3",
   "lastOpenFiles": [
+    "PLM/Alignment/Training-FreeGRPO/Training-FreeGRPO.md",
+    "PLM/Agent/Tongyi-DeepReSearch/Tongyi-DeepSearch.md",
+    "PLM/Agent/Tongyi-DeepReSearch",
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251016205305.png",
     "PLM/Agent/ACE/ACE.md",
-    "PLM/Alignment/Training-FreeGRPO/Training-FreeGRPO.md",
     "Tool/python/Anaconda.md",
     "PLM/Agent/ACE/img/ACE-20251015180111.png",
     "PLM/Agent/ACE/img/ACE-20251015175901.png",
@@ -334,7 +336,6 @@
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014175257.png",
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014174515.png",
     "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014173501.png",
-    "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014171712.png",
     "PLM/Alignment/Training-FreeGRPO/img",
     "PLM/Agent/ACE",
     "PLM/Alignment/Training-FreeGRPO",
@@ -344,7 +345,6 @@
     "PLM/Models/TRM/img",
     "PLM/Models/TRM",
     "PLM/Alignment/EarlyExperience/EarlyExperience.md",
-    "PLM/Alignment/EarlyExperience/img",
     "Speedup/DeepSpeed/为什么 DeepSpeed ZeRO Stage 3 是数据并行而不是模型并行.md",
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "Speedup/模型并行/模型并行训练.md",
