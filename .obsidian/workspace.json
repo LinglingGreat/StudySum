@@ -92,17 +92,17 @@
             }
           },
           {
-            "id": "3196934b7573e687",
+            "id": "2902cb6500e166e5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CV/DeepSeek-OCR/DeepSeek-OCR.md",
+                "file": "News/如何阅读论文.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DeepSeek-OCR"
+              "title": "如何阅读论文"
             }
           },
           {
@@ -313,13 +313,21 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "3196934b7573e687",
+  "active": "2902cb6500e166e5",
   "lastOpenFiles": [
+    "News/img/如何阅读论文-20251021222526.png",
+    "News/img/如何阅读论文-20251021221746.png",
+    "News/img/如何阅读论文-20251021221732.png",
+    "News/img/如何阅读论文-20251021221651.png",
+    "common.md",
+    "News/如何阅读论文.md",
+    "NLP知识体系.md",
+    "README.md",
+    "Tool/k8s/k8s.md",
+    "CV/DeepSeek-OCR/DeepSeek-OCR.md",
     "CV/DeepSeek-OCR/img/DeepSeek-OCR-20251020220658.png",
     "CV/DeepSeek-OCR/img/DeepSeek-OCR-20251020215904.png",
     "CV/DeepSeek-OCR/img",
-    "Tool/k8s/k8s.md",
-    "CV/DeepSeek-OCR/DeepSeek-OCR.md",
     "CV/DeepSeek-OCR",
     "Tool/Linux/Linux.md",
     "Tool/Git/Git.md",
@@ -338,10 +346,6 @@
     "CourseNote/NanoGPT",
     "PLM/Models/Qwen/Qwen3-Omni/Qwen3-Omni.md",
     "PLM/Alignment/GRSP/GRSP.md",
-    "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014175553.png",
-    "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014175431.png",
-    "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014175257.png",
-    "PLM/Alignment/Training-FreeGRPO/img/Training-FreeGRPO-20251014174515.png",
     "PLM/Alignment/Training-FreeGRPO/img",
     "PLM/Agent/ACE",
     "PLM/Alignment/Training-FreeGRPO",
@@ -357,10 +361,6 @@
     "Speedup/README.md",
     "Tool/python/Deepspeed.md",
     "Tool/python/Python.md",
-    "PLM/Models/DeepSeek/DeepSeekV3.2/DeepSeekV3.2.md",
-    "PLM/Models/DeepSeek/DeepSeekR/R1-related.md",
-    "PLM/Models/DeepSeek/DeepSeekv3.md",
-    "PLM/Models/DeepSeek/README.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
