@@ -135,7 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 483.50390243530273
+    "width": 314.50390243530273
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -273,6 +273,7 @@
   },
   "active": "fcb732cee814dd7a",
   "lastOpenFiles": [
+    "PLM/Models/Minimax/img/MiniMaxM2-20251029232743.png",
     "PLM/Models/Minimax/img/MiniMaxM2-20251028205255.png",
     "PLM/Models/Minimax/img/MiniMaxM2-20251028205246.png",
     "PLM/Models/Minimax/img/MiniMaxM2-20251028205228.png",
@@ -288,7 +289,6 @@
     "Tool/Linux/Linux.md",
     "Tool/k8s/k8s.md",
     "PLM/Benchmark/Investment/模型的投资水平测评.md",
-    "PLM/Benchmark/Investment/img/模型的投资水平测评-20251026132059.png",
     "PLM/Benchmark/Investment/img",
     "PLM/Benchmark/Investment",
     "Tool/python/Anaconda.md",
