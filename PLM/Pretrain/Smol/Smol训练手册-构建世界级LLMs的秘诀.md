@@ -180,7 +180,17 @@ SmolLM3 的目标是做一款混合推理（Hybrid Reasoning）的模型——�
 | s1k-1.1                            | /think         | 835        | 0.9           | 8.2          | 10.8        | 8,859.3                   | 370.9                    | 9,728.5                   | 2            |
 | Total                              | -              | 96,555     | 100.0         | 76.1         | 100.0       | 2,131.5                   | 266.2                    | 2,149.9                   | 4.0          |
 
+| Algorithm                  | When to Use                                                                                                                                                                                                                              | Tradeoffs                                                                                                                               | Best for Model Size                                                                           |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| **Online DPO**             | You can get preference labels cheaply. Best for aligning behaviour with evolving distributions.                                                                                                                                          | Easy to scale iteratively, more stable than RL, but depends on label quality and coverage. Supported in few training frameworks.        | Any size, where preferences capture improvements beyond imitation.                            |
+| **On-policy distillation** | You have access to a stronger teacher model and want to transfer capabilities efficiently.                                                                                                                                               | Simple to implement, cheap to run, inherits teacher biases, ceiling limited by teacher. Supported only in TRL and NemoRL                | Most effective for small to mid-sized models (<30B).                                          |
+| **Reinforcement learning** | Best when you have verifiable rewards or tasks requiring multi-step reasoning/planning. Can be used with reward models, but there are challenges like reward-hacking, where the model takes advantage in weaknesses in the reward model. | Flexible and powerful, but costly and harder to stabilise; requires careful reward shaping. Supported in most post-training frameworks. | Mid to large models (20B+), where extra capacity lets them exploit structured reward signals. |
 
+|Method|AIME’24|AIME’25|MATH500|LiveCodeBench v5|MMLU -Redux|GPQA -Diamond|GPU Hours|
+|---|---|---|---|---|---|---|---|
+|Off-policy Distillation|55.0|42.8|92.4|42.0|86.4|55.6|-|
+|+ Reinforcement Learning|67.6|55.5|94.8|52.9|86.9|61.3|17,920|
+|+ On-policy Distillation|**74.4**|**65.5**|**97.0**|**60.3**|**88.3**|**63.3**|1,800|
 
 # 参考资料
 
