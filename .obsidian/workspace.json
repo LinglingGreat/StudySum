@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md",
+                "file": "PLM/业界分享/语音智能体/语音智能体-李沐.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Smol训练手册-构建世界级LLMs的秘诀"
+              "title": "语音智能体-李沐"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md",
+                "file": "PLM/业界分享/语音智能体/语音智能体-李沐.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Smol训练手册-构建世界级LLMs的秘诀 的大纲"
+              "title": "语音智能体-李沐 的大纲"
             }
           },
           {
@@ -234,10 +234,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md"
+                "file": "PLM/业界分享/语音智能体/语音智能体-李沐.md"
               },
               "icon": "lucide-info",
-              "title": "Smol训练手册-构建世界级LLMs的秘诀的笔记属性"
+              "title": "语音智能体-李沐的笔记属性"
             }
           },
           {
@@ -273,8 +273,10 @@
   },
   "active": "fcb732cee814dd7a",
   "lastOpenFiles": [
-    "PLM/Models/Minimax/MiniMaxM2.md",
     "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md",
+    "PLM/业界分享/语音智能体/语音智能体-李沐.md",
+    "PLM/业界分享/语音智能体",
+    "PLM/Models/Minimax/MiniMaxM2.md",
     "PLM/Pretrain/Smol",
     "PLM/Models/Minimax/img/MiniMaxM2-20251029232743.png",
     "PLM/Models/Minimax/img/MiniMaxM2-20251028205255.png",
@@ -311,14 +313,12 @@
     "PLM/Models/Qwen/Qwen3-Omni/Qwen3-Omni.md",
     "PLM/Alignment/GRSP/GRSP.md",
     "PLM/Alignment/Training-FreeGRPO/img",
-    "PLM/Agent/ACE",
     "PLM/Models/TRM/TRM.md",
     "PLM/Alignment/EarlyExperience/EarlyExperience.md",
     "Speedup/DeepSpeed/为什么 DeepSpeed ZeRO Stage 3 是数据并行而不是模型并行.md",
     "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
     "Speedup/模型并行/模型并行训练.md",
     "Speedup/基础概念/分布式训练框架的编程基础.md",
-    "Speedup/Megatron/Megatron.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
