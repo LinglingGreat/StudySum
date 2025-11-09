@@ -36,20 +36,6 @@
             }
           },
           {
-            "id": "fcb732cee814dd7a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/业界分享/语音智能体/语音智能体-李沐.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "语音智能体-李沐"
-            }
-          },
-          {
             "id": "e2d53901ff7383cd",
             "type": "leaf",
             "state": {
@@ -61,6 +47,34 @@
               },
               "icon": "lucide-file",
               "title": "k8s"
+            }
+          },
+          {
+            "id": "792cf878018318f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Models/Kimi/Kimi-K2-Thinking.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Kimi-K2-Thinking"
+            }
+          },
+          {
+            "id": "d07c13916a548cef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Models/Kimi/Kimi-K2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Kimi-K2"
             }
           },
           {
@@ -78,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "GLIBCXX",
+                "query": "Artificial Analysis",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -135,7 +149,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 314.50390243530273
+    "width": 220.50390243530273
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -185,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/语音智能体/语音智能体-李沐.md",
+                "file": "PLM/Models/Kimi/Kimi-K2-Thinking.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "语音智能体-李沐 的大纲"
+              "title": "Kimi-K2-Thinking 的大纲"
             }
           },
           {
@@ -234,10 +248,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/业界分享/语音智能体/语音智能体-李沐.md"
+                "file": "PLM/Models/Kimi/Kimi-K2-Thinking.md"
               },
               "icon": "lucide-info",
-              "title": "语音智能体-李沐的笔记属性"
+              "title": "Kimi-K2-Thinking的笔记属性"
             }
           },
           {
@@ -251,12 +265,11 @@
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 308.5,
-    "collapsed": true
+    "width": 308.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -271,26 +284,31 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "fcb732cee814dd7a",
+  "active": "792cf878018318f3",
   "lastOpenFiles": [
-    "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md",
-    "PLM/业界分享/语音智能体/语音智能体-李沐.md",
-    "PLM/业界分享/语音智能体",
+    "Speedup/量化/QAT.md",
+    "PLM/Models/Kimi/Kimi-K2-Thinking.md",
+    "Speedup/量化/混合精度训练.md",
+    "Speedup/量化/模型量化-FP8.md",
+    "PLM/Models/Kimi/img/Kimi-K2-Thinking-20251109122938.png",
+    "PLM/Models/Kimi/img/Kimi-K2-Thinking-20251109122858.png",
+    "PLM/Models/Kimi/img/Kimi-K2-Thinking-20251109122833.png",
+    "PLM/Models/Kimi/img/Kimi-K2-Thinking-20251109122811.png",
     "PLM/Models/Minimax/MiniMaxM2.md",
+    "PLM/Models/Kimi/Kimi-K2.md",
+    "PLM/Models/Kimi/img/Kimi-K2-Thinking-20251109115032.png",
+    "Tool/k8s/k8s.md",
+    "Tool/Linux/Linux.md",
+    "PLM/业界分享/语音智能体/语音智能体-李沐.md",
+    "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md",
+    "PLM/业界分享/语音智能体",
     "PLM/Pretrain/Smol",
     "PLM/Models/Minimax/img/MiniMaxM2-20251029232743.png",
     "PLM/Models/Minimax/img/MiniMaxM2-20251028205255.png",
     "PLM/Models/Minimax/img/MiniMaxM2-20251028205246.png",
     "PLM/Models/Minimax/img/MiniMaxM2-20251028205228.png",
     "PLM/Models/Minimax/img/MiniMaxM2-20251028205202.png",
-    "PLM/Models/Minimax/img/MiniMaxM2-20251028205124.png",
-    "PLM/Models/Minimax/img/MiniMaxM2-20251028205103.png",
-    "PLM/Models/Minimax/img/MiniMaxM2-20251028202226.png",
-    "PLM/Models/Minimax/img/MiniMaxM2-20251028202147.png",
-    "PLM/Models/Minimax/img/MiniMaxM2-20251028201734.png",
     "PLM/Models/Minimax/Minimax01.md",
-    "Tool/Linux/Linux.md",
-    "Tool/k8s/k8s.md",
     "PLM/Benchmark/Investment/模型的投资水平测评.md",
     "PLM/Benchmark/Investment/img",
     "PLM/Benchmark/Investment",
@@ -314,11 +332,6 @@
     "PLM/Alignment/GRSP/GRSP.md",
     "PLM/Alignment/Training-FreeGRPO/img",
     "PLM/Models/TRM/TRM.md",
-    "PLM/Alignment/EarlyExperience/EarlyExperience.md",
-    "Speedup/DeepSpeed/为什么 DeepSpeed ZeRO Stage 3 是数据并行而不是模型并行.md",
-    "Speedup/DeepSpeed/DeepSpeed之ZeRO系列.md",
-    "Speedup/模型并行/模型并行训练.md",
-    "Speedup/基础概念/分布式训练框架的编程基础.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
