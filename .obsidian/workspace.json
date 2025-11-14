@@ -36,6 +36,20 @@
             }
           },
           {
+            "id": "450eed335b56782d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/python/Anaconda.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Anaconda"
+            }
+          },
+          {
             "id": "e2d53901ff7383cd",
             "type": "leaf",
             "state": {
@@ -50,31 +64,17 @@
             }
           },
           {
-            "id": "792cf878018318f3",
+            "id": "d5de646d92d318fe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/Kimi/Kimi-K2-Thinking.md",
+                "file": "PLM/Alignment/README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kimi-K2-Thinking"
-            }
-          },
-          {
-            "id": "d07c13916a548cef",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Models/Kimi/Kimi-K2.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Kimi-K2"
+              "title": "README"
             }
           },
           {
@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -124,7 +124,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Artificial Analysis",
+                "query": "swift",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/Kimi/Kimi-K2-Thinking.md",
+                "file": "PLM/Alignment/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Kimi-K2-Thinking 的大纲"
+              "title": "README 的大纲"
             }
           },
           {
@@ -248,10 +248,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Models/Kimi/Kimi-K2-Thinking.md"
+                "file": "PLM/Alignment/README.md"
               },
               "icon": "lucide-info",
-              "title": "Kimi-K2-Thinking的笔记属性"
+              "title": "README的笔记属性"
             }
           },
           {
@@ -284,10 +284,14 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "792cf878018318f3",
+  "active": "d5de646d92d318fe",
   "lastOpenFiles": [
-    "Speedup/量化/QAT.md",
+    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
+    "Tool/python/Anaconda.md",
+    "Tool/Linux/Linux.md",
+    "Tool/k8s/k8s.md",
     "PLM/Models/Kimi/Kimi-K2-Thinking.md",
+    "Speedup/量化/QAT.md",
     "Speedup/量化/混合精度训练.md",
     "Speedup/量化/模型量化-FP8.md",
     "PLM/Models/Kimi/img/Kimi-K2-Thinking-20251109122938.png",
@@ -297,8 +301,6 @@
     "PLM/Models/Minimax/MiniMaxM2.md",
     "PLM/Models/Kimi/Kimi-K2.md",
     "PLM/Models/Kimi/img/Kimi-K2-Thinking-20251109115032.png",
-    "Tool/k8s/k8s.md",
-    "Tool/Linux/Linux.md",
     "PLM/业界分享/语音智能体/语音智能体-李沐.md",
     "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md",
     "PLM/业界分享/语音智能体",
@@ -312,7 +314,6 @@
     "PLM/Benchmark/Investment/模型的投资水平测评.md",
     "PLM/Benchmark/Investment/img",
     "PLM/Benchmark/Investment",
-    "Tool/python/Anaconda.md",
     "PLM/Agent/ACE/ACE.md",
     "CourseNote/NanoGPT/nanochat.md",
     "News/如何阅读论文.md",
@@ -331,7 +332,6 @@
     "PLM/Models/Qwen/Qwen3-Omni/Qwen3-Omni.md",
     "PLM/Alignment/GRSP/GRSP.md",
     "PLM/Alignment/Training-FreeGRPO/img",
-    "PLM/Models/TRM/TRM.md",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

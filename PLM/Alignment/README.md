@@ -383,3 +383,6 @@ Qwen2.5: [后训练](../Models/Qwen/Qwen2.5.md#后训练)
 [人人都能看懂的RL-PPO理论知识](https://zhuanlan.zhihu.com/p/7461863937)
 
 [如何理解 LLM 中的 RL 算法？](https://zhuanlan.zhihu.com/p/22331625359)
+
+[如何训练开源推理模型Olmo-Thinking - Nathan Lambert](https://zhuanlan.zhihu.com/p/1969096454581756839)
+
