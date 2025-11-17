@@ -45,28 +45,9 @@ institution: Microsoft
 Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning
 
 
-## 贡献
 
+## 参考资料
 
-## 相关研究
-有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？
-
-
-## 实验
-论文中的实验是如何设计的？
-
-用于定量评估的数据集是什么？代码有没有开源？
-
-论文中的实验及结果有没有很好地支持需要验证的科学假设？
-
-
-
-## 未来方向
-
-
-## 核心亮点
-
-
-## 主要收获
+[LoRA Without Regret - Thinking Machines Lab](https://thinkingmachines.ai/blog/lora/)
 
 
