@@ -64,6 +64,34 @@
             }
           },
           {
+            "id": "2defcacc08607b3a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/Models/闭源模型.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "闭源模型"
+            }
+          },
+          {
+            "id": "053366be49e7094d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Tool/python/Anaconda.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Anaconda"
+            }
+          },
+          {
             "id": "c48060fa323e145a",
             "type": "leaf",
             "state": {
@@ -78,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -110,7 +138,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "swift",
+                "query": "ndefined symbol",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -185,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/k8s/k8s.md",
+                "file": "PLM/Models/闭源模型.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "k8s 的大纲"
+              "title": "闭源模型 的大纲"
             }
           },
           {
@@ -234,10 +262,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Tool/k8s/k8s.md"
+                "file": "PLM/Models/闭源模型.md"
               },
               "icon": "lucide-info",
-              "title": "k8s的笔记属性"
+              "title": "闭源模型的笔记属性"
             }
           },
           {
@@ -270,15 +298,17 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "e2d53901ff7383cd",
+  "active": "2defcacc08607b3a",
   "lastOpenFiles": [
+    "PLM/Models/GPT/GPT.md",
+    "PLM/Models/闭源模型.md",
+    "PLM/Alignment/README.md",
+    "Tool/python/Anaconda.md",
+    "Tool/k8s/k8s.md",
     "PLM/PEFT/LORA/LORA.md",
     "PLM/PEFT/Finetune/Finetune.md",
-    "PLM/Alignment/README.md",
     "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
-    "Tool/python/Anaconda.md",
     "Tool/Linux/Linux.md",
-    "Tool/k8s/k8s.md",
     "PLM/Models/Kimi/Kimi-K2-Thinking.md",
     "Speedup/量化/QAT.md",
     "Speedup/量化/混合精度训练.md",
@@ -312,8 +342,6 @@
     "CV/DeepSeek-OCR/DeepSeek-OCR.md",
     "CV/DeepSeek-OCR/img",
     "CV/DeepSeek-OCR",
-    "Tool/Git/Git.md",
-    "PLM/Agent/Tongyi-DeepReSearch/Tongyi-DeepSearch.md",
     "PLM/Agent/Tongyi-DeepReSearch",
     "PLM/Agent/ACE/img",
     "CourseNote/NanoGPT",
