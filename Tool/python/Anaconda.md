@@ -62,6 +62,14 @@ conda install -c conda-forge gxx
 
 `export LD_LIBRARY_PATH=~/miniconda3/envs/env_name/lib/:$LD_LIBRARY_PATH`
 
+
+
+报错`ImportError: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.32' not found：
+
+`conda install -c conda-forge libstdcxx-ng`
+
+`export LD_LIBRARY_PATH=~/miniconda3/envs/env_name/lib/:$LD_LIBRARY_PATH`
+
 ## flash-attention
 
 ```
