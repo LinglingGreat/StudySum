@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -200,13 +200,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
+                "file": "Tool/python/Anaconda.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Megatron-Swift踩坑记录 的大纲"
+              "title": "Anaconda 的大纲"
             }
           },
           {
@@ -249,10 +249,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md"
+                "file": "Tool/python/Anaconda.md"
               },
               "icon": "lucide-info",
-              "title": "Megatron-Swift踩坑记录的笔记属性"
+              "title": "Anaconda的笔记属性"
             }
           },
           {
@@ -285,10 +285,10 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "2defcacc08607b3a",
+  "active": "450eed335b56782d",
   "lastOpenFiles": [
-    "Tool/python/Anaconda.md",
     "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
+    "Tool/python/Anaconda.md",
     "PLM/Models/闭源模型.md",
     "PLM/Models/GPT/GPT.md",
     "PLM/Alignment/README.md",

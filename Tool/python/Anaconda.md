@@ -68,7 +68,7 @@ conda install -c conda-forge gxx
 
 `conda install -c conda-forge libstdcxx-ng`
 
-`export LD_LIBRARY_PATH=~/miniconda3/envs/env_name/lib/:$LD_LIBRARY_PATH`
+`module load gcc/14.1.0`
 
 ## flash-attention
 
