@@ -72,6 +72,7 @@ $I_{t,s}​=\sum_{j=1}^{H^I}​​w_{t,j}^I​⋅ReLU(q_{t,j}^I​⋅k_s^I​)$
 
 ## 训练
 
+
 **数据收集​**​：从DeepSeek-V3.1-Terminus的基础检查点开始（上下文长度为128K），训练数据与用于DeepSeek-V3.1-Terminus的128K长上下文扩展数据完全对齐。
 
 ​**​预训练阶段​**​：分为密集预热阶段和稀疏训练阶段。
@@ -90,12 +91,17 @@ $I_{t,s}​=\sum_{j=1}^{H^I}​​w_{t,j}^I​⋅ReLU(q_{t,j}^I​⋅k_s^I​)$
 **​后训练阶段​**​：在继续预训练之后，进行后训练以创建最终的DeepSeek-V3.2-Exp。后训练也采用与稀疏继续预训练阶段相同的稀疏注意力方式。为了对引入 DSA 的影响进行严格评估，对于 DeepSeek-V3.2-Exp，维护了与 DeepSeek-V3.1-Terminus 相同的训练后管道、算法和数据。
 
 - **专家蒸馏​**​: 为每个任务开发专门的模型（都从同一个预训练的 DeepSeek-V3.2检查点开始微调），并使用这些专家模型生成特定领域的数据进行最终检查点的训练。
-	- 专家领域包括：写作、通用问答、数学、竞赛编程、逻辑推理、agentic coding、 agentic search
+	- 专家领域包括：写作、通用问答、数学、竞赛编程、逻辑推理、通用agent任务、agentic coding、 agentic search。所有领域都支持思考模式和非思考模式。都使用大规模RL训练。
 	- 发现：在蒸馏数据上训练的模型达到的性能水平仅略低于特定领域专家的性能水平，通过后续的 RL 训练有效地**消除了性能差距**。
 - ​**​混合RL训练​**​: 采用Group Relative Policy Optimization (GRPO)算法，将推理、agent和人类对齐训练合并为一个RL阶段（以前的DeepSeek模型是分阶段训练的），以平衡不同领域的性能，还能规避灾难性遗忘问题。
 	- 对于推理和agent任务，采取基于规则的结果奖励、长度惩罚和语言一致性奖励
 	- 对于通用任务，采用生成式奖励模型，其中每个提示都有自己的评估标准
 	- 奖励设计仔细平衡了两个关键权衡：（1） 长度与准确性，（2） 语言一致性与准确性。
+
+DeepSeek-V3.2和V3.2-Exp的预训练阶段、后训练阶段的方法是一样的。
+
+为了探索扩展思维的潜力，开发了一种实验变体，DeepSeek-V3.2-Speciale。该模型在强化学习期间仅基于推理数据进行训练，且长度惩罚较小。此外还结合了DeepSeekMath-V2（Shao等，2025）中的数据集和奖励方法，以增强数学证明能力。
+
 
 
 ## 评估
@@ -106,6 +112,13 @@ $I_{t,s}​=\sum_{j=1}^{H^I}​​w_{t,j}^I​⋅ReLU(q_{t,j}^I​⋅k_s^I​)$
 - 少数任务（如 GPQA、HLE、HMMT）略有下降，作者解释为：**V3.2-Exp 生成的推理 token 更少**，但若使用中间 checkpoint（生成 token 数相当），差距消失
 
 ![](img/DeepSeekV3.2-20250930201351.png)
+
+DeepSeek-V3.2技术报告中补充了人类便好评估和长文本评估。
+
+**人类偏好**： ChatbotArena的ELO排行榜上，DeepSeek-V3.1-Terminus和DeepSeek-V3.2-Exp的分数也非常接近。
+
+**长文本评估**：在DeepSeek-V3.2-Exp发布后，使用了此前未见过的测试集进行了多次独立的长上下文评估。一个代表性的基准是AA-LCR3，其中DeepSeek-V3.2-Exp在推理模式下比DeepSeek-V3.1Terminus高出4分。在Fiction.liveBench的评估中，DeepSeek-V3.2-Exp在多个指标上始终优于DeepSeek-V3.1-Terminus。这些证据表明，DeepSeek-V3.2-Exp的基础检查点在长时间上下文任务中不会倒退。
+
 
 **强化学习训练曲线**：两个模型在BrowseComp和SWE Verified上的性能在整个训练过程中稳步提高，曲线紧密对齐，这反映了DSA的训练稳定性。
 
