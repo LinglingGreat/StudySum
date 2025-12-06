@@ -73,6 +73,8 @@ OpenAI 团队明确地定义了用于评估 GPT-3 的不同设定，包括 zero-
 [张俊林详细拆解o1：OpenAI o1完整训练过程逆向推演](https://mp.weixin.qq.com/s/2rK59hPV8C_PeDsT8Ii73w)
 
 
+ChatGPT-Agent
+
 
 ## 参考资料
 
