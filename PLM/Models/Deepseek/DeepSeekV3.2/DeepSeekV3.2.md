@@ -109,6 +109,18 @@ DeepSeek-V3.2和V3.2-Exp的预训练阶段、后训练阶段的方法是一样�
 - we preserve the expert routing paths used during sampling in the inference framework and enforce the same routing paths during training, ensuring that identical expert parameters are optimized.
 - we preserve the truncation masks during sampling from πold and apply them to πθ during training, ensuring both policies share identical action subspaces.
 
+- **特定领域的 KL 强度（数学领域为零）**：DeepSeek V3.2 没有像 DAPO 和 Dr. GRPO 那样总是丢弃 KL 散度，而是在目标中保留 KL 项，但**针对每个领域调整其权重**。不过，他们也注意到，对于数学来说，非常弱甚至为零的 KL 通常效果最好。（但不是完全移除它，而是变成了一个超参数）。
+    
+- **无偏 KL 估计**：如上所述，DeepSeek V3.2 没有移除 KL 惩罚。除了将其视为调节旋钮外，他们还提出了一个修复 GRPO 中 KL 惩罚估计的方法，即用与主损失相同的重要性比率（Importance Ratio）对 KL 项进行加权，这样 KL 梯度实际上匹配了样本来自旧策略而不是当前策略的事实。
+    
+- **异策略序列掩码 (Off-policy sequence masking)**：当他们在许多梯度步骤中重复使用 rollout 数据（rollout 是模型生成的完整序列的术语）时，DeepSeek V3.2 会测量当前策略在每个完整答案上偏离 rollout 策略的程度，并简单地**丢弃那些既具有负优势又“过度偏离策略 (too off-policy)”的序列**。这防止了模型从过度偏离或陈旧的数据中学习。
+    
+- **保持 MoE 模型的路由**：对于混合专家骨干网，他们记录了在 rollout 期间激活了哪些专家，并在训练期间强制执行相同的路由模式，以便梯度更新仅针对那些产生采样答案的专家。
+    
+- **保持 Top-p/Top-k 的采样掩码**：当 rollout 使用 top-p or top-k 采样时，DeepSeek V3.2 存储选择掩码并在计算 GRPO 损失和 KL 时重新应用它，以便训练时的动作空间与采样时实际可用的空间相匹配。
+    
+- **保留原始 GRPO 优势归一化**：Dr. GRPO 表明 GRPO 的长度和每组标准差归一化项会使优化偏向于过长的错误答案，并过分强调非常简单或非常难的问题。Dr. GRPO 通过移除这两项并回归到无偏的 PPO 风格目标来修复此问题。相比之下，DAPO 转向 Token 级损失，并改变了长短答案的加权方式。然而，DeepSeek V3.2 **保留了原始的 GRPO 归一化**，并专注于其他修复，例如上述内容。
+
 ### Thinking in Tool-Use
 
 DeepSeek-R1发现工具使用中的思维 融入思考过程可以显著提升模型解决复杂问题的能力。
@@ -162,4 +174,6 @@ DeepSeek-V3.2技术报告中补充了人类便好评估和长文本评估。
 
 
 ## 参考资料
+
+[# DeepSeek 模型技术之旅：从 V3 到 V3.2](https://mp.weixin.qq.com/s/eMEC1JUcSaUnSPGwgCbcNQ)
 

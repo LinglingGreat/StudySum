@@ -2,6 +2,8 @@
 
 DeepSeek的API文档中也有类似的说明： https://api-docs.deepseek.com/zh-cn/updates
 
+![](img/README-20251208110258.png)
+
 ## DeepSeek-LLM（67B / 7B等）
 
 DeepSeek 在2023年11月底开源了名为 “DeepSeek-LLM” 的模型系列（包括 7B / 67B 基础模型 + Chat 版本）
