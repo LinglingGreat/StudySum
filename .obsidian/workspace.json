@@ -64,6 +64,20 @@
             }
           },
           {
+            "id": "58878792043b969a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/DataStrategy/README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          },
+          {
             "id": "115366a0203583e0",
             "type": "leaf",
             "state": {
@@ -138,7 +152,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "DPO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -213,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/DeepSeek/DeepSeekV3.2/DeepSeekV3.2.md",
+                "file": "PLM/DataStrategy/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "DeepSeekV3.2 的大纲"
+              "title": "README 的大纲"
             }
           },
           {
@@ -262,10 +276,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Models/DeepSeek/DeepSeekV3.2/DeepSeekV3.2.md"
+                "file": "PLM/DataStrategy/README.md"
               },
               "icon": "lucide-info",
-              "title": "DeepSeekV3.2的笔记属性"
+              "title": "README的笔记属性"
             }
           },
           {
@@ -298,11 +312,15 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "115366a0203583e0",
+  "active": "58878792043b969a",
   "lastOpenFiles": [
+    "PLM/Alignment/README.md",
+    "PLM/Alignment/PPO/PPO.md",
+    "PLM/Alignment/DPO/DPO.md",
+    "Tool/k8s/k8s.md",
+    "PLM/Models/DeepSeek/DeepSeekV3.2/DeepSeekV3.2.md",
     "PLM/Models/DeepSeek/README.md",
     "PLM/Models/DeepSeek/img/README-20251208110258.png",
-    "PLM/Models/DeepSeek/DeepSeekV3.2/DeepSeekV3.2.md",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211913.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211750.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211253.png",
@@ -311,14 +329,12 @@
     "PLM/Models/Kimi/Kimi-K2.md",
     "PLM/Models/Kimi/Kimi-K2-Thinking.md",
     "PLM/Models/DeepSeekMath/DeepSeekMath.md",
-    "Tool/k8s/k8s.md",
     "PLM/Models/DeepSeekMath/DeepSeekMath-V2.md",
     "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129214100.png",
     "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129214022.png",
     "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129213838.png",
     "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129213636.png",
     "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md",
-    "PLM/Alignment/README.md",
     "PLM/README.md",
     "Tool/python/Anaconda.md",
     "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
@@ -336,10 +352,8 @@
     "PLM/业界分享/语音智能体",
     "PLM/Pretrain/Smol",
     "PLM/Models/Minimax/Minimax01.md",
-    "PLM/Benchmark/Investment/模型的投资水平测评.md",
     "PLM/Benchmark/Investment/img",
     "PLM/Benchmark/Investment",
-    "PLM/Agent/ACE/ACE.md",
     "CV/DeepSeek-OCR/img",
     "CV/DeepSeek-OCR",
     "PLM/Agent/Tongyi-DeepReSearch",
