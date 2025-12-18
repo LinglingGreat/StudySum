@@ -191,6 +191,11 @@ echo "CUDNN_INCLUDE_DIR: $CUDNN_INCLUDE_DIR"
 echo "CUDNN_LIBRARY_DIR: $CUDNN_LIBRARY_DIR"
 ```
 
+在verl环境安装的时候也遇到问题，verl的安装命令是`NVTE_FRAMEWORK=pytorch pip3 install --no-deps git+https://github.com/NVIDIA/TransformerEngine.git@v2.2.1`
+总是失败，看原因也看不出来什么。
+后来就换成这样安装：`pip install --no-build-isolation transformer_engine[pytorch]`（可以指定版本）
+前提是要module load cuda/12.4, gcc 13.3.0, 对应的nccl版本.
+
 安装flash_attention：`pip install flash_attn-2.7.3+cu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl`
 
 测试flash_attention正常：`import flash_attn_2_cuda as flash_attn_gpu`（因为每次都是这里报错，不行的话就下载源码安装）

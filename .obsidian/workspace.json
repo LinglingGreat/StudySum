@@ -287,8 +287,9 @@
   },
   "active": "2defcacc08607b3a",
   "lastOpenFiles": [
-    "Tool/k8s/k8s.md",
     "Tool/python/Anaconda.md",
+    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
+    "Tool/k8s/k8s.md",
     "Tool/Linux/Linux.md",
     "PLM/BaseStruct/Architecture/Comparision.md",
     "PLM/Models/README.md",
@@ -314,7 +315,6 @@
     "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129213636.png",
     "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md",
     "PLM/README.md",
-    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
     "PLM/Models/闭源模型.md",
     "PLM/PEFT/LORA/LORA.md",
     "PLM/PEFT/Finetune/Finetune.md",
