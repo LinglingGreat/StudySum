@@ -195,6 +195,10 @@ echo "CUDNN_LIBRARY_DIR: $CUDNN_LIBRARY_DIR"
 总是失败，看原因也看不出来什么。
 后来就换成这样安装：`pip install --no-build-isolation transformer_engine[pytorch]==2.3.0`
 前提是要module load cuda/12.4, gcc 13.3.0, 对应的nccl版本.
+最新20251219：官方写的2.6，我安装2.8.0才行，2.6版本import会报错undefinedsymbol
+[[Colab] ImportError: undefined symbol: \_ZNK3c106SymInt22maybe\_as\_int\_slow\_pathEv on A100 w/ Python 3.12 · Issue #2317 · NVIDIA/TransformerEngine](https://github.com/NVIDIA/TransformerEngine/issues/2317)
+
+
 
 安装flash_attention：`pip install flash_attn-2.7.3+cu12torch2.6cxx11abiTRUE-cp310-cp310-linux_x86_64.whl`
 
