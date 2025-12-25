@@ -58,6 +58,7 @@ MLA的核心是对key和value进行低秩联合压缩，以减少KV缓存
 - **每个k_head附带有不同的信息，它将用这份独有的信息和对应的q_head进行attn的计算**。
 - 当前我要存的K cache是4个k_head（图中深绿色框），**但如果我能从这4个k_head中抽取出1份共有的信息**，然后在做attn计算时，**每个head都用这1份共有的信息做计算**，那么我也只需存这1份共有信息作为K cache了。这样我就**把K cache从原来[num_heads](https://zhida.zhihu.com/search?content_id=252939704&content_type=Article&match_order=2&q=num_heads&zhida_source=entity) = 4变成num_heads = 1**，这不就能节省K cache了吗？
 - 但是等等，**现在共有的k_head信息是抽取出来了，那么相异的k_head信息呢？**（**简单来说，就是由**WK**不同head部分学习到的相异信息**）。我们当然是希望k_head间相异的信息也能保留下来，那么该把它们保留至哪里呢？当你回顾attn_weights的计算公式时，一个想法在你脑中闪现：**q部分不是也有heads吗！我可以把每个k_head独有的信息转移到对应的q_head上吗！写成公式解释就是：**
+
 ![](img/Pasted%20image%2020250124160346.png)
 
 
@@ -72,6 +73,7 @@ ROPE
 我们在表 1 中展示了不同注意力机制中每个 token 的 KV 缓存的比较。MLA 仅需要少量的 KV 缓存，相当于只有 2.25 个组的 GQA，但可以实现比 MHA 更强的性能。
 
 ![](img/Pasted%20image%2020250122120132.png)
+
 
 ## 手撕MLA
 
