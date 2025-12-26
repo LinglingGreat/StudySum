@@ -64,7 +64,7 @@
             }
           },
           {
-            "id": "d4ce35fad13139d5",
+            "id": "d095a1b233ec4c77",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -298,12 +298,12 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "d4ce35fad13139d5",
+  "active": "d095a1b233ec4c77",
   "lastOpenFiles": [
+    "Tool/k8s/k8s.md",
     "PLM/Models/DeepSeek/Gemini解析MLA.md",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/BaseStruct/GQA/MQA&GQA.md",
-    "Tool/k8s/k8s.md",
     "Tool/Linux/Linux.md",
     "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
     "Tool/python/Anaconda.md",
