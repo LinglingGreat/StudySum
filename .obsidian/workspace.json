@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
+                "file": "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "对OpenAI姚顺雨3小时访谈"
+              "title": "罗永浩对谈MiniMax闫俊杰"
             }
           },
           {
@@ -152,7 +152,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "MXFP4",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
+                "file": "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "对OpenAI姚顺雨3小时访谈 的大纲"
+              "title": "罗永浩对谈MiniMax闫俊杰 的大纲"
             }
           },
           {
@@ -276,10 +276,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md"
+                "file": "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md"
               },
               "icon": "lucide-info",
-              "title": "对OpenAI姚顺雨3小时访谈的笔记属性"
+              "title": "罗永浩对谈MiniMax闫俊杰的笔记属性"
             }
           },
           {
@@ -312,10 +312,11 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "d7b4726a47851567",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
-    "PLM/Models/Kimi/Kimi-K2-Thinking.md",
     "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
+    "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
+    "PLM/Models/Kimi/Kimi-K2-Thinking.md",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
     "Tool/k8s/k8s.md",
     "PLM/Models/DeepSeek/Gemini解析MLA.md",
@@ -347,7 +348,6 @@
     "PLM/Pretrain/Smol/Smol训练手册-构建世界级LLMs的秘诀.md",
     "PLM/README.md",
     "PLM/Models/闭源模型.md",
-    "PLM/PEFT/LORA/LORA.md",
     "PLM/Models/Kimi/img/Kimi-K2-Thinking-20251109122938.png",
     "PLM/Models/Kimi/img/Kimi-K2-Thinking-20251109122858.png",
     "PLM/业界分享/语音智能体",
