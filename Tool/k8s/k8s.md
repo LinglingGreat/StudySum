@@ -241,6 +241,52 @@ kubectl port-forward svc/grafana -n monitoring 8082:3000
 
 通过这些步骤，你应该能够将服务从故障节点迁移到集群中的其他健康节点。
 
+# helm的使用
+
+helm部署 deploy
+
+- 部署helm
+    - **test是自定义helm部署的名字，修改成自己的部署名字，不要重复**
+    - 使用当前目录下的 Helm Chart，读取 `my-values.yaml` 作为配置文件，在 Kubernetes 集群中安装一个名为 `test` 的 Release。
+
+```Plain
+helm install test . -f my-values.yaml
+```
+
+- 查看helm结果
+    
+
+```Plain
+ helm list    
+```
+
+- Upgrade 部署
+	- 加上`--force`强制部署
+
+```Plain
+helm upgrade test . -f deploy_configs/abtest.yaml 
+```
+
+- 删除部署
+
+```Plain
+# 卸载部署
+helm uninstall test
+```
+
+- 查看升级历史，回滚
+    
+
+```Plain
+# 查看版本历史
+helm history test
+
+# 回滚到上一个版本
+helm rollback test 1
+```
+
+  
+
 # LimitRange 与 ResourceQuota 的区别
 
 您问的这个问题非常好，这是 Kubernetes 资源管理的两个核心概念。让我详细解释它们的区别：
