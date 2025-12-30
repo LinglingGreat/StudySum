@@ -64,34 +64,6 @@
             }
           },
           {
-            "id": "d7b4726a47851567",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "罗永浩对谈MiniMax闫俊杰"
-            }
-          },
-          {
-            "id": "5ef2e09c89454a1e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "对OpenAI姚顺雨3小时访谈"
-            }
-          },
-          {
             "id": "f88b0d2b3f6d7122",
             "type": "leaf",
             "state": {
@@ -134,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -241,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
+                "file": "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "对OpenAI姚顺雨3小时访谈 的大纲"
+              "title": "听姚顺雨&闫俊杰的访谈有感 的大纲"
             }
           },
           {
@@ -290,10 +262,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md"
+                "file": "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md"
               },
               "icon": "lucide-info",
-              "title": "对OpenAI姚顺雨3小时访谈的笔记属性"
+              "title": "听姚顺雨&闫俊杰的访谈有感的笔记属性"
             }
           },
           {
@@ -326,13 +298,13 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "5ef2e09c89454a1e",
+  "active": "f88b0d2b3f6d7122",
   "lastOpenFiles": [
+    "Tool/k8s/k8s.md",
     "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
+    "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
     "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
-    "Tool/k8s/k8s.md",
-    "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
     "PLM/Models/Kimi/Kimi-K2-Thinking.md",
     "PLM/Models/DeepSeek/Gemini解析MLA.md",
     "PLM/BaseStruct/GQA/MQA&GQA.md",
