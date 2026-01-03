@@ -285,7 +285,20 @@ helm history test
 helm rollback test 1
 ```
 
-  
+  ### 2️⃣ 查看某个 release 的详细信息（最重要）
+
+`helm status <release-name> -n <namespace>`
+
+3️⃣ 查看当前生效的 values（部署参数）
+
+`helm get values <release-name> -n <namespace>`
+
+如果你想看 **完整 values（包含默认值）**：
+
+`helm get values <release-name> -n <namespace> --all`
+
+
+
 
 # LimitRange 与 ResourceQuota 的区别
 

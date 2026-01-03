@@ -106,7 +106,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
+                "file": "Tool/k8s/k8s.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "听姚顺雨&闫俊杰的访谈有感 的大纲"
+              "title": "k8s 的大纲"
             }
           },
           {
@@ -262,10 +262,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md"
+                "file": "Tool/k8s/k8s.md"
               },
               "icon": "lucide-info",
-              "title": "听姚顺雨&闫俊杰的访谈有感的笔记属性"
+              "title": "k8s的笔记属性"
             }
           },
           {
@@ -298,12 +298,12 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "f88b0d2b3f6d7122",
+  "active": "e2d53901ff7383cd",
   "lastOpenFiles": [
+    "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
     "Tool/k8s/k8s.md",
     "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
     "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
-    "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/Models/Kimi/Kimi-K2-Thinking.md",
     "PLM/Models/DeepSeek/Gemini解析MLA.md",
