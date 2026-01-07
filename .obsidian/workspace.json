@@ -50,20 +50,6 @@
             }
           },
           {
-            "id": "83178c426a0e19cc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Models/Minimax/Minimax-M2.1-Agent后训练的经验与认知.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Minimax-M2.1-Agent后训练的经验与认知"
-            }
-          },
-          {
             "id": "e2d53901ff7383cd",
             "type": "leaf",
             "state": {
@@ -83,12 +69,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
+                "file": "PLM/业界分享/其他分享/机器人.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "听姚顺雨&闫俊杰的访谈有感"
+              "title": "机器人"
+            }
+          },
+          {
+            "id": "e0d250853f62ff6b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/BaseStruct/Attention/LinearAttention.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LinearAttention"
             }
           },
           {
@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -177,7 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 302.50390243530273
+    "width": 318.50390243530273
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/Minimax/Minimax-M2.1-Agent后训练的经验与认知.md",
+                "file": "Tool/python/Anaconda.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Minimax-M2.1-Agent后训练的经验与认知 的大纲"
+              "title": "Anaconda 的大纲"
             }
           },
           {
@@ -276,10 +276,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "PLM/Models/Minimax/Minimax-M2.1-Agent后训练的经验与认知.md"
+                "file": "Tool/python/Anaconda.md"
               },
               "icon": "lucide-info",
-              "title": "Minimax-M2.1-Agent后训练的经验与认知的笔记属性"
+              "title": "Anaconda的笔记属性"
             }
           },
           {
@@ -312,23 +312,28 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "83178c426a0e19cc",
+  "active": "450eed335b56782d",
   "lastOpenFiles": [
+    "PLM/Models/Minimax/Minimax-M2.1-Agent后训练的经验与认知.md",
+    "PLM/BaseStruct/Attention/LinearAttention.md",
+    "PLM/业界分享/其他分享/机器人.md",
+    "PLM/BaseStruct/Attention/Attention.md",
+    "PLM/BaseStruct/S2A/S2A.md",
+    "PLM/BaseStruct/SWA/SWA.md",
+    "PLM/BaseStruct/GQA/MQA&GQA.md",
+    "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201627.png",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201423.png",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201350.png",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106200957.png",
     "Tool/python/Anaconda.md",
-    "PLM/Models/Minimax/Minimax-M2.1-Agent后训练的经验与认知.md",
     "Tool/k8s/k8s.md",
     "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
-    "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
     "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
     "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/Models/Kimi/Kimi-K2-Thinking.md",
     "PLM/Models/DeepSeek/Gemini解析MLA.md",
-    "PLM/BaseStruct/GQA/MQA&GQA.md",
     "Tool/Linux/Linux.md",
     "PLM/BaseStruct/Architecture/Comparision.md",
     "PLM/Models/README.md",
@@ -343,13 +348,8 @@
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211750.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211253.png",
     "PLM/Agent/README.md",
-    "PLM/Models/GPT/GPT.md",
-    "PLM/Models/Kimi/Kimi-K2.md",
-    "PLM/Models/DeepSeekMath/DeepSeekMath.md",
-    "PLM/Models/DeepSeekMath/DeepSeekMath-V2.md",
     "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129214100.png",
     "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129214022.png",
-    "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129213838.png",
     "PLM/业界分享/语音智能体",
     "PLM/Pretrain/Smol",
     "PLM/Benchmark/Investment/img",
