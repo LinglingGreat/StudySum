@@ -243,6 +243,12 @@ kubectl port-forward svc/grafana -n monitoring 8082:3000
 
 # helm的使用
 
+使用 `helm template` 命令： 这个命令会渲染模板并输出生成的 Kubernetes 资源定义，但不会实际安装任何东西。
+    
+```Plain
+helm template . -f my-values.yaml > preview.yaml
+```
+
 helm部署 deploy
 
 - 部署helm

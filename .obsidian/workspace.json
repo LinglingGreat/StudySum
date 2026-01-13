@@ -64,45 +64,17 @@
             }
           },
           {
-            "id": "f88b0d2b3f6d7122",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/业界分享/其他分享/Gemini 3秘诀.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Gemini 3秘诀"
-            }
-          },
-          {
             "id": "c43e4567aadc2dcd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
+                "file": "PLM/业界分享/其他分享/机器人.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "听姚顺雨&闫俊杰的访谈有感"
-            }
-          },
-          {
-            "id": "cdb0f975c4403380",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "罗永浩对谈MiniMax闫俊杰"
+              "title": "机器人"
             }
           },
           {
@@ -148,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -255,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
+                "file": "Tool/k8s/k8s.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "听姚顺雨&闫俊杰的访谈有感 的大纲"
+              "title": "k8s 的大纲"
             }
           },
           {
@@ -340,15 +312,15 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "c43e4567aadc2dcd",
+  "active": "e2d53901ff7383cd",
   "lastOpenFiles": [
-    "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
+    "PLM/业界分享/其他分享/机器人.md",
     "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
     "PLM/业界分享/其他分享/Gemini 3秘诀.md",
-    "PLM/业界分享/其他分享/机器人.md",
+    "PLM/BaseStruct/Attention/LinearAttention.md",
+    "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
     "Tool/python/Anaconda.md",
     "PLM/Models/Minimax/Minimax-M2.1-Agent后训练的经验与认知.md",
-    "PLM/BaseStruct/Attention/LinearAttention.md",
     "PLM/BaseStruct/Attention/Attention.md",
     "PLM/BaseStruct/S2A/S2A.md",
     "PLM/BaseStruct/SWA/SWA.md",
