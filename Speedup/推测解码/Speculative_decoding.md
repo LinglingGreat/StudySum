@@ -4,3 +4,6 @@ SGLang支持： [Speculative Decoding — SGLang](https://docs.sglang.io/advance
 
 VLLM支持：[Speculative Decoding - vLLM - vLLM 文档](https://docs.vllm.com.cn/en/latest/features/spec_decode/#speculating-using-eagle-based-draft-models)
 
+训练推测解码的代码仓库：[GitHub - sgl-project/SpecForge: Train speculative decoding models effortlessly and port them smoothly to SGLang serving.](https://github.com/sgl-project/SpecForge)
+
+- 2026.1：EAGLE3草稿模型目前只支持LLama模型，写死的
