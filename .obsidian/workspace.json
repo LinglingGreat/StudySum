@@ -125,12 +125,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Speedup/推测解码/Speculative_decoding.md",
+                "file": "PLM/Models/DeepSeek/DeepSeek_Engram.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Speculative_decoding"
+              "title": "DeepSeek_Engram"
             }
           }
         ],
@@ -241,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Speedup/推测解码/Speculative_decoding.md",
+                "file": "PLM/Models/DeepSeek/DeepSeek_Engram.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Speculative_decoding 的大纲"
+              "title": "DeepSeek_Engram 的大纲"
             }
           },
           {
@@ -326,8 +326,12 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "45f4d6b8f71484a4",
   "lastOpenFiles": [
+    "PLM/Models/DeepSeek/img/DeepSeek_Engram-20260113203801.png",
+    "PLM/Models/DeepSeek/img/DeepSeek_Engram-20260113203734.png",
+    "Speedup/推测解码/Speculative_decoding.md",
+    "PLM/Models/DeepSeek/DeepSeek_Engram.md",
     "Tool/Docker/Docker.md",
     "Speedup/推测解码",
     "PLM/BaseStruct/Attention/LinearAttention.md",
@@ -356,15 +360,11 @@
     "PLM/Models/README.md",
     "PLM/DataStrategy/README.md",
     "PLM/Alignment/README.md",
-    "PLM/Alignment/PPO/PPO.md",
-    "PLM/Alignment/DPO/DPO.md",
-    "PLM/Models/DeepSeek/DeepSeekV3.2/DeepSeekV3.2.md",
     "PLM/Models/DeepSeek/img/README-20251208110258.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211913.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211750.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211253.png",
     "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129214100.png",
-    "PLM/Models/DeepSeekMath/img/DeepSeekMath-V2-20251129214022.png",
     "PLM/业界分享/语音智能体",
     "PLM/Pretrain/Smol",
     "PLM/Benchmark/Investment/img",
