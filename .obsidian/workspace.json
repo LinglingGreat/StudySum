@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/BaseStruct/Attention/LinearAttention.md",
+                "file": "PLM/业界分享/其他分享/一家投资OpenAI的硅谷基金的深度研究.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "LinearAttention"
+              "title": "一家投资OpenAI的硅谷基金的深度研究"
             }
           },
           {
@@ -120,7 +120,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Linux/Linux.md",
+                "file": "PLM/业界分享/其他分享/一家投资OpenAI的硅谷基金的深度研究.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Linux 的大纲"
+              "title": "一家投资OpenAI的硅谷基金的深度研究 的大纲"
             }
           },
           {
@@ -312,12 +312,13 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "0bff3209a9a7e303",
+  "active": "e0d250853f62ff6b",
   "lastOpenFiles": [
-    "PLM/业界分享/其他分享/Manus季逸超访谈.md",
-    "Tool/Linux/Linux.md",
-    "Speedup/推测解码/Speculative_decoding.md",
     "PLM/BaseStruct/Attention/LinearAttention.md",
+    "PLM/业界分享/其他分享/一家投资OpenAI的硅谷基金的深度研究.md",
+    "Tool/Linux/Linux.md",
+    "PLM/业界分享/其他分享/Manus季逸超访谈.md",
+    "Speedup/推测解码/Speculative_decoding.md",
     "Tool/Git/Git.md",
     "Tool/k8s/k8s.md",
     "PLM/业界分享/其他分享/机器人.md",
@@ -346,7 +347,6 @@
     "PLM/Models/Kimi/Kimi-K2-Thinking.md",
     "PLM/Models/DeepSeek/Gemini解析MLA.md",
     "PLM/BaseStruct/Architecture/Comparision.md",
-    "PLM/Models/README.md",
     "PLM/Models/DeepSeek/img/README-20251208110258.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211913.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211750.png",
