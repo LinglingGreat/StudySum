@@ -78,6 +78,18 @@
             }
           },
           {
+            "id": "85b90b532a0b9d92",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.11.5"
+            }
+          },
+          {
             "id": "2defcacc08607b3a",
             "type": "leaf",
             "state": {
@@ -213,13 +225,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Megatron-Swift踩坑记录 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -287,7 +298,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
+      "bases:新建数据库": false,
       "canvas:新建白板": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
@@ -298,8 +309,9 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "2defcacc08607b3a",
+  "active": "85b90b532a0b9d92",
   "lastOpenFiles": [
+    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
     "PLM/BaseStruct/Attention/LinearAttention.md",
     "PLM/业界分享/其他分享/一家投资OpenAI的硅谷基金的深度研究.md",
     "Tool/Linux/Linux.md",
@@ -314,7 +326,6 @@
     "PLM/Models/DeepSeek/img/DeepSeek_Engram-20260113203801.png",
     "PLM/Models/DeepSeek/img/DeepSeek_Engram-20260113203734.png",
     "Speedup/推测解码",
-    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
     "PLM/业界分享/其他分享/听姚顺雨&闫俊杰的访谈有感.md",
     "PLM/业界分享/其他分享/Gemini 3秘诀.md",
     "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
