@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "PLM/Models/Minimax/MiniMax-M2-her 技术深度解析.md",
+                "file": "PLM/业界分享/其他分享/阶跃星辰董事长印奇访谈.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MiniMax-M2-her 技术深度解析"
+              "title": "阶跃星辰董事长印奇访谈"
             }
           },
           {
@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/Models/Minimax/MiniMax-M2-her 技术深度解析.md",
+                "file": "PLM/业界分享/其他分享/阶跃星辰董事长印奇访谈.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "MiniMax-M2-her 技术深度解析 的大纲"
+              "title": "阶跃星辰董事长印奇访谈 的大纲"
             }
           },
           {
@@ -298,10 +298,11 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "2defcacc08607b3a",
   "lastOpenFiles": [
-    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
     "PLM/Models/Minimax/MiniMax-M2-her 技术深度解析.md",
+    "PLM/业界分享/其他分享/阶跃星辰董事长印奇访谈.md",
+    "Tool/Megatron-Swift/Megatron-Swift踩坑记录.md",
     "PLM/Benchmark/Minimax_Bench",
     "PLM/BaseStruct/Attention/LinearAttention.md",
     "PLM/业界分享/其他分享/一家投资OpenAI的硅谷基金的深度研究.md",
@@ -333,7 +334,6 @@
     "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
     "PLM/Models/DeepSeek/DeepSeekv2.md",
     "PLM/Models/Kimi/Kimi-K2-Thinking.md",
-    "PLM/Models/DeepSeek/Gemini解析MLA.md",
     "PLM/Models/DeepSeek/img/README-20251208110258.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211913.png",
     "PLM/Models/DeepSeek/DeepSeekV3.2/img/DeepSeekV3.2-20251206211750.png",
