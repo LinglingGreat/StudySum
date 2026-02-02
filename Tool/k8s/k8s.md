@@ -38,6 +38,12 @@ kubectl get pods -A --field-selector status.phase=Failed
 kubectl delete pods -A --field-selector status.phase=Failed
 ```
 
+## 复制pod中的文件出来
+
+```
+kubectl cp <pod-name>:<pod-path> <local-path> -n <namespace>
+```
+
 # 服务启动
 
 ```Markdown
