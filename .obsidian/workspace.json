@@ -36,20 +36,6 @@
             }
           },
           {
-            "id": "df7e7afafd3f662b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/业界分享/其他分享/张月光创业两年首次访谈.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "张月光创业两年首次访谈"
-            }
-          },
-          {
             "id": "450eed335b56782d",
             "type": "leaf",
             "state": {
@@ -199,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/业界分享/其他分享/张月光创业两年首次访谈.md",
+                "file": "Tool/python/Anaconda.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "张月光创业两年首次访谈 的大纲"
+              "title": "Anaconda 的大纲"
             }
           },
           {
@@ -284,10 +270,10 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "df7e7afafd3f662b",
+  "active": "450eed335b56782d",
   "lastOpenFiles": [
-    "Tool/Linux/Linux.md",
     "PLM/业界分享/其他分享/张月光创业两年首次访谈.md",
+    "Tool/Linux/Linux.md",
     "Tool/k8s/k8s.md",
     "Tool/Docker/Docker.md",
     "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
