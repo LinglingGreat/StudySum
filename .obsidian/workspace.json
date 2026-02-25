@@ -50,20 +50,6 @@
             }
           },
           {
-            "id": "a3ce8a0cc23b12c5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Speedup/推测解码/README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
-            }
-          },
-          {
             "id": "e2d53901ff7383cd",
             "type": "leaf",
             "state": {
@@ -92,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -149,7 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 236.50390243530273
+    "width": 297.50390243530273
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -199,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Speedup/推测解码/README.md",
+                "file": "Tool/Docker/Docker.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大纲"
+              "title": "Docker 的大纲"
             }
           },
           {
@@ -284,15 +270,16 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "a3ce8a0cc23b12c5",
+  "active": "c48060fa323e145a",
   "lastOpenFiles": [
+    "PLM/业界分享/其他分享/对星海图高继扬的3小时访谈.md",
+    "PLM/业界分享/其他分享/张月光创业两年首次访谈.md",
+    "Tool/Docker/Docker.md",
     "Speedup/推测解码/Speculative_decoding.md",
+    "Tool/k8s/k8s.md",
     "Speedup/推测解码/README.md",
     "Tool/python/Anaconda.md",
-    "PLM/业界分享/其他分享/张月光创业两年首次访谈.md",
     "Tool/Linux/Linux.md",
-    "Tool/k8s/k8s.md",
-    "Tool/Docker/Docker.md",
     "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
     "PLM/业界分享/其他分享/阶跃星辰董事长印奇访谈.md",
     "PLM/Models/Minimax/MiniMax-M2-her 技术深度解析.md",
@@ -315,7 +302,6 @@
     "PLM/BaseStruct/Attention/Attention.md",
     "PLM/BaseStruct/S2A/S2A.md",
     "PLM/BaseStruct/SWA/SWA.md",
-    "PLM/BaseStruct/GQA/MQA&GQA.md",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201627.png",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201423.png",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201350.png",
