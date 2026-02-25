@@ -297,7 +297,7 @@ helm history test
 helm rollback test 1
 ```
 
-  ### 2️⃣ 查看某个 release 的详细信息（最重要）
+2️⃣ 查看某个 release 的详细信息（最重要）
 
 `helm status <release-name> -n <namespace>`
 
