@@ -62,9 +62,23 @@
               "icon": "lucide-file",
               "title": "k8s"
             }
+          },
+          {
+            "id": "b64061bff50a48b5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/业界分享/其他分享/机器人.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "机器人"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -171,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/k8s/k8s.md",
+                "file": "PLM/业界分享/其他分享/机器人.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "k8s 的大纲"
+              "title": "机器人 的大纲"
             }
           },
           {
@@ -256,13 +270,17 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "e2d53901ff7383cd",
+  "active": "b64061bff50a48b5",
   "lastOpenFiles": [
+    "PLM/Models/GLM/GLM5.md",
+    "PLM/业界分享/其他分享/机器人.md",
+    "PLM/Models/GLM/GLM.md",
+    "PLM/Models/GLM/GLM4.5.md",
+    "Tool/k8s/k8s.md",
     "Tool/Docker/Docker.md",
     "PLM/业界分享/其他分享/对星海图高继扬的3小时访谈.md",
     "PLM/业界分享/其他分享/张月光创业两年首次访谈.md",
     "Speedup/推测解码/Speculative_decoding.md",
-    "Tool/k8s/k8s.md",
     "Speedup/推测解码/README.md",
     "Tool/python/Anaconda.md",
     "Tool/Linux/Linux.md",
@@ -275,7 +293,6 @@
     "PLM/业界分享/其他分享/一家投资OpenAI的硅谷基金的深度研究.md",
     "PLM/业界分享/其他分享/Manus季逸超访谈.md",
     "Tool/Git/Git.md",
-    "PLM/业界分享/其他分享/机器人.md",
     "PLM/Benchmark/README.md",
     "PLM/Models/DeepSeek/DeepSeek_Engram.md",
     "PLM/Models/DeepSeek/img/DeepSeek_Engram-20260113203801.png",
@@ -285,9 +302,6 @@
     "PLM/业界分享/其他分享/Gemini 3秘诀.md",
     "PLM/业界分享/其他分享/罗永浩对谈MiniMax闫俊杰.md",
     "PLM/Models/Minimax/Minimax-M2.1-Agent后训练的经验与认知.md",
-    "PLM/BaseStruct/Attention/Attention.md",
-    "PLM/BaseStruct/S2A/S2A.md",
-    "PLM/BaseStruct/SWA/SWA.md",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201627.png",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201423.png",
     "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201350.png",
