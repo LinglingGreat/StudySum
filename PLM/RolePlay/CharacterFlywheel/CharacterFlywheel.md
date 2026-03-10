@@ -26,6 +26,13 @@ institution:
 
 ![](img/CharacterFlywheel-20260305113615.png)
 
+## 目标定义
+
+Meta的作者们将核心要优化的目标定义为：**用户参与度（User engagement），分为广度（有多少用户愿意和AI持续对话）和深度（核心用户的粘性和对话深度）**。该指标通过线上数据计算，天然不可微，没法直接用梯度下降优化模型。类比模型梯度下降的优化过程，作者提出核心的几步来优化该目标：数据采样（摸清当前位置的地形）→ Pre-Herding（训练奖励模型RM画地形等高线）→ Herding（用RL沿着等高线往上爬）→ 评估上线。
+
+![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/2oicuz5vRaSuhfH9MApsC85caOyMfQSRCEhFibwDYahAg49zsQiaFEur7CnCGY3Qaut0W3hpFtMib6NEWLgFRrv1V98Tfu22HHRkpEKZs85t77c/640?wx_fmt=png&from=appmsg&tp=wxpic&wxfrom=5&wx_lazy=1#imgIndex=1)
+
+其中的核心迭代原则是**小步快跑**，步长必须足够大保证能看到进步，同时必须足够小避免过拟合。每一代只做增量优化，不靠单次大更新赌运气，靠多轮迭代的复利堆出最终效果。
 
 ## 数据处理流程
 
@@ -38,6 +45,7 @@ institution:
 **第三阶段（基于约束的调整）**： 最终处理阶段在多个维度上应用约束条件。我们采用分层抽样方法，使统计数据与原始流量分布或预先设定的目标水平保持一致。表 [1](https://arxiv.org/html/2603.01973?_immersive_translate_auto_translate=1#S2.T1 "Table 1 ‣ 2.2.1 Curation Pipeline ‣ 2.2 Data Curation and Annotation ‣ 2 Methodology ‣ CharacterFlywheel: Scaling Iterative Improvement of Engaging and Steerable LLMs in Production") 总结了关键约束条件和监控维度。
 
 ![](img/CharacterFlywheel-20260305113627.png)
+
 
 ## 标注
 
