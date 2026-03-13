@@ -36,6 +36,12 @@ kubectl describe node <节点名称>
 kubectl get pods -A --field-selector status.phase=Failed
 # 清理
 kubectl delete pods -A --field-selector status.phase=Failed
+
+
+
+# 查看deployment
+kubectl describe deployment <deploy名称>
+kubectl describe replicaset <ReplicaSet名称>
 ```
 
 ## 复制pod中的文件出来

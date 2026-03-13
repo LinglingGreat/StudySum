@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "PLM/RolePlay/CharacterFlywheel/CharacterFlywheel.md",
+                "file": "Tool/k8s/k8s.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "CharacterFlywheel 的大纲"
+              "title": "k8s 的大纲"
             }
           },
           {
@@ -270,8 +270,11 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "e2d53901ff7383cd",
+  "active": "7d011fa3cb904c6e",
   "lastOpenFiles": [
+    "Tool/python/Anaconda.md",
+    "Tool/k8s/k8s.md",
+    "PLM/RolePlay/CharacterFlywheel/CharacterFlywheel.md",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305115838.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305115817.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305114852.png",
@@ -281,8 +284,6 @@
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305113627.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305113615.png",
     "PLM/RolePlay/CharacterFlywheel/img",
-    "Tool/k8s/k8s.md",
-    "PLM/RolePlay/CharacterFlywheel/CharacterFlywheel.md",
     "PLM/RolePlay/CharacterFlywheel",
     "PLM/Alignment/SWiRL/SWiRL.md",
     "PLM/CoT/DAPO/DAPO.md",
@@ -302,7 +303,6 @@
     "PLM/业界分享/其他分享/张月光创业两年首次访谈.md",
     "Speedup/推测解码/Speculative_decoding.md",
     "Speedup/推测解码/README.md",
-    "Tool/python/Anaconda.md",
     "Tool/Linux/Linux.md",
     "PLM/业界分享/其他分享/对OpenAI姚顺雨3小时访谈.md",
     "PLM/业界分享/其他分享/阶跃星辰董事长印奇访谈.md",
@@ -312,7 +312,6 @@
     "PLM/Models/DeepSeek/img/DeepSeek_Engram-20260113203801.png",
     "PLM/Models/DeepSeek/img/DeepSeek_Engram-20260113203734.png",
     "Speedup/推测解码",
-    "PLM/Models/Minimax/img/Minimax-M2.1-Agent后训练的经验与认知-20260106201627.png",
     "PLM/业界分享/语音智能体",
     "PLM/Pretrain/Smol",
     "PLM/Benchmark/Investment/img",
