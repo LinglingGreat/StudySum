@@ -43,6 +43,7 @@ kubectl delete pods -A --field-selector status.phase=Failed
 kubectl describe deployment <deploy名称>
 kubectl describe replicaset <ReplicaSet名称>
 kubectl get deployment <你的deployment名称> -o yaml
+kubectl get configmap <你的deployment名称> -o yaml
 ```
 
 ## 复制pod中的文件出来
