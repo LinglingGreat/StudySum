@@ -69,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/AI动态/2026-04-23.md",
+                "file": "PLM/业界分享/其他分享/独家对话罗福莉：AI范式已然巨变！.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-04-23"
+              "title": "独家对话罗福莉：AI范式已然巨变！"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/k8s/k8s.md",
+                "file": "PLM/业界分享/其他分享/独家对话罗福莉：AI范式已然巨变！.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "k8s 的大纲"
+              "title": "独家对话罗福莉：AI范式已然巨变！ 的大纲"
             }
           },
           {
@@ -270,13 +270,15 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "7d011fa3cb904c6e",
+  "active": "747eec79bb38e5ef",
   "lastOpenFiles": [
-    "News/AI动态/2026-04-23.md",
     "News/AI动态/2026-04-24.md",
+    "PLM/业界分享/其他分享/独家对话罗福莉：AI范式已然巨变！.md",
+    "News/AI动态/2026-04-25.md",
+    "News/AI动态/2026-04-23.md",
+    "Tool/k8s/k8s.md",
     "News/papers/HuggingFace_2026-03.md",
     "~",
-    "Tool/k8s/k8s.md",
     "News/papers/HuggingFace_2026-04.md",
     "SUMMARY.md",
     "PLM/paperlist-2024.md",
@@ -300,8 +302,6 @@
     "News/如何阅读论文.md",
     "News/月度论文/HuggingFace_2026-03.md",
     "News/月度论文",
-    "PLM/Models/LongCat-Next/LongCat-Next.md",
-    "PLM/Alignment/OPD/OPD.md",
     "PLM/Alignment/OPD",
     "PLM/Models/LongCat-Next",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305115838.png",
