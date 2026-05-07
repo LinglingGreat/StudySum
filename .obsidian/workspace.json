@@ -64,35 +64,21 @@
             }
           },
           {
-            "id": "cddd2077fd573492",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/Models/DeepSeek/DeepSeek_V4.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "DeepSeek_V4"
-            }
-          },
-          {
             "id": "47eb4d2fddfdc229",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/papers/HuggingFace_2026-W17.md",
+                "file": "News/papers/HuggingFace_2026-W18.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HuggingFace_2026-W17"
+              "title": "HuggingFace_2026-W18"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -199,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "News/papers/HuggingFace_2026-W17.md",
+                "file": "News/papers/HuggingFace_2026-W18.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "HuggingFace_2026-W17 的大纲"
+              "title": "HuggingFace_2026-W18 的大纲"
             }
           },
           {
@@ -286,13 +272,16 @@
   },
   "active": "47eb4d2fddfdc229",
   "lastOpenFiles": [
+    "News/papers/HuggingFace_2026-W17.md",
+    "News/AI动态/2026-05-07.md",
+    "News/papers/HuggingFace_2026-W18.md",
+    "News/AI动态/2026-05-06.md",
     "News/AI动态/2026-05-05.md",
+    "PLM/Models/DeepSeek/DeepSeek_V4.md",
     "News/AI动态/2026-04-29.md",
     "News/AI动态/2026-04-28.md",
     "News/AI动态/2026-04-27.md",
     "PLM/业界分享/其他分享/独家对话罗福莉-AI范式已然巨变.md",
-    "News/papers/HuggingFace_2026-W17.md",
-    "PLM/Models/DeepSeek/DeepSeek_V4.md",
     "Tool/k8s/k8s.md",
     "News/AI动态/2026-04-26.md",
     "News/AI动态/2026-04-24.md",
@@ -310,9 +299,6 @@
     "CourseNote/算法工程师.md",
     "CourseNote/贪心科技机器学习必修知识点特训营.md",
     "CourseNote/NLP-book.md",
-    "CourseNote/AI技术内参.md",
-    "CourseNote/资源.md",
-    "CourseNote/唐宇迪机器学习.md",
     "News/AI动态",
     "News/papers",
     "News/月度论文",
