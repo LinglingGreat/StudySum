@@ -69,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/papers/HuggingFace_2026-W19.md",
+                "file": "News/papers/HuggingFace_2026-W20.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HuggingFace_2026-W19"
+              "title": "HuggingFace_2026-W20"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Tool/k8s/k8s.md",
+                "file": "News/papers/HuggingFace_2026-W20.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "k8s 的大纲"
+              "title": "HuggingFace_2026-W20 的大纲"
             }
           },
           {
@@ -270,16 +270,18 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "f5e130d6e52a15d2",
+  "active": "47eb4d2fddfdc229",
   "lastOpenFiles": [
+    "News/AI动态/2026-05-21.md",
+    "Tool/k8s/k8s.md",
+    "News/AI动态/2026-05-20.md",
+    "News/papers/HuggingFace_2026-W20.md",
+    "News/papers/HuggingFace_2026-W19.md",
     "News/AI动态/2026-05-19.md",
     "Tool/python/uv-cheatsheet.md",
     "Tool/Linux/terminal-keybindings-cheatsheet.md",
     "Tool/Linux/tmux-cheatsheet.md",
     "Tool/k8s/kubectl-helm-cheatsheet.md",
-    "News/papers/HuggingFace_2026-W19.md",
-    "News/papers/HuggingFace_2026-W20.md",
-    "Tool/k8s/k8s.md",
     "News/AI动态/2026-05-18.md",
     "News/AI动态/2026-05-17.md",
     "News/AI动态/2026-05-16.md",
@@ -296,8 +298,6 @@
     "News/AI动态/2026-05-07.md",
     "News/AI动态/2026-05-06.md",
     "News/AI动态/2026-05-05.md",
-    "PLM/Models/DeepSeek/DeepSeek_V4.md",
-    "News/AI动态/2026-04-29.md",
     "~",
     "News/AI动态",
     "News/papers",
