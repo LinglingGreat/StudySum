@@ -69,16 +69,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/papers/HuggingFace_2026-W20.md",
+                "file": "News/papers/HuggingFace_2026-W24.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HuggingFace_2026-W20"
+              "title": "HuggingFace_2026-W24"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#8/",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -185,23 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "News/papers/HuggingFace_2026-W20.md",
+                "file": "Tool/k8s/k8s.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "HuggingFace_2026-W20 的大纲"
-            }
-          },
-          {
-            "id": "2b06d05197be2c99",
-            "type": "leaf",
-            "state": {
-              "type": "todo",
-              "state": {},
-              "icon": "checkmark",
-              "title": "Todo List"
+              "title": "k8s 的大纲"
             }
           },
           {
@@ -210,8 +200,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           },
           {
@@ -251,7 +241,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -270,8 +260,26 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "47eb4d2fddfdc229",
+  "active": "9e307ffc18a4e195",
   "lastOpenFiles": [
+    "News/AI动态/2026-06-20.md",
+    "News/AI动态/2026-06-19.md",
+    "News/papers/HuggingFace_2026-W24.md",
+    "News/AI动态/2026-06-18.md",
+    "News/papers/HuggingFace_2026-W23.md",
+    "News/papers/HuggingFace_2026-W22.md",
+    "News/papers/HuggingFace_2026-W20.md",
+    "News/papers/HuggingFace_2026-W21.md",
+    "Tool/k8s/k8s.md",
+    "News/AI动态/2026-06-15.md",
+    "News/AI动态/2026-06-16.md",
+    "News/AI动态/2026-06-17.md",
+    "News/AI动态/2026-06-13.md",
+    "News/AI动态/2026-06-12.md",
+    "News/AI动态/2026-06-11.md",
+    "News/AI动态/2026-06-10.md",
+    "News/AI动态/2026-06-09.md",
+    "News/AI动态/2026-06-08.md",
     "News/AI动态/2026-06-06.md",
     "News/AI动态/2026-06-02.md",
     "News/AI动态/2026-06-01.md",
@@ -280,24 +288,6 @@
     "News/AI动态/2026-05-29.md",
     "News/AI动态/2026-05-28.md",
     "News/AI动态/2026-05-23.md",
-    "News/AI动态/2026-05-22.md",
-    "News/AI动态/2026-05-21.md",
-    "Tool/k8s/k8s.md",
-    "News/AI动态/2026-05-20.md",
-    "News/papers/HuggingFace_2026-W20.md",
-    "News/papers/HuggingFace_2026-W19.md",
-    "News/AI动态/2026-05-19.md",
-    "Tool/python/uv-cheatsheet.md",
-    "Tool/Linux/terminal-keybindings-cheatsheet.md",
-    "Tool/Linux/tmux-cheatsheet.md",
-    "Tool/k8s/kubectl-helm-cheatsheet.md",
-    "News/AI动态/2026-05-18.md",
-    "News/AI动态/2026-05-17.md",
-    "News/AI动态/2026-05-16.md",
-    "News/AI动态/2026-05-15.md",
-    "News/AI动态/2026-05-14.md",
-    "News/AI动态/2026-05-13.md",
-    "News/AI动态/2026-05-12.md",
     "~",
     "News/AI动态",
     "News/papers",
