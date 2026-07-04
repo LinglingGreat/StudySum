@@ -245,7 +245,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 308.5
+    "width": 308.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -260,17 +261,26 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "9e307ffc18a4e195",
+  "active": "7d011fa3cb904c6e",
   "lastOpenFiles": [
+    "News/AI动态/2026-07-04.md",
+    "News/AI动态/2026-07-03.md",
+    "News/AI动态/2026-07-02.md",
+    "News/papers/HuggingFace_2026-W24.md",
+    "News/AI动态/2026-07-01.md",
+    "News/AI动态/2026-06-30.md",
+    "News/AI动态/2026-06-29.md",
+    "News/AI动态/2026-06-28.md",
+    "News/AI动态/2026-06-27.md",
+    "News/AI动态/2026-06-26.md",
+    "Tool/k8s/k8s.md",
     "News/AI动态/2026-06-20.md",
     "News/AI动态/2026-06-19.md",
-    "News/papers/HuggingFace_2026-W24.md",
     "News/AI动态/2026-06-18.md",
     "News/papers/HuggingFace_2026-W23.md",
     "News/papers/HuggingFace_2026-W22.md",
     "News/papers/HuggingFace_2026-W20.md",
     "News/papers/HuggingFace_2026-W21.md",
-    "Tool/k8s/k8s.md",
     "News/AI动态/2026-06-15.md",
     "News/AI动态/2026-06-16.md",
     "News/AI动态/2026-06-17.md",
@@ -279,15 +289,6 @@
     "News/AI动态/2026-06-11.md",
     "News/AI动态/2026-06-10.md",
     "News/AI动态/2026-06-09.md",
-    "News/AI动态/2026-06-08.md",
-    "News/AI动态/2026-06-06.md",
-    "News/AI动态/2026-06-02.md",
-    "News/AI动态/2026-06-01.md",
-    "News/AI动态/2026-05-31.md",
-    "News/AI动态/2026-05-30.md",
-    "News/AI动态/2026-05-29.md",
-    "News/AI动态/2026-05-28.md",
-    "News/AI动态/2026-05-23.md",
     "~",
     "News/AI动态",
     "News/papers",
