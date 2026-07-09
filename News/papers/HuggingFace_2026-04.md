@@ -9,7 +9,7 @@
 ## 📑 目录
 
 - [一、LLM 训练与推理优化（7篇）](#-一llm-训练与推理优化)
-  - [1. Adam&#39;s Law](#1-adams-law-textual-frequency-law-on-large-language-models)
+  - [1. Adam&[39];s Law](#1-adams-law-textual-frequency-law-on-large-language-models)
   - [2. GrandCode](#2-grandcode-achieving-grandmaster-level-in-competitive-programming-via-agentic-rl)
   - [3. FIPO](#3-fipo-eliciting-deep-reasoning-with-future-kl-influenced-policy-optimization)
   - [4. Rethinking Generalization in Reasoning SFT](#4-rethinking-generalization-in-reasoning-sft)
@@ -1022,7 +1022,7 @@ QuanBench+ 是首个跨框架的量子代码生成基准：
 - **历史感知**：MEDS 给奖励系统安装"记忆"，识别和惩罚重复错误
 - **效率提升**：Self-Distilled RLVR 用 token 级自蒸馏提供稠密信号
 
-**涉及论文**：#3 FIPO, #6 RLSD, #7 MEDS, #4 Rethinking SFT
+**涉及论文**：[3] FIPO, [6] RLSD, [7] MEDS, [4] Rethinking SFT
 **核心观点**：RL 训练的下一步不是"更大的奖励模型"，而是"更聪明的奖励信号"。
 
 ### 2. "数据 > 架构" 被系统性验证
@@ -1033,7 +1033,7 @@ QuanBench+ 是首个跨框架的量子代码生成基准：
 - DataFlex：动态数据调度节省 20-30% 训练成本
 - Adam's Law：从频率角度解释为什么数据分布如此重要
 
-**涉及论文**：#1 Adam's Law, #21 DataFlex, #22 MinerU2.5-Pro
+**涉及论文**：[1] Adam's Law, [21] DataFlex, [22] MinerU2.5-Pro
 **核心观点**：下一波 AI 红利可能属于"数据引擎"而非"模型架构"。
 
 ### 3. 智能体评估从"及格制"走向"全面体检"
@@ -1044,7 +1044,7 @@ QuanBench+ 是首个跨框架的量子代码生成基准：
 - ClawBench：真实在线环境的多步任务——从解题走向做事
 - GameWorld：实时交互 + 标准化动作空间——测试综合能力
 
-**涉及论文**：#8 ClawBench, #9 Claw-Eval, #10 GameWorld, #11 Video-MME-v2
+**涉及论文**：[8] ClawBench, [9] Claw-Eval, [10] GameWorld, [11] Video-MME-v2
 **核心观点**：部署 AI 智能体前必须进行"安全 + 鲁棒性 + 能力"三维评估。
 
 ### 4. "离散化" vs "连续化" 的路线竞争
@@ -1054,7 +1054,7 @@ QuanBench+ 是首个跨框架的量子代码生成基准：
 - **"万物皆 Token"派**：LongCat-Next 将视觉、音频离散化为 token，统一自回归建模
 - **"潜在空间计算"派**：Latent Space 综述指出连续表征在推理、规划上的根本优势
 
-**涉及论文**：#13 LongCat-Next, #23 Latent Space Survey
+**涉及论文**：[13] LongCat-Next, [23] Latent Space Survey
 **核心观点**：这两种范式可能在未来融合——离散 token 用于跨模态接口，连续潜在空间用于内部计算。
 
 ### 5. 世界模型成为"基础设施层"
@@ -1065,7 +1065,7 @@ QuanBench+ 是首个跨框架的量子代码生成基准：
 - CARLA-Air 扩展仿真到空地协同——丰富应用场景
 - Generative World Renderer 用游戏数据训练——解决数据瓶颈
 
-**涉及论文**：#18 OpenWorldLib, #19 CARLA-Air, #20 Generative World Renderer
+**涉及论文**：[18] OpenWorldLib, [19] CARLA-Air, [20] Generative World Renderer
 **核心观点**：世界模型是自动驾驶、机器人、游戏 AI 的共性基础——标准化和工具化是关键。
 
 ### 6. "推理时计算" 成为新战场
@@ -1076,7 +1076,7 @@ QuanBench+ 是首个跨框架的量子代码生成基准：
 - NUMINA：推理时注意力调制纠正生成错误
 - TriAttention：推理时高效压缩让大模型在小 GPU 上运行
 
-**涉及论文**：#15 NUMINA, #16 RationalRewards, #24 TriAttention
+**涉及论文**：[15] NUMINA, [16] RationalRewards, [24] TriAttention
 **核心观点**：现有模型的很多能力是"沉睡"的——推理时的聪明策略可以低成本地唤醒它们。
 
 ### 对比与张力

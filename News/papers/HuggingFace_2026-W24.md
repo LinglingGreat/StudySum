@@ -109,7 +109,7 @@ MSA 是建立在 GQA 之上的分块稀疏注意力。轻量级 Index Branch 给
 Top-k 块选择是近似，极端任务（需精确全局聚合的 needle-in-haystack）可能漏选关键块（摘要未明确，推断）。「与 GQA 持平」是相对其自身底座，未给出与其他稀疏注意力方案（如 NSA）的直接对比。
 
 ### 启发与应用前景
-28.4 倍计算压缩 + 7.6 倍解码加速对长上下文服务成本是实质性利好，且已有生产模型验证，落地可信度高。其「简单优先」哲学对工程团队尤具吸引力，是本周长上下文方向的代表作之一（与 #24 形成同主题呼应）。
+28.4 倍计算压缩 + 7.6 倍解码加速对长上下文服务成本是实质性利好，且已有生产模型验证，落地可信度高。其「简单优先」哲学对工程团队尤具吸引力，是本周长上下文方向的代表作之一（与 [24] 形成同主题呼应）。
 
 ## 5. EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments
 **👍 135** · https://huggingface.co/papers/2606.13681 · GitHub: https://github.com/Aiden0526/EvoArena
@@ -127,7 +127,7 @@ EvoArena 把环境变化建模为终端、软件、社交三域上的「渐进�
 EvoMem 在 EvoArena 自身上的增益（1.5%）反而小于在外部基准上的增益（4.8–6.1%），说明对「演化」这一核心难题的对治仍有限。39.6% 的基线低分也意味着任务对当前模型整体偏难，方法改进空间巨大。
 
 ### 启发与应用前景
-对长期运行、环境会变的生产 Agent（运维、长期助理）极有价值——「记录变化而非快照」是可迁移的记忆设计思想。它与本周多篇 Agent 记忆/演化工作（#17、#22）共同指向「co-evolution」趋势。
+对长期运行、环境会变的生产 Agent（运维、长期助理）极有价值——「记录变化而非快照」是可迁移的记忆设计思想。它与本周多篇 Agent 记忆/演化工作（[17]、[22]）共同指向「co-evolution」趋势。
 
 ## 6. Imaginative Perception Tokens Enhance Spatial Reasoning in Multimodal Language Models
 **👍 121** · https://huggingface.co/papers/2606.03988 · GitHub: https://github.com/weikaih04/Imaginative-Perception-Token
@@ -145,7 +145,7 @@ IPT 监督持续提升空间推理，且常优于文本思维链（CoT）训练�
 需要约 20K 带真值想象的标注数据，构造成本不低，向新空间任务的泛化依赖此类监督的可得性。3.4% 的 MVC 增益虽显著但不算巨大，IPT 对更复杂 4D 动态空间的覆盖未验证（摘要未明确，推断）。
 
 ### 启发与应用前景
-「空间计算不该被逼进语言通道」是一个有冲击力的洞见，对具身、导航、机器人视觉规划都有指导意义。可解释的中间想象表征也利于调试。它与 #10 SpatialClaw 共同代表本周「空间推理」热点。
+「空间计算不该被逼进语言通道」是一个有冲击力的洞见，对具身、导航、机器人视觉规划都有指导意义。可解释的中间想象表征也利于调试。它与 [10] SpatialClaw 共同代表本周「空间推理」热点。
 
 ## 7. SWE-Explore: Benchmarking How Coding Agents Explore Repositories
 **👍 114** · https://huggingface.co/papers/2606.07297 · GitHub: https://github.com/Qiushao-E/SWE-Explore-Bench
@@ -163,7 +163,7 @@ SWE-Explore 给定仓库与 issue，要求探索器在固定行预算下返回�
 行级真值来自「成功轨迹查阅过的行」，但成功 Agent 查阅的行未必都是必要的（可能含冗余浏览），真值定义存在噪声（摘要未明确，推断）。固定行预算的设定对不同规模仓库是否公平也值得讨论。
 
 ### 启发与应用前景
-把「探索能力」从端到端结果里拆出来单独度量，对诊断编码 Agent 失败根因极有价值，可指导 RAG/定位模块的针对性优化。与本周 #21 Claw-SWE-Bench、#27 RHO 共同丰富了编码 Agent 评测生态。
+把「探索能力」从端到端结果里拆出来单独度量，对诊断编码 Agent 失败根因极有价值，可指导 RAG/定位模块的针对性优化。与本周 [21] Claw-SWE-Bench、[27] RHO 共同丰富了编码 Agent 评测生态。
 
 ## 8. Toward Generalist Autonomous Research via Hypothesis-Tree Refinement
 **👍 111** · https://huggingface.co/papers/2606.11926 · GitHub: https://github.com/RUC-NLPIR/Arbor
@@ -181,7 +181,7 @@ SWE-Explore 给定仓库与 issue，要求探索器在固定行预算下返回�
 六个任务规模偏小，且集中在 ML 工程领域，向物理/生物等需真实实验的科学领域泛化未验证。HTR 树随时间膨胀的管理成本、洞见传播的正确性（错误经验也会被传播）是潜在风险（摘要未明确，推断）。
 
 ### 启发与应用前景
-「把自主研究从局部尝试序列变为累积过程」是关键范式转变，HTR 这种持久结构化记忆对任何长程 Agent 都有借鉴价值。2.5 倍于 Claude Code 的增益和 86.36% 的 MLE 成绩使其成为本周自主研究方向的标杆（与 #12 ResearchClawBench 互为评测/方法两面）。
+「把自主研究从局部尝试序列变为累积过程」是关键范式转变，HTR 这种持久结构化记忆对任何长程 Agent 都有借鉴价值。2.5 倍于 Claude Code 的增益和 86.36% 的 MLE 成绩使其成为本周自主研究方向的标杆（与 [12] ResearchClawBench 互为评测/方法两面）。
 
 ## 9. WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces
 **👍 100** · https://huggingface.co/papers/2606.09426 · GitHub: https://github.com/weavebench/WeaveBench
@@ -199,7 +199,7 @@ WeaveBench 提供 114 个任务，覆盖 8 个真实工作域，源于真实用�
 114 个任务规模中等，跨 8 域的代表性可能有限。轨迹感知评判器本身的准确率与误报率摘要未给出量化（摘要未明确，推断），其捷径检测能否覆盖所有作弊模式存疑。
 
 ### 启发与应用前景
-「outcome-only 高估性能」这一发现对所有 Agent 评测都是警钟，轨迹感知评判是可推广的方法论。对 CUA 产品（自动化办公、RPA 升级版）的真实能力评估提供了硬基准。与 #2 ALE 共同强调「真实工作流 + 可验证」的评测取向。
+「outcome-only 高估性能」这一发现对所有 Agent 评测都是警钟，轨迹感知评判是可推广的方法论。对 CUA 产品（自动化办公、RPA 升级版）的真实能力评估提供了硬基准。与 [2] ALE 共同强调「真实工作流 + 可验证」的评测取向。
 
 ## 10. SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning
 **👍 98** · https://huggingface.co/papers/2606.13673 · GitHub: https://github.com/NVlabs/SpatialClaw
@@ -217,7 +217,7 @@ WeaveBench 提供 114 个任务，覆盖 8 个真实工作域，源于真实用�
 免训练意味着上限受底座 VLM 能力约束；有状态 Python kernel 每步执行带来延迟与错误累积风险（一步代码出错可能污染后续）。59.9% 的绝对准确率说明 4D 动态空间推理整体仍未解决（摘要未明确，推断）。
 
 ### 启发与应用前景
-「代码作为动作接口比结构化工具调用更灵活」是对 Agent 设计的重要洞见，可迁移到任何需复杂工具组合的领域。+11.2 点的提升 + 免训练 + 跨底座通用，工程吸引力强。与 #6 IPT 共同把空间推理推向本周焦点。
+「代码作为动作接口比结构化工具调用更灵活」是对 Agent 设计的重要洞见，可迁移到任何需复杂工具组合的领域。+11.2 点的提升 + 免训练 + 跨底座通用，工程吸引力强。与 [6] IPT 共同把空间推理推向本周焦点。
 
 ## 11. Your UnEmbedding Matrix is Secretly a Feature Lens for Text Embeddings
 **👍 92** · https://huggingface.co/papers/2606.07502 · GitHub: https://github.com/CentreChen/EmbFilter
@@ -253,7 +253,7 @@ ResearchClawBench 覆盖 10 个科学领域的 40 个任务，每个任务都锚
 40 个任务规模偏小，评分依赖专家 rubric 的主观性可能影响可复现性。「隐藏目标论文」难防训练数据泄漏（模型可能已见过该论文），这会高估再发现能力（摘要未明确，推断）。
 
 ### 启发与应用前景
-21.5/26.5 的低分给「AI 自动做科研」的炒作降了温，错误分类（协议/证据/核心三类失败）为改进指明方向。与 #8 Arbor 恰成对照：一边给方法（HTR），一边给标尺，共同定义本周「自主科研」议题。
+21.5/26.5 的低分给「AI 自动做科研」的炒作降了温，错误分类（协议/证据/核心三类失败）为改进指明方向。与 [8] Arbor 恰成对照：一边给方法（HTR），一边给标尺，共同定义本周「自主科研」议题。
 
 ## 13. MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling
 **👍 88** · https://huggingface.co/papers/2606.13473
@@ -289,7 +289,7 @@ MaxProof 是面向 MiniMax-M3 系列的「群体级」（population-level）测�
 摘要未给出与标准路由器的精确性能差值（摘要未明确）。幂迭代步骤在每次更新中引入额外计算，对训练吞吐的影响、在更大规模（百亿以上）的可扩展性未充分验证（推断）。
 
 ### 启发与应用前景
-为 MoE 路由提供了首个「主奇异方向对齐」的理论原则，把路由器设计从经验试错推向有数学依据的方向，对所有 MoE 架构（本周 #3 Keye、#4 MSA、#30 SearchSwarm 均为 MoE）的训练稳定性有潜在贡献。
+为 MoE 路由提供了首个「主奇异方向对齐」的理论原则，把路由器设计从经验试错推向有数学依据的方向，对所有 MoE 架构（本周 [3] Keye、[4] MSA、[30] SearchSwarm 均为 MoE）的训练稳定性有潜在贡献。
 
 ## 15. InterleaveThinker: Reinforcing Agentic Interleaved Generation
 **👍 79** · https://huggingface.co/papers/2606.13679 · GitHub: https://github.com/zhengdian1/InterleaveThinker
@@ -343,7 +343,7 @@ Role-Agent 让单个 LLM 同时充当 Agent 和环境，实现自举协同进化
 让同一 LLM 既当 Agent 又当环境，存在「自我一致性偏差」——模型可能预测自己擅长的状态、回避真实环境的意外（摘要未明确，推断）。4% 的平均增益稳健但不算大，对真实复杂环境的迁移效果未充分验证。
 
 ### 启发与应用前景
-「单模型自举既当 Agent 又当环境」对治了环境反馈稀缺这一现实瓶颈，对无法获得丰富外部环境的领域尤有价值。它与 #5 EvoArena/EvoMem、#22 环境综述共同构成本周「Agent-环境协同进化」主题。
+「单模型自举既当 Agent 又当环境」对治了环境反馈稀缺这一现实瓶颈，对无法获得丰富外部环境的领域尤有价值。它与 [5] EvoArena/EvoMem、[22] 环境综述共同构成本周「Agent-环境协同进化」主题。
 
 ## 18. FORT-Searcher: Synthesizing Shortcut-Resistant Search Tasks for Training Deep Search Agents
 **👍 73** · https://huggingface.co/papers/2606.12087 · GitHub: https://github.com/RUCAIBox/FORT-Searcher
@@ -361,7 +361,7 @@ Role-Agent 让单个 LLM 同时充当 Agent 和环境，实现自举协同进化
 摘要未给出 FORT-Searcher 在具体基准（如 BrowseComp）上的精确分数（摘要未明确）。四类捷径风险的枚举是否完备、对抗精炼能否覆盖未来出现的新捷径模式是开放问题（推断）。
 
 ### 启发与应用前景
-「结构复杂 ≠ 真实搜索难度」「捷径会让训练失效」是对数据合成的深刻洞见，对所有需可验证难任务的 Agent 训练（搜索、推理）都有警示与方法价值。仅 SFT 即达 SOTA 也说明高质量抗捷径数据的杠杆作用。与 #30 SearchSwarm 同属深度搜索方向。
+「结构复杂 ≠ 真实搜索难度」「捷径会让训练失效」是对数据合成的深刻洞见，对所有需可验证难任务的 Agent 训练（搜索、推理）都有警示与方法价值。仅 SFT 即达 SOTA 也说明高质量抗捷径数据的杠杆作用。与 [30] SearchSwarm 同属深度搜索方向。
 
 ## 19. On the Geometry of On-Policy Distillation
 **👍 72** · https://huggingface.co/papers/2606.07082
@@ -415,7 +415,7 @@ Claw-SWE-Bench 是多语言 SWE-bench 风格基准 + 适配器协议，用固定
 基准把 harness 与成本核算作为一等公民，但成本随 API 定价波动，跨时间可比性需维护。350 实例取自既有数据集，未来提交清洗能否完全防泄漏存疑（推断）。
 
 ### 启发与应用前景
-「适配器把 Pass@1 从 19.1% 拉到 73.4%」这一惊人差距揭示：评估 Agent 编码能力时，harness/适配器是被严重忽视的变量。把 harness 与成本作为一等评测轴对 Agent 工程选型极具实操价值。与 #7 SWE-Explore、#27 RHO 共同构成本周编码 Agent 评测/优化集群。
+「适配器把 Pass@1 从 19.1% 拉到 73.4%」这一惊人差距揭示：评估 Agent 编码能力时，harness/适配器是被严重忽视的变量。把 harness 与成本作为一等评测轴对 Agent 工程选型极具实操价值。与 [7] SWE-Explore、[27] RHO 共同构成本周编码 Agent 评测/优化集群。
 
 ## 22. Agentic Environment Engineering for Large Language Models: A Survey
 **👍 63** · https://huggingface.co/papers/2606.12191
@@ -433,7 +433,7 @@ Claw-SWE-Bench 是多语言 SWE-bench 风格基准 + 适配器协议，用固定
 综述的固有局限是时效性与覆盖完整性，分类框架的边界（如「八属性八领域」的划分依据）可能有主观性。提出的未来方向——Environment-as-a-Service、多智能体环境、神经-符号环境——尚属展望（推断）。
 
 ### 启发与应用前景
-为快速膨胀的「Agent 环境」领域提供了急需的地图，对研究者定位自己工作、对工程者理解环境设计选项都有参考价值。「Environment-as-a-Service」的提法可能预示一个新的基础设施方向。它为本周多篇环境/进化工作（#5、#17）提供了理论框架背景。
+为快速膨胀的「Agent 环境」领域提供了急需的地图，对研究者定位自己工作、对工程者理解环境设计选项都有参考价值。「Environment-as-a-Service」的提法可能预示一个新的基础设施方向。它为本周多篇环境/进化工作（[5]、[17]）提供了理论框架背景。
 
 ## 23. LatentSkill: From In-Context Textual Skills to In-Weight Latent Skills for LLM Agents
 **👍 63** · https://huggingface.co/papers/2606.06087
@@ -469,7 +469,7 @@ LatentSkill 通过一个预训练超网络（hypernetwork）把文本技能转�
 「lookahead 预测未来需求」是启发式，若预测失误会丢弃后续真正需要的 KV（摘要未明确，推断）。dual-encoder indexer 与底座解耦训练，二者表示空间的对齐质量是潜在风险点。
 
 ### 启发与应用前景
-13.5% KV 占用 + 90% 显存抑制 + 准确率不降，对超长上下文服务的成本是革命性的，「无底座解耦训练 indexer」更是降低训练门槛的巧思。与 #4 MiniMax MSA 同属本周「稀疏注意力压长上下文」主线，但路线不同（显存 vs 计算），互补性强。
+13.5% KV 占用 + 90% 显存抑制 + 准确率不降，对超长上下文服务的成本是革命性的，「无底座解耦训练 indexer」更是降低训练门槛的巧思。与 [4] MiniMax MSA 同属本周「稀疏注意力压长上下文」主线，但路线不同（显存 vs 计算），互补性强。
 
 ## 25. Beyond Scalar Rewards by Internalizing Reasoning into Score Distributions
 **👍 59** · https://huggingface.co/papers/2606.09076 · GitHub: https://github.com/Tongyi-MAI/Z-Image
@@ -505,7 +505,7 @@ LatentSkill 通过一个预训练超网络（hypernetwork）把文本技能转�
 摘要未给出具体成功率数值与基线差距（摘要未明确）。数据来自仿真（RoboGenesis），sim-to-real 差距对真实实验室仪器（透明液体光学、精密操作）的迁移效果是关键未验证点（推断）。
 
 ### 启发与应用前景
-把 VLA 从家居桌面推进到科学实验室是有意义的领域拓展，「数据引擎 + 动作 token 预训练 + flow matching」的配方对其他专业领域具身智能有借鉴价值。若 sim-to-real 可解，将真正推动「AI 动手做实验」的自动化科学愿景（呼应 #1 弥合 sim-to-real）。
+把 VLA 从家居桌面推进到科学实验室是有意义的领域拓展，「数据引擎 + 动作 token 预训练 + flow matching」的配方对其他专业领域具身智能有借鉴价值。若 sim-to-real 可解，将真正推动「AI 动手做实验」的自动化科学愿景（呼应 [1] 弥合 sim-to-real）。
 
 ## 27. Retrospective Harness Optimization: Improving LLM Agents via Self-Preference over Trajectory Rollouts
 **👍 52** · https://huggingface.co/papers/2606.05922 · GitHub: https://github.com/wbopan/retro-harness
@@ -523,7 +523,7 @@ AI Agent 依赖技能、工具、工作流构成的 harness 来解决问题，�
 完全依赖模型「自偏好」选择更新，存在自我偏差风险——模型可能偏好自己擅长但实际更差的 harness（摘要未明确，推断）。59%→78% 是单轮单基准结果，多轮优化是否持续增益、是否会过拟合历史失败模式未知。
 
 ### 启发与应用前景
-「无需真值、仅靠过去轨迹自监督优化 harness」直击生产部署中标注稀缺的痛点，59%→78% 的提升极具吸引力。它把 Agent 自我改进从「需人工标注」推向「自给自足」，与 #17 Role-Agent 的自举思想呼应，是本周 Agent 自改进方向的代表。
+「无需真值、仅靠过去轨迹自监督优化 harness」直击生产部署中标注稀缺的痛点，59%→78% 的提升极具吸引力。它把 Agent 自我改进从「需人工标注」推向「自给自足」，与 [17] Role-Agent 的自举思想呼应，是本周 Agent 自改进方向的代表。
 
 ## 28. SoCRATES: Towards Reliable Automated Evaluation of Proactive LLM Mediation across Domains and Socio-cognitive Variations
 **👍 52** · https://huggingface.co/papers/2606.05563
@@ -577,37 +577,37 @@ LLM 被期望处理上下文需求可无界增长的长程真实任务，但上�
 委派智能来自 harness 引导的轨迹蒸馏，其质量上限受 harness 设计约束，对 harness 未覆盖的委派模式可能不泛化（摘要未明确，推断）。子 Agent 只返回摘要可能丢失主 Agent 后续需要的细节，信息瓶颈风险未讨论。
 
 ### 启发与应用前景
-「把难标注的委派能力转化为 harness 引导轨迹再 SFT 内化」是对治长程任务上下文瓶颈的务实路线，BrowseComp 68.1 的同规模最佳成绩 + 全套开源对社区价值高。它与 #4 MSA、#24 FlashMemory 从不同角度（委派 vs 注意力 vs 显存）共同攻克长上下文/长程问题。
+「把难标注的委派能力转化为 harness 引导轨迹再 SFT 内化」是对治长程任务上下文瓶颈的务实路线，BrowseComp 68.1 的同规模最佳成绩 + 全套开源对社区价值高。它与 [4] MSA、[24] FlashMemory 从不同角度（委派 vs 注意力 vs 显存）共同攻克长上下文/长程问题。
 
 ---
 
 ## 🗺️ 趋势洞察
 
 ### 1. 评测范式从「排行榜」转向「真实经济价值 + 可验证 + 抗作弊」
-**涉及论文**：#2, #7, #9, #12, #21, #28, #29
-**核心观点**：本周最密集的主题是评测哲学的集体反思。ALE（#2）以 2.6% 的完整通过率把「benchmark 成功 ≠ GDP 影响」量化为议程；WeaveBench（#9）揭示「outcome-only 评分大幅高估性能」并引入轨迹感知评判抗作弊；ResearchClawBench（#12）让最强 Claude Code 仅得 21.5 分，给「AI 自动做科研」降温；Claw-SWE-Bench（#21）证明 harness/适配器能把 Pass@1 从 19.1% 拉到 73.4%，把「harness 与成本」立为一等评测轴；SWE-Explore（#7）把编码能力细粒度拆解到「探索」；SoCRATES（#28）用话题局部化评估去除多轮噪声；TRL-Bench（#29）则证明「没有单一冠军、质量是能力特异的」。共同信号：2026 年的评测正在从「分数高低」转向「真实、可验证、防虚高、关注成本」。
+**涉及论文**：[2], [7], [9], [12], [21], [28], [29]
+**核心观点**：本周最密集的主题是评测哲学的集体反思。ALE（[2]）以 2.6% 的完整通过率把「benchmark 成功 ≠ GDP 影响」量化为议程；WeaveBench（[9]）揭示「outcome-only 评分大幅高估性能」并引入轨迹感知评判抗作弊；ResearchClawBench（[12]）让最强 Claude Code 仅得 21.5 分，给「AI 自动做科研」降温；Claw-SWE-Bench（[21]）证明 harness/适配器能把 Pass@1 从 19.1% 拉到 73.4%，把「harness 与成本」立为一等评测轴；SWE-Explore（[7]）把编码能力细粒度拆解到「探索」；SoCRATES（[28]）用话题局部化评估去除多轮噪声；TRL-Bench（[29]）则证明「没有单一冠军、质量是能力特异的」。共同信号：2026 年的评测正在从「分数高低」转向「真实、可验证、防虚高、关注成本」。
 
 ### 2. 长上下文/长程任务的多路线攻坚：稀疏注意力、显存压缩、委派与记忆
-**涉及论文**：#3, #4, #24, #30, #5, #23
-**核心观点**：超长上下文是 frontier LLM 的刚需，本周出现多条互补路线。计算侧：MiniMax MSA（#4）用分块稀疏注意力把 1M 上下文的 attention 计算降 28.4 倍、解码加速 7.6 倍；Keye-VL（#3）首次把 DSA 适配 GQA 实现 256K 无损视频上下文。显存侧：FlashMemory（#24）用 lookahead 稀疏注意力把 KV cache 压到 13.5%、500K 下省 90% 显存且准确率不降。任务侧：SearchSwarm（#30）用「委派智能」把长程任务拆给子 Agent 以绕过窗口上限。记忆侧：EvoArena/EvoMem（#5）与 LatentSkill（#23）分别用 patch 记忆和权重空间技能减少上下文占用。四条路线（算、存、派、记）并行，说明长上下文已无单一银弹。
+**涉及论文**：[3], [4], [24], [30], [5], [23]
+**核心观点**：超长上下文是 frontier LLM 的刚需，本周出现多条互补路线。计算侧：MiniMax MSA（[4]）用分块稀疏注意力把 1M 上下文的 attention 计算降 28.4 倍、解码加速 7.6 倍；Keye-VL（[3]）首次把 DSA 适配 GQA 实现 256K 无损视频上下文。显存侧：FlashMemory（[24]）用 lookahead 稀疏注意力把 KV cache 压到 13.5%、500K 下省 90% 显存且准确率不降。任务侧：SearchSwarm（[30]）用「委派智能」把长程任务拆给子 Agent 以绕过窗口上限。记忆侧：EvoArena/EvoMem（[5]）与 LatentSkill（[23]）分别用 patch 记忆和权重空间技能减少上下文占用。四条路线（算、存、派、记）并行，说明长上下文已无单一银弹。
 
 ### 3. Agent 自改进与「Agent-环境协同进化」
-**涉及论文**：#8, #17, #27, #5, #22
-**核心观点**：Agent 研究正从「静态训练」转向「自举/协同进化」。Arbor（#8）用 Hypothesis Tree Refinement 把自主研究变成跨时间的累积过程，达 Claude Code 的 2.5 倍增益；RHO（#27）仅用过去轨迹自监督优化 harness，把 SWE-Bench Pro 从 59% 拉到 78%；Role-Agent（#17）让单 LLM 同时当 Agent 和环境自举协同进化；EvoArena（#5）强调动态演化环境下的记忆；而环境工程综述（#22）则为整个「agent-环境协同进化」提供理论地图。共同点：摆脱对外部真值/静态环境的依赖，让 Agent 在自身轨迹与可演化环境中持续改进。
+**涉及论文**：[8], [17], [27], [5], [22]
+**核心观点**：Agent 研究正从「静态训练」转向「自举/协同进化」。Arbor（[8]）用 Hypothesis Tree Refinement 把自主研究变成跨时间的累积过程，达 Claude Code 的 2.5 倍增益；RHO（[27]）仅用过去轨迹自监督优化 harness，把 SWE-Bench Pro 从 59% 拉到 78%；Role-Agent（[17]）让单 LLM 同时当 Agent 和环境自举协同进化；EvoArena（[5]）强调动态演化环境下的记忆；而环境工程综述（[22]）则为整个「agent-环境协同进化」提供理论地图。共同点：摆脱对外部真值/静态环境的依赖，让 Agent 在自身轨迹与可演化环境中持续改进。
 
 ### 4. 空间/3D/具身智能从「感知」走向「可执行的世界」
-**涉及论文**：#1, #6, #10, #20, #26
-**核心观点**：本周热度第一（#1, 470 赞）即生成式 3D 地球，指向具身 AI 的可扩展仿真沙盒。空间推理上，IPT（#6）用「想象式感知 token」externalize 不可见视角，且发现文本 CoT 反而损害空间推理；SpatialClaw（#10）用「代码即动作接口」在 20 个空间基准上 +11.2 点。世界模型上，Mirage（#20）把空间记忆搬进潜空间，10.57 倍加速。具身执行上，LabVLA（#26）把 VLA 推进到科学实验室。共同张力：从「让模型看懂空间」到「让模型在 3D/4D 世界里行动」，而 sim-to-real（#1 与 #26 都强调）是贯穿的关键瓶颈。
+**涉及论文**：[1], [6], [10], [20], [26]
+**核心观点**：本周热度第一（[1], 470 赞）即生成式 3D 地球，指向具身 AI 的可扩展仿真沙盒。空间推理上，IPT（[6]）用「想象式感知 token」externalize 不可见视角，且发现文本 CoT 反而损害空间推理；SpatialClaw（[10]）用「代码即动作接口」在 20 个空间基准上 +11.2 点。世界模型上，Mirage（[20]）把空间记忆搬进潜空间，10.57 倍加速。具身执行上，LabVLA（[26]）把 VLA 推进到科学实验室。共同张力：从「让模型看懂空间」到「让模型在 3D/4D 世界里行动」，而 sim-to-real（[1] 与 [26] 都强调）是贯穿的关键瓶颈。
 
 ### 对比与张力
-- **算法精简 vs 工程复杂**：MSA（#4）刻意「简单优先」以求跨 GPU 部署，而 Keye-VL（#3）的 MOPD 多教师蒸馏、InterleaveThinker（#15）的多智能体管线则复杂度高、复现门槛大。社区在「优雅可复现」与「堆栈式 SOTA」之间存在张力。
-- **「想象/生成」补全信息 vs 幻觉风险**：ABot-Earth（#1）从卫星图生成建筑侧面、Robust-U1（#16）自恢复损坏像素、IPT（#6）想象未见视角——都靠生成补全不可观测信息，但这与「编造不存在的真值」只有一线之隔，可信度边界普遍未被量化。
-- **测试时扩展的性价比**：MaxProof（#13）用群体级测试时扩展超越人类数学金牌门槛，展示了「砸测试时算力」的威力，但与本周另一主线（MSA/FlashMemory 拼命压成本）形成鲜明对比——能力上限与部署成本的权衡尚无定论。
-- **自监督/自偏好的自我偏差**：RHO（#27）、Role-Agent（#17）都让模型用「自己的判断」改进自己，绕开了标注稀缺，但都潜藏「模型偏好自己擅长而非真正更好的方向」这一未被充分检验的风险。
+- **算法精简 vs 工程复杂**：MSA（[4]）刻意「简单优先」以求跨 GPU 部署，而 Keye-VL（[3]）的 MOPD 多教师蒸馏、InterleaveThinker（[15]）的多智能体管线则复杂度高、复现门槛大。社区在「优雅可复现」与「堆栈式 SOTA」之间存在张力。
+- **「想象/生成」补全信息 vs 幻觉风险**：ABot-Earth（[1]）从卫星图生成建筑侧面、Robust-U1（[16]）自恢复损坏像素、IPT（[6]）想象未见视角——都靠生成补全不可观测信息，但这与「编造不存在的真值」只有一线之隔，可信度边界普遍未被量化。
+- **测试时扩展的性价比**：MaxProof（[13]）用群体级测试时扩展超越人类数学金牌门槛，展示了「砸测试时算力」的威力，但与本周另一主线（MSA/FlashMemory 拼命压成本）形成鲜明对比——能力上限与部署成本的权衡尚无定论。
+- **自监督/自偏好的自我偏差**：RHO（[27]）、Role-Agent（[17]）都让模型用「自己的判断」改进自己，绕开了标注稀缺，但都潜藏「模型偏好自己擅长而非真正更好的方向」这一未被充分检验的风险。
 
 ### 值得关注的研究方向
-1. **抗作弊/轨迹感知评测的标准化**：WeaveBench（#9）揭示 outcome-only 高估性能后，如何把「轨迹感知评判 + 捷径检测」（呼应 #18 FORT 的抗捷径数据合成）做成通用评测基础设施，将是可信 Agent 落地的前提。
-2. **长上下文的「算-存-派-记」协同**：#4/#24/#30/#23 各攻一面，把稀疏注意力、KV 显存压缩、委派分解、权重空间记忆组合进单一系统的工程整合是明确的下一步。
-3. **可累积的长程记忆结构**：Arbor 的 HTR（#8）、EvoMem 的 patch 记忆（#5）、LatentSkill 的权重技能（#23）都在探索「跨时间复用经验」的结构，统一的持久记忆抽象可能成为下一代 Agent 的核心组件。
-4. **生成式补全的可信度量化**：#1/#6/#16 共享「生成不可观测信息」的范式，亟需建立「何时是有用想象、何时是有害幻觉」的可验证度量与边界。
-5. **MoE 的理论化设计**：MPI 路由（#14）为 MoE 提供了首个奇异方向对齐原则，而本周大量强模型（#3/#4/#30）都是 MoE-A3B 架构，路由与稀疏激活的理论化设计有望带来普惠性增益。
+1. **抗作弊/轨迹感知评测的标准化**：WeaveBench（[9]）揭示 outcome-only 高估性能后，如何把「轨迹感知评判 + 捷径检测」（呼应 [18] FORT 的抗捷径数据合成）做成通用评测基础设施，将是可信 Agent 落地的前提。
+2. **长上下文的「算-存-派-记」协同**：[4] / [24] / [30] / [23] 各攻一面，把稀疏注意力、KV 显存压缩、委派分解、权重空间记忆组合进单一系统的工程整合是明确的下一步。
+3. **可累积的长程记忆结构**：Arbor 的 HTR（[8]）、EvoMem 的 patch 记忆（[5]）、LatentSkill 的权重技能（[23]）都在探索「跨时间复用经验」的结构，统一的持久记忆抽象可能成为下一代 Agent 的核心组件。
+4. **生成式补全的可信度量化**：[1] / [6] / [16] 共享「生成不可观测信息」的范式，亟需建立「何时是有用想象、何时是有害幻觉」的可验证度量与边界。
+5. **MoE 的理论化设计**：MPI 路由（[14]）为 MoE 提供了首个奇异方向对齐原则，而本周大量强模型（[3] / [4] / [30]）都是 MoE-A3B 架构，路由与稀疏激活的理论化设计有望带来普惠性增益。

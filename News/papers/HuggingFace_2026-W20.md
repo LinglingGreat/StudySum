@@ -1259,39 +1259,39 @@ LLM 路由（按 query 把请求分发给最合适模型）研究多数聚焦"�
 ## 🗺️ 趋势洞察
 
 ### 1. 记忆是 2026-W20 最密集的研究主题
-**涉及论文**：[#5 MemPrivacy](#5-memprivacy)、[#7 δ-mem](#7-delta-mem)、[#18 MemLens](#18-memlens)、[#26 MemEye](#26-memeye)、[#37 STALE](#37-stale)
+**涉及论文**：[[5] MemPrivacy](#5-memprivacy)、[[7] δ-mem](#7-delta-mem)、[[18] MemLens](#18-memlens)、[[26] MemEye](#26-memeye)、[[37] STALE](#37-stale)
 **核心观点**：一周内有 5 篇高分论文同时围绕"长程 Agent 记忆"展开，且**每一篇切入角度都不同**——隐私保护型记忆（5）、轻量在线状态记忆（7）、跨模态记忆评测（18, 26）、记忆是否过期（37）。这意味着"记忆"已经从单一系统问题分化成一组子领域，且急需统一的评测与协议——目前各篇 benchmark 互不兼容。短期内不会出现"the memory paper"，更可能形成 RAG 当年那种"组件分工的生态"。
 
 ### 2. RL/蒸馏方法论的统一化与黑盒化
-**涉及论文**：[#9 SDAR](#9-sdar)、[#10 Flow-OPD](#10-flow-opd)、[#17 RubricEM](#17-rubricem)、[#21 LPO](#21-lpo)、[#23 HyperEyes](#23-hypereyes)、[#39 ROPD](#39-ropd)、[#42 AlphaGRPO](#42-alphagrpo)
-**核心观点**：GRPO 类 RL 在过去半年成为 LLM 后训练默认工具，本周则呈现两条交汇趋势：(a) **理论统一**（[#21](#21-lpo) 揭示所有 group-based 方法都在 simplex 上做投影），(b) **奖励替代**（[#17 rubric](#17-rubricem) / [#39 rubric](#39-ropd) / [#42 分解可验证奖励](#42-alphagrpo) 取代标量奖励 + 让黑盒教师可被蒸馏）。两条线合起来意味着：**未来一年 RL post-training 会从"哪个变种好"转向"哪个奖励信号更结构化"**。
+**涉及论文**：[[9] SDAR](#9-sdar)、[[10] Flow-OPD](#10-flow-opd)、[[17] RubricEM](#17-rubricem)、[[21] LPO](#21-lpo)、[[23] HyperEyes](#23-hypereyes)、[[39] ROPD](#39-ropd)、[[42] AlphaGRPO](#42-alphagrpo)
+**核心观点**：GRPO 类 RL 在过去半年成为 LLM 后训练默认工具，本周则呈现两条交汇趋势：(a) **理论统一**（[[21]](#21-lpo) 揭示所有 group-based 方法都在 simplex 上做投影），(b) **奖励替代**（[[17] rubric](#17-rubricem) / [[39] rubric](#39-ropd) / [[42] 分解可验证奖励](#42-alphagrpo) 取代标量奖励 + 让黑盒教师可被蒸馏）。两条线合起来意味着：**未来一年 RL post-training 会从"哪个变种好"转向"哪个奖励信号更结构化"**。
 
 ### 3. 视频生成的 any-step / few-step 蒸馏走向实时化
-**涉及论文**：[#10 Flow-OPD](#10-flow-opd)、[#11 AnyFlow](#11-anyflow)、[#12 Causal Forcing++](#12-causal-forcing-pp)、[#16 SANA-WM](#16-sana-wm)、[#40 Warp-as-History](#40-warp-as-history)、[#41 TrackCraft3R](#41-trackcraft3r)
-**核心观点**：视频扩散正在同时压低"步数"（[#11 任意步](#11-anyflow) / [#12 1-2 步 frame-wise](#12-causal-forcing-pp)）、扩展"长度"（[#16 1 分钟世界模型](#16-sana-wm)）、增强"控制"（[#40 相机](#40-warp-as-history)）、并把生成 backbone 反用于"几何理解"（[#41 3D 追踪](#41-trackcraft3r)）。综合趋势是：**视频扩散模型正在从"离线生成器"变成"实时交互世界引擎 + 通用视觉先验"**——这一变化的产业影响很可能不亚于 GPT-3.5。
+**涉及论文**：[[10] Flow-OPD](#10-flow-opd)、[[11] AnyFlow](#11-anyflow)、[[12] Causal Forcing++](#12-causal-forcing-pp)、[[16] SANA-WM](#16-sana-wm)、[[40] Warp-as-History](#40-warp-as-history)、[[41] TrackCraft3R](#41-trackcraft3r)
+**核心观点**：视频扩散正在同时压低"步数"（[[11] 任意步](#11-anyflow) / [[12] 1-2 步 frame-wise](#12-causal-forcing-pp)）、扩展"长度"（[[16] 1 分钟世界模型](#16-sana-wm)）、增强"控制"（[[40] 相机](#40-warp-as-history)）、并把生成 backbone 反用于"几何理解"（[[41] 3D 追踪](#41-trackcraft3r)）。综合趋势是：**视频扩散模型正在从"离线生成器"变成"实时交互世界引擎 + 通用视觉先验"**——这一变化的产业影响很可能不亚于 GPT-3.5。
 
 ### 4. 多模态走向"原生统一"与"评测对齐"
-**涉及论文**：[#3 SenseNova-U1](#3-sensenova-u1)、[#6 MulTaBench](#6-multabench)、[#8 Qwen-Image-2.0](#8-qwen-image-20)、[#13 MMProLong](#13-mmprolong)、[#27 Qwen-Image-VAE-2.0](#27-qwen-image-vae)、[#42 AlphaGRPO](#42-alphagrpo)、[#43 DRoRAE](#43-drorae)、[#45 Edit-Compass](#45-edit-compass)、[#47 WorldReasonBench](#47-worldreasonbench)
-**核心观点**：本周多模态的两个明显信号是：(a) 架构层"原生统一"逐步从概念走向产品 ([#3](#3-sensenova-u1) NEO-unify、[#8](#8-qwen-image-20)/[#27](#27-qwen-image-vae) 阿里影像栈)，(b) 评测从 "co-occurrence" 升级到 "task-aware" / "world reasoning" ([#6](#6-multabench) / [#45](#45-edit-compass) / [#47](#47-worldreasonbench))。模型与基准在同步推进。
+**涉及论文**：[[3] SenseNova-U1](#3-sensenova-u1)、[[6] MulTaBench](#6-multabench)、[[8] Qwen-Image-2.0](#8-qwen-image-20)、[[13] MMProLong](#13-mmprolong)、[[27] Qwen-Image-VAE-2.0](#27-qwen-image-vae)、[[42] AlphaGRPO](#42-alphagrpo)、[[43] DRoRAE](#43-drorae)、[[45] Edit-Compass](#45-edit-compass)、[[47] WorldReasonBench](#47-worldreasonbench)
+**核心观点**：本周多模态的两个明显信号是：(a) 架构层"原生统一"逐步从概念走向产品 ([[3]](#3-sensenova-u1) NEO-unify、[[8]](#8-qwen-image-20)/[[27]](#27-qwen-image-vae) 阿里影像栈)，(b) 评测从 "co-occurrence" 升级到 "task-aware" / "world reasoning" ([[6]](#6-multabench) / [[45]](#45-edit-compass) / [[47]](#47-worldreasonbench))。模型与基准在同步推进。
 
 ### 5. 具身智能与世界模型形成可复现的开源底座
-**涉及论文**：[#16 SANA-WM](#16-sana-wm)、[#22 WAM 综述](#22-wam-survey)、[#25 CascadeBench](#25-cascadebench)、[#29 HumanNet](#29-humannet)、[#36 MCP-Cosmos](#36-mcp-cosmos)、[#47 WorldReasonBench](#47-worldreasonbench)
-**核心观点**：本周一次出现了**世界模型自身**（[#16](#16-sana-wm)）、**领域综述**（[#22](#22-wam-survey)）、**数据底座**（[#29](#29-humannet)）、**接口范式**（[#36](#36-mcp-cosmos)）、**评测协议**（[#47](#47-worldreasonbench)）和**企业 vs 学术对比**（[#25](#25-cascadebench)）——这是世界模型领域罕见的"全栈出场"。意味着从下半年起，社区可以**复制粘贴**一套世界模型工作流而非各自手工搭。
+**涉及论文**：[[16] SANA-WM](#16-sana-wm)、[[22] WAM 综述](#22-wam-survey)、[[25] CascadeBench](#25-cascadebench)、[[29] HumanNet](#29-humannet)、[[36] MCP-Cosmos](#36-mcp-cosmos)、[[47] WorldReasonBench](#47-worldreasonbench)
+**核心观点**：本周一次出现了**世界模型自身**（[[16]](#16-sana-wm)）、**领域综述**（[[22]](#22-wam-survey)）、**数据底座**（[[29]](#29-humannet)）、**接口范式**（[[36]](#36-mcp-cosmos)）、**评测协议**（[[47]](#47-worldreasonbench)）和**企业 vs 学术对比**（[[25]](#25-cascadebench)）——这是世界模型领域罕见的"全栈出场"。意味着从下半年起，社区可以**复制粘贴**一套世界模型工作流而非各自手工搭。
 
 ### 对比与张力
 
-- **离线学习 vs 运行时发现**：[#25 CascadeBench](#25-cascadebench) 与 [#22 WAM 综述](#22-wam-survey) 的张力——在可读规则环境（企业）下，把规则学进权重未必胜过 runtime read。这意味着具身 Agent 的"内化 vs 外化"边界要被重新定义。
-- **长上下文 vs 记忆 Agent**：[#13 MMProLong](#13-mmprolong) 与 [#18 MemLens](#18-memlens) / [#26 MemEye](#26-memeye) 表明二者各擅胜场，目前**没有任一路线独立解决多模态长程问题**，未来一段时间应该混合架构占主导。
-- **训练 vs 合并 vs 路由**：[#28 Darwin](#28-darwin) + [#35 Merging Scaling Law](#35-merging-scaling-law) 主张合并取代多任务训练；[#49 RouteProfile](#49-routeprofile) 主张多模型路由；两条路径在"特化能力来自哪里"上互相替代——这是 2026 下半场最关键的资源分配辩论。
-- **步数蒸馏的两条路线**：[#11 AnyFlow](#11-anyflow) 推任意步数 + 越多越好，[#12 Causal Forcing++](#12-causal-forcing-pp) 推极少步 + 极低时延——两者分别面向"质量"和"实时"端，应被视作互补而非竞争。
+- **离线学习 vs 运行时发现**：[[25] CascadeBench](#25-cascadebench) 与 [[22] WAM 综述](#22-wam-survey) 的张力——在可读规则环境（企业）下，把规则学进权重未必胜过 runtime read。这意味着具身 Agent 的"内化 vs 外化"边界要被重新定义。
+- **长上下文 vs 记忆 Agent**：[[13] MMProLong](#13-mmprolong) 与 [[18] MemLens](#18-memlens) / [[26] MemEye](#26-memeye) 表明二者各擅胜场，目前**没有任一路线独立解决多模态长程问题**，未来一段时间应该混合架构占主导。
+- **训练 vs 合并 vs 路由**：[[28] Darwin](#28-darwin) + [[35] Merging Scaling Law](#35-merging-scaling-law) 主张合并取代多任务训练；[[49] RouteProfile](#49-routeprofile) 主张多模型路由；两条路径在"特化能力来自哪里"上互相替代——这是 2026 下半场最关键的资源分配辩论。
+- **步数蒸馏的两条路线**：[[11] AnyFlow](#11-anyflow) 推任意步数 + 越多越好，[[12] Causal Forcing++](#12-causal-forcing-pp) 推极少步 + 极低时延——两者分别面向"质量"和"实时"端，应被视作互补而非竞争。
 
 ### 值得关注的研究方向
 
 1. **统一多模态记忆协议**：MemLens / MemEye / STALE / MemPrivacy 四篇都在挖记忆的不同断面，但 schema、评测、隐私模型各自为政。把它们统一成"多模态记忆 v1 协议"是高 ROI 的工作，且具备产品落地价值（数字员工、长程助手）。
-2. **黑盒教师蒸馏的工业管线**：[#39 ROPD](#39-ropd) 解锁了用 GPT/Claude/Gemini 当教师的 OPD 可行性，配合 [#17 RubricEM](#17-rubricem) / [#42 DVReward](#42-alphagrpo) 的奖励替代，2026 下半年很可能涌现"黑盒蒸馏 + 自动 rubric 生成"的开源管线，要尽早布局基础设施（如 MinT 类基础设施 [#1](#1-mint)）。
-3. **训练-free 模型组装**：[#28 Darwin](#28-darwin) + [#31 GCWM](#31-gcwm) + [#35 Merging Scaling Law](#35-merging-scaling-law) 三篇组合，能否催生"训练-free 模型工厂"？这种范式对算力受限团队意义巨大，是绕开大厂军备竞赛的差异化路径。
-4. **AR + Frame-wise 视频实时化**：[#12 Causal Forcing++](#12-causal-forcing-pp) + [#16 SANA-WM](#16-sana-wm) + [#40 Warp-as-History](#40-warp-as-history) 三篇组合后已经离"游戏级实时世界模型"非常近，谁能整合出第一款消费级实时世界引擎 demo，谁就拿下 2026-2027 年视频生成的话语权。
-5. **企业 Agent 的可读规则范式**：[#25 CascadeBench](#25-cascadebench) + [#36 MCP-Cosmos](#36-mcp-cosmos) + [#34 WildClawBench](#34-wildclaw) 三篇组合，把"企业 Agent = LLM + 工具 + 可读配置 + 世界模型"形式化。对企业 SaaS 与 B2B AI 公司是必读组合。
+2. **黑盒教师蒸馏的工业管线**：[[39] ROPD](#39-ropd) 解锁了用 GPT/Claude/Gemini 当教师的 OPD 可行性，配合 [[17] RubricEM](#17-rubricem) / [[42] DVReward](#42-alphagrpo) 的奖励替代，2026 下半年很可能涌现"黑盒蒸馏 + 自动 rubric 生成"的开源管线，要尽早布局基础设施（如 MinT 类基础设施 [[1]](#1-mint)）。
+3. **训练-free 模型组装**：[[28] Darwin](#28-darwin) + [[31] GCWM](#31-gcwm) + [[35] Merging Scaling Law](#35-merging-scaling-law) 三篇组合，能否催生"训练-free 模型工厂"？这种范式对算力受限团队意义巨大，是绕开大厂军备竞赛的差异化路径。
+4. **AR + Frame-wise 视频实时化**：[[12] Causal Forcing++](#12-causal-forcing-pp) + [[16] SANA-WM](#16-sana-wm) + [[40] Warp-as-History](#40-warp-as-history) 三篇组合后已经离"游戏级实时世界模型"非常近，谁能整合出第一款消费级实时世界引擎 demo，谁就拿下 2026-2027 年视频生成的话语权。
+5. **企业 Agent 的可读规则范式**：[[25] CascadeBench](#25-cascadebench) + [[36] MCP-Cosmos](#36-mcp-cosmos) + [[34] WildClawBench](#34-wildclaw) 三篇组合，把"企业 Agent = LLM + 工具 + 可读配置 + 世界模型"形式化。对企业 SaaS 与 B2B AI 公司是必读组合。
 
 
 

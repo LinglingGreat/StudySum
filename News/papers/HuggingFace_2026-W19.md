@@ -171,7 +171,7 @@ ARIS 跨模型对抗协作：executor model 推进进度，**不同模型家族*
 "超 10 点"是平均，单基准差异未知；Wikipedia 路径采样的语料偏置可能让 agent 在非百科域表现下滑；致命错误感知 GRPO 对短轨迹任务是否同样有效需验证。
 
 ### 启发与应用前景
-本周 search-agent 主题三连发之一（另两篇是 #8 DCI 和 #13 OpenSeeker-v2）。对要做"研究助手 / 投资研究 agent"的人，这套数据合成方法可以直接借鉴——尤其是"source-anchor 视觉 grounding"思路对要处理含图表的金融研报场景很有用。
+本周 search-agent 主题三连发之一（另两篇是 [8] DCI 和 [13] OpenSeeker-v2）。对要做"研究助手 / 投资研究 agent"的人，这套数据合成方法可以直接借鉴——尤其是"source-anchor 视觉 grounding"思路对要处理含图表的金融研报场景很有用。
 
 ---
 
@@ -538,30 +538,30 @@ GRPO 在复杂任务上常遇"零优势问题"——所有 sample 都失败时�
 ## 🗺️ 趋势洞察
 
 ### 1. Agentic Search 全面升级：数据合成、接口革命、多 agent 协作三线并进
-**涉及论文**：#7 OpenSearch-VL、#8 DCI、#13 OpenSeeker-v2、#19 Web2BigTable、#24 BRIGHT-Pro
+**涉及论文**：[7] OpenSearch-VL、[8] DCI、[13] OpenSeeker-v2、[19] Web2BigTable、[24] BRIGHT-Pro
 **核心观点**：本周一口气 5 篇 search agent，但路线分化明显：OpenSeeker-v2 证明**纯 SFT + 高质量数据**能打过工业 RL pipeline；DCI 直接挑战"必须先建向量索引"的成见，让 agent 用 grep/shell 直接和原始语料对话；Web2BigTable 用 bi-level 多 agent 解决宽度+深度双需求；OpenSearch-VL 给多模态 search agent 完整开源 recipe；BRIGHT-Pro 提供新评估协议。**信号**：search agent 已从"做 SOTA"进入"暴露隐藏问题 + 重新设计接口"阶段。
 
 ### 2. Skill 库自演化：三种路线同周对照
-**涉及论文**：#2 Ctx2Skill、#12 Skill1、#20 SkillOS
+**涉及论文**：[2] Ctx2Skill、[12] Skill1、[20] SkillOS
 **核心观点**：让 agent 把经验沉淀成可复用 skill 这件事在本周成为显学。三种范式：(a) Ctx2Skill 用多 agent 对抗自博弈，无人工无外部反馈；(b) Skill1 用单一 RL 策略同时演化 selection / utilization / distillation；(c) SkillOS 冻结 executor、单独训 curator。对个人 Builder：SkillOS 路线门槛最低、最容易复刻；Skill1 的"低频/高频信号归因"思路最优雅。
 
 ### 3. 流式视频生成进入 "TTS + 蒸馏" 双轴优化阶段
-**涉及论文**：#3 Stream-R1、#6 Stream-T1、#9 UniVidX
+**涉及论文**：[3] Stream-R1、[6] Stream-T1、[9] UniVidX
 **核心观点**：FrameX-AI 同周双发 Stream-R1（蒸馏端 reward-aware 加权）和 Stream-T1（推理端 test-time scaling），把流式视频的训练和推理两端都优化了。UniVidX 在多模态视频生成统一框架上做出 < 1000 视频高效训练。**信号**：流式范式已成共识，竞争点转向"如何榨干每一帧的监督信号"。
 
 ### 4. 具身智能：开源 VLA 走向真正可部署
-**涉及论文**：#1 MolmoAct2、#4 RLDX-1、#18 FFDC、#23 PhysForge
+**涉及论文**：[1] MolmoAct2、[4] RLDX-1、[18] FFDC、[23] PhysForge
 **核心观点**：MolmoAct2（AI2）和 RLDX-1 双开源 VLA 同周发布，前者走"开权重 + flow-matching 嫁接 + 双臂数据"，后者走"多流 Transformer + 数据合成"。FFDC 解决"动作执行什么时候该信任想象"的根本问题，PhysForge 把"VLM 当 architect"用到 3D 资产生成。**信号**：具身 VLA 不再是闭源专利，且开源方案开始在硬指标（86.8% vs 40%）上拉开差距。
 
 ### 对比与张力
-- **DCI（#8 grep 直查）vs 传统 RAG（#15 #24 retriever 优化）**：一边是"丢掉所有 retriever 用通用工具直接交互"，一边是"在 retriever 框架内做更精细评估和数据合成"。两边都在涨点，**接口设计自由度**和**针对性优化**的张力会持续。
-- **OpenSeeker-v2（#13 纯 SFT）vs PRISM（#16 SFT → 对齐 → RL）**：一边是"数据够好 SFT 就能 SOTA"，一边是"SFT-to-RL 的漂移必须显式对齐"。问题是：OpenSeeker-v2 的 SOTA 是否只是因为基准本身没榨干 SFT 能力上限？
-- **三种 skill 自演化（#2 #12 #20）**：对抗自博弈 vs 单策略共演化 vs 冻结-curator 解耦。
-- **MARBLE（#21 多 reward 梯度空间）vs Stream-R1（#3 reward 加权蒸馏）**：都是"reward 不再统一权重"，但一个是用 QP 解多目标，一个是用 reward 自身做权重指导器。同一周不同子领域同时摸到了"reward 加权机械化失败"这个问题。
+- **DCI（[8] grep 直查）vs 传统 RAG（[15] [24] retriever 优化）**：一边是"丢掉所有 retriever 用通用工具直接交互"，一边是"在 retriever 框架内做更精细评估和数据合成"。两边都在涨点，**接口设计自由度**和**针对性优化**的张力会持续。
+- **OpenSeeker-v2（[13] 纯 SFT）vs PRISM（[16] SFT → 对齐 → RL）**：一边是"数据够好 SFT 就能 SOTA"，一边是"SFT-to-RL 的漂移必须显式对齐"。问题是：OpenSeeker-v2 的 SOTA 是否只是因为基准本身没榨干 SFT 能力上限？
+- **三种 skill 自演化（[2] [12] [20]）**：对抗自博弈 vs 单策略共演化 vs 冻结-curator 解耦。
+- **MARBLE（[21] 多 reward 梯度空间）vs Stream-R1（[3] reward 加权蒸馏）**：都是"reward 不再统一权重"，但一个是用 QP 解多目标，一个是用 reward 自身做权重指导器。同一周不同子领域同时摸到了"reward 加权机械化失败"这个问题。
 
 ### 值得关注的研究方向
-1. **Search agent 的接口革命**：DCI（#8）这条线如果成立，意味着 RAG 这套技术栈的相当一部分可以被绕开。值得花周末复现一下小规模实验。
-2. **Skill 库自演化**：三种范式同周对照，对要做"会自我进化的个人 AI 工具"的人是绝佳学习窗口。优先看 SkillOS（#20）的 curator 实现。
-3. **端侧全双工多模态**：MiniCPM-o 4.5（#14）的 <12GB 全双工把"端侧实时陪伴 AI"的可行性大幅推进，做角色扮演 / 心理陪伴产品的应该立刻评估。
-4. **多 reward 梯度协调**：MARBLE（#21）的 QP 框架是"对齐多目标"的通解，LLM 后训练做多目标对齐的可立刻借鉴。
-5. **Prompt 扰动作为探索 boost**：LoPE（#22）这个简单到不可思议的 trick，几乎所有 GRPO 训练都该试一下。
+1. **Search agent 的接口革命**：DCI（[8]）这条线如果成立，意味着 RAG 这套技术栈的相当一部分可以被绕开。值得花周末复现一下小规模实验。
+2. **Skill 库自演化**：三种范式同周对照，对要做"会自我进化的个人 AI 工具"的人是绝佳学习窗口。优先看 SkillOS（[20]）的 curator 实现。
+3. **端侧全双工多模态**：MiniCPM-o 4.5（[14]）的 <12GB 全双工把"端侧实时陪伴 AI"的可行性大幅推进，做角色扮演 / 心理陪伴产品的应该立刻评估。
+4. **多 reward 梯度协调**：MARBLE（[21]）的 QP 框架是"对齐多目标"的通解，LLM 后训练做多目标对齐的可立刻借鉴。
+5. **Prompt 扰动作为探索 boost**：LoPE（[22]）这个简单到不可思议的 trick，几乎所有 GRPO 训练都该试一下。
