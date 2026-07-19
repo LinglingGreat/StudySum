@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/papers/HuggingFace_2026-W27.md",
+                "file": "News/papers/HuggingFace_2026-W28.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HuggingFace_2026-W27"
+              "title": "HuggingFace_2026-W28"
             }
           },
           {
@@ -277,6 +277,11 @@
   },
   "active": "47eb4d2fddfdc229",
   "lastOpenFiles": [
+    "News/AI动态/2026-07-19.md",
+    "News/AI动态/2026-07-18.md",
+    "News/papers/HuggingFace_2026-W27.md",
+    "Tool/k8s/k8s.md",
+    "News/AI动态/2026-07-17.md",
     "News/AI动态/2026-07-16.md",
     "News/papers/HuggingFace_2026-W28.md",
     "News/AI动态/2026-07-07.md",
@@ -288,14 +293,12 @@
     "News/AI动态/2026-07-10.md",
     "News/AI动态/2026-07-08.md",
     "News/AI动态/2026-07-09.md",
-    "News/papers/HuggingFace_2026-W27.md",
     "News/papers/HuggingFace_2026-W27.md.new",
     "News/papers/HuggingFace_2026-W26.md.new",
     "News/papers/HuggingFace_2026-W25.md.new",
     "News/papers/HuggingFace_2026-W26.md",
     "News/papers/HuggingFace_2026-W25.md",
     "News/papers/HuggingFace_2026-W24.md",
-    "Tool/k8s/k8s.md",
     "News/AI动态/2026-07-06.md",
     "News/AI动态/2026-07-05.md",
     "News/AI动态/2026-07-04.md",
@@ -303,9 +306,6 @@
     "News/AI动态/2026-07-02.md",
     "News/AI动态/2026-07-01.md",
     "News/AI动态/2026-06-30.md",
-    "News/AI动态/2026-06-29.md",
-    "News/AI动态/2026-06-28.md",
-    "News/AI动态/2026-06-27.md",
     "~",
     "News/AI动态",
     "News/papers",
