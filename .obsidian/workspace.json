@@ -8,20 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6d901cb86da5e3ce",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/Git/Git.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Git"
-            }
-          },
-          {
             "id": "0bff3209a9a7e303",
             "type": "leaf",
             "state": {
@@ -33,20 +19,6 @@
               },
               "icon": "lucide-file",
               "title": "Linux"
-            }
-          },
-          {
-            "id": "450eed335b56782d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tool/python/Anaconda.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Anaconda"
             }
           },
           {
@@ -69,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/papers/HuggingFace_2026-W28.md",
+                "file": "News/papers/HuggingFace_2026-W30.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HuggingFace_2026-W28"
+              "title": "HuggingFace_2026-W30"
             }
           },
           {
@@ -83,12 +55,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/AI动态/2026-07-18.md",
+                "file": "News/AI动态/2026-07-30.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-07-18"
+              "title": "2026-07-30"
+            }
+          },
+          {
+            "id": "df52a8c0040b28bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "PLM/RolePlay/EvolvingWorld/EvolvingWorld.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "EvolvingWorld"
             }
           }
         ],
@@ -275,14 +261,28 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "47eb4d2fddfdc229",
+  "active": "df52a8c0040b28bf",
   "lastOpenFiles": [
-    "News/papers/HuggingFace_2026-W29.md",
-    "News/AI动态/2026-07-18.md",
+    "News/AI动态/2026-07-30.md",
+    "PLM/RolePlay/EvolvingWorld/EvolvingWorld.md",
+    "PLM/RolePlay/EvolvingWorld/img/EvolvingWorld-case.png",
+    "PLM/RolePlay/EvolvingWorld/img/EvolvingWorld-framework.png",
+    "PLM/RolePlay/EvolvingWorld/img",
+    "PLM/RolePlay/EvolvingWorld",
+    "News/AI动态/2026-07-31.md",
     "News/AI动态/2026-07-19.md",
+    "News/AI动态/2026-07-18.md",
+    "News/papers/HuggingFace_2026-W30.md",
+    "News/papers/HuggingFace_2026-W29.md",
+    "News/AI动态/2026-07-29.md",
+    "News/AI动态/2026-07-28.md",
+    "News/AI动态/2026-07-24.md",
+    "News/AI动态/2026-07-23.md",
+    "News/AI动态/2026-07-21.md",
+    "News/AI动态/2026-07-20.md",
+    "News/papers/HuggingFace_2026-W28.md",
     "News/AI动态/2026-07-08.md",
     "News/AI动态/2026-07-07.md",
-    "News/papers/HuggingFace_2026-W28.md",
     "News/papers/HuggingFace_2026-W27.md",
     "Tool/k8s/k8s.md",
     "News/AI动态/2026-07-17.md",
@@ -293,25 +293,14 @@
     "News/AI动态/2026-07-12.md",
     "News/AI动态/2026-07-11.md",
     "News/AI动态/2026-07-10.md",
-    "News/AI动态/2026-07-09.md",
     "News/papers/HuggingFace_2026-W27.md.new",
     "News/papers/HuggingFace_2026-W26.md.new",
     "News/papers/HuggingFace_2026-W25.md.new",
-    "News/papers/HuggingFace_2026-W26.md",
-    "News/papers/HuggingFace_2026-W25.md",
-    "News/papers/HuggingFace_2026-W24.md",
-    "News/AI动态/2026-07-06.md",
-    "News/AI动态/2026-07-05.md",
-    "News/AI动态/2026-07-04.md",
-    "News/AI动态/2026-07-03.md",
-    "News/AI动态/2026-07-02.md",
-    "News/AI动态/2026-07-01.md",
     "~",
     "News/AI动态",
     "News/papers",
     "News/月度论文",
     "PLM/Alignment/OPD",
-    "PLM/Models/LongCat-Next",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305115838.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305115817.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305114852.png",
@@ -320,9 +309,6 @@
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305114337.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305113627.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305113615.png",
-    "PLM/RolePlay/CharacterFlywheel/img",
-    "PLM/Models/DeepSeek/img/DeepSeek_Engram-20260113203801.png",
-    "PLM/Models/DeepSeek/img/DeepSeek_Engram-20260113203734.png",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
