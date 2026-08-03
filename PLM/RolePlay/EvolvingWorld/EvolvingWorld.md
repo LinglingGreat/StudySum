@@ -128,17 +128,17 @@ institution:
 
 **数据统计**：
 
-| 项目 | 数量 |
-|------|------|
-| 书 | 57 |
-| 抽取场景 | 9,763 |
-| 抽取互动 | 132,800 |
-| 去重角色 | 3,311 |
-| 去重地点 | 1,888 |
-| 训练样本（7 任务合计） | 138,596 |
-| 测试快照（ID/OOD） | 222（116/106） |
-| 角色档案维度词表 | 581 个（高频：Social Standing、Core Personality、Key Relationships、Professional Identity） |
-| 世界状态维度词表 | 136 个（高频：Cultural Values & Moral Expectations、Social Order & Class、Economy & Material Survival） |
+| 项目           | 数量                                                                                              |
+| ------------ | ----------------------------------------------------------------------------------------------- |
+| 书            | 57                                                                                              |
+| 抽取场景         | 9,763                                                                                           |
+| 抽取互动         | 132,800                                                                                         |
+| 去重角色         | 3,311                                                                                           |
+| 去重地点         | 1,888                                                                                           |
+| 训练样本（7 任务合计） | 138,596                                                                                         |
+| 测试快照（ID/OOD） | 222（116/106）                                                                                    |
+| 角色档案维度词表     | 581 个（高频：Social Standing、Core Personality、Key Relationships、Professional Identity）              |
+| 世界状态维度词表     | 136 个（高频：Cultural Values & Moral Expectations、Social Order & Class、Economy & Material Survival） |
 
 **分布特征**（中位数）：每本书 160 场景 / 43 角色 / 25 地点；每场景 8 条互动、3 个角色；每角色 2 次档案更新（均值 6.1，长尾到 301）；每地点 2 次状态更新。覆盖从紧凑中篇到多角色长篇的复杂度谱系。
 
