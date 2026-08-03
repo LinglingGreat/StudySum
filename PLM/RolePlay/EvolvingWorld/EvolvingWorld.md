@@ -126,6 +126,78 @@ institution:
 
 **穿插的清洗**：每条互动送 LLM 精修——去掉混进台词里的思维、保持私人思维与口头发言分离、统一为行动者的第一人称视角。
 
+### 一个具体例子：《玩偶之家》从原文到训练样本
+
+**核心思想一句话**：数据合成是模拟的**反向工程**。书里已经写好了「正确答案轨迹」——谁出场、在哪、说了什么、世界怎么变。合成工作就是把这条轨迹重放一遍，在每个决策点「截图」：此刻模拟器应该看到什么（输入观测）→ 书里实际发生了什么（监督标签）。抽取时构造的输入视图和推理时模拟器的观测完全同构，所以训出来的模型能直接插进 pipeline。
+
+以下按流程走一遍（引号内容来自论文 Figure 1 的真实例子，标〔示意〕的是为讲清楚补的合理示例）。
+
+**Step 1：原文 → 结构化场景**
+
+《玩偶之家》全文切成数千词的 chunk，每个 chunk 让 Gemini-2.5-Pro 抽出 JSON。到第三幕结尾，得到 scene 19：
+
+```json
+{
+  "scenario": "It is late at night in the living room...（深夜的客厅，圣诞派对刚散场...）",
+  "key_characters": [
+    {"name": "Nora Helmer", "description": "〔场景前的她〕", "experience": "〔她在本场的角色/行为〕", "motivation": "〔进场前的所思所想〕"},
+    {"name": "Torvald Helmer", ...}
+  ],
+  "interactions": [
+    ...,
+    {"characters": ["Torvald Helmer"],
+     "content": "[I finally open it..] (Take out the contents of the letter box and go to the kitchen) Helen!—Helen, put out the light over the front door..."},
+    ...
+  ],
+  "summary": "..."
+}
+```
+
+抽取规则的几个关键点：每条互动**必须以 `[思维]` 开头**（原文没写就从行为合理推断）；叙述文也要转成互动格式（原文写 "The children walked into room together" → 抽成 `[We need to stay together] (walk into room together)`）；氛围/天气/非角色事件用 `Environment` 当行动者；不许出现 "the crowd"「众人」这种模糊主体，具名的群体要展开成个人列表；同一角色连续多轮合并成一条；场景在 chunk 边界被切断就标 `truncated`，残段拼到下一 chunk 续抽。
+
+**Step 2：角色构建（两步）**
+
+先**别名归一**："Mr. Helmer"/"Torvald" → "Torvald Helmer"，所有场景里的引用统一替换。
+
+再造**初始档案**：把 Nora 出现的所有场景数据给 LLM，要求「**倒推**故事开始前她是什么样的人」——明确规则：不许剧透（只在故事中途才形成的关系/特质不能写进初始档案），从约 19 个参考维度（Physical Description、Social Standing、Core Personality、Speech Patterns、Core Fears、Key Relationships、Supernatural Powers……）里**自选/合并/自造**——这就是 open-schema 的落地方式。得到初始档案如「Social Standing: Wife of a newly appointed bank manager...」。
+
+然后**逐场景更新**（数据合成的核心一步）。对每个场景的每个参演角色跑一次「Dynamic Profile Update」prompt，输入 = 当前档案 + hidden tracker + 刚完成的场景（含全部互动）+ **下一场景全文（仅作 look-ahead 参考）**，一次输出 5 样东西：
+
+[1] 维度推理：哪些维度稳定（外貌、核心恐惧）、哪些动态（关系、目标、心理状态）
+[2] 新 hidden tracker（<300 词，覆盖旧版）：记录还没到阈值的信号——潜在变化的苗头、累积的心理压力、未解决的张力
+[3] 是否更新档案的判断 + 更新后的完整档案：本场有实质可观察的变化（关系转折/改变目标的决定/创伤），或 tracker 里累积的信号加上本场刚好过阈值 → 更新；轻微瞬时反应 → 不更。scene 19 里 Nora 的更新：Core Personality →「Her terror has crystallized into a cold resolve（她的恐惧已结晶为冷静的决绝）」
+[4] 50-80 词第三人称**短描述**（当前身份 + 眼下意图）——这是给 scene_cast 任务当输入用的压缩视图，避免选角时塞几十个完整档案
+[5] **下一场的增强动机**：参考下一场景的实际内容，反写「她进入下一场时的内心驱动」——要求能自然引出下一场的实际言行（可以写「打算与 X 对质」），但不许剧透下一场的结果
+
+Look-ahead 的用法被严格限定：只用来判断「当前变化是否有意义」，所有输出只能反映**当前场景结束时**的状态，不许泄露未来。
+
+**Step 3：世界构建（两步）**
+
+初始化：全局状态从 15 个参考维度自选（本书选出「Social order: 19th-century bourgeois society...（19 世纪资产阶级社会）」「Marriage/family: Husband is provider...（丈夫是供养者）」等）；每个地点生成描述 + 重要实体清单（明确排除人物），可选平铺或含子地点两种结构——Helmer 公寓：「The remnants of festivities remain...（派对余迹尚存），Important Entities: [Letter-box: contains letter...（信箱：内有信件）]」。
+
+逐互动更新标注：把一场的互动编号 0,1,2... 批量送入，附**两种 look-ahead**——全局 look-ahead = 紧接着的互动序列（可跨场景），地点 look-ahead = 同一地点未来的互动（可能来自几场之后）。LLM 只对「造成持久变化」的互动输出**完整的新状态**（不是 diff；要删掉被推翻的旧信息、压缩篇幅，状态是快照不是流水账；多数互动应当不触发更新）。Torvald 取走信件那一条互动 → 触发地点更新：Letter-box → empty；全局无变化 → ∅。
+
+**Step 4：沿时间线切出 7 类训练样本**
+
+到这里，整本书变成了一条完整的「状态轨迹」：每个场景 t 都有场景前状态、cast、地点、scenario、各角色动机、互动序列、逐互动的世界状态、场景后的角色状态。7 类样本就是在不同决策点截取「输入视图 → 真实标签」。以 scene 19 为例：
+
+| 任务 | 该样本的输入（模拟器视角） | 该样本的标签（来自抽取结果） |
+|------|--------------------------|------------------------------|
+| scene_cast | 全局状态（18 场后）+ 全部角色的 50-80 词短描述 + 场景 18 的 scenario 和互动 | `{"has_next_scene": true, "involved_characters": ["Nora Helmer", "Torvald Helmer", ...]}`——即场景 19 的实际参演者 |
+| location_scenario | 上行输入 + 选定 cast + 候选地点列表 | `{"location": "The Helmer Apartment", "scenario": "It is late at night in the living room..."}`——场景 19 的实际地点和 scenario |
+| motivation_update（Nora） | Nora 的档案+tracker + 场景 19 的 scenario | Step 2-[5] 反写的增强动机——因为它是从场景 19 实际内容倒推的，天然能「解释」她接下来的言行 |
+| next_character | 多轮对话：第 k 轮输入 = 前 k−1 条互动 | 第 k 轮标签 = 场景 19 第 k 条互动的实际 actor（"Torvald Helmer"）；最后一轮 = END |
+| interaction_gen（Torvald） | Torvald 的完整档案+动机 + 地点状态 + scenario + 互动史（**他人的 `[思维]` 已剥除**，只留他自己的） | `"[I finally open it..] (Take out the contents of the letter box...) Helen!—..."`——书里抽出的原互动 |
+| world_update | 当前全局+地点状态 + 刚发生的互动 | Step 3 的标注：Letter-box → empty（多数互动的标签是「无更新」） |
+| character_update（Nora） | Nora 场景前状态 + 整场互动 + 场景结束时的世界状态 | Step 2 的输出：新档案（terror→cold resolve）+ 新 tracker |
+
+样本量的对应关系：motivation_update 和 character_update 都是 24,977 = 训练集里的（场景, 参演角色）对数；next_character 一场一个多轮对话（116,789 个回合 ≈ 每场 8 次选人 + END）；interaction_gen 按（场景, 行动者）组织成多轮对话，样本比 character_update 多（40,554），因为环境和角色团体也是行动者但不做档案更新；world_update 论文未明说如何从 13 万条互动压到 17,832 个样本，从构造方式看应是按批组织且只保留有更新判断价值的部分。
+
+**Step 5：为什么这样设计（两个关键）**
+
+[1] **Look-ahead 让标签「有据可查」**：状态更新的 ground truth 不是抽取 LLM 的自由发挥，而是被书的后文验证过的（懒散学生的反思，要等后文出现持续努力才算真变化）；动机标签更直接——从实际发生的下一场倒推，训练时「动机→行为」的对齐天然成立。这是一种 hindsight relabeling（事后重标注）思路。
+[2] **抽取与模拟严格镜像**：每类样本的输入视图（谁能看到什么状态、思维对谁可见、用短描述还是完整档案）和推理时模拟器的观测构造完全一致，SFT 后模型无缝插进 pipeline，没有 train/inference 的观测错配。
+
 **数据统计**：
 
 | 项目           | 数量                                                                                              |
