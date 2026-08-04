@@ -181,15 +181,15 @@ Look-ahead 的用法被严格限定：只用来判断「当前变化是否有意
 
 到这里，整本书变成了一条完整的「状态轨迹」：每个场景 t 都有场景前状态、cast、地点、scenario、各角色动机、互动序列、逐互动的世界状态、场景后的角色状态。7 类样本就是在不同决策点截取「输入视图 → 真实标签」。以 scene 19 为例：
 
-| 任务 | 该样本的输入（模拟器视角） | 该样本的标签（来自抽取结果） |
-|------|--------------------------|------------------------------|
-| scene_cast | 全局状态（18 场后）+ 全部角色的 50-80 词短描述 + 场景 18 的 scenario 和互动 | `{"has_next_scene": true, "involved_characters": ["Nora Helmer", "Torvald Helmer", ...]}`——即场景 19 的实际参演者 |
-| location_scenario | 上行输入 + 选定 cast + 候选地点列表 | `{"location": "The Helmer Apartment", "scenario": "It is late at night in the living room..."}`——场景 19 的实际地点和 scenario |
-| motivation_update（Nora） | Nora 的档案+tracker + 场景 19 的 scenario | Step 2-[5] 反写的增强动机——因为它是从场景 19 实际内容倒推的，天然能「解释」她接下来的言行 |
-| next_character | 多轮对话：第 k 轮输入 = 前 k−1 条互动 | 第 k 轮标签 = 场景 19 第 k 条互动的实际 actor（"Torvald Helmer"）；最后一轮 = END |
-| interaction_gen（Torvald） | Torvald 的完整档案+动机 + 地点状态 + scenario + 互动史（**他人的 `[思维]` 已剥除**，只留他自己的） | `"[I finally open it..] (Take out the contents of the letter box...) Helen!—..."`——书里抽出的原互动 |
-| world_update | 当前全局+地点状态 + 刚发生的互动 | Step 3 的标注：Letter-box → empty（多数互动的标签是「无更新」） |
-| character_update（Nora） | Nora 场景前状态 + 整场互动 + 场景结束时的世界状态 | Step 2 的输出：新档案（terror→cold resolve）+ 新 tracker |
+| 任务                       | 该样本的输入（模拟器视角）                                                       | 该样本的标签（来自抽取结果）                                                                                                         |
+| ------------------------ | ------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| scene_cast               | 全局状态（18 场后）+ 全部角色的 50-80 词短描述 + 场景 18 的 scenario 和互动                | `{"has_next_scene": true, "involved_characters": ["Nora Helmer", "Torvald Helmer", ...]}`——即场景 19 的实际参演者               |
+| location_scenario        | 上行输入 + 选定 cast + 候选地点列表                                             | `{"location": "The Helmer Apartment", "scenario": "It is late at night in the living room..."}`——场景 19 的实际地点和 scenario |
+| motivation_update（Nora）  | Nora 的档案+tracker + 场景 19 的 scenario                                 | Step 2-[5] 反写的增强动机——因为它是从场景 19 实际内容倒推的，天然能「解释」她接下来的言行                                                                  |
+| next_character           | 多轮对话：第 k 轮输入 = 前 k−1 条互动                                            | 第 k 轮标签 = 场景 19 第 k 条互动的实际 actor（"Torvald Helmer"）；最后一轮 = END                                                          |
+| interaction_gen（Torvald） | Torvald 的完整档案+动机 + 地点状态 + scenario + 互动史（**他人的 `[思维]` 已剥除**，只留他自己的） | `"[I finally open it..] (Take out the contents of the letter box...) Helen!—..."`——书里抽出的原互动                            |
+| world_update             | 当前全局+地点状态 + 刚发生的互动                                                  | Step 3 的标注：Letter-box → empty（多数互动的标签是「无更新」）                                                                           |
+| character_update（Nora）   | Nora 场景前状态 + 整场互动 + 场景结束时的世界状态                                      | Step 2 的输出：新档案（terror→cold resolve）+ 新 tracker                                                                         |
 
 样本量的对应关系：motivation_update 和 character_update 都是 24,977 = 训练集里的（场景, 参演角色）对数；next_character 一场一个多轮对话（116,789 个回合 ≈ 每场 8 次选人 + END）；interaction_gen 按（场景, 行动者）组织成多轮对话，样本比 character_update 多（40,554），因为环境和角色团体也是行动者但不做档案更新；world_update 论文未明说如何从 13 万条互动压到 17,832 个样本，从构造方式看应是按批组织且只保留有更新判断价值的部分。
 
