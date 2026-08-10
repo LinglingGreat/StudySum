@@ -41,44 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/papers/HuggingFace_2026-W30.md",
+                "file": "News/papers/HuggingFace_2026-W31.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HuggingFace_2026-W30"
-            }
-          },
-          {
-            "id": "39e2b2ac5b708603",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "News/AI动态/2026-07-30.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-07-30"
-            }
-          },
-          {
-            "id": "df52a8c0040b28bf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "PLM/RolePlay/EvolvingWorld/EvolvingWorld.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "EvolvingWorld"
+              "title": "HuggingFace_2026-W31"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +70,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -135,7 +109,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.50390243530273
+    "width": 200
   },
   "right": {
     "id": "305f592ad77dae89",
@@ -261,14 +235,26 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "df52a8c0040b28bf",
+  "active": "47eb4d2fddfdc229",
   "lastOpenFiles": [
+    "News/AI动态/2026-08-09.md",
+    "PLM/RolePlay/Agentopia/Agentopia.md",
+    "PLM/RolePlay/Agentopia/img/Agentopia-framework.png",
+    "PLM/RolePlay/Agentopia/img/Agentopia-emergent.png",
+    "PLM/RolePlay/Agentopia/img",
+    "PLM/RolePlay/Agentopia",
+    "News/AI动态/2026-08-08.md",
+    "News/AI动态/2026-08-07.md",
+    "News/AI动态/2026-08-06.md",
+    "News/papers/HuggingFace_2026-W30.md",
+    "News/papers/HuggingFace_2026-W31.md",
+    "News/AI动态/2026-07-30.md",
+    "PLM/RolePlay/EvolvingWorld/EvolvingWorld.md",
+    "News/AI动态/2026-08-05.md",
     "News/AI动态/2026-08-04.md",
     "News/AI动态/2026-08-03.md",
     "News/AI动态/2026-08-02.md",
     "News/AI动态/2026-08-01.md",
-    "News/AI动态/2026-07-30.md",
-    "PLM/RolePlay/EvolvingWorld/EvolvingWorld.md",
     "PLM/RolePlay/EvolvingWorld/img/EvolvingWorld-case.png",
     "PLM/RolePlay/EvolvingWorld/img/EvolvingWorld-framework.png",
     "PLM/RolePlay/EvolvingWorld/img",
@@ -276,7 +262,6 @@
     "News/AI动态/2026-07-31.md",
     "News/AI动态/2026-07-19.md",
     "News/AI动态/2026-07-18.md",
-    "News/papers/HuggingFace_2026-W30.md",
     "News/papers/HuggingFace_2026-W29.md",
     "News/AI动态/2026-07-29.md",
     "News/AI动态/2026-07-28.md",
@@ -286,29 +271,18 @@
     "News/AI动态/2026-07-20.md",
     "News/papers/HuggingFace_2026-W28.md",
     "News/AI动态/2026-07-08.md",
-    "News/AI动态/2026-07-07.md",
-    "News/papers/HuggingFace_2026-W27.md",
-    "Tool/k8s/k8s.md",
-    "News/AI动态/2026-07-17.md",
-    "News/AI动态/2026-07-16.md",
-    "News/AI动态/2026-07-15.md",
-    "News/AI动态/2026-07-14.md",
     "News/papers/HuggingFace_2026-W27.md.new",
     "News/papers/HuggingFace_2026-W26.md.new",
     "News/papers/HuggingFace_2026-W25.md.new",
     "~",
     "News/AI动态",
     "News/papers",
-    "News/月度论文",
-    "PLM/Alignment/OPD",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305115838.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305115817.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305114852.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305114557.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305114501.png",
     "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305114337.png",
-    "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305113627.png",
-    "PLM/RolePlay/CharacterFlywheel/img/CharacterFlywheel-20260305113615.png",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
