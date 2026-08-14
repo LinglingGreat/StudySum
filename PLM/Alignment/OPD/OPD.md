@@ -195,3 +195,9 @@ OPD的上限，从来不是OPD本身，是RL能跑多远。
 作者：rumor（北航本硕，大模型算法工程师，谷歌开发者专家）
 
 原文链接：https://mp.weixin.qq.com/s/dRGhsyts9GxMJexTnH1JMA
+
+---
+
+## 相关笔记
+
+- [Simple-OPD](Simple-OPD.md)（arXiv 2608.06802，清华+港大+腾讯）——本文提出的 off-policy cold start **具体该怎么做**：数据用 OPD 教师自己采的 CoT（不必过滤对错），训练用低秩 LoRA 训到接近饱和（全参 SFT 会把 OOD 打崩）。它的两组消融（错答案也 work、更强的 GPT-5.5 反而没用）也部分回答了上文 P.S. 里「冷启动实验没隔离数据量 vs 思维模式对齐」的疑问。
