@@ -49,8 +49,7 @@
               "title": "HuggingFace_2026-W32"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -235,8 +234,13 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "47eb4d2fddfdc229",
+  "active": "0bff3209a9a7e303",
   "lastOpenFiles": [
+    "News/AI动态/2026-08-18.md",
+    "News/AI动态/2026-08-17.md",
+    "News/AI动态/2026-08-16.md",
+    "News/AI动态/2026-08-15.md",
+    "News/papers/HuggingFace_2026-W32.md",
     "News/AI动态/2026-08-14.md",
     "PLM/Alignment/OPD/Simple-OPD.md",
     "PLM/Alignment/OPD/img/Simple-OPD-fig8-dynamics.png",
@@ -251,7 +255,6 @@
     "News/AI动态/2026-08-13.md",
     "News/AI动态/2026-08-12.md",
     "News/papers/HuggingFace_2026-W31.md",
-    "News/papers/HuggingFace_2026-W32.md",
     "News/AI动态/2026-08-11.md",
     "PLM/Alignment/SDPO/SDPO.md",
     "PLM/Alignment/SDPO/img/SDPO-heatmap-irrelevant.png",
@@ -276,10 +279,6 @@
     "News/AI动态/2026-08-01.md",
     "PLM/RolePlay/EvolvingWorld/img",
     "PLM/RolePlay/EvolvingWorld",
-    "News/AI动态/2026-07-31.md",
-    "News/AI动态/2026-07-19.md",
-    "News/AI动态/2026-07-18.md",
-    "News/papers/HuggingFace_2026-W29.md",
     "News/papers/HuggingFace_2026-W27.md.new",
     "News/papers/HuggingFace_2026-W26.md.new",
     "News/papers/HuggingFace_2026-W25.md.new",
