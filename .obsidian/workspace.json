@@ -49,7 +49,8 @@
               "title": "HuggingFace_2026-W32"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -234,8 +235,15 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "0bff3209a9a7e303",
+  "active": "7d011fa3cb904c6e",
   "lastOpenFiles": [
+    "News/AI动态/2026-08-29.md",
+    "News/AI动态/2026-08-28.md",
+    "News/AI动态/2026-08-27.md",
+    "News/AI动态/2026-08-26.md",
+    "News/AI动态/2026-08-25.md",
+    "News/AI动态/2026-08-24.md",
+    "Tool/Linux/Linux.md",
     "News/AI动态/2026-08-18.md",
     "News/AI动态/2026-08-17.md",
     "News/AI动态/2026-08-16.md",
@@ -270,13 +278,6 @@
     "News/AI动态/2026-08-07.md",
     "News/AI动态/2026-08-06.md",
     "News/papers/HuggingFace_2026-W30.md",
-    "News/AI动态/2026-07-30.md",
-    "PLM/RolePlay/EvolvingWorld/EvolvingWorld.md",
-    "News/AI动态/2026-08-05.md",
-    "News/AI动态/2026-08-04.md",
-    "News/AI动态/2026-08-03.md",
-    "News/AI动态/2026-08-02.md",
-    "News/AI动态/2026-08-01.md",
     "PLM/RolePlay/EvolvingWorld/img",
     "PLM/RolePlay/EvolvingWorld",
     "News/papers/HuggingFace_2026-W27.md.new",
