@@ -175,3 +175,102 @@ Ctrl+b w                   # 列出所有窗口并选择
 ```
 
 原则：**长时间跑的独立任务单独 session，交互式 claude 实例合并到一个 session 的多个窗口里。**
+
+---
+
+## 十、踩过的坑（2026-09-10，Mac + iTerm2 + tmux 3.7）
+
+### 坑 1：在 tmux 里往上滚，最顶上是当前会话的内容，但跟记忆完全对不上
+
+**现象**：Claude Code 跑在 tmux 里，往上滚，scrollback 顶部确实是本会话的内容，
+但它是会话**中途**的某一段，前面的全没有 —— 看起来像"错乱"。
+
+**根因**：会话不是在 tmux 里开始的，是 `claude --resume` 恢复进来的。
+**resume 只把最近一段历史重放到终端，不重放全部**，所以 pane 的 scrollback 从会话中途开始。
+
+**怎么确认**（三条证据同时看）：
+
+```bash
+# 1. pane 里 claude 进程跑了多久 —— 远小于会话实际时长就是 resume
+tmux list-panes -t <sess>:<win> -F '#{pane_pid}' | xargs -I{} pgrep -P {} | xargs -I{} ps -o pid,lstart,etime,command -p {}
+
+# 2. scrollback 里有没有启动横幅 —— 没有 = 不是从这里启动的
+tmux capture-pane -p -S - -t <sess>:<win> | grep -i 'welcome to claude'
+
+# 3. 会话真实长度看 transcript
+wc -l ~/.claude/projects/<项目路径转义>/<session-id>.jsonl
+```
+
+**⚠️ 做上面三步之前，先确认「你查的 pane 里跑的到底是哪个会话」** —— 我第一次查就栽在这：
+人在 tmux **外面**的窗口里，却去抓 tmux 里另一个会话的 scrollback，
+再拿那个 pane 的进程启动时间跟**自己**会话的 transcript 行数配对，推出来的结论方向对、证据全错。
+
+```bash
+# 0. 先确认自己在不在 tmux 里（空 = 不在，那 tmux 里跑的就是别人）
+echo "${TMUX:-不在 tmux}"
+
+# 1. 从 scrollback 里的 scratchpad 路径反查该 pane 属于哪个 session id
+tmux capture-pane -p -S - -t <sess>:<win> \
+  | grep -oE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' \
+  | sort | uniq -c | sort -rn | head
+# 出现次数最多的那个就是；若你自己的 session id 出现 0 次，说明这个 pane 不是你
+
+# 2. 确认是同一个会话之后，再去比 transcript 创建时间 vs 进程启动时间
+stat -f '%SB' -t '%H:%M:%S' ~/.claude/projects/<项目>/<那个 id>.jsonl
+```
+
+**真实案例的数据长这样**（2026-09-10）：
+
+| | 值 | 说明 |
+|---|---|---|
+| transcript | 5656 行，**前一晚 19:11** 创建 | 会话真实体量 |
+| pane 里进程启动 | **次日 14:06** | 差了一整晚 → 是 resume |
+| pane scrollback | 1635 行 | 只有重放的一小段 + 之后的新内容 |
+
+5656 行的会话若从头跑，scrollback 会有几万行；只剩 1635 行就是断层的量化证据。
+
+**结论**：这不是 tmux 的问题，配置改不好。
+- 要回看完整历史 → 读 transcript `~/.claude/projects/<项目>/<session>.jsonl`，或 `claude --resume` 后用界面自己的历史
+- 想让 scrollback 完整 → **在 tmux 里从头启动** claude，别在外面开了再 resume 进来
+- 对照：在服务器上习惯先 tmux 再 claude 的，就从来不会遇到这个断层
+
+### 坑 2：macOS 上 `LC_CTYPE=C` 不会让 tmux 中文乱码（别照搬 Linux 经验）
+
+Linux 上的常识是"locale 不是 UTF-8 → tmux 按单字节拆汉字 → 乱码"。
+**macOS + tmux 3.7 实测不成立**：`LC_CTYPE=C` 时 tmux 仍然 `utf8=1`，
+存进 scrollback 的中文字节完全正确（tmux 自己 fallback 到 UTF-8 了）。
+
+```bash
+# 判定 tmux 这层到底是不是 UTF-8
+tmux list-clients -F 'term=#{client_termname} utf8=#{client_utf8}'
+
+# 直接验字节：tmux 内部存的 vs 直接输出的，一致就说明 tmux 没问题
+tmux new-session -d -s _probe -x 80 -y 10
+tmux send-keys -t _probe 'printf "中文测试|abc\n"' Enter; sleep 1
+tmux capture-pane -p -t _probe | grep '中文测试' | hexdump -C | head -3
+tmux kill-session -t _probe
+printf "中文测试|abc\n" | hexdump -C | head -3     # 对照
+# 中 = e4 b8 ad，文 = e6 96 87
+```
+
+所以在 macOS 上看到 tmux 里中文有问题，**先别急着怪 locale**，用上面的字节对照法确认是哪一层。
+
+顺带：oh-my-zsh 的 `.zshrc` 模板里 `# export LANG=en_US.UTF-8` 默认注释着，
+装完基本没人打开（`locale` 会显示 `LANG=""`、`LC_CTYPE="C"`）。
+这行**该开**（很多 CLI 工具、Python 输出、ssh 到 Linux 时都依赖它），只是它不是 tmux 乱码的解释。
+设 `LANG` 就够，不要设 `LC_ALL`——它强制覆盖所有 `LC_*`，出问题时没法单项调。
+
+注：非交互式 `ssh host 'locale'` 显示 `LANG=` 是正常的，那是没 source 交互式 rc 文件，
+不代表登录进去也是空的（A100 的 `LANG` 就写在 `~/.shell_common` 里）。
+
+### 附：`alternate_on` 是什么，什么时候真该看它
+
+```bash
+tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index} cmd=#{pane_current_command} alt=#{alternate_on} hist=#{history_size}'
+```
+
+- `alternate_on=1`（vim / htop / less）：程序用备用屏幕，退出后屏幕**还原**成进入前的样子，不污染 scrollback
+- `alternate_on=0`（Claude Code）：输出直接进正常缓冲区，退出后内容留在 scrollback 里
+
+真正会被它坑到的场景是**满屏刷新型 TUI**（进度条、watch）把每一帧都糊进 scrollback；
+Claude Code 的对话正文是正常输出，翻起来是干净的，不要拿这个当排版错乱的解释。
