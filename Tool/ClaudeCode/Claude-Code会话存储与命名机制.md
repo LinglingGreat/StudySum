@@ -81,7 +81,17 @@ Remote Control 区里看到的终端会话是「正在运行的进程」的注�
 
 - **共享**：`~/.claude/settings.json`（hooks 在桌面会话里照常触发）、`~/.claude/CLAUDE.md`、项目 CLAUDE.md、`~/.claude/skills/`、`~/.claude/plugins/`、`~/.claude/projects/`（记录 + 记忆）、`~/.claude.json`
 - **桌面额外**：`…/Claude/local-agent-mode-sessions/skills-plugin/<组织>/<账号>/skills/`（docx/pptx/xlsx/pdf/morning/schedule 等，即 `anthropic-skills:*`）；桌面自带的 MCP（浏览器、会话管理、Claude Docs、visualize 等）由 app 注入
-- **不共享**：① CLI 二进制——桌面用 `…/Claude/claude-code/<ver>/`，终端用 `~/.local/share/claude/versions/<ver>`，版本各自升级；② 「始终允许」落点——终端写项目 `.claude/settings.local.json`，桌面写进该会话的 `local_*.json`（`sessionPermissionUpdates`，destination=session），终端批的桌面认、桌面批的终端不认；③ 模型/effort 由桌面 UI 逐会话传参覆盖 settings.json；④ 「No folder」桌面会话的 cwd 是临时 scratch 目录，记忆池独立，看不到项目记忆
+- **不共享**：① CLI 二进制——桌面用 `…/Claude/claude-code/<ver>/`（app 自带，随 app 更新，实测一天内 2.1.260→2.1.271），终端用 `~/.local/share/claude/versions/<ver>`，版本各自升级；② 「始终允许」落点——终端写项目 `.claude/settings.local.json`，桌面写进该会话的 `local_*.json`（`sessionPermissionUpdates`，destination=session），终端批的桌面认、桌面批的终端不认；③ 模型/effort 由桌面 UI 逐会话传参覆盖 settings.json；④ 「No folder」桌面会话的 cwd 是临时 scratch 目录，记忆池独立，看不到项目记忆
+
+## 七、桌面端「权限不一样」与「更慢」的实测
+
+**权限**：两端都是 auto 模式（`settings.json` 的 `permissions.defaultMode=auto`，桌面另传 `--permission-mode auto`），分类器拒绝（"denied by the Claude Code auto mode classifier"）在终端会话里同样出现（596bca1d 里 3+ 次），不是桌面独有。桌面独有的四样：
+1. **文件夹作用域**：会话绑定选中的文件夹，「No folder」会话落在临时 scratch 目录，碰任何项目都要先 `change_directory`/`request_directory` 拿授权（授权后环境里出现 "Additional working directories added"）
+2. **桌面注入的安全 system prompt**：一整段 Prohibited / Explicit-permission 规则（删文件、发消息、提交表单、下载、填凭证……），模型会主动说「需要你确认 / 不能做」——这是模型**自述**没权限，不是硬拦截，终端没有这段
+3. `--disallowedTools SendMessage`；权限询问走 `--permission-prompt-tool stdio` 弹到桌面 UI
+4. 「始终允许」只写进该会话的 `local_*.json`，不跨会话
+
+**速度**：按 jsonl 时间戳算「用户消息 → 首条 assistant 记录」：桌面会话中位 4.3 s / p90 7.3 s（8 轮样本），终端三个会话中位 5.8–8.0 s / p90 7.5–22.9 s；首轮 prompt 规模两端相当（桌面 65.7K tok，终端 53–68K；`~/.claude/skills` 里 28 个 lark-* skill 两端都加载）。**数据不支持「桌面更慢」**。感知差异更可能来自桌面 `--thinking-display omitted` + `CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES=false`：思考和工具调用过程不显示，长思考的一轮在桌面看起来是空等，终端能看到 spinner/思考流。
 
 ## 排查时踩的坑
 

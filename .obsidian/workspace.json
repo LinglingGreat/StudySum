@@ -237,6 +237,8 @@
   },
   "active": "7d011fa3cb904c6e",
   "lastOpenFiles": [
+    "PLM/Models/Jev/Jev.md",
+    "PLM/Models/Jev",
     "News/AI动态/2026-09-17.md",
     "Tool/lark-cli/lark-cli飞书CLI安装与跨机迁移.md",
     "Tool/lark-cli",
@@ -265,7 +267,6 @@
     "News/AI动态/2026-08-31.md",
     "News/AI动态/2026-08-30.md",
     "News/AI动态/2026-08-29.md",
-    "News/AI动态/2026-08-28.md",
     "PLM/Alignment/OPD/img/Simple-OPD-fig8-dynamics.png",
     "PLM/Alignment/OPD/img/Simple-OPD-fig7-same-size.png",
     "PLM/Alignment/OPD/img/Simple-OPD-fig6-warmup-steps.png",
@@ -282,7 +283,6 @@
     "PLM/RolePlay/Agentopia/img",
     "PLM/RolePlay/Agentopia",
     "PLM/RolePlay/EvolvingWorld/img",
-    "PLM/RolePlay/EvolvingWorld",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
