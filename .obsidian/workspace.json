@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -248,8 +248,9 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "05113a5de3634a2a",
+  "active": "47eb4d2fddfdc229",
   "lastOpenFiles": [
+    "News/AI动态/2026-10-11.md",
     "News/AI动态/2026-10-15.md",
     "News/AI动态/2026-10-14.md",
     "News/AI动态/2026-10-13.md",
@@ -275,7 +276,6 @@
     "News/AI动态/2026-10-12.md",
     "News/papers/HuggingFace_2026-W32.md",
     "Tool/k8s/k8s.md",
-    "News/AI动态/2026-10-11.md",
     "News/AI动态/2026-10-10.md",
     "News/AI动态/2026-10-09.md",
     "News/AI动态/2026-10-08.md",
