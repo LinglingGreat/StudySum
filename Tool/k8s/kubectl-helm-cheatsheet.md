@@ -6,6 +6,23 @@
 
 ---
 
+## bx-h800 SSH 终端默认命名空间与补全（2026-10-21）
+
+bx 的 `liling` 使用 Bash。现有 `~/.kube/config` 及目录归 root，本人不能修改；直接 `kubectl config set-context --current --namespace=xinchen` 因无法创建 `config.lock` 而失败。复制管理员 kubeconfig 的方案被自动审批拒绝，未执行。最终只做交互终端设置，不复制凭据、不修改集群配置：
+
+```bash
+# ~/.bashrc（现有交互判断之后）
+alias kubectl='kubectl --namespace=xinchen'
+
+# ~/.inputrc（已有系统配置通过 $include /etc/inputrc 保留）
+set show-all-if-ambiguous on
+set completion-ignore-case on
+```
+
+新 SSH 会话自动加载；当前会话执行 `source ~/.bashrc` 和 `bind -f ~/.inputrc`。`kubectl get pods` 默认查 xinchen，`kubectl -n mira get pods` 可覆盖；别名不改变 kubeconfig 中记录的 namespace，非交互脚本应显式传 `-n xinchen`。
+
+系统原有 `bash-completion` 已注册 `__start_kubectl`，无需重复安装。`kube` 同时匹配 kubeadm/kubectl/kubelet，输入 `kubec` + Tab 才能唯一补成 kubectl；`kubectl ge` + Tab 可补成 get，Pod名称补全也验证读取xinchen。新登录Bash的补全结果和两个namespace的实际查询均通过。`.bashrc` 修改前已在家目录保存 `.bashrc.before-kubectl-*` 备份。
+
 ## kubectl 常用命令
 
 ### 别名

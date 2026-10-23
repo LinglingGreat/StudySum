@@ -36,17 +36,17 @@
             }
           },
           {
-            "id": "47eb4d2fddfdc229",
+            "id": "506747b07714b255",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/papers/HuggingFace_2026-W32.md",
+                "file": "News/papers/HuggingFace_2026-W41.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HuggingFace_2026-W32"
+              "title": "HuggingFace_2026-W41"
             }
           },
           {
@@ -55,16 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "News/AI动态/2026-10-11.md",
+                "file": "News/AI动态/2026-10-14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-10-11"
+              "title": "2026-10-14"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -248,13 +248,15 @@
       "note-to-mp:复制到公众号": false
     }
   },
-  "active": "47eb4d2fddfdc229",
+  "active": "f5e130d6e52a15d2",
   "lastOpenFiles": [
+    "News/AI动态/2026-10-13.md",
+    "News/AI动态/2026-10-12.md",
     "News/AI动态/2026-10-11.md",
+    "News/papers/HuggingFace_2026-W41.md",
+    "News/papers/HuggingFace_2026-W32.md",
     "News/AI动态/2026-10-15.md",
     "News/AI动态/2026-10-14.md",
-    "News/AI动态/2026-10-13.md",
-    "News/papers/HuggingFace_2026-W41.md",
     "News/papers/assemble_w41.py",
     "News/papers/w41_part5.md",
     "News/papers/w41_part4.md",
@@ -273,8 +275,6 @@
     "PLM/Agent/Latent-Communication/Cache-to-Cache.md",
     "PLM/Agent/Latent-Communication/LatentMAS.md",
     "PLM/Agent/Latent-Communication/CLAUDE.md",
-    "News/AI动态/2026-10-12.md",
-    "News/papers/HuggingFace_2026-W32.md",
     "Tool/k8s/k8s.md",
     "News/AI动态/2026-10-10.md",
     "News/AI动态/2026-10-09.md",
