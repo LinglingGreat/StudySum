@@ -449,6 +449,84 @@ HF 那篇术语表 [3] 之所以值得读，是它把 agent 圈和 RL 圈的词�
 - **最值得记住的一个数字是 13.7。** 模型完全不动、只改 harness，Terminal-Bench 2.0 从 52.8 到 66.5。它同时说明两件事：做 harness 的投入回报率可能高于换模型；以及任何脱离 harness 的模型对比都是无效对比。
 - **对做训练的人，最该警惕的是 benchmark 数字脱离 harness 被引用。** 报告一个 agentic 分数时，模型名、harness 名、harness 版本三者缺一不可，否则不可比。
 
+## 10. 长会话压缩与结构化状态更新
+
+补充日期：2026-10-26。源码结论固定于 2026-10-15 调研版本：OpenCode dev `4397ee44d038a5f17bf6ac161431673d93e563b5`、DeepSeek Harness master `571902028a75c64c1d767f4ae5fd099485f0ddf0`，不代表之后版本或线上部署。证据为源码及测试断言阅读，未运行项目测试或做摘要语义保真评测。
+
+### 10.1 历史存储不等于模型可见上下文
+
+长会话的主线是保存历史、压缩较早内容、保留近期细节，再按需读取文件。会话可以跨越多个上下文窗口，但模型每轮可见内容仍有限。Prompt/KV cache 复用相同前缀的计算，不会让已移出输入的信息自动可见。跨会话记忆文件、规则文件又是另一层机制。
+
+两家的文本摘要路径均让模型重写完整 Markdown checkpoint，再替换旧的可见历史；摘要中的“进行中→已完成”是模型重新组织文本，不是宿主逐字段执行 JSON patch。
+
+### 10.2 OpenCode 文本压缩路径
+
+- **触发**：令 `W = model.limit.input || model.limit.context`。显式 buffer 时阈值为 `W-buffer`；默认是 `W-max(floor(W*0.1), W>=32000 ? 16000 : 0)`。当前压力达到阈值就触发。压力使用最近可用响应的实际 usage 加未计量增量，没有实际计量时估算完整请求。测试断言 272000 输入容量在 244800 触发，100000 窗口在 84000 触发。[阈值源码](https://github.com/anomalyco/opencode/blob/4397ee44d038a5f17bf6ac161431673d93e563b5/packages/core/src/session/compaction.ts#L874-L930)
+- **保留**：默认近期预算 15000 tokens，切口向前对齐用户消息以保护整个交互，因此可超预算。近期内容已经过文本序列化：工具结果最多 1250 Unicode code points，附件只留下说明，不能理解成全部近期数据无损保留。[切分与序列化](https://github.com/anomalyco/opencode/blob/4397ee44d038a5f17bf6ac161431673d93e563b5/packages/core/src/session/compaction.ts#L708-L827)
+- **摘要要求**：目标、用户约束、决策、已完成/进行中/阻塞、下一步、最多15个关键文件、不能轻易重获的重要事实。保留精确路径/命令/标识符和Git状态；可从文件恢复的内容允许省略。仓库规则与环境信息单独加载，不复制进摘要。更新时新历史优先，保留未被取代的旧事实，移除已解决的问题。[模板与更新指令](https://github.com/anomalyco/opencode/blob/4397ee44d038a5f17bf6ac161431673d93e563b5/packages/core/src/session/compaction.ts#L104-L175)
+- **失败边界**：格式检查只要求出现至少一个预期标题，不是完整schema或语义校验。压缩请求过大时先转文本、截工具输出，仍过大则丢最老完整交互，保住旧摘要和最新交互；不能继续缩小时失败。[恢复逻辑](https://github.com/anomalyco/opencode/blob/4397ee44d038a5f17bf6ac161431673d93e563b5/packages/core/src/session/compaction.ts#L278-L510)
+
+### 10.3 DeepSeek Harness 基础压缩路径
+
+- **触发**：每个 `agent/pre-step` 检查。`W` 为路由模型窗口，`O` 为请求maxTokens（否则adapter默认值，否则0），默认余量 `B=65536`。阈值 `T=floor(min(W*0.8,W-O-B))`，近期保留预算 `R=floor((W-O)*0.16)`；显式 retainTokens 可覆盖后者。因此不是固定等到80%才压缩。[预算代码](https://github.com/deepseek-ai/deepseek-harness/blob/571902028a75c64c1d767f4ae5fd099485f0ddf0/packages/compaction/compaction-basic/src/config.ts#L153-L210)
+- **执行**：达到阈值后先运行可选工具结果裁剪并重新计量，降到阈值以下就无需摘要。正常路径摘要后仍超阈值，默认最多再做一次，然后报错。服务端确认超限时绕过正常阈值和R，按 `R=0` 尽力压缩。[执行路径](https://github.com/deepseek-ai/deepseek-harness/blob/571902028a75c64c1d767f4ae5fd099485f0ddf0/packages/compaction/compaction-basic/src/index.ts#L260-L345)
+- **保留**：从最新surface node向前累计至至少R，再向前调整工具配对边界；可超过预算，不要求保留整个人类轮次。开头system不参与替换。即使R为0，也先保留最后一个node再补齐工具配对。[范围选择](https://github.com/deepseek-ai/deepseek-harness/blob/571902028a75c64c1d767f4ae5fd099485f0ddf0/packages/compaction/compaction-basic/src/region.ts#L109-L155)
+- **摘要要求**：用户意图、技术概念、文件/代码、错误/修复、未完成任务、当前工作、下一步、关键约束。要求精确保留数值、签名、命令及用户纠正，并合并已有checkpoint。代码拒绝空输出、图片输出和因token上限中止的摘要，但不逐项验证八个章节及事实覆盖。[摘要实现](https://github.com/deepseek-ai/deepseek-harness/blob/571902028a75c64c1d767f4ae5fd099485f0ddf0/packages/compaction/compaction-basic/src/summarizer.ts)
+- **提交保护**：检查摘要带包装后的token数确实变小，并检查异步期间选区是否仍有效；原始事件及来源关系留在追加日志中。这些保证流程与可追溯性，不保证语义无损。[收缩检查与提交](https://github.com/deepseek-ai/deepseek-harness/blob/571902028a75c64c1d767f4ae5fd099485f0ddf0/packages/compaction/compaction-basic/src/region.ts#L396-L509)
+
+### 10.4 多次压缩的失真边界
+
+共同模式为 `H1→S1`，再以 `S1+新增历史→S2`。不会默认重新展开全部H1重新总结。首次漏进S1的信息，无法只凭S1在第二次恢复。近期原文、规则重新加载、原始日志和精确文件引用能降低损失，但格式正确、输出完整、摘要变小都不能证明关键事实保留。需要长期精确保存的约束和决策，应另有可追溯记录；这属于设计建议，并非上述实现已提供语义无损保证。
+
+### 10.5 嵌套聊天状态的更新协议建议
+
+以下为讨论中的候选方案，未获实施确认，也没有模型成功率对比数据；不表示已修改业务Harness或平台契约。
+
+1. **小而有界的模块**：模型输出完整新值或keep，程序完整替换该owner。完整schema应规定必填项、可空值及删除含义；聊天没提某字段不表示清空。不要同时把省略解释为保留和删除。
+2. **嵌套对象的少量字段修改**：程序提供稳定target_id、当前值、字段白名单，模型只返回 `target_id + set + evidence_message_ids`。程序负责将ID解析到真实对象并执行白名单字段覆盖；模型不生成任意JSON路径或数组下标。目标ID不能按每轮数组位置重新编号。
+3. **不断增长的集合**：考虑稳定记录ID和少量业务操作，如完成约定、纠正事实、记录经历。不要默认用字符串append维护当前事实，也不要开放无限制merge。
+4. **程序负责正确提交**：校验目标、字段、类型、有效证据引用、幂等及基础版本。模型输出合法JSON只保证可解析，不保证语义正确；reason用于审计，自报confidence不能替代校验。版本、提交进度和重试身份由程序生成。字段协议不能绕过owner层的条件提交和原子边界。
+
+红信封例子：`unfinished_business`是数组，原提议路径缺少 `[0]`。更重要的是“提出称重/嗅闻”不能更新为已执行进展；应区分提议、已接受计划、已发生事实。若schema没有计划字段，这次对inspection_progress应不更新。可选方案是把已完成检查、提议检查、已接受检查分开，但新增字段需另行确认。
+
+### 10.6 Markdown 状态的小节替换候选方案
+
+当状态主要用于重新提供给模型、实体内部结构开放时，可以把正文改为Markdown，由稳定实体ID确定替换范围。程序需要直接用于分支、筛选或统计的字段仍宜保留结构化表示。此方案只讨论更新协议，未实现或比较准确率。
+
+完整文档可以包含多个独立区块：
+
+```markdown
+# 关系状态
+
+<!-- state:envelope_001:start -->
+## 红信封
+- 状态：密封。
+- 限制：未获许可不得打开。
+- 已完成检查：外观。
+- 提议检查：称重、嗅闻，尚未执行。
+<!-- state:envelope_001:end -->
+
+<!-- state:promise_002:start -->
+## 周五的约定
+- 双方约好周五晚上见面。
+- 状态：尚未履行。
+<!-- state:promise_002:end -->
+```
+
+新增消息明确描述“称重12克，原样放回，没有打开”时，仅将红信封旧正文与新增消息交给模型。模型返回该区块完整新正文，不返回边界标记：
+
+```markdown
+## 红信封
+- 状态：密封。
+- 限制：未获许可不得打开。
+- 已完成检查：外观、称重；重量为12克。
+- 提议检查：嗅闻，尚未执行。
+```
+
+程序按已选定的ID替换start/end之间正文，保留边界和其他区块原始内容；若一次更新多个区块，可用浅层JSON封装section_id与content。这里是“实体小节完整重写”，不是“整份状态重写”，也不是“只改一句”。物理保存整个文件不改变这个逻辑边界。
+
+建议的程序约束：ID和边界由程序管理并验证唯一性与配对；缺失、重复、正文夹带边界标记等情况拒绝提交，不猜测替换范围；不依赖标题或行号定位；更新须通过读取版本检查。小节划分优先保证内部状态一致性，例如称重完成与待做清单同步变更，不宜为减少输出把每一句都拆成独立区块。Markdown只减少路径/嵌套操作负担，不消除重写遗漏或“提议变事实”的语义错误。
+
 ## 参考资料
 
 一手来源（本文事实依据）：
